@@ -1,0 +1,1620 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lehrmaterial, Übungen, Aufgaben und Hilfen für Programmieren I">
+      
+      
+        <meta name="author" content="Jörn Freiheit">
+      
+      
+        <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/prog1/hilfsklassen/">
+      
+      
+        <link rel="prev" href="../sortieren/">
+      
+      
+        <link rel="next" href="../javadoc/">
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>Hilfsklassen - Programmieren I</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nutzliche-klassen" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href=".." title="Programmieren I" class="md-header__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programmieren I
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hilfsklassen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jfreiheit/prog1" title="Zum Repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programmieren I" class="md-nav__button md-logo" aria-label="Programmieren I" data-md-component="logo">
+      
+  <img src="../img/fiw.jpg" alt="logo">
+
+    </a>
+    Programmieren I
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jfreiheit/prog1" title="Zum Repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    prog1
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithmen/" class="md-nav__link">
+        Algorithmen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start/" class="md-nav__link">
+        Erstes Programm
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variablen/" class="md-nav__link">
+        Variablen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ausdruecke/" class="md-nav__link">
+        Ausdrücke
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methoden/" class="md-nav__link">
+        Methoden
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selektion/" class="md-nav__link">
+        Selektion
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iteration/" class="md-nav__link">
+        Iteration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodenstack/" class="md-nav__link">
+        Methodenstack
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objekte1/" class="md-nav__link">
+        Klassen und Objekte I
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objekte2/" class="md-nav__link">
+        Klassen und Objekte II
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vererbung/" class="md-nav__link">
+        Vererbung
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../object/" class="md-nav__link">
+        Klasse Object
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arrays/" class="md-nav__link">
+        Arrays
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sortieren/" class="md-nav__link">
+        Sortieren
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Hilfsklassen
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Hilfsklassen
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#die-klasse-scanner" class="md-nav__link">
+    Die Klasse Scanner
+  </a>
+  
+    <nav class="md-nav" aria-label="Die Klasse Scanner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#erzeugen-eines-scanner-objektes" class="md-nav__link">
+    Erzeugen eines Scanner-Objektes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aufrufen-der-passenden-objektmethoden" class="md-nav__link">
+    Aufrufen der passenden Objektmethoden
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#die-klasse-math" class="md-nav__link">
+    Die Klasse Math
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#die-klasse-random" class="md-nav__link">
+    Die Klasse Random
+  </a>
+  
+    <nav class="md-nav" aria-label="Die Klasse Random">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ein-random-objekt-erzeugen" class="md-nav__link">
+    Ein Random-Objekt erzeugen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objektemethoden-der-klasse-random" class="md-nav__link">
+    Objektemethoden der Klasse Random
+  </a>
+  
+    <nav class="md-nav" aria-label="Objektemethoden der Klasse Random">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextint" class="md-nav__link">
+    nextInt()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextintint-bound" class="md-nav__link">
+    nextInt(int bound)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#die-klasse-string" class="md-nav__link">
+    Die Klasse String
+  </a>
+  
+    <nav class="md-nav" aria-label="Die Klasse String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-methode-und-printf" class="md-nav__link">
+    format()-Methode und printf()
+  </a>
+  
+    <nav class="md-nav" aria-label="format()-Methode und printf()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formatierung-von-gleikommazahlen" class="md-nav__link">
+    Formatierung von Gleikommazahlen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javadoc/" class="md-nav__link">
+        Javadoc
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Werkzeuge
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        Übungen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aufgaben/" class="md-nav__link">
+        Aufgaben
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#die-klasse-scanner" class="md-nav__link">
+    Die Klasse Scanner
+  </a>
+  
+    <nav class="md-nav" aria-label="Die Klasse Scanner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#erzeugen-eines-scanner-objektes" class="md-nav__link">
+    Erzeugen eines Scanner-Objektes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aufrufen-der-passenden-objektmethoden" class="md-nav__link">
+    Aufrufen der passenden Objektmethoden
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#die-klasse-math" class="md-nav__link">
+    Die Klasse Math
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#die-klasse-random" class="md-nav__link">
+    Die Klasse Random
+  </a>
+  
+    <nav class="md-nav" aria-label="Die Klasse Random">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ein-random-objekt-erzeugen" class="md-nav__link">
+    Ein Random-Objekt erzeugen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objektemethoden-der-klasse-random" class="md-nav__link">
+    Objektemethoden der Klasse Random
+  </a>
+  
+    <nav class="md-nav" aria-label="Objektemethoden der Klasse Random">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextint" class="md-nav__link">
+    nextInt()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextintint-bound" class="md-nav__link">
+    nextInt(int bound)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#die-klasse-string" class="md-nav__link">
+    Die Klasse String
+  </a>
+  
+    <nav class="md-nav" aria-label="Die Klasse String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-methode-und-printf" class="md-nav__link">
+    format()-Methode und printf()
+  </a>
+  
+    <nav class="md-nav" aria-label="format()-Methode und printf()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formatierung-von-gleikommazahlen" class="md-nav__link">
+    Formatierung von Gleikommazahlen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="nutzliche-klassen">Nützliche Klassen<a class="headerlink" href="#nutzliche-klassen" title="Permanent link">&para;</a></h1>
+<p>In Java gibt es eine Vielzahl bereits existierender Klassen, auf die wir zugreifen können. Wir werden nach und nach einige davon kennenlernen - aber längst nicht alle. Bis jetzt haben wir nur zwei Klassen direkt verwendet:</p>
+<ul>
+<li>die Klasse <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html"><code>System</code></a>, die uns eine Schnittstelle zu unserer Konsole (dem Standardausgabegerät zur Verfügung stellt - z.B. <code>System.out.println()</code>) und </li>
+<li>die Klasse <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html"><code>String</code></a>, die einen Datentyp für Zeichenketten darstellt und dafür auch nützliche Methoden mitbringt, die wir uns hier mal genauer anschauen wollen.</li>
+</ul>
+<p>Beide Klassen gehören zum Paket <code>java.lang</code>. Dieses Paket muss nicht importiert werden, umn die Klassen daraus zu nutzen. Bei anderen Klassen, die wir im Folgenden betrachten, ist das teilweise anders.</p>
+<h2 id="die-klasse-scanner">Die Klasse <code>Scanner</code><a class="headerlink" href="#die-klasse-scanner" title="Permanent link">&para;</a></h2>
+<p>Wir können derzeit Ausgaben auf die Konsole schreiben. Wir können jedoch noch keine Eingaben tätigen. Das wird sich mit der Verwendung der Klasse <code>Scanner</code> nun ändern. </p>
+<p>Die Verwendung dieser Klasse durch uns erfolgt durch </p>
+<ol>
+<li>die Erzeugung eines <code>Scanner</code>-<em>Objektes</em> </li>
+<li>den Aufruf einer passenden <em>Objektmethode</em>, je nachdem, was wir einlesen wollen, ein <code>int</code>, ein <code>double</code> oder einen <code>String</code>.</li>
+</ol>
+<h3 id="erzeugen-eines-scanner-objektes">Erzeugen eines <code>Scanner</code>-Objektes<a class="headerlink" href="#erzeugen-eines-scanner-objektes" title="Permanent link">&para;</a></h3>
+<p>Wir haben oben zwei begriffe verwendet, deren Bedeutung wir erst später kennenlernen: <em>Objekt</em> und <em>Objektmethode</em>. Das soll uns aber nicht aufhalten, einfach einmal ein <code>Scanner</code>-Objekt zu erzeugen:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Hierbei passiert folgendes:</p>
+<ul>
+<li>wir deklarieren uns eine Variable <code>sc</code> vom Datentyp <code>Scanner</code>,</li>
+<li>wir erzeugen mithilfe von <code>new Scanner()</code> ein neues Objekt vom Datentyp <code>Scanner</code>,  </li>
+<li>wir übergeben der Methode, die ein <code>Scanner</code>-Objekt erzeugt unser Standardeingabegerät (<code>System.in</code>) - das ist die Konsole, d.h. wir wollen unsere Daten über die Konsole einlesen</li>
+<li>wir weisen unser neues Objekt (genauer gesagt: eine <em>Referenz</em> auf unser neues Objekt) der Variablen <code>sc</code> zu</li>
+</ul>
+<p>Wenn Sie obige Anweisung z.B. in Ihre <code>main()</code>-Methode einfügen, dann stellen Sie fest, dass beide <code>Scanner</code> rot unterstrichen sind. Die Fehlerausgabe ist <code>Scanner cannot be resolved to a type</code>. Das liegt daran, dass die Klasse <code>Scanner</code> nicht zum Standardpaket <code>java.lang</code> gehört, sondern wir sie erst importieren müssen. Das lassen wir aber von unserer IDE erledigen. Wir wählen eines der vorgeschlagenen <code>quick fixes</code> aus, und zwar <code>import Scanner (java.util)</code>. Achten Sie darauf, dass dies nicht der erste Vorschlag für ein <code>quick fix</code> ist! Nachdem die entsprechende <code>import</code>-Anweisung (<code>import java.util.Scanner;</code>) eingefügt wurde, ist die Fehlermeldung behoben. Das Programm könnte also so aussehen:</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">themen.hilfsklassen</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hilfsklassen</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">{</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Die <code>import</code>-Anweisung (Zeile <code>3</code>) erfolgt außerhalb und vor der Klassendeklaration. </p>
+<h3 id="aufrufen-der-passenden-objektmethoden">Aufrufen der passenden Objektmethoden<a class="headerlink" href="#aufrufen-der-passenden-objektmethoden" title="Permanent link">&para;</a></h3>
+<p>Für ein solches Objekt vom Typ <code>Scanner</code> stehen eine Vielzahl von Methoden zur Verfügung, von denen wir uns nur die folgenden anschauen wollen:</p>
+<ul>
+<li><code>next()</code>: liest einen <code>String</code> ein</li>
+<li><code>nextInt()</code>: liest ein <code>int</code> ein</li>
+<li><code>nextDouble()</code>: liest ein <code>double</code> ein</li>
+<li><code>nextBoolean()</code>: liest ein <code>boolean</code> ein</li>
+</ul>
+<p>Es sei erwähnt, dass es auch noch <code>nextLong()</code>, <code>nextFloat()</code>, <code>nextShort()</code> usw. gibt. </p>
+<p>Der Aufruf einer solchen Objektmethode erfolgt stets nach dem Prinzip:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>referenzVariable.objektMethode<span class="o">()</span>
+</span></code></pre></div>
+<p>Das heißt die Variable, die eine Referenz auf das Objekt hält (bei uns <code>sc</code>), ruft über <em>Punktnotation</em>  (mit einem <code>.</code> verbinden) die entsprechende Objektmethode auf. Wir betrachten Beispiele:</p>
+<p><div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span>
+<span class="normal"><a href="#__codelineno-3-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Geben Sie eine ganze Zahl ein: &quot;</span><span class="p">);</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="hll"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ganzeZahl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span></span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ganzeZahl</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+In Zeile <code>6</code> sehen Sie den Aufruf der Methode <code>nextInt()</code> für das <code>sc</code>-Objekt, also <code>sc.nextInt()</code>. Die Methode <code>nextInt()</code> gibt die eingegebene Zahl zurück, d.h. der Aufruf der Methode entspricht einer Zahl vom Datentyp <code>int</code>. Diese speichern wir in obigem Beispiel in der Variablen <code>ganzeZahl</code> vom Typ <code>int</code>.</p>
+<p>Wenn Sie auf der Konsole dann eine Zahl eingeben, sieht das so aus:
+<img alt="scanner" src="../files/23_scanner.png" /></p>
+<p>Was passiert, wenn Sie keine Zahl eingeben? Dann wird eine sogenannte * Exception* geworfen. Eine Exception ist ein Fehler, der zur Laufzeit passiert. Wir werden bald lernen, wie man soclhe Exceptions abfängt, damit es nicht einen solchen "Systemabsturz" gibt. Derzeit müssen wir damit noch leben. Eine solche fehlerhafte Eingabe würde so aussehenen:
+<img alt="scanner" src="../files/24_scanner.png" /></p>
+<p>Für diejenigen, die es interessiert, ist hier eine Methode, die einen solchen Fehlerfall abfängt. Das müssen sie jetzt aber noch nicht verstehen - es ist, wie gesagt, nur für eventuelles Interesse:</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">themen.hilfsklassen</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.InputMismatchException</span><span class="p">;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hilfsklassen</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="p">{</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">ganzeZahlEinlesen</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">inputOk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">        </span><span class="k">do</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="p">);</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">                </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">                </span><span class="n">inputOk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">            </span><span class="k">catch</span><span class="p">(</span><span class="n">InputMismatchException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">                </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sie müssen eine Zahl eingeben&quot;</span><span class="p">;</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">                </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">        </span><span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">inputOk</span><span class="p">);</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">number</span><span class="p">;</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">ganzeZahl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ganzeZahlEinlesen</span><span class="p">(</span><span class="s">&quot;Geben Sie eine Zahl ein&quot;</span><span class="p">);</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ganzeZahl</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Ein möglicher Ablauf wäre dann wie folgt: 
+<img alt="scanner" src="../files/25_scanner.png" /></p>
+<p>Wir gehen erstmal davon aus, dass die Eingaben korrekt erfolgen und schauen uns noch weitere Beispiele an:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">weitereBeispiele</span><span class="p">()</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;int Zahl : &quot;</span><span class="p">);</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">intNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">intNumber</span><span class="p">);</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;double Zahl : &quot;</span><span class="p">);</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">doubleNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">doubleNumber</span><span class="p">);</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;boolean : &quot;</span><span class="p">);</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">wahrheitswert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextBoolean</span><span class="p">();</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">wahrheitswert</span><span class="p">);</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;String : &quot;</span><span class="p">);</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">zeichenkette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zeichenkette</span><span class="p">);</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Ein Aufruf der Methode <code>weitereBeispiele();</code> (z.B. in <code>main()</code>) könnte dann so aussehen:
+<img alt="scanner" src="../files/26_scanner.png" /></p>
+<p>Beachten Sie:</p>
+<ol>
+<li>Bei der Eingabe einer <code>double</code>-Zahl müssen Sie anstelle des Punktes ein <strong>Komma</strong> eingeben. Das hängt mit den ländertypischen Einstellungen von Eclipse zusammen. (Bei manchen ist es vielleicht ein Punkt.)</li>
+<li>Wenn Sie ein <code>String</code> eingeben, dann wird bei der Methode <code>next()</code> nur der String bis zum ersten Leerzeichen eingelesen. (Das lässt sich ändern, aber darauf gehen wir hier nicht näher ein.) </li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Wir können jetzt Eingaben über unsere Konsole tätigen!</p>
+</div>
+<h2 id="die-klasse-math">Die Klasse <code>Math</code><a class="headerlink" href="#die-klasse-math" title="Permanent link">&para;</a></h2>
+<p>Die Klasse <code>Math</code> enthält viele mathematische Funktionen als Methoden. Außerdem ist in ihr z.B. die Konstante <code>PI</code> definiert. Um die Klasse <code>Math</code> zu verwenden, müssen wir sie nicht importieren, denn sie befindet sich im Paket <code>java.lang</code>. Wir müssen auch kein Objekt der Klasse erzeugen, da alle Methoden dieser Klasse <em>Klassenmethoden</em> (also <code>static</code> sind). Um eine Methode dieser Klasse aufzurufen, setzen wir vor die Methode einfach <code>Math.</code>. Wir schauen uns Beispiele an:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">nr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">16.0</span><span class="p">;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">nr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">nr1</span><span class="p">);</span><span class="w">        </span><span class="c1">// Quadratwurzel</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">nr3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">nr4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">12.0</span><span class="p">);</span><span class="w">       </span><span class="c1">// absoluter Betrag</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">nr5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">floor</span><span class="p">(</span><span class="mf">12.3456</span><span class="p">);</span><span class="w">   </span><span class="c1">// abgeschnitten -&gt; 12</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">nr6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">floor</span><span class="p">(</span><span class="mf">12.9876</span><span class="p">);</span><span class="w">   </span><span class="c1">// abgeschnitten -&gt; 12</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">nr7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">12.3456</span><span class="p">);</span><span class="w">  </span><span class="c1">// abgeschnitten -&gt; -13</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">nr8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">12.9876</span><span class="p">);</span><span class="w">  </span><span class="c1">// abgeschnitten -&gt; -13</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">nr9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span><span class="w">         </span><span class="c1">// 2 hoch 5 = 32</span>
+</span></code></pre></div>
+<p>Beachten Sie, dass <code>floor()</code> nicht rundet, sondern die nächste ganze Zahl angibt, die <strong>kleiner</strong> als der Parameterwert ist. </p>
+<p>Mithilfe der <code>Math.random()</code>-Methode können Sie sich außerdem <code>double</code>-Zufallszahlen aus dem Bereich <code>0.0 &lt;= zufallszahl &lt;1.0</code> erzeugen lassen. Wir werden das aber meistens mithilfe der folgenden Klasse <code>Random</code> erledigen. </p>
+<p>Alle Methoden der Klasse <code>Math</code> finden Sie <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html">hier</a>. </p>
+<h2 id="die-klasse-random">Die Klasse <code>Random</code><a class="headerlink" href="#die-klasse-random" title="Permanent link">&para;</a></h2>
+<p>Mithilfe der Klasse <code>Random</code> können wir Zufallszahlen erzeugen. Bei der Klasse <code>Random</code> ist es ähnlich wie bei <code>Scanner</code>:</p>
+<ol>
+<li>wir erzeugen uns ein <code>Random</code>-Objekt,</li>
+<li>die Klasse befindet sich im Paket <code>java.util</code>, d.h. wir müssen sie importieren, </li>
+<li>wir wählen die passende Methode aus, je nachdem, von welchem Datentyp unsere Zufallszahl sein soll</li>
+</ol>
+<h3 id="ein-random-objekt-erzeugen">Ein <code>Random</code>-Objekt erzeugen<a class="headerlink" href="#ein-random-objekt-erzeugen" title="Permanent link">&para;</a></h3>
+<p>Wir erzwugen uns ein <code>Random</code>-Objekt wie folgt
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">Random</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+</span></code></pre></div></p>
+<p>Um die Klasse <code>Random</code> verwenden zu können, muss sie importiert werden. Hier ein Ausschnitt aus der Klasse, in der wir neben <code>Random</code> auch <code>Scanner</code> verwenden:
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">themen.hilfsklassen</span><span class="p">;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Random</span><span class="p">;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hilfsklassen</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="p">{</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>In Zeile <code>3</code> wird die Klasse <code>Random</code> importiert. </p>
+<h3 id="objektemethoden-der-klasse-random">Objektemethoden der Klasse <code>Random</code><a class="headerlink" href="#objektemethoden-der-klasse-random" title="Permanent link">&para;</a></h3>
+<p>Die Klasse <code>Random</code> bietet verschiedene Methoden, um Zufallswerte der einzelnen Datentypen zu generieren:</p>
+<ul>
+<li><code>nextDouble()</code>: erzeugt eine <code>double</code>-Zahl (aus dem Bereich <code>0.0</code> inklusive bis <code>1.0</code> exclusive)</li>
+<li><code>nextFloat()</code>: erzeugt eine <code>float</code>-Zahl (aus dem Bereich <code>0.0</code> inklusive bis <code>1.0</code> exclusive)</li>
+<li><code>nextLong()</code>: erzeugt eine <code>long</code>-Zahl (aus (fast) dem Bereich gesamten Bereich von <code>long</code>)</li>
+<li><code>nextBoolean()</code>: erzeugt einen <code>boolean</code>-Wert zufällig (<code>true</code> oder <code>false</code>)</li>
+</ul>
+<p>Wir betrachten jedoch hauptsächlich die Methoden, die uns zufällig einen <code>int</code>-Wert liefern:</p>
+<ul>
+<li><code>nextInt()</code>: erzeugt eine <code>int</code>-Zahl aus dem gesamten Wertebereich von <code>int</code> - also auch negative Zahlen,</li>
+<li><code>nextInt(int bound)</code>: erzeugt eine <code>int</code>-Zahl aus dem Bereich <code>0</code> inklusive bis <code>bound</code> exclusive)</li>
+</ul>
+<h4 id="nextint"><code>nextInt()</code><a class="headerlink" href="#nextint" title="Permanent link">&para;</a></h4>
+<p>Schauen wir uns zunächst <code>nextInt()</code> an. Wir implementieren eine Methode, die uns 10 Zufallszahlen mithilfe der Methode <code>nextInt()</code>erzeugt und auf die Konsole ausgibt:
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span>
+<span class="normal"><a href="#__codelineno-9-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printIntRandomNumbers</span><span class="p">()</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="p">{</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="n">Random</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">randomNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">randomNumber</span><span class="p">);</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>In Zeile <code>6</code> sehen wir den Aufruf der Methode <code>nextInt()</code>. Die Referenzvariable <code>r</code> zeigt auf unser <code>Random</code>-Objekt. Für die Referenzvariable wird mithilfe der Punktnotation die Methode <code>nextInt()</code> aufgerufen, also <code>r.nextInt();</code>. Diese Methode gibt eine Zufallszahl zurück, die wir in der Variablen <code>randomNumber</code> speichern.</p>
+<p>Ein Aufruf der Methode <code>printIntRandomNumbers();</code> z.B. in <code>main()</code> kann zu folgender Ausgabe führen (das sind Zufallszahlen, also jeder Aufruf liefert andere Werte):
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="m">1362288576</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="m">1801089219</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>-1573362027
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="m">56087730</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="m">1015233281</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="m">1341464232</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="m">2112804572</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="m">841838154</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="m">1460116224</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>-910734474
+</span></code></pre></div></p>
+<h4 id="nextintint-bound"><code>nextInt(int bound)</code><a class="headerlink" href="#nextintint-bound" title="Permanent link">&para;</a></h4>
+<p>Die Methode <code>nextInt()</code> existiert auch parametrisiert, d.h. wir können ihr einen Parameterwert (vom Datentyp <code>int</code>) übergeben. Dieser Wert muss positiv sein! Wenn nicht, dann wird eine <code>IllegalArgumentException</code> geworfen. Die Idee dieses Parameters ist zunächst die, dass wir den Wertebereich einschränken, aus dem die Zufallszahlen erzeugt werden. Angenommen, wir übergeben eine <code>6</code>, dann werden die Zufallszahlen aus dem Bereich <code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code> erzeugt. Für <code>nextInt(bound)</code> gilt also, dass eine Zufallszahl aus dem Bereich <code>0</code> (inklusive)  bis <code>bound</code>(exklusive) (<code>0 &lt;= zufZahl &lt; bound</code>) erzeugt wird. </p>
+<p>Wir betrachten folgendes Beispiel:</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printIntRandomNumbers</span><span class="p">()</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="p">{</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">    </span><span class="n">Random</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">randomNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="n">bound</span><span class="p">);</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">randomNumber</span><span class="p">);</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Wir haben die gleiche Methode wie oben, nur dass wir jetzt nicht <code>nextInt()</code>, sondern <code>nextInt(bound)</code> aufrufen (Zeile <code>7</code>). <code>bound</code> ist vom Typ <code>int</code> und hat den Wert <code>10</code> (Zeile <code>4</code>).</p>
+<p>Ein Aufruf der Methode <code>printIntRandomNumbers();</code> z.B. in <code>main()</code> kann zu folgender Ausgabe führen (das sind Zufallszahlen, also jeder Aufruf liefert andere Werte):
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="m">2</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="m">8</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="m">8</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="m">6</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="m">8</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="m">2</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="m">5</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="m">9</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="m">8</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="m">3</span>
+</span></code></pre></div></p>
+<p>Angenommen, wir wollen einen Würfel implementieren. Mit dem Aufruf <code>nextInt(6)</code> würden wir Zahlen zufällig aus dem Bereich <code>[0, ..., 5]</code> erzeugen. Das wäre es noch nicht ganz. Erst, wenn wir zu der erzeugten Zufallszahl jeweils eine <code>1</code> hinzuaddieren, "würfeln" wir Zahlen aus dem Bereich <code>[1, ..., 6]</code>. Ein Würfel würde also so implementiert werden:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">Random</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">wurf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">// zufaellig Zahlen 1 bis 6</span>
+</span></code></pre></div>
+<p>Eine generelle Methode, um mithilfe der Methode <code>nextInt(bound)</code> einen beliebigen Bereich aus dem <code>int</code>-Wertebereich zufällig abzudecken, sehe z.B. wie folgt aus:</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span>
+<span class="normal"><a href="#__codelineno-14-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getRandomNumber</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fromInclusive</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">toInclusive</span><span class="p">)</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="p">{</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">    </span><span class="n">Random</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">toInclusive</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">fromInclusive</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// +1 wegen toInclusive soll auch</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">randomNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="n">bound</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fromInclusive</span><span class="p">;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">randomNumber</span><span class="p">;</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Die Methode ist nicht besonders stabil. Wir müssten eigentlich überprüfen, ob <code>toInclusive</code> größer ist als <code>fromInclusive</code>, aber wir wollen hier zunächst nur das Prinzip erläutern.</p>
+<p>Wir "testen" unsere Methode und schauen mal, ob wir Zufallszahlen aus dem Bereich <code>[90, ... , 99]</code> erzeugen:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">50</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="p">{</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">getRandomNumber</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Eine mögliche Ausgabe:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="m">96</span><span class="w"> </span><span class="m">99</span><span class="w"> </span><span class="m">92</span><span class="w"> </span><span class="m">98</span><span class="w"> </span><span class="m">95</span><span class="w"> </span><span class="m">91</span><span class="w"> </span><span class="m">95</span><span class="w"> </span><span class="m">96</span><span class="w"> </span><span class="m">97</span><span class="w"> </span><span class="m">93</span><span class="w"> </span><span class="m">97</span><span class="w"> </span><span class="m">90</span><span class="w"> </span><span class="m">94</span><span class="w"> </span><span class="m">92</span><span class="w"> </span><span class="m">92</span><span class="w"> </span><span class="m">94</span><span class="w"> </span><span class="m">95</span><span class="w"> </span><span class="m">93</span><span class="w"> </span><span class="m">99</span><span class="w"> </span><span class="m">91</span><span class="w"> </span><span class="m">92</span><span class="w"> </span><span class="m">95</span><span class="w"> </span><span class="m">99</span><span class="w"> </span><span class="m">90</span><span class="w"> </span><span class="m">91</span><span class="w"> </span><span class="m">97</span><span class="w"> </span><span class="m">99</span><span class="w"> </span><span class="m">93</span><span class="w"> </span><span class="m">92</span><span class="w"> </span><span class="m">98</span><span class="w"> </span><span class="m">91</span><span class="w"> </span><span class="m">92</span><span class="w"> </span><span class="m">99</span><span class="w"> </span><span class="m">90</span><span class="w"> </span><span class="m">90</span><span class="w"> </span><span class="m">97</span><span class="w"> </span><span class="m">95</span><span class="w"> </span><span class="m">90</span><span class="w"> </span><span class="m">92</span><span class="w"> </span><span class="m">97</span><span class="w"> </span><span class="m">93</span><span class="w"> </span><span class="m">92</span><span class="w"> </span><span class="m">94</span><span class="w"> </span><span class="m">93</span><span class="w"> </span><span class="m">94</span><span class="w"> </span><span class="m">90</span><span class="w"> </span><span class="m">92</span><span class="w"> </span><span class="m">96</span><span class="w"> </span><span class="m">96</span><span class="w"> </span><span class="m">94</span><span class="w"> </span>
+</span></code></pre></div></p>
+<p>Noch ein "Test", diesmal Zahlen aus dem Bereich <code>[-33 , ... , -10]</code>:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">50</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">{</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">getRandomNumber</span><span class="p">(</span><span class="o">-</span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Eine mögliche Ausgabe:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>-10<span class="w"> </span>-31<span class="w"> </span>-29<span class="w"> </span>-29<span class="w"> </span>-33<span class="w"> </span>-11<span class="w"> </span>-19<span class="w"> </span>-15<span class="w"> </span>-33<span class="w"> </span>-22<span class="w"> </span>-13<span class="w"> </span>-15<span class="w"> </span>-14<span class="w"> </span>-10<span class="w"> </span>-28<span class="w"> </span>-27<span class="w"> </span>-24<span class="w"> </span>-19<span class="w"> </span>-13<span class="w"> </span>-26<span class="w"> </span>-21<span class="w"> </span>-10<span class="w"> </span>-25<span class="w"> </span>-16<span class="w"> </span>-29<span class="w"> </span>-28<span class="w"> </span>-16<span class="w"> </span>-18<span class="w"> </span>-29<span class="w"> </span>-15<span class="w"> </span>-23<span class="w"> </span>-26<span class="w"> </span>-18<span class="w"> </span>-25<span class="w"> </span>-29<span class="w"> </span>-19<span class="w"> </span>-12<span class="w"> </span>-23<span class="w"> </span>-26<span class="w"> </span>-22<span class="w"> </span>-15<span class="w"> </span>-26<span class="w"> </span>-11<span class="w"> </span>-16<span class="w"> </span>-18<span class="w"> </span>-22<span class="w"> </span>-20<span class="w"> </span>-12<span class="w"> </span>-21<span class="w"> </span>-25
+</span></code></pre></div></p>
+<p>Von <code>[-10, ... , 10]</code> geht auch:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">50</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="p">{</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">getRandomNumber</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>und unser Würfel klappt auch:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">50</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="p">{</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">getRandomNumber</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="die-klasse-string">Die Klasse <code>String</code><a class="headerlink" href="#die-klasse-string" title="Permanent link">&para;</a></h2>
+<p>Wir haben die Klasse <code>String</code> bereits bei den <a href="./variablen/#der-datentyp-string">Datentypen</a> betrachtet. Dort haben wir gesagt, dass <code>String</code> ein anderer Datentyp ist, als die <em>Wertetypen</em> <code>int</code>, <code>boolean</code>, <code>double</code> usw. Bei <code>String</code> handelt es sich um einen <em>Referenztypen</em>. Ein <code>String</code> ist eine <em>Referenz</em> auf ein Objekt. Wenn wir also so etwas haben:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">;</span><span class="w"> </span>
+</span></code></pre></div>
+dann ist <code>str</code> eine <em>Referenzvariable</em>, so wie z.B. <code>r</code> bei <code>Random</code> und <code>sc</code> bei <code>Scanner</code>. Wie bei <code>Random</code> und <code>Scanner</code> gibt es auch für String Methoden, die wir auf die Objekte anwenden können. Einige davon schauen wir uns im Folgenden an. Zunächst untersuchen wir jedoch, was so ein String eigentlich intern ist. Bei einer Zeichenkette handelt es sich um ein <em>Array</em> aus einzelnen Zeichen, also <code>char</code>. Wir wissen noch nicht, was ein <em>Array</em> ist, aber wir bekommen hier eine Vorstellung davon. Angenommen, wir haben den obigen String (<code>"Hallo FIW!"</code>). Intern sieht der so aus:
+<img alt="string" src="../files/27_string.png" />  </p>
+<p>Ein String besteht also aus einzelnen Zeichen (vom Typ <code>char</code>) und diese sind sogar automatisch "nummeriert". Wir haben einen sogenannten <em>Index</em>. Dieser Index ist eine ganze Zahl (<code>int</code>) und beginnt beim ersten Zeichen mit <code>0</code> und läuft dann fortlaufend mit jedem Zeichen eins höher. </p>
+<p>Betrachten wir unsere erste Methode für String: die Methode <code>length()</code>. Diese Methode gibt die Länge eines Strings zurück - in unserem Beispiel <code>10</code>.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="na">length</span><span class="p">());</span><span class="w">       </span><span class="c1">// 10</span>
+</span></code></pre></div>
+<p>Sie können die Methode über Punktnotation übrigens auch direkt an das Literal anhängen, also so:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">.</span><span class="na">length</span><span class="p">());</span><span class="w">      </span><span class="c1">// 10</span>
+</span></code></pre></div>
+<p>das gilt für alle der folgenden Objektmethoden. Beachten Sie, dass Länge (<code>length()</code>) eines Strings um 1 größer ist als der größte Indexwert. In der obigen Abbildung sehen wir, dass das Ausrufezeichen (<code>!</code>) mit dem Index <code>9</code> nummeriert ist. Das liegt daran, dass der erste Index die <code>0</code> ist.  </p>
+<p>Nun wollen wir den Index verwenden, also die "Nummer" jedes einzelnen Zeichens in einem String. Die Methode <code>charAt(int index)</code> liefrt das Zeichen eines Strings an dem Index <code>index</code> zurück. Also z.B.:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span><span class="w">        </span><span class="c1">// &#39;F&#39;</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w">                  </span><span class="c1">// F</span>
+</span></code></pre></div>
+<p>Wir lassen uns einmal alle Zeichen einzeln eines Strings ausgeben. Dazu verwenden wir eine <code>for</code>-Schleife. Die Laufvariable nimmt alle Werte aus dem Index an, d.h. <code>0</code> bis kleiner als <code>length()</code>:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">;</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">str</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="p">{</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Das erzeugt folgende Ausgabe:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>H
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>a
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>l
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>l
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>o
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>F
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>I
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>W
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>!
+</span></code></pre></div>
+<details>
+<summary>Verschlüsseln</summary>
+<p>Wir wissen ja, dass <code>char</code> ein ganzzahliger Datentyp ist. Wir könnten unsere Zeichenkette jetzt verschlüsseln, indem wir einfach zu dem ASCII-Code des jeweiligen Zeichens eine <code>1</code> hinzuaddieren. Das machen wir mal:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">;</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span><span class="w">            </span><span class="c1">// Hallo FIW!</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">str</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="p">{</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">    </span><span class="n">c</span><span class="o">++</span><span class="p">;</span><span class="w">                            </span><span class="c1">// naechstgroesserer ASCII-Code (um 1 addiert)</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w">            </span><span class="c1">// Ibmmp!GJX&quot;</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Erzeugt folgende Ausgabe:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Hallo<span class="w"> </span>FIW!
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>Ibmmp!GJX<span class="s2">&quot;</span>
+</span></code></pre></div></p>
+</details>
+<p>Wir können auch einen bestimmten Index erfragen. Die Methode <code>indexOf(char c)</code> gibt den Index zurück, an dem das Zeichen zum <strong>ersten</strong> Mal im String autaucht. Die Methode <code>lastIndexOf(char c)</code> gibt den Index zurück, an dem das Zeichen zum <strong>letzten</strong> Mal im String autaucht. </p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="sc">&#39;l&#39;</span><span class="p">);</span><span class="w">                  </span><span class="c1">// 2</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">.</span><span class="na">lastIndexOf</span><span class="p">(</span><span class="sc">&#39;l&#39;</span><span class="p">);</span><span class="w">               </span><span class="c1">// 3</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;l zum ersten Mal  : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">first</span><span class="p">);</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;l zum letzten Mal : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">last</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Mithilfe des Index können wir auch Teile eines Strings extrahieren. Die Methode <code>substring(int beginIndex)</code> liefert den Teilstring beginnend mit dem Index <code>beginIndex</code> bis zum Ende des Strings zurück. Die Methode <code>substring(int beginIndex, int endIndex)</code> liefert den Teilstring beginnend mit dem Index <code>beginIndex</code> (inklusive) bis zum Index <code>endIndex</code> (exklusive) zurück.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">String</span><span class="w"> </span><span class="n">substr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w">         </span><span class="c1">// lo FIW!</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="n">String</span><span class="w"> </span><span class="n">substr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span><span class="w">       </span><span class="c1">// lo F</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">substr1</span><span class="p">);</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">substr2</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Mithilfe der Methode <code>toLowerCase()</code> werden alle Buchstaben eines Strings in Kleinbuchstaben umgewandelt.<br />
+Mithilfe der Methode <code>toUpperCase()</code> werden alle Buchstaben eines Strings in Großbuchstaben umgewandelt. </p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">String</span><span class="w"> </span><span class="n">lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span><span class="w">          </span><span class="c1">// hallo fiw!</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="n">String</span><span class="w"> </span><span class="n">upper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span><span class="w">          </span><span class="c1">// HALLO FIW!</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">lower</span><span class="p">);</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">upper</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Um zwei Strings lexikographisch miteinander zu vergleichen, kann die Methode <code>compareTo(String)</code> verwendet werden. Diese gibt ein <code>int</code> zurück. Wir betrachten dazu ein Beispiel:</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1">1</a></span>
+<span class="normal"><a href="#__codelineno-32-2">2</a></span>
+<span class="normal"><a href="#__codelineno-32-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="s">&quot;abd&quot;</span><span class="p">);</span><span class="w">           </span><span class="c1">// -1 </span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abd&quot;</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">);</span><span class="w">           </span><span class="c1">// 1</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">result3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">);</span><span class="w">           </span><span class="c1">// 0</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>In Zeile <code>1</code> ruft der String <code>"abc"</code> die <code>compareTo()</code>-Methode auf und vergleicht sich mit dem String <code>"abd"</code>. Da <code>"abc"</code> "kleiner" ist als <code>"abd"</code>, ist der Rückgabewert <strong>negativ</strong> <code>-1</code>. </li>
+<li>In Zeile <code>2</code> ruft der String <code>"abd"</code> die <code>compareTo()</code>-Methode auf und vergleicht sich mit dem String <code>"abc"</code>. Da <code>"abd"</code> "größer" ist als <code>"abc"</code>, ist der Rückgabewert <strong>positiv</strong> <code>1</code>. </li>
+<li>In Zeile <code>3</code> ruft der String <code>"abc"</code> die <code>compareTo()</code>-Methode auf und vergleicht sich mit dem String <code>"abc"</code>. Da beide Strings gleich sind, ist der Rückgabewert <code>0</code>. </li>
+</ul>
+<p>Um einen Wert von einem Wertetypen (also die primitiven Datentypen <code>int</code>, <code>boolean</code>, <code>double</code> usw.) in einen String umzuwandeln, stehen die <em>Klassenmethoden</em> <code>valueOf()</code> zur Verfügung. Der Zugriff auf eine solche Methode erfolgt mittels Punktschreibweise und dem Namen der Klasse, also <code>String.valueOf()</code> (es handelt sich um <code>static</code> Methoden). Die Umwandlung erfolgt also wie folgt:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">String</span><span class="w"> </span><span class="n">si9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span><span class="w">         </span><span class="c1">// int --&gt; String</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="n">String</span><span class="w"> </span><span class="n">si123</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span><span class="w">     </span><span class="c1">// int --&gt; String</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="n">String</span><span class="w"> </span><span class="n">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">       </span><span class="c1">// boolean --&gt; String</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="n">String</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mf">5.5</span><span class="p">);</span><span class="w">        </span><span class="c1">// double --&gt; String</span>
+</span></code></pre></div>
+<h3 id="format-methode-und-printf"><code>format()</code>-Methode und <code>printf()</code><a class="headerlink" href="#format-methode-und-printf" title="Permanent link">&para;</a></h3>
+<p>In der <a href="../uebungen/#ubungsblatter-wochenweise">Übung 2</a> sollte das kleine 1x1 einaml als Liste und einmal als Matrix ausgegeben werden. Bei beiden war die Formatierung der Ausgabe nicht besonders schön, da die Zahlen unterschiedliche Längen hatten. Schöner wäre es gewesen, die Ausgabe der Zahlen rechtsbündig zu gestalten. Das geht mit der <code>System.out.printf()</code>-Methode. Die <code>printf()</code>-Methode verwendet die <code>format()</code>-Methode von Strings zur Formatierung der Ausgabe. Wir schauen uns zunächst ein einführendes Beispiel an:</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span>
+<span class="normal"><a href="#__codelineno-34-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="n">String</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;in %s angemeldet : %d Studentinnen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FIW&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">);</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">output</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Die <code>format()</code>-Methode in Zeile <code>1</code> hat drei Parameter:</p>
+<ul>
+<li>einen Ausgabestring, der <em>Platzhalter</em> enthält</li>
+<li>einen String <code>"FIW"</code> und</li>
+<li>eine <code>int</code>-Zahl <code>44</code></li>
+</ul>
+<p>Der Ausgabestring enthält sogenannte <em>Platzhalter</em>, nämlich <code>%s</code> für einen <code>String</code> und <code>%d</code> für ein <code>int</code>. Anstelle dieser Platzhalter werden die nach dem Ausgabestring aufgelisteten Werte eingefügt, also für <code>%s</code> wird <code>"FIW"</code> eingesetzt und für <code>%d</code> die <code>44</code>. Die Ausgabe sieht dann so aus:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="k">in</span><span class="w"> </span>FIW<span class="w"> </span>angemeldet<span class="w"> </span>:<span class="w"> </span><span class="m">44</span><span class="w"> </span>Studentinnen
+</span></code></pre></div>
+<p>Das ist zunächst wenig spektakulär. Hier zunächst eine Tabelle mit den wichtigsten Platzhaltern:</p>
+<table>
+<thead>
+<tr>
+<th>Platzhalter</th>
+<th>Eingabetyp</th>
+<th> Ausgabe (String)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%d</td>
+<td> int/long/...</td>
+<td> ganze Zahl</td>
+</tr>
+<tr>
+<td> %f</td>
+<td> float/double</td>
+<td> Gleitkommazahl, Standardnotation</td>
+</tr>
+<tr>
+<td> %e</td>
+<td> float/double</td>
+<td> Gleitkommazahl, wiss. Notation</td>
+</tr>
+<tr>
+<td> %s</td>
+<td> String</td>
+<td> Zeichenkette</td>
+</tr>
+<tr>
+<td> %c</td>
+<td> char</td>
+<td> Buchstabe</td>
+</tr>
+<tr>
+<td> %n</td>
+<td> </td>
+<td> Zeilenumbruch</td>
+</tr>
+</tbody>
+</table>
+<p>Ein Beispiel sieht also so aus:
+<img alt="printf" src="../files/29_printf.png" /></p>
+<p>Die eigentliche Formatierung erfolgt durch die Angabe der vorgesehenen Breite für einen Ausgabewert und ob dieser Wert rechtsbündig oder linksbündig dargestellt werden soll. Die allgemeine Syntax für einen solchen Platzhalter ist wie folgt:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>%<span class="w"> </span><span class="o">[</span>Schalter<span class="o">]</span><span class="w"> </span><span class="o">[</span>Breite<span class="o">]</span><span class="w"> </span>.<span class="w"> </span><span class="o">[</span>Genauigkeit<span class="o">]</span><span class="w"> </span>Typ
+</span></code></pre></div>
+<p>Dabei sind:</p>
+<ul>
+<li><code>%</code> :  Formatierungsausdruck beginnt</li>
+<li><code>Schalter</code> (optional): verändert das Format der Ausgabe (Minuszeichen (-) = linksbündige Ausgabe)</li>
+<li><code>Breite</code> : Anzahl der ausgegebenen Zeichen </li>
+<li><code>Genauigkeit</code> (optional): Nachkommastellen </li>
+<li><code>Typ</code> : Ausgabetyp (<code>s</code> (String): Zeichenkette kleingeschrieben, <code>S</code>: Zeichenkette großgeschrieben, <code>d</code> (decimal): Ganzzahl, <code>f</code> (floating-point): Nachkommazahl)</li>
+</ul>
+<p>Dazu ein Beispiel:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createTable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">rows</span><span class="p">)</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="p">{</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">    </span><span class="n">Random</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">number2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;  a   |   b   |  a + b   |  a - b  |  a * b  |  a / b  |  a % b &quot;</span><span class="p">);</span>
+</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;----------------------------------------------------------------&quot;</span><span class="p">);</span>
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>
+</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">rows</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-37-12"><a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a><span class="w">        </span><span class="n">number1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a><span class="w">        </span><span class="n">number2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-37-14"><a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%4d  | %4d  |  %5d   | %5d   |%7d  |  %5d  | %4d %n&quot;</span><span class="p">,</span>
+</span><span id="__span-37-15"><a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a><span class="w">            </span><span class="n">number1</span><span class="p">,</span><span class="w"> </span><span class="n">number2</span><span class="p">,</span><span class="w"> </span><span class="n">number1</span><span class="o">+</span><span class="n">number2</span><span class="p">,</span><span class="w"> </span><span class="n">number1</span><span class="o">-</span><span class="n">number2</span><span class="p">,</span><span class="w"> </span><span class="n">number1</span><span class="o">*</span><span class="n">number2</span><span class="p">,</span>
+</span><span id="__span-37-16"><a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a><span class="w">            </span><span class="n">number1</span><span class="o">/</span><span class="n">number2</span><span class="p">,</span><span class="w"> </span><span class="n">number1</span><span class="o">%</span><span class="n">number2</span><span class="p">);</span>
+</span><span id="__span-37-17"><a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-37-18"><a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Bei Aufruf von <code>createTable(8);</code> erreichen wir zum Beispiel folgende Ausgabe:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="w">  </span>a<span class="w">   </span><span class="p">|</span><span class="w">   </span>b<span class="w">   </span><span class="p">|</span><span class="w">  </span>a<span class="w"> </span>+<span class="w"> </span>b<span class="w">   </span><span class="p">|</span><span class="w">  </span>a<span class="w"> </span>-<span class="w"> </span>b<span class="w">  </span><span class="p">|</span><span class="w">  </span>a<span class="w"> </span>*<span class="w"> </span>b<span class="w">  </span><span class="p">|</span><span class="w">  </span>a<span class="w"> </span>/<span class="w"> </span>b<span class="w">  </span><span class="p">|</span><span class="w">  </span>a<span class="w"> </span>%<span class="w"> </span>b<span class="w"> </span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>----------------------------------------------------------------
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">   </span><span class="m">4</span><span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">39</span><span class="w">  </span><span class="p">|</span><span class="w">     </span><span class="m">43</span><span class="w">   </span><span class="p">|</span><span class="w">   </span>-35<span class="w">   </span><span class="p">|</span><span class="w">    </span><span class="m">156</span><span class="w">  </span><span class="p">|</span><span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="p">|</span><span class="w">    </span><span class="m">4</span><span class="w"> </span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">  </span><span class="m">60</span><span class="w">  </span><span class="p">|</span><span class="w">    </span><span class="m">2</span><span class="w">  </span><span class="p">|</span><span class="w">     </span><span class="m">62</span><span class="w">   </span><span class="p">|</span><span class="w">    </span><span class="m">58</span><span class="w">   </span><span class="p">|</span><span class="w">    </span><span class="m">120</span><span class="w">  </span><span class="p">|</span><span class="w">     </span><span class="m">30</span><span class="w">  </span><span class="p">|</span><span class="w">    </span><span class="m">0</span><span class="w"> </span>
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="w">  </span><span class="m">93</span><span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">60</span><span class="w">  </span><span class="p">|</span><span class="w">    </span><span class="m">153</span><span class="w">   </span><span class="p">|</span><span class="w">    </span><span class="m">33</span><span class="w">   </span><span class="p">|</span><span class="w">   </span><span class="m">5580</span><span class="w">  </span><span class="p">|</span><span class="w">      </span><span class="m">1</span><span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">33</span><span class="w"> </span>
+</span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="w">   </span><span class="m">8</span><span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">68</span><span class="w">  </span><span class="p">|</span><span class="w">     </span><span class="m">76</span><span class="w">   </span><span class="p">|</span><span class="w">   </span>-60<span class="w">   </span><span class="p">|</span><span class="w">    </span><span class="m">544</span><span class="w">  </span><span class="p">|</span><span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="p">|</span><span class="w">    </span><span class="m">8</span><span class="w"> </span>
+</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="w">  </span><span class="m">80</span><span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">82</span><span class="w">  </span><span class="p">|</span><span class="w">    </span><span class="m">162</span><span class="w">   </span><span class="p">|</span><span class="w">    </span>-2<span class="w">   </span><span class="p">|</span><span class="w">   </span><span class="m">6560</span><span class="w">  </span><span class="p">|</span><span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">80</span><span class="w"> </span>
+</span><span id="__span-38-8"><a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="w">  </span><span class="m">31</span><span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">10</span><span class="w">  </span><span class="p">|</span><span class="w">     </span><span class="m">41</span><span class="w">   </span><span class="p">|</span><span class="w">    </span><span class="m">21</span><span class="w">   </span><span class="p">|</span><span class="w">    </span><span class="m">310</span><span class="w">  </span><span class="p">|</span><span class="w">      </span><span class="m">3</span><span class="w">  </span><span class="p">|</span><span class="w">    </span><span class="m">1</span><span class="w"> </span>
+</span><span id="__span-38-9"><a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a><span class="w">   </span><span class="m">7</span><span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">30</span><span class="w">  </span><span class="p">|</span><span class="w">     </span><span class="m">37</span><span class="w">   </span><span class="p">|</span><span class="w">   </span>-23<span class="w">   </span><span class="p">|</span><span class="w">    </span><span class="m">210</span><span class="w">  </span><span class="p">|</span><span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="p">|</span><span class="w">    </span><span class="m">7</span><span class="w"> </span>
+</span><span id="__span-38-10"><a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="w">  </span><span class="m">54</span><span class="w">  </span><span class="p">|</span><span class="w">   </span><span class="m">12</span><span class="w">  </span><span class="p">|</span><span class="w">     </span><span class="m">66</span><span class="w">   </span><span class="p">|</span><span class="w">    </span><span class="m">42</span><span class="w">   </span><span class="p">|</span><span class="w">    </span><span class="m">648</span><span class="w">  </span><span class="p">|</span><span class="w">      </span><span class="m">4</span><span class="w">  </span><span class="p">|</span><span class="w">    </span><span class="m">6</span><span class="w"> </span>
+</span></code></pre></div>
+<p>Die Zahlen erscheinen also alle geordnet untereinander und rechtsbündig. Wie gesagt, <code>System.out.printf()</code> und <code>String.format()</code> funktionieren exakt gleich, da <code>printf()</code> <code>format()</code> verwendet. Weitere Beispiele für Schalter und ihre Breitenangaben:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">String</span><span class="w"> </span><span class="n">output</span><span class="p">;</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;|%10d|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1234</span><span class="p">);</span><span class="w">             </span><span class="c1">// |      1234|</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;|%-10d|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1234</span><span class="p">);</span><span class="w">            </span><span class="c1">// |1234      |</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;|%010d|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1234</span><span class="p">);</span><span class="w">            </span><span class="c1">// |0000001234|</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;|%+10d|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1234</span><span class="p">);</span><span class="w">            </span><span class="c1">// |     +1234|</span>
+</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;|%,10d|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1234</span><span class="p">);</span><span class="w">            </span><span class="c1">// |     1.234|</span>
+</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;|%10.2f|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1234.567</span><span class="p">);</span><span class="w">       </span><span class="c1">// |   1234,57|</span>
+</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;|%-10.2f|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1234.567</span><span class="p">);</span><span class="w">      </span><span class="c1">// |1234,57   |</span>
+</span><span id="__span-39-9"><a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;|%5.2f|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1234.567</span><span class="p">);</span><span class="w">        </span><span class="c1">// |1234,57|</span>
+</span><span id="__span-39-10"><a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;|%15s|&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">);</span><span class="w">     </span><span class="c1">// |     Hallo FIW!|</span>
+</span><span id="__span-39-11"><a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;|%-15s|&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">);</span><span class="w">    </span><span class="c1">// |Hallo FIW!     |</span>
+</span><span id="__span-39-12"><a id="__codelineno-39-12" name="__codelineno-39-12" href="#__codelineno-39-12"></a><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;|%.7s|&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hallo FIW!&quot;</span><span class="p">);</span><span class="w">     </span><span class="c1">// |Hallo F|</span>
+</span></code></pre></div>
+<p>Unsere beiden Methoden des kleinen 1x1 aus Übung 2 hätten dann auch eine schönere Ausgabe:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printTimesTables</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">nr1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nr2</span><span class="p">)</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">faktor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">faktor1</span><span class="o">&lt;=</span><span class="n">nr1</span><span class="p">;</span><span class="w"> </span><span class="n">faktor1</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">faktor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">faktor2</span><span class="o">&lt;=</span><span class="n">nr2</span><span class="p">;</span><span class="w"> </span><span class="n">faktor2</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a><span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">produkt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">faktor1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">faktor2</span><span class="p">;</span>
+</span><span id="__span-40-8"><a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%2d  * %2d = %3d %n&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">faktor1</span><span class="p">,</span><span class="w"> </span><span class="n">faktor2</span><span class="p">,</span><span class="w"> </span><span class="n">produkt</span><span class="p">);</span>
+</span><span id="__span-40-9"><a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-40-10"><a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+</span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-40-13"><a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>
+</span><span id="__span-40-14"><a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printTimesMatrix</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">nr1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nr2</span><span class="p">)</span>
+</span><span id="__span-40-15"><a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-40-16"><a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">faktor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">faktor1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">nr1</span><span class="p">;</span><span class="w"> </span><span class="n">faktor1</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-40-17"><a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-40-18"><a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a><span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">faktor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">faktor2</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">nr2</span><span class="p">;</span><span class="w"> </span><span class="n">faktor2</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-40-19"><a id="__codelineno-40-19" name="__codelineno-40-19" href="#__codelineno-40-19"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-40-20"><a id="__codelineno-40-20" name="__codelineno-40-20" href="#__codelineno-40-20"></a><span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">produkt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">faktor1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">faktor2</span><span class="p">;</span>
+</span><span id="__span-40-21"><a id="__codelineno-40-21" name="__codelineno-40-21" href="#__codelineno-40-21"></a><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%4d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">produkt</span><span class="p">);</span>
+</span><span id="__span-40-22"><a id="__codelineno-40-22" name="__codelineno-40-22" href="#__codelineno-40-22"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-40-23"><a id="__codelineno-40-23" name="__codelineno-40-23" href="#__codelineno-40-23"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+</span><span id="__span-40-24"><a id="__codelineno-40-24" name="__codelineno-40-24" href="#__codelineno-40-24"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-40-25"><a id="__codelineno-40-25" name="__codelineno-40-25" href="#__codelineno-40-25"></a><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div>
+<p>Nämlich so:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>-----<span class="w"> </span>Aufgabe<span class="w"> </span><span class="m">1</span><span class="w"> </span>------
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="w"> </span><span class="m">1</span><span class="w">  </span>*<span class="w">  </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">1</span><span class="w"> </span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w"> </span><span class="m">1</span><span class="w">  </span>*<span class="w">  </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">2</span><span class="w"> </span>
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w"> </span><span class="m">1</span><span class="w">  </span>*<span class="w">  </span><span class="nv">3</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">3</span><span class="w"> </span>
+</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="w"> </span><span class="m">1</span><span class="w">  </span>*<span class="w">  </span><span class="nv">4</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">4</span><span class="w"> </span>
+</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="w"> </span><span class="m">1</span><span class="w">  </span>*<span class="w">  </span><span class="nv">5</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">5</span><span class="w"> </span>
+</span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="w"> </span><span class="m">1</span><span class="w">  </span>*<span class="w">  </span><span class="nv">6</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">6</span><span class="w"> </span>
+</span><span id="__span-41-9"><a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a><span class="w"> </span><span class="m">1</span><span class="w">  </span>*<span class="w">  </span><span class="nv">7</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">7</span><span class="w"> </span>
+</span><span id="__span-41-10"><a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="w"> </span><span class="m">1</span><span class="w">  </span>*<span class="w">  </span><span class="nv">8</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">8</span><span class="w"> </span>
+</span><span id="__span-41-11"><a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a><span class="w"> </span><span class="m">1</span><span class="w">  </span>*<span class="w">  </span><span class="nv">9</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">9</span><span class="w"> </span>
+</span><span id="__span-41-12"><a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a><span class="w"> </span><span class="m">1</span><span class="w">  </span>*<span class="w"> </span><span class="nv">10</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">10</span><span class="w"> </span>
+</span><span id="__span-41-13"><a id="__codelineno-41-13" name="__codelineno-41-13" href="#__codelineno-41-13"></a>
+</span><span id="__span-41-14"><a id="__codelineno-41-14" name="__codelineno-41-14" href="#__codelineno-41-14"></a><span class="w"> </span><span class="m">2</span><span class="w">  </span>*<span class="w">  </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">2</span><span class="w"> </span>
+</span><span id="__span-41-15"><a id="__codelineno-41-15" name="__codelineno-41-15" href="#__codelineno-41-15"></a><span class="w"> </span><span class="m">2</span><span class="w">  </span>*<span class="w">  </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">4</span><span class="w"> </span>
+</span><span id="__span-41-16"><a id="__codelineno-41-16" name="__codelineno-41-16" href="#__codelineno-41-16"></a><span class="w"> </span><span class="m">2</span><span class="w">  </span>*<span class="w">  </span><span class="nv">3</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">6</span><span class="w"> </span>
+</span><span id="__span-41-17"><a id="__codelineno-41-17" name="__codelineno-41-17" href="#__codelineno-41-17"></a><span class="w"> </span><span class="m">2</span><span class="w">  </span>*<span class="w">  </span><span class="nv">4</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">8</span><span class="w"> </span>
+</span><span id="__span-41-18"><a id="__codelineno-41-18" name="__codelineno-41-18" href="#__codelineno-41-18"></a><span class="w"> </span><span class="m">2</span><span class="w">  </span>*<span class="w">  </span><span class="nv">5</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">10</span><span class="w"> </span>
+</span><span id="__span-41-19"><a id="__codelineno-41-19" name="__codelineno-41-19" href="#__codelineno-41-19"></a><span class="w"> </span><span class="m">2</span><span class="w">  </span>*<span class="w">  </span><span class="nv">6</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">12</span><span class="w"> </span>
+</span><span id="__span-41-20"><a id="__codelineno-41-20" name="__codelineno-41-20" href="#__codelineno-41-20"></a><span class="w"> </span><span class="m">2</span><span class="w">  </span>*<span class="w">  </span><span class="nv">7</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">14</span><span class="w"> </span>
+</span><span id="__span-41-21"><a id="__codelineno-41-21" name="__codelineno-41-21" href="#__codelineno-41-21"></a><span class="w"> </span><span class="m">2</span><span class="w">  </span>*<span class="w">  </span><span class="nv">8</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">16</span><span class="w"> </span>
+</span><span id="__span-41-22"><a id="__codelineno-41-22" name="__codelineno-41-22" href="#__codelineno-41-22"></a><span class="w"> </span><span class="m">2</span><span class="w">  </span>*<span class="w">  </span><span class="nv">9</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">18</span><span class="w"> </span>
+</span><span id="__span-41-23"><a id="__codelineno-41-23" name="__codelineno-41-23" href="#__codelineno-41-23"></a><span class="w"> </span><span class="m">2</span><span class="w">  </span>*<span class="w"> </span><span class="nv">10</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">20</span><span class="w"> </span>
+</span><span id="__span-41-24"><a id="__codelineno-41-24" name="__codelineno-41-24" href="#__codelineno-41-24"></a>
+</span><span id="__span-41-25"><a id="__codelineno-41-25" name="__codelineno-41-25" href="#__codelineno-41-25"></a><span class="w"> </span><span class="m">3</span><span class="w">  </span>*<span class="w">  </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">3</span><span class="w"> </span>
+</span><span id="__span-41-26"><a id="__codelineno-41-26" name="__codelineno-41-26" href="#__codelineno-41-26"></a><span class="w"> </span><span class="m">3</span><span class="w">  </span>*<span class="w">  </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">6</span><span class="w"> </span>
+</span><span id="__span-41-27"><a id="__codelineno-41-27" name="__codelineno-41-27" href="#__codelineno-41-27"></a><span class="w"> </span><span class="m">3</span><span class="w">  </span>*<span class="w">  </span><span class="nv">3</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">9</span><span class="w"> </span>
+</span><span id="__span-41-28"><a id="__codelineno-41-28" name="__codelineno-41-28" href="#__codelineno-41-28"></a><span class="w"> </span><span class="m">3</span><span class="w">  </span>*<span class="w">  </span><span class="nv">4</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">12</span><span class="w"> </span>
+</span><span id="__span-41-29"><a id="__codelineno-41-29" name="__codelineno-41-29" href="#__codelineno-41-29"></a><span class="w"> </span><span class="m">3</span><span class="w">  </span>*<span class="w">  </span><span class="nv">5</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">15</span><span class="w"> </span>
+</span><span id="__span-41-30"><a id="__codelineno-41-30" name="__codelineno-41-30" href="#__codelineno-41-30"></a><span class="w"> </span><span class="m">3</span><span class="w">  </span>*<span class="w">  </span><span class="nv">6</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">18</span><span class="w"> </span>
+</span><span id="__span-41-31"><a id="__codelineno-41-31" name="__codelineno-41-31" href="#__codelineno-41-31"></a><span class="w"> </span><span class="m">3</span><span class="w">  </span>*<span class="w">  </span><span class="nv">7</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">21</span><span class="w"> </span>
+</span><span id="__span-41-32"><a id="__codelineno-41-32" name="__codelineno-41-32" href="#__codelineno-41-32"></a><span class="w"> </span><span class="m">3</span><span class="w">  </span>*<span class="w">  </span><span class="nv">8</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">24</span><span class="w"> </span>
+</span><span id="__span-41-33"><a id="__codelineno-41-33" name="__codelineno-41-33" href="#__codelineno-41-33"></a><span class="w"> </span><span class="m">3</span><span class="w">  </span>*<span class="w">  </span><span class="nv">9</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">27</span><span class="w"> </span>
+</span><span id="__span-41-34"><a id="__codelineno-41-34" name="__codelineno-41-34" href="#__codelineno-41-34"></a><span class="w"> </span><span class="m">3</span><span class="w">  </span>*<span class="w"> </span><span class="nv">10</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">30</span><span class="w"> </span>
+</span><span id="__span-41-35"><a id="__codelineno-41-35" name="__codelineno-41-35" href="#__codelineno-41-35"></a>
+</span><span id="__span-41-36"><a id="__codelineno-41-36" name="__codelineno-41-36" href="#__codelineno-41-36"></a><span class="w"> </span><span class="m">4</span><span class="w">  </span>*<span class="w">  </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">4</span><span class="w"> </span>
+</span><span id="__span-41-37"><a id="__codelineno-41-37" name="__codelineno-41-37" href="#__codelineno-41-37"></a><span class="w"> </span><span class="m">4</span><span class="w">  </span>*<span class="w">  </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">8</span><span class="w"> </span>
+</span><span id="__span-41-38"><a id="__codelineno-41-38" name="__codelineno-41-38" href="#__codelineno-41-38"></a><span class="w"> </span><span class="m">4</span><span class="w">  </span>*<span class="w">  </span><span class="nv">3</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">12</span><span class="w"> </span>
+</span><span id="__span-41-39"><a id="__codelineno-41-39" name="__codelineno-41-39" href="#__codelineno-41-39"></a><span class="w"> </span><span class="m">4</span><span class="w">  </span>*<span class="w">  </span><span class="nv">4</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">16</span><span class="w"> </span>
+</span><span id="__span-41-40"><a id="__codelineno-41-40" name="__codelineno-41-40" href="#__codelineno-41-40"></a><span class="w"> </span><span class="m">4</span><span class="w">  </span>*<span class="w">  </span><span class="nv">5</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">20</span><span class="w"> </span>
+</span><span id="__span-41-41"><a id="__codelineno-41-41" name="__codelineno-41-41" href="#__codelineno-41-41"></a><span class="w"> </span><span class="m">4</span><span class="w">  </span>*<span class="w">  </span><span class="nv">6</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">24</span><span class="w"> </span>
+</span><span id="__span-41-42"><a id="__codelineno-41-42" name="__codelineno-41-42" href="#__codelineno-41-42"></a><span class="w"> </span><span class="m">4</span><span class="w">  </span>*<span class="w">  </span><span class="nv">7</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">28</span><span class="w"> </span>
+</span><span id="__span-41-43"><a id="__codelineno-41-43" name="__codelineno-41-43" href="#__codelineno-41-43"></a><span class="w"> </span><span class="m">4</span><span class="w">  </span>*<span class="w">  </span><span class="nv">8</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">32</span><span class="w"> </span>
+</span><span id="__span-41-44"><a id="__codelineno-41-44" name="__codelineno-41-44" href="#__codelineno-41-44"></a><span class="w"> </span><span class="m">4</span><span class="w">  </span>*<span class="w">  </span><span class="nv">9</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">36</span><span class="w"> </span>
+</span><span id="__span-41-45"><a id="__codelineno-41-45" name="__codelineno-41-45" href="#__codelineno-41-45"></a><span class="w"> </span><span class="m">4</span><span class="w">  </span>*<span class="w"> </span><span class="nv">10</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">40</span><span class="w"> </span>
+</span><span id="__span-41-46"><a id="__codelineno-41-46" name="__codelineno-41-46" href="#__codelineno-41-46"></a>
+</span><span id="__span-41-47"><a id="__codelineno-41-47" name="__codelineno-41-47" href="#__codelineno-41-47"></a><span class="w"> </span><span class="m">5</span><span class="w">  </span>*<span class="w">  </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">5</span><span class="w"> </span>
+</span><span id="__span-41-48"><a id="__codelineno-41-48" name="__codelineno-41-48" href="#__codelineno-41-48"></a><span class="w"> </span><span class="m">5</span><span class="w">  </span>*<span class="w">  </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">10</span><span class="w"> </span>
+</span><span id="__span-41-49"><a id="__codelineno-41-49" name="__codelineno-41-49" href="#__codelineno-41-49"></a><span class="w"> </span><span class="m">5</span><span class="w">  </span>*<span class="w">  </span><span class="nv">3</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">15</span><span class="w"> </span>
+</span><span id="__span-41-50"><a id="__codelineno-41-50" name="__codelineno-41-50" href="#__codelineno-41-50"></a><span class="w"> </span><span class="m">5</span><span class="w">  </span>*<span class="w">  </span><span class="nv">4</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">20</span><span class="w"> </span>
+</span><span id="__span-41-51"><a id="__codelineno-41-51" name="__codelineno-41-51" href="#__codelineno-41-51"></a><span class="w"> </span><span class="m">5</span><span class="w">  </span>*<span class="w">  </span><span class="nv">5</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">25</span><span class="w"> </span>
+</span><span id="__span-41-52"><a id="__codelineno-41-52" name="__codelineno-41-52" href="#__codelineno-41-52"></a><span class="w"> </span><span class="m">5</span><span class="w">  </span>*<span class="w">  </span><span class="nv">6</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">30</span><span class="w"> </span>
+</span><span id="__span-41-53"><a id="__codelineno-41-53" name="__codelineno-41-53" href="#__codelineno-41-53"></a><span class="w"> </span><span class="m">5</span><span class="w">  </span>*<span class="w">  </span><span class="nv">7</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">35</span><span class="w"> </span>
+</span><span id="__span-41-54"><a id="__codelineno-41-54" name="__codelineno-41-54" href="#__codelineno-41-54"></a><span class="w"> </span><span class="m">5</span><span class="w">  </span>*<span class="w">  </span><span class="nv">8</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">40</span><span class="w"> </span>
+</span><span id="__span-41-55"><a id="__codelineno-41-55" name="__codelineno-41-55" href="#__codelineno-41-55"></a><span class="w"> </span><span class="m">5</span><span class="w">  </span>*<span class="w">  </span><span class="nv">9</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">45</span><span class="w"> </span>
+</span><span id="__span-41-56"><a id="__codelineno-41-56" name="__codelineno-41-56" href="#__codelineno-41-56"></a><span class="w"> </span><span class="m">5</span><span class="w">  </span>*<span class="w"> </span><span class="nv">10</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">50</span><span class="w"> </span>
+</span><span id="__span-41-57"><a id="__codelineno-41-57" name="__codelineno-41-57" href="#__codelineno-41-57"></a>
+</span><span id="__span-41-58"><a id="__codelineno-41-58" name="__codelineno-41-58" href="#__codelineno-41-58"></a><span class="w"> </span><span class="m">6</span><span class="w">  </span>*<span class="w">  </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">6</span><span class="w"> </span>
+</span><span id="__span-41-59"><a id="__codelineno-41-59" name="__codelineno-41-59" href="#__codelineno-41-59"></a><span class="w"> </span><span class="m">6</span><span class="w">  </span>*<span class="w">  </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">12</span><span class="w"> </span>
+</span><span id="__span-41-60"><a id="__codelineno-41-60" name="__codelineno-41-60" href="#__codelineno-41-60"></a><span class="w"> </span><span class="m">6</span><span class="w">  </span>*<span class="w">  </span><span class="nv">3</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">18</span><span class="w"> </span>
+</span><span id="__span-41-61"><a id="__codelineno-41-61" name="__codelineno-41-61" href="#__codelineno-41-61"></a><span class="w"> </span><span class="m">6</span><span class="w">  </span>*<span class="w">  </span><span class="nv">4</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">24</span><span class="w"> </span>
+</span><span id="__span-41-62"><a id="__codelineno-41-62" name="__codelineno-41-62" href="#__codelineno-41-62"></a><span class="w"> </span><span class="m">6</span><span class="w">  </span>*<span class="w">  </span><span class="nv">5</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">30</span><span class="w"> </span>
+</span><span id="__span-41-63"><a id="__codelineno-41-63" name="__codelineno-41-63" href="#__codelineno-41-63"></a><span class="w"> </span><span class="m">6</span><span class="w">  </span>*<span class="w">  </span><span class="nv">6</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">36</span><span class="w"> </span>
+</span><span id="__span-41-64"><a id="__codelineno-41-64" name="__codelineno-41-64" href="#__codelineno-41-64"></a><span class="w"> </span><span class="m">6</span><span class="w">  </span>*<span class="w">  </span><span class="nv">7</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">42</span><span class="w"> </span>
+</span><span id="__span-41-65"><a id="__codelineno-41-65" name="__codelineno-41-65" href="#__codelineno-41-65"></a><span class="w"> </span><span class="m">6</span><span class="w">  </span>*<span class="w">  </span><span class="nv">8</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">48</span><span class="w"> </span>
+</span><span id="__span-41-66"><a id="__codelineno-41-66" name="__codelineno-41-66" href="#__codelineno-41-66"></a><span class="w"> </span><span class="m">6</span><span class="w">  </span>*<span class="w">  </span><span class="nv">9</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">54</span><span class="w"> </span>
+</span><span id="__span-41-67"><a id="__codelineno-41-67" name="__codelineno-41-67" href="#__codelineno-41-67"></a><span class="w"> </span><span class="m">6</span><span class="w">  </span>*<span class="w"> </span><span class="nv">10</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">60</span><span class="w"> </span>
+</span><span id="__span-41-68"><a id="__codelineno-41-68" name="__codelineno-41-68" href="#__codelineno-41-68"></a>
+</span><span id="__span-41-69"><a id="__codelineno-41-69" name="__codelineno-41-69" href="#__codelineno-41-69"></a><span class="w"> </span><span class="m">7</span><span class="w">  </span>*<span class="w">  </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">7</span><span class="w"> </span>
+</span><span id="__span-41-70"><a id="__codelineno-41-70" name="__codelineno-41-70" href="#__codelineno-41-70"></a><span class="w"> </span><span class="m">7</span><span class="w">  </span>*<span class="w">  </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">14</span><span class="w"> </span>
+</span><span id="__span-41-71"><a id="__codelineno-41-71" name="__codelineno-41-71" href="#__codelineno-41-71"></a><span class="w"> </span><span class="m">7</span><span class="w">  </span>*<span class="w">  </span><span class="nv">3</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">21</span><span class="w"> </span>
+</span><span id="__span-41-72"><a id="__codelineno-41-72" name="__codelineno-41-72" href="#__codelineno-41-72"></a><span class="w"> </span><span class="m">7</span><span class="w">  </span>*<span class="w">  </span><span class="nv">4</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">28</span><span class="w"> </span>
+</span><span id="__span-41-73"><a id="__codelineno-41-73" name="__codelineno-41-73" href="#__codelineno-41-73"></a><span class="w"> </span><span class="m">7</span><span class="w">  </span>*<span class="w">  </span><span class="nv">5</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">35</span><span class="w"> </span>
+</span><span id="__span-41-74"><a id="__codelineno-41-74" name="__codelineno-41-74" href="#__codelineno-41-74"></a><span class="w"> </span><span class="m">7</span><span class="w">  </span>*<span class="w">  </span><span class="nv">6</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">42</span><span class="w"> </span>
+</span><span id="__span-41-75"><a id="__codelineno-41-75" name="__codelineno-41-75" href="#__codelineno-41-75"></a><span class="w"> </span><span class="m">7</span><span class="w">  </span>*<span class="w">  </span><span class="nv">7</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">49</span><span class="w"> </span>
+</span><span id="__span-41-76"><a id="__codelineno-41-76" name="__codelineno-41-76" href="#__codelineno-41-76"></a><span class="w"> </span><span class="m">7</span><span class="w">  </span>*<span class="w">  </span><span class="nv">8</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">56</span><span class="w"> </span>
+</span><span id="__span-41-77"><a id="__codelineno-41-77" name="__codelineno-41-77" href="#__codelineno-41-77"></a><span class="w"> </span><span class="m">7</span><span class="w">  </span>*<span class="w">  </span><span class="nv">9</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">63</span><span class="w"> </span>
+</span><span id="__span-41-78"><a id="__codelineno-41-78" name="__codelineno-41-78" href="#__codelineno-41-78"></a><span class="w"> </span><span class="m">7</span><span class="w">  </span>*<span class="w"> </span><span class="nv">10</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">70</span><span class="w"> </span>
+</span><span id="__span-41-79"><a id="__codelineno-41-79" name="__codelineno-41-79" href="#__codelineno-41-79"></a>
+</span><span id="__span-41-80"><a id="__codelineno-41-80" name="__codelineno-41-80" href="#__codelineno-41-80"></a><span class="w"> </span><span class="m">8</span><span class="w">  </span>*<span class="w">  </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">8</span><span class="w"> </span>
+</span><span id="__span-41-81"><a id="__codelineno-41-81" name="__codelineno-41-81" href="#__codelineno-41-81"></a><span class="w"> </span><span class="m">8</span><span class="w">  </span>*<span class="w">  </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">16</span><span class="w"> </span>
+</span><span id="__span-41-82"><a id="__codelineno-41-82" name="__codelineno-41-82" href="#__codelineno-41-82"></a><span class="w"> </span><span class="m">8</span><span class="w">  </span>*<span class="w">  </span><span class="nv">3</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">24</span><span class="w"> </span>
+</span><span id="__span-41-83"><a id="__codelineno-41-83" name="__codelineno-41-83" href="#__codelineno-41-83"></a><span class="w"> </span><span class="m">8</span><span class="w">  </span>*<span class="w">  </span><span class="nv">4</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">32</span><span class="w"> </span>
+</span><span id="__span-41-84"><a id="__codelineno-41-84" name="__codelineno-41-84" href="#__codelineno-41-84"></a><span class="w"> </span><span class="m">8</span><span class="w">  </span>*<span class="w">  </span><span class="nv">5</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">40</span><span class="w"> </span>
+</span><span id="__span-41-85"><a id="__codelineno-41-85" name="__codelineno-41-85" href="#__codelineno-41-85"></a><span class="w"> </span><span class="m">8</span><span class="w">  </span>*<span class="w">  </span><span class="nv">6</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">48</span><span class="w"> </span>
+</span><span id="__span-41-86"><a id="__codelineno-41-86" name="__codelineno-41-86" href="#__codelineno-41-86"></a><span class="w"> </span><span class="m">8</span><span class="w">  </span>*<span class="w">  </span><span class="nv">7</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">56</span><span class="w"> </span>
+</span><span id="__span-41-87"><a id="__codelineno-41-87" name="__codelineno-41-87" href="#__codelineno-41-87"></a><span class="w"> </span><span class="m">8</span><span class="w">  </span>*<span class="w">  </span><span class="nv">8</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">64</span><span class="w"> </span>
+</span><span id="__span-41-88"><a id="__codelineno-41-88" name="__codelineno-41-88" href="#__codelineno-41-88"></a><span class="w"> </span><span class="m">8</span><span class="w">  </span>*<span class="w">  </span><span class="nv">9</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">72</span><span class="w"> </span>
+</span><span id="__span-41-89"><a id="__codelineno-41-89" name="__codelineno-41-89" href="#__codelineno-41-89"></a><span class="w"> </span><span class="m">8</span><span class="w">  </span>*<span class="w"> </span><span class="nv">10</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">80</span><span class="w"> </span>
+</span><span id="__span-41-90"><a id="__codelineno-41-90" name="__codelineno-41-90" href="#__codelineno-41-90"></a>
+</span><span id="__span-41-91"><a id="__codelineno-41-91" name="__codelineno-41-91" href="#__codelineno-41-91"></a><span class="w"> </span><span class="m">9</span><span class="w">  </span>*<span class="w">  </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">9</span><span class="w"> </span>
+</span><span id="__span-41-92"><a id="__codelineno-41-92" name="__codelineno-41-92" href="#__codelineno-41-92"></a><span class="w"> </span><span class="m">9</span><span class="w">  </span>*<span class="w">  </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">18</span><span class="w"> </span>
+</span><span id="__span-41-93"><a id="__codelineno-41-93" name="__codelineno-41-93" href="#__codelineno-41-93"></a><span class="w"> </span><span class="m">9</span><span class="w">  </span>*<span class="w">  </span><span class="nv">3</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">27</span><span class="w"> </span>
+</span><span id="__span-41-94"><a id="__codelineno-41-94" name="__codelineno-41-94" href="#__codelineno-41-94"></a><span class="w"> </span><span class="m">9</span><span class="w">  </span>*<span class="w">  </span><span class="nv">4</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">36</span><span class="w"> </span>
+</span><span id="__span-41-95"><a id="__codelineno-41-95" name="__codelineno-41-95" href="#__codelineno-41-95"></a><span class="w"> </span><span class="m">9</span><span class="w">  </span>*<span class="w">  </span><span class="nv">5</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">45</span><span class="w"> </span>
+</span><span id="__span-41-96"><a id="__codelineno-41-96" name="__codelineno-41-96" href="#__codelineno-41-96"></a><span class="w"> </span><span class="m">9</span><span class="w">  </span>*<span class="w">  </span><span class="nv">6</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">54</span><span class="w"> </span>
+</span><span id="__span-41-97"><a id="__codelineno-41-97" name="__codelineno-41-97" href="#__codelineno-41-97"></a><span class="w"> </span><span class="m">9</span><span class="w">  </span>*<span class="w">  </span><span class="nv">7</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">63</span><span class="w"> </span>
+</span><span id="__span-41-98"><a id="__codelineno-41-98" name="__codelineno-41-98" href="#__codelineno-41-98"></a><span class="w"> </span><span class="m">9</span><span class="w">  </span>*<span class="w">  </span><span class="nv">8</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">72</span><span class="w"> </span>
+</span><span id="__span-41-99"><a id="__codelineno-41-99" name="__codelineno-41-99" href="#__codelineno-41-99"></a><span class="w"> </span><span class="m">9</span><span class="w">  </span>*<span class="w">  </span><span class="nv">9</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">81</span><span class="w"> </span>
+</span><span id="__span-41-100"><a id="__codelineno-41-100" name="__codelineno-41-100" href="#__codelineno-41-100"></a><span class="w"> </span><span class="m">9</span><span class="w">  </span>*<span class="w"> </span><span class="nv">10</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">90</span><span class="w"> </span>
+</span><span id="__span-41-101"><a id="__codelineno-41-101" name="__codelineno-41-101" href="#__codelineno-41-101"></a>
+</span><span id="__span-41-102"><a id="__codelineno-41-102" name="__codelineno-41-102" href="#__codelineno-41-102"></a><span class="m">10</span><span class="w">  </span>*<span class="w">  </span><span class="nv">1</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">10</span><span class="w"> </span>
+</span><span id="__span-41-103"><a id="__codelineno-41-103" name="__codelineno-41-103" href="#__codelineno-41-103"></a><span class="m">10</span><span class="w">  </span>*<span class="w">  </span><span class="nv">2</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">20</span><span class="w"> </span>
+</span><span id="__span-41-104"><a id="__codelineno-41-104" name="__codelineno-41-104" href="#__codelineno-41-104"></a><span class="m">10</span><span class="w">  </span>*<span class="w">  </span><span class="nv">3</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">30</span><span class="w"> </span>
+</span><span id="__span-41-105"><a id="__codelineno-41-105" name="__codelineno-41-105" href="#__codelineno-41-105"></a><span class="m">10</span><span class="w">  </span>*<span class="w">  </span><span class="nv">4</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">40</span><span class="w"> </span>
+</span><span id="__span-41-106"><a id="__codelineno-41-106" name="__codelineno-41-106" href="#__codelineno-41-106"></a><span class="m">10</span><span class="w">  </span>*<span class="w">  </span><span class="nv">5</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">50</span><span class="w"> </span>
+</span><span id="__span-41-107"><a id="__codelineno-41-107" name="__codelineno-41-107" href="#__codelineno-41-107"></a><span class="m">10</span><span class="w">  </span>*<span class="w">  </span><span class="nv">6</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">60</span><span class="w"> </span>
+</span><span id="__span-41-108"><a id="__codelineno-41-108" name="__codelineno-41-108" href="#__codelineno-41-108"></a><span class="m">10</span><span class="w">  </span>*<span class="w">  </span><span class="nv">7</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">70</span><span class="w"> </span>
+</span><span id="__span-41-109"><a id="__codelineno-41-109" name="__codelineno-41-109" href="#__codelineno-41-109"></a><span class="m">10</span><span class="w">  </span>*<span class="w">  </span><span class="nv">8</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">80</span><span class="w"> </span>
+</span><span id="__span-41-110"><a id="__codelineno-41-110" name="__codelineno-41-110" href="#__codelineno-41-110"></a><span class="m">10</span><span class="w">  </span>*<span class="w">  </span><span class="nv">9</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">90</span><span class="w"> </span>
+</span><span id="__span-41-111"><a id="__codelineno-41-111" name="__codelineno-41-111" href="#__codelineno-41-111"></a><span class="m">10</span><span class="w">  </span>*<span class="w"> </span><span class="nv">10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="w"> </span>
+</span><span id="__span-41-112"><a id="__codelineno-41-112" name="__codelineno-41-112" href="#__codelineno-41-112"></a>
+</span><span id="__span-41-113"><a id="__codelineno-41-113" name="__codelineno-41-113" href="#__codelineno-41-113"></a>
+</span><span id="__span-41-114"><a id="__codelineno-41-114" name="__codelineno-41-114" href="#__codelineno-41-114"></a>-----<span class="w"> </span>Aufgabe<span class="w"> </span><span class="m">2</span><span class="w"> </span>------
+</span><span id="__span-41-115"><a id="__codelineno-41-115" name="__codelineno-41-115" href="#__codelineno-41-115"></a>
+</span><span id="__span-41-116"><a id="__codelineno-41-116" name="__codelineno-41-116" href="#__codelineno-41-116"></a><span class="w">   </span><span class="m">1</span><span class="w">   </span><span class="m">2</span><span class="w">   </span><span class="m">3</span><span class="w">   </span><span class="m">4</span><span class="w">   </span><span class="m">5</span><span class="w">   </span><span class="m">6</span><span class="w">   </span><span class="m">7</span><span class="w">   </span><span class="m">8</span><span class="w">   </span><span class="m">9</span><span class="w">  </span><span class="m">10</span>
+</span><span id="__span-41-117"><a id="__codelineno-41-117" name="__codelineno-41-117" href="#__codelineno-41-117"></a><span class="w">   </span><span class="m">2</span><span class="w">   </span><span class="m">4</span><span class="w">   </span><span class="m">6</span><span class="w">   </span><span class="m">8</span><span class="w">  </span><span class="m">10</span><span class="w">  </span><span class="m">12</span><span class="w">  </span><span class="m">14</span><span class="w">  </span><span class="m">16</span><span class="w">  </span><span class="m">18</span><span class="w">  </span><span class="m">20</span>
+</span><span id="__span-41-118"><a id="__codelineno-41-118" name="__codelineno-41-118" href="#__codelineno-41-118"></a><span class="w">   </span><span class="m">3</span><span class="w">   </span><span class="m">6</span><span class="w">   </span><span class="m">9</span><span class="w">  </span><span class="m">12</span><span class="w">  </span><span class="m">15</span><span class="w">  </span><span class="m">18</span><span class="w">  </span><span class="m">21</span><span class="w">  </span><span class="m">24</span><span class="w">  </span><span class="m">27</span><span class="w">  </span><span class="m">30</span>
+</span><span id="__span-41-119"><a id="__codelineno-41-119" name="__codelineno-41-119" href="#__codelineno-41-119"></a><span class="w">   </span><span class="m">4</span><span class="w">   </span><span class="m">8</span><span class="w">  </span><span class="m">12</span><span class="w">  </span><span class="m">16</span><span class="w">  </span><span class="m">20</span><span class="w">  </span><span class="m">24</span><span class="w">  </span><span class="m">28</span><span class="w">  </span><span class="m">32</span><span class="w">  </span><span class="m">36</span><span class="w">  </span><span class="m">40</span>
+</span><span id="__span-41-120"><a id="__codelineno-41-120" name="__codelineno-41-120" href="#__codelineno-41-120"></a><span class="w">   </span><span class="m">5</span><span class="w">  </span><span class="m">10</span><span class="w">  </span><span class="m">15</span><span class="w">  </span><span class="m">20</span><span class="w">  </span><span class="m">25</span><span class="w">  </span><span class="m">30</span><span class="w">  </span><span class="m">35</span><span class="w">  </span><span class="m">40</span><span class="w">  </span><span class="m">45</span><span class="w">  </span><span class="m">50</span>
+</span><span id="__span-41-121"><a id="__codelineno-41-121" name="__codelineno-41-121" href="#__codelineno-41-121"></a><span class="w">   </span><span class="m">6</span><span class="w">  </span><span class="m">12</span><span class="w">  </span><span class="m">18</span><span class="w">  </span><span class="m">24</span><span class="w">  </span><span class="m">30</span><span class="w">  </span><span class="m">36</span><span class="w">  </span><span class="m">42</span><span class="w">  </span><span class="m">48</span><span class="w">  </span><span class="m">54</span><span class="w">  </span><span class="m">60</span>
+</span><span id="__span-41-122"><a id="__codelineno-41-122" name="__codelineno-41-122" href="#__codelineno-41-122"></a><span class="w">   </span><span class="m">7</span><span class="w">  </span><span class="m">14</span><span class="w">  </span><span class="m">21</span><span class="w">  </span><span class="m">28</span><span class="w">  </span><span class="m">35</span><span class="w">  </span><span class="m">42</span><span class="w">  </span><span class="m">49</span><span class="w">  </span><span class="m">56</span><span class="w">  </span><span class="m">63</span><span class="w">  </span><span class="m">70</span>
+</span><span id="__span-41-123"><a id="__codelineno-41-123" name="__codelineno-41-123" href="#__codelineno-41-123"></a><span class="w">   </span><span class="m">8</span><span class="w">  </span><span class="m">16</span><span class="w">  </span><span class="m">24</span><span class="w">  </span><span class="m">32</span><span class="w">  </span><span class="m">40</span><span class="w">  </span><span class="m">48</span><span class="w">  </span><span class="m">56</span><span class="w">  </span><span class="m">64</span><span class="w">  </span><span class="m">72</span><span class="w">  </span><span class="m">80</span>
+</span><span id="__span-41-124"><a id="__codelineno-41-124" name="__codelineno-41-124" href="#__codelineno-41-124"></a><span class="w">   </span><span class="m">9</span><span class="w">  </span><span class="m">18</span><span class="w">  </span><span class="m">27</span><span class="w">  </span><span class="m">36</span><span class="w">  </span><span class="m">45</span><span class="w">  </span><span class="m">54</span><span class="w">  </span><span class="m">63</span><span class="w">  </span><span class="m">72</span><span class="w">  </span><span class="m">81</span><span class="w">  </span><span class="m">90</span>
+</span><span id="__span-41-125"><a id="__codelineno-41-125" name="__codelineno-41-125" href="#__codelineno-41-125"></a><span class="w">  </span><span class="m">10</span><span class="w">  </span><span class="m">20</span><span class="w">  </span><span class="m">30</span><span class="w">  </span><span class="m">40</span><span class="w">  </span><span class="m">50</span><span class="w">  </span><span class="m">60</span><span class="w">  </span><span class="m">70</span><span class="w">  </span><span class="m">80</span><span class="w">  </span><span class="m">90</span><span class="w"> </span><span class="m">100</span>
+</span></code></pre></div>
+<h4 id="formatierung-von-gleikommazahlen">Formatierung von Gleikommazahlen<a class="headerlink" href="#formatierung-von-gleikommazahlen" title="Permanent link">&para;</a></h4>
+<p>Um Gleitkommazahlen in der Standardnotation (nicht wissenschaftliche Notation) formatiert auszugeben, wird der Platzhalter <code>%f</code> verwendet. Die allgemeine Syntax ist also</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>%<span class="w"> </span><span class="o">[</span>Schalter<span class="o">]</span><span class="w"> </span><span class="o">[</span>Breite<span class="o">]</span><span class="w"> </span>.<span class="w"> </span><span class="o">[</span>Genauigkeit<span class="o">]</span><span class="w"> </span>f
+</span></code></pre></div>
+<p>Der <code>Schalter</code> kann <code>-</code> sein, dann wird die Zahl linksbündig dargestellt. Ist kein <code>Schalter</code> angegeben, erfolgt die Ausgabe rechtsbündig. Die <code>Breite</code> beschreibt die gesamte Anzahl der Stellen für die Zahl. Die <code>Breite</code> enthält insbesondere auch eine Stelle für das Komma und die Anzahl der Stellen für die <code>Genauigkeit</code>. Die <code>Genauigkeit</code> gibt die Anzahl der Nachkommastellen an.  </p>
+<p>Angenommen, der Plathalter lautet <code>%7.2f</code>. Dann werden insgesamt sieben Stellen für die gesamte Zahl reserviert, inklusive dem Komma und den <code>2</code> Nachkommastellen, also</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>_<span class="w"> </span>_<span class="w"> </span>_<span class="w"> </span>_<span class="w"> </span>,<span class="w"> </span>_<span class="w"> </span>_<span class="w"> </span>
+</span></code></pre></div>
+<p>Wenn die Gesamtlänge beliebig ist, Sie aber nur genau 2 Nachkommastellen haben möchten, dann können Sie auch <code>%.2f</code> als Platzhalter angeben. Für eine Nachkommastelle <code>%.1f</code>. Die Nachkommastellen werden sogar gerundet. </p>
+<p>Hier nochmal einige Beispiele von oben nur für Gleikommazahlen:</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-44-1">1</a></span>
+<span class="normal"><a href="#__codelineno-44-2">2</a></span>
+<span class="normal"><a href="#__codelineno-44-3">3</a></span>
+<span class="normal"><a href="#__codelineno-44-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;|%10.2f|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1234.567</span><span class="p">);</span><span class="w">        </span><span class="c1">// |   1234,57|</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;|%-10.2f|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1234.567</span><span class="p">);</span><span class="w">       </span><span class="c1">// |1234,57   |</span>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;|%7.2f|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1234.567</span><span class="p">);</span><span class="w">         </span><span class="c1">// |1234,57|</span>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;|%5.2f|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1234.567</span><span class="p">);</span><span class="w">         </span><span class="c1">// |1234,57|</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Beachten Sie auch das letzte Beispiel (Zeile <code>4</code>). Es wurden nur insgesamt <code>5</code> Stellen für die gesamte Zahl reserviert. Davon benötigen wir alleine <code>2</code> Stellen für die Nachkommastellen und <code>1</code> Stelle für das Komma. Die Vorkommastellen hätten also nur <code>2</code>Stellen Platz. Vorne wird die Zahl aber <strong>nie</strong> abgeschnitten. Sollte der reservierte Platz für die Vorkommastellen nicht ausreichen, wird der Vorkommabereich trotzdem vollständig dargestellt. Es kann also trotz der Formatierung zu Verzerrungen in der Ausgabe kommen!</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Jörn Freiheit
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,92 @@
+# Project information
+site_name: Programmieren I
+site_description: Lehrmaterial, Übungen, Aufgaben und Hilfen für Programmieren I
+site_author: Jörn Freiheit
+site_url: http://freiheit.f4.htw-berlin.de/prog1
+
+# Repository
+repo_name: prog1
+repo_url: https://github.com/jfreiheit/prog1
+
+# Copyright
+copyright: Copyright &copy; 2023 Jörn Freiheit
+
+# Configuration
+theme:
+  name: material
+  language: de
+  palette:
+    primary: grey
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - instant
+    - tabs
+    - content.code.copy
+    - navigation.footer
+  favicon: img/favicon.png
+  logo: img/fiw.jpg
+
+extra_css:
+  - extra.css
+
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - footnotes
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tilde
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+
+#Navigation
+nav:
+    - Home: index.md
+    - Algorithmen: algorithmen.md
+    - Erstes Programm: start.md
+    - Variablen: variablen.md
+    - Ausdrücke: ausdruecke.md 
+    - Methoden: methoden.md 
+    - Selektion: selektion.md 
+    - Iteration: iteration.md 
+    - Methodenstack: methodenstack.md 
+    - Klassen und Objekte I: objekte1.md 
+    - Klassen und Objekte II: objekte2.md 
+    - Vererbung: vererbung.md 
+    - Klasse Object: object.md 
+    - Arrays: arrays.md 
+    - Sortieren: sortieren.md 
+    - Hilfsklassen: hilfsklassen.md 
+    - Javadoc: javadoc.md 
+    - Werkzeuge: tools.md
+    - Übungen: uebungen.md
+    - Aufgaben: aufgaben.md 
+    - Funktionale Programmierung: functional.md
+    - Clean Code: cleancode.md 
