@@ -9,7 +9,7 @@ repo_name: prog1
 repo_url: https://github.com/jfreiheit/prog1
 
 # Copyright
-copyright: Copyright &copy; 2023 Jörn Freiheit
+copyright: Copyright &copy; 2024 Jörn Freiheit
 
 # Configuration
 theme:
@@ -36,6 +36,7 @@ extra_css:
 # Extensions
 markdown_extensions:
   - admonition
+  - attr_list
   - footnotes
   - pymdownx.arithmatex
   - pymdownx.betterem:
@@ -43,6 +44,9 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -63,7 +67,6 @@ markdown_extensions:
       guess_lang: false
   - toc:
       permalink: true
-  - attr_list
   - md_in_html
 
 #Navigation

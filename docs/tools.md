@@ -33,9 +33,9 @@ java -version
 ein. Es sollte soetwas erscheinen, wie (Versionsnummern bei Ihnen sicherlich schon höher):
 
 ```bash
-openjdk version "21.0.1" 2023-10-17
-OpenJDK Runtime Environment (build 21.0.1+12-29)
-OpenJDK 64-Bit Server VM (build 21.0.1+12-29, mixed mode, sharing)
+openjdk version "22.0.2" 2024-07-16
+OpenJDK Runtime Environment (build 22.0.2+9-70)
+OpenJDK 64-Bit Server VM (build 22.0.2+9-70, mixed mode, sharing)
 ```
 
 Somit wissen Sie, dass die Laufzeitumgebung funktioniert. Zum Testen des JDK rufen wir am besten den Compiler (`javac`) auf:
@@ -48,7 +48,7 @@ javac -version
 Es sollte soetwas erscheinen, wie (Versionsnummern bei Ihnen sicherlich schon höher):
 
 ```bash
-javac 21.0.1
+javac 22.0.2
 ```
 
 !!! success
@@ -59,27 +59,9 @@ javac 21.0.1
 Um unsere Programme "zu schreiben", verwenden wir eine sogenannte *Integrated Development Environment (IDE)*, eine integrierte Entwicklungsumgebung, die uns beim Programmieren unterstützt. Wir könnten unsere Programme auch mit einfachen Texteditoren schreiben, aber eine IDE unterstützt uns, indem der Programmcode geeignet hervorgehoben wird (*Syntx-Highlighting*) und uns Vorschläge für die Verwendung von Methoden und Variablen gemacht werden (*Intelligent Code Completion*). 
 
 
-
-### IntelliJ
-
-Sie sind in der Wahl Ihrer IDE frei. Wir verwenden [**IntelliJ IDEA**](https://www.jetbrains.com/de-de/idea/). IntelliJ ist von JetBrains, einem tschechischen Unternehmen, und derzeit die wohl modernste IDE auf dem Markt, nicht nur für Java- sondern auch für Web-Entwicklungen. IntelliJ ist nicht Open-Source und ist kostenpflichtig. Mit einer Hochschullizenz erhalten Sie jedoch kostenlosen Zugriff auf alle Ultimate-Versionen. Sie müssen sich dazu bei JetBrains mit Ihrer HTW-Adresse registrieren. Die Download-Seite von IntelliJ IDEA finden Sie [hier](https://www.jetbrains.com/idea/).
-
-Nach dem Start von IntelliJ IDEA kleicken Sie auf `New project`. Es erscheint:
-
-![intellij](./files/219_intellij.png)
-
-Wählen Sie in der linken Spalte `Maven Archetype" aus. Geben Sie Ihrem Projekt einen `Name`n (muss mit einem Buchstaben beginnen und darf keine Leerzeichen enthalten, vermeiden Sie auch Umlaute und Sonderzeichen). Wählen als `Location` einen Ordner aus, in dem Sie Ihre selbstgeschriebenen Programme speichern wollen. Ein solcher Ordner könnte bei Ihnen z.B. `Documents/HTW/Programmierung/Prog1` sein. Wählen Sie unter `Archetype` die Option `org.apache.maven.archetypes:maven-archetype-quickstart` aus. Klicken Sie dann auf `Create`. 
-
-Es erscheint folgendes Fenster (Informationen, um das *Theme* in IntelliJ zu ändern, finden Sie z.B. [hier](https://www.jetbrains.com/help/idea/user-interface-themes.html)):
-
-![intellij](./files/220_intellij.png)
-
-Öffnen Sie im *Project explorer* (linke Spalte) sukzessive die Ordner `src/main/java/org.example`. Doppelklicken Sie auf `App`. Im Editorfenster öffnet sich unsere erste Java-Klasse `App.java`. Klicken Sie in der Werkzeugleiste auf den grünen Pfeil neben dem Textfeld, in dem `Current file` steht. Im unteren Terminalfenster erscheint `Hello World!`.
-
-
 ### Eclipse
 
-Eine weitere sehr gute IDE ist [**Eclipse**](https://www.eclipse.org/). Eclipse ist in Java geschrieben und Open-Source. Den Download-Link für Eclipse finden Sie [hier](https://www.eclipse.org/downloads/). Es gibt verschiedene Versionen von Eclipse, wir verwenden die *Eclipse IDE for Java Developers*. Installieren Sie Eclipse am besten in ihren *Applications* oder *Programme* Ordner. 
+Sie sind in der Wahl Ihrer IDE frei. Eine sehr gute IDE ist [**Eclipse**](https://www.eclipse.org/). Eclipse ist in Java geschrieben und Open-Source. Das ist auch der Grund, warum wir Eclipse verwenden und nicht [IntelliJ](#intellij). Den Download-Link für Eclipse finden Sie [hier](https://www.eclipse.org/downloads/). Es gibt verschiedene Versionen von Eclipse, wir verwenden die *Eclipse IDE for Java Developers*. Installieren Sie Eclipse am besten in ihrem *Applications*- oder *Programme*-Ordner. 
 
 1. Starten Sie Eclipse durch Doppelklick auf das Programmsymbol.
 2. Erstellen Sie einen *Workspace* (Arbeitsbereich) in einem gewünschten Ordner (z. B.
@@ -105,18 +87,35 @@ Die folgende Abbildung gibt einen Überblick über die Bedeutung der einzelnen F
 
 ![Eclipse](./files/01_eclipse.png)
 
+### IntelliJ
+
+Eine sehr häufig und im Bereich der Java-Entwicklung die derzeit wohl am meisten verwendete IDE ist [**IntelliJ IDEA**](https://www.jetbrains.com/de-de/idea/). IntelliJ ist von JetBrains, einem tschechischen Unternehmen, und derzeit die wohl modernste IDE auf dem Markt, nicht nur für Java- sondern auch für Web-Entwicklungen. IntelliJ ist nicht Open-Source und ist kostenpflichtig. Mit einer Hochschullizenz erhalten Sie jedoch kostenlosen Zugriff auf alle Ultimate-Versionen. Sie müssen sich dazu bei JetBrains mit Ihrer HTW-Adresse registrieren. Die Download-Seite von IntelliJ IDEA finden Sie [hier](https://www.jetbrains.com/idea/).
+
+Nach dem Start von IntelliJ IDEA klicken Sie auf `New project`. Es erscheint:
+
+![intellij](./files/219_intellij.png)
+
+Wählen Sie in der linken Spalte `Maven Archetype" aus. Geben Sie Ihrem Projekt einen `Name`n (muss mit einem Buchstaben beginnen und darf keine Leerzeichen enthalten, vermeiden Sie auch Umlaute und Sonderzeichen). Wählen als `Location` einen Ordner aus, in dem Sie Ihre selbstgeschriebenen Programme speichern wollen. Ein solcher Ordner könnte bei Ihnen z.B. `Documents/HTW/Programmierung/Prog1` sein. Wählen Sie unter `Archetype` die Option `org.apache.maven.archetypes:maven-archetype-quickstart` aus. Klicken Sie dann auf `Create`. 
+
+Es erscheint folgendes Fenster (Informationen, um das *Theme* in IntelliJ zu ändern, finden Sie z.B. [hier](https://www.jetbrains.com/help/idea/user-interface-themes.html)):
+
+![intellij](./files/220_intellij.png)
+
+Öffnen Sie im *Project explorer* (linke Spalte) sukzessive die Ordner `src/main/java/org.example`. Doppelklicken Sie auf `App`. Im Editorfenster öffnet sich unsere erste Java-Klasse `App.java`. Klicken Sie in der Werkzeugleiste auf den grünen Pfeil neben dem Textfeld, in dem `Current file` steht. Im unteren Terminalfenster erscheint `Hello World!`.
+
+
+
 ### Visual Studio Code
 
-Wer gerne mit Microsoft-Produkten arbeitet, kann auch gerne [**Visual Studio Code**](https://code.visualstudio.com/docs/java/java-tutorial) (*VS Code*) arbeiten. Das ist auch eine sehr gute IDE und ebenfalls nicht nur zur Nutzung für die Java-Entwicklung, sondern auch für Web- und App-Entwicklungen geeignet. Spätestens im dritten Semster in *WebTech* werden die meisten von Ihnen entweder auf IntelliJ oder VS Code wechseln. 
+Wer gerne mit Microsoft-Produkten arbeitet, kann auch gerne [**Visual Studio Code**](https://code.visualstudio.com/docs/java/java-tutorial) (*VS Code*) arbeiten. Das ist auch eine sehr gute IDE und ebenfalls nicht nur zur Nutzung für die Java-Entwicklung, sondern auch für Web- und App-Entwicklungen geeignet. Spätestens im dritten Semster in *WebTech* werden die meisten von Ihnen entweder auf IntelliJ oder VS Code wechseln. Im Bereich der Web-Entwicklung ist VS Code sicherlich die am meisten verwendete IDE. 
 
 
 ## Weitere nützliche Werkzeuge
 
 ### Windows: gitBash
 
-Das Terminal (`cmd`) in Windows ist nicht so gut. Installieren Sie sich lieber die [**GitBash für Windows**](https://gitforwindows.org/). Unter Downloads öffnet sich das GitHub-Repository für Git. Aktuell wählen Sie dort [**Git-2.29.2-64-bit.exe**](https://github.com/git-for-windows/git/releases/download/v2.29.2.windows.1/Git-2.29.2-64-bit.exe) und folgen dann den Installationsanweisungen. 
+Das Terminal (`cmd`) in Windows ist nicht so gut. Installieren Sie sich lieber die [**GitBash für Windows**](https://gitforwindows.org/). Unter Downloads öffnet sich das GitHub-Repository für Git. Aktuell wählen Sie dort [**Git-2.46.0-64-bit.exe**](https://github.com/git-for-windows/git/releases/download/v2.46.0.windows.1/Git-2.46.0-64-bit.exe) und folgen dann den Installationsanweisungen. 
 
 ## Online-Kurse
 
-* SoloLearn [https://www.sololearn.com/Course/Java/](https://www.sololearn.com/Course/Java/)
-* JetBrains Academy [https://hyperskill.org/tracks/1](https://hyperskill.org/tracks/8)
+* JetBrains Academy [https://lp.jetbrains.com/de-de/academy/learn-java/](https://lp.jetbrains.com/de-de/academy/learn-java/)

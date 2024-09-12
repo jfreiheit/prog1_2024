@@ -13,7 +13,7 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 
 - Achten Sie darauf, dass Sie die Quelldateien (also die `.java`-Dateien aus dem `src`-Verzeichnis) hochladen. 
 - Ihre Klassen erstellen Sie immer in einem package `aufgaben.aufgabeX`. Das heißt, Aufgabe1 ist im package `aufgaben.aufgabe1`, Aufgabe2 im package `aufgaben.aufgabe2` usw. 
-- In Ihrem `workspace`gibt es dann einen Ordner für Ihr Java-Projekt, z.B. `WS22` (je nachdem, wie Sie Ihr Java-Projekt genannt haben) und darin befindet sich ein `bin`- und ein `src`-Ordner. In dem `src`-Ordner befindet sich dann ein Ordner `aufgaben` und darin ein Ordner `aufgaben1` (für Aufgabe1). Darin befindet sich Ihre `.java`-Datei, die Sie hochladen sollen. Angenommen, Sie haben Ihre Klasse `Aufgabe1` genannt, dann heißt die Klasse also `Aufgabe1.java`. Sie folgen also dem Pfad `workspace`--> *Java-Projekt* (z.B. `WS22`) --> `src` --> `aufgaben` --> `aufgabe`*X*.
+- In Ihrem `workspace`gibt es dann einen Ordner für Ihr Java-Projekt, z.B. `WS24` (je nachdem, wie Sie Ihr Java-Projekt genannt haben) und darin befindet sich ein `bin`- und ein `src`-Ordner. In dem `src`-Ordner befindet sich dann ein Ordner `aufgaben` und darin ein Ordner `aufgaben1` (für Aufgabe1). Darin befindet sich Ihre `.java`-Datei, die Sie hochladen sollen. Angenommen, Sie haben Ihre Klasse `Aufgabe1` genannt, dann heißt die Klasse also `Aufgabe1.java`. Sie folgen also dem Pfad `workspace`--> *Java-Projekt* (z.B. `WS24`) --> `src` --> `aufgaben` --> `aufgabe`*X*.
 - Wenn Ihre Lösung aus mehreren Klassen (mehreren `.java`-Dateien) besteht, können Sie entweder die Dateien einzeln hochladen oder Sie zippen Ihre Dateien (am besten dann den `aufgabeX`-Ordner und laden das `.zip`-File hoch. 
 - In Ihrer Lösung (Ihrer/n Klasse/n) fügen Sie direkt oberhalb Ihrer Klassendefinition einen JavaDoc-Kommentar ein (`/** ... */`). Dieser enthält ein `@author`-Tag. dahinter schreiben Sie Ihren Namen. Das sieht dann z.B. so aus:
 	```java
@@ -37,9 +37,8 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 
 ## Aufgaben
 
-#### Aufgabe 1 (Abgabe bis 22.11.2023 24:00 Uhr)
 
-??? "Aufgabe1 - Rhombus"
+??? "<a id="aufgabe-1"></a>Aufgabe1 - Rhombus"
 	- Erstellen Sie eine Klasse `Aufgabe1` mit `main()`-Methode im package `aufgaben.aufgabe1` 
 	- Implementieren Sie eine Methode `public static void printRhombus(int upperHalf, boolean filled){}`
 	- Ist der Parameterwert von `filled` `true`, dann soll ein Rhombus (eine Raute) wie folgt auf die Konsole ausgegeben werden:
@@ -93,9 +92,8 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	- Viel Spaß und viel Erfolg!
 
 
-#### Aufgabe 2 (Abgabe bis 29.11.2023 24:00 Uhr)
 
-??? "Aufgabe2 - Numbers"
+??? "<a id="aufgabe-2"></a>Aufgabe2 - Numbers"
 	- Erstellen Sie eine Klasse `Aufgabe2` mit `main()`-Methode im package `aufgaben.aufgabe2`.
 	- Bei der Lösung der Aufgabe soll nicht der Datentyp `String` verwendet werden! 
 	- Implementieren Sie eine Methode `public static int lengthOfNumber(int number){}`. Diese Methode gibt die Länge von `number` zurück, d.h. die Anzahl der Ziffern in der Zahl. **Beachten Sie**: für `number == 0` soll jedoch `0` zurückgegeben werden. <br/>
@@ -172,10 +170,9 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	- Viel Spaß und viel Erfolg!
 
 
-#### Aufgabe 3 (Abgabe bis 06.12.2023 24:00 Uhr)
 
 
-??? "Aufgabe 3 - Triangle"
+??? "<a id="aufgabe-3"></a>Aufgabe 3 - Triangle"
 	- Wir erstellen uns einen neuen Datentyp `Triangle`
 
 	- Erstellen Sie im package `aufgaben.aufgabe3` eine Klasse `Triangle` ohne `main()`-Methode und eine Klasse `Testklasse` mit `main()`-Methode. 
@@ -373,10 +370,9 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	- Viel Spaß und viel Erfolg!
 
 
-#### Aufgabe 4 (Abgabe bis 13.12.2023 24:00 Uhr)
 
 
-??? "Aufgabe 4 - Bruch"
+??? "<a id="aufgabe-4"></a>Aufgabe 4 - Bruch"
 	- Wir erstellen uns einen neuen Datentyp `Bruch`
 
 	- Erstellen Sie im package `aufgaben.aufgabe4` eine Klasse `Bruch` ohne `main()`-Methode und eine Klasse `BruchTest` mit `main()`-Methode. 
@@ -466,10 +462,9 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 
 
 
-#### Aufgabe 5 (Abgabe bis 20.12.2023 24:00 Uhr)
 
 
-??? "Aufgabe 5 - Doppelt-verkettete Liste"
+??? "<a id="aufgabe-5"></a>Aufgabe 5 - Doppelt-verkettete Liste"
 	- Wir erstellen uns einen neuen Datentyp `ListElement`. Dieser Datentyp wird für ein Element aus einer doppelt verketteten Liste verwendet. Eine Liste kann aus vielen `ListElement`-Elementen bestehen. Ein `ListElement` hat einen Vorgänger (`predecessor`) und einen Nachfolger (`successor`) in der Liste. Nur das erste Element hat keinen Vorgänger und das letzte Element hat keinen Nachfolger.
 
 	- Erstellen Sie im package `aufgaben.aufgabe5` eine Klasse `ListElement` ohne `main()`-Methode und eine Klasse `Programmklasse` mit `main()`-Methode. 
@@ -564,10 +559,9 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 
 
 
-#### Aufgabe 6 (Abgabe bis 03.01.2024 24:00 Uhr)
 
 
-??? "Aufgabe 6 - Arrays ausgeben"
+??? "<a id="aufgabe-6"></a>Aufgabe 6 - Arrays ausgeben"
 	- Wir geben Arrays in verschiedenen Arten auf der Konsole aus. 
 
 	- Implementieren Sie eine Methode `public static int[] createAndFillArray(int length, int fromInclusive, int toInclusive)`. Diese Methode soll genau so sein, wie die `createAndFillArray(int length, int bound)`-Methode in [Methoden mit Array als Rückgabe](arrays.md#methoden-mit-array-als-ruckgabe) mit dem einzigen Unterschied, dass wir nicht den `bound` angeben (der sorgt ja dafür, dass wir Zufallswerte aus dem Bereich `[0, 1, ... , bound-1]` erzeugen), sondern `fromInclusive` und `toExclusive`, so dass wir Zufallswerte aus dem Wertebereich `[fromInclusive, ... , toInclusive]` erzeugen. Siehe dazu auch [`nextInt(bound)`](hilfsklassen.md#nextintint-bound).
@@ -737,10 +731,9 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	- Viel Spaß und viel Erfolg!
 
 
-#### Aufgabe 7 (Abgabe bis 10.01.2024 24:00 Uhr)
 
 
-??? "Aufgabe 7 - Arrays befüllen"
+??? "<a id="aufgabe-7"></a>Aufgabe 7 - Arrays befüllen"
 	- Wir befüllen ein `char`-Array, aber das ist leider gar nicht so einfach ;-)
 
 	- **einleitende Vorbetrachtung:** angenommen, wir haben die folgende Schleife: 
@@ -845,10 +838,9 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 
 
 
-#### Aufgabe 8 (Abgabe bis 17.01.2024 24:00 Uhr)
 
 
-??? "Aufgabe 8 - SortedArray"
+??? "<a id="aufgabe-8"></a>Aufgabe 8 - SortedArray"
 	- Wir erstellen uns einen neuen Datentyp `SortedArray`
 
 	- **Idee**: Ein Objekt dieser Klasse beschreibt (enthält) ein `int`-Array, in dem 

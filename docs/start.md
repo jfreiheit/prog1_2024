@@ -6,7 +6,7 @@ Bevor wir uns mit der Funktionsweise von Java auseinandersetzen, schreiben wir e
 
 	![Projekt](./files/01_project.png)
 
-	Den `module name` beim Erstellen der `module-info.java` können Sie genau so lassen, wie vorgeschlagen (`WS22`). Klicken Sie auf den Button `Create`.
+	Den `module name` beim Erstellen der `module-info.java` können Sie genau so lassen, wie vorgeschlagen (`WS24`). Klicken Sie auf den Button `Create`.
 
 2. erstellen wir uns ein Paket: Menüpunkt `File --> New --> Package` und geben `themen.eins.start` ein.
 3. erstellen wir uns eine Klasse: Wir wählen das Paket `themen.eins.start` aus und wählen den Menüpunkt `File --> New --> Class`, geben in dem Fenster den Klassennamen `HelloFIW` ein und setzen bei `public static void main(Strg[] args)` ein Häkchen:

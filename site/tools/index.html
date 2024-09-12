@@ -643,18 +643,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#intellij" class="md-nav__link">
+  <a href="#eclipse" class="md-nav__link">
     <span class="md-ellipsis">
-      IntelliJ
+      Eclipse
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#eclipse" class="md-nav__link">
+  <a href="#intellij" class="md-nav__link">
     <span class="md-ellipsis">
-      Eclipse
+      IntelliJ
     </span>
   </a>
   
@@ -850,18 +850,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#intellij" class="md-nav__link">
+  <a href="#eclipse" class="md-nav__link">
     <span class="md-ellipsis">
-      IntelliJ
+      Eclipse
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#eclipse" class="md-nav__link">
+  <a href="#intellij" class="md-nav__link">
     <span class="md-ellipsis">
-      Eclipse
+      IntelliJ
     </span>
   </a>
   
@@ -956,15 +956,15 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>java<span class="w"> </span>-version
 </span></code></pre></div>
 <p>ein. Es sollte soetwas erscheinen, wie (Versionsnummern bei Ihnen sicherlich schon höher):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>openjdk<span class="w"> </span>version<span class="w"> </span><span class="s2">&quot;21.0.1&quot;</span><span class="w"> </span><span class="m">2023</span>-10-17
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>OpenJDK<span class="w"> </span>Runtime<span class="w"> </span>Environment<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">21</span>.0.1+12-29<span class="o">)</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>OpenJDK<span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </span>Server<span class="w"> </span>VM<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">21</span>.0.1+12-29,<span class="w"> </span>mixed<span class="w"> </span>mode,<span class="w"> </span>sharing<span class="o">)</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>openjdk<span class="w"> </span>version<span class="w"> </span><span class="s2">&quot;22.0.2&quot;</span><span class="w"> </span><span class="m">2024</span>-07-16
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>OpenJDK<span class="w"> </span>Runtime<span class="w"> </span>Environment<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">22</span>.0.2+9-70<span class="o">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>OpenJDK<span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </span>Server<span class="w"> </span>VM<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">22</span>.0.2+9-70,<span class="w"> </span>mixed<span class="w"> </span>mode,<span class="w"> </span>sharing<span class="o">)</span>
 </span></code></pre></div>
 <p>Somit wissen Sie, dass die Laufzeitumgebung funktioniert. Zum Testen des JDK rufen wir am besten den Compiler (<code>javac</code>) auf:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>javac<span class="w"> </span>-version
 </span></code></pre></div>
 <p>Es sollte soetwas erscheinen, wie (Versionsnummern bei Ihnen sicherlich schon höher):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>javac<span class="w"> </span><span class="m">21</span>.0.1
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>javac<span class="w"> </span><span class="m">22</span>.0.2
 </span></code></pre></div>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
@@ -972,16 +972,8 @@
 </div>
 <h2 id="ide">IDE<a class="headerlink" href="#ide" title="Permanent link">&para;</a></h2>
 <p>Um unsere Programme "zu schreiben", verwenden wir eine sogenannte <em>Integrated Development Environment (IDE)</em>, eine integrierte Entwicklungsumgebung, die uns beim Programmieren unterstützt. Wir könnten unsere Programme auch mit einfachen Texteditoren schreiben, aber eine IDE unterstützt uns, indem der Programmcode geeignet hervorgehoben wird (<em>Syntx-Highlighting</em>) und uns Vorschläge für die Verwendung von Methoden und Variablen gemacht werden (<em>Intelligent Code Completion</em>). </p>
-<h3 id="intellij">IntelliJ<a class="headerlink" href="#intellij" title="Permanent link">&para;</a></h3>
-<p>Sie sind in der Wahl Ihrer IDE frei. Wir verwenden <a href="https://www.jetbrains.com/de-de/idea/"><strong>IntelliJ IDEA</strong></a>. IntelliJ ist von JetBrains, einem tschechischen Unternehmen, und derzeit die wohl modernste IDE auf dem Markt, nicht nur für Java- sondern auch für Web-Entwicklungen. IntelliJ ist nicht Open-Source und ist kostenpflichtig. Mit einer Hochschullizenz erhalten Sie jedoch kostenlosen Zugriff auf alle Ultimate-Versionen. Sie müssen sich dazu bei JetBrains mit Ihrer HTW-Adresse registrieren. Die Download-Seite von IntelliJ IDEA finden Sie <a href="https://www.jetbrains.com/idea/">hier</a>.</p>
-<p>Nach dem Start von IntelliJ IDEA kleicken Sie auf <code>New project</code>. Es erscheint:</p>
-<p><img alt="intellij" src="../files/219_intellij.png" /></p>
-<p>Wählen Sie in der linken Spalte <code>Maven Archetype" aus. Geben Sie Ihrem Projekt einen</code>Name<code>n (muss mit einem Buchstaben beginnen und darf keine Leerzeichen enthalten, vermeiden Sie auch Umlaute und Sonderzeichen). Wählen als</code>Location<code>einen Ordner aus, in dem Sie Ihre selbstgeschriebenen Programme speichern wollen. Ein solcher Ordner könnte bei Ihnen z.B.</code>Documents/HTW/Programmierung/Prog1<code>sein. Wählen Sie unter</code>Archetype<code>die Option</code>org.apache.maven.archetypes:maven-archetype-quickstart<code>aus. Klicken Sie dann auf</code>Create`. </p>
-<p>Es erscheint folgendes Fenster (Informationen, um das <em>Theme</em> in IntelliJ zu ändern, finden Sie z.B. <a href="https://www.jetbrains.com/help/idea/user-interface-themes.html">hier</a>):</p>
-<p><img alt="intellij" src="../files/220_intellij.png" /></p>
-<p>Öffnen Sie im <em>Project explorer</em> (linke Spalte) sukzessive die Ordner <code>src/main/java/org.example</code>. Doppelklicken Sie auf <code>App</code>. Im Editorfenster öffnet sich unsere erste Java-Klasse <code>App.java</code>. Klicken Sie in der Werkzeugleiste auf den grünen Pfeil neben dem Textfeld, in dem <code>Current file</code> steht. Im unteren Terminalfenster erscheint <code>Hello World!</code>.</p>
 <h3 id="eclipse">Eclipse<a class="headerlink" href="#eclipse" title="Permanent link">&para;</a></h3>
-<p>Eine weitere sehr gute IDE ist <a href="https://www.eclipse.org/"><strong>Eclipse</strong></a>. Eclipse ist in Java geschrieben und Open-Source. Den Download-Link für Eclipse finden Sie <a href="https://www.eclipse.org/downloads/">hier</a>. Es gibt verschiedene Versionen von Eclipse, wir verwenden die <em>Eclipse IDE for Java Developers</em>. Installieren Sie Eclipse am besten in ihren <em>Applications</em> oder <em>Programme</em> Ordner. </p>
+<p>Sie sind in der Wahl Ihrer IDE frei. Eine sehr gute IDE ist <a href="https://www.eclipse.org/"><strong>Eclipse</strong></a>. Eclipse ist in Java geschrieben und Open-Source. Das ist auch der Grund, warum wir Eclipse verwenden und nicht <a href="#intellij">IntelliJ</a>. Den Download-Link für Eclipse finden Sie <a href="https://www.eclipse.org/downloads/">hier</a>. Es gibt verschiedene Versionen von Eclipse, wir verwenden die <em>Eclipse IDE for Java Developers</em>. Installieren Sie Eclipse am besten in ihrem <em>Applications</em>- oder <em>Programme</em>-Ordner. </p>
 <ol>
 <li>Starten Sie Eclipse durch Doppelklick auf das Programmsymbol.</li>
 <li>Erstellen Sie einen <em>Workspace</em> (Arbeitsbereich) in einem gewünschten Ordner (z. B.
@@ -1011,15 +1003,22 @@ Programmieren) im Dateisystem. Achten Sie darauf, dass Sie Schreibrechte in dies
 </ol>
 <p>Die folgende Abbildung gibt einen Überblick über die Bedeutung der einzelnen Fenster in Eclipse:</p>
 <p><img alt="Eclipse" src="../files/01_eclipse.png" /></p>
+<h3 id="intellij">IntelliJ<a class="headerlink" href="#intellij" title="Permanent link">&para;</a></h3>
+<p>Eine sehr häufig und im Bereich der Java-Entwicklung die derzeit wohl am meisten verwendete IDE ist <a href="https://www.jetbrains.com/de-de/idea/"><strong>IntelliJ IDEA</strong></a>. IntelliJ ist von JetBrains, einem tschechischen Unternehmen, und derzeit die wohl modernste IDE auf dem Markt, nicht nur für Java- sondern auch für Web-Entwicklungen. IntelliJ ist nicht Open-Source und ist kostenpflichtig. Mit einer Hochschullizenz erhalten Sie jedoch kostenlosen Zugriff auf alle Ultimate-Versionen. Sie müssen sich dazu bei JetBrains mit Ihrer HTW-Adresse registrieren. Die Download-Seite von IntelliJ IDEA finden Sie <a href="https://www.jetbrains.com/idea/">hier</a>.</p>
+<p>Nach dem Start von IntelliJ IDEA klicken Sie auf <code>New project</code>. Es erscheint:</p>
+<p><img alt="intellij" src="../files/219_intellij.png" /></p>
+<p>Wählen Sie in der linken Spalte <code>Maven Archetype" aus. Geben Sie Ihrem Projekt einen</code>Name<code>n (muss mit einem Buchstaben beginnen und darf keine Leerzeichen enthalten, vermeiden Sie auch Umlaute und Sonderzeichen). Wählen als</code>Location<code>einen Ordner aus, in dem Sie Ihre selbstgeschriebenen Programme speichern wollen. Ein solcher Ordner könnte bei Ihnen z.B.</code>Documents/HTW/Programmierung/Prog1<code>sein. Wählen Sie unter</code>Archetype<code>die Option</code>org.apache.maven.archetypes:maven-archetype-quickstart<code>aus. Klicken Sie dann auf</code>Create`. </p>
+<p>Es erscheint folgendes Fenster (Informationen, um das <em>Theme</em> in IntelliJ zu ändern, finden Sie z.B. <a href="https://www.jetbrains.com/help/idea/user-interface-themes.html">hier</a>):</p>
+<p><img alt="intellij" src="../files/220_intellij.png" /></p>
+<p>Öffnen Sie im <em>Project explorer</em> (linke Spalte) sukzessive die Ordner <code>src/main/java/org.example</code>. Doppelklicken Sie auf <code>App</code>. Im Editorfenster öffnet sich unsere erste Java-Klasse <code>App.java</code>. Klicken Sie in der Werkzeugleiste auf den grünen Pfeil neben dem Textfeld, in dem <code>Current file</code> steht. Im unteren Terminalfenster erscheint <code>Hello World!</code>.</p>
 <h3 id="visual-studio-code">Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permanent link">&para;</a></h3>
-<p>Wer gerne mit Microsoft-Produkten arbeitet, kann auch gerne <a href="https://code.visualstudio.com/docs/java/java-tutorial"><strong>Visual Studio Code</strong></a> (<em>VS Code</em>) arbeiten. Das ist auch eine sehr gute IDE und ebenfalls nicht nur zur Nutzung für die Java-Entwicklung, sondern auch für Web- und App-Entwicklungen geeignet. Spätestens im dritten Semster in <em>WebTech</em> werden die meisten von Ihnen entweder auf IntelliJ oder VS Code wechseln. </p>
+<p>Wer gerne mit Microsoft-Produkten arbeitet, kann auch gerne <a href="https://code.visualstudio.com/docs/java/java-tutorial"><strong>Visual Studio Code</strong></a> (<em>VS Code</em>) arbeiten. Das ist auch eine sehr gute IDE und ebenfalls nicht nur zur Nutzung für die Java-Entwicklung, sondern auch für Web- und App-Entwicklungen geeignet. Spätestens im dritten Semster in <em>WebTech</em> werden die meisten von Ihnen entweder auf IntelliJ oder VS Code wechseln. Im Bereich der Web-Entwicklung ist VS Code sicherlich die am meisten verwendete IDE. </p>
 <h2 id="weitere-nutzliche-werkzeuge">Weitere nützliche Werkzeuge<a class="headerlink" href="#weitere-nutzliche-werkzeuge" title="Permanent link">&para;</a></h2>
 <h3 id="windows-gitbash">Windows: gitBash<a class="headerlink" href="#windows-gitbash" title="Permanent link">&para;</a></h3>
-<p>Das Terminal (<code>cmd</code>) in Windows ist nicht so gut. Installieren Sie sich lieber die <a href="https://gitforwindows.org/"><strong>GitBash für Windows</strong></a>. Unter Downloads öffnet sich das GitHub-Repository für Git. Aktuell wählen Sie dort <a href="https://github.com/git-for-windows/git/releases/download/v2.29.2.windows.1/Git-2.29.2-64-bit.exe"><strong>Git-2.29.2-64-bit.exe</strong></a> und folgen dann den Installationsanweisungen. </p>
+<p>Das Terminal (<code>cmd</code>) in Windows ist nicht so gut. Installieren Sie sich lieber die <a href="https://gitforwindows.org/"><strong>GitBash für Windows</strong></a>. Unter Downloads öffnet sich das GitHub-Repository für Git. Aktuell wählen Sie dort <a href="https://github.com/git-for-windows/git/releases/download/v2.46.0.windows.1/Git-2.46.0-64-bit.exe"><strong>Git-2.46.0-64-bit.exe</strong></a> und folgen dann den Installationsanweisungen. </p>
 <h2 id="online-kurse">Online-Kurse<a class="headerlink" href="#online-kurse" title="Permanent link">&para;</a></h2>
 <ul>
-<li>SoloLearn <a href="https://www.sololearn.com/Course/Java/">https://www.sololearn.com/Course/Java/</a></li>
-<li>JetBrains Academy <a href="https://hyperskill.org/tracks/8">https://hyperskill.org/tracks/1</a></li>
+<li>JetBrains Academy <a href="https://lp.jetbrains.com/de-de/academy/learn-java/">https://lp.jetbrains.com/de-de/academy/learn-java/</a></li>
 </ul>
 
 
@@ -1090,7 +1089,7 @@ Programmieren) im Dateisystem. Achten Sie darauf, dass Sie Schreibrechte in dies
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2023 Jörn Freiheit
+      Copyright &copy; 2024 Jörn Freiheit
     </div>
   
   

@@ -1,6 +1,4 @@
-# Übungen
-
-## Übungsblätter (wochenweise)
+# Uebungen
 
 
 ??? note "<a id="ubung-0"></a>Übung 0"
@@ -102,6 +100,66 @@
 	
 
 
+??? question "Eine mögliche Lösung für Übung 1"
+	```java
+	package uebungen.uebung1;
+
+	public class Uebung1
+	{
+		public static void main(String[] args)
+		{
+			int in = 123;
+			long lo = 456789;
+			char ch = 'a';
+			byte by = 127;
+			short sh = 32767;
+			float fl = 4.23f;		// f notwendig
+			double d1 = 6.98;
+			boolean b1 = true;
+			String s1 = "Hallo!";
+			
+			System.out.println(" --- Aufgabe 3 -------");
+			System.out.println();
+			System.out.println("Wert vom Typ int     : " + in );
+			System.out.println("Wert vom Typ long    : " + lo );
+			System.out.println("Wert vom Typ char    : " + ch );
+			System.out.println("Wert vom Typ byte    : " + by );
+			System.out.println("Wert vom Typ short   : " + sh );
+			System.out.println("Wert vom Typ float   : " + fl );
+			System.out.println("Wert vom Typ double  : " + d1 );
+			System.out.println("Wert vom Typ boolean : " + b1 );
+			System.out.println("Wert vom Typ String  : " + s1 );
+			
+			System.out.println();
+			System.out.println(" --- Aufgabe 4 -------");
+			System.out.println();
+			in = 2147483647;
+			System.out.println("Wert vom Typ int     : " + in );
+			in = in + 1;		// in++;
+			System.out.println("Wert vom Typ int     : " + in );
+			
+			System.out.println();
+			System.out.println(" --- Aufgabe 5 -------");
+			System.out.println();
+			lo = 2147483647;	
+			System.out.println("Wert vom Typ long    : " + lo );
+			lo = lo +1 ;
+			System.out.println("Wert vom Typ long    : " + lo );
+			lo = 2147483648L;	// L notwendig, da 2147483648 kein int
+			
+			System.out.println();
+			System.out.println(" --- Aufgabe 6 -------");
+			System.out.println();
+			ch = 65;
+			System.out.println("Wert vom Typ char    : " + ch );
+			
+			// 7 a)		
+		}
+
+	}
+	```
+
+
 ??? note "<a id="ubung-2"></a>Übung 2"
 	
 	1. Erstellen Sie ein package `uebungen.uebung2`. 
@@ -142,6 +200,61 @@
 
 	7. Können wir die Methoden `getQuotient(int nr1, int nr2)` und `getRemainder(int nr1, int nr2)` auch in der `printIntDivision(int nr1, int nr2)`-Methode verwenden/aufrufen? Wenn ja, wie?
 
+
+??? question "Eine mögliche Lösung für Übung 2"
+	```java 
+	package uebungen.uebung2;
+
+	public class Uebung2
+	{
+
+		public static void printIntDivision(int nr1, int nr2)
+		{
+			//int quotient = nr1 / nr2;				
+			int quotient = getQuotient(nr1, nr2);
+			//int remainder = nr1 % nr2;
+			int remainder = getRemainder(nr1, nr2);
+			System.out.println(nr1 + " geteilt "
+					+ "durch " + nr2 
+					+ " ergibt " + quotient + ". "
+					+ "Es bleibt ein Rest "
+					+ "von " + remainder);
+		}
+		
+		public static int getQuotient(int nr1, int nr2) 
+		{
+			int quotient = nr1 / nr2;
+			return quotient;		
+		} 
+		
+		public static int getRemainder(int nr1, int nr2) 
+		{
+			int remainder = nr1 % nr2;
+			return remainder;
+		}
+		
+		public static void main(String[] args)
+		{
+			printIntDivision(7,4);
+			printIntDivision(17,4);
+			
+			int number1 = 17;
+			int number2 = 4;
+			int result = getQuotient(number1, number2);
+			int rest = getRemainder(number1, number2);
+			
+			System.out.println(number1 + "/" 
+							+ number2 + " = " 
+							+ result);
+			
+			System.out.println(number1 + " mod " 
+					+ number2 + " = " 
+					+ rest);
+		}
+
+	}
+
+	```
 
 
 ??? note "<a id="ubung-3"></a>Übung 3"
@@ -324,6 +437,105 @@
 		```
 
 
+
+??? question "Eine mögliche Lösung für Übung 3"
+	```java 
+	package uebungen.uebung3;
+
+	public class Uebung3
+	{
+
+		public static void printTimesTables(int nr1, int nr2)
+		{
+			for (int i = 1; i <= nr1; i++)
+			{
+				for(int j = 1; j <= nr2; j++)
+				{
+					// System.out.println(" i = " + i + ", j = " + j);
+					int product = i * j;
+					System.out.println(i + " * " + j + " = " + product);
+				}
+				System.out.println();
+			}
+		}
+
+		public static void printTimesMatrix(int nr1, int nr2)
+		{
+			for (int i = 1; i <= nr1; i++)
+			{
+				for(int j = 1; j <= nr2; j++)
+				{
+					System.out.print(" i = " + i + ", j = " + j + " ");
+					int product = i * j;
+					System.out.print(product + " ");
+				}
+				System.out.println();
+			}
+		}
+
+		public static void printTriangleUp(int height)
+		{
+			for(int row = 0; row < height; row++)
+			{
+				// System.out.print("Zeile " + row + " : ");
+
+				for(int nrOfStars = 0; nrOfStars < (height - row); nrOfStars++)
+				{
+					// System.out.print(nrOfStars + " ");
+					System.out.print("* ");
+				}
+
+				// System.out.println("  <- Ende Zeile " + row);
+				System.out.println();
+			}
+		}
+
+		public static void printXYZ()
+		{
+			for(int x = -36; x <= 36; x++)
+			{
+				for(int y = x; y <= 36; y++)
+				{
+					for(int z = y; z <= 36; z++)
+					{
+						if(x * y * z == 36)
+						{
+							System.out.println("x=" + x + ", y=" + y + ", z= " + z);
+						}
+					}
+				}
+			}
+		}
+
+		public static void main(String[] args)
+		{
+			System.out.println();
+			System.out.println("---------------- Aufgabe 3 --------------");
+			System.out.println();
+			printTimesTables(10,10);
+
+			System.out.println();
+			System.out.println("---------------- Aufgabe 4 --------------");
+			System.out.println();
+			printTimesMatrix(10,10);
+
+			System.out.println();
+			System.out.println("---------------- Aufgabe 5 --------------");
+			System.out.println();
+			printTriangleUp(7);
+
+
+			System.out.println();
+			System.out.println("---------------- Aufgabe 6 --------------");
+			System.out.println();
+			printXYZ();
+		}
+
+	}
+
+	```
+
+
 	
 ??? note "<a id="ubung-4"></a>Übung 4"
 	
@@ -345,6 +557,120 @@
 			d.h. alle kleinsten Teiler werden mit dem Multiplikationszeichen verbunden und am Ende erscheint `= Wert von number`. 
 		- Testen Sie alle Methoden. Rufen Sie insbesondere `printPrimenumbers(int)` und `createStringOfPrimeFactorization(int)` in der `main()`-Methode auf.
 
+
+
+??? question "Eine mögliche Lösung für Übung 4"
+	```java 
+	package uebungen.uebung4;
+
+	public class Uebung4
+	{
+		
+		public static boolean isPrime(int number)
+		{
+			if(number<2)
+			{
+				return false;
+			}
+			
+			for(int divider=2; divider<number; divider++)
+			{
+				if(number % divider == 0)
+				{
+					return false;
+				}
+			}
+			
+			return true;
+		}
+		
+		public static void printPrimeNumbers(int maximum)
+		{
+			for(int number=1; number<=maximum; number++)
+			{
+				if(isPrime(number))
+				{
+					System.out.print(number+" ");
+				}
+				else
+				{
+					System.out.print(". ");
+				}
+			}
+		}
+		
+
+		public static int getSmallestDivider(int number)
+		{
+			
+			if(number<2)
+			{
+				return number;
+			}
+
+			for(int divider=2; divider<number; divider++)
+			{
+				if(number % divider == 0)
+				{
+					return divider;
+				}
+			}
+
+			return number;
+		}
+		
+		public static String createStringOfPrimeFactorization(int number) 
+		{
+			String s = "";
+			/*
+			 * 	2 * 2 * 5 * 11 * 13 * 13 * 17 = 632060
+			 *  632060 --> 2 
+			 *  316030 --> 2
+			 *  158015 --> 5
+			 *   ...   --> divider
+			 *  result/divider == 1
+			 */
+			int smallestDivider = getSmallestDivider(number);
+			s = s + smallestDivider;
+			int result = number/smallestDivider;
+			
+			while(result > 1)
+			{
+				smallestDivider = getSmallestDivider(result);
+				s = s + " * " + smallestDivider;
+				result = result/smallestDivider;
+			}
+			s = s + " = " + number;
+			
+			return s;
+		}
+
+		public static void main(String[] args)
+		{
+			System.out.printf("%n%n----------- Aufgabe 1 ------------ %n %n");
+			for(int number = 1; number <= 100; number++)
+			{
+				System.out.println(number + " : " + isPrime(number));
+			}
+			
+			System.out.printf("%n%n----------- Aufgabe 2 ------------ %n %n");
+			printPrimeNumbers(61);
+			
+			System.out.printf("%n%n----------- Aufgabe 3 ------------ %n %n");
+			for(int number = 1; number <= 100; number++)
+			{
+				System.out.println(number + " : " + getSmallestDivider(number));
+			}
+			
+			System.out.printf("%n%n----------- Aufgabe 4 ------------ %n %n");
+			String output = createStringOfPrimeFactorization(632060);
+			System.out.println(output);
+			
+		
+		}
+
+	}
+	```
 
 	
 ??? note "<a id="ubung-5"></a>Übung 5"
@@ -512,6 +838,118 @@
 			Ihr aktuelles Guthaben betraegt 836,16 Euro.
 			```
 
+??? question "Eine mögliche Lösung für Übung 5"
+	=== "Konto.java"
+		```java 
+		package uebungen.uebung5;
+
+		public class Konto
+		{
+			private double guthaben;
+			private int pin;
+			private double dispogrenze;
+			
+			public Konto(int pPin)
+			{
+				guthaben = 0;
+				pin = pPin;
+				dispogrenze = -1000.0;
+			}
+			
+			public void einzahlen(double betrag)
+			{
+				guthaben = guthaben + betrag;
+				System.out.printf("Es wurden %.2f Euro eingezahlt.%n", betrag);
+			}
+			
+			public void auszahlen(int pPin, double betrag)
+			{
+				if(pin==pPin)
+				{
+					if(guthaben - dispogrenze >= betrag)
+					{
+						guthaben = guthaben - betrag;
+						System.out.printf("Es wurden %.2f Euro ausgezahlt.%n", betrag);
+					}
+					else
+					{
+						System.out.printf("Ihr Guthaben reicht nicht, um %.2f Euro auszuzahlen.%n", betrag);
+					}
+				}
+				else
+				{
+					System.out.println("Falsche PIN!");
+				}
+			}
+			
+			public void kontoauszug(int pPin)
+			{
+				if(pin==pPin)
+				{
+					System.out.printf("Ihr aktuelles Guthaben betraegt %.2f Euro.%n", guthaben);
+				}
+				else
+				{
+					System.out.println("Falsche PIN!");
+				}
+			}
+			
+			public void zinsenZahlen()
+			{
+				final double DISPOZINSEN = 12.0;
+				final double GUTHABENZINSEN = 0.5;
+				if(guthaben >0)
+				{
+					double zinsen = guthaben * GUTHABENZINSEN / 100.0;
+					guthaben = guthaben + zinsen;
+					System.out.printf("Ihnen wurden %.2f Euro Zinsen gutgeschrieben.%n", zinsen);
+				}
+				else
+				{
+					double zinsen = guthaben * DISPOZINSEN / 100.0;		// ist negativ!
+					guthaben = guthaben + zinsen;
+					System.out.printf("Ihnen wurden %.2f Euro Zinsen abgebucht.%n", -zinsen);
+				}
+			}
+		}
+		```
+	=== "Testklasse.java"
+		```java 
+		package uebungen.uebung5;
+
+		public class Testklasse
+		{
+
+			public static void main(String[] args)
+			{
+				Konto k1 = new Konto(1234);
+				
+				k1.einzahlen(100.0);
+				k1.einzahlen(50.0);
+				k1.einzahlen(150.0);
+				
+				k1.kontoauszug(1235); 		// Falsche PIN!
+				k1.kontoauszug(1234); 		
+				
+				k1.auszahlen(1235, 100.0); 	// Falsche PIN!
+				k1.auszahlen(1234, 100.0); 	
+				k1.kontoauszug(1234); 		
+				k1.auszahlen(1234, 300.0);	
+				k1.auszahlen(1234, 200.0); 	
+				k1.kontoauszug(1234); 
+				
+				k1.einzahlen(150.0);
+				k1.kontoauszug(1234); 		
+				k1.zinsenZahlen();
+				k1.kontoauszug(1234); 		
+				k1.einzahlen(1000.0);
+				k1.kontoauszug(1234); 		
+				k1.zinsenZahlen();
+				k1.kontoauszug(1234); 
+			}
+		}
+		```
+
 
 ??? note "<a id="ubung-6"></a>Übung 6"
 	
@@ -644,6 +1082,155 @@
 		```
 
 		Sollte die `scale()`-Methode besser ein neues `Rectangle`-Objekt zurückgeben? Wenn ja, dann implementieren Sie es so.
+
+
+??? question "Eine mögliche Lösung für Übung 6"
+	=== "Rectangle.java"
+		```java 
+		package uebungen.uebung6;
+
+		public class Rectangle
+		{
+			private int a;
+			private int b;
+			
+			public Rectangle()
+			{
+				this.a = 10;
+				this.b = 20;
+			}
+			
+			public Rectangle(int a, int b)
+			{
+				this.a = a;
+				this.b = b;
+			}
+			
+			public int area()
+			{
+				return this.a * this.b;
+			}
+			
+			public int perimeter()
+			{
+				return 2 * (this.a + this.b);
+			}
+			
+			public double diagonal()
+			{
+				int a2 = this.a * this.a;
+				int b2 = this.b * this.b;
+				double diagonal = Math.sqrt(a2 + b2);
+				return diagonal;
+			}
+			
+			public String toString()
+			{
+				/*
+				return "Rectangle : ( a=" + 
+						this.a + ", b=" + 
+						this.b + ", area=" + 
+						this.area() + ", perimeter=" + 
+						this.perimeter() + ", diagonal=" +
+						this.diagonal() + " )";
+						*/
+				return String.format("Rectangle : ( a=%2d, b=%2d, area=%3d, "
+						+ "perimeter=%2d, diagonal=%.3f )", 
+						this.a, 
+						this.b, 
+						this.area(), 
+						this.perimeter(),
+						this.diagonal());
+				
+			}
+			
+			public void print()
+			{
+				System.out.println( this.toString() );
+			}
+			
+			public boolean sidesAreEqual(Rectangle r)
+			{
+				return (this.a == r.a && this.b == r.b) ||
+						(this.a == r.b && this.b == r.a);
+			}
+			
+			public boolean areasAreEqual(Rectangle r)
+			{
+				return (this.area() == r.area());
+			}
+			
+			public boolean perimetersAreEqual(Rectangle r)
+			{
+				return (this.perimeter() == r.perimeter());
+			}
+			
+			public void printComparison(Rectangle r)
+			{
+				System.out.printf("%-9s %s %n", "this", this.toString());
+				System.out.printf("%-9s %s %n", "the other", r.toString());
+				if(this.sidesAreEqual(r))
+				{
+					System.out.println("sides are equal");
+				}
+				else
+				{
+					System.out.println("sides are not equal");
+				}
+				if(this.areasAreEqual(r))
+				{
+					System.out.println("areas are equal");
+				}
+				else
+				{
+					System.out.println("areas are not equal");
+				}
+				if(this.perimetersAreEqual(r))
+				{
+					System.out.println("perimeters are equal");
+				}
+				else
+				{
+					System.out.println("perimeters are not equal");
+				}
+				System.out.println();
+			}
+		}
+
+		```
+	=== "Testklasse.java"
+		```java 
+		package uebungen.uebung6;
+
+		public class Testklasse
+		{
+
+			public static void main(String[] args)
+			{
+				// Objekte erzeugen
+				Rectangle r1 = new Rectangle();
+				Rectangle r2 = new Rectangle(12, 18);
+				Rectangle r3 = new Rectangle(40, 5);
+				Rectangle r4 = new Rectangle(20, 10);
+				Rectangle r5 = new Rectangle(11, 21);
+
+				System.out.printf("%n%n--------------- print()-Methode -----------------%n%n");
+				r1.print();
+				r2.print();
+				r3.print();
+				r4.print();
+				r5.print();
+
+				System.out.printf("%n%n---------- printComparison()-Methode ------------%n%n");
+				r1.printComparison(r2);
+				r1.printComparison(r3);
+				r1.printComparison(r4);
+				r1.printComparison(r5);
+
+			}
+
+		}
+		```
 
 
 
@@ -888,6 +1475,137 @@
 			```
 
 
+??? question "Eine mögliche Lösung für Übung 7"
+	=== "Counter.java"
+		```java 
+		package uebungen.uebung7;
+
+		public class Counter
+		{
+			private int counter;
+			private int limit;
+			
+			public Counter(int limit)
+			{
+				this.counter = 0;
+				this.limit = limit;
+			}
+			
+			public boolean increase()
+			{
+				if(this.counter < this.limit - 1)
+				{
+					this.counter++;
+					return true;
+				}
+				else
+				{
+					this.counter = 0;
+					return false;
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+		//		String s = "";
+		//		if(this.counter < 10)
+		//		{
+		//			s += "0" + this.counter;	// s = s + "0" + this.counter
+		//		}
+		//		else
+		//		{
+		//			s += this.counter;			// s = s + this.counter
+		//		}
+		//		return s;
+				return String.format("%02d", this.counter);
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+		}
+
+		```
+	=== "Clock.java"
+		```java 
+		package uebungen.uebung7;
+
+		public class Clock
+		{
+			private Counter minutes;
+			private Counter hours;
+			
+			public Clock()
+			{
+				this.minutes = new Counter(60);
+				this.hours = new Counter(24);
+			}
+			
+			public void increase()
+			{
+				boolean increased = this.minutes.increase();
+				if(!increased)
+				{
+					this.hours.increase();
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+				return this.hours.toString() + ":" + this.minutes.toString();
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+		}
+
+		```
+	=== "Programmklasse.java"
+		```java 
+		package uebungen.uebung7;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n---------------- Test Counter -----------%n%n");
+
+				Counter counter = new Counter(60);
+				for(int i=0; i<120; i++)
+				{
+				    counter.increase();
+				    System.out.printf("%3d : ", i);
+				    counter.print();
+				}
+				
+				System.out.printf("%n----------------- Test Clock ------------%n%n");
+
+				Clock clock = new Clock();
+				for(int i=0; i<1600; i++)
+				{
+				    clock.increase();
+				    if(i%50==0)
+				    {
+				        System.out.printf("%4d : ", i);
+				        clock.print();
+				    }
+				}
+
+
+			}
+
+		}
+
+		```
+
+??? info "Video von Übung 7"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=9d51c05c846ae56f40250ff6be806c4e&width=720&height=405&autoplay=false&controls=true&autolightsoff=false&loop=false&chapters=false&playlist=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=9d51c05c846ae56f40250ff6be806c4e&width=720&height=405&autoplay=false&controls=true&autolightsoff=false&loop=false&chapters=false&playlist=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="405" title="Prog1_Uebung7" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
 ??? note "<a id="ubung-8"></a>Übung 8"
 	
@@ -917,6 +1635,231 @@
     	- Implementieren Sie eine Methode `public static boolean containsDoublets(char[] ca)` die ein `true` zurückgibt, wenn *mindestens* ein Wert in `ca` *mindestens* zwei Mal vorkommt (wenn Sie schon dabei sind, können Sie sich auch überlegen, wenn *genau* ein Wert *genau* zwei Mal vorkommt - oder *mindestens* ein Wert *genau* zwei Mal - oder *genau* ein Wert *mindestens* zwei Mal) und `false` sonst.
 
 
+??? question "Eine mögliche Lösung für Übung 8"
+
+	```java
+	package uebungen.uebung8;
+
+	public class Uebung8 {
+
+		public static void print(char[] ca)
+	    {
+			System.out.print("[");
+			
+			// Ausgabe der Werte von ca
+			for(int index = 0; index < ca.length; index++ )
+			{
+				System.out.print(ca[index]);
+				if(index < ca.length-1)
+				{
+					System.out.print(", ");
+				}
+			}
+			
+			System.out.println("]");
+	    }
+		
+		public static void print(int[] ia)
+	    {
+			System.out.print("[");
+			
+			// Ausgabe der Werte von ia
+			for(int index = 0; index < ia.length; index++ )
+			{
+				System.out.print(ia[index]);
+				if(index < ia.length-1)
+				{
+					System.out.print(", ");
+				}
+			}
+			
+			System.out.println("]");
+	    }
+		
+		public static char[] stringToCharArray(String s)
+		{
+			/*
+			 * ca hat dieselbe Laenge wie der String
+			 * (gleichviele Zeichen)
+			 */
+			char[] ca = new char[s.length()];
+			for (int index = 0; index < ca.length; index++)
+			{
+				ca[index] = s.charAt(index);
+			}
+			
+			return ca;
+		}
+		
+		public static int[] reverse(int[] iarr)
+		{
+			int[] ia = new int[iarr.length];
+			
+			/*
+			 * ia wird von links nach rechts durchlaufen
+			 * iarr von rechts nach links
+			 */
+			for (int index = 0; index < ia.length; index++)
+			{
+				ia[index] = iarr[iarr.length-1 - index];
+			}
+			return ia;
+		}
+
+		public static char[] filter(char[] carr, char filter)
+		{
+			/*
+			 * neues Array erzeugen -- Idee:
+			 * 		1. neues Array erzeugen (char[])
+			 * 		2. aber wie lang ist das neue Array?
+			 * 		3. Laenge von neuen Array ist (Laenge von carr - Anzahl des Vorkommens von filter in carr)
+			 */
+			
+			// wie oft kommt filter in carr vor?
+			int counter = 0;
+			for (int index = 0; index < carr.length; index++)
+			{
+				if(carr[index] == filter)
+				{
+					counter++;
+				}
+			}
+			
+			// jetzt wissen wir, wie oft filter in carr vorkommt: counter
+			int laengeVomNeuenArray = carr.length - counter;
+			
+			// jetzt kann das neue Array erzeugt werden (jetzt kennen wir die Laenge)
+			char[] filterArray = new char[laengeVomNeuenArray];
+			
+			/*
+			 * neues Array befuellen -- Idee:
+			 * 		1. wir laufen durch das komplette carr (for-Schleife)
+			 * 		2. fuer jedes Element aus carr pruefen, ob es dem filter entspricht
+			 * 			2a. wenn es nicht filter entspricht, dann kopieren
+			 * 			2b. wenn es filter entspricht, dann wird es nicht kopiert
+			 * 		3. wichtig: unterschiedlich indexCarr und indexNeuesArray (haben ja auch unter-
+			 * 			schiedliche Laengen)
+			 */
+			
+			// jetzt befuellen - zunaechst for-Schleife fuer carr
+			int indexFilterArray = 0;
+			for (int indexCarr = 0; indexCarr < carr.length; indexCarr++)
+			{
+				if(carr[indexCarr] != filter)
+				{
+					// dann kopieren (sonst nicht)
+					// das geht nicht: --> filterArray[indexCarr] = carr[indexCarr];
+					filterArray[indexFilterArray] = carr[indexCarr];
+					indexFilterArray++;
+				}
+			}
+			return filterArray;
+		}
+
+		public static int[] minAndMax(int[] iarr)
+		{
+			// wir koennen davon ausgehen, dass iarr.length mind. 1 ist
+			int curMin = iarr[0];
+			int curMax = iarr[0];
+			for (int index = 0; index < iarr.length; index++)
+			{
+				if(iarr[index] < curMin)
+				{
+					curMin = iarr[index];	// iarr[index] ist nun mein neues aktuelles Minimum
+				}
+				if(iarr[index] > curMax)
+				{
+					curMax = iarr[index];	// iarr[index] ist nun mein neues aktuelles Maximum
+				}
+			}
+			// entweder so:
+			/*
+			 * int[] minAndMax = new int[2]; 
+			 * minAndMax[0] = curMin; 
+			 * minAndMax[1] = curMax;
+			 * return minAndMax;
+			 */
+			
+			// oder so:
+			/*
+			 * int[] minAndMax = { curMin, curMax }; 
+			 * return minAndMax;
+			 */
+			
+			// oder so:
+			return new int[]{ curMin, curMax };
+		}
+
+		public static void main(String[] args) 
+		{
+			char[] ca1 = {'a', 'b', 'c', 'a', 'c', 'a', 'b', 'c'};
+			char[] ca2 = new char[0];
+			
+			int[] ia1 = {4,2,8,1,6,2,4,1,8};
+			int[] ia2 = { 4 };
+			
+			System.out.printf("%n%n------------------ print() --------------------%n%n");
+
+			print(ca1);
+			print(ca2);
+			print(ia1);
+			print(ia2);
+			
+			System.out.printf("%n%n------------ stringToCharArray()---------------%n%n");
+
+			char[] ca3 = stringToCharArray("Hallo FIW!");
+			print(ca3);
+			
+			System.out.printf("%n%n----------------- reverse() -------------------%n%n");
+
+			int[] ia3 = reverse(ia1);
+			print(ia1);
+			print(ia3);
+
+			System.out.printf("%n%n------------------ filter() -------------------%n%n");
+
+			print(ca1);
+			
+			char[] ca4 = filter(ca1, 'c');
+			print(ca4);
+			
+			char[] ca5 = filter(ca1, 'a');
+			print(ca5);
+				
+			char[] ca6 = filter(ca1, 'b');
+			print(ca6);
+			
+			char[] ca7 = filter(ca1, 'd');
+			print(ca7);
+			
+			System.out.println();
+			
+			print(ca3);
+			
+			char[] ca8 = filter(ca3, 'l');
+			print(ca8);
+			
+			char[] ca9 = stringToCharArray("superlangerTeststringzumFiltern kann auch Leerzeichen enthalten oder alle möglichen Zeichen ?%$§!*");
+			print(ca9);
+			print(u1.filter(ca9, 'e'));
+			
+			System.out.printf("%n%n----------------- minAndMax() ----------------%n%n");
+
+			print(ia1);
+			int[] mm1 = minAndMax(ia1);
+			print(mm1);
+
+			System.out.println();
+			
+			print(ia2);
+			int[] mm2 = minAndMax(ia2);
+			print(mm2);
+		}
+	}
+	```		
+
+??? info "Video von Übung 8"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=29c3b200767c4a80a1b20570406d734f&width=720&height=405&autoplay=false&controls=true&autolightsoff=false&loop=false&chapters=false&playlist=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=29c3b200767c4a80a1b20570406d734f&width=720&height=405&autoplay=false&controls=true&autolightsoff=false&loop=false&chapters=false&playlist=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="405" title="Prog1_uebung8" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 	
 ??? note "<a id="ubung-9"></a>Übung 9"
 	
@@ -1073,6 +2016,114 @@
 			Es muss das `target` nicht exakt getroffen werden, das ist Zufall. Es stoppt, sobald `100` oder mehr Punkte erreicht wurden. 
 
 
+??? question "Eine mögliche Lösung für Übung 9"
+
+	```java
+	package uebungen.uebung9;
+
+	import java.util.Random;
+
+	public class Uebung9
+	{
+		public static int throwDice()
+		{
+			Random r = new Random();
+			return r.nextInt(6)+1;
+		}
+		
+		public static void printThrow(int cast)
+		{
+			System.out.println("Es wurde eine " + cast + " gewuerfelt.");
+		}
+		
+		public static void insertIntoStatistics(int[] statistics, int cast)
+		{
+			int index = cast - 1;
+			statistics[index]++;
+		}
+		
+		public static void printStatistics(int[] statistics)
+		{
+			System.out.print("[ ");
+			
+			int counter = 1;
+			for (int index = 0; index < statistics.length; index++) 
+			{
+				System.out.print("(" + statistics[index] + " x " + counter + ")");
+				counter++;
+				if(index < statistics.length - 1)
+				{
+					System.out.print(", ");
+				}
+			}
+			
+			System.out.println(" ]");
+		}
+		
+		public static int sumOfStatistics(int[] statistics)
+		{
+			int sum = 0;
+			
+			for (int index = 0; index < statistics.length; index++) 
+			{
+				sum = sum + (statistics[index] * (index+1));
+			}
+			
+			return sum;
+		}
+		
+		public static int throwDiceUntilTarget(int target, int[] statistics)
+		{
+			int tries = 0;
+			
+			while(sumOfStatistics(statistics) < target)
+			{
+				int cast = throwDice();
+				printThrow(cast);
+				insertIntoStatistics(statistics, cast);
+				tries++;
+			}
+			
+			return tries;
+		}
+		
+		public static void main(String[] args)
+		{
+			int[] statistics = new int[6];
+
+			System.out.printf("%n%n------------------- Test throwDice and printThrow -------------------%n%n");
+			for(int index=0; index<10; index++)
+			{
+			    int cast = throwDice();
+			    printThrow(cast);
+			}
+			
+			statistics = new int[6];
+			System.out.printf("%n%n------------------ Test insert- and printStatistics -----------------%n%n");
+			for(int index=0; index<100; index++)
+			{
+			    int cast = throwDice();
+			    insertIntoStatistics(statistics, cast);
+			}
+			printStatistics(statistics);
+			
+			System.out.printf("%n%n--------------------- Test sumOfStatistics --------------------------%n%n");
+			printStatistics(statistics);
+			int sumTest = sumOfStatistics(statistics);
+			System.out.println("Summe = " + sumTest);
+
+			System.out.printf("%n%n------------------- Test throwDiceUntilTarget -----------------------%n%n");
+			statistics = new int[6];    // altes Array war schon befuellt 
+			final int TARGET = 100;
+			int tries = throwDiceUntilTarget(TARGET, statistics);
+			printStatistics(statistics);
+			int sum = sumOfStatistics(statistics);
+			System.out.println("Es wurden " + tries + " Versuche benötigt, um " + sum + " Punkte zu erzielen.");
+		}
+
+	}
+	```		
+
 
 ??? note "<a id="ubung-10"></a>Übung 10"
 	
@@ -1127,11 +2178,174 @@
 			```
 
 
+??? question "Eine mögliche Lösung für Übung 10"
+	=== "Lottery.java"
+		```java
+		package uebungen.uebung10;
+
+		import java.util.Iterator;
+		import java.util.Random;
+
+		public class Lottery
+		{
+			private int[] drawingResults;
+			
+			public Lottery()
+			{
+				this.drawingResults = new int[5];
+			}
+			
+			public boolean contains(int number)
+			{
+				for (int index = 0; index < this.drawingResults.length; index++) 
+				{
+					if(this.drawingResults[index] == number)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			public void drawing()
+			{
+				Random r = new Random();
+				
+				for (int index = 0; index < this.drawingResults.length; index++) 
+				{
+					int newValue = r.nextInt(9) + 1;
+					while(this.contains(newValue)) 
+					{
+						newValue = r.nextInt(9) + 1; 
+					}
+					this.drawingResults[index] = newValue;
+				}	
+			}
+			
+			public void print()
+			{
+				String s = "[ ";
+				for (int index = 0; index < this.drawingResults.length; index++) 
+				{
+					s += this.drawingResults[index];
+					if(index < this.drawingResults.length-1)
+					{
+						s += ", ";
+					}
+				}
+				s += " ]";
+				//System.out.println(s);
+				System.out.println(this.toString());
+			}
+			
+			public void sort()
+			{
+				for (int bubble = 0; bubble < this.drawingResults.length-1; bubble++) 
+				{
+					for (int index = 0; index < this.drawingResults.length-1-bubble; index++) 
+					{
+						if(this.drawingResults[index] > this.drawingResults[index+1])
+						{
+							int tmp = this.drawingResults[index];
+							this.drawingResults[index] = this.drawingResults[index+1];
+							this.drawingResults[index+1] = tmp;
+						}
+					}
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = "( ";
+				for(int number=1; number<10; number++)
+				{
+					if(this.contains(number))
+					{
+						s += number + " ";
+					}
+					else
+					{
+						s += "- ";
+					}
+				}
+				s += ")";
+				return s;
+			}
+			
+			public boolean isEqual(Lottery lo)
+			{
+				/*
+				this.sort();
+				lo.sort();
+				for (int index = 0; index < this.drawingResults.length; index++) 
+				{
+					if(this.drawingResults[index] != lo.drawingResults[index])
+					{
+						return false;
+					}
+				}
+				return true;
+				*/
+				for (int index = 0; index < this.drawingResults.length; index++) 
+				{
+					if(!lo.contains(this.drawingResults[index]))
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+		}
+		```		
+	=== "Programmklasse.java"
+		```java
+		package uebungen.uebung10;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				for(int i=0; i<10; i++)
+				{
+					Lottery lo = new Lottery();
+					lo.drawing();
+					lo.sort();
+					lo.print();
+				}
+				
+				System.out.printf("%n%n--------- Zusatz ------------%n%n");
+				
+				Lottery lo1 = new Lottery();
+				lo1.drawing();
+				lo1.print();
+				
+				Lottery lo2 = new Lottery();
+				lo2.drawing();
+				while(!lo1.isEqual(lo2))
+				{
+					lo2 = new Lottery();	// damit das Array wieder leer ist
+					lo2.drawing();
+				}
+				lo2.print();
+			}
+
+		}
+		```
+
+
+??? info "Video von Übung 10"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=b1d7a0585e6ad4180b4d8eabc98b8bb6&width=720&height=405&autoplay=false&controls=true&autolightsoff=false&loop=false&chapters=false&playlist=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=b1d7a0585e6ad4180b4d8eabc98b8bb6&width=720&height=405&autoplay=false&controls=true&autolightsoff=false&loop=false&chapters=false&playlist=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="405" title="Prog1_Uebung10" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 
 ??? note "<a id="ubung-11"></a>Übung 11"
 
 	[Übung 11 (pdf)](./files/prog1_uebung11.pdf)
 
+
+??? question "Eine mögliche Lösung für Übung 11"
+
+	[Übung 11 Lösung (pdf)](./files/prog1_uebung11_lsg.pdf)
 
 
 ??? note "<a id="ubung-12"></a>Übung 12"
@@ -1149,6 +2363,295 @@
 	- Implementieren Sie die `replace(char, char)`-Methode der Klasse [String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html) nach. 
 	- Implementieren Sie die `split(char)`-Methode der Klasse [String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html) nach. 
 
+??? question "Quellcode aus Übung 12a"
+	=== "Uebung12.java"
+		```java
+		package uebungen.uebung12a;
+
+		public class Uebung12
+		{
+			// enthaelt ein ein int-Array Doppelungen?
+			
+			public static boolean containsDoubles(int[] arr)
+			{
+				boolean foundDouble = false;
+				for (int index = 0; index < arr.length && !foundDouble; index++) 
+				{
+					// pruefe, ob arr[index] in arr ab Index index+1 vorkommt
+					// wenn ja, dann return true (Methode wird sofort verlassen)
+					// wenn nicht, dann index++ (Schleife)
+					int elementToCheck = arr[index];
+					for(int indexNochNichtAbgearbeitet = index+1; indexNochNichtAbgearbeitet < arr.length; indexNochNichtAbgearbeitet++)
+					{
+						int elementToCompare = arr[indexNochNichtAbgearbeitet];
+						//if(arr[index] == arr[indexNochNichtAbgearbeitet])			// funktioniert!
+						if(elementToCheck == elementToCompare)
+						{
+							foundDouble = true;
+						}
+					}
+				}
+				return foundDouble;
+			}
+			
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n------------------ a1 -------------------------%n%n");
+				int[] a1 = new int[5];	// 5 int-Variablen erzeugt (a1[0], a1[1], ... , a1[4]
+				
+				a1[0] = 4;
+				a1[1] = 3;
+				a1[2] = 2;
+				a1[3] = 4;
+				a1[4] = 1;
+				System.out.println("Laenge von a1 : " + a1.length);
+				System.out.println("Wert in a1 am Index 3 ist " + a1[3]);
+				
+				int index = 2;
+				System.out.println("Wert in a1 am Index " + index + " ist " + a1[index]);
+				index = 4;
+				System.out.println("Wert in a1 am Index " + index + " ist " + a1[index]);
+				
+				for(int i = 0; i < a1.length; i++)
+				{
+					System.out.println("Wert in a1 am Index " + i + " ist " + a1[i]);
+				}
+				
+				System.out.printf("%n%n------------------ contains a1 -------------------------%n%n");
+				System.out.println(containsDoubles(a1));
+				
+				System.out.printf("%n%n------------------ a2 -------------------------%n%n");
+				int[] a2 = { 5, 3, 2, 5, 2, 1, 8 }; // 7 int-Variablen erzeugt (a2[0], a2[1], ... , a2[6]
+				System.out.println("Laenge von a2 : " + a2.length);
+				System.out.println("Wert in a2 am Index 3 ist " + a2[3]);
+				
+				for(int i = 0; i < a2.length; i++)
+				{
+					System.out.println("Wert in a2 am Index " + i + " ist " + a2[i]);
+				}
+				
+				System.out.printf("%n%n------------------ contains a2 -------------------------%n%n");
+				System.out.println(containsDoubles(a2));
+				
+				System.out.printf("%n%n------------------ contains a3 -------------------------%n%n");
+				int[] a3 = { 5, 3, 2, 0, 4, 1, 8 };
+				System.out.println(containsDoubles(a3));
+				
+				System.out.printf("%n%n------------------ NeuerTyp -------------------------%n%n");
+				NeuerTyp nt1 = new NeuerTyp(20);
+				nt1.fillArray();
+				System.out.println(nt1.containsDoubles());
+				
+				NeuerTyp nt2 = new NeuerTyp(10);
+				nt2.fillArray();
+				System.out.println(nt2.containsDoubles());
+				
+				NeuerTyp nt3 = new NeuerTyp(100);
+				nt3.fillArray();
+				System.out.println(nt3.containsDoubles());
+			}
+
+		}
+		```
+	=== "NeuerTyp.java"
+		```java
+		package uebungen.uebung12a;
+
+		import java.util.Random;
+
+		public class NeuerTyp
+		{
+			private int[] myArray;
+			
+			public NeuerTyp(int length)
+			{
+				this.myArray = new int[length];
+				//this.fillArray();
+			}
+			
+			public void fillArray()
+			{
+				Random r = new Random();
+				for(int i = 0; i < this.myArray.length; i++)
+				{
+					this.myArray[i] = r.nextInt(100);
+				}
+			}
+			
+			public boolean containsDoubles()
+			{
+				boolean foundDouble = false;
+				for (int index = 0; index < this.myArray.length; index++) 
+				{
+					// pruefe, ob arr[index] in arr ab Index index+1 vorkommt
+					// wenn ja, dann return true (Methode wird sofort verlassen)
+					// wenn nicht, dann index++ (Schleife)
+					int elementToCheck = this.myArray[index];
+					for(int indexNochNichtAbgearbeitet = index+1; indexNochNichtAbgearbeitet < this.myArray.length; indexNochNichtAbgearbeitet++)
+					{
+						int elementToCompare = this.myArray[indexNochNichtAbgearbeitet];
+						//if(arr[index] == arr[indexNochNichtAbgearbeitet])			// funktioniert!
+						if(elementToCheck == elementToCompare)
+						{
+							foundDouble = true;
+						}
+					}
+				}
+				return foundDouble;
+			}
+		}
+		```
+
+
+??? info "Video von Übung 12a"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=5f90b3baed1c8059edcfc85afbf4d72b&width=720&height=405&autoplay=false&controls=true&autolightsoff=false&loop=false&chapters=false&playlist=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=5f90b3baed1c8059edcfc85afbf4d72b&width=720&height=405&autoplay=false&controls=true&autolightsoff=false&loop=false&chapters=false&playlist=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="405" title="Prog1_uebung12a" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
+
+
+??? question "Quellcode aus Übung 12b"
+	=== "Uebung12.java"
+		```java
+		package uebungen.uebung12b;
+
+		import java.util.Random;
+
+		public class Uebung12
+		{
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n------ Schleifen ------ %n%n");
+				Random r = new Random();
+				int[] a1 = new int[10];	// 10 int-Variablen a1[0], a1[1], ... , a1[9]
+				
+				System.out.println("Laenge von a1 ist " + a1.length);
+				
+				a1[0] = 12;
+				a1[1] = 10;
+				
+				for(int index = 2; index < a1.length; index++)
+				{
+					System.out.println("Wert der Variablen index ist : " + index);
+					int neuerWert = r.nextInt(10) + 10; // r.nextInt(10) erzeugt eine Zufallszahl 
+														// aus dem Bereich 0, 1, .., 9
+														// wegen +10 aus dem Bereich 10, 11, ... 19
+					a1[index] = neuerWert;
+					System.out.println("a1[" + index + "] = " + neuerWert);
+				}
+				System.out.println("Schleifenende");
+				
+				// diese while-Schleife ist identisch mit ...
+				int index = 0;
+				System.out.print("[ ");
+				while(index < a1.length)
+				{
+					System.out.print(a1[index] + " ");
+					index++;
+				}
+				System.out.println("]");
+				
+				// ... dieser for-Schleife
+				System.out.print("[ ");
+				for(int i = 0; i < a1.length; i++)
+				{
+					System.out.print(a1[i] + " ");
+				}
+				System.out.println("]");
+				
+				// 3n+1-Problem
+				int startZahl = 7;
+				int naechsteZahl;
+				if(startZahl % 2 == 0) // gerade Zahl
+				{
+					naechsteZahl = startZahl / 2;
+				}
+				else // ungerade Zahl
+				{
+					naechsteZahl = startZahl * 3 + 1;
+				}
+				System.out.print(startZahl + " " + naechsteZahl);
+				
+				while(naechsteZahl > 1)
+				{
+					if(naechsteZahl % 2 == 0) // gerade Zahl
+					{
+						naechsteZahl = naechsteZahl / 2;
+					}
+					else // ungerade Zahl
+					{
+						naechsteZahl = naechsteZahl * 3 + 1;
+					}
+					System.out.print(" " + naechsteZahl);
+				}
+				
+				System.out.printf("%n%n------ ListElement ------ %n%n");
+				ListElement l1 = new ListElement('a');
+				ListElement l2 = new ListElement('b');
+				l1.insertBefore(l2);
+				
+				/*
+					int indexX = i;
+					int indexB = x[indexX];
+					b[indexB] = true;
+					
+					gleich:
+					
+					b[x[i]] = true;
+				
+
+				 * b = { f , t , t , t , f }
+				 */
+			}
+
+		}
+
+		```
+	=== "ListElement.java"
+		```java
+		package uebungen.uebung12b;
+
+		public class ListElement
+		{
+			private char value;
+			private boolean hasSuccessor;
+			private boolean hasPredecessor;
+			private ListElement predecessor;
+			private ListElement successor;
+
+			/*
+			E <-> E <-> E
+			 */
+
+			public ListElement(char value)
+			{
+				this.value = value;
+				this.hasPredecessor = false;
+				this.hasSuccessor = false;
+			}
+
+			public void insertBefore(ListElement element)
+			{
+				/*
+				 * irgend <-> element --> irgend <-> this <-> element
+				 * this <-> element
+				 */
+				if(element.hasPredecessor)
+				{
+					this.hasPredecessor = true;
+					this.predecessor = element.predecessor;
+				}
+				
+				this.hasSuccessor = true;
+				this.successor = element;
+				element.hasPredecessor = true;
+				element.predecessor = this;
+			}
+		}
+		```
+
+
+??? info "Video von Übung 12b"
+	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=1db30c08e884fc7ea7a73b86aa60ffbd&width=720&height=405&autoplay=false&controls=true&autolightsoff=false&loop=false&chapters=false&playlist=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=1db30c08e884fc7ea7a73b86aa60ffbd&width=720&height=405&autoplay=false&controls=true&autolightsoff=false&loop=false&chapters=false&playlist=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="405" title="Prog1_uebung12b" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 	
 ## Probeklausuren
 
