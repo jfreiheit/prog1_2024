@@ -11,7 +11,7 @@
 	`Prog1`) im Dateisystem. Achten Sie darauf, dass Sie Schreibrechte in diesem Ordner besitzen.
 	5. Anlegen eines Projektordners:
 		* Auswahl im Menü `File-->New-->Java Project`.
-		* Eingabe des `Project name:` Name des Projektes (z.B. `WiSe23`). Klicken auf den Button `Finish`.
+		* Eingabe des `Project name:` Name des Projektes (z.B. `WiSe24`). Klicken auf den Button `Finish`.
 		* Das Fenster `New module-info.java` können Sie einfach mit `Create` bestätigen.
 	4. Erstellen eines neuen Packages (Paketes):
 		* Öffnen der Projektmappe im `Package Explorer`.

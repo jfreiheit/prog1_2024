@@ -21,7 +21,7 @@ Der Plan zur Durchführung der Veranstaltung ist derzeit wie folgt:
 - Themen werden ausführlich in der Vorlesung vorgestellt und in diesem Skript beschrieben.
 - Es ist geplant, die neuen Themen stets vorab in diesem Skript hier zu veröffentlichen. Sie können sich also bereits vorab mit dem jeweiligen neuen Thema beschäftigen. 
 - Zusammen mit dem Skript (das neue Thema) werden sowohl die dazugehörige Übung als auch die dazugehörige Aufgabe hochgeladen.
-- Die beiden Übungen am Dienstag und am Mittwoch sind jeweils gleich (d.h. dort werden die gleichen Übungsaufgaben gelöst). Die Übungen behandeln den Stoff, der am Dienstag in der gleichen Woche besprochen wird. Das bedeutet: das neue Thema wird am Dienstag in der Vorlesung vermittelt und direkt danach oder an dem folgenden Mittwoch in der Übung angewendet. 
+- Die beiden Übungen am Freitag sind jeweils gleich (d.h. dort werden die gleichen Übungsaufgaben gelöst). Die Übungen behandeln den Stoff, der am Montag und Mittwoch in der gleichen Woche besprochen wird. Das bedeutet: das neue Thema wird am Montag und Mittwoch in den Vorlesungen vermittelt und am folgenden Freitag in der Übung angewendet. 
 - Sie können frei wählen, welche der beiden Übungen Sie besuchen. Sie können auch beliebig wöchentlich wechseln. 
 - Es wird ein Tutorium angeboten (Termin wird noch bekanntgegeben). 
 - Sollten Sie Wünsche haben, diesen Plan zu ändern, kommen Sie gerne auf mich zu.

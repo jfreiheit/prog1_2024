@@ -2,7 +2,7 @@
 
 Bevor wir uns mit der Funktionsweise von Java auseinandersetzen, schreiben wir einfach einmal unser erstes Programm. Wir öffnen dazu [*Eclipse*](tools.md#eclipse) und erstellen uns eine Klasse `HelloFIW`. Dazu 
 
-1. erstellen wir uns ein Java-Projekt (falls noch nicht geschehen): Menüpunkt `File --> New --> Java Project`, geben in das Textfeld `Project name:` z.B. `WS22` ein.
+1. erstellen wir uns ein Java-Projekt (falls noch nicht geschehen): Menüpunkt `File --> New --> Java Project`, geben in das Textfeld `Project name:` z.B. `WS24` (in den Screenshots steht dort `WS22`) ein.
 
 	![Projekt](./files/01_project.png)
 
