@@ -48,15 +48,15 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 2. | 14.-18.10.2024 | [Variablen und Datentypen](variablen.md#variablen-und-datentypen) | [Übung 1](uebungen.md#ubung-1)| -  | - | 
 | 3. | 21.-25.10.2024 | [Operatoren und Ausdrücke](ausdruecke.md#operatoren-und-ausdrucke) sowie [Methoden](methoden.md#methoden) | [Übung 2](uebungen.md#ubung-2)| -  | - | 
 | 4. | 28.-01.11.2024 | [Selektion (if)](selektion.md#selektion) und [Iteration (for)](iteration.md#die-for-schleife)| [Übung 3](uebungen.md#ubung-3)| - | - | 
-| 5. | 04.-08.11.2024 | [Iteration (while)](iteration.md#die-while-schleife) und [Methodenstack](methodenstack.md#methodenstack) | [Übung 4](uebungen.md#ubung-4)| [Aufgabe 1](aufgaben.md#aufgabe-1) | 22.11.2023 | 
-| 6. | 11.-15.11.2024 | [Klassen und Objekte](objekte1.md#klassen-und-objekte) | [Übung 5](uebungen.md#ubung-5)| [Aufgabe 2](aufgaben.md#aufgabe-2)  | 29.11.2023 | 
-| 7. | 18.-22.11.2024 | [Konstruktoren, this, eigene Datentypen, Rückgabe von Objekten](objekte2.md#klassen-und-objekte-ii) | [Übung 6](uebungen.md#ubung-6)| [Aufgabe 3](aufgaben.md#aufgabe-3) | 06.12.2023 | 
-| 8. | 25.-29.11.2024 | [Vererbung,](vererbung.md#vererbung) [Object und Polymorphie](object.md#die-klasse-object) | [Übung 7](uebungen.md#ubung-7)| [Aufgabe 4](aufgaben.md#aufgabe-4)  | 13.12.2023 |
-| 9. | 02.-06.12.2024 | [Arrays](arrays.md#arrays) | [Übung 8](uebungen.md#ubung-8)| [Aufgabe 5](aufgaben.md#aufgabe-5)  | 20.12.2023 |
-| 10. | 09.-13.12.2024 | [Algorithmen über Arrays](arrays.md#algorithmen-uber-arrays) | [Übung 9](uebungen.md#ubung-9)| [Aufgabe 6](aufgaben.md#aufgabe-6) | 03.01.2024 |
-| 11. | 16.-20.12.2024 | [Sortieren von Arrays](sortieren.md#sortieren-von-arrays)  | [Übung 10](uebungen.md#ubung-10)| [Aufgabe 7](aufgaben.md#aufgabe-7)  | 10.01.2024 |
+| 5. | 04.-08.11.2024 | [Iteration (while)](iteration.md#die-while-schleife) und [Methodenstack](methodenstack.md#methodenstack) | [Übung 4](uebungen.md#ubung-4)| [Aufgabe 1](aufgaben.md#aufgabe-1) | 22.11.2024 | 
+| 6. | 11.-15.11.2024 | [Klassen und Objekte](objekte1.md#klassen-und-objekte) | [Übung 5](uebungen.md#ubung-5)| [Aufgabe 2](aufgaben.md#aufgabe-2)  | 29.11.2024 | 
+| 7. | 18.-22.11.2024 | [Konstruktoren, this, eigene Datentypen, Rückgabe von Objekten](objekte2.md#klassen-und-objekte-ii) | [Übung 6](uebungen.md#ubung-6)| [Aufgabe 3](aufgaben.md#aufgabe-3) | 06.12.2024 | 
+| 8. | 25.-29.11.2024 | [Vererbung,](vererbung.md#vererbung) [Object und Polymorphie](object.md#die-klasse-object) | [Übung 7](uebungen.md#ubung-7)| [Aufgabe 4](aufgaben.md#aufgabe-4)  | 13.12.2024 |
+| 9. | 02.-06.12.2024 | [Arrays](arrays.md#arrays) | [Übung 8](uebungen.md#ubung-8)| [Aufgabe 5](aufgaben.md#aufgabe-5)  | 20.12.2024 |
+| 10. | 09.-13.12.2024 | [Algorithmen über Arrays](arrays.md#algorithmen-uber-arrays) | [Übung 9](uebungen.md#ubung-9)| [Aufgabe 6](aufgaben.md#aufgabe-6) | 03.01.2025 |
+| 11. | 16.-20.12.2024 | [Sortieren von Arrays](sortieren.md#sortieren-von-arrays)  | [Übung 10](uebungen.md#ubung-10)| [Aufgabe 7](aufgaben.md#aufgabe-7)  | 10.01.2025 |
 | | | | | | | |
-| 12. | 06.-10.01.2025 | [Suchen in Arrays](arrays.md#suchen-in-arrays) | [Übung 11](uebungen.md#ubung-11)| [Aufgabe 8](aufgaben.md#aufgabe-8)  | 17.01.2024 |
+| 12. | 06.-10.01.2025 | [Suchen in Arrays](arrays.md#suchen-in-arrays) | [Übung 11](uebungen.md#ubung-11)| [Aufgabe 8](aufgaben.md#aufgabe-8)  | 17.01.2025 |
 | 13. | 13.-17.01.2025 | [JavaDoc](javadoc.md#javadoc) | [Übung 12](uebungen.md#ubung-12)| - | - |
 | 14. | 20.-24.01.2025 | Wiederholung, Klausurvorbereitung  | | -  | - |
 | 15. | 27.-31.01.2025 | Wiederholung, Klausurvorbereitung | | - | - |
