@@ -66,7 +66,7 @@
 	```bash
 	Wert von i 	: 	2147483647
 	```
-	Erhöhen Sie nun den Wert der Variablen um `1` und geben Sie den Wert erneut aus. Was passiert? Warum?
+	Versuchen Sie nun den Wert auf `2147483648` zu setzen. Was passiert? Warum?
 	5. Wiederholen Sie das gleiche mit einer `long`-Variablen.
 	6. Weisen Sie Ihrer `char`-Variablen den Wert `65` zu. Geben Sie den Wert Ihrer `char`-Variablen aus. Was passiert? Warum?
 	7. Gegeben ist die folgende Klasse:
@@ -78,7 +78,7 @@
 			public static void main(String[] args) 
 			{
 				System.out.print("answer=");
-				System.out.println(40 + 2);
+				System.out.println(42);
 			}
 		}
 		```
@@ -101,6 +101,72 @@
 		```
 	
 
+
+??? question "Eine mögliche Lösung für Übung 1"
+	```java
+	package uebungen.uebung1;
+
+	public class Uebung1
+	{
+		public static void main(String[] args)
+		{
+			int in = 123;
+			long lo = 456789;
+			char ch = 'a';
+			byte by = 127;
+			short sh = 32767;
+			float fl = 4.23f;		// f notwendig
+			double d1 = 6.98;
+			boolean b1 = true;
+			String s1 = "Hallo!";
+			
+			System.out.println(" --- Aufgabe 3 -------");
+			System.out.println();
+			System.out.print("Wert vom Typ int     : ");
+			System.out.println(in);
+			System.out.print("Wert vom Typ long    : ");
+			System.out.println(lo);
+			System.out.print("Wert vom Typ char    : ");
+			System.out.println(ch);
+			System.out.print("Wert vom Typ byte    : ");
+			System.out.println(by);
+			System.out.print("Wert vom Typ short   : ");
+			System.out.println(sh);
+			System.out.print("Wert vom Typ float   : ");
+			System.out.println(fl);
+			System.out.print("Wert vom Typ double  : ");
+			System.out.println(d1);
+			System.out.print("Wert vom Typ boolean : ");
+			System.out.println(b1);
+			System.out.print("Wert vom Typ String  : ");
+			System.out.println(s1);
+			
+			System.out.println();
+			System.out.println(" --- Aufgabe 4 -------");
+			System.out.println();
+			in = 2147483647;
+			System.out.println("Wert vom Typ int     : " + in );
+			//in = 2147483648;		// Compilerfehler out of range
+			
+			System.out.println();
+			System.out.println(" --- Aufgabe 5 -------");
+			System.out.println();
+			lo = 2147483647;	
+			System.out.println("Wert vom Typ long    : " + lo );
+			lo = 2147483648L;		// L notwendig, da 2147483648 kein int	
+			System.out.println("Wert vom Typ long    : " + lo );
+			
+			System.out.println();
+			System.out.println(" --- Aufgabe 6 -------");
+			System.out.println();
+			ch = 65;
+			System.out.println(ch);		// A
+			
+			// 7 a)		
+		}
+
+	}
+	```
 
 ??? note "<a id="ubung-2"></a>Übung 2"
 	
