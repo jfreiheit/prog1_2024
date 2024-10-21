@@ -65,3 +65,149 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ## Code aus der Vorlesung
 
+
+??? question "Vorlesung Datentypen und Variablen"
+	```java
+	package vorlesungen.vorl1016;
+
+	public class Datentypen
+	{
+		public static void main(String[] args) 
+		{
+			// hier hinter koennen Sie schreiben, was Sie moechten
+			// Zeilenkommentar
+
+			/*
+				Blockkommentar ueber mehrere Zeilen
+				alles 
+				noch
+				Kommentar
+			*/
+			
+			  System.out.println("test test test"); 
+			  System.out.println("test test test");
+			  
+			  int ganzeZahl = 0;
+			  boolean wahrheitswert = true;
+			  double gleitkommaZahl = 1.0;
+			  char zeichen = 'a';
+			  String zeichenkette = "Das ist eine Zeichenkette";
+			  
+			  System.out.println(zeichenkette);
+			  
+			  ganzeZahl = 5;
+			  System.out.println(ganzeZahl);
+			  
+			  ganzeZahl = 9;
+			  System.out.println(ganzeZahl);
+			  
+			  wahrheitswert = true;
+			  gleitkommaZahl = 5.5;
+			  
+			  gleitkommaZahl = 17.56;
+			  
+			  double number = 1;
+			  System.out.println(number);
+			  
+			  //int numberInt = 1.0;
+			  //System.out.println(numberInt);
+			  
+			  System.out.println(ganzeZahl);
+			  
+			  ganzeZahl = ganzeZahl + 1;
+			  
+			  System.out.println(ganzeZahl);
+			  
+			  byte test = 127;
+			  test = (byte) (test + 1);
+			  System.out.println(test);
+			 
+		}
+
+	}
+	```
+
+??? question "Vorlesung Ausdrücke"
+	```java
+	package vorlesungen.vorl1021;
+
+	public class Ausdruecke
+	{
+
+		public static void main(String[] args)
+		{
+			System.out.println();
+			System.out.println("------ arithmetische Operatoren ------");
+			System.out.println();
+			System.out.println(3 + 4);
+			System.out.println(3.0 - -4);
+			System.out.println(3 * 4);
+			System.out.println(3.0 * -4);
+			System.out.println(-4);
+			System.out.println(+4);
+			System.out.println(-4.0);
+			System.out.println(+4.0);
+			System.out.println(9 / 3);
+			System.out.println(9.0 / 3.0);
+			
+			System.out.println(5 / 3);		// int-Division 1
+			System.out.println(5.0 / 3);	// double-Division 1.66
+			System.out.println(5 / 3.0);	// double-Division 1.66
+			System.out.println(5.0 / 3.0);	// double-Division 1.66
+			
+			System.out.println(5 % 3);		// Rest 2
+			System.out.println(5 + 3 * 4); 	// 17
+			
+			int x = 3 + 4 * 5 + 6 - 7;		// 22
+			x = 3 + 4 * (5 + 6) - 7;		// 40
+			System.out.println(x);
+			x = x + 1;
+			System.out.println(x);
+			x++;							// x = x + 1;
+			System.out.println(x);
+			++x;
+			System.out.println(x);			// x = x + 1;
+			x+=1;
+			System.out.println(x);			// x = x + 1;
+			x*=3;							// x = x * 3;
+			x/=3;							// x = x / 3;
+			x-=3;							// x = x - 3;
+			x%=3;							// x = x % 3;
+			
+			System.out.println();
+			System.out.println("------ Vergleichsoperatoren ------");
+			System.out.println();
+			
+			int y = 7;
+			int z = 8;
+			int w = 8;
+			System.out.println(y < z);		// true
+			System.out.println(y > z);		// false
+			System.out.println(y == z); 	// false
+			System.out.println(z == w); 	// true
+			System.out.println(y <= z); 	// true
+			System.out.println(y >= z); 	// false
+			
+			System.out.println(y % 2 == 1 ); 	// wenn true, dann y ungerade (false: gerade)
+			System.out.println(y % 2 == 0 ); 	// wenn true, dann y gerade (false: ungerade)
+
+			
+			System.out.println();
+			System.out.println("------ Zeichenkettenverbindungsoperator ------");
+			System.out.println();
+		
+			
+			String s1 = "Hello " + "FIW!";
+			String s2 = " noch mehr dazu ";
+			String s3 = s1 + s2;
+			System.out.println(s1);
+			System.out.println(s3+s1);
+			
+			int a = 3;
+			System.out.println(a);
+			System.out.println("a = " + a);		// "a = " + "3"
+			System.out.println(a + " = a");		// "3" + " = a"
+		}
+
+	}
+	```
