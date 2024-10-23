@@ -172,41 +172,33 @@
 	
 	1. Erstellen Sie ein package `uebungen.uebung2`. 
 	2. Erstellen Sie in diesem package eine Klasse `Uebung2` mit `main()`-Methode.
-	3. Schreiben Sie eine Methode 
-	```java
-	public static void printIntDivision(int nr1, int nr2) 
-	{
-	}
-	``` 
-	Diese Methode soll folgende Ausgabe auf die Konsole erzeugen,
-	z.B. für `printIntDivision(7, 4);` die Ausgabe 
-	```bash
-	7 geteilt durch 4 ergibt 1. Es bleibt ein Rest von 3
-	```
-	z.B. für `printIntDivision(17, 4);` die Ausgabe
+	3. Deklarieren Sie in `main()` 2 `int`-Variablen und geben Sie Ihnen Werte (die folgenden Werte `17` und `4` sind nur Beispiele). Erzeugen Sie nun unter Verwendung dieser Variablen folgende Ausgabe (bei anderen Werten natürlich entsprechend anders):  
 	```bash 
 	17 geteilt durch 4 ergibt 4. Es bleibt ein Rest von 1
 	```
 	
-		Rufen Sie die Methode entsprechend in der `main()`-Methode auf!
 
-	5. Schreiben Sie zwei Methoden 
-	```java
-	public static int getQuotient(int nr1, int nr2) {} // und 
-	public static int getRemainder(int nr1, int nr2) {}
-	``` 
-	Deklarieren Sie in der main()-Methode zwei int-Variablen und weisen Sie diesen Werte zu (z.B. `17` und `4`). Wenden Sie die beiden Methoden so an, dass mit Hilfe der `println()`-Methode folgende Ausgaben erscheinen: 
+	4. Erzeugen Sie nun stattdessen folgende Ausgabe: 
 	```bash 
 	17/4 = 4
 	17 mod 4 = 1
 	```
-	6. Besitzen die folgende Methodenaufrufe einem Wert? Wenn ja, welcher?
+	5. Beachten Sie, dass Sie den Wert für den Quotienten und für den Rest für `3.` und `4.` nur einmal ermitteln sollen.
 
-		- `printIntDivision(17, 4);`
-		- `getQuotient(17,4);`
-		- `getRemainder(17,4);`
+	6. Deklarieren Sie sich eine `boolean`-Variable. Der Wert der Variablen soll `true` sein, wenn das Produkt der beiden `int`-Variablen aus `3.` gerade ist und `false`, wenn es ungerade ist. 
 
-	7. Können wir die Methoden `getQuotient(int nr1, int nr2)` und `getRemainder(int nr1, int nr2)` auch in der `printIntDivision(int nr1, int nr2)`-Methode verwenden/aufrufen? Wenn ja, wie?
+	7. Probieren Sie die Dvision `100/3` in den folgenden Datentypen: `int`, `float`, `double`. Was stellen Sie fest? 
+
+	8. Prüfen Sie, ob die letzte Ziffer von 2 `int`-Variablen gleich ist (dann `true`, sonst `false`). 
+
+	9. <b>Zusatz</b>: Gegeben sei eine Anzahl von Stunden. Geben Sie aus, wieviel ganze Tage in dieser Anzahl enthalten sind, z.B. 
+	```bash 
+	In 34567 Stunden sind 1440 ganze Tage enthalten.
+	```
+	Wieviele Stunden bleiben übrig? 
+	```bash
+	Zieht man von den 34567 Stunden die 1440 Tage ab, bleiben 7 Stunden übrig.
+	```
 
 
 

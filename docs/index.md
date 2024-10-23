@@ -211,3 +211,59 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 	}
 	```
+
+
+??? question "Vorlesung Ausdrücke - Teil 2"
+	```java
+	package vorlesungen.vorl1023;
+
+	public class Ausdruecke2
+	{
+
+		public static void main(String[] args)
+		{
+			int nr1 = 13;
+			int nr2 = 4;
+			int sum = nr1 + nr2;
+			
+			System.out.println(nr1 + " + " + nr2 + " = " + sum);
+			System.out.println(nr1 + " + " + nr2 + " = " + (nr1 + nr2));
+			
+			System.out.println();
+			System.out.println("--------- Logische Ausdruecke ----------");
+			System.out.println();
+			
+			boolean a = false;
+			boolean b = true;
+			
+			System.out.println(a + " && " + b + " = " + (a && b));
+			System.out.println(a + " || " + b + " = " + (a || b));
+			System.out.println("!a = " + !a);
+			
+			int year = 2024;
+			boolean isLeapYear = ((year % 400) == 0) || 
+					((year % 4) == 0 && !((year % 100) == 0));
+			
+			System.out.println("war " + year + " Schaltjahr ? " + isLeapYear);
+		
+			int x = 3;
+			int y = 4; 
+			int z = 5;
+			
+			boolean xSmallerYSmallerZ = (x < y) && (y < z);
+			
+			int noten = 1 + 2 + 3 + 1 + 3 + 4 + 1 + 1 + 2 + 1;
+			double schnitt = noten / 10.0;
+			System.out.println("Durchschnitt ist " + schnitt);
+			
+			int test1 = 1;
+			double test2 = test1;
+			System.out.println(test2);
+			test2 = 1.7;
+			test1 = (int) test2;
+			System.out.println(test1);
+			System.out.println(test2);
+		}
+
+	}
+	```

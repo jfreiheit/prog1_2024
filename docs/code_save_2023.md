@@ -9,6 +9,14 @@
 		public static void main(String[] args) 
 		{
 			// hier hinter koennen Sie schreiben, was Sie moechten
+			// Zeilenkommentar
+
+			/*
+				Blockkommentar ueber mehrere Zeilen
+				alles 
+				noch
+				Kommentar
+			*/
 			
 			  System.out.println("test test test"); 
 			  System.out.println("test test test");
