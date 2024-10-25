@@ -201,6 +201,84 @@
 	```
 
 
+??? question "Eine mögliche Lösung für Übung 2"
+	```java
+	package uebungen.uebung2;
+
+	public class Uebung2
+	{
+
+		public static void main(String[] args)
+		{
+			System.out.println();
+			System.out.println("-------------------- 3. -------------------------");
+			System.out.println();
+			int i1 = 77;
+			int i2 = 5;
+			int quotient = i1/i2;
+			int rest = i1%i2;
+			
+			System.out.print(i1 + " geteilt durch " + i2 + " ergibt " + quotient + ". ");
+			System.out.println("Es bleibt ein Rest von " + rest + ".");
+			
+			System.out.println();
+			System.out.println("-------------------- 4. -------------------------");
+			System.out.println();
+			
+			System.out.println(i1 + "/" + i2 + " = " + quotient);
+			System.out.println(i1 + " mod " + i2 + " = " + rest);
+			
+			System.out.println();
+			System.out.println("-------------------- 6. -------------------------");
+			System.out.println();
+			
+			int product = i1 * i2;
+			boolean productIsEven = product % 2 == 0;
+			boolean productIsOdd = !productIsEven;		// product % 2 == 1
+			
+			System.out.println(product + " ist gerade   ? " + productIsEven);
+			System.out.println(product + " ist ungerade ? " + productIsOdd);
+			
+			
+			System.out.println();
+			System.out.println("-------------------- 7. -------------------------");
+			System.out.println();
+			
+			System.out.println("int    : " + 100/3); 		// int
+			
+			System.out.println("float  : " + 100.0f/3.0f); 	// float
+			System.out.println("float  : " + 100f/3f); 		// float
+			
+			System.out.println("double : " + 100.0/3.0); 	// double
+			System.out.println("double : " + 100.0/3); 		// double
+			System.out.println("double : " + 100/3.0); 		// double
+			
+			System.out.println();
+			System.out.println("-------------------- 8. -------------------------");
+			System.out.println();
+			
+			int lastDigitOfi1 = i1 % 10;
+			int lastDigitOfi2 = i2 % 10;
+			boolean lastDigitsAreEqual = (lastDigitOfi1 == lastDigitOfi2);
+			
+			System.out.println();
+			System.out.println("-------------------- 9. -------------------------");
+			System.out.println();
+			
+			int hours = 34567;
+			int oneDay = 24;
+			int days = hours/oneDay;
+			
+			System.out.println("In " + hours + " Stunden sind " + days + " ganze Tage enthalten.");
+			System.out.println("Zieht man von den " + hours + " Stunden die " + days + " Tage ab, "
+					+ "bleiben " + hours%oneDay + " Stunden übrig.");
+			
+		}
+
+	}
+
+	```
+
 
 ??? note "<a id="ubung-3"></a>Übung 3"
 	

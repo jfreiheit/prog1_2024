@@ -62,11 +62,11 @@ Generell wird häufig versucht, "schlechte" Programmierung durch Kommentare zu "
 
 Nachdem [Robert C. Martin](https://de.wikipedia.org/wiki/Robert_Cecil_Martin) Design-Prinzipien für die Softwareentwicklung zusammengetragen hatte ([Clean Code Literatur](https://portal.dnb.de/opac.htm?method=simpleSearch&query=114440964)), wurden diese unter dem Akronym SOLID zusammengefasst. SOLID steht für die Prinzipien:
 
-- **S**ingle Responsibility Principle (RSP)
-- **O**pen Closed Principle
-- **L**iskov Substitution Principle (LSP)
-- **I**nterface Segregation Principle
-- **D**ependency Inversion Principle
+- <b>S</b>ingle Responsibility Principle (RSP)
+- <b>O</b>pen Closed Principle
+- <b>L</b>iskov Substitution Principle (LSP)
+- <b>I</b>nterface Segregation Principle
+- <b>D</b>ependency Inversion Principle
 
 #### Single Responsibility Principle
 
