@@ -280,6 +280,55 @@
 	```
 
 
+??? note "<a id="ubung-2"></a>Übung 2a"
+	
+	1. Verwenden Sie erneut die Klasse `Uebung2` aus dem Paket `uebungen.uebung2`.
+	3. Schreiben Sie eine Methode 
+	```java
+	public static void printIntDivision(int nr1, int nr2) 
+	{
+	}
+	``` 
+	Diese Methode soll folgende Ausgabe auf die Konsole erzeugen,
+	z.B. für `printIntDivision(7, 4);` die Ausgabe 
+	```bash
+	7 geteilt durch 4 ergibt 1. Es bleibt ein Rest von 3
+	```
+	z.B. für `printIntDivision(17, 4);` die Ausgabe
+	```bash 
+	17 geteilt durch 4 ergibt 4. Es bleibt ein Rest von 1
+	```
+	
+		Rufen Sie die Methode entsprechend in der `main()`-Methode auf!
+
+	5. Schreiben Sie zwei Methoden 
+	```java
+	public static int getQuotient(int nr1, int nr2) {} // und 
+	public static int getRemainder(int nr1, int nr2) {}
+	``` 
+	Rufen Sie diese Methoden in der `main()`-Methode auf generieren mit den Aufrufen und unter Verwendung der `println()`-Methode folgende Ausgaben: 
+	```bash 
+	17/4 = 4
+	17 mod 4 = 1
+	```
+	6. Besitzen die folgende Methodenaufrufe einem Wert? Wenn ja, welcher?
+
+		- `printIntDivision(17, 4);`
+		- `getQuotient(17,4);`
+		- `getRemainder(17,4);`
+
+	7. Können wir die Methoden `getQuotient(int nr1, int nr2)` und `getRemainder(int nr1, int nr2)` auch in der `printIntDivision(int nr1, int nr2)`-Methode verwenden/aufrufen? Wenn ja, wie?
+	8. Schreiben Sie eine Methode `lastDigitsAreEqual(int nr1, int nr2)`, die ein `true` zurückgibt, wenn `nr1` und `nr2` dieselbe letzte Ziffer haben und `false` sonst. 
+	9. Schreiben Sie eine Methode `getDays(int hours)`, die für eine gegebene Stundenanzahl `hours` zurückgibt, wieviele ganze Tage diese Studnden entsprechen. Schreiben Sie eine Methode `getRemainingHours(int hours)`, die für eine gegebene Stundenanzahl `hours` zurückgibt, wieviele Stunden noch verbleiben, wenn man die ganzen Tage darin abzieht. Erstellen Sie mit diesen Methoden und der `println()`-Methode folgende Ausgaben auf der Konsole (Beispielwerte):
+	```bash 
+	In 34567 Stunden sind 1440 ganze Tage enthalten.
+	```
+	Wieviele Stunden bleiben übrig? 
+	```bash
+	Zieht man von den 34567 Stunden die 1440 Tage ab, bleiben 7 Stunden übrig.
+	```	
+
+
 ??? note "<a id="ubung-3"></a>Übung 3"
 	
 	1. Erstellen Sie ein package `uebungen.uebung3`. 

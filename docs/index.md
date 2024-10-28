@@ -267,3 +267,42 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 	}
 	```
+
+
+??? question "Vorlesung Methoden"
+	```java
+	package vorlesungen.vorl1028;
+
+	public class Methoden
+	{
+		public static void add(int summand1, int summand2)
+		{
+			int summe = summand1 + summand2;
+			System.out.println(summand1 + " + " + summand2 + " = " + summe);
+		}
+		
+		public static int computeSum(int summand1, int summand2)
+		{
+			int summe = summand1 + summand2;
+			return summe;
+		}
+		
+		public static void main(String[] args)
+		{
+			
+			add(4,5);
+			add(5,4);
+			add(7,9);
+			add(-7,19);
+			add(3,3);
+			
+			int nr1 = 12;
+			int nr2 = 13;
+			int ergebnis = computeSum(nr1, nr2);
+			System.out.println(nr1 + " + " + nr2 + " = " + ergebnis);
+			
+			ergebnis = computeSum(31,2);		
+		}
+	}
+
+	```
