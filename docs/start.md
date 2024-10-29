@@ -227,6 +227,17 @@ In Ihren Quellcode (Ihr Programm) können Sie an allen beliebigen Stellen *Komme
 	}
 	```
 
+
+-------
+
+***>>> Ab hier müssen Sie nicht selbst ausprobieren.*** <br/>
+***>>> Es geht darum, ein Verständnis dafür zu erzeugen, dass*** <br/>
+***>>> das Programm immer zunächst compiliert und*** <br/>
+***>>> nur wenn dies erfolgreich war, ausgeführt wird*** <br/>
+
+-------
+
+
 ## Compilieren und Ausführen
 
 Wir haben nun unser erstes einfaches Programm geschrieben - in der Programmiersprache *Java*. Wie wir in [**Werkzeuge -> Java**](./tools.md#java) bereits bei der Installation von Java erläutert haben, ist Java nicht nur eine Programmiersprache, sondern auch ein Programm, in dem wir Java-Programme ausführen können - die *Laufzeitumgebung* von Java. Wir werden zunächst erläutern, was im Hintergrund passiert, wenn wir ein selbstgeschriebenes Java-Programm ausführen. 
