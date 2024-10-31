@@ -77,9 +77,9 @@ nav:
     - Variablen: variablen.md
     - Ausdrücke: ausdruecke.md 
     - Methoden: methoden.md 
+    - Methodenstack: methodenstack.md 
     - Selektion: selektion.md 
     - Iteration: iteration.md 
-    - Methodenstack: methodenstack.md 
     - Klassen und Objekte I: objekte1.md 
     - Klassen und Objekte II: objekte2.md 
     - Vererbung: vererbung.md 

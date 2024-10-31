@@ -280,7 +280,7 @@
 	```
 
 
-??? note "<a id="ubung-2"></a>Übung 2a"
+??? note "<a id="ubung-2a"></a>Übung 2a (1.11.2024)"
 	
 	1. Verwenden Sie erneut die Klasse `Uebung2` aus dem Paket `uebungen.uebung2`.
 	3. Schreiben Sie eine Methode 
@@ -298,8 +298,11 @@
 	```bash 
 	17 geteilt durch 4 ergibt 4. Es bleibt ein Rest von 1
 	```
-	
-		Rufen Sie die Methode entsprechend in der `main()`-Methode auf!
+	Fall kein Rest bleibt, soll die Ausgabe sein:
+	```bash
+	16 geteilt durch 4 ergibt 4. Es bleibt kein Rest.
+	```
+	Rufen Sie die Methode entsprechend in der `main()`-Methode auf!
 
 	5. Schreiben Sie zwei Methoden 
 	```java
@@ -318,8 +321,9 @@
 		- `getRemainder(17,4);`
 
 	7. Können wir die Methoden `getQuotient(int nr1, int nr2)` und `getRemainder(int nr1, int nr2)` auch in der `printIntDivision(int nr1, int nr2)`-Methode verwenden/aufrufen? Wenn ja, wie?
-	8. Schreiben Sie eine Methode `lastDigitsAreEqual(int nr1, int nr2)`, die ein `true` zurückgibt, wenn `nr1` und `nr2` dieselbe letzte Ziffer haben und `false` sonst. 
-	9. Schreiben Sie eine Methode `getDays(int hours)`, die für eine gegebene Stundenanzahl `hours` zurückgibt, wieviele ganze Tage diese Studnden entsprechen. Schreiben Sie eine Methode `getRemainingHours(int hours)`, die für eine gegebene Stundenanzahl `hours` zurückgibt, wieviele Stunden noch verbleiben, wenn man die ganzen Tage darin abzieht. Erstellen Sie mit diesen Methoden und der `println()`-Methode folgende Ausgaben auf der Konsole (Beispielwerte):
+	8. Schreiben Sie eine Methode `lastDigitsAreEqual(int nr1, int nr2)`, die ein `true` zurückgibt, wenn `nr1` und `nr2` dieselbe letzte Ziffer haben und `false` sonst. <br/>
+	**Zusatz:** Schreiben Sie eine Methode `last2DigitsAreEqual(int nr1, int nr2)`, die ein `true` zurückgibt, wenn `nr1` und `nr2` dieselben letzten 2 Ziffern haben. 
+	9. Schreiben Sie eine Methode `getDays(int hours)`, die für eine gegebene Stundenanzahl `hours` zurückgibt, wieviele ganze Tage diese Studnden entsprechen. Schreiben Sie eine Methode `getRemainingHours(int hours)`, die für eine gegebene Stundenanzahl `hours` zurückgibt, wieviele Stunden noch verbleiben, wenn man die ganzen Tage darin abzieht. Erstellen Sie in `main()` mit diesen Methoden und der `println()`-Methode folgende Ausgaben auf der Konsole (Beispielwerte):
 	```bash 
 	In 34567 Stunden sind 1440 ganze Tage enthalten.
 	```
@@ -327,6 +331,11 @@
 	```bash
 	Zieht man von den 34567 Stunden die 1440 Tage ab, bleiben 7 Stunden übrig.
 	```	
+		**Zusatz:** Ändern Sie `main()` so, dass für den Fall, dass die Gesamtanzahl der Stunden keinen ganzen Tag enthält, folgende Ausgabe erscheint: 
+		```bash
+		In 22 Stunden ist kein ganzer Tag enthalten. 
+		```
+		Es soll dann auch keine Ausgabe bezüglich der übrig bleibenden Stunden erscheinen.  
 
 
 ??? note "<a id="ubung-3"></a>Übung 3"
