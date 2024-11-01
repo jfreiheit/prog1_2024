@@ -282,7 +282,7 @@
 
 ??? note "<a id="ubung-2a"></a>Übung 2a (1.11.2024)"
 	
-	1. Verwenden Sie erneut die Klasse `Uebung2` aus dem Paket `uebungen.uebung2`.
+	1. Verwenden Sie erneut die Klasse `Uebung2` aus dem Paket `uebungen.uebung2` (oder Sie erstellen sich ein Paket `uebungen.uebung2.a` und darin eine Klasse `Uebung2a`).
 	3. Schreiben Sie eine Methode 
 	```java
 	public static void printIntDivision(int nr1, int nr2) 
@@ -298,11 +298,12 @@
 	```bash 
 	17 geteilt durch 4 ergibt 4. Es bleibt ein Rest von 1
 	```
-	Fall kein Rest bleibt, soll die Ausgabe sein:
+	Falls kein Rest bleibt, soll die Ausgabe sein:
 	```bash
 	16 geteilt durch 4 ergibt 4. Es bleibt kein Rest.
 	```
-	Rufen Sie die Methode entsprechend in der `main()`-Methode auf!
+	Rufen Sie die Methode entsprechend in der `main()`-Methode auf!<br/><br/>
+	**Zusatz:** Prüfen Sie, ob der Wert von `nr2` ungleich `0` ist. Nur dann ist die Division definiert. Sollte er `0` sein, geben Sie `Division durch 0 ist nicht definiert!` auf die Konsole aus. 
 
 	5. Schreiben Sie zwei Methoden 
 	```java
@@ -321,7 +322,7 @@
 		- `getRemainder(17,4);`
 
 	7. Können wir die Methoden `getQuotient(int nr1, int nr2)` und `getRemainder(int nr1, int nr2)` auch in der `printIntDivision(int nr1, int nr2)`-Methode verwenden/aufrufen? Wenn ja, wie?
-	8. Schreiben Sie eine Methode `lastDigitsAreEqual(int nr1, int nr2)`, die ein `true` zurückgibt, wenn `nr1` und `nr2` dieselbe letzte Ziffer haben und `false` sonst. <br/>
+	8. Schreiben Sie eine Methode `lastDigitsAreEqual(int nr1, int nr2)`, die ein `true` zurückgibt, wenn `nr1` und `nr2` dieselbe letzte Ziffer haben und `false` sonst. <br/><br/>
 	**Zusatz:** Schreiben Sie eine Methode `last2DigitsAreEqual(int nr1, int nr2)`, die ein `true` zurückgibt, wenn `nr1` und `nr2` dieselben letzten 2 Ziffern haben. 
 	9. Schreiben Sie eine Methode `getDays(int hours)`, die für eine gegebene Stundenanzahl `hours` zurückgibt, wieviele ganze Tage diese Studnden entsprechen. Schreiben Sie eine Methode `getRemainingHours(int hours)`, die für eine gegebene Stundenanzahl `hours` zurückgibt, wieviele Stunden noch verbleiben, wenn man die ganzen Tage darin abzieht. Erstellen Sie in `main()` mit diesen Methoden und der `println()`-Methode folgende Ausgaben auf der Konsole (Beispielwerte):
 	```bash 
@@ -337,6 +338,147 @@
 		```
 		Es soll dann auch keine Ausgabe bezüglich der übrig bleibenden Stunden erscheinen.  
 
+
+??? question "Eine mögliche Lösung für Übung 2a"
+	```java
+	package uebungen.uebung2.a;
+
+	public class Uebung2a
+	{
+		public static void printIntDivision(int nr1, int nr2) 
+		{		
+			if(nr2 == 0)
+			{
+				System.out.println("Division durch 0 nicht definiert!");
+			}
+			else	// nr2 != 0
+			{
+				// int quotient = nr1 / nr2;
+				int quotient = getQuotient(nr1, nr2);
+				// int rest = nr1 % nr2;
+				int rest = getRemainder(nr1, nr2);
+				
+				System.out.print(nr1 + " geteilt durch " + nr2 + " ergibt " + quotient + ".");
+				
+				if(rest != 0 )
+				{
+					System.out.println(" Es bleibt ein Rest von " + rest + ".");
+				}
+				else 	// rest == 0
+				{
+					System.out.println(" Es bleibt kein Rest.");
+				}
+			}	// else nr2 != 0
+		}
+		
+		public static int getQuotient(int nr1, int nr2)
+		{
+			return nr1 / nr2;
+		}
+		
+		public static int getRemainder(int nr1, int nr2)
+		{
+			return nr1 % nr2;
+		}
+		
+		public static boolean lastDigitsAreEqual(int nr1, int nr2)
+		{
+			int lastDigitOfNr1 = nr1 % 10;
+			int lastDigitOfNr2 = nr2 % 10;
+			return (lastDigitOfNr1 == lastDigitOfNr2);
+		}
+		
+		public static int getDays(int hours)
+		{
+			int oneDay = 24;
+			return hours / oneDay;
+		}
+		
+		public static int getRemainingHours(int hours)
+		{
+			int oneDay = 24;
+			return hours % oneDay;
+		}
+		
+		public static void printHours2Days(int hours)
+		{
+			int days = getDays(hours);
+			int remainingHours = getRemainingHours(hours);
+			
+			if(days > 0)
+			{
+				System.out.println("In " + hours + " Stunden sind " + days 
+					+ " ganze Tage enthalten.");
+				System.out.println("Zieht man von den " + hours + " Stunden die " 
+					+ days + " Tage ab, bleiben " + remainingHours + " Stunden übrig.");
+			}
+			else // days == 0
+			{
+				System.out.println("In " + hours + " Stunden ist kein ganzer Tag enthalten.");
+			}
+		}
+		
+		public static void main(String[] args)
+		{
+			System.out.println();
+			System.out.println("--------------- 2. ----------------");
+			System.out.println();
+			
+			printIntDivision(17, 4);
+			printIntDivision(16, 4);
+			printIntDivision(16, 0);
+			
+			System.out.println();
+			System.out.println("--------------- 3. ----------------");
+			System.out.println();
+			
+			int nr1 = 17;
+			int nr2 = 4;
+			System.out.println(nr1 + "/" + nr2 + " = " + getQuotient(nr1, nr2));
+			System.out.println(nr1 + " mod " + nr2 + " = " + getRemainder(nr1, nr2));
+			
+			nr1 = 15;
+			nr2 = 5;
+			System.out.println(nr1 + "/" + nr2 + " = " + getQuotient(nr1, nr2));
+			System.out.println(nr1 + " mod " + nr2 + " = " + getRemainder(nr1, nr2));
+			
+			
+			System.out.println();
+			System.out.println("--------------- 6. ----------------");
+			System.out.println();
+			
+			System.out.println(nr1 + ", " + nr2 + " ? " + lastDigitsAreEqual(nr1, nr2));
+			nr1 = 123;
+			nr2 = 3;
+			System.out.println(nr1 + ", " + nr2 + " ? " + lastDigitsAreEqual(nr1, nr2));
+			
+			System.out.println();
+			System.out.println("--------------- 7. ----------------");
+			System.out.println();
+			
+			int hours = 34567;
+			// hours = 22;
+			int days = getDays(hours);
+			int remainingHours = getRemainingHours(hours);
+			
+			if(days > 0)
+			{
+				System.out.println("In " + hours + " Stunden sind " + days 
+					+ " ganze Tage enthalten.");
+				System.out.println("Zieht man von den " + hours + " Stunden die " 
+					+ days + " Tage ab, bleiben " + remainingHours + " Stunden übrig.");
+			}
+			else // days == 0
+			{
+				System.out.println("In " + hours + " Stunden ist kein ganzer Tag enthalten.");
+			}
+			
+			printHours2Days(34567);
+			printHours2Days(22);
+		}
+
+	}
+	```
 
 ??? note "<a id="ubung-3"></a>Übung 3"
 	
