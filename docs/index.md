@@ -413,10 +413,58 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			}
 			
 		}
-
-
-
+		
 	}
 	```
 
+??? question "Vorlesung Iteration - for-Schleife"
+	```java
+	package vorlesungen.vorl1104;
 
+	public class Iteration1
+	{
+
+		public static void main(String[] args)
+		{
+			for(int i = 0; i < 0; i++)
+			{
+				System.out.println("in der Schleife : i = " + i);
+			}
+			
+			System.out.println("fertig");
+			
+			System.out.println();
+			System.out.println("------ printSum ----------");
+			System.out.println();
+			
+			printSum1ToN(10);
+			/*
+			for(int i = 1; i < 50; i++)
+			{
+				System.out.print(" i = " + i + " : ");
+				printSum1ToN(i);
+			}
+			*/
+		}
+		
+		public static void printSum1ToN(int n)
+		{
+			int sum = 0;
+			
+			for(int summand = 1; summand <= n ; summand++)
+			{
+				System.out.print(summand);
+				
+				if(summand < n) 
+				{
+					System.out.print(" + ");
+				}
+				
+				sum = sum + summand;
+			}
+			
+			System.out.println(" = " + sum);
+		}
+
+	}
+	```
