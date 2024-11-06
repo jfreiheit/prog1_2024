@@ -468,3 +468,64 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 	}
 	```
+
+??? question "Vorlesung Iteration - verschachtelte for-Schleife"
+	```java
+	package vorlesungen.vorl1106;
+
+	public class Iteration2
+	{
+
+		public static void main(String[] args)
+		{
+			for(int number = -5; number < 17; number++)
+			{
+				System.out.println(number + "! = " + factorial(number));
+			}
+
+			printRectangle(6, 4);
+			printRectangle(16, 10);
+		}
+
+		public static int factorial(int n)
+		{
+			if(n < 1)
+			{
+				return 0;
+			}
+			else
+			{
+				int product = 1;	
+				for(int factor = n;  factor > 1   ; factor--)
+				{
+					product = product * factor;
+				}
+				return product;
+			}
+		}
+
+		public static void printRectangle(int width, int height)
+		{
+			// kein row
+			for(int row = 1; row <= height; row++)
+			{
+				// kein stars
+				// probieren Sie in der folgenden Bedingung anstelle von width mal row
+				// for(int stars = 1;  stars <= width; stars++)
+				// for(int stars = width;  stars > 0; stars--)
+				// for(int stars = width;  stars >= 1; stars--)
+				for(int stars = 0;  stars < width; stars++)
+				{
+					System.out.print(" [" + stars + ", " + row + "] ");
+					// System.out.print("* ");
+				}
+				// kein stars
+				System.out.println();
+			}
+			// kein row
+			System.out.println();
+		}
+
+	}
+
+	```

@@ -6,6 +6,13 @@ Hier finden Sie die Aufgaben. Die Abgabefristen der einzelnen Aufgaben stehen [h
 
 Die Aufgaben laden Sie in [Moodle](https://moodle.htw-berlin.de/course/view.php?id=29156) unter dem Reiter "Aufgaben" hoch. Dort ist für jede Aufgabe eine Moodle-Aufgabe erstellt. Beachten Sie, dass ein Hochladen nach Ablauf der Abgabefrist nicht mehr möglich ist. 
 
+----
+
+***Bitte laden Sie weder Lösungen hoch, die Sie mithilfe von KI erstellt haben, noch die Lösung, die vollständig der Lösung aus dem Tutorium entspricht! Ein Hochladen einer Lösung ist nicht zwingend notwendig! Es geht mir darum, Ihre Lösungen bzw. Lösungsversuche zu betrachten, um Schwerpunkte in der Vorlesung setzen zu können. Ihnen sollte es darum gehen, möglichst viel selbständig zu programmieren und versuchen, eigene Lösungen zu entwickeln. Am Ende sollen Sie programmieren und nicht fremde Lösungen in Moodle hochladen können. Es ist viel mehr wert, es versucht zu haben und nicht fertig geworden zu sein, als es gar nicht erst selbständig versucht zu haben. Sie lernen Programmieren nur durch Programmieren! Es gibt keinen anderen Weg.***
+
+----
+
+
 
 ### Eclipse
 
