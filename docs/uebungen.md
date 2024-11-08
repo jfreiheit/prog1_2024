@@ -688,10 +688,7 @@
 		```bash
 		12345 Sekunden sind 3 Stunden, 25 Minuten, 45 Sekunden.
 		```
-	- <b>Zusatz</b> Schreiben Sie eine Methode, die für eine natürliche Zahl deren Quersumme ausgibt, z.B.: `crossSum(12345678)`
-		```bash
-		Die Quersumme von 12345678 ist 36.
-		```
+
 
 
 	
@@ -714,6 +711,10 @@
 			```
 			d.h. alle kleinsten Teiler werden mit dem Multiplikationszeichen verbunden und am Ende erscheint `= Wert von number`. 
 		- Testen Sie alle Methoden. Rufen Sie insbesondere `printPrimenumbers(int)` und `createStringOfPrimeFactorization(int)` in der `main()`-Methode auf.
+		- <b>Zusatz</b> Schreiben Sie eine Methode, die für eine natürliche Zahl deren Quersumme ausgibt, z.B.: `crossSum(12345678)`
+			```bash
+			Die Quersumme von 12345678 ist 36.
+			```
 
 
 	

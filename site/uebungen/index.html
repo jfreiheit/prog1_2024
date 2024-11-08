@@ -1493,9 +1493,6 @@ Wieviele Stunden bleiben übrig?
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="m">12345</span><span class="w"> </span>Sekunden<span class="w"> </span>sind<span class="w"> </span><span class="m">3</span><span class="w"> </span>Stunden,<span class="w"> </span><span class="m">25</span><span class="w"> </span>Minuten,<span class="w"> </span><span class="m">45</span><span class="w"> </span>Sekunden.
 </span></code></pre></div></p>
 </li>
-<li><b>Zusatz</b> Schreiben Sie eine Methode, die für eine natürliche Zahl deren Quersumme ausgibt, z.B.: <code>crossSum(12345678)</code>
-    <div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>Die<span class="w"> </span>Quersumme<span class="w"> </span>von<span class="w"> </span><span class="m">12345678</span><span class="w"> </span>ist<span class="w"> </span><span class="m">36</span>.
-</span></code></pre></div></li>
 </ol>
 </details>
 <details class="note">
@@ -1506,16 +1503,19 @@ Wieviele Stunden bleiben übrig?
 <li>Implementieren Sie folgende Methoden: <ul>
 <li><code>public static boolean isPrime(int number)</code> – diese Methode prüft, ob die als Parameter übergebene <code>number</code> eine Primzahl ist. Die Methode gibt ein <code>true</code> zurück, wenn <code>number</code> eine Primzahl ist und <code>false</code> sonst.</li>
 <li><code>public static void printPrimeNumbers(int maximum)</code> – diese Methode gibt alle Primzahlen von 1 bis einschließlich <code>maximum</code> wie folgt auf der Konsole aus (Bsp. für <code>maximum=61</code>):
-    <div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>Zahl<span class="w"> </span>:<span class="w"> </span><span class="m">61</span>
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>.2<span class="w"> </span><span class="m">3</span><span class="w"> </span>.5<span class="w"> </span>.7<span class="w"> </span>...11<span class="w"> </span>.13<span class="w"> </span>...17<span class="w"> </span>.19<span class="w"> </span>...23<span class="w"> </span>.....29<span class="w"> </span>.31<span class="w"> </span>.....37<span class="w"> </span>...41<span class="w"> </span>.43<span class="w"> </span>...47<span class="w"> </span>.....53<span class="w"> </span>.....59<span class="w"> </span>.61
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>Zahl<span class="w"> </span>:<span class="w"> </span><span class="m">61</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>.2<span class="w"> </span><span class="m">3</span><span class="w"> </span>.5<span class="w"> </span>.7<span class="w"> </span>...11<span class="w"> </span>.13<span class="w"> </span>...17<span class="w"> </span>.19<span class="w"> </span>...23<span class="w"> </span>.....29<span class="w"> </span>.31<span class="w"> </span>.....37<span class="w"> </span>...41<span class="w"> </span>.43<span class="w"> </span>...47<span class="w"> </span>.....53<span class="w"> </span>.....59<span class="w"> </span>.61
 </span></code></pre></div>
     d.h. es werden die Zahlen, die Primzahlen sind, ausgegeben und für die anderen Zahlen erscheint nur ein Punkt. Verwenden Sie in der Methode <code>printPrimenumbers(int)</code> die Methode <code>isPrime(int)</code>.</li>
 <li><code>public static int getSmallestDivider(int number)</code> – diese Methode gibt den kleinsten Teiler zurück, der <code>number</code> ganzzahlig teilt. Ist <code>number</code> eine Primzahl, wird <code>number</code> zurückgegeben. Für den Fall, dass <code>number</code> kleiner als <code>2</code> ist, geben Sie ebenfalls <code>number</code> zurück.</li>
 <li><code>public static String createStringOfPrimeFactorization(int number)</code> – diese Methode gibt einen String in folgender Form zurück (Bsp. für <code>number=632060</code>):
-    <div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="s2">&quot; 2 * 2 * 5 * 11 * 13 * 13 * 17 = 632060 &quot;</span>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="s2">&quot; 2 * 2 * 5 * 11 * 13 * 13 * 17 = 632060 &quot;</span>
 </span></code></pre></div>
     d.h. alle kleinsten Teiler werden mit dem Multiplikationszeichen verbunden und am Ende erscheint <code>= Wert von number</code>. </li>
 <li>Testen Sie alle Methoden. Rufen Sie insbesondere <code>printPrimenumbers(int)</code> und <code>createStringOfPrimeFactorization(int)</code> in der <code>main()</code>-Methode auf.</li>
+<li><b>Zusatz</b> Schreiben Sie eine Methode, die für eine natürliche Zahl deren Quersumme ausgibt, z.B.: <code>crossSum(12345678)</code>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>Die<span class="w"> </span>Quersumme<span class="w"> </span>von<span class="w"> </span><span class="m">12345678</span><span class="w"> </span>ist<span class="w"> </span><span class="m">36</span>.
+</span></code></pre></div></li>
 </ul>
 </li>
 </ol>
