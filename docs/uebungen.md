@@ -690,6 +690,103 @@
 		```
 
 
+??? question "Eine mögliche Lösung für Übung 3"
+	```java
+	package uebungen.uebung3;
+
+	public class Uebung3
+	{
+		public static void printTimesTables(int nr1, int nr2)
+		{
+			for(int factor1 = 1; factor1 <= nr1; factor1++)
+			{
+				//System.out.println();
+				//System.out.println("factor1 : " + factor1);
+				//System.out.println("--> vor innerer Schleife");
+				
+				for(int factor2 = 1; factor2 <= nr2; factor2++)
+				{
+					//System.out.println("            factor2 : " + factor2);
+					int product = factor1 * factor2;
+					System.out.println(factor1 + " * " + factor2 + " = " + product);
+				}
+				
+				//System.out.println("--> nach innerer Schleife");
+				System.out.println();
+			}
+		}
+		
+		public static void printTimesMatrix(int nr1, int nr2)
+		{
+			for(int factor1 = 1; factor1 <= nr1; factor1++)
+			{
+				for(int factor2 = 1; factor2 <= nr2; factor2++)
+				{
+					System.out.print(factor1 * factor2 + " ");
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+		
+		public static void printTriangleUp(int height)
+		{
+			for(int row = 0; row < height; row++)
+			{
+				System.out.print(" Zeile " + row + " : ");
+				for(int stars = 1; stars <= height-row; stars++)
+				{
+					System.out.print("* ");
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+
+		public static void main(String[] args)
+		{
+			System.out.println();
+			System.out.println("----------------- 3. --------------------");
+			System.out.println();
+			printTimesTables(10,10);
+			printTimesTables(3,7);
+			
+			System.out.println();
+			System.out.println("----------------- 4. --------------------");
+			System.out.println();
+			printTimesMatrix(10,10);
+			printTimesMatrix(3,7);
+			
+			System.out.println();
+			System.out.println("----------------- 5. --------------------");
+			System.out.println();
+			printTriangleUp(9);
+			printTriangleUp(4);
+			
+			
+			System.out.println();
+			System.out.println("----------------- 6. --------------------");
+			System.out.println();
+			
+			for(int x = -36; x <= 36; x++)
+			{
+				for(int y = x; y <= 36; y++)
+				{
+					for(int z = y; z <= 36; z++)
+					{
+						int product = x * y * z;
+						//if(product == 36 && x <= y && y <= z)
+						if(product == 36)
+						{
+							System.out.println(x + " * " + y + " * " + z + " = " + product );
+						}
+					}
+				}
+			}
+		}
+
+	}
+	```
 
 	
 ??? note "<a id="ubung-4"></a>Übung 4"
