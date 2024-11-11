@@ -529,3 +529,107 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	}
 
 	```
+
+
+??? question "Vorlesung Iteration - while-Schleife"
+	```java
+	package vorlesungen.vorl1111;
+
+	public class Iteration3
+	{
+
+		public static void main(String[] args)
+		{
+			printTriangleLeft(7);
+			//printNStarsInOneRow(10);
+			//printNStarsInOneRow(1);
+			
+			printCollatz(7);
+			printGGT(-148, 144);
+		}
+		
+		public static void printNStarsInOneRow(int nrOfStars)
+		{
+			for(int stars = 1; stars <= nrOfStars; stars++)
+			{
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+		
+		public static void printNCharsInOneRow(int n, char c)
+		{
+			for(int stars = 1; stars <= n; stars++)
+			{
+				System.out.print(c + " ");
+			}
+		}
+		
+		public static void printTriangleLeft(int height)
+		{
+			
+			for(int row = 1; row <= height; row++)
+			{
+				printNCharsInOneRow(height-row, ' ');
+				printNCharsInOneRow(row, '*');
+				System.out.println();
+			}
+		}
+		
+		public static void printCollatz(int anfang)
+		{
+			int n = anfang;
+			
+			while( n > 1 )
+			{
+				System.out.print(n + " ");
+				if(n % 2 == 0)
+				{
+					n = n/2;
+				}
+				else
+				{
+					n = 3 * n + 1;
+				}
+			}
+			
+			System.out.println(n + "      ende für anfang = " + anfang);
+		}
+		
+		public static void printGGT(int nr1, int nr2)
+		{
+			int a = nr1;		
+			int b = nr2;
+			if(a < 0)
+			{
+				a = -a;		// wenn a negativ, dann |a|
+			}
+			if(b < 0)
+			{
+				b = -b;		// wenn b negativ, dann |b|
+			}
+			if(a == 0)
+			{
+				a = b;		// wenn a gleich 0, dann b ist ggT
+			}
+			if(b == 0)
+			{
+				b = a;		// wenn b gleich 0, dann a ist ggT
+			}
+			while(a != b)
+			{
+				System.out.println("a = " + a + ", b = " + b);
+				if(a > b)
+				{
+					a = a - b;
+				}
+				else
+				{
+					b = b - a;
+				}
+			}
+			System.out.println("ggT von " + nr1 + " und " + nr2 + " ist " + a);
+		}
+
+	}
+	```
