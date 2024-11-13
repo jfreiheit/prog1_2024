@@ -636,11 +636,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 ??? question "Klasse und Objekte - Adresse"
-<<<<<<< HEAD
-	==="Adresse.java"
-=======
 	=== "Adresse.java"
->>>>>>> 796eed2 (Klassen und Objekte I)
 		```java
 		package vorlesungen.vorl1113;
 
@@ -676,12 +672,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		}
 
 		```
-<<<<<<< HEAD
-
-	==="Programmklasse.java"
-=======
 	=== "Programmklasse.java"
->>>>>>> 796eed2 (Klassen und Objekte I)
 		```java
 		package vorlesungen.vorl1113;
 
