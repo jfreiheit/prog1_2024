@@ -34,7 +34,7 @@ Daneben gibt es jede Woche (zu jedem Thema) [**Übungen**](uebungen.md#ubungsbla
 
 Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com/intl/de-de/) (Channel `#b11_prog1_ws2024_25`). Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, dass Sie sich diese gegenseitig beantworten. Damit wäre allen geholfen und wir können besser erkennen, wo noch Nachhol- bzw. Erläuterungsbedarf bei den meisten besteht. Bei Bedarf beantworten die Lehrenden die Fragen natürlich.  
 
-Das Tutorium bei Anne Quinkenstein findet einmal die Woche statt. Der Termin wird noch bekanntgegeben.
+Das Tutorium bei Noa Sauter findet immer mittwochs um 15:45 Uhr in C 624 statt.
 
 
 ## Planung
@@ -633,3 +633,78 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 	}
 	```
+
+
+??? question "Klasse und Objekte - Adresse"
+	==="Adresse.java"
+		```java
+		package vorlesungen.vorl1113;
+
+		public class Adresse
+		{
+			// Objektvariablen
+			private String strasse;
+			private int nummer;
+			private int plz;
+			private String wohnort;
+			
+			
+			// Konstruktor
+			public Adresse(String str, int nr, int postleitzahl, String ort)
+			{
+				strasse = str;
+				nummer = nr;
+				plz = postleitzahl;
+				wohnort = ort;
+			}
+			
+			
+			// Objektmethode
+			public String getAdresse()
+			{
+				return strasse + " " + nummer + " in " + plz + " " + wohnort;
+			}
+			
+			public void strasseUmbenennen(String neuerStrassenname)
+			{
+				strasse = neuerStrassenname;
+			}
+		}
+
+		```
+
+	==="Programmklasse.java"
+		```java
+		package vorlesungen.vorl1113;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				Adresse adresse1 = new Adresse("Wilhelminenhofstrasse", 75, 12459, "Berlin");	// ein Objekt erzeugt
+				Adresse adresse2 = new Adresse("Treskowallee", 8, 10435, "Berlin");	// noch ein Objekt erzeugt
+				
+				/*
+				adresse1.strasse = "Wilhelminenhofstrasse";	// geht nicht wegen private
+				adresse1.nummer = 75;
+				adresse1.plz = 12459;
+				adresse1.wohnort = "Berlin";
+				*/
+				System.out.println(adresse1.getAdresse());
+				adresse1.strasseUmbenennen("Neue Strasse");
+				System.out.println(adresse1.getAdresse());
+				
+				/*
+				adresse2.strasse = "Treskowallee";
+				adresse2.nummer = 8;
+				adresse2.plz = 10435;
+				adresse2.wohnort = "Berlin";
+				*/
+				System.out.println(adresse2.getAdresse());
+
+
+			}
+
+		}
+		```
