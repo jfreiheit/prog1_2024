@@ -814,6 +814,126 @@
 			```
 
 
+??? question "Eine mögliche Lösung für Übung 4"
+	```java
+	package uebungen.uebung4;
+
+
+	public class Uebung4
+	{
+
+		public static void main(String[] args)
+		{
+			System.out.println();
+			System.out.println("------------------ isPrime ------------------");
+			System.out.println();
+			
+			System.out.println(isPrime(17));
+			System.out.println(isPrime(121));
+
+	        System.out.println();
+			System.out.println("--------------- printPrimeNumbers ----------------");
+			System.out.println();
+			printPrimeNumbers(1000);
+			
+	        System.out.println();
+			System.out.println("--------------- createStringOfPrimeFactorization ----------------");
+			System.out.println();
+			System.out.println(createStringOfPrimeFactorization(632030));
+		}
+		
+		public static void printPrimeNumbers(int maximum)
+		{
+			for(int i = 1; i <= maximum; i++)
+			{
+				if(isPrime(i))
+				{
+					System.out.print(i + " ");
+				}
+				else
+				{
+					System.out.print(".");
+				}
+				if(i % 50 == 0)		// alle 50 Zahlen ein Zeilenumbruch
+				{
+					System.out.println();
+				}
+			}
+			System.out.println();
+		}
+		
+		public static boolean isPrime(int number)
+		{
+			if(number < 2)
+			{
+				return false;		// Methode wird sofort verlassen (keine Primzahl)
+			}
+			else
+			{
+				for(int divider = 2; divider < number; divider++)
+				{
+					if(number % divider == 0)
+					{
+						return false;	// Methode wird sofort verlassen (keine Primzahl)
+					}
+				}
+				return true;  	// number ist Primzahl (kein divider war Teiler)
+			}
+		}
+		
+		public static int getSmallestDivider(int number)
+		{
+			if(number < 2 || isPrime(number))
+			{
+				return number;
+			}
+			else
+			{
+				for(int divider = 2; divider < number; divider++)
+				{
+					if(number % divider == 0)
+					{
+						return divider;     // ist immer eine Primzahl 
+	                                        // denn falls divider = a * b 
+	                                        // haetten wir schon a oder b zurueckgegeben
+					}
+				}
+				return number;	// wird gar nicht erreicht, weiss aber der Compiler nicht
+			}
+		}
+		
+		public static String createStringOfPrimeFactorization(int number) 
+		{
+			/*
+			 * 2 * 2 * 5 * 11 * 13 * 13 * 17 = 632060
+			 * 632060 --> 2			(632060 / 2 --> 316030)
+			 * 316030 --> 2			(316030 / 2 --> 158015)
+			 * 158015 --> 5			(158015 / 5 --> 31603)
+			 * 31603 --> 11			(31603 / 11 --> 2873)
+			 * ...
+			 * 17 --> 17 			( 17 / 17 --> 1 schluss)
+			 * 
+			 */
+			
+			int smallestDivider = getSmallestDivider(number);
+			int quotient = number / smallestDivider;
+			String s = "" + smallestDivider;
+			
+	        // falls number ist Primzahl, wird Schleife gar nicht betreten
+			while(quotient > 1)
+			{
+				smallestDivider = getSmallestDivider(quotient);
+				quotient = quotient / smallestDivider;
+				s = s + " * " + smallestDivider;
+			}
+	        
+			s = s  + " = " + number;
+			return s;
+		}
+
+	}
+	```
+
 	
 ??? note "<a id="ubung-5"></a>Übung 5"
 	
