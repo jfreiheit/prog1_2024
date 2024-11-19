@@ -707,3 +707,101 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 		}
 		```
+
+
+??? question "Klasse und Objekte - Point"
+	=== "Point.java"
+		```java
+		package vorlesungen.vorl1118;
+
+		public class Point
+		{
+			// Objektvariablen
+			private int x;
+			private int y;
+			
+			// Konstruktor
+			public Point(int px, int py)
+			{
+				x = px;
+				y = py;
+			}
+			
+			// Objektmethoden
+			// Getter
+			public int getX()
+			{
+				return x;
+			}
+
+			public int getY()
+			{
+				return y;
+			}
+			
+			public void print()
+			{
+				System.out.println("[ x=" + x + ", y=" + y + " ]");
+			}
+			
+			public void translate(int deltaX, int deltaY)
+			{
+				x = x + deltaX;
+				y = y + deltaY;
+			}
+			
+			public boolean isLeft(Point otherPoint)
+			{
+				return x < otherPoint.x;
+			}
+			
+			
+		}
+		```
+	=== "Programmklasse.java"
+		```java
+		package vorlesungen.vorl1118;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				Point p1 = new Point(-1, 3);
+				Point p2 = new Point(2, 2);
+
+				// p1.x = 5; 	// Fehler wegen private
+				System.out.println("p1.x = " + p1.getX());
+				System.out.println("p1.y = " + p1.getY());
+				
+				System.out.println("p2.x = " + p2.getX());
+				System.out.println("p2.y = " + p2.getY());
+				
+				p1.print();
+				p2.print();
+				
+				System.out.println("----------- p3 ---------------");
+				Point p3 = new Point(1, 5);
+				p3.print();
+				p3.translate(-1, -3);
+				p3.print();
+				
+				System.out.println("----------- p1 ---------------");
+				p1.print();
+				p2.print();
+				System.out.println("p1 links von p2 ? " + p1.isLeft(p2));
+				p2.print();
+				
+				
+				Point p4 = p3;
+				p4.print();
+				p3.print();
+				p3.translate(1, -1);
+				p4.print();
+				
+				
+			}
+
+		}
+
+		```
