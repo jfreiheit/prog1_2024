@@ -805,3 +805,94 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		}
 
 		```
+
+
+??? question "Klasse und Objekte - Circle"
+	=== "Circle.java"
+		```java
+		package vorlesungen.vorl1120;
+
+		public class Circle
+		{
+			// Obejektvariable
+			private double radius;
+			
+			// Konstruktor (parametrisiert)
+			public Circle(double radius)
+			{
+				this.radius = radius;
+			}
+			
+			// Konstruktor (parameterlos)
+			public Circle()
+			{
+				this.radius = 1.0;
+			}
+			
+			public double getDiameter()
+			{
+				return 2.0 * this.radius;
+			}
+			
+			public double getRadius()
+			{
+				return this.radius;
+			}
+			
+			public double getPerimeter()
+			{
+				return Math.PI * this.getDiameter();
+			}
+			
+			public double getArea()
+			{
+				return Math.PI * Math.pow(this.radius, 2);
+			}
+			
+			public void print()
+			{
+				System.out.println("Radius         " + this.radius);
+				System.out.println("Durchmesser    " + this.getDiameter());
+				System.out.println("Umfang         " + this.getPerimeter());
+				System.out.println("Flaecheninhalt " + this.getArea());
+				System.out.println();
+			}
+			
+			public boolean isBigger(Circle c)
+			{
+				return this.radius > c.radius;
+			}
+		}
+
+		```
+	=== "Programmklasse.java"
+		```java
+		package vorlesungen.vorl1120;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				Circle c1 = new Circle(3.0);
+				Circle c2 = new Circle(4.0);
+				Circle c3 = new Circle();
+				
+				System.out.println("c1 Radius : " + c1.getRadius() + " Durchmesser : " + c1.getDiameter());
+				System.out.println("c2 Radius : " + c2.getRadius() + " Durchmesser : " + c2.getDiameter());
+				
+				c1.print();
+				c2.print();
+				c3.print();
+				
+				System.out.println("c3 groesser als c1 ? " + c3.isBigger(c1));
+				
+				Circle c4 = c3;	// 2 Referenzen auf dasselbe Objekte
+				Circle c5 = new Circle();
+				c5.print();
+				
+				Circle c6;		// Referenz ist null				
+			}
+
+		}
+		```

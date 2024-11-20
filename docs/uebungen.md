@@ -944,7 +944,7 @@
 		- `guthaben` vom Typ `double` --> nur in der Klasse sichtbar!
 		- `pin` vom Typ `int`	--> ebenfalls nur in der Klasse sichtbar!
 	5. Erstellen Sie in der Klasse `Konto` einen Konstruktor für `Konto`
-		- diesem Konstruktor wird als Parameter `int pPin` übergeben
+		- diesem Konstruktor wird als Parameter `int pin` übergeben
 		- mit dem Wert des Parameters wird innerhalb des Konstruktors der Wert von `pin` initialisiert
 		- Initialisieren Sie im Konstruktor auch die Objektvariable `guthaben`. Sie bekommt den Wert `0.0` (hierfür haben wir also keinen Parameter, wir setzen den initialen Wert einfach generell auf `0.0`)
 	6. Erstellen Sie in der Klasse `Konto` eine Objektmethode `einzahlen(double betrag)`
@@ -954,7 +954,7 @@
 			```bash
 			Es wurden 100,00 Euro eingezahlt.
 			```
-			falls der `betrag` den Wert `100.0` hatte. Verwenden Sie am besten die `printf()`-Methode, um stets genau 2 Stellen nach dem Komma des Betrages auszugeben (siehe [hier](hilfsklassen.md#formatierung-von-gleikommazahlen)). 
+			falls der `betrag` den Wert `100.0` hatte. (**Optional:** Verwenden Sie am besten die `printf()`-Methode, um stets genau 2 Stellen nach dem Komma des Betrages auszugeben (siehe [hier](hilfsklassen.md#formatierung-von-gleikommazahlen)). 
 	7. Geben Sie in der `main()`-Methode der `Testklasse` ein:
 		```java
 		Konto k1 = new Konto(1234);
@@ -963,15 +963,15 @@
 		k1.einzahlen(50.0);
 		k1.einzahlen(150.0);
 		```
-		und führen Sie die `Testklasse` aus. Es sollten folgende Ausgaben erzeugt werden:
+		und führen Sie die `Testklasse` aus. Es sollten folgende Ausgaben erzeugt werden (falls `printf()` verwendet wird, ansonsten ist die Ausgabe z.B. `100.0 Euro`):
 		```bash
 		Es wurden 100,00 Euro eingezahlt.
 		Es wurden 50,00 Euro eingezahlt.
 		Es wurden 150,00 Euro eingezahlt.
 		```
-	8. Erstellen Sie in der Klasse `Konto` eine Objektmethode `kontoauszug(int pPin)`
+	8. Erstellen Sie in der Klasse `Konto` eine Objektmethode `kontoauszug(int pin)`
 		- diese Objektmethode ist `public` und gibt nichts zurück
-		- einen `kontoauszug(int pPin)` können Sie nur "ziehen", wenn der Parameterwert von `pPin` mit dem Wert der Objektvariablen `pin` übereinstimmt
+		- einen `kontoauszug(int pin)` können Sie nur "ziehen", wenn der Parameterwert von `pin` mit dem Wert der Objektvariablen `pin` übereinstimmt
 		- wird der richtige Wert für die `pin` übergeben, geben Sie das `guthaben` in der folgenden Form aus:
 			```bash
 			Ihr aktuelles Guthaben betraegt 300,00 Euro.
@@ -991,9 +991,9 @@
 		Falsche PIN!
 		Ihr aktuelles Guthaben betraegt 300,00 Euro.
 		```
-	10. Erstellen Sie in der Klasse `Konto` eine Objektmethode `auszahlen(int pPin, double betrag)`
+	10. Erstellen Sie in der Klasse `Konto` eine Objektmethode `auszahlen(int pin, double betrag)`
 		- diese Objektmethode ist `public` und gibt nichts zurück
-		- es kann nur etwas ausgezahlt werden, wenn der Parameterwert von `pPin` mit dem Wert der Objektvariablen `pin` übereinstimmt
+		- es kann nur etwas ausgezahlt werden, wenn der Parameterwert von `pin` mit dem Wert der Objektvariablen `pin` übereinstimmt
 		- stimmen die Werte nicht überein, geben Sie erneut 
 			```bash
 			Falsche PIN!
