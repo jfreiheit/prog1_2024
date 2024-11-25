@@ -896,3 +896,111 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 		}
 		```
+
+
+??? question "Klasse und Objekte - Person"
+	=== "Adresse.java (anderes Package)"
+		```java
+		package vorlesungen.vorl1113;
+
+		public class Adresse
+		{
+			// Objektvariablen
+			private String strasse;
+			private int nummer;
+			private int plz;
+			private String wohnort;
+			
+			
+			// Konstruktor
+			public Adresse(String strasse, int nummer, int plz, String wohnort)
+			{
+				this.strasse = strasse;
+				this.nummer = nummer;
+				this.plz = plz;
+				this.wohnort = wohnort;
+			}
+			
+			
+			// Objektmethode
+			public String adresseToString()
+			{
+				return this.strasse + " " + this.nummer + " in " + this.plz + " " + this.wohnort;
+			}
+			
+			public void strasseUmbenennen(String neuerStrassenname)
+			{
+				this.strasse = neuerStrassenname;
+			}
+		}
+		```
+	=== "Person.java (anderes Package)"
+		```java
+		package vorlesungen.vorl1125;
+
+		import vorlesungen.vorl1113.Adresse;
+
+		public class Person
+		{
+			private String vorname;
+			private String nachname;
+			private Adresse adresse;
+			
+			public Person(String vorname, String nachname, Adresse adresse)
+			{
+				this.vorname = vorname;
+				this.nachname = nachname;
+				this.adresse = adresse;
+			}
+			
+			public void print()
+			{
+				System.out.printf("%s %s %n%s %n", this.vorname, this.nachname, "wohnt in");
+				System.out.println(this.adresse.adresseToString());
+				System.out.println();
+			}
+			
+			public Adresse getAdresse()
+			{
+				return this.adresse;
+			}
+		}
+
+		```
+	=== "Programmklasse.java"
+		```java
+		package vorlesungen.vorl1125;
+
+		import vorlesungen.vorl1113.Adresse;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				Adresse wh = new Adresse("Wilhelminenhofstr.", 75, 12459, "Berlin");
+				Adresse ta = new Adresse("Treskowallee", 8, 10435, "Berlin");
+				
+				Person max = new Person("Max", "Muster", new Adresse("Wilhelminenhofstr.", 75, 12459, "Berlin"));
+				Person maria = new Person("Maria", "Schmidt", ta);
+				Person mo = new Person("Mo", "Mueller", wh);
+				Person bo = new Person("Bo", "Mueller", wh);
+				
+				max.print();
+				maria.print();		// Treskowallee
+				mo.print();
+				bo.print();
+				
+				ta.strasseUmbenennen("Neue Strasse");
+				
+				maria.print();
+				
+				System.out.println();
+				
+				System.out.println(max.getAdresse().adresseToString());
+
+			}
+
+		}
+
+		```
