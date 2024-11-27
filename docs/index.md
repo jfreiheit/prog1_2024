@@ -50,8 +50,8 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 4. | 28.-01.11.2024 | [Methoden](methoden.md#methoden) und [Methodenstack](methodenstack.md#methodenstack)| [Übung 2a](uebungen.md#ubung-2a)| - | - | 
 | 5. | 04.-08.11.2024 | [Selektion (if)](selektion.md#selektion) und [Iteration (for)](iteration.md#die-for-schleife)| [Übung 3](uebungen.md#ubung-3)| [Aufgabe 1](aufgaben.md#aufgabe-1) | 22.11.2024 | 
 | 6. | 11.-15.11.2024 | [Iteration (while)](iteration.md#die-while-schleife) und [Methodenstack](methodenstack.md#methodenstack) | [Übung 4](uebungen.md#ubung-4)| [Aufgabe 2](aufgaben.md#aufgabe-2)  | 29.11.2024 | 
-| 7. | 18.-22.11.2024 | [Klassen und Objekte](objekte1.md#klassen-und-objekte) | [Übung 5](uebungen.md#ubung-5)| [Aufgabe 3](aufgaben.md#aufgabe-3) | 06.12.2024 | 
-| 8. | 25.-29.11.2024 | [Konstruktoren, this, eigene Datentypen, Rückgabe von Objekten](objekte2.md#klassen-und-objekte-ii) | [Übung 6](uebungen.md#ubung-6)| [Aufgabe 4](aufgaben.md#aufgabe-4)  | 13.12.2024 |
+| 7. | 18.-22.11.2024 | [Klassen und Objekte, Konstruktoren, this](objekte1.md#klassen-und-objekte) | [Übung 5](uebungen.md#ubung-5)| [Aufgabe 3](aufgaben.md#aufgabe-3) | 06.12.2024 | 
+| 8. | 25.-29.11.2024 | [Eigene Datentypen, Rückgabe von Objekten](objekte2.md#klassen-und-objekte-ii) und [Leben der Objekte](methodenstack.md/#das-leben-der-objekte)| [Übung 6](uebungen.md#ubung-6)| [Aufgabe 4](aufgaben.md#aufgabe-4)  | 13.12.2024 |
 | 9. | 02.-06.12.2024 | [Vererbung,](vererbung.md#vererbung) [Object und Polymorphie](object.md#die-klasse-object) | [Übung 7](uebungen.md#ubung-7)| [Aufgabe 5](aufgaben.md#aufgabe-5)  | 20.12.2024 |
 | 10. | 09.-13.12.2024 | [Arrays](arrays.md#arrays) | [Übung 8](uebungen.md#ubung-8)| [Aufgabe 6](aufgaben.md#aufgabe-6) | 03.01.2025 |
 | 11. | 16.-20.12.2024 | [Algorithmen über Arrays](arrays.md#algorithmen-uber-arrays) | [Übung 9](uebungen.md#ubung-9)| [Aufgabe 7](aufgaben.md#aufgabe-7)  | 10.01.2025 |
@@ -1072,8 +1072,8 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 		}
 		```
-	=== "Person.java - nur die Erweiterungen"
-		```java	
+	=== "Person.java"
+		```java	lineums="1" hl_lines="10"
 		package vorlesungen.vorl1125;
 
 		import vorlesungen.vorl1113.Adresse;
