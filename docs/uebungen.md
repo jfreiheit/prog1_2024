@@ -1101,6 +1101,128 @@
 			```
 
 
+??? question "Eine mögliche Lösung für Übung 5"
+	=== "Konto.java"
+		```java
+		package uebungen.uebung5;
+
+		public class Konto
+		{
+			private double guthaben;
+			private int pin;
+			private double dispogrenze;
+			
+			public Konto(int pin)
+			{
+				this.pin = pin;
+				this.guthaben = 0.0;
+				this.dispogrenze = -1000;
+			}
+			
+			public void einzahlen(double betrag)
+			{
+				if(betrag > 0)
+				{
+					this.guthaben += betrag;
+					System.out.printf("Es wurden %6.2f Euro eingezahlt.%n", betrag);
+				}
+				else
+				{
+					System.out.println("Betrag muss groesser als 0 sein!");
+				}
+			}
+			
+			public void kontoauszug(int pin)
+			{
+				if(this.pin == pin)			// pin stimmt
+				{
+					System.out.printf("Ihr aktuelles Guthaben betraegt %.2f Euro.%n", this.guthaben);
+				}
+				else						// pin stimmt nicht
+				{
+					System.out.println("Falsche PIN!");
+				}
+			}
+			
+			public void auszahlen(int pin, double betrag)
+			{
+				if(this.pin == pin)			// pin stimmt
+				{
+					if(this.guthaben - betrag >= this.dispogrenze)	// guthaben reicht
+					{
+						this.guthaben -= betrag;
+						System.out.printf("Es wurden %.2f Euro ausgezahlt.%n", betrag);
+					}
+					else						// guthaben reicht nicht
+					{
+						System.out.printf("Ihr Guthaben reicht nicht, um %.2f Euro auszuzahlen.%n", betrag);
+					}
+				}
+				else						// pin stimmt nicht
+				{
+					System.out.println("Falsche PIN!");
+				}
+			}
+			
+			public void zinsenZahlen()
+			{
+				final double DISPOZINSEN = 12.0;
+				final double GUTHABENZINSEN = 0.5;
+				// DISPOZINSEN = 13.0;  // Fehler wegen final
+				
+				double zinsen = 0;
+				if(this.guthaben > 0)		// positives guthaben (Habenzinsen)
+				{
+					zinsen = this.guthaben * (GUTHABENZINSEN/100.0);		// positiver Wert
+				}
+				else 						// negatives guthaben (Dispozinsen)
+				{
+					zinsen = this.guthaben * (DISPOZINSEN/100.0);			// negativer Wert
+				}
+				
+				this.guthaben += zinsen;
+				
+				if(zinsen > 0)		// Guthabenzinsen - gutgeschrieben
+				{
+					System.out.printf("Ihnen wurden %.2f Euro Zinsen gutgeschrieben.%n", zinsen);
+				}
+				else				// Dispozinsen	- abgebucht
+				{
+					System.out.printf("Ihnen wurden %.2f Euro Zinsen abgebucht.%n", -zinsen);
+				}
+			}
+		}
+
+		```
+	=== "Testklasse.java"
+		```java
+		package uebungen.uebung5;
+
+		public class Testklasse
+		{
+
+			public static void main(String[] args)
+			{
+				Konto k1 = new Konto(1234);
+				
+				k1.einzahlen(100.0);
+				k1.einzahlen(50.0);
+				k1.einzahlen(150.0);
+				
+				k1.kontoauszug(1235);       // Falsche PIN!
+				k1.kontoauszug(1234);
+				
+				k1.auszahlen(1235, 100.0);  // Falsche PIN!
+				k1.auszahlen(1234, 100.0);  
+				k1.kontoauszug(1234);       
+				k1.auszahlen(1234, 300.0);  // Guthaben reicht nicht
+				k1.auszahlen(1234, 200.0);  
+				k1.kontoauszug(1234);
+			}
+
+		}
+		```
+
 ??? note "<a id="ubung-6"></a>Übung 6"
 	
 	1. Erstellen Sie ein package `uebungen.uebung6`. 
