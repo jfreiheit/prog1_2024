@@ -891,7 +891,7 @@
 <tr>
 <td>7.</td>
 <td>18.-22.11.2024</td>
-<td><a href="objekte1/#klassen-und-objekte">Klassen und Objekte</a></td>
+<td><a href="objekte1/#klassen-und-objekte">Klassen und Objekte, Konstruktoren, this</a></td>
 <td><a href="uebungen/#ubung-5">Übung 5</a></td>
 <td><a href="aufgaben/#aufgabe-3">Aufgabe 3</a></td>
 <td>06.12.2024</td>
@@ -899,7 +899,7 @@
 <tr>
 <td>8.</td>
 <td>25.-29.11.2024</td>
-<td><a href="objekte2/#klassen-und-objekte-ii">Konstruktoren, this, eigene Datentypen, Rückgabe von Objekten</a></td>
+<td><a href="objekte2/#klassen-und-objekte-ii">Eigene Datentypen, Rückgabe von Objekten</a> und <a href="methodenstack/#das-leben-der-objekte">Leben der Objekte</a></td>
 <td><a href="uebungen/#ubung-6">Übung 6</a></td>
 <td><a href="aufgaben/#aufgabe-4">Aufgabe 4</a></td>
 <td>13.12.2024</td>
@@ -1933,7 +1933,7 @@
 </details>
 <details class="question">
 <summary>Klasse und Objekte - Leben von Objekten</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Programmklasse.java</label><label for="__tabbed_5_2">Person.java - nur die Erweiterungen</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Programmklasse.java</label><label for="__tabbed_5_2">Person.java</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-java highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">vorlesungen.vorl1127</span><span class="p">;</span>
@@ -2001,55 +2001,54 @@
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-java highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">vorlesungen.vorl1125</span><span class="p">;</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">vorlesungen.vorl1113.Adresse</span><span class="p">;</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="p">{</span>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">vorname</span><span class="p">;</span>
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nachname</span><span class="p">;</span>
-</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Adresse</span><span class="w"> </span><span class="n">adresse</span><span class="p">;</span>
-</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
-</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">vorname</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nachname</span><span class="p">,</span><span class="w"> </span><span class="n">Adresse</span><span class="w"> </span><span class="n">adresse</span><span class="p">)</span>
-</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">vorname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vorname</span><span class="p">;</span>
-</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nachname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nachname</span><span class="p">;</span>
-</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">adresse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">adresse</span><span class="p">;</span>
-</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>
-</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">vorname</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nachname</span><span class="p">,</span><span class="w"> </span>
-</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">strasse</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nummer</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">plz</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">wohnort</span><span class="p">)</span>
-</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">vorname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vorname</span><span class="p">;</span>
-</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nachname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nachname</span><span class="p">;</span>
-</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">adresse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Adresse</span><span class="p">(</span><span class="n">strasse</span><span class="p">,</span><span class="w"> </span><span class="n">nummer</span><span class="p">,</span><span class="w"> </span><span class="n">plz</span><span class="p">,</span><span class="w"> </span><span class="n">wohnort</span><span class="p">);</span>
-</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>
-</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>
-</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span>
-</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-18-29"><a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%s %s %n%s %n&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">vorname</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">nachname</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;wohnt in&quot;</span><span class="p">);</span>
-</span><span id="__span-18-30"><a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">adresse</span><span class="p">.</span><span class="na">adresseToString</span><span class="p">());</span>
-</span><span id="__span-18-31"><a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-</span><span id="__span-18-32"><a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-18-33"><a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a>
-</span><span id="__span-18-34"><a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Adresse</span><span class="w"> </span><span class="nf">getAdresse</span><span class="p">()</span>
-</span><span id="__span-18-35"><a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-18-36"><a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">adresse</span><span class="p">;</span>
-</span><span id="__span-18-37"><a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-18-38"><a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a>
-</span><span id="__span-18-39"><a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">umzug</span><span class="p">(</span><span class="n">Adresse</span><span class="w"> </span><span class="n">neueAdresse</span><span class="p">)</span>
-</span><span id="__span-18-40"><a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-18-41"><a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">adresse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">neueAdresse</span><span class="p">;</span>
-</span><span id="__span-18-42"><a id="__codelineno-18-42" name="__codelineno-18-42" href="#__codelineno-18-42"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-18-43"><a id="__codelineno-18-43" name="__codelineno-18-43" href="#__codelineno-18-43"></a>
-</span><span id="__span-18-44"><a id="__codelineno-18-44" name="__codelineno-18-44" href="#__codelineno-18-44"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">umzug</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">strasse</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nummer</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">plz</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">wohnort</span><span class="p">)</span>
-</span><span id="__span-18-45"><a id="__codelineno-18-45" name="__codelineno-18-45" href="#__codelineno-18-45"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-18-46"><a id="__codelineno-18-46" name="__codelineno-18-46" href="#__codelineno-18-46"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">adresse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Adresse</span><span class="p">(</span><span class="n">strasse</span><span class="p">,</span><span class="w"> </span><span class="n">nummer</span><span class="p">,</span><span class="w"> </span><span class="n">plz</span><span class="p">,</span><span class="w"> </span><span class="n">wohnort</span><span class="p">);</span>
-</span><span id="__span-18-47"><a id="__codelineno-18-47" name="__codelineno-18-47" href="#__codelineno-18-47"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-18-48"><a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a><span class="p">}</span>
-</span></code></pre></div>
+<p>```java lineums="1" hl_lines="10"
+package vorlesungen.vorl1125;</p>
+<p>import vorlesungen.vorl1113.Adresse;</p>
+<p>public class Person
+{
+    private String vorname;
+    private String nachname;
+    private Adresse adresse;</p>
+<div class="language-text highlight"><pre><span></span><code>public Person(String vorname, String nachname, Adresse adresse)
+{
+    this.vorname = vorname;
+    this.nachname = nachname;
+    this.adresse = adresse;
+}
+
+public Person(String vorname, String nachname, 
+        String strasse, int nummer, int plz, String wohnort)
+{
+    this.vorname = vorname;
+    this.nachname = nachname;
+    this.adresse = new Adresse(strasse, nummer, plz, wohnort);
+
+}
+
+public void print()
+{
+    System.out.printf(&quot;%s %s %n%s %n&quot;, this.vorname, this.nachname, &quot;wohnt in&quot;);
+    System.out.println(this.adresse.adresseToString());
+    System.out.println();
+}
+
+public Adresse getAdresse()
+{
+    return this.adresse;
+}
+
+public void umzug(Adresse neueAdresse)
+{
+    this.adresse = neueAdresse;
+}
+
+public void umzug(String strasse, int nummer, int plz, String wohnort)
+{
+    this.adresse = new Adresse(strasse, nummer, plz, wohnort);
+}
+</code></pre></div>
+<p>}
+```</p>
 </div>
 </div>
 </div>
