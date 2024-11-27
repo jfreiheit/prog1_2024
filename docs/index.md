@@ -1004,3 +1004,122 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		}
 
 		```
+
+
+??? question "Klasse und Objekte - Leben von Objekten"
+	=== "Programmklasse.java"
+		```java
+		package vorlesungen.vorl1127;
+
+		import vorlesungen.vorl1113.Adresse;
+		import vorlesungen.vorl1125.Person;
+
+		public class Programmklasse
+		{
+			public static int doSomething(int beliebig)
+			{
+				beliebig++;
+				return beliebig;
+			}
+			
+			public static void doSomething(Int i)
+			{
+				i.increment();
+			}
+			
+			public static Int createInt(int value)
+			{
+				Int i = new Int(value);
+				return i;
+			}
+
+			public static void main(String[] args)
+			{
+				int i = 0;
+				i = doSomething(i);
+				System.out.println("i = " + i);
+				
+				Int nr1 = new Int(0);
+				Int nr2 = new Int(10);
+				doSomething(nr1);
+				doSomething(nr2);
+				System.out.println(nr1.getValue());
+				System.out.println(nr2.getValue());
+				
+				Int i1 = createInt(5);
+				
+				Person p1 = new Person("Peter", "Lustig", "Lustigweg", 12, 12345, "Bayern");
+				p1.print();
+				
+				Adresse pA = p1.getAdresse();
+				System.out.println(pA.adresseToString());
+				
+				Adresse wh = new Adresse("Wilhelminenhofstr.", 75, 12459, "Berlin");
+				Adresse ta = new Adresse("Treskowallee", 8, 10435, "Berlin");
+				
+				p1.umzug(ta);
+				p1.print();
+				
+				ta.strasseUmbenennen("Neue Strasse");
+				p1.print();
+				p1.umzug("Noch neuer Strasse", 1, 12345, "Bayern");
+				p1.print();
+				
+				Adresse a = p1.getAdresse();
+				a.strasseUmbenennen("Alte Strasse");
+				p1.print();
+			}
+
+		}
+		```
+	=== "Person.java - nur die Erweiterungen"
+		```java	
+		package vorlesungen.vorl1125;
+
+		import vorlesungen.vorl1113.Adresse;
+
+		public class Person
+		{
+			private String vorname;
+			private String nachname;
+			private Adresse adresse;
+			
+			public Person(String vorname, String nachname, Adresse adresse)
+			{
+				this.vorname = vorname;
+				this.nachname = nachname;
+				this.adresse = adresse;
+			}
+			
+			public Person(String vorname, String nachname, 
+					String strasse, int nummer, int plz, String wohnort)
+			{
+				this.vorname = vorname;
+				this.nachname = nachname;
+				this.adresse = new Adresse(strasse, nummer, plz, wohnort);
+				
+			}
+			
+			public void print()
+			{
+				System.out.printf("%s %s %n%s %n", this.vorname, this.nachname, "wohnt in");
+				System.out.println(this.adresse.adresseToString());
+				System.out.println();
+			}
+			
+			public Adresse getAdresse()
+			{
+				return this.adresse;
+			}
+			
+			public void umzug(Adresse neueAdresse)
+			{
+				this.adresse = neueAdresse;
+			}
+			
+			public void umzug(String strasse, int nummer, int plz, String wohnort)
+			{
+				this.adresse = new Adresse(strasse, nummer, plz, wohnort);
+			}
+		}
+		```
