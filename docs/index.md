@@ -1008,7 +1008,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ??? question "Klasse und Objekte - Leben von Objekten"
 	=== "Programmklasse.java"
-		```java
+		```java	linenums="1"
 		package vorlesungen.vorl1127;
 
 		import vorlesungen.vorl1113.Adresse;
@@ -1072,8 +1072,33 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 		}
 		```
+	=== "Int.java"
+		```java	linenums="1"
+		package vorlesungen.vorl1127;
+
+		public class Int
+		{
+			private int value;
+			
+			public Int(int value)
+			{
+				this.value = value;
+			}
+			
+			public void increment()
+			{
+				this.value++;
+			}
+			
+			public int getValue()
+			{
+				return this.value;
+			}
+		}
+		```
+
 	=== "Person.java"
-		```java	lineums="1" hl_lines="10"
+		```java	linenums="1" hl_lines="18-24 38-41 43-46"
 		package vorlesungen.vorl1125;
 
 		import vorlesungen.vorl1113.Adresse;
@@ -1097,7 +1122,6 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 				this.vorname = vorname;
 				this.nachname = nachname;
 				this.adresse = new Adresse(strasse, nummer, plz, wohnort);
-				
 			}
 			
 			public void print()
