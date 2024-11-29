@@ -1357,6 +1357,162 @@
 
 
 
+??? question "Eine mögliche Lösung für Übung 6"
+	=== "Rectangle.java"
+		```java
+		package uebungen.uebung6;
+
+		public class Rectangle
+		{
+			private int a;
+			private int b;
+			
+			public Rectangle()
+			{
+				this.a = 10;
+				this.b = 20;
+			}
+			
+			public Rectangle(int a, int b)
+			{
+				this.a = a;
+				this.b = b;
+			}
+			
+			public int area()
+			{
+				return this.a * this.b;
+			}
+			
+			public int perimeter()
+			{
+				return 2 * (this.a + this.b);
+			}
+			
+			public String toString()
+			{
+				return String.format("Rectangle : ( a=%2d, b=%2d, area=%3d, perimeter=%2d, diagonal=%.3f )", 
+						this.a, this.b, this.area(), this.perimeter(), this.diagonal());
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			public boolean sidesAreEqual(Rectangle r)
+			{
+				return (this.a == r.a && this.b == r.b) ||
+					   (this.a == r.b && this.b == r.a);
+			}
+			
+			public boolean areasAreEqual(Rectangle r)
+			{
+				return this.area() == r.area();
+			}
+			
+			public boolean perimetersAreEqual(Rectangle r)
+			{
+				return this.perimeter() == r.perimeter();
+			}
+			
+			public void printComparison(Rectangle r)
+			{
+				System.out.println("this      " + this.toString());
+				System.out.println("the other " + r.toString());
+				if(this.sidesAreEqual(r))
+				{
+					System.out.println("sides are equal");
+				}
+				else
+				{
+					System.out.println("sides are not equal");
+				}
+				if(this.areasAreEqual(r))
+				{
+					System.out.println("areas are equal");
+				}
+				else
+				{
+					System.out.println("areas are not equal");
+				}
+				if(this.perimetersAreEqual(r))
+				{
+					System.out.println("perimeters are equal");
+				}
+				else
+				{
+					System.out.println("perimeters are not equal");
+				}
+				System.out.println();
+			}
+			
+			public double diagonal()
+			{
+				int a2 = this.a * this.a;
+				int b2 = this.b * this.b;
+				double d = Math.sqrt(a2+b2);
+				return d;
+			}
+			
+			public void scale(int factor)
+			{
+				double areaNew = factor * this.area();
+				double newA = Math.sqrt(factor * this.a * this.a); 
+				double newB = Math.sqrt(factor * this.b * this.b); 
+				System.out.printf("newArea=%7.2f newA=%6.2f newB=%6.2f", areaNew, newA, newB);
+				System.out.printf(" check (newA * newB) = %.2f %n", (newA * newB));
+			}
+		}
+		```
+	=== "Rectangle.java"
+		```java
+		package uebungen.uebung6;
+
+		public class Testklasse
+		{
+
+			public static void main(String[] args)
+			{
+				// Objekte erzeugen
+				Rectangle r1 = new Rectangle();
+				Rectangle r2 = new Rectangle(12, 18);
+				Rectangle r3 = new Rectangle(40, 5);
+				Rectangle r4 = new Rectangle(20, 10);
+				Rectangle r5 = new Rectangle(11, 21);
+
+				System.out.printf("%n%n--------------- print()-Methode -----------------%n%n");
+				r1.print();
+				r2.print();
+				r3.print();
+				r4.print();
+				r5.print();
+				
+				System.out.printf("%n%n---------- printComparison()-Methode ------------%n%n");
+				r1.printComparison(r2);
+				r1.printComparison(r3);
+				r1.printComparison(r4);
+				r1.printComparison(r5);
+				
+				System.out.printf("%n%n--------------- scale()-Methode -----------------%n%n");
+				r1.scale(2);
+				r2.scale(2);
+				r3.scale(2);
+				r4.scale(2);
+				r5.scale(2);
+				r1.scale(10);
+				r2.scale(10);
+				r3.scale(10);
+				r4.scale(10);
+				r5.scale(10);
+
+			}
+
+		}
+		```
+
+
+
 ??? "<a id="ubung-7"></a>Übung 7"
 	
 	---
