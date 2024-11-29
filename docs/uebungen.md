@@ -1465,7 +1465,7 @@
 			}
 		}
 		```
-	=== "Rectangle.java"
+	=== "Testklasse.java"
 		```java
 		package uebungen.uebung6;
 
