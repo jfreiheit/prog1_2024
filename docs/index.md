@@ -1147,3 +1147,104 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			}
 		}
 		```
+
+
+??? question "Vererbung"
+	=== "Programmklasse.java"
+		```java	linenums="1"
+		package vorlesungen.vorl1202;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				Viereck v1 = new Viereck(10,20,30,40);
+				v1.print();
+				
+				Rechteck r1 = new Rechteck(80, 40);
+				r1.print();
+				
+				Quadrat q1 = new Quadrat(35);
+				q1.print();
+			}
+
+		}
+		```
+	=== "Viereck.java"
+		```java	linenums="1"
+		package vorlesungen.vorl1202;
+
+		public class Viereck
+		{
+			// Objektvariablen
+			protected int a, b, c, d;		// Seiten des Vierecks
+			
+			public Viereck(int a, int b, int c, int d)
+			{
+				this.a = a;
+				this.b = b;
+				this.c = c;
+				this.d = d;
+			}
+			
+			public int umfang()
+			{
+				return this.a + this.b + this.c + this.d;
+			}
+			
+			public void print()
+			{
+				System.out.printf("[ a=%2d, b=%2d, c=%2d, d=%2d ]%n", this.a, this.b, this.c, this.d);
+		        System.out.printf("Der Umfang des Vierecks betraegt %3dcm.%n%n", this.umfang());
+			}
+			
+			
+		}
+		```
+	=== "Rechteck.java"
+		```java	linenums="1"
+		package vorlesungen.vorl1202;
+
+		public class Rechteck extends Viereck
+		{	
+			public Rechteck(int laenge, int breite)
+			{
+				super(laenge, breite, laenge, breite); // Aufruf des Konstruktors von Viereck
+			}
+			
+			public int flaecheninhalt()
+			{
+				return this.a * this.b;
+			}
+			
+			@Override
+			public void print()
+			{
+				System.out.printf("[ laenge=%2d, breite=%2d ]%n", this.a, this.b);
+				System.out.printf("Der Umfang des Rechtecks betraegt %3dcm.%n", this.umfang());
+				System.out.printf("Der Flaecheninhalt des Rechtecks betraegt %4dcm.%n%n", this.flaecheninhalt());
+			}
+		}
+		```
+	=== "Quadrat.java"
+		```java	linenums="1"
+		package vorlesungen.vorl1202;
+
+		public class Quadrat extends Rechteck
+		{
+			public Quadrat(int seite)
+			{
+				super(seite, seite);	// Aufruf des Konstruktors von Rechteck
+			}
+			
+			@Override
+			public void print()
+			{
+				System.out.printf("[ seite=%2d ]%n", this.a );
+				System.out.printf("Der Umfang des Quadrats betraegt %3dcm.%n", this.umfang());
+				System.out.printf("Der Flaecheninhalt des Quadrats betraegt %4dcm.%n%n", this.flaecheninhalt());
+			
+			}
+		}
+		```

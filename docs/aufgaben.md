@@ -223,7 +223,7 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	- Erstellen Sie in der Klasse `Triangle` eine Objektmethode `public int circumference()`, die den Umfang des Dreiecks zurückgibt (also die Summe der drei Seitenlängen).
 
 	- Erstellen Sie in der Klasse `Triangle` eine Objektmethode `public double area()`, die den Flaecheninhalt des Dreiecks zurückgibt.  Der Flächeninhalt `A` eines Dreiecks lässt sich nach der [Heron'schen Formel](https://de.wikipedia.org/wiki/Satz_des_Heron) wie folgt berechnen:
-		- `A = Math.sqrt(s * (s-a) * (s-b) * (s-c)) (siehe Klasse [Math](hilfsklassen.md#die-klasse-math))
+		- `A = Math.sqrt(s * (s-a) * (s-b) * (s-c))` (siehe Klasse [Math](hilfsklassen.md#die-klasse-math))
 		- wobei `s = (a + b + c) / 2`
 		- Achten Sie darauf, dass Sie stets mit `double` rechnen!
 		- Beachten Sie, dass in einem Dreieck keine Seite länger sein darf als die Summe der beiden anderen. Für die oben in der `main()`-Methode erstellten Objekte gilt das aber. Wir müssen deshalb nichts weiter beachten. 
@@ -322,12 +322,11 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 
 	- Erstellen Sie in der Klasse `Triangle` eine Objektmethode `public boolean sidesAreEqual(Triangle t)`, die ein `true` zurückgibt, wenn das aufrufende Objekt die gleichen Seitenlängen hat wie `t` und `false` sonst.
 		- Beachten Sie, dass folgende Dreiecke mit z.B. dem Dreieck (`a=3, b=4, c=5`) gleich sein sollen: (`a=3, b=4, c=5`), aber auch (`a=4, b=5, c=3`), aber auch (`a=5, b=3, c=4`) --> die "Benennung" der Seiten ist also egal
-		- Jedoch soll z.B. (`a=4, b=3, c=5`) nicht gleich zu (`a=3, b=4, c=5`) sein
 		- für die obigen Objekte soll somit gelten:
 			```bash
 			t1 und t2 gleiche Seiten ? : false
 			t1 und t4 gleiche Seiten ? : true
-			t1 und t5 gleiche Seiten ? : false
+			t1 und t5 gleiche Seiten ? : true
 			t1 und t6 gleiche Seiten ? : true
 			```
 			Erzeugen Sie diese Ausgabe in `main()`.

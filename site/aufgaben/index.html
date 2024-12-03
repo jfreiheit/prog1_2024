@@ -1044,7 +1044,7 @@
 <li>
 <p>Erstellen Sie in der Klasse <code>Triangle</code> eine Objektmethode <code>public double area()</code>, die den Flaecheninhalt des Dreiecks zurückgibt.  Der Flächeninhalt <code>A</code> eines Dreiecks lässt sich nach der <a href="https://de.wikipedia.org/wiki/Satz_des_Heron">Heron'schen Formel</a> wie folgt berechnen:</p>
 <ul>
-<li>`A = Math.sqrt(s * (s-a) * (s-b) * (s-c)) (siehe Klasse <a href="../hilfsklassen/#die-klasse-math">Math</a>)</li>
+<li><code>A = Math.sqrt(s * (s-a) * (s-b) * (s-c))</code> (siehe Klasse <a href="../hilfsklassen/#die-klasse-math">Math</a>)</li>
 <li>wobei <code>s = (a + b + c) / 2</code></li>
 <li>Achten Sie darauf, dass Sie stets mit <code>double</code> rechnen!</li>
 <li>Beachten Sie, dass in einem Dreieck keine Seite länger sein darf als die Summe der beiden anderen. Für die oben in der <code>main()</code>-Methode erstellten Objekte gilt das aber. Wir müssen deshalb nichts weiter beachten. </li>
@@ -1153,11 +1153,10 @@
 <p>Erstellen Sie in der Klasse <code>Triangle</code> eine Objektmethode <code>public boolean sidesAreEqual(Triangle t)</code>, die ein <code>true</code> zurückgibt, wenn das aufrufende Objekt die gleichen Seitenlängen hat wie <code>t</code> und <code>false</code> sonst.</p>
 <ul>
 <li>Beachten Sie, dass folgende Dreiecke mit z.B. dem Dreieck (<code>a=3, b=4, c=5</code>) gleich sein sollen: (<code>a=3, b=4, c=5</code>), aber auch (<code>a=4, b=5, c=3</code>), aber auch (<code>a=5, b=3, c=4</code>) &rarr; die "Benennung" der Seiten ist also egal</li>
-<li>Jedoch soll z.B. (<code>a=4, b=3, c=5</code>) nicht gleich zu (<code>a=3, b=4, c=5</code>) sein</li>
 <li>für die obigen Objekte soll somit gelten:
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>t1<span class="w"> </span>und<span class="w"> </span>t2<span class="w"> </span>gleiche<span class="w"> </span>Seiten<span class="w"> </span>?<span class="w"> </span>:<span class="w"> </span><span class="nb">false</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>t1<span class="w"> </span>und<span class="w"> </span>t4<span class="w"> </span>gleiche<span class="w"> </span>Seiten<span class="w"> </span>?<span class="w"> </span>:<span class="w"> </span><span class="nb">true</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>t1<span class="w"> </span>und<span class="w"> </span>t5<span class="w"> </span>gleiche<span class="w"> </span>Seiten<span class="w"> </span>?<span class="w"> </span>:<span class="w"> </span><span class="nb">false</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>t1<span class="w"> </span>und<span class="w"> </span>t5<span class="w"> </span>gleiche<span class="w"> </span>Seiten<span class="w"> </span>?<span class="w"> </span>:<span class="w"> </span><span class="nb">true</span>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>t1<span class="w"> </span>und<span class="w"> </span>t6<span class="w"> </span>gleiche<span class="w"> </span>Seiten<span class="w"> </span>?<span class="w"> </span>:<span class="w"> </span><span class="nb">true</span>
 </span></code></pre></div>
     Erzeugen Sie diese Ausgabe in <code>main()</code>.</li>
