@@ -1248,3 +1248,90 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			}
 		}
 		```
+
+
+??? question "Object"
+	=== "Programmklasse.java"
+		```java	linenums="1"
+		package vorlesungen.vorl1204;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				Viereck v1 = new Viereck(10,20,30,40);
+				v1.print();
+				
+				Viereck r1 = new Rechteck(80, 40);
+				r1.print();
+				if(r1 instanceof Rechteck) {
+					Rechteck r2 = (Rechteck)r1;
+					System.out.println(r2.flaecheninhalt());
+				}
+
+				
+				Viereck q1 = new Quadrat(35);
+				q1.print();
+				
+				System.out.println(v1.getClass());
+				System.out.println(r1.getClass());
+				System.out.println(q1.getClass());
+				
+				if(q1 instanceof Quadrat)
+				{
+					System.out.println("q1 ist vom Laufzeittyp Quadrat");
+				}
+				else
+				{
+					System.out.println("q1 ist nicht vom Laufzeittyp Quadrat");
+				}
+				
+				if(q1 instanceof Rechteck)
+				{
+					System.out.println("q1 ist vom Laufzeittyp Rechteck");
+				}
+				else
+				{
+					System.out.println("q1 ist nicht vom Laufzeittyp Rechteck");
+				}
+				
+				if(q1 instanceof Viereck)
+				{
+					System.out.println("q1 ist vom Laufzeittyp Viereck");
+				}
+				else
+				{
+					System.out.println("q1 ist nicht vom Laufzeittyp Viereck");
+				}
+				
+				if(q1 instanceof Object)
+				{
+					System.out.println("q1 ist vom Laufzeittyp Object");
+				}
+				else
+				{
+					System.out.println("q1 ist nicht vom Laufzeittyp Object");
+				}
+				
+				System.out.println(q1.toString());
+				System.out.println(q1);
+				
+				Viereck o1 = new Quadrat(10);
+				Viereck o2 = new Rechteck(10, 20);
+				Viereck o3 = new Viereck(10, 20, 30, 40);
+				o1.print();
+				o2.print();
+				o3.print();
+				
+				Viereck ve1 = new Viereck(10,20,30,40);
+				Viereck ve2 = new Viereck(10,20,30,40);
+				Viereck ve3 = ve1;
+				System.out.println("ve1 gleich ve2 ? " + (ve1 == ve2)); 	// false
+				System.out.println("ve1 gleich ve3 ? " + (ve1 == ve3)); 	// true
+				System.out.println("ve1 gleich ve2 ? " + (ve1.equals(ve2))); 	// false
+				System.out.println("ve1 gleich ve3 ? " + (ve1.equals(ve3))); 	// true
+			}
+
+		}
+		```
