@@ -1754,6 +1754,132 @@
 			```
 
 
+??? question "Eine mögliche Lösung für Übung 7"
+	=== "Counter.java"
+		```java 
+		package uebungen.uebung7;
+
+		public class Counter
+		{
+			private int counter;
+			private int limit;
+			
+			public Counter(int limit)
+			{
+				this.counter = 0;
+				this.limit = limit;
+			}
+			
+			public boolean increase()
+			{
+				this.counter++;
+				if(this.counter == this.limit)
+				{
+					this.counter = 0;
+					return false;
+				}
+				return true;		// falls this.counter != this.limit
+			}
+			
+			@Override
+			public String toString()
+			{
+		//		String s = "";
+		//		if(this.counter < 10)
+		//		{
+		//			s += "0" + this.counter;	// s = s + "0" + this.counter
+		//		}
+		//		else
+		//		{
+		//			s += this.counter;			// s = s + this.counter
+		//		}
+		//		return s;
+				return String.format("%02d", this.counter);
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+		}
+
+		```
+	=== "Clock.java"
+		```java 
+		package uebungen.uebung7;
+
+		public class Clock
+		{
+			private Counter minutes;
+			private Counter hours;
+			
+			public Clock()
+			{
+				this.minutes = new Counter(60);
+				this.hours = new Counter(24);
+			}
+			
+			public void increase()
+			{
+				boolean increased = this.minutes.increase();
+				if(!increased)
+				{
+					this.hours.increase();
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+				return this.hours.toString() + ":" + this.minutes.toString();
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+		}
+
+		```
+	=== "Programmklasse.java"
+		```java 
+		package uebungen.uebung7;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n---------------- Test Counter -----------%n%n");
+
+				Counter counter = new Counter(60);
+				for(int i=0; i<120; i++)
+				{
+				    counter.increase();
+				    System.out.printf("%3d : ", i);
+				    counter.print();
+				}
+				
+				System.out.printf("%n----------------- Test Clock ------------%n%n");
+
+				Clock clock = new Clock();
+				for(int i=0; i<1600; i++)
+				{
+				    clock.increase();
+				    if(i%50==0)
+				    {
+				        System.out.printf("%4d : ", i);
+				        clock.print();
+				    }
+				}
+
+
+			}
+
+		}
+
+		```
+
 
 ??? note "<a id="ubung-8"></a>Übung 8"
 	
