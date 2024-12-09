@@ -1335,3 +1335,121 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 		}
 		```
+
+
+??? question "equals(Object) und Arrays"
+	=== "Programmklasse.java"
+		```java	linenums="1"
+		package vorlesungen.vorl1209;
+
+		import vorlesungen.vorl1120.Circle;
+		import vorlesungen.vorl1202.Rechteck;
+		import vorlesungen.vorl1202.Viereck;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				
+				Viereck ve1 = new Viereck(10,20,30,40);
+				Viereck ve2 = new Viereck(10,20,30,40);
+				Viereck ve3 = ve1;
+				System.out.println("ve1 gleich ve2 ? " + (ve1 == ve2)); 	// false
+				System.out.println("ve1 gleich ve3 ? " + (ve1 == ve3)); 	// true
+				System.out.println("ve1 gleich ve2 ? " + (ve1.equals(ve2))); 	// true
+				System.out.println("ve1 gleich ve3 ? " + (ve1.equals(ve3))); 	// true
+
+				Circle c1 = new Circle();
+				System.out.println("ve1 gleich null ? " + (ve1.equals(null))); 	// false
+				System.out.println("ve1 gleich c1 ? " + (ve1.equals(c1))); 		// false
+				
+				Rechteck r1 = new Rechteck(10,20);
+				Rechteck r2 = new Rechteck(15,25);
+				Rechteck r3;
+				Rechteck r4;
+				Rechteck r5;
+				
+				Rechteck[] rechtecke = new Rechteck[5];		// Laenge des Arrays ist 5
+				rechtecke[0] = new Rechteck(10,20);
+				rechtecke[1] = new Rechteck(15,25);
+				rechtecke[2] = new Rechteck(20,30);
+				rechtecke[3] = new Rechteck(25,35);
+				rechtecke[4] = new Rechteck(30,40);
+				
+				rechtecke[0].print();
+				rechtecke[1].print();
+				rechtecke[2].print();
+				rechtecke[3].print();
+				rechtecke[4].print();
+				
+				for(int index = 0; index < rechtecke.length; index++)
+				{
+					rechtecke[index].print();
+				}
+				
+				Rechteck[] vieleRechtecke = new Rechteck[1000];
+				for(int index = 0; index < vieleRechtecke.length; index++)
+				{
+					System.out.println(index);
+					int laenge = 10 + 5 * index;
+					int breite = 20 + 5 * index;
+					vieleRechtecke[index] = new Rechteck(laenge, breite);
+					vieleRechtecke[index].print();
+				}
+
+			}
+
+		}
+		```
+	=== "Viereck.java"
+		```java	linenums="1" hl_lines="33-44"
+		package vorlesungen.vorl1202;
+
+		public class Viereck
+		{
+			// Objektvariablen
+			protected int a, b, c, d;		// Seiten des Vierecks
+			
+			public Viereck(int a, int b, int c, int d)
+			{
+				this.a = a;
+				this.b = b;
+				this.c = c;
+				this.d = d;
+			}
+			
+			public int umfang()
+			{
+				return this.a + this.b + this.c + this.d;
+			}
+			
+			public void print()
+			{
+				System.out.printf("[ a=%2d, b=%2d, c=%2d, d=%2d ]%n", this.a, this.b, this.c, this.d);
+		        System.out.printf("Der Umfang des Vierecks betraegt %3dcm.%n%n", this.umfang());
+			}
+			
+			@Override
+			public String toString()
+			{
+				return String.format("[ a=%d, b=%d, c=%d, d=%d ]", this.a, this.b, this.c, this.d);
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;			// null
+				if(this == o) return true;			// Reflexivitaet
+				if(this.getClass() != o.getClass()) return false;	// anderer Typ
+				
+				// hier wissen wir: o ist Referenz auf ein Viereckobjekt
+				Viereck other = (Viereck)o;
+				return this.a == other.a && this.b == other.b && 
+						this.c == other.c && this.d == other.d;
+			}
+
+			
+			
+		}
+		```
