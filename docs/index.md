@@ -1453,3 +1453,88 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			
 		}
 		```
+
+
+??? question "Arrays"
+	=== "Programmklasse.java"
+		```java	linenums="1"
+		package vorlesungen.vorl1211;
+
+		public class Programmklasse
+		{
+			public static void printIntArray(int[] numbers)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < numbers.length; index++)
+				{
+					System.out.print(numbers[index]);
+					if(index < numbers.length - 1)
+					{
+						System.out.print(", ");
+					}
+				}
+				System.out.println(" ]");
+			}
+
+			public static void main(String[] args)
+			{
+				int[] numbers = new int[6];
+				
+				numbers[0] = 0;
+				numbers[1] = 1;
+				numbers[2] = 4;
+				numbers[3] = 9;
+				numbers[4] = 16;
+				numbers[5] = 25;
+				
+				for(int index = 0; index < numbers.length; index++)
+				{
+					numbers[index] = index * index;
+				}
+				
+				System.out.print("[ ");
+				for (int index = 0; index < numbers.length - 1; index++)
+				{
+					System.out.print(numbers[index] + ", ");
+				}
+				System.out.println(numbers[numbers.length-1] + " ]");
+				
+				printIntArray(numbers);
+				
+				int[] numbers1 = { 1, 2, 3, 4, 5, 6, 7 };
+				System.out.println(numbers1.length);
+				printIntArray(numbers1);
+				
+				String[] satz = new String[5];
+				satz[0] = "Das";
+				satz[1] = "ist";
+				satz[2] = "ein";
+				satz[3] = "Satz";
+				satz[4] = ".";
+				
+				for(int index = 0; index < satz.length; index++)
+				{
+					System.out.print(satz[index] + " ");
+				}
+				
+				System.out.println();
+				
+				char[] alphabet = new char[26];
+				for(int index = 0; index < alphabet.length; index++)
+				{
+					alphabet[index] = (char)('A' + index);
+					System.out.print(alphabet[index] + " ");
+				}
+				
+				System.out.println();
+				char c1 = 65;
+				System.out.println(c1);
+				c1++;
+				System.out.println(c1);
+				
+
+			}
+
+		}
+		```
+
