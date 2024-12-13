@@ -2133,9 +2133,6 @@
 		}
 	}
 	```		
-
-??? info "altes Video von Übung 8"
-	<iframe src="https://mediathek.htw-berlin.de/media/embed?key=29c3b200767c4a80a1b20570406d734f&width=720&height=405&autoplay=false&controls=true&autolightsoff=false&loop=false&chapters=false&playlist=false&related=false&responsive=false&t=0&loadonclick=true&thumb=true" data-src="https://mediathek.htw-berlin.de/media/embed?key=29c3b200767c4a80a1b20570406d734f&width=720&height=405&autoplay=false&controls=true&autolightsoff=false&loop=false&chapters=false&playlist=false&related=false&responsive=false&t=0&loadonclick=true" class="" width="720" height="405" title="Prog1_uebung8" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no" aria-label="media embed code" style=""></iframe>
 	
 
 	
