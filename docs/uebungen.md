@@ -1890,6 +1890,8 @@
 		Ausgabe auf Konsole: `[a, b, c, a, c, a, b, c]`
 
 	4. Kopieren Sie die `print`-Methode vollständig und ändern Sie den Typ des Parameters von `char[]` in `int[]`. (Die Methode ist jetzt *überladen* und `print()` kann jetzt entweder ein `char[]` oder ein `int[]` übergeben werden, welches auf die Konsole ausgegeben wird.)
+		Bsp:  `print([4,2,8,1,6,2,4,1,8])` <br/>
+		Ausgabe auf Konsole: `[8, 1, 4, 2, 6, 1, 8, 2, 4]`
 
 	5. Implementieren Sie eine Methode `public static char[] stringToCharArray(String s)`. Diese Methode wandelt einen `String` in ein `char[]` um, so dass jedes Zeichen des Strings im `char[]` enthalten ist. Das `char[]` wird zurückgegeben. 
 		Tipps: die Länge eines Strings wird mit der Objektmethode `length()` ermittelt. Die einzelnen Zeichen eines Strings können mithilfe der `charAt(index)`-Objektmethode von Strings ermittelt werden. Siehe [String](hilfsklassen.md#die-klasse-string) <br/>
