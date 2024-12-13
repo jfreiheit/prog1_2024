@@ -1889,7 +1889,7 @@
 		Bsp:  `print(['a', 'b', 'c', 'a', 'c', 'a', 'b', 'c'])` <br/>
 		Ausgabe auf Konsole: `[a, b, c, a, c, a, b, c]`
 
-	4. Kopieren Sie die `print`-Methode vollständig und ändern Sie den Typ des Parameters von `char[]` in `int[]`. (Die Methode ist jetzt *überladen* und `print()` kann jetzt entweder ein `char[]` oder ein `int[]` übergeben werden, welches auf die Konsole ausgegeben wird.)
+	4. Kopieren Sie die `print`-Methode vollständig und ändern Sie den Typ des Parameters von `char[]` in `int[]`. (Die Methode ist jetzt *überladen* und `print()` kann jetzt entweder ein `char[]` oder ein `int[]` übergeben werden, welches auf die Konsole ausgegeben wird.)<br/>
 		Bsp:  `print([4,2,8,1,6,2,4,1,8])` <br/>
 		Ausgabe auf Konsole: `[8, 1, 4, 2, 6, 1, 8, 2, 4]`
 
