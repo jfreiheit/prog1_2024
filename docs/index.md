@@ -1538,3 +1538,189 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		}
 		```
 
+
+??? question "Algorithmen über Arrays"
+	=== "Programmklasse.java"
+		```java linenums="1"
+		package vorlesungen.vorl1218;
+
+		import java.util.Random;
+
+		public class Programmklasse
+		{
+			public static void print(int[] numbers)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < numbers.length; index++)
+				{
+					System.out.print(numbers[index]);
+					if(index < numbers.length - 1)
+					{
+						System.out.print(", ");
+					}
+					if(index>0 && index%20 == 0)
+					{
+						System.out.println();
+					}
+				}
+				System.out.println(" ]");
+			}
+
+
+			public static int[] createAndFillArray(int laenge)
+			{
+				Random r = new Random();
+				// int-Array erzeugen
+				int[] ia = new int[laenge];
+
+				// Befuellen des Arrays mit Zufallszahlen
+				for (int index = 0; index < ia.length; index++)
+				{
+					ia[index] = r.nextInt(laenge);
+				}
+
+				// Referenz auf int-Array zurueckgeben
+				return ia;
+			}
+
+			public static int[] concat(int[] a, int[] b)
+			{
+				int[] c = new int[a.length + b.length];
+
+
+				for (int index = 0; index < a.length; index++)
+				{
+					c[index] = a[index];
+				}
+
+				for (int index = 0; index < b.length; index++)
+				{
+					c[index + a.length] = b[index];
+				}
+
+				return c;
+			}
+
+			public static boolean contains(int[] a, int element)
+			{
+				for (int index = 0; index < a.length; index++)
+				{
+					if(a[index] == element)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+
+			public static int getFirstIndex(int[] a, int element)
+			{
+				final int NOT_FOUND = -1;
+
+				for (int index = 0; index < a.length; index++)
+				{
+					if(a[index] == element)
+					{
+						return index;
+					}
+				}
+
+				return NOT_FOUND;
+			}
+
+			public static int getLastIndex(int[] a, int element)
+			{
+				final int NOT_FOUND = -1;
+
+				for (int index = a.length-1; index >= 0; index--)
+				{
+					if(a[index] == element)
+					{
+						return index;
+					}
+				}
+
+				return NOT_FOUND;
+			}
+
+			public static boolean containsDoublets(int[] a)
+			{
+				for (int index = 0; index < a.length; index++)
+				{
+					if(getFirstIndex(a, a[index]) != getLastIndex(a, a[index]))
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+
+			public static int numberOfOccurrences(int[] a, int element)
+			{
+				int counter = 0;
+				for (int index = 0; index < a.length; index++)
+				{
+					if(a[index] == element)
+					{
+						counter++;
+					}
+				}
+				return counter;
+			}
+
+			public static boolean isSorted(int[] a)
+			{	
+				/*
+				 * [ 1, 2, 2, 3, 6, 8, 9 ]	sortiert	true
+				 * [ 1, 2, 2, 1, 6, 8, 9 ]	unsortiert false
+				 */
+
+				for (int index = 0; index < a.length-1; index++)
+				{
+					if(a[index + 1] < a[index])
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+
+
+			public static int[] append(int[] a, int value)
+			{
+				int[] b = new int[a.length + 1];
+
+				// b befuellt mit allen Werten aus a
+				for (int index = 0; index < a.length; index++)
+				{
+					b[index] = a[index];	
+				}
+
+				b[b.length-1] = value;
+
+				return b;
+			}
+
+
+			public static void main(String[] args)
+			{
+				int[] ia1 = createAndFillArray(7);
+				print(ia1);
+
+				int[] ia2 = createAndFillArray(0);
+				print(ia2);
+
+				int[] ia3 = concat(ia1, ia2);
+				print(ia3);
+
+				System.out.println(contains(ia1, 5));
+				System.out.println(getFirstIndex(ia1, 5));
+
+				int[] sorted = {1, 2, 2, 3, 6, 8, 9};
+				int[] unsorted = {1, 2, 2, 1, 6, 8, 9};
+				System.out.println(isSorted(sorted));
+				System.out.println(isSorted(unsorted));
+			}
+
+		}
+		```
