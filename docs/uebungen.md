@@ -2291,6 +2291,128 @@
 			Es muss das `target` nicht exakt getroffen werden, das ist Zufall. Es stoppt, sobald `100` oder mehr Punkte erreicht wurden. 
 
 
+??? question "Eine mögliche Lösung für Übung 9"
+
+	```java
+	package uebungen.uebung9;
+
+	import java.util.Random;
+
+	public class Uebung9
+	{
+		public static int throwDice()
+		{
+			Random r = new Random();
+			int cast = r.nextInt(6) + 1; 	// bound [0 ... bound-1]
+											// 6 	[0 ... 5]
+											// +1   [1 ... 6]
+			return cast;
+		}
+		
+		public static void printThrow(int cast)
+		{
+			System.out.println("Es wurde eine " + cast + " gewuerfelt.");
+		}
+		
+		public static void insertIntoStatistics(int[] statistics, int cast)
+		{
+			int index = cast - 1;
+			if(index >= 0 && index < statistics.length)
+			{
+				statistics[index]++;
+			}
+			else
+			{
+				System.out.println("index " + index + 
+						" existiert nicht im Array der Laenge " + 
+						statistics.length);
+			}
+		}
+		
+		public static void printStatistics(int[] statistics)
+		{
+			System.out.print("[ ");
+			for (int index = 0; index < statistics.length; index++)
+			{
+				System.out.print("(" + statistics[index] + " x " + (index+1) + ")");
+				if(index < statistics.length - 1)
+				{
+					System.out.print(", ");
+				}
+			}	
+			System.out.println(" ]");
+		}
+		
+		public static int sumOfStatistics(int[] statistics)
+		{
+			int sum = 0;
+			for (int index = 0; index < statistics.length; index++)
+			{
+				sum = sum + statistics[index] * (index + 1);
+			}
+			return sum;
+		}
+		
+		public static int throwDiceUntilTarget(int target, int[] statistics)
+		{
+			int nrOfThrows = 0;
+			
+			int cast = throwDice();
+			printThrow(cast);
+			insertIntoStatistics(statistics, cast);
+			int currentSum = sumOfStatistics(statistics);
+			nrOfThrows++;
+			
+			while(currentSum < target)
+			{
+				cast = throwDice();
+				printThrow(cast);
+				insertIntoStatistics(statistics, cast);
+				currentSum = sumOfStatistics(statistics);
+				nrOfThrows++;
+			}
+
+			return nrOfThrows;	
+		}
+
+		public static void main(String[] args)
+		{
+			int[] statistics = new int[6];
+			
+			System.out.printf("%n%n------------------- Test throwDice and printThrow -------------------%n%n");
+			for(int index=0; index<10; index++)
+			{
+			    int cast = throwDice();
+			    printThrow(cast);
+			}
+			
+			System.out.printf("%n%n------------------ Test insert- and printStatistics -----------------%n%n");
+			for(int index=0; index<100; index++)
+			{
+			    int cast = throwDice();
+			    insertIntoStatistics(statistics, cast);
+			}
+			printStatistics(statistics);
+			
+			System.out.printf("%n%n--------------------- Test sumOfStatistics --------------------------%n%n");
+			printStatistics(statistics);
+			int sumTest = sumOfStatistics(statistics);
+			System.out.println("Summe = " + sumTest);
+			
+			
+			System.out.printf("%n%n------------------- Test throwDiceUntilTarget -----------------------%n%n");
+			statistics = new int[6];    // altes Array war schon befuellt 
+			final int TARGET = 100;
+			int tries = throwDiceUntilTarget(TARGET, statistics);
+			printStatistics(statistics);
+			int sum = sumOfStatistics(statistics);
+			System.out.println("Es wurden " + tries + " Versuche benötigt, um " + sum + " Punkte zu erzielen.");
+
+		}
+
+	}
+
+	```
 
 ??? note "<a id="ubung-10"></a>Übung 10"
 	
