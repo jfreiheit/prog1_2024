@@ -1724,3 +1724,111 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 		}
 		```
+
+
+??? question "Sortieren von Arrays"
+	=== "Sortieren.java"
+		```java linenums="1"
+		package vorlesungen.vorl0106;
+
+		import java.util.Random;
+
+		public class Sortieren
+		{
+			public static int[] createArray(int length, int bound)
+			{
+				Random r = new Random();
+				
+				// Array mit Laenge length erzeugen
+				int[] arr = new int[length];
+			
+				// Array mit Zufasllszahlen befuellen 
+				for (int index = 0; index < arr.length; index++)
+				{
+					arr[index] = r.nextInt(bound);
+				}
+				
+				return arr;
+			}
+			
+			public static void print(int[] a)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < a.length; index++)
+				{
+					System.out.printf("%2d", a[index]);
+					if(index < a.length-1)
+					{
+						System.out.print(", ");
+					}
+				}
+				System.out.println(" ]");
+			}
+			
+			public static int[] bubbleSort(int[] unsorted)
+			{
+				int[] sorted = new int[unsorted.length];
+				
+				// alle Werte aus unsorted nach sorted kopieren
+				for (int index = 0; index < sorted.length; index++)
+				{
+					sorted[index] = unsorted[index];
+				}
+				
+				// jetzt sorted sortieren
+				for(int bubble = 1; bubble <= sorted.length-1; bubble++)
+				{
+					for(int index = 0; index < sorted.length-bubble; index++)
+					{
+						if(sorted[index] > sorted[index+1])
+						{
+							int merke = sorted[index];
+							sorted[index] = sorted[index+1];
+							sorted[index+1] = merke;
+						}
+					}
+				}
+				
+				return sorted;
+			}
+
+			public static void main(String[] args)
+			{
+				int[] a1 = createArray(10, 100);
+				print(a1);
+				
+				boolean isSorted = false;
+				
+				for(int bubble=1; bubble <= a1.length-1 && !isSorted; bubble++)
+				{
+					isSorted = true;
+					
+					System.out.printf("Nach Bubble-Phase %2d (9) --> ", bubble);
+					for(int index = 0; index < a1.length-bubble; index++)
+					{
+						if(a1[index] > a1[index+1])
+						{
+							// Nachbarn tauschen
+							int merke = a1[index];
+							a1[index] = a1[index+1];
+							a1[index+1] = merke;
+							isSorted = false;
+						}
+					}
+					print(a1);
+					//System.out.println();
+				}
+				
+				print(a1);
+				
+				int[] a2 = createArray(20, 100);
+				print(a2);
+				int[] a3 = bubbleSort(a2);
+				print(a3);
+				//print(a2);
+
+			}
+
+		}
+		```
+
