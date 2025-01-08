@@ -1832,3 +1832,252 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		}
 		```
 
+
+??? question "binarySearch und Circle-Array"
+	=== "Programmklasse.java"
+		```java linenums="1"
+		package vorlesungen.vorl0108;
+
+		import java.util.Random;
+
+		public class Programmklasse
+		{
+			
+			public static void print(int[] a)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < a.length; index++)
+				{
+					System.out.printf("%2d", a[index]);
+					if(index < a.length-1)
+					{
+						System.out.print(", ");
+					}
+				}
+				System.out.println(" ]");
+			}
+			
+			
+			public static void print(int[] a, int startIndex, int endIndex)
+			{
+				System.out.print("[ ");
+				for (int index = startIndex; index <= endIndex; index++)
+				{
+					System.out.printf("%2d", a[index]);
+					if(index < a.length-1)
+					{
+						System.out.print(", ");
+					}
+				}
+				System.out.println(" ]");
+			}
+			
+			public static int[] createArray(int length, int bound)
+			{
+				Random r = new Random();
+				
+				// Array mit Laenge length erzeugen
+				int[] arr = new int[length];
+			
+				// Array mit Zufasllszahlen befuellen 
+				for (int index = 0; index < arr.length; index++)
+				{
+					arr[index] = r.nextInt(bound);
+				}
+				
+				return arr;
+			}
+			
+			public static Circle[] createCircleArray(int length, int bound)
+			{
+				Random r = new Random();
+				
+				// Array mit Laenge length erzeugen
+				Circle[] arr = new Circle[length];
+			
+				// Array mit Circle-Objekten befuellen 
+				for (int index = 0; index < arr.length; index++)
+				{
+					arr[index] = new Circle(r.nextInt(bound)+1);
+				}
+				
+				return arr;
+			}
+			
+			public static int[] bubbleSort(int[] unsorted)
+			{
+				int[] sorted = new int[unsorted.length];
+				
+				// alle Werte aus unsorted nach sorted kopieren
+				for (int index = 0; index < sorted.length; index++)
+				{
+					sorted[index] = unsorted[index];
+				}
+				
+				// jetzt sorted sortieren
+				for(int bubble = 1; bubble <= sorted.length-1; bubble++)
+				{
+					for(int index = 0; index < sorted.length-bubble; index++)
+					{
+						if(sorted[index] > sorted[index+1])
+						{
+							int merke = sorted[index];
+							sorted[index] = sorted[index+1];
+							sorted[index+1] = merke;
+						}
+					}
+				}
+				
+				return sorted;
+			}
+			
+			public static boolean containsInUnsorted(int[] a, int element)
+			{
+				for (int index = 0; index < a.length; index++)
+				{
+					if(a[index] == element)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			
+			public static boolean containsInSorted(int[] a, int element)
+			{
+				for (int index = 0; index < a.length; index++)
+				{
+					if(a[index] == element)
+					{
+						return true;
+					}
+					if(a[index] > element)
+					{
+						return false;
+					}
+				}
+				return false;
+			}
+			
+			public static boolean binarySearch(int[] a, int element)
+			{
+				int lo = 0;
+				int hi = a.length - 1;
+
+				while(lo <= hi) 
+				{
+					print(a, lo, hi);
+					int mid = (lo + hi) / 2;
+					if(a[mid]==element)	// element gefunden
+					{
+						return true;
+					}
+					
+					if(element < a[mid])
+					{
+						hi = mid - 1;
+					}
+					else // element > a[mid]
+					{
+						lo = mid + 1;
+					}
+				}
+				return false;
+			}
+
+			public static void main(String[] args)
+			{
+				int[] a1 = createArray(50, 100);
+				print(a1);
+				int[] a2 = bubbleSort(a1);
+				print(a2);
+				System.out.println(binarySearch(a2, 26));
+				
+				Circle[] c1 = createCircleArray(10, 10);
+				for (int index = 0; index < c1.length; index++)
+				{
+					c1[index].print();
+				}
+				
+				for (int bubble = 1; bubble < c1.length; bubble++)
+				{
+					for (int index = 0; index < c1.length - bubble; index++)
+					{
+						if(c1[index].isBigger(c1[index+1]))
+						{
+							Circle merke = c1[index];
+							c1[index] = c1[index+1];
+							c1[index+1] = merke;
+						}
+					}
+				}
+				System.out.printf("%n--------- jetzt sortiert (hofentlich) ------%n%n");
+				
+				for (int index = 0; index < c1.length; index++)
+				{
+					c1[index].print();
+				}
+
+			}
+
+		}
+
+		```
+
+	=== "Circle.java (hatten wir schon)"
+		```java linenums="1"
+		package vorlesungen.vorl0108;
+
+		public class Circle
+		{
+			// Obejektvariable
+			private double radius;
+			
+			// Konstruktor
+			public Circle(double radius)
+			{
+				this.radius = radius;
+			}
+			
+			public Circle()
+			{
+				this.radius = 1.0;
+			}
+			
+			public double getDiameter()
+			{
+				return 2.0 * this.radius;
+			}
+			
+			public double getRadius()
+			{
+				return this.radius;
+			}
+			
+			public double getPerimeter()
+			{
+				return Math.PI * this.getDiameter();
+			}
+			
+			public double getArea()
+			{
+				return Math.PI * Math.pow(this.radius, 2);
+			}
+			
+			public void print()
+			{
+				System.out.println("Radius         " + this.radius);
+				System.out.println("Durchmesser    " + this.getDiameter());
+				System.out.println("Umfang         " + this.getPerimeter());
+				System.out.println("Flaecheninhalt " + this.getArea());
+				System.out.println();
+			}
+			
+			public boolean isBigger(Circle c)
+			{
+				return this.radius > c.radius;
+			}
+		}
+		```
+
