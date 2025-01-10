@@ -2467,6 +2467,163 @@
 			```
 
 
+??? question "Eine mögliche Lösung für Übung 10"
+	=== "Lottery.java"
+		```java
+		package uebungen.uebung10;
+
+		import java.util.Random;
+
+		public class Lottery
+		{
+			private int[] drawingResults;
+			
+			public Lottery()
+			{
+				this.drawingResults = new int[5];
+			}
+			
+			public boolean contains(int number)
+			{
+				for (int index = 0; index < this.drawingResults.length; index++) 
+				{
+					if(this.drawingResults[index] == number)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			public void drawing()
+			{
+				Random r = new Random();
+				
+				for (int index = 0; index < this.drawingResults.length; index++) 
+				{
+					int newValue = r.nextInt(9) + 1;
+					while(this.contains(newValue)) 
+					{
+						newValue = r.nextInt(9) + 1; 
+					}
+					this.drawingResults[index] = newValue;
+				}	
+			}
+			
+			public void printArray()
+			{
+				String s = "[ ";
+				for (int index = 0; index < this.drawingResults.length; index++) 
+				{
+					s += this.drawingResults[index];
+					if(index < this.drawingResults.length-1)
+					{
+						s += ", ";
+					}
+				}
+				s += " ]";
+				//System.out.println(s);
+				System.out.println(this.toString());
+			}
+			
+			public void sort()
+			{
+				for (int bubble = 0; bubble < this.drawingResults.length-1; bubble++) 
+				{
+					for (int index = 0; index < this.drawingResults.length-1-bubble; index++) 
+					{
+						if(this.drawingResults[index] > this.drawingResults[index+1])
+						{
+							int tmp = this.drawingResults[index];
+							this.drawingResults[index] = this.drawingResults[index+1];
+							this.drawingResults[index+1] = tmp;
+						}
+					}
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = "( ";
+				for(int number=1; number<10; number++)
+				{
+					if(this.contains(number))
+					{
+						s += number + " ";
+					}
+					else
+					{
+						s += "- ";
+					}
+				}
+				s += ")";
+				return s;
+			}
+
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+
+				// jetzt wissen wir, dass o vom Lauzeittyp Lottery ist
+				// o.contains() geht nicht, da o vom Compilertyp Object ist
+				Lottery lo = (Lottery)o; 	// lo und o zeigen auf dasselbe Objekt
+
+				for (int index = 0; index < this.drawingResults.length; index++) 
+				{
+					if(!lo.contains(this.drawingResults[index]))
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+		}
+		```		
+	=== "Programmklasse.java"
+		```java
+		package uebungen.uebung10;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				for(int i=0; i<10; i++)
+				{
+					Lottery lo = new Lottery();
+					lo.drawing();
+					lo.sort();
+					lo.print();
+				}
+				
+				System.out.printf("%n%n--------- Zusatz ------------%n%n");
+				
+				Lottery lo1 = new Lottery();
+				lo1.drawing();
+				lo1.print();
+				
+				Lottery lo2 = new Lottery();
+				lo2.drawing();
+				while(!lo1.isEqual(lo2))
+				{
+					lo2 = new Lottery();	// damit das Array wieder leer ist
+					lo2.drawing();
+				}
+				lo2.print();
+			}
+
+		}
+		```
+
 
 ??? note "<a id="ubung-11"></a>Übung 11"
 
