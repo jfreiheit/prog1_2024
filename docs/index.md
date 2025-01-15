@@ -2081,3 +2081,370 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		}
 		```
 
+
+??? question "Klausurvorbereitung 13.-15.1.2025"
+	=== "Testklasse.java"
+		```java
+		package vorlesungen.vorl0113;
+
+		import java.util.Arrays;
+
+		public class Testklasse
+		{
+			
+			public static int[] insertIntoSorted(int[] old, int element)
+			{
+				int[] newArray = new int[old.length + 1];
+				
+				int index = 0;
+				// erstmal alle Werte aus old in newArray kopieren,
+				// die kleiner sind als element
+				while(index < old.length && old[index] < element)
+				{
+					newArray[index] = old[index];
+					index++;
+				}
+				
+				// element hinzufuegen
+				newArray[index] = element;
+				
+				// Rest kopieren
+				/*
+				for (int i = index; i < newArray.length; i++)
+				{
+					newArray[i+1] = old[i];
+				}
+				*/
+				while(index < old.length)
+				{
+					newArray[index+1] = old[index];
+					index++;
+				}
+				
+				return newArray;
+			}
+			
+			
+			public static int[] mergeSorted(int[] a1, int[] a2)
+			{
+				
+				int[] merged = a1;
+				
+				for(int index = 0; index < a2.length; index++)
+				{
+					merged = insertIntoSorted(merged, a2[index]);
+					//System.out.printf("merged %d : %s %n", index, Arrays.toString(merged));
+				}
+				
+				
+				return merged;	
+			}
+			
+			public static int[] mergeSorted2(int[] a1, int[] a2)
+			{
+				
+				int[] merged = new int[a1.length + a2.length];
+				
+				int indexA1 = 0;
+				int indexA2 = 0;
+				
+				for(int index = 0; index < merged.length; index++)
+				{
+					if(indexA1 == a1.length)
+					{
+						merged[index] = a2[indexA2];
+						indexA2++;
+					} 
+					else if(indexA2 == a2.length)
+					{
+						merged[index] = a1[indexA1];
+						indexA1++;
+					}
+					else if(a1[indexA1] < a2[indexA2])
+					{
+						merged[index] = a1[indexA1];
+						indexA1++;
+					}
+					else
+					{
+						merged[index] = a2[indexA2];
+						indexA2++;
+					}
+				}
+						
+				return merged;	
+			}
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n--------------------- Test Wohnung -------------------------%n%n");
+				Wohnung w1 = new Wohnung(70, 3, 4, 12.50);
+				Wohnung w2 = new Wohnung(40, 1, 0, 9.50);
+				Wohnung w3 = new Wohnung(90, 4, 2, 11.10);
+				Wohnung w4 = new Wohnung(60, 2, 0, 9.00);
+
+				w1.print();
+				w2.print();
+				w3.print();
+				w4.print();
+				
+				System.out.printf("%n%n--------------- Test Dachgeschosswohnung -------------------%n%n");
+				Dachgeschosswohnung dg1 = new Dachgeschosswohnung(70, 3, 15.50);
+				Dachgeschosswohnung dg2 = new Dachgeschosswohnung(100, 4, 17.25);
+
+				dg1.print();
+				dg2.print();
+				
+				System.out.printf("%n%n---------------------- Test Haus ---------------------------%n%n");
+				Haus h1 = new Haus(10);
+				h1.print();
+				
+				
+				int[] a1 = { 3, 5, 9, 11, 13, 17, 19 };
+				int[] a2 = insertIntoSorted(a1, 12);
+				System.out.println(Arrays.toString(a2));
+				int[] a3 = insertIntoSorted(a1, 1);
+				System.out.println(Arrays.toString(a3));
+				int[] a4 = insertIntoSorted(a1, 21);
+				System.out.println(Arrays.toString(a4));
+				int[] a5 = { 1, 2, 8, 10, 12, 17, 18, 19, 21, 22 };
+				System.out.println("a1 : " + Arrays.toString(a1));
+				System.out.println("a5 : " + Arrays.toString(a5));
+				int[] a6 = mergeSorted2(a1, a5);
+				System.out.println("a6 : " + Arrays.toString(a6));
+			}
+
+		}
+		```
+	=== "Wohnung.java"
+		```java
+		package vorlesungen.vorl0113;
+
+		public class Wohnung
+		{
+			private int qm;
+			private int anzZimmer;
+			private int etage;
+			private double qmMiete;
+			
+			public Wohnung(int qm, int anzZimmer, int etage, double qmMiete)
+			{
+				this.qm = qm;
+				this.anzZimmer = anzZimmer;
+				this.etage = etage;
+				this.qmMiete = qmMiete;
+			}
+
+			public int getQm()
+			{
+				return this.qm;
+			}
+
+			public int getAnzZimmer()
+			{
+				return this.anzZimmer;
+			}
+
+			public int getEtage()
+			{
+				return this.etage;
+			}
+
+			public double getQmMiete()
+			{
+				return this.qmMiete;
+			}
+			
+			public double gesamtMiete()
+			{
+				return this.qm * this.qmMiete;
+			}
+			
+			public boolean billiger(Wohnung w)
+			{
+				return this.gesamtMiete() < w.gesamtMiete();
+			}
+			
+			public boolean teurer(Wohnung w)
+			{
+				return this.gesamtMiete() > w.gesamtMiete();
+			}
+			
+			@Override
+			public String toString()
+			{
+				/*
+				return this.anzZimmer + "-Zimmer Wohnung mit ";
+				s += this.qm + " qm in der " + this.etage + ". Etage.";
+				s += " Monatliche Miete: "+ this.gesamtMiete() + " Euro.";
+				*/
+				
+				if(this.etage > 0)
+				{
+					return String.format("%d-Zimmer Wohnung mit %d qm in der %d. Etage. "
+							+ "Monatliche Miete: %.2f Euro.", 
+						this.anzZimmer, this.qm, this.etage, this.gesamtMiete());
+				}
+				else
+				{
+					return String.format("%d-Zimmer Wohnung mit %d qm im Erdgeschoss. "
+							+ "Monatliche Miete: %.2f Euro.", 
+							this.anzZimmer, this.qm, this.gesamtMiete());
+				}
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+		}
+
+		```
+	=== "Dachgeschosswohnung.java"
+		```java
+		package vorlesungen.vorl0113;
+
+		public class Dachgeschosswohnung extends Wohnung
+		{
+			boolean balkon;
+			
+			public Dachgeschosswohnung(int qm, int anzZimmer, double qmMiete)
+			{
+				super(qm, anzZimmer, 5, qmMiete);
+				//this.balkon = balkon;
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = this.getAnzZimmer() + "-Zimmer DG-Wohnung mit ";
+				 s += this.getQm() + " qm in der 5. Etage. Monatliche Miete: ";
+				 s += this.gesamtMiete() + " Euro.";
+				 
+				return s;
+			}
+		}
+		```
+	=== "Haus.java"
+		```java
+		package vorlesungen.vorl0113;
+
+		import java.util.Random;
+
+		public class Haus
+		{
+			private Wohnung[] wohnungen;
+			
+			public Haus(int anzWohnungen)
+			{
+				this.wohnungen = new Wohnung[anzWohnungen];
+				for (int index = 0; index < this.wohnungen.length; index++)
+				{
+					this.wohnungen[index] = this.neueWohnung();
+				}
+			}
+			
+			public Wohnung neueWohnung()
+			{
+				/*
+				 * Ein Wert für eine Quadratmeteranzahl qm aus dem Wertebereich [20, 40, 60, 80, 100] ( → also zufällig eine dieser 5 Zahlen),
+				 * Ein Wert für die Anzahl der Zimmer anzZimmer aus dem Wertebereich [1, 2, 3, 4, 5] ( → also zufällig eine dieser 5 Zahlen),
+				 * Ein Wert für die Etage etage aus dem Wertebereich [0, 1, 2, 3, 4, 5] ( → also zufällig eine dieser 6 Zahlen),
+				 * Ein Wert für den Mietpreis pro Quadratmeter qmMiete aus dem Wertebereich [8.0, 8.5, 9.0, 9.5, 10.0, 10.5, 11.0, 11.5, 12.0, 12.5] ( → also zufällig eine dieser 10 Zahlen – Achtung hier double, Sie können aber trotzdem nextInt(int bound) verwenden, müssen dann aber geeignet multiplizieren und addieren). Erzeugen Sie mit diesen Werten ein neues Wohnung-Objekt und geben Sie dieses Objekt zurück.
+				 */
+				Random r = new Random();
+				/*
+				int[] qmarr = {20, 40, 60, 80, 100};
+				int index = r.nextInt(5);
+				int qm1 = qmarr[index];
+				*/
+				int qm = (r.nextInt(5) + 1) * 20;
+				int anzZimmer = r.nextInt(5) + 1;
+				int etage = r.nextInt(6);
+				double qmMiete = 8 + r.nextInt(10) * 0.5; 
+				
+				Wohnung w = new Wohnung(qm, anzZimmer, etage, qmMiete);
+				return w;
+				
+			}
+			
+			public void print()
+			{
+				System.out.println("Das Haus besteht aus: ");
+				for (int index = 0; index < this.wohnungen.length; index++)
+				{
+					System.out.println("  " + this.wohnungen[index].toString());
+					// oder:
+					// System.out.println("  "); 
+					// this.wohnungen[index].print();
+				}
+			}
+		}
+		```
+	=== "SortedArray.java"
+		```java
+		package vorlesungen.vorl0113;
+
+		public class SortedArray
+		{
+			int[] s;
+			
+			SortedArray()
+			{
+				this.s = new int[0];
+			}
+			
+			public boolean contains(int element)
+			{
+				for (int index = 0; index < this.s.length; index++)
+				{
+					if(this.s[index] == element)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			public boolean insert(int element)
+			{
+				if(this.contains(element))
+				{
+					return false;
+				}
+				int[] newArray = new int[this.s.length + 1];
+				int index = 0;
+				while(index < this.s.length && this.s[index] < element)
+				{
+					newArray[index] = this.s[index];
+					index++;
+				}
+				
+				newArray[index] = element;
+				
+				while(index < this.s.length)
+				{
+					newArray[index+1] = this.s[index];
+					index++;
+				}
+				
+				this.s = newArray;
+				
+				return true;
+			}
+		}
+		```
+
+
+
+
+
+
+
+
+
+
+
+
+

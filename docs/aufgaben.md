@@ -98,7 +98,155 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	- Das Programm soll für beliebige (nicht so große - max. Wert `50`) positive Zahlen (also `> 0`) von `upperHalf` funktionieren. Insbesondere sind die Tests für `upperhalf == 1` interessant. 
 	- Viel Spaß und viel Erfolg!
 
+??? success "eine mögliche Lösung für Aufgabe1"
+	```java linenums="1"
+	package aufgaben.aufgabe1;
 
+	public class Aufgabe1 {
+
+	    /*
+	     * upperHalf: the number of rows in the upper half of the rhombus   
+	     * filled: true if the rhombus should be filled, false if it should be unfilled
+	     */
+	    public static void printRhombus(int upperHalf, boolean filled) {
+	        if (filled) {
+	            printRhombusFilled(upperHalf);
+	        } else {
+	            
+	            printRhombusUnfilled(upperHalf);
+	        }
+	    }
+
+	    /*
+	    * printNChars: prints n characters of the given character  
+	    * n: the number of characters to print
+	    * c: the character to print
+	    */
+	    private static void printNChars(int n, char c) {
+	        for (int i = 0; i < n; i++) {
+	            System.out.print(c);
+	        }
+	    }
+
+	    /*
+	     * printRhombusUnfilledUpperHalf: prints the upper half of the rhombus
+	     * upperHalf: the number of rows in the upper half of the rhombus
+	     */
+	    private static void printRhombusUnfilledUpperHalf(int upperHalf) {
+	        for (int row = 0; row < upperHalf; row++) {
+	            if(row == 0) {
+	                printNChars(upperHalf, ' ');
+	                printNChars(1, '*');
+	            } else {
+	                printNChars(upperHalf-row, ' ');
+	                printNChars(1, '*');
+	                printNChars(row*2-1, ' ');
+	                printNChars(1, '*');
+	            }
+	            System.out.println();
+	        }
+	    }
+
+	    /*
+	     * printRhombusUnfilledLowerHalf: prints the lower half of the rhombus
+	     * upperHalf: the number of rows in the upper half of the rhombus
+	     */
+	    private static void printRhombusUnfilledLowerHalf(int upperHalf) {
+	        for (int row = upperHalf-1; row >= 0; row--) {
+	            if(row == 0) {
+	                printNChars(upperHalf, ' ');
+	                printNChars(1, '*');
+	            } else {
+	                printNChars(upperHalf-row, ' ');
+	                printNChars(1, '*');
+	                printNChars(row*2-1, ' ');
+	                printNChars(1, '*');
+	            }
+	            System.out.println();
+	        }
+	    }
+
+	    
+	    /*
+	     * printRhombusFilledUpperHalf: prints the upper half of the rhombus
+	     * upperHalf: the number of rows in the upper half of the rhombus
+	     */
+	    private static void printRhombusFilledUpperHalf(int upperHalf) {
+	        for (int row = 0; row < upperHalf; row++) {
+	            printNChars(upperHalf-row, ' ');
+	            printNChars(row*2+1, '*');
+	            System.out.println();
+	        }
+	    }
+
+	    /*
+	     * printRhombusFilledLowerHalf: prints the lower half of the rhombus
+	     * upperHalf: the number of rows in the upper half of the rhombus
+	     */
+	    private static void printRhombusFilledLowerHalf(int upperHalf) {
+	        for (int row = upperHalf-1; row >= 0; row--) {
+	            printNChars(upperHalf-row, ' ');
+	            printNChars(row*2+1, '*');
+	            System.out.println();
+	        }
+	    }
+
+	    /*
+	     * printRhombusFilled: prints the rhombus
+	     * upperHalf: the number of rows in the upper half of the rhombus
+	     */
+	    private static void printRhombusFilled(int upperHalf) {
+	        printRhombusFilledUpperHalf(upperHalf);
+	        printMiddleRowFilled(upperHalf);
+	        printRhombusFilledLowerHalf(upperHalf);
+	        System.out.println();
+	    }
+
+	    /*
+	     * printMiddleRowFilled: prints the middle row of the rhombus
+	     * upperHalf: the number of rows in the upper half of the rhombus
+	     */
+	    private static void printMiddleRowFilled(int upperHalf) {
+	        printNChars(2*upperHalf+1, '*');
+	        System.out.println();
+	    }
+
+	    /*
+	     * printMiddleRowUnfilled: prints the middle row of the rhombus
+	     * upperHalf: the number of rows in the upper half of the rhombus
+	     */
+	    private static void printMiddleRowUnfilled(int upperHalf) {
+	        printNChars(1, '*');
+	        printNChars(2*upperHalf-1, ' ');
+	        printNChars(1, '*');
+	        System.out.println();
+	    }
+
+	    /*
+	     * printRhombusUnfilled: prints the rhombus
+	     * upperHalf: the number of rows in the upper half of the rhombus
+	     */
+	    private static void printRhombusUnfilled(int upperHalf) {
+	        printRhombusUnfilledUpperHalf(upperHalf);
+	        printMiddleRowUnfilled(upperHalf);
+	        printRhombusUnfilledLowerHalf(upperHalf);
+	        System.out.println();
+	    }   
+
+	    public static void main(String[] args) {
+	        printRhombus(1, true);
+	        printRhombus(1, false);
+	        printRhombus(5, true);
+	        printRhombus(5, false);
+	        printRhombus(10, true);
+	        printRhombus(10, false);
+	        printRhombus(15, true);
+	        printRhombus(15, false);
+
+	    }
+	}
+
+	```
 
 ??? "<a id="aufgabe-2"></a>Aufgabe2 - Numbers"
 	- Erstellen Sie eine Klasse `Aufgabe2` mit `main()`-Methode im package `aufgaben.aufgabe2`.
@@ -176,6 +324,136 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	
 	- Viel Spaß und viel Erfolg!
 
+
+
+??? success "eine mögliche Lösung für Aufgabe2"
+	```java linenums="1"
+	package aufgaben.aufgabe2;
+
+	public class Aufgabe2 {
+
+	    /*
+	     * lengthOfNumber: returns the length of the number
+	     * number: the number to get the length of
+	     */
+	    public static int lengthOfNumber(int number){
+	        int copyNumber = number;
+	        if(number < 0){
+	            copyNumber = -number;
+	        }
+	        // this is better instead of the first 4 lines above:
+	        // int copynumber = number < 0 ? -number : number;  
+	        int length = 0;
+	        while(copyNumber > 0){
+	            copyNumber /= 10;
+	            length++;
+	        }
+	        return length;  
+	    }   
+
+	    /*
+	     * firstDigit: returns the first digit of the number
+	     * number: the number to get the first digit of
+	     */
+	    public static int firstDigit(int number){
+	        int copyNumber = number;
+	        if(number < 0){
+	            copyNumber = -number;
+	        }
+	        while(copyNumber > 9){
+	            copyNumber /= 10;
+	        }
+	        return copyNumber;
+	    }
+
+	    /*
+	     * powerOf10ToN: returns the power of 10 to the n
+	     * n: the power to calculate (n >= 0)
+	     */
+	    public static int powerOf10ToN(int n){
+	        int result = 1;
+	        for(int i = 0; i < n; i++){
+	            result *= 10;
+	        }
+	        return result;
+	    }
+
+	    /*
+	     * cutFirstDigit: cuts the first digit of the number
+	     * number: the number to cut the first digit of
+	     */
+	    public static int cutFirstDigit(int number){
+	        int copyNumber = number < 0 ? -number : number;
+	        int firstDigit = firstDigit(copyNumber);
+	        int length = lengthOfNumber(copyNumber);
+	        int result = copyNumber - firstDigit * powerOf10ToN(length - 1);
+	        return result;
+	    }   
+
+	    /*
+	     * secondDigitIsZero: returns true if the second digit is 0
+	     * number: the number to check if the second digit is 0
+	     */
+	    public static boolean secondDigitIsZero(int number){
+	        int copyNumber = number < 0 ? -number : number;
+	        if(copyNumber < 10){
+	            return false;
+	        }   
+	        while(copyNumber > 99) {
+	            copyNumber /= 10;
+	        }
+	        return copyNumber % 10 == 0;
+	    }   
+
+	    public static void main(String[] args) {
+
+	        System.out.printf("Length of 0     ---> %d\n", lengthOfNumber(0));
+	        System.out.printf("Length of 1     ---> %d\n", lengthOfNumber(1));
+	        System.out.printf("Length of 9    ---> %d\n", lengthOfNumber(9));
+	        System.out.printf("Length of 10    ---> %d\n", lengthOfNumber(10));
+	        System.out.printf("Length of 1234  ---> %d\n", lengthOfNumber(1234));
+	        System.out.printf("Length of -1234 ---> %d\n", lengthOfNumber(-1234));
+
+	        System.out.printf("First digit of 0     ---> %d\n", firstDigit(0));
+	        System.out.printf("First digit of 1     ---> %d\n", firstDigit(1));
+	        System.out.printf("First digit of 9     ---> %d\n", firstDigit(9));
+	        System.out.printf("First digit of 10    ---> %d\n", firstDigit(10));
+	        System.out.printf("First digit of 1234  ---> %d\n", firstDigit(1234));
+	        System.out.printf("First digit of -1234 ---> %d\n", firstDigit(-1234));
+	        System.out.printf("First digit of 5678  ---> %d\n", firstDigit(5678));
+
+	        System.out.printf("Power of 10 to 0  ---> %d\n", powerOf10ToN(0));
+	        System.out.printf("Power of 10 to 1  ---> %d\n", powerOf10ToN(1));
+	        System.out.printf("Power of 10 to 2  ---> %d\n", powerOf10ToN(2));
+	        System.out.printf("Power of 10 to 3  ---> %d\n", powerOf10ToN(3));
+	        System.out.printf("Power of 10 to 4  ---> %d\n", powerOf10ToN(4));  
+
+	        System.out.printf("Cut first digit of 0     ---> %d\n", cutFirstDigit(0));
+	        System.out.printf("Cut first digit of 1     ---> %d\n", cutFirstDigit(1));
+	        System.out.printf("Cut first digit of 9     ---> %d\n", cutFirstDigit(9));
+	        System.out.printf("Cut first digit of -9    ---> %d\n", cutFirstDigit(-9));
+	        System.out.printf("Cut first digit of 11    ---> %d\n", cutFirstDigit(11));
+	        System.out.printf("Cut first digit of 91    ---> %d\n", cutFirstDigit(91));
+	        System.out.printf("Cut first digit of 1234  ---> %d\n", cutFirstDigit(1234));
+	        System.out.printf("Cut first digit of -1234 ---> %d\n", cutFirstDigit(-1234));
+	        System.out.printf("Cut first digit of 9999  ---> %d\n", cutFirstDigit(9999));
+	        System.out.printf("Cut first digit of -9999 ---> %d\n", cutFirstDigit(-9999));
+	        System.out.printf("Cut first digit of 1023  ---> %d\n", cutFirstDigit(1023));   
+	        System.out.printf("Cut first digit of -1023 ---> %d\n", cutFirstDigit(-1023));
+
+	        System.out.printf("Second digit is zero of 0       ---> %b\n", secondDigitIsZero(0));
+	        System.out.printf("Second digit is zero of 1       ---> %b\n", secondDigitIsZero(1));
+	        System.out.printf("Second digit is zero of 9       ---> %b\n", secondDigitIsZero(9));
+	        System.out.printf("Second digit is zero of 11      ---> %b\n", secondDigitIsZero(11));
+	        System.out.printf("Second digit is zero of 101     ---> %b\n", secondDigitIsZero(101));
+	        System.out.printf("Second digit is zero of 111     ---> %b\n", secondDigitIsZero(111));
+	        System.out.printf("Second digit is zero of 1001    ---> %b\n", secondDigitIsZero(1001));
+	        System.out.printf("Second digit is zero of -10234  ---> %b\n", secondDigitIsZero(-10234));
+	        System.out.printf("Second digit is zero of 1111    ---> %b\n", secondDigitIsZero(1111));
+	        System.out.printf("Second digit is zero of 10000   ---> %b\n", secondDigitIsZero(10000));
+	    }
+	}
+	```
 
 
 
