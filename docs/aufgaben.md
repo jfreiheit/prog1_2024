@@ -1590,7 +1590,7 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 
 	```
 
-	- Rufen Sie in der `main()` die beiden Methoden (oder die, die Sie implememntiert haben) wie folgt auf:
+	- Rufen Sie in der `main()` die beiden Methoden (oder die, die Sie implementiert haben) wie folgt auf:
 		```java
 		System.out.printf("%n%n%n----------- printUpsideDown ------------%n%n%n");
 		printUpsideDown(arr1);
@@ -1605,6 +1605,209 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	- Viel Spaß und viel Erfolg!
 
 
+??? success "eine mögliche Lösung für Aufgabe6"
+	=== "Aufgabe6.java"
+		```java linenums="1"
+		package aufgaben.aufgabe6;
+
+		import java.util.Random;
+
+		public class Aufgabe6 
+		{
+		    /*
+		     * fill an array with random numbers between fromInclusive and toInclusive
+		     * @param length the length of the array
+		     * @param fromInclusive the lower bound of the random numbers
+		     * @param toInclusive the upper bound of the random numbers
+		     * @return the filled array with random numbers
+		     */
+		    public static int[] createAndFillArray(int length, int fromInclusive, int toInclusive)
+		    {
+		        int[] arr = new int[length];
+		        Random r = new Random();
+		        for(int index = 0; index<length; index++)
+		        {
+		            arr[index] = r.nextInt(toInclusive + 1 - fromInclusive) + fromInclusive;
+		        }
+		        return arr;
+		    }
+
+		    /*
+		     * print an array
+		     * @param a the array to print
+		     */
+		    public static void printArray(int[] a)
+		    {
+		        System.out.print("[");  
+		        for(int index = 0; index<a.length; index++)
+		        {
+		            if(index < a.length - 1)
+		            {
+		                System.out.print(a[index] + ", ");
+		            }
+		            else
+		            {
+		                System.out.print(a[index]);
+		            }
+		        }
+		        System.out.println("]");
+		    }
+
+		    /*
+		     * print an array as a table
+		     * @param a the array to print
+		     */
+		    public static void printTable(int[] a)
+		    {
+		        System.out.printf("%n| %-10s |", "Index : ");
+		        for(int index = 0; index<a.length; index++)
+		        {
+		            System.out.printf(" %3d |", index);
+		        }
+		        System.out.printf("%n|------------|");
+		        for(int index = 0; index<a.length; index++)
+		        {
+		            System.out.printf("-----|");
+		        }
+		        System.out.printf("%n| %-10s |", "Wert  : ");
+		        for(int index = 0; index<a.length; index++)
+		        {
+		            System.out.printf(" %3d |", a[index]);
+		        }
+		        System.out.printf("%n%n");
+		    }
+
+		    /*
+		     * print an array as a horizontal histogram
+		     * @param a the array to print
+		     */
+		    public static void printHorizontal(int[] a)
+		    {
+		        System.out.println();
+		        for(int index = 0; index<a.length; index++)
+		        {
+		            System.out.printf("     |%n %3d | ", index);
+		            for(int nrOfStars=0; nrOfStars<a[index]; nrOfStars++)
+		            {
+		                System.out.printf("*");
+		            }
+		            System.out.printf("%n     |%n");
+		        }
+		        System.out.printf("%n%n");
+		    }   
+
+		    /*
+		     * print an array as an upside down histogram
+		     * @param a the array to print
+		     */
+		    public static void printUpsideDown(int[] a)
+		    {
+		        int maxValue = a.length > 0 ? a[0] : 0;
+		        for(int index = 0; index<a.length; index++)
+		        {
+		            if(a[index] > maxValue)
+		            {
+		                maxValue = a[index];
+		            }
+		        }
+		        System.out.printf("%n     |");
+		        for(int index = 0; index<a.length; index++)
+		        {
+		            System.out.printf(" %3d   ", index);
+		        }
+		        System.out.printf("%n-----+");
+		        for(int index = 0; index<a.length; index++)
+		        {
+		            System.out.printf("-------");
+		        }
+
+		        for(int row = 0; row<maxValue; row++)
+		        {
+		            System.out.printf("%n %3d |", row+1);
+		            for(int index = 0; index<a.length; index++)
+		            {
+		                if(a[index] > row)
+		                {
+		                    System.out.printf("   *   ");   
+		                }
+		                else
+		                {
+		                    System.out.printf("       ");
+		                }
+		            }
+		        }
+		        System.out.printf("%n%n");
+		    }
+
+
+		    /*
+		     * print an array as a vertical histogram
+		     * @param a the array to print
+		     */
+		    public static void printVertical(int[] a)
+		    {
+		        int maxValue = a.length > 0 ? a[0] : 0;
+		        for(int index = 0; index<a.length; index++)
+		        {
+		            if(a[index] > maxValue)
+		            {
+		                maxValue = a[index];
+		            }
+		        }
+
+		        for(int row = maxValue; row>0; row--)
+		        {
+		            System.out.printf("%n %3d |", row);
+		            for(int index = 0; index<a.length; index++)
+		            {
+		                if(a[index] > row)
+		                {
+		                    System.out.printf("   *   ");   
+		                }
+		                else
+		                {
+		                    System.out.printf("       ");
+		                }
+		            }
+		        }
+
+		        System.out.printf("%n-----+");
+		        for(int index = 0; index<a.length; index++)
+		        {
+		            System.out.printf("-------");
+		        }
+
+		        System.out.printf("%n     |");
+		        for(int index = 0; index<a.length; index++)
+		        {
+		            System.out.printf(" %3d   ", index);
+		        }
+		        System.out.printf("%n%n");
+
+		    }
+		    public static void main(String[] args)
+		    {
+		        Random r = new Random();
+		        int length = r.nextInt(10)+10;
+		        int[] arr1 = createAndFillArray(length, 20, 30);
+
+		        System.out.printf("%n%n%n----------- printArray -----------------%n%n%n");
+		        printArray(arr1);
+
+		        System.out.printf("%n%n%n----------- printTable -----------------%n%n%n");
+		        printTable(arr1);
+
+		        System.out.printf("%n%n%n----------- printHorizontal -----------------%n%n%n");
+		        printHorizontal(arr1);
+
+		        System.out.printf("%n%n%n----------- printUpsideDown -----------------%n%n%n");
+		        printUpsideDown(arr1);  
+
+		        System.out.printf("%n%n%n----------- printVertical -----------------%n%n%n");
+		        printVertical(arr1);    
+		    }
+		}
+		```
 
 
 ??? "<a id="aufgabe-7"></a>Aufgabe 7 - Arrays befüllen"
@@ -1719,7 +1922,8 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 
 		import java.util.Random;
 
-		public class Aufgabe7 {
+		public class Aufgabe7 
+		{
 
 		    /*
 		     * checks if a char is in a char array  
@@ -1839,7 +2043,7 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 		    public static void findWord(String word)
 		    {
 		        String copyLowerCase = word.toLowerCase();
-		        System.out.println(copyLowerCase);
+		        // System.out.println(copyLowerCase);
 
 		        for(int index = 0; index<word.length(); index++)
 		        {
@@ -1974,6 +2178,154 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 		```
 	- Viel Spaß und viel Erfolg!
 
+
+
+??? success "eine mögliche Lösung für Aufgabe8"
+	=== "SortedArray.java"
+		```java linenums="1"
+		package aufgaben.aufgabe8;
+
+		public class SortedArray {
+		    private int[] s;
+
+		    public SortedArray()
+		    {
+		        this.s = new int[0];
+		    }
+
+		    public SortedArray(int element)
+		    {
+		        this.s = new int[1];
+		        this.s[0] = element;
+		    }
+
+		    /*
+		     * checks if the element is in the array this.s
+		     * @param element the element to check
+		     * @return true if the element is in the array this.s, false otherwise
+		     */
+		    public boolean contains(int element)
+		    {
+		        for(int index = 0; index<this.s.length; index++)
+		        {
+		            if(this.s[index] == element)
+		            {
+		                return true;
+		            }
+		        }
+		        return false;
+		    }
+
+		    /*
+		     * inserts the element into the array this.s
+		     * @param element the element to insert
+		     * @return true if the element was inserted, false otherwise
+		     */
+		    public boolean insert(int element)
+		    {
+		        if(contains(element))
+		        {
+		            return false;
+		        }
+		        int[] copy = new int[this.s.length + 1];
+		        int index = 0;
+		        while(index < this.s.length && this.s[index] < element)
+		        {
+		            copy[index] = this.s[index];
+		            index++;
+		        }
+		        copy[index] = element;
+		        for(int i = index; i<this.s.length; i++)
+		        {
+		            copy[i+1] = this.s[i];
+		        }
+		        this.s = copy;
+		        return true;
+		    }
+
+		    /*
+		     * deletes the element from the array this.s
+		     * @param element the element to delete
+		     * @return true if the element was deleted, false otherwise
+		     */
+		    public boolean delete(int element)
+		    {
+		        if(!contains(element))
+		        {
+		            return false;
+		        }
+		        int[] copy = new int[this.s.length - 1];
+		        int copyIndex = 0;
+		        for(int index = 0; index<this.s.length; index++)
+		        {
+		            if(this.s[index] != element)
+		            {
+		                copy[copyIndex] = this.s[index];
+		                copyIndex++;
+		            }
+		        }
+		        this.s = copy;  
+		        return true;
+		    }
+
+		    /*
+		     * prints the array this.s
+		     */
+		    public void print()
+		    {
+		        System.out.print("[");
+		        for(int index = 0; index<this.s.length; index++)
+		        {
+		            if(index<this.s.length-1)
+		            {
+		                System.out.print(this.s[index] + ", ");
+		            }
+		            else
+		            {
+		                System.out.print(this.s[index]);
+		            }
+		        }
+		        System.out.println("]");
+		    }
+		}
+		```
+	=== "SortedArrayTest.java"
+		```java linenums="1"
+		package aufgaben.aufgabe8;
+
+		public class SortedArrayTest {
+
+		    public static void main(String[] args)
+		    {
+		        System.out.printf("%n%n------------------------- Test a1 -----------------------------------%n%n");
+		        SortedArray a1 = new SortedArray();
+		        a1.print();
+		        a1.delete(5);       a1.print();
+		        a1.insert(5);       a1.print();
+		        a1.insert(7);       a1.print();
+		        a1.delete(5);       a1.print();
+		        a1.insert(6);       a1.print();
+		        a1.insert(4);       a1.print();
+		        a1.insert(8);       a1.print();
+		        a1.delete(8);       a1.print();
+		        a1.delete(6);       a1.print();
+		        
+		        System.out.printf("%n%n------------------------- Test a2 -----------------------------------%n%n");
+		        SortedArray a2 = new SortedArray(9);
+		        a2.print();
+		        a2.insert(5);       a2.print();
+		        a2.insert(9);       a2.print();
+		        a2.insert(5);       a2.print();
+		        a2.insert(4);       a2.print();
+		        a2.insert(4);       a2.print();
+		        a2.delete(5);       a2.print();
+		        a2.delete(9);       a2.print();
+		        a2.delete(4);       a2.print();
+		        a2.delete(4);       a2.print();
+		    }
+		}
+
+		```
 
 
 
