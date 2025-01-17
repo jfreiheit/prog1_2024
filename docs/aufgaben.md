@@ -102,16 +102,21 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	```java linenums="1"
 	package aufgaben.aufgabe1;
 
-	public class Aufgabe1 {
+	public class Aufgabe1 
+	{
 
 	    /*
 	     * upperHalf: the number of rows in the upper half of the rhombus   
 	     * filled: true if the rhombus should be filled, false if it should be unfilled
 	     */
-	    public static void printRhombus(int upperHalf, boolean filled) {
-	        if (filled) {
+	    public static void printRhombus(int upperHalf, boolean filled) 
+	    {
+	        if (filled) 
+	        {
 	            printRhombusFilled(upperHalf);
-	        } else {
+	        } 
+	        else 
+	        {
 	            
 	            printRhombusUnfilled(upperHalf);
 	        }
@@ -122,8 +127,10 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	    * n: the number of characters to print
 	    * c: the character to print
 	    */
-	    private static void printNChars(int n, char c) {
-	        for (int i = 0; i < n; i++) {
+	    private static void printNChars(int n, char c) 
+	    {
+	        for (int i = 0; i < n; i++) 
+	        {
 	            System.out.print(c);
 	        }
 	    }
@@ -132,12 +139,17 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	     * printRhombusUnfilledUpperHalf: prints the upper half of the rhombus
 	     * upperHalf: the number of rows in the upper half of the rhombus
 	     */
-	    private static void printRhombusUnfilledUpperHalf(int upperHalf) {
-	        for (int row = 0; row < upperHalf; row++) {
-	            if(row == 0) {
+	    private static void printRhombusUnfilledUpperHalf(int upperHalf) 
+	    {
+	        for (int row = 0; row < upperHalf; row++) 
+	        {
+	            if(row == 0) 
+	            {
 	                printNChars(upperHalf, ' ');
 	                printNChars(1, '*');
-	            } else {
+	            } 
+	            else 
+	            {
 	                printNChars(upperHalf-row, ' ');
 	                printNChars(1, '*');
 	                printNChars(row*2-1, ' ');
@@ -151,12 +163,17 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	     * printRhombusUnfilledLowerHalf: prints the lower half of the rhombus
 	     * upperHalf: the number of rows in the upper half of the rhombus
 	     */
-	    private static void printRhombusUnfilledLowerHalf(int upperHalf) {
-	        for (int row = upperHalf-1; row >= 0; row--) {
-	            if(row == 0) {
+	    private static void printRhombusUnfilledLowerHalf(int upperHalf) 
+	    {
+	        for (int row = upperHalf-1; row >= 0; row--) 
+	        {
+	            if(row == 0) 
+	            {
 	                printNChars(upperHalf, ' ');
 	                printNChars(1, '*');
-	            } else {
+	            } 
+	            else 
+	            {
 	                printNChars(upperHalf-row, ' ');
 	                printNChars(1, '*');
 	                printNChars(row*2-1, ' ');
@@ -171,8 +188,10 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	     * printRhombusFilledUpperHalf: prints the upper half of the rhombus
 	     * upperHalf: the number of rows in the upper half of the rhombus
 	     */
-	    private static void printRhombusFilledUpperHalf(int upperHalf) {
-	        for (int row = 0; row < upperHalf; row++) {
+	    private static void printRhombusFilledUpperHalf(int upperHalf) 
+	    {
+	        for (int row = 0; row < upperHalf; row++) 
+	        {
 	            printNChars(upperHalf-row, ' ');
 	            printNChars(row*2+1, '*');
 	            System.out.println();
@@ -183,8 +202,10 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	     * printRhombusFilledLowerHalf: prints the lower half of the rhombus
 	     * upperHalf: the number of rows in the upper half of the rhombus
 	     */
-	    private static void printRhombusFilledLowerHalf(int upperHalf) {
-	        for (int row = upperHalf-1; row >= 0; row--) {
+	    private static void printRhombusFilledLowerHalf(int upperHalf) 
+	    {
+	        for (int row = upperHalf-1; row >= 0; row--) 
+	        {
 	            printNChars(upperHalf-row, ' ');
 	            printNChars(row*2+1, '*');
 	            System.out.println();
@@ -195,7 +216,8 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	     * printRhombusFilled: prints the rhombus
 	     * upperHalf: the number of rows in the upper half of the rhombus
 	     */
-	    private static void printRhombusFilled(int upperHalf) {
+	    private static void printRhombusFilled(int upperHalf) 
+	    {
 	        printRhombusFilledUpperHalf(upperHalf);
 	        printMiddleRowFilled(upperHalf);
 	        printRhombusFilledLowerHalf(upperHalf);
@@ -206,7 +228,8 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	     * printMiddleRowFilled: prints the middle row of the rhombus
 	     * upperHalf: the number of rows in the upper half of the rhombus
 	     */
-	    private static void printMiddleRowFilled(int upperHalf) {
+	    private static void printMiddleRowFilled(int upperHalf) 
+	    {
 	        printNChars(2*upperHalf+1, '*');
 	        System.out.println();
 	    }
@@ -215,7 +238,8 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	     * printMiddleRowUnfilled: prints the middle row of the rhombus
 	     * upperHalf: the number of rows in the upper half of the rhombus
 	     */
-	    private static void printMiddleRowUnfilled(int upperHalf) {
+	    private static void printMiddleRowUnfilled(int upperHalf) 
+	    {
 	        printNChars(1, '*');
 	        printNChars(2*upperHalf-1, ' ');
 	        printNChars(1, '*');
@@ -226,14 +250,16 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	     * printRhombusUnfilled: prints the rhombus
 	     * upperHalf: the number of rows in the upper half of the rhombus
 	     */
-	    private static void printRhombusUnfilled(int upperHalf) {
+	    private static void printRhombusUnfilled(int upperHalf) 
+	    {
 	        printRhombusUnfilledUpperHalf(upperHalf);
 	        printMiddleRowUnfilled(upperHalf);
 	        printRhombusUnfilledLowerHalf(upperHalf);
 	        System.out.println();
 	    }   
 
-	    public static void main(String[] args) {
+	    public static void main(String[] args) 
+	    {
 	        printRhombus(1, true);
 	        printRhombus(1, false);
 	        printRhombus(5, true);
@@ -330,21 +356,25 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	```java linenums="1"
 	package aufgaben.aufgabe2;
 
-	public class Aufgabe2 {
+	public class Aufgabe2 
+	{
 
 	    /*
 	     * lengthOfNumber: returns the length of the number
 	     * number: the number to get the length of
 	     */
-	    public static int lengthOfNumber(int number){
+	    public static int lengthOfNumber(int number)
+	    {
 	        int copyNumber = number;
-	        if(number < 0){
+	        if(number < 0)
+	        {
 	            copyNumber = -number;
 	        }
 	        // this is better instead of the first 4 lines above:
 	        // int copynumber = number < 0 ? -number : number;  
 	        int length = 0;
-	        while(copyNumber > 0){
+	        while(copyNumber > 0)
+	        {
 	            copyNumber /= 10;
 	            length++;
 	        }
@@ -355,12 +385,15 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	     * firstDigit: returns the first digit of the number
 	     * number: the number to get the first digit of
 	     */
-	    public static int firstDigit(int number){
+	    public static int firstDigit(int number)
+	    {
 	        int copyNumber = number;
-	        if(number < 0){
+	        if(number < 0)
+	        {
 	            copyNumber = -number;
 	        }
-	        while(copyNumber > 9){
+	        while(copyNumber > 9)
+	        {
 	            copyNumber /= 10;
 	        }
 	        return copyNumber;
@@ -370,9 +403,11 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	     * powerOf10ToN: returns the power of 10 to the n
 	     * n: the power to calculate (n >= 0)
 	     */
-	    public static int powerOf10ToN(int n){
+	    public static int powerOf10ToN(int n)
+	    {
 	        int result = 1;
-	        for(int i = 0; i < n; i++){
+	        for(int i = 0; i < n; i++)
+	        {
 	            result *= 10;
 	        }
 	        return result;
@@ -382,7 +417,8 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	     * cutFirstDigit: cuts the first digit of the number
 	     * number: the number to cut the first digit of
 	     */
-	    public static int cutFirstDigit(int number){
+	    public static int cutFirstDigit(int number)
+	    {
 	        int copyNumber = number < 0 ? -number : number;
 	        int firstDigit = firstDigit(copyNumber);
 	        int length = lengthOfNumber(copyNumber);
@@ -394,18 +430,22 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	     * secondDigitIsZero: returns true if the second digit is 0
 	     * number: the number to check if the second digit is 0
 	     */
-	    public static boolean secondDigitIsZero(int number){
+	    public static boolean secondDigitIsZero(int number)
+	    {
 	        int copyNumber = number < 0 ? -number : number;
-	        if(copyNumber < 10){
+	        if(copyNumber < 10)
+	        {
 	            return false;
 	        }   
-	        while(copyNumber > 99) {
+	        while(copyNumber > 99) 
+	        {
 	            copyNumber /= 10;
 	        }
 	        return copyNumber % 10 == 0;
 	    }   
 
-	    public static void main(String[] args) {
+	    public static void main(String[] args) 
+	    {
 
 	        System.out.printf("Length of 0     ---> %d\n", lengthOfNumber(0));
 	        System.out.printf("Length of 1     ---> %d\n", lengthOfNumber(1));
@@ -655,6 +695,204 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 
 
 
+??? success "eine mögliche Lösung für Aufgabe3"
+	=== "Triangle.java"
+		```java linenums="1"
+		package aufgaben.aufgabe3;
+
+		public class Triangle 
+		{
+		    private int a;
+		    private int b;
+		    private int c;
+
+		    public Triangle(int a, int b, int c) 
+		    {
+		        this.a = a;
+		        this.b = b;
+		        this.c = c;
+		    }
+
+		    /*
+		     * Berechnet den Umfang des Dreiecks    
+		     * @return der Umfang des Dreiecks
+		     */
+		    public int circumference()
+		    {
+		        return this.a + this.b + this.  c;
+		    }
+
+		    /*
+		     * Berechnet den Flaecheninhalt des Dreiecks
+		     * @return der Flaecheninhalt des Dreiecks
+		     */
+		    public double area()
+		    {
+		        double s = (this.a + this.b + this.c) / 2.0;
+		        return Math.sqrt(s * (s - this.a) * (s - this.b) * (s - this.c));
+		    }
+
+		    /*
+		     * Gibt die Informationen des Dreiecks auf die Konsole aus
+		     */
+		    public void print() 
+		    {
+		        System.out.printf("Seiten          : a=%d, b=%d, c=%d\n", this.a, this.b, this.c);
+		        System.out.printf("Umfang          : %d\n", this.circumference());
+		        System.out.printf("Flaecheninhalt  : %f\n", this.area());
+		        if(this.equilateral())
+		        {
+		            System.out.println("Das Dreieck ist gleichseitig.");
+		        }
+		        else if(this.isosceles())
+		        {
+		            System.out.println("Das Dreieck ist gleichschenklig.");
+		        }
+		        else
+		        {
+		            System.out.println("Das Dreieck ist unregelmaessig.");
+		        }
+		        if(this.rightAngled())
+		        {
+		            System.out.println("Das Dreieck ist rechtwinklig.");
+		        }
+		        else
+		        {
+		            System.out.println("Das Dreieck ist nicht rechtwinklig.");
+		        }
+		        System.out.println();
+		    }
+
+		    /*
+		     * Prueft ob das Dreieck gleichseitig ist
+		     * @return true, wenn das Dreieck gleichseitig ist, false sonst
+		     */
+		    public boolean equilateral()
+		    {
+		        return this.a == this.b && this.b == this.c;
+		    }   
+
+		    /*
+		     * Prueft ob das Dreieck gleichschenklig ist
+		     * @return true, wenn das Dreieck gleichschenklig ist, false sonst
+		     */
+		    public boolean isosceles()
+		    {
+		        return this.a == this.b || this.b == this.c || this.a == this.c;
+		    }       
+
+		    /*
+		     * Prueft ob das Dreieck rechtwinklig ist
+		     * @return true, wenn das Dreieck rechtwinklig ist, false sonst
+		     */
+		    public boolean rightAngled()
+		    {
+		        return  this.a * this.a + this.b * this.b == this.c * this.c || 
+		                this.a * this.a + this.c * this.c == this.b * this.b || 
+		                this.b * this.b + this.c * this.c == this.a * this.a;
+		    }  
+
+		    /*
+		     * Prueft ob das Dreieck den gleichen Umfang hat
+		     * @param t das zu vergleichende Dreieck
+		     * @return true, wenn das Dreieck den gleichen Umfang hat, false sonst
+		     */
+		    public boolean sameCircumference(Triangle t)
+		    {
+		        return this.circumference() == t.circumference();
+		    }  
+		    
+		    /*
+		     * Prueft ob das Dreieck kleiner ist als das andere Dreieck
+		     * @param t das zu vergleichende Dreieck
+		     * @return true, wenn das Dreieck kleiner ist als das andere Dreieck, false sonst
+		     */
+		    public boolean isSmaller(Triangle t)
+		    {
+		        return this.area() < t.area();
+		    }   
+
+		    /*
+		     * Prueft ob das Dreieck groesser ist als das andere Dreieck
+		     * @param t das zu vergleichende Dreieck
+		     * @return true, wenn das Dreieck groesser ist als das andere Dreieck, false sonst
+		     */
+		    public boolean isBigger(Triangle t)
+		    {
+		        return this.area() > t.area();
+		    }  
+		    
+		    /*
+		     * Prueft ob das Dreieck die gleichen Seiten hat
+		     * @param t das zu vergleichende Dreieck
+		     * @return true, wenn das Dreieck die gleichen Seiten hat, false sonst
+		     */
+		    public boolean sidesAreEqual(Triangle t)
+		    {
+		        return this.a == t.a && this.b == t.b && this.c == t.c ||
+		               this.a == t.b && this.b == t.c && this.c == t.a ||
+		               this.a == t.c && this.b == t.a && this.c == t.b ||
+		               this.a == t.a && this.b == t.c && this.c == t.b ||
+		               this.a == t.b && this.b == t.a && this.c == t.c ||
+		               this.a == t.c && this.b == t.b && this.c == t.a ||
+		               this.a == t.a && this.b == t.b && this.c == t.c;
+		    }   
+
+		}
+		```
+	=== "Testklasse.java"
+		```java linenums="1"
+		package aufgaben.aufgabe3;
+
+		public class Testklasse 
+		{
+
+		    public static void main(String[] args) 
+		    {
+		        Triangle t1 = new Triangle(3, 4, 5);
+		        Triangle t2 = new Triangle(4, 4, 7);
+		        Triangle t3 = new Triangle(5, 5, 5);
+		        Triangle t4 = new Triangle(4, 5, 3);
+		        Triangle t5 = new Triangle(4, 3, 5);
+		        Triangle t6 = new Triangle(3, 4, 5);
+
+		        t1.print();
+		        t2.print();
+		        t3.print();
+		        t4.print();
+		        t5.print();
+		        t6.print();
+
+		        System.out.println();
+		        System.out.println("t1 und t2 gleicher Umfang ? : " + t1.sameCircumference(t2));
+		        System.out.println("t1 und t3 gleicher Umfang ? : " + t1.sameCircumference(t3));
+		        System.out.println("t2 und t3 gleicher Umfang ? : " + t2.sameCircumference(t3));
+
+		        System.out.println();
+		        System.out.println("t1 kleiner als t2 ? : " + t1.isSmaller(t2));
+		        System.out.println("t2 kleiner als t1 ? : " + t2.isSmaller(t1));
+		        System.out.println("t1 kleiner als t4 ? : " + t1.isSmaller(t4));
+		        System.out.println("t4 kleiner als t1 ? : " + t4.isSmaller(t1));
+
+		        System.out.println();
+		        System.out.println("t1 groesser als t2 ? : " + t1.isBigger(t2));
+		        System.out.println("t2 groesser als t1 ? : " + t2.isBigger(t1));
+		        System.out.println("t1 groesser als t4 ? : " + t1.isBigger(t4));
+		        System.out.println("t4 groesser als t1 ? : " + t4.isBigger(t1));
+
+		        System.out.println();
+		        System.out.println("t1 und t2 gleiche Seiten ? : " + t1.sidesAreEqual(t2));
+		        System.out.println("t1 und t4 gleiche Seiten ? : " + t1.sidesAreEqual(t4));
+		        System.out.println("t1 und t5 gleiche Seiten ? : " + t1.sidesAreEqual(t5));
+		        System.out.println("t1 und t6 gleiche Seiten ? : " + t1.sidesAreEqual(t6));
+
+		        System.out.println();
+		        
+		    }
+		}
+		```
+
+
 
 ??? "<a id="aufgabe-4"></a>Aufgabe 4 - Bruch"
 	- Wir erstellen uns einen neuen Datentyp `Bruch`
@@ -673,7 +911,7 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 		- `public Bruch mal(Bruch b)` --> gibt den gekürzten Bruch aus der Multiplikation eines Bruchs mit `b` zurück
 		- `public Bruch geteilt(Bruch b)` --> gibt den gekürzten Bruch aus der Division eines Bruchs mit `b` zurück
 		- `public Bruch kuerzen()` --> gibt den gekürzten Bruch zurück (Sie brauchen dazu den `ggT`)
-		_ `public String toString()` --> gibt einen Bruch als `String` in der Form `zaehler / nenner` zurück
+		- `public String toString()` --> gibt einen Bruch als `String` in der Form `zaehler / nenner` zurück
 		- `public int ggT(int zahl1, int zahl2)` --> gibt den größten gemeinsamen Teiler (ggT) der beiden Zahlen `zahl1` und `zahl2` als `int` zurück - siehe [Euklidischer Algorithmus](algorithmen.md#beispiel-euklidischer-algorithmus)
 
 	- Geben Sie in die `main()`-Methode der `BruchTest`-Klasse mindestens folgende Anweisungen ein:
@@ -692,7 +930,7 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 		System.out.printf("%5s + %5s = %5s %n", b5.toString(), b4.toString(), b5.plus(b4).toString());	
 		System.out.printf("%5s - %5s = %5s %n", b1.toString(), b1.toString(), b1.minus(b1).toString());		// nenner sollte ungleich 0 bleiben!	
 		``` 
-		und führen Sie die `BruchTest`-Klasse aus. Es sollten folgende Augaben entstehen:
+		und führen Sie die `BruchTest`-Klasse aus. Es sollten folgende Ausgaben entstehen:
 		```bash
 		------------------------- Rechnen -----------------------------------
 
@@ -744,6 +982,193 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	
 	- Viel Spaß und viel Erfolg!
 
+
+
+??? success "eine mögliche Lösung für Aufgabe4"
+	=== "Bruch.java"
+		```java linenums="1"
+		package aufgaben.aufgabe4;
+
+		public class Bruch 
+		{
+		    private int zaehler;
+		    private int nenner;
+
+		    /*
+		     * Konstruktor fuer einen Bruch mit dem Wert zaehler/nenner
+		     * @param zaehler der Zaehler des Bruchs
+		     * @param nenner der Nenner des Bruchs
+		     */
+		    public Bruch(int zaehler, int nenner)
+		    {
+		        this.zaehler = zaehler;
+		        this.nenner = nenner;
+		    }
+
+		    /*
+		     * Konstruktor fuer einen Bruch mit dem Wert 1/1
+		     */
+		    public Bruch() 
+		    {
+		        this.zaehler = 1;
+		        this.nenner = 1;
+		    }
+
+		    /*
+		     * Wandelt den Bruch in einen String um
+		     * @return der String
+		     */
+		    public String toString()
+		    {
+		        return this.zaehler + "/" + this.nenner;
+		    }
+
+		    /*
+		     * Berechnet den groessten gemeinsamen Teiler von zahl1 und zahl2
+		     * @param zahl1 die erste Zahl
+		     * @param zahl2 die zweite Zahl
+		     * @return der groesste gemeinsame Teiler von zahl1 und zahl2
+		     */
+		    public int ggT(int zahl1, int zahl2)
+		    {  
+		        int a = zahl1 < 0 ? -zahl1 : zahl1;
+		        int b = zahl2 < 0 ? -zahl2 : zahl2;
+		        while (b > 0) 
+		        {
+		            int temp = b;
+		            b = a % b;
+		            a = temp;
+		        }
+		        return a;
+		    }
+
+		    /*
+		     * Kuerzt den Bruch
+		     * @return der gekuerzte Bruch
+		     */
+		    public Bruch kuerzen()
+		    {
+		        int ggt = ggT(this.zaehler, this.nenner);
+		        this.zaehler /= ggt;
+		        this.nenner /= ggt;
+		        return this;
+		    }
+
+		    /*
+		     * Addiert zwei Brueche
+		     * @param b der zu addierende Bruch
+		     * @return der addierte Bruch
+		     */
+		    public  Bruch plus(Bruch b)
+		    {
+		        int neuerNenner = this.nenner * b.nenner;
+		        int neuerZaehler = this.zaehler * b.nenner + b.zaehler * this.nenner;
+		        return new Bruch(neuerZaehler, neuerNenner).kuerzen();
+		    }
+
+		    /*
+		     * Subtrahiert zwei Brueche
+		     * @param b der zu subtrahierende Bruch
+		     * @return der subtrahierte Bruch
+		     */
+		    public Bruch minus(Bruch b)
+		    {
+		        int neuerNenner = this.nenner * b.nenner;
+		        int neuerZaehler = this.zaehler * b.nenner - b.zaehler * this.nenner;
+		        return new Bruch(neuerZaehler, neuerNenner).kuerzen();
+		    }
+
+		    /*
+		     * Multipliziert zwei Brueche
+		     * @param b der zu multiplizierende Bruch
+		     * @return der multiplizierte Bruch
+		     */
+		    public Bruch mal(Bruch b)
+		    {
+		        int neuerZaehler = this.zaehler * b.zaehler;
+		        int neuerNenner = this.nenner * b.nenner;
+		        return new Bruch(neuerZaehler, neuerNenner).kuerzen();
+		    }   
+
+		    /*
+		     * Dividiert zwei Brueche
+		     * @param b der zu dividierende Bruch
+		     * @return der dividierten Bruch
+		     */
+		    public Bruch geteilt(Bruch b)
+		    {
+		        int neuerZaehler = this.zaehler * b.nenner;
+		        int neuerNenner = this.nenner * b.zaehler;
+		        return new Bruch(neuerZaehler, neuerNenner).kuerzen();
+		    }
+
+		    /*
+		     * Prueft ob der Bruch groesser ist als ein anderer Bruch
+		     * @param b der zu vergleichende Bruch
+		     * @return true, wenn der Bruch groesser ist, false sonst
+		     */
+		    public boolean istGroesser(Bruch b)
+		    {
+		        return this.zaehler * b.nenner > this.nenner * b.zaehler;
+		    }
+
+		    /*
+		     * Prueft ob der Bruch kleiner ist als ein anderer Bruch
+		     * @param b der zu vergleichende Bruch
+		     * @return true, wenn der Bruch kleiner ist, false sonst
+		     */
+		    public boolean istKleiner(Bruch b)
+		    {
+		        return this.zaehler * b.nenner < this.nenner * b.zaehler;
+		    }   
+
+		    /*
+		     * Prueft ob der Bruch gleich ist wie ein anderer Bruch
+		     * @param b der zu vergleichende Bruch
+		     * @return true, wenn der Bruch gleich ist, false sonst
+		     */
+		    public boolean istGleich(Bruch b)
+		    {
+		        return this.zaehler * b.nenner == this.nenner * b.zaehler;
+		    }
+		}
+		```
+	=== "BruchTest.java"
+		```java linenums="1"
+		package aufgaben.aufgabe4;
+
+		public class BruchTest 
+		{
+
+		    public static void main(String[] args) 
+		    {
+		        Bruch b1 = new Bruch(3,7);
+		        Bruch b2 = new Bruch(4,8);
+		        Bruch b3 = new Bruch(2,5);
+		        Bruch b4 = new Bruch(5,11);
+		        Bruch b5 = new Bruch();
+		        
+		        System.out.printf("%n%n------------------------- Rechnen -----------------------------------%n%n");
+		        System.out.printf("%5s + %5s = %5s %n", b1.toString(), b2.toString(), b1.plus(b2).toString());
+		        System.out.printf("%5s - %5s = %5s %n", b3.toString(), b4.toString(), b3.minus(b4).toString());
+		        System.out.printf("%5s * %5s = %5s %n", b1.toString(), b3.toString(), b1.mal(b3).toString());
+		        System.out.printf("%5s / %5s = %5s %n", b2.toString(), b1.toString(), b2.geteilt(b1).toString());
+		        System.out.printf("%5s + %5s = %5s %n", b5.toString(), b4.toString(), b5.plus(b4).toString());  
+		        System.out.printf("%5s - %5s = %5s %n", b1.toString(), b1.toString(), b1.minus(b1).toString());     // nenner sollte ungleich 0 bleiben!
+		    
+		        System.out.printf("%n%n------------------------- Vergleichen -----------------------------------%n%n");
+		        System.out.printf("%5s  > %5s ? %b %n", b1.toString(), b2.toString(), b1.istGroesser(b2));
+		        System.out.printf("%5s  < %5s ? %b %n", b1.toString(), b2.toString(), b1.istKleiner(b2));
+		        System.out.printf("%5s == %5s ? %b %n", b1.toString(), b2.toString(), b1.istGleich(b2));
+		        System.out.printf("%5s  > %5s ? %b %n", b3.toString(), b4.toString(), b3.istGroesser(b4));
+		        System.out.printf("%5s  < %5s ? %b %n", b3.toString(), b4.toString(), b3.istKleiner(b4));
+		        System.out.printf("%5s == %5s ? %b %n", b3.toString(), b4.toString(), b3.istGleich(b4));
+		        System.out.printf("%5s  > %5s ? %b %n", b5.toString(), b5.toString(), b5.istGroesser(b5));
+		        System.out.printf("%5s  < %5s ? %b %n", b5.toString(), b5.toString(), b5.istKleiner(b5));
+		        System.out.printf("%5s == %5s ? %b %n", b5.toString(), b5.toString(), b5.istGleich(b5));
+		    }
+		}
+		```
 
 
 
@@ -841,6 +1266,171 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 
 	- Viel Spaß und viel Erfolg!
 
+
+
+??? success "eine mögliche Lösung für Aufgabe5"
+	=== "ListElement.java"
+		```java linenums="1"
+		package aufgaben.aufgabe5;
+
+		public class ListElement 
+		{
+		    private char value;
+		    private boolean hasPredecessor;
+		    private boolean hasSuccessor;
+		    private ListElement predecessor;
+		    private ListElement successor;
+
+		    /*
+		     * Konstruktor fuer ein einzelnes Element
+		     * @param value der Wert des Elements
+		     */
+		    public ListElement(char value)
+		    {
+		        this.value = value;
+		        this.hasPredecessor = false;
+		        this.hasSuccessor = false;
+		        this.predecessor = null;
+		        this.successor = null;
+		    }
+
+		    /*
+		     * Diese Methode dient nur der Ueberlegung. Sie stellt einen einfachen Fall dar.
+		     * 
+		     * Fuegt ein einzelnes Element vor einem anderen Element in eine Liste ein
+		     * @param element das Element, vor das das neue Element eingefuegt werden soll
+		     */
+		    public void insertSingleListElementBeforeList(ListElement element)
+		    {
+		        if(!element.hasPredecessor)
+		        {
+		            this.predecessor = null;
+		            this.hasPredecessor = false;
+		        }
+		        else
+		        {
+		            this.predecessor = element.predecessor;
+		            this.hasPredecessor = true;
+		            element.predecessor.successor = this;
+		        }
+		        this.successor = element;
+		        this.hasSuccessor = true;
+		        element.predecessor = this;
+		        element.hasPredecessor = true;  
+		    }
+
+		    /*
+		     * Diese Methode dient nur der Ueberlegung. Sie stellt einen weiteren Fall dar.
+		     * 
+		     * Fuegt eine Liste vor einem anderen einzelnen Element in eine Liste ein
+		     * @param element das Element, vor das die neue Liste eingefuegt werden soll
+		     */
+		    public void insertListBeforeSingleListElement(ListElement element)
+		    {
+		        ListElement lastInList = this;
+		        while(lastInList.hasSuccessor)
+		        {
+		            lastInList = lastInList.successor;
+		        }
+		        lastInList.successor = element;
+		        lastInList.hasSuccessor = true;
+		        element.predecessor = lastInList;
+		        element.hasPredecessor = true;
+		    }   
+
+		    /*
+		     * Dies ist die eigentliche Methode, die eine Liste in eine andere Liste einfuegt.
+		     * 
+		     * Fuegt eine Liste vor eine andere Liste in eine Liste ein
+		     * @param element die Liste, die vor das neue Element eingefuegt werden soll
+		     */
+		    public void insertListBeforeList(ListElement element)
+		    {
+		        ListElement lastInThisList = this;        
+		        while(lastInThisList.hasSuccessor)
+		        {
+		            lastInThisList = lastInThisList.successor;
+		        }
+		        lastInThisList.successor = element;
+		        lastInThisList.hasSuccessor = true;
+		        if(element.hasPredecessor)
+		        {
+		            ListElement predecessorOfElement = element.predecessor;
+		            predecessorOfElement.successor = this;
+		            predecessorOfElement.hasSuccessor = true;
+		            this.predecessor = predecessorOfElement;
+		            this.hasPredecessor = true; 
+		        }
+		        element.predecessor = lastInThisList;
+		        element.hasPredecessor = true;  
+		    }
+
+		    public void insertBefore(ListElement element)
+		    {
+		        insertListBeforeList(element);
+		    }
+
+		    public void print()
+		    {
+		       System.out.print(this.value);
+		       if(this.hasSuccessor)
+		       {
+		        this.successor.print();
+		       }
+		       else
+		       {
+		        System.out.println();
+		       }
+		    }
+		}
+
+		```
+	=== "Programmklasse.java"
+		```java linenums="1"
+		package aufgaben.aufgabe5;
+
+		public class Programmklasse {
+
+		    public static void main(String[] args) 
+		    {
+		        ListElement l1 = new ListElement('W');
+		        ListElement l2 = new ListElement('e');
+		        ListElement l3 = new ListElement('i');
+		        ListElement l4 = new ListElement('h');
+		        ListElement l5 = new ListElement('n');
+		        ListElement l6 = new ListElement('a');
+		        ListElement l7 = new ListElement('c');
+		        ListElement l8 = new ListElement('h');
+		        ListElement l9 = new ListElement('t');
+		        ListElement l10 = new ListElement('e');
+		        ListElement l11 = new ListElement('n');
+		        
+		        System.out.printf("? : %15s", "W == ");l1.print();
+		        l1.insertBefore(l2);        // W-e
+		        System.out.printf("? : %15s", "We == ");l1.print();
+		        
+		        l5.insertBefore(l6);        // n-a
+		        l5.insertBefore(l7);        // na-c
+		        l7.insertBefore(l8);        // nac-h
+		        l6.insertBefore(l9);        // nach-t
+		        System.out.printf("? : %15s", "nacht == ");l5.print();
+		        
+		        l1.insertBefore(l5);        // We-nacht
+		        System.out.printf("? : %15s", "Wenacht == ");l1.print();            
+		        
+		        l10.insertBefore(l11);      // e-n
+		        l9.insertBefore(l10);       // Wenacht-en
+		        System.out.printf("? : %15s", "Wenachten == ");l1.print();
+		        System.out.printf("? : %15s", "nachten == ");l5.print();
+		        
+		        l3.insertBefore(l5);        // We-i-nachten
+		        System.out.printf("? : %15s", "inachten == ");l3.print();
+		        System.out.printf("? : %15s", "Weinachten == ");l1.print();
+		        l4.insertBefore(l5);        // Wei-h-nachten
+		        System.out.printf("? : %15s", "Weihnachten == ");l1.print();
+		    }
+		}
+		```
 
 
 
@@ -1121,6 +1711,180 @@ Sie sind in der Wahl Ihrer Entwicklungsumgebung frei. Ich verwende in der Verans
 	- Viel Spaß und viel Erfolg!
 
 
+
+??? success "eine mögliche Lösung für Aufgabe7"
+	=== "Aufgabe7.java"
+		```java linenums="1"
+		package aufgaben.aufgabe7;
+
+		import java.util.Random;
+
+		public class Aufgabe7 {
+
+		    /*
+		     * checks if a char is in a char array  
+		     * @param charArray the char array to check 
+		     * @param c the char to check for
+		     * @return true if the char is in the array, false otherwise
+		     */
+		    private static boolean contains(char[] charArray, char c)
+		    {
+
+		        for(int i = 0; i<charArray.length; i++)
+		        {
+		            if(charArray[i] == c)
+		            {
+		                return true;
+		            }
+		        }
+		        return false;
+		    }
+
+		    /*
+		     * creates a char array with 25 random chars
+		     * chars are small letters and unique
+		     * @return the char array
+		     */
+		    public static char[] createAndFillCharArray()
+		    {
+		        char[] charArray = new char[25];
+		        for(int index = 0; index<charArray.length; index++)
+		        {
+		            Random r = new Random();
+		            char c = (char) (r.nextInt(26) + 97);
+		            while(contains(charArray, c))
+		            {
+		                c = (char) (r.nextInt(26) + 97);
+		            }
+		            charArray[index] = c;
+		        }
+		        return charArray;
+		    }
+
+		    /*
+		     * sorts a char array
+		     * @param unsorted the char array to sort
+		     * @return the sorted char array
+		     */
+		    public static char[] sort(char[] unsorted)
+		    {
+		        char[] sorted = new char[unsorted.length];
+		        for(int index = 0; index<unsorted.length; index++)
+		        {
+		            sorted[index] = unsorted[index];
+		        }
+
+		        for(int bubble = 1; bubble<unsorted.length; bubble++)
+		        {
+		            for(int index = 0; index<unsorted.length - bubble; index++)
+		            {
+		                if(sorted[index]>sorted[index+1])
+		                {
+		                    char temp = sorted[index];
+		                    sorted[index] = sorted[index+1];
+		                    sorted[index+1] = temp;
+		                }
+		            }
+		        }
+		        return sorted;
+		    }
+
+		    /*
+		     * prints a char array
+		     * @param array the char array to print
+		     */
+		    public static void print(char[] array)
+		    {
+		        System.out.print("[");
+		        for(int index = 0; index<array.length; index++)
+		        {
+		            if(index == array.length - 1)
+		            {
+		                System.out.print(array[index]);
+		            }
+		            else
+		            {
+		                System.out.print(array[index] + ", ");
+		            }
+		        }
+		        System.out.println("]");
+		    }
+
+		    /*
+		     * gets the missing letter in a char array
+		     * missing letter is the first letter in the alphabet that is not in the array
+		     * @param ca the char array to check
+		     * @return the missing letter
+		     */
+		    public static char getMissingLetter(char[] ca)
+		    {
+		        for(int asciiCode = 97; asciiCode<123; asciiCode++)
+		        {
+		            char letter = (char) asciiCode;
+		            if(!contains(ca, letter))
+		            {
+		                return letter;
+		            }
+		        }
+		        return '!'; // never called for our use case
+		    }
+
+		    /*
+		     * give a word; for each letter in the word, create a char array with 25 random chars   
+		     * get the missing letter for each char array
+		     * if the missing letter is not the same as the letter in the word, create a new char array and get the missing letter again
+		     * print the letter and the number of times the missing letter was found
+		     * @param word the word to find the missing letter in
+		     */
+		    public static void findWord(String word)
+		    {
+		        String copyLowerCase = word.toLowerCase();
+		        System.out.println(copyLowerCase);
+
+		        for(int index = 0; index<word.length(); index++)
+		        {
+		            int count = 1;
+		            System.out.print(word.charAt(index));
+		            char[] ca = createAndFillCharArray();
+		            char missingLetter = getMissingLetter(ca);
+		            while(missingLetter != copyLowerCase.charAt(index))
+		            {
+		                ca = createAndFillCharArray();
+		                missingLetter = getMissingLetter(ca);
+		                System.out.print(".");
+		                count++;
+		            }
+		            System.out.println(missingLetter + " (" + count + ")");
+		        }
+		    }
+
+		    public static void main(String[] args) 
+		    {
+		        for(int asciiValue = 97; asciiValue<123; asciiValue++)
+		        {
+		            char c = (char) asciiValue;
+		            System.out.print(c + " ");
+		        }
+
+		        System.out.printf("%n%n----------------- Erzeugen ------------------%n%n");
+		        char[] ca1 = createAndFillCharArray();
+		        print(ca1);
+
+		        System.out.printf("%n%n----------------- Sortieren ------------------%n%n");        
+		        char[] ca2 = sort(ca1);
+		        print(ca2);
+
+		        System.out.printf("%n%n----------------- findMissingLetter ------------------%n%n"); 
+		        char missingLetter = getMissingLetter(ca2);
+		        System.out.println("Missing letter: " + missingLetter);
+
+
+		        System.out.printf("%n%n----------------- findWord ------------------%n%n"); 
+		        findWord("Programmieren");
+		    }
+		}
+
+		```
 
 
 
