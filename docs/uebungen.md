@@ -3853,6 +3853,362 @@
 
 
 
+??? question "Eine mögliche Lösung für Clothes"
+	=== "Clothes.java"
+		```java
+		package klausurvorbereitung.clothes;
+
+		import java.util.Random;
+
+		public class Clothes
+		{
+			private String color;
+			private int type;
+			private int size;
+			
+			public Clothes()
+			{
+				Random r = new Random();
+				int color = r.nextInt(4);
+				this.color = switch(color) {
+					case 0 -> "Rot";
+					case 1 -> "Gelb";
+					case 2 -> "Blau";
+					case 3 -> "Schwarz";
+					default -> "";
+				};
+				this.type = r.nextInt(5) + 1;
+				this.size = r.nextInt(12)*2 + 30;	
+			}
+			
+			public String getType()
+			{
+				String type = switch(this.type) {
+					case 1 -> "Hose";
+					case 2 -> "Jacke";
+					case 3 -> "Kleid";
+					case 4 -> "Rock";
+					case 5 -> "Pullover";
+					default -> "";
+				};
+				return type;
+			}
+			
+			public String getColor()
+			{
+				return this.color;
+			}
+			
+			public int getSize()
+			{
+				return this.size;
+			}
+			
+			@Override
+			public String toString()
+			{
+				String output = String.format("%-8s Farbe %-7s in Groesse %2d", this.getType(), this.color, this.size);
+				return output;
+			}
+			
+			public boolean isEqual(Clothes c)
+			{
+				return this.color.equals(c.color) && this.size == c.size && this.type == c.type;
+			}
+			
+			public boolean isBigger(Clothes c)
+			{
+				return this.size > c.size;
+			}	
+		}
+
+		```	
+
+	=== "Item.java"
+		```java
+		package klausurvorbereitung.clothes;
+
+		import java.util.Random;
+
+		public class Item
+		{
+			private double prize;
+			private int amount;
+			private Clothes clothes;
+			
+			public Item()
+			{
+				Random r = new Random();
+				int intPrize = r.nextInt(5000) + 5000;
+				this.prize = intPrize/100.0;
+				this.amount = 5;
+				this.clothes = new Clothes();
+			}
+			
+			public Item(Clothes c)
+			{
+				this(); 	// oder aus dem oberen Konstruktor erneut die ersten 4 Zeilen
+				this.clothes = c;
+			}
+			
+			public Clothes getClothes()
+			{
+				return this.clothes;
+			}
+			
+			public boolean available()
+			{
+				return this.amount > 0;
+			}
+			
+			public void reduce()
+			{
+				this.amount--;
+			}
+			
+			public void increase()
+			{
+				this.amount += 5;
+			}
+			
+			public double getPrize()
+			{
+				return this.prize;
+			}
+			
+			@Override
+			public String toString()
+			{
+				return String.format("%-30s %2d Stueck fuer je %.2f Euro", this.clothes.toString(), this.amount, this.prize);
+			}
+		}
+
+		```	
+
+	=== "Shop.java"
+		```java
+		package klausurvorbereitung.clothes;
+
+		public class Shop
+		{
+			private Item[] stock;
+			
+			public Shop()
+			{
+				this.stock = new Item[0];
+			}
+			
+			public void delivery(Item i)
+			{
+				if(this.contains(i.getClothes()))
+				{
+					for (int index = 0; index < this.stock.length; index++) 
+					{
+						if(this.stock[index].getClothes().isEqual(i.getClothes()))
+						{
+							if(this.stock[index].available())
+							{
+								this.stock[index].increase();
+							}
+						}
+					}
+				}
+				else
+				{
+					Item[] copy = new Item[this.stock.length + 1];
+					for (int index = 0; index < this.stock.length; index++) 
+					{
+						copy[index] = this.stock[index];
+					}
+					copy[this.stock.length] = i;
+					this.stock = copy;
+				}
+			}
+			
+			public void delivery(int quantity)
+			{
+				Item[] copy = new Item[this.stock.length + quantity];
+				for (int i = 0; i < this.stock.length; i++) 
+				{
+					copy[i] = this.stock[i];
+				}
+				for (int i = this.stock.length; i < copy.length; i++) 
+				{
+					Item newItem = new Item();
+					while(this.contains(newItem.getClothes()))
+					{
+						newItem = new Item();
+					}
+					copy[i] = newItem;
+				}
+				this.stock = copy;
+			}
+			
+			private boolean contains(Clothes c)
+			{
+				for (int i = 0; i < this.stock.length; i++) 
+				{
+					if(this.stock[i].getClothes().isEqual(c))
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			public void sell(Clothes c)
+			{
+				if(this.contains(c)) 
+				{
+					for (int i = 0; i < this.stock.length; i++) 
+					{
+						if(this.stock[i].getClothes().isEqual(c))
+						{
+							if(this.stock[i].available())
+							{
+								this.stock[i].reduce();
+								System.out.printf("%s fuer %.2f Euro verkauft.%n",  c.toString(), this.stock[i].getPrize());
+							}
+							else
+							{
+								System.out.println(c.toString() + " nicht verfuegbar.");
+							}
+						}
+					}
+				}
+				else
+				{
+					System.out.println(c.toString() + " nicht erhaeltlich.");
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+				String output = String.format("%n%d items in stock ---------- %n%n", this.stock.length);
+				for (int i = 0; i < this.stock.length; i++) 
+				{
+					output += String.format("%s %n", this.stock[i].toString());
+				}
+				output += String.format("%n");
+				return output;
+			}
+			
+			public void sort()
+			{
+				for (int bubble = 1; bubble < this.stock.length; bubble++) 
+				{
+					for (int index = 0; index < this.stock.length - bubble; index++) 
+					{
+						if(this.stock[index].getPrize() > this.stock[index+1].getPrize())
+						{
+							Item i = this.stock[index];
+							this.stock[index] = this.stock[index+1];
+							this.stock[index+1] = i;
+						}
+					}
+				}
+			}
+			
+			public Item[] filter(int size)
+			{
+				int counter = 0;
+				for (int index = 0; index < this.stock.length; index++) 
+				{
+					if(this.stock[index].getClothes().getSize() == size)
+					{
+						counter++;
+					}
+				}
+				Item[] filter = new Item[counter];
+				int indexFilter = 0;
+				for (int index = 0; index < this.stock.length; index++) 
+				{
+					if(this.stock[index].getClothes().getSize() == size)
+					{
+						filter[indexFilter++] = this.stock[index];
+					}
+				}
+				return filter;
+			}
+		}
+
+		```	
+
+	=== "Programmklasse.java"
+		```java
+		package klausurvorbereitung.clothes;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				
+				System.out.printf("%n---------------- Teil 1 --------------------%n%n");
+				Clothes[] ca = new Clothes[10];
+				for(int i = 0; i < 10; i++)
+				{
+					ca[i] = new Clothes();
+					System.out.println(ca[i].toString());
+				}
+
+				
+				System.out.printf("%n---------------- Teil 2 --------------------%n%n");
+				Item[] ia = new Item[20];
+				for(int i = 0; i < 10; i++)
+				{
+					ia[i] = new Item();
+					System.out.println(ia[i].toString());
+				}
+				for(int i = 10; i < 20; i++)
+				{
+					ia[i] = new Item(ca[i-10]);
+					System.out.println(ia[i].toString());
+				}
+				
+				System.out.printf("%n---------------- Teil 3 --------------------%n%n");
+				Shop s1 = new Shop();
+				s1.delivery(20);
+				System.out.println(s1.toString());
+				for(int i = 0; i < ca.length; i++)
+				{
+					s1.sell(ca[i]);
+				}
+				
+				Shop s2 = new Shop();
+				for(int i = 0; i < 20; i++)
+				{
+					s2.delivery(ia[i]);
+				}
+				System.out.println(s2.toString());
+				for(int i = 0; i < ca.length; i++)
+				{
+					s2.sell(ca[i]);
+				}
+				System.out.println(s2.toString());
+				
+				System.out.printf("%n---------------- sort() --------------------%n%n");
+				
+				s2.sort();
+				System.out.println(s2.toString());
+				
+				System.out.printf("%n----------- filter(int size) ---------------%n%n");
+				
+				Item[] filter = s2.filter(32);
+				for(int i = 0; i < filter.length; i++)
+				{
+					System.out.println(filter[i]);
+				}
+				
+			}
+
+		}
+
+		```
+
+
+
 
 
 
