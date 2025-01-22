@@ -2437,6 +2437,129 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 
 
+??? question "Klausurvorbereitung 22.1.2025"
+	=== "Programmklasse.java"
+		```java
+		package vorlesungen.vorl0122;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				final int ascii_a = 65;
+				for(int nr = 0; nr<10; nr++)
+				{
+					char c1 = (char)(ascii_a + nr);
+					System.out.println(c1);
+				}
+				
+				Produkt p = new Produkt();
+				for(int anz = 0; anz < 5; anz++)
+				{
+					int nummer = p.erzeuge8stelligeNummer();
+					double preis = p.erzeugePreis(nummer);
+					String code = p.erzeugeCode();
+					System.out.printf("%d %.2f Euro %s %n", nummer, preis, code);
+				}
+
+			}
+
+		}
+		```
+	=== "Produkt.java"
+		```java
+		package vorlesungen.vorl0122;
+
+		import java.util.Random;
+
+		public class Produkt
+		{
+			private int nummer;
+			private double preis;
+			private String code;
+			
+			public String getCode()
+			{
+				return this.code;
+			}
+
+			public Produkt()
+			{
+				this.nummer = this.erzeuge8stelligeNummer();
+				this.preis = this.erzeugePreis(this.nummer);
+				this.code = this.erzeugeCode();
+			}
+			
+			public int erzeuge8stelligeNummer()
+			{
+				Random r = new Random();
+				return r.nextInt(90000000) + 10000000;
+			}
+			
+			public double erzeugePreis(final int nummer)
+			{
+				int copynummer = nummer;
+				while(copynummer > 9999)
+				{
+					copynummer = copynummer / 10;
+				}
+				double preis = copynummer / 100.0;
+				return preis;
+			}
+			
+			public String erzeugeCode()
+			{
+				String s = "";
+				final int CODE_LENGTH = 4;
+				Random r = new Random();
+				/*
+				for(int anz = 0; anz < 4; anz++)
+				{
+					char buchstabe = (char)(r.nextInt(10) + 65);
+					s = s + buchstabe;
+				}
+				*/
+				while(s.length() < CODE_LENGTH)
+				{
+					char buchstabe = (char)(r.nextInt(10) + 65);
+					s = s + buchstabe;
+				}
+				
+				return s;
+			}
+			
+			@Override
+			public String toString()
+			{
+				return String.format("%d %.2f Euro %s", this.nummer, this.preis, this.code);
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			public boolean istTeurer(Produkt p)
+			{
+				return this.preis > p.preis;
+			}
+			
+
+		}
+
+		```
+	=== "Produktgruppe.java"
+		```java
+		package vorlesungen.vorl0122;
+
+		public class Produktgruppe
+		{
+			
+		}
+		```
+
+
 
 
 

@@ -2650,8 +2650,1214 @@
 ## Probeklausuren
 
 
+??? note "Bit und Byte [(pdf)](./files/2024-02-05_Klausur_ProgI_PZ1.pdf)"
+		
+	1. Erstellen Sie ein package `klausurvorbereitung.bit`. 
+	2. (**Teil 1**) Erstellen Sie in diesem package eine Klasse `Bit` mit 
+
+		- der privaten Objektvariablen 
+
+			- `value` vom Typ `boolean`. 
+
+		- Erstellen Sie in der `Bit`-Klasse einen parametrisierten Konstruktor, dem ein Wert für `value` übergeben wird. Initialisieren Sie damit die Objektvariable. 
+
+		- Erstellen Sie eine Objektmethode `bitToInt()`. Diese Methode gibt eine `1` zurück, wenn die Objektvariable `value` den Wert `true` hat und eine `0`, wenn der Wert der Objektvariable `false` ist.
+
+		- Erstellen Sie eine Objektmethode `and(Bit b)`, die ein `Bit`-Objekt zurückgibt. Der Wert der Objektvariablen `value` des zurückzugebenden Objektes ergibt sich aus der `&&`-Verknüpfung (Java-UND-Operator) der beiden `value`-Werte des aufrufenden Objektes und `b`. 
+
+			![bit](./files/222_bit.png)
+
+		- Erstellen Sie eine Objektmethode `or(Bit b)`, die ein `Bit`-Objekt zurückgibt. Der Wert der Objektvariablen `value` des zurückzugebenden Objektes ergibt sich aus der `||`-Verknüpfung (Java-OR-Operator) der beiden `value`-Werte des aufrufenden Objektes und `b`. 
+
+			![bit](./files/223_bit.png)
+
+		- Erstellen Sie eine Objektmethode `isBigger(Bit b)`, die genau dann ein `true` zurückgibt, wenn `value` des aufrufenden Objektes `true` und der Wert von `b` `false` ist. Ansonsten wird `false` zurückgegeben. 
+
+		- Erstellen Sie eine Objektmethode `isEqual(Bit b)`, die genau dann ein `true` zurückgibt, wenn `value` des aufrufenden Objektes gleich dem Wert von `b` ist (also entweder `true` und `true` oder `false` und `false`). Ansonsten wird `false` zurückgegeben.
+
+		- ^^Überschreiben^^ Sie die Methode `toString()` so, dass eine `"1"` zurückgegeben wird, wenn `value` den Wert `true` hat und eine `"0"`, wenn `false`. 
+
+		- Erstellen Sie eine `Programmklasse` mit `main()`-Methode. Erzeugen Sie in der `main()`-Methode vier `Bit`-Objekte `b1`, `b2`, `b3` und `b4` mit den Werten `true` (`b1`), `true` (`b2`), `false` (`b3`), `false` (`b4`). Erzeugen Sie mithilfe der `toString()`-Methode von `Bit` folgende Konsolenausgaben:
+
+			```bash
+			------------------ Bit-Objekte ----------------------
+			b1 = 1
+			b2 = 1
+			b3 = 0
+			b4 = 0
+			```
+		- Wenden Sie die `and(Bit)`- und `or(Bit)`-Methode jeweils für (`b1,b2`), (`b1, b3`) und (`b3, b4`) (zuerst immer das aufrufende Objekt) an und erzeugen Sie mithilfe der `toString()`-Methode von `Bit` folgende Konsolenausgaben:
+
+			```bash
+			---------------- Bit and und or ---------------------
+
+			b1 and b2 = 1
+			b1 or  b2 = 1
+			b1 and b3 = 0
+			b1 or  b3 = 1
+			b3 and b4 = 0
+			b3 or  b4 = 0
+			```
+
+		- Wenden Sie die `isBigger(Bit)`- und `isEqual(Bit)`-Methode jeweils für (`b1,b2`), (`b1, b3`) und (`b3, b4`) (`>` steht für `isBigger()` und `==` steht für `isEqual()`) an und erzeugen Sie mithilfe der `toString()`-Methode von `Bit` folgende Konsolenausgaben:
+
+			```bash
+			---------------- Bit Vergleiche ---------------------
+
+			b1 >  b2 ? false
+			b1 >  b3 ? true
+			b3 >  b4 ? false
+			b1 == b2 ? true
+			b1 == b3 ? false
+			b3 == b4 ? true
+			```
+
+
+	3. (**Teil 2**) Erstellen Sie eine Klasse `Byte` mit 
+
+		- der privaten Objektvariablen 
+
+			- `bits` vom Typ `Bit[]`.
+
+		- Erstellen Sie für die Klasse `Byte` einen parameterlosen Konstruktor. Innerhalb des Konstruktors wird das `bits`-Array der Länge `8` erzeugt.
+		- Erstellen Sie eine Objektmethode `createByte()`. Diese Methode gibt nichts zurück. 
+
+			- In der Methode wird das `bits`-Array vollständig mit `Bit`-Objekten befüllt.
+			- Die `value`-Werte der einzelnen `Bit`-Objekte werden jeweils zufällig mithilfe der `nextBoolean()`-Methode der Klasse `Random` erzeugt. (`nextBoolean()` gibt zufällig ein `true` oder ein `false` zurück).
+			- Erzeugen Sie sich dazu in der `createByte()`-Methode ein `Random`-Objekt, für das Sie jeweils `nextBoolean()` aufrufen. Die Klasse `Random` muss aus dem `java.util`-Paket importiert werden. 
+
+		- Erstellen Sie eine Objektmethode `createByte(String nr)`. Diese Methode gibt nichts zurück. Für den übergebenen String können Sie folgende Annahmen treffen:
+
+			- Der String hat die Länge `8`.
+			- Der String enthält nur die Zeichen `0` und `1`.
+			- Beispiele: `"10010010"`, `"10010001"`, `"01110001"`, `"01110011"`
+
+			- In der Methode wird das `bits`-Array vollständig mit `Bit`-Objekten befüllt.
+			- Die `value`-Werte der einzelnen `Bit`-Objekte entsprechen dem Zeichen im übergebenen String (`'1'` :material-arrow-right-thin: `true`, `'0'` :material-arrow-right-thin: `false`).
+
+				![bit](./files/224_bit.png)
+
+		- ^^Überschreiben^^ Sie die Methode `toString()` so, dass ein String in der folgenden Form zurückgegeben wird (Beispielwerte): 
+
+			```bash
+			1001 0010
+			```
+
+			- Nach 4 `Bits` erfolgt ein Leerzeichen
+
+		- Erzeugen Sie in der `main()`-Methode der `Programmklasse` ein Objekt `by1` von `Byte` und befüllen Sie das `bits`-Array mithilfe der `createByte()`-Methode (also zufällig). <br><br>
+		Erzeugen Sie 5 weite `Byte`-Objekte `by2`, `by3`, `by4`, `by5` und `by6` und befüllen Sie das jeweilige `bits`-Array mithilfe der `createByte(String)`-Methode unter Verwendung folgender Strings: 
+
+			- `by2` :material-arrow-right-thin: `"10010010"`
+			- `by3` :material-arrow-right-thin: `"10010001"`
+			- `by4` :material-arrow-right-thin: `"10010010"`
+			- `by5` :material-arrow-right-thin: `"01110001"`
+			- `by6` :material-arrow-right-thin: `"01110011"`
+
+			Erzeugen Sie mithilfe der `toString()`-Methode für `Byte` folgende Konsolenausgaben (für `by1` Beispielwerte – zufällig erzeugt):
+
+			```bash
+			----------------- Byte-Objekte ----------------------
+
+			by1 = 0011 0100
+			by2 = 1001 0010
+			by3 = 1001 0001
+			by4 = 1001 0010
+			by5 = 0111 0001
+			by6 = 0111 0011 
+			```
+
+		- Erstellen Sie in der Klasse `Byte` eine Objektmethode `isBigger(Byte b)`. Diese Methode gibt ein `true` zurück, wenn das aufrufende `Byte`-Objekt einem höheren `Byte`-Wert entspricht als `b`, also z.B. `"1001 0010"` **isBigger** als `"1001 0001"` oder `"0111 0011"` **isBigger** als `"0111 0001"`. Für gleich oder kleiner wird `false` zurückgegeben.
+
+		- Erstellen Sie in der Klasse `Byte` eine Objektmethode `and(Byte b)`. Diese Methode gibt ein `Byte`-Objekt zurück. Die Werte des `bits`-Array des zurückzugebenden Objektes ergeben sich durch bitweise `&&`-Verknüpfung (`and(Bit)`-Methode), z.B.: 
+
+			![bit](./files/225_bit.png)
+
+		- Erstellen Sie in der Klasse `Byte` eine Objektmethode `add(Byte b)`. Diese Methode gibt ein `Byte`-Objekt zurück. Die Werte des `bits`-Array des zurückzugebenden Objektes ergeben sich durch bitweise Addition: 
+
+			![bit](./files/226_bit.png)
+
+			Beispiel:
+
+			![bit](./files/227_bit.png)
+
+		- Verwenden Sie in der `main()`-Methode 
+
+			- die Methode `isBigger(Byte)` für den Vergleich der Objekte (`by2, by3`), (`by2, by4`) und (`by3, by4`) und erzeugen Sie unter Verwendung der `toString()`-Methode von `Byte` folgende Konsolenausgaben:
+
+				```bash
+				--------------- Byte Vergleiche ---------------------
+
+				1001 0010 > 1001 0001 ? true
+				1001 0010 > 1001 0010 ? false
+				1001 0001 > 1001 0010 ? false
+				```
+
+			- die Methode `and(Byte)` für die Operation der Objekte (`by2, by3`) und (`by2, by4`) und erzeugen Sie unter Verwendung der `toString()`-Methode von `Byte` folgende Konsolenausgaben:
+
+				```bash
+				------------------- Byte and ------------------------
+
+				1001 0010 and 1001 0001 = 0000 1001
+				1001 0010 and 1001 0010 = 0100 1001
+				```
+
+			- die Methode `add(Byte)` für die Operation der Objekte (`by2, by3`) und (`by5, by6`) und erzeugen Sie unter Verwendung der `toString()`-Methode von `Byte` folgende Konsolenausgaben:
+
+				```bash
+				------------------- Byte add ------------------------
+
+				1001 0010 + 1001 0001 = 0010 0011
+				0111 0001 + 0111 0011 = 1110 0100
+				```
+
+	4. (**Teil  - Programmklasse**) 
+
+		- Erzeugen Sie in der `main()`-Methode der `Programmklasse` zwei `Byte`-Arrays `bya1` und `bya2`. 
+			- Das `Byte`-Array `bya1` hat die Länge `10`. Befüllen Sie es vollständig mit `Byte`-Objekten. Wenden Sie auf die `Byte`-Objekte jeweils die `createByte()`-Methode an (zufällige Werte).
+			- Das `Byte`-Array `bya2` hat die Länge `20`. Befüllen Sie es vollständig mit `Byte`-Objekten. Wenden Sie auf die `Byte`-Objekte jeweils die `createByte()`-Methode an (zufällige Werte).
+
+		- Erstellen Sie in der `Programmklasse` eine statische Methode `printByteArray(Byte[] bya)`. Diese Methode gibt das übergebene `Byte`-Array `bya` auf der Konsole in der folgenden Form aus (Beispiel `bya1` – Zufallswerte):  
+
+
+			```bash
+			------ Byte-Array der Laenge 10 --------
+
+			 0 :  0001 1110 
+			 1 :  1000 0000 
+			 2 :  0010 1000 
+			 3 :  1110 1010 
+			 4 :  0100 0111 
+			 5 :  0010 0101 
+			 6 :  1100 0001 
+			 7 :  1010 0111 
+			 8 :  1100 1100 
+			 9 :  0100 0001
+			```
+
+			- In der obersten Zeile wird also auch immer zunächst die Länge des Arrays mitausgegeben!
+			- Die einzelnen `Byte`-Objekte werden nummeriert (ganz linker Wert in jeder Zeile) beginnend mit `0` (gefolgt von Doppelpunkt).
+
+		- Rufen Sie in der `main()`-Methode die `printByteArray()`-Methode für die `Byte`-Arrays `bya1` und `bya2` auf. Es entstehen folgende Ausgaben (Zufallswerte!):  
+
+			```bash
+			------ Byte-Array der Laenge 10 --------
+
+			 0 :  0001 1110 
+			 1 :  1000 0000 
+			 2 :  0010 1000 
+			 3 :  1110 1010 
+			 4 :  0100 0111 
+			 5 :  0010 0101 
+			 6 :  1100 0001 
+			 7 :  1010 0111 
+			 8 :  1100 1100 
+			 9 :  0100 0001 
+
+			------ Byte-Array der Laenge 20 --------
+
+			 0 :  1101 0111 
+			 1 :  0110 1000 
+			 2 :  0011 0101 
+			 3 :  1100 0000 
+			 4 :  1001 0010 
+			 5 :  0101 0010 
+			 6 :  1110 1101 
+			 7 :  0110 1100 
+			 8 :  1100 1010 
+			 9 :  1111 1110 
+			10 :  0101 0101
+			11 :  0101 1100 
+			12 :  1011 1101 
+			13 :  1011 0101 
+			14 :  0110 1000 
+			15 :  1011 0100 
+			16 :  1001 1000 
+			17 :  0011 0001 
+			18 :  1000 1101 
+			19 :  0011 0100 
+			```
+
+		- Erstellen Sie in der `Programmklasse` eine statische Methode `sortByteArray(Byte[] bya)`. Diese Methode gibt ein `Byte`-Array zurück. Das zurückgegebene `Byte`-Array enthält alle `Byte`-Objekte aus `bya` und ist aufsteigend sortiert. Das übergebene `bya` wird nicht sortiert!  
+
+		- Rufen Sie in der `main()`-Methode die `sortByteArray()`-Methode für die `Byte`-Arrays `bya1` und `bya2` auf. Geben Sie das jeweils zurückgegebene `Byte`-Array mithilfe der `printByteArray()`-Methode auf die Konsole aus. Es entstehen folgende Ausgaben (Beispielwerte - zufällig):
+
+			```bash
+			------ Byte-Array der Laenge 10 --------
+
+			 0 :  0001 1110 
+			 1 :  0010 0101 
+			 2 :  0010 1000 
+			 3 :  0100 0001 
+			 4 :  0100 0111 
+			 5 :  1000 0000 
+			 6 :  1010 0111 
+			 7 :  1100 0001 
+			 8 :  1100 1100 
+			 9 :  1110 1010 
+
+
+			------ Byte-Array der Laenge 20 --------
+
+			 0 :  0011 0001 
+			 1 :  0011 0100 
+			 2 :  0011 0101 
+			 3 :  0101 0010 
+			 4 :  0101 0101 
+			 5 :  0101 1100 
+			 6 :  0110 1000 
+			 7 :  0110 1000 
+			 8 :  0110 1100 
+			 9 :  1000 1101 
+			10 :  1001 0010 
+			11 :  1001 1000 
+			12 :  1011 0100 
+			13 :  1011 0101 
+			14 :  1011 1101 
+			15 :  1100 0000 
+			16 :  1100 1010 
+			17 :  1101 0111 
+			18 :  1110 1101 
+			19 :  1111 1110 
+			```
+
+			??? abstract "Zur Kontrolle. Die möglichen Ausgaben (Zufallswerte) könnten sein:"
+				```bash
+
+				------------------ Bit-Objekte ----------------------
+
+				b1 = 1
+				b2 = 1
+				b3 = 0
+				b4 = 0
+
+
+				---------------- Bit and und or ---------------------
+
+				b1 and b2 = 1
+				b1 or  b2 = 1
+				b1 and b3 = 0
+				b1 or  b3 = 1
+				b3 and b4 = 0
+				b3 or  b4 = 0
+
+
+				---------------- Bit Vergleiche ---------------------
+
+				b1 >  b2 ? false
+				b1 >  b3 ? true
+				b3 >  b4 ? false
+				b1 == b2 ? true
+				b1 == b3 ? false
+				b3 == b4 ? true
+
+
+				----------------- Byte-Objekte ----------------------
+
+				by1 = 1111 0101
+				by2 = 1001 0010
+				by3 = 1001 0001
+				by4 = 1001 0010
+				by5 = 0111 0001
+				by6 = 0111 0011
+
+				--------------- Byte Vergleiche ---------------------
+
+				1001 0010 > 1001 0001 ? true
+				1001 0010 > 1001 0010 ? false
+				1001 0001 > 1001 0010 ? false
+
+
+				------------------- Byte and ------------------------
+
+				1001 0010 and 1001 0001 = 0000 1001
+				1001 0010 and 1001 0010 = 0100 1001
+
+
+				------------------- Byte add ------------------------
+
+				1001 0010 + 1001 0001 = 0010 0011
+				0111 0001 + 0111 0011 = 1110 0100
+
+
+				------------------- Byte-Array unsortiert ------------------------
+
+
+				------ Byte-Array der Laenge 10 --------
+
+				 0 :  0001 1110 
+				 1 :  1000 0000 
+				 2 :  0010 1000 
+				 3 :  1110 1010 
+				 4 :  0100 0111 
+				 5 :  0010 0101 
+				 6 :  1100 0001 
+				 7 :  1010 0111 
+				 8 :  1100 1100 
+				 9 :  0100 0001 
+
+
+
+				------ Byte-Array der Laenge 20 --------
+
+				 0 :  1101 0111 
+				 1 :  0110 1000 
+				 2 :  0011 0101 
+				 3 :  1100 0000 
+				 4 :  1001 0010 
+				 5 :  0101 0010 
+				 6 :  1110 1101 
+				 7 :  0110 1100 
+				 8 :  1100 1010 
+				 9 :  1111 1110 
+				10 :  0101 0101 
+				11 :  0101 1100 
+				12 :  1011 1101 
+				13 :  1011 0101 
+				14 :  0110 1000 
+				15 :  1011 0100 
+				16 :  1001 1000 
+				17 :  0011 0001 
+				18 :  1000 1101 
+				19 :  0011 0100 
+
+
+
+				--------------------- Byte-Array sortiert ------------------------
+
+
+
+				------ Byte-Array der Laenge 10 --------
+
+				 0 :  0001 1110 
+				 1 :  0010 0101 
+				 2 :  0010 1000 
+				 3 :  0100 0001 
+				 4 :  0100 0111 
+				 5 :  1000 0000 
+				 6 :  1010 0111 
+				 7 :  1100 0001 
+				 8 :  1100 1100 
+				 9 :  1110 1010 
+
+				------ Byte-Array der Laenge 20 --------
+
+				 0 :  0011 0001 
+				 1 :  0011 0100 
+				 2 :  0011 0101 
+				 3 :  0101 0010 
+				 4 :  0101 0101 
+				 5 :  0101 1100 
+				 6 :  0110 1000 
+				 7 :  0110 1000 
+				 8 :  0110 1100 
+				 9 :  1000 1101 
+				10 :  1001 0010 
+				11 :  1001 1000 
+				12 :  1011 0100 
+				13 :  1011 0101 
+				14 :  1011 1101 
+				15 :  1100 0000 
+				16 :  1100 1010 
+				17 :  1101 0111 
+				18 :  1110 1101 
+				19 :  1111 1110 
+
+				```
+
+
+
+??? question "Eine mögliche Lösung für Bit und Byte"
+	=== "Bit.java"
+		```java
+		package klausurvorbereitung.bit;
+
+		public class Bit
+		{
+			private boolean value;
+			
+			public Bit(boolean value)
+			{
+				this.value = value;
+			}
+			
+			public int bitToInt()
+			{
+				if(this.value) return 1;
+				else return 0;
+			}
+			
+			public Bit and(Bit b)
+			{
+				return new Bit(this.value && b.value);
+			}
+			
+			public Bit or(Bit b)
+			{
+				return new Bit(this.value || b.value);
+			}
+			
+			public boolean isBigger(Bit b)
+			{
+				return (this.value && !b.value);
+			}
+			
+			public boolean isEqual(Bit b)
+			{
+				return (this.value && b.value) || (!this.value && !b.value);
+			}
+			
+			@Override
+			public String toString()
+			{
+				return this.bitToInt()+"";
+			}
+		}
+		```	
+
+	=== "Byte.java"
+		```java
+		package klausurvorbereitung.bit;
+
+		import java.util.Random;
+
+		public class Byte
+		{
+			private Bit[] bits;
+			
+			public Byte()
+			{
+				this.bits = new Bit[8];
+			}
+			
+			public void createByte()
+			{
+				Random r = new Random();
+				for(int i=0; i < this.bits.length; i++)
+				{
+					this.bits[i] = new Bit(r.nextBoolean());
+				}
+			}
+			
+			public void createByte(String nr)
+			{
+				for(int i=this.bits.length-1; i >= 0; i--)
+				{
+					if(nr.charAt(i) == '1')
+					{
+						this.bits[i] = new Bit(true);
+					}
+					else
+					{
+						this.bits[i] = new Bit(false);
+					}
+				}
+			}
+			
+			public String toString()
+			{
+				String s = "";
+				for (int i = 0; i < this.bits.length; i++) 
+				{
+					if(i==4) s+= " ";
+					s += this.bits[i].bitToInt();
+				}
+				return s;
+			}
+			
+			public boolean isBigger(Byte b)
+			{
+				for (int i = 0; i < this.bits.length; i++) 
+				{
+					if(this.bits[i].isBigger(b.bits[i])) return true;
+					else if(b.bits[i].isBigger(this.bits[i])) return false;
+				}
+				return false;
+			}
+			
+			public Byte and(Byte b)
+			{
+				String s = "";
+				for (int i = 0; i < this.bits.length; i++) 
+				{
+					Bit result = this.bits[i].and(b.bits[i]);
+					s = result.bitToInt() + s;
+				}
+				Byte by = new Byte();
+				by.createByte(s);
+				return by;
+			}
+			
+			public Byte add(Byte b)
+			{
+				int uebertrag = 0;
+				String result = "";
+				for (int i = bits.length-1; i >= 0; i--) 
+				{
+					if(this.bits[i].and(b.bits[i]).bitToInt()==1)
+					{
+						result = (0 + uebertrag) + result;
+						uebertrag = 1;
+					} 
+					else if(this.bits[i].or(b.bits[i]).bitToInt()==1)
+					{
+						if(uebertrag == 0)
+						{
+							result = "1" + result;
+							uebertrag = 0;
+						} 
+						else if(uebertrag == 1)
+						{
+							result = "0" + result;
+							uebertrag = 1;
+						}
+					}
+					else
+					{
+						result = (0 + uebertrag) + result;
+						uebertrag = 0;
+					}
+				}
+				Byte resultByte = new Byte();
+				resultByte.createByte(result);
+				return resultByte;
+			}
+		}
+
+		```	
+
+	=== "Programmklasse.java"
+		```java
+		package klausurvorbereitung.bit;
+
+		public class Programmklasse
+		{
+			public static void printByteArray(Byte[] bya)
+			{
+				String s = String.format("%n%n------ Byte-Array der Laenge %d --------%n%n", bya.length);
+				for (int i = 0; i < bya.length; i++) 
+				{
+					s += String.format("%2d : %10s %n", i, bya[i].toString());
+				}
+				System.out.println(s);
+			}
+			
+			public static Byte[] sortByteArray(Byte[] unsorted)
+			{
+				Byte[] sorted = new Byte[unsorted.length];
+				for (int i = 0; i < sorted.length; i++) 
+				{
+					sorted[i] = unsorted[i];
+				}
+				
+				for (int bubble = 1; bubble < sorted.length; bubble++) 
+				{
+					for (int index = 0; index < sorted.length - bubble; index++) 
+					{
+						if(sorted[index].isBigger(sorted[index+1]))
+						{
+							Byte tmp = sorted[index];
+							sorted[index] = sorted[index+1];
+							sorted[index+1] = tmp;
+						}
+					}
+				}
+				return sorted;
+			}
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n------------------ Bit-Objekte ----------------------%n%n");
+				Bit b1 = new Bit(true);
+				Bit b2 = new Bit(true);
+				Bit b3 = new Bit(false);
+				Bit b4 = new Bit(false);
+
+				System.out.println("b1 = " + b1.toString());
+				System.out.println("b2 = " + b2.toString());
+				System.out.println("b3 = " + b3.toString());
+				System.out.println("b4 = " + b4.toString());
+				
+				System.out.printf("%n%n---------------- Bit and und or ---------------------%n%n");
+				Bit b = b1.and(b2);
+				System.out.println("b1 and b2 = " + b.toString());
+				b = b1.or(b2);
+				System.out.println("b1 or  b2 = " + b.toString());
+				b = b1.and(b3);
+				System.out.println("b1 and b3 = " + b.toString());
+				b = b1.or(b3);
+				System.out.println("b1 or  b3 = " + b.toString());
+				b = b3.and(b4);
+				System.out.println("b3 and b4 = " + b.toString());
+				b = b3.or(b4);
+				System.out.println("b3 or  b4 = " + b.toString());
+
+				
+				System.out.printf("%n%n---------------- Bit Vergleiche ---------------------%n%n");
+				System.out.println("b1 >  b2 ? " + b1.isBigger(b2));
+				System.out.println("b1 >  b3 ? " + b1.isBigger(b3));
+				System.out.println("b3 >  b4 ? " + b3.isBigger(b4));
+				System.out.println("b1 == b2 ? " + b1.isEqual(b2));
+				System.out.println("b1 == b3 ? " + b1.isEqual(b3));
+				System.out.println("b3 == b4 ? " + b3.isEqual(b4));
+				
+				System.out.printf("%n%n----------------- Byte-Objekte ----------------------%n%n");
+				Byte by1 = new Byte();
+				by1.createByte();
+				System.out.println("by1 = " + by1.toString());
+				
+				Byte by2 = new Byte();
+				by2.createByte("10010010");
+				System.out.println("by2 = " + by2.toString());
+				
+				Byte by3 = new Byte();
+				by3.createByte("10010001");
+				System.out.println("by3 = " + by3.toString());
+				
+				Byte by4 = new Byte();
+				by4.createByte("10010010");
+				System.out.println("by4 = " + by4.toString());
+				
+				Byte by5 = new Byte();
+				by5.createByte("01110001");
+				System.out.println("by5 = " + by5.toString());	
+				
+				Byte by6 = new Byte();
+				by6.createByte("01110011");
+				System.out.println("by6 = " + by6.toString());	
+				
+				System.out.printf("%n%n--------------- Byte Vergleiche ---------------------%n%n");
+				System.out.println(by2.toString() + " > " + by3.toString()  + " ? " + by2.isBigger(by3));
+				System.out.println(by2.toString() + " > " + by4.toString()  + " ? " + by2.isBigger(by4));
+				System.out.println(by3.toString() + " > " + by4.toString()  + " ? " + by3.isBigger(by4));
+				
+				System.out.printf("%n%n------------------- Byte and ------------------------%n%n");
+				Byte by10 = by2.and(by3);
+				System.out.println(by2.toString() + " and " + by3.toString()  + " = " + by10.toString());
+				Byte by11 = by2.and(by4);
+				System.out.println(by2.toString() + " and " + by4.toString()  + " = " + by11.toString());
+				
+				System.out.printf("%n%n------------------- Byte add ------------------------%n%n");
+				Byte by12 = by2.add(by3);
+				System.out.println(by2.toString() + " + " + by3.toString()  + " = " + by12.toString());
+				Byte by13 = by5.add(by6);
+				System.out.println(by5.toString() + " + " + by6.toString()  + " = " + by13.toString());
+
+				System.out.printf("%n%n------------------- Byte-Array unsortiert ------------------------%n%n");
+				Byte[] bya1 = new Byte[10];
+				for (int i = 0; i < bya1.length; i++) 
+				{
+					bya1[i] = new Byte();
+					bya1[i].createByte();
+				}
+				printByteArray(bya1);
+				
+				Byte[] bya2 = new Byte[20];
+				for (int i = 0; i < bya2.length; i++) 
+				{
+					bya2[i] = new Byte();
+					bya2[i].createByte();
+				}
+				printByteArray(bya2);
+				
+				System.out.printf("%n%n--------------------- Byte-Array sortiert ------------------------%n%n");
+				Byte[] bya3 = sortByteArray(bya1);
+				printByteArray(bya3);
+				Byte[] bya4 = sortByteArray(bya2);
+				printByteArray(bya4);
+			}
+
+		}
+		```
+
+
+??? note "Clothes [(pdf)](./files/2024-03-25_Klausur_ProgI_PZ2.pdf)"
+		
+	1. Erstellen Sie ein package `klausurvorbereitung.clothes`. 
+	2. (**Teil 1 - Clothes**) 
+
+		- Erstellen Sie in diesem package eine Klasse `Clothes` mit den Objektvariablen 
+
+			- `color` vom Typ `String`,	// Farbe des Kleidungsstückes
+			- `type` vom Typ `int`,		// Typ des Kleidungsstückes
+			- `size` vom Typ `int`.		// Größe des Kleidungsstückes
+			
+			Die Objektvariablen sind nur innerhalb der Klasse sichtbar!
+
+		- Erstellen Sie für die Klasse `Clothes` einen parameterlosen Konstruktor. Darin werden die drei Objektvariablen wie folgt initialisiert:
+			- `color` erhält zufällig einen der Werte `"Rot"`, `"Gelb"`, `"Blau"`, `"Schwarz"`.
+			- `type` erhält zufällig einen der Werte `1, 2, 3, 4, 5`.  
+			- `size` erhält zufällig einen der Werte `30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52`.
+
+			Verwenden Sie dazu die Klasse `Random` aus dem Paket `java.util`.
+
+		- Erstellen Sie eine Objektmethode `getType()`. Diese Methode gibt einen `String` zurück. Ist der Wert der Objektvariablen `type` eine `1`, wird `"Hose"` zurückgeben, ist er `2`, `"Jacke"`, ist `3`, `"Kleid"`, ist er `4`, `"Rock"` und ist er `5`, wird `"Pullover"` zurückgegeben.  Für alle anderen Werte von `type` wird ein leerer String zurückgegeben.
+
+		- Erstellen Sie die Objektmethoden `getColor()` und `getSize()`, die den Wert der jeweiligen Objektvariablen zurückgeben. 
+
+		- ^^Überschreiben^^ Sie die Methode `toString()` so, dass ein *formatierter* String in folgender Form zurückgegeben wird (zufällige Beispielwerte): 
+			```bash
+			Pullover Farbe Schwarz in Groesse 42
+			```
+
+			Der String soll so formatiert sein, dass bei Ausgabe mehrerer `Clothes`-Objekte die jeweiligen Werte untereinander stehen, also z.B. (zufällige Beispielwerte):
+			```bash
+			Jacke    Farbe Schwarz in Groesse 30
+			Kleid    Farbe Blau    in Groesse 40
+			Pullover Farbe Blau    in Groesse 40
+			Hose     Farbe Rot     in Groesse 40
+			Rock     Farbe Blau    in Groesse 48
+			Kleid    Farbe Schwarz in Groesse 36
+			```
+
+		- Erstellen Sie eine Objektmethode `isEqual(Clothes c)`, die genau dann ein `true` zurückgibt, wenn das aufrufende Objekt und `c` in ihren jeweiligen drei Objektvariablen paarweise dieselben Werte haben. Sonst `false`.
+
+		- Erzeugen Sie eine `Programmklasse` mit `main()`-Methode. <br> <br>
+		Erzeugen Sie in der `main()`-Methode der `Programmklasse` ein `Clothes[] ca` der Länge `10`. Befüllen Sie in *einer Schleife* das `Clothes`-Array mit `Clothes`-Objekten und geben Sie diese auf die Konsole aus. Es entsteht folgende Ausgabe (zufällige Beispielwerte):
+			```bash
+			---------------- Teil 1 --------------------
+
+			Pullover Farbe Rot     in Groesse 36
+			Rock     Farbe Blau    in Groesse 32
+			Pullover Farbe Blau    in Groesse 38
+			Hose     Farbe Schwarz in Groesse 48
+			Jacke    Farbe Gelb    in Groesse 38
+			Kleid    Farbe Blau    in Groesse 40
+			Hose     Farbe Schwarz in Groesse 48
+			Hose     Farbe Gelb    in Groesse 34
+			Kleid    Farbe Blau    in Groesse 32
+			Hose     Farbe Rot     in Groesse 52
+			```
+
+	3. (**Teil 2 - Item**)
+
+		- Erstellen Sie eine Klasse `Item`. Objektvariablen sind 
+
+			- `prize` vom Typ `double`,		// Preis des Kleidungsstückes
+			- `amount` vom Typ `int`,		// Anzahl der Kleidungsstücke
+			- `clothes` vom Typ `Clothes`.	// das jeweilige Kleidungsstück
+
+			Die Objektvariablen sind nur innerhalb der Klasse sichtbar!
+
+		- Erstellen Sie für die Klasse `Item` einen parameterlosen Konstruktor. Innerhalb des Konstruktors werden die drei Objektvariablen wie folgt initialisiert:
+			- `prize` erhält zufällig einen Wert zwischen `50,00` und `99,99` (jeweils inklusive),
+			- `amount` erhält den Wert `5`.  
+			- `clothes` zeigt auf ein neu erstelltes `Clothes`-Objekt.
+
+			***Tipp:*** Erzeugen Sie für `prize` einen passenden `int`-Wert und teilen diesen durch `100`.
+
+		- Erstellen Sie für die Klasse `Item` einen Konstruktor, dem ein `Clothes c` als Parameter übergeben wird. Initialisieren Sie die Objektvariablen `prize` und `amount` wie im parameterlosen Konstruktor. Die Objektvariable `clothes` wird mit `c` initialisiert.  
+
+		- Erstellen Sie eine Objektmethode `getClothes()`, die den Wert der Objektvariablen `clothes` zurückgibt. 
+
+		- Erstellen Sie eine Objektmethode `available()`, die genau dann ein `true` zurückgibt, wenn der Wert von `amount` größer als `0` ist. Sonst `false`.
+
+		- Erstellen Sie eine Objektmethode `reduce()`, die den Wert von `amount` um `1` reduziert.
+
+		- Erstellen Sie eine Objektmethode `increase()`, die den Wert von `amount` um `5` erhöht.
+
+		- Erstellen Sie eine Objektmethode `getPrize()`, die den Wert der Objektvariablen `prize` zurückgibt. 
+
+		- ^^Überschreiben^^ Sie die Methode `toString()` so, dass ein formatierter String in der folgenden Form zurückgegeben wird (zufällige Beispielwerte):
+			```bash 
+			Pullover Farbe Schwarz in Groesse 42  5 Stueck fuer je 88,32 Euro
+			```
+
+		- Erzeugen Sie in der `main()`-Methode der `Programmklasse` ein `Item[] ia` der Länge `20`.
+
+			- Befüllen Sie in einer Schleife die **ersten** `10` Elemente des `Item`-Arrays mit `Item`-Objekten unter Verwendung des parameterlosen Konstruktors von `Item`.
+
+			- Befüllen Sie in einer Schleife die **letzten** `10` Elemente des `Item`-Arrays unter Verwendung des parametrisierten Konstruktors von `Item`. Übergeben Sie diesem Konstruktor sukzessive die `Clothes`-Objekte aus dem `Clothes`-Array `ca` aus Teil 1. Es entsteht folgende Ausgabe (zufällige Beispielwerte):
+
+				```bash
+				---------------- Teil 2 --------------------
+
+				Kleid    Farbe Gelb    in Groesse 44  5 Stueck fuer je 66,49 Euro
+				Jacke    Farbe Rot     in Groesse 42  5 Stueck fuer je 51,61 Euro
+				Kleid    Farbe Blau    in Groesse 34  5 Stueck fuer je 67,01 Euro
+				Kleid    Farbe Rot     in Groesse 50  5 Stueck fuer je 89,76 Euro
+				Kleid    Farbe Gelb    in Groesse 32  5 Stueck fuer je 96,25 Euro
+				Rock     Farbe Schwarz in Groesse 42  5 Stueck fuer je 59,62 Euro
+				Rock     Farbe Blau    in Groesse 48  5 Stueck fuer je 65,93 Euro
+				Jacke    Farbe Schwarz in Groesse 32  5 Stueck fuer je 88,81 Euro
+				Rock     Farbe Schwarz in Groesse 42  5 Stueck fuer je 71,11 Euro
+				Pullover Farbe Rot     in Groesse 52  5 Stueck fuer je 75,88 Euro
+				Pullover Farbe Rot     in Groesse 36  5 Stueck fuer je 91,53 Euro
+				Rock     Farbe Blau    in Groesse 32  5 Stueck fuer je 69,84 Euro
+				Pullover Farbe Blau    in Groesse 38  5 Stueck fuer je 53,19 Euro
+				Hose     Farbe Schwarz in Groesse 48  5 Stueck fuer je 61,06 Euro
+				Jacke    Farbe Gelb    in Groesse 38  5 Stueck fuer je 69,07 Euro
+				Kleid    Farbe Blau    in Groesse 40  5 Stueck fuer je 58,04 Euro
+				Hose     Farbe Schwarz in Groesse 48  5 Stueck fuer je 78,22 Euro
+				Hose     Farbe Gelb    in Groesse 34  5 Stueck fuer je 64,14 Euro
+				Kleid    Farbe Blau    in Groesse 32  5 Stueck fuer je 50,53 Euro
+				Hose     Farbe Rot     in Groesse 52  5 Stueck fuer je 64,61 Euro
+				```
+
+	4. (**Teil 3 - Shop**)
+
+		- Erstellen Sie eine Klasse `Shop`. Objektvariable ist
+
+			- `stock` vom Typ `Item[]`.		
+
+			Die Objektvariable ist nur innerhalb der Klasse sichtbar!	
+
+		- Erstellen Sie für die Klasse `Shop` einen parameterlosen Konstruktor. Innerhalb des Konstruktors wird die Objektvariable mit einem leeren `Item`-Array initialisiert.
+
+		- Erstellen Sie eine Objektmethode `delivery(Item i)`. Das als Parameter übergebene `Item` wird dem `stock`-Array hinzugefügt. Die Länge des `stock`-Arrays muss sich dazu um `1` erhöhen. <br> <br>
+
+			**Beachten Sie:** Ist das in `Item i` enthaltene Kleidungsstück `clothes` (mit gleicher Größe, Typ und Farbe – siehe `isEquals(Clothes)`) bereits in `stock` enthalten, erhöht sich nur der `amount` des `Item`s in `stock` (siehe `increase()`). Die Länge des `stock`-Arrays ändert sich dann nicht. 
 	
-??? note "Produkt"
+		- Erstellen Sie eine Objektmethode `sell(Clothes c)`.
+
+			1. Ist das passende `Item` im `stock`-Array und verfügbar (siehe `available()`), wird dessen `amount` um `1` reduziert und es erfolgt die Ausgabe auf die Konsole (Beispielwert): 
+				```bash
+				Jacke    Farbe Gelb    in Groesse 50 fuer 84,80 Euro verkauft.
+				```
+
+			2. Ist das passende `Item` nicht im `stock`-Array, erfolgt die Ausgabe auf die Konsole (Beispielwert): 
+				```bash
+				Pullover Farbe Blau    in Groesse 44 nicht erhaeltlich.
+				```
+
+			3. Ist das passende `Item` nicht verfügbar (siehe `available()`), erfolgt die Ausgabe auf die Konsole (Beispielwert): 
+				```bash
+				Kleid    Farbe Rot     in Groesse 48 nicht verfuegbar.
+				```
+
+		- ^^Überschreiben^^ Sie die Methode `toString()` so, dass ein formatierter String in der folgenden Form zurückgegeben wird (zufällige Beispielwerte): 
+			```bash
+			9 items in stock ---------- 
+
+			Hose     Farbe Schwarz in Groesse 32  5 Stueck fuer je 84,69 Euro 
+			Pullover Farbe Schwarz in Groesse 30  5 Stueck fuer je 66,70 Euro 
+			Hose     Farbe Rot     in Groesse 48 10 Stueck fuer je 87,67 Euro 
+			Pullover Farbe Schwarz in Groesse 50  5 Stueck fuer je 53,60 Euro 
+			Kleid    Farbe Rot     in Groesse 42  5 Stueck fuer je 71,00 Euro 
+			Hose     Farbe Blau    in Groesse 46  5 Stueck fuer je 77,10 Euro 
+			Kleid    Farbe Schwarz in Groesse 30  5 Stueck fuer je 55,47 Euro 
+			Kleid    Farbe Rot     in Groesse 36  5 Stueck fuer je 65,42 Euro 
+			Rock     Farbe Rot     in Groesse 46  5 Stueck fuer je 80,64 Euro
+			```
+
+			- Zunächst die Anzahl der `Item`s in `stock`
+			- Dann alle `Item`s in `stock`
+
+		- Erstellen Sie eine Objektmethode `sort()`. Diese sortiert das `stock`-Array den Preisen nach aufsteigend. 
+
+		- Erstellen Sie eine Objektmethode `filter(int size)`. Diese gibt ein `Item`-Array mit allen Items aus dem `stock`-Array zurück, die die übergebene Kleidergröße `size` haben.
+
+		- Erzeugen Sie in der `main()`-Methode der `Programmklasse` ein `Shop`-Objekt `s1`. 
+
+			- Liefern Sie mithilfe der `delivery(int)`-Methode `20` Items.
+			- Geben Sie `s1` auf die Konsole aus.
+			- „Verkaufen“ Sie (`sell(Clothes)`) in `s1` alle `Clothes` aus `ca` (Teil 1). (die „verkauften“ `Clothes` sind eventuell gar nicht im `stock`).
+
+			Es entsteht folgende Ausgabe (zufällige Beispielwerte):
+
+			```bash
+			20 items in stock ---------- 
+
+			Hose     Farbe Schwarz in Groesse 42  5 Stueck fuer je 95,50 Euro 
+			Pullover Farbe Rot     in Groesse 32  5 Stueck fuer je 83,17 Euro 
+			Hose     Farbe Gelb    in Groesse 38  5 Stueck fuer je 54,02 Euro 
+			Rock     Farbe Gelb    in Groesse 44  5 Stueck fuer je 97,98 Euro 
+			Jacke    Farbe Blau    in Groesse 40  5 Stueck fuer je 76,35 Euro 
+			Kleid    Farbe Gelb    in Groesse 46  5 Stueck fuer je 94,77 Euro 
+			Hose     Farbe Blau    in Groesse 40  5 Stueck fuer je 89,68 Euro 
+			Hose     Farbe Schwarz in Groesse 46  5 Stueck fuer je 77,56 Euro 
+			Pullover Farbe Rot     in Groesse 38  5 Stueck fuer je 58,85 Euro 
+			Rock     Farbe Gelb    in Groesse 38  5 Stueck fuer je 83,63 Euro 
+			Rock     Farbe Blau    in Groesse 30  5 Stueck fuer je 85,67 Euro 
+			Pullover Farbe Gelb    in Groesse 48  5 Stueck fuer je 66,45 Euro 
+			Hose     Farbe Gelb    in Groesse 48  5 Stueck fuer je 60,87 Euro 
+			Hose     Farbe Gelb    in Groesse 32  5 Stueck fuer je 71,71 Euro 
+			Kleid    Farbe Gelb    in Groesse 46  5 Stueck fuer je 91,35 Euro 
+			Rock     Farbe Blau    in Groesse 48  5 Stueck fuer je 74,04 Euro 
+			Rock     Farbe Rot     in Groesse 50  5 Stueck fuer je 88,73 Euro 
+			Kleid    Farbe Schwarz in Groesse 38  5 Stueck fuer je 96,23 Euro 
+			Pullover Farbe Gelb    in Groesse 32  5 Stueck fuer je 62,45 Euro 
+			Rock     Farbe Gelb    in Groesse 30  5 Stueck fuer je 64,27 Euro 
+
+
+			Pullover Farbe Rot     in Groesse 36 nicht erhaeltlich.
+			Rock     Farbe Blau    in Groesse 32 nicht erhaeltlich.
+			Pullover Farbe Blau    in Groesse 38 nicht erhaeltlich.
+			Hose     Farbe Schwarz in Groesse 48 nicht erhaeltlich.
+			Jacke    Farbe Gelb    in Groesse 38 nicht erhaeltlich.
+			Kleid    Farbe Blau    in Groesse 40 nicht erhaeltlich.
+			Hose     Farbe Schwarz in Groesse 48 nicht erhaeltlich.
+			Hose     Farbe Gelb    in Groesse 34 nicht erhaeltlich.
+			Kleid    Farbe Blau    in Groesse 32 nicht erhaeltlich.
+			Hose     Farbe Rot     in Groesse 52 nicht erhaeltlich.
+
+			```
+
+		- Erzeugen Sie in der `main()`-Methode der `Programmklasse` ein `Shop`-Objekt `s2`. 
+
+			- Liefern Sie mithilfe der `delivery(Item)`-Methode alle Items aus `ia` (Teil 2).
+			- Geben Sie `s2` auf die Konsole aus.
+			- Verkaufen Sie (`sell(Clothes)`) in `s1` alle `Clothes` aus `ca` (Teil 1).
+
+			Es entsteht folgende Ausgabe (zufällige Beispielwerte):
+
+			```bash
+			18 items in stock ---------- 
+
+			Kleid    Farbe Gelb    in Groesse 44  5 Stueck fuer je 66,49 Euro 
+			Jacke    Farbe Rot     in Groesse 42  5 Stueck fuer je 51,61 Euro 
+			Kleid    Farbe Blau    in Groesse 34  5 Stueck fuer je 67,01 Euro 
+			Kleid    Farbe Rot     in Groesse 50  5 Stueck fuer je 89,76 Euro 
+			Kleid    Farbe Gelb    in Groesse 32  5 Stueck fuer je 96,25 Euro 
+			Rock     Farbe Schwarz in Groesse 42 10 Stueck fuer je 59,62 Euro 
+			Rock     Farbe Blau    in Groesse 48  5 Stueck fuer je 65,93 Euro 
+			Jacke    Farbe Schwarz in Groesse 32  5 Stueck fuer je 88,81 Euro 
+			Pullover Farbe Rot     in Groesse 52  5 Stueck fuer je 75,88 Euro 
+			Pullover Farbe Rot     in Groesse 36  5 Stueck fuer je 91,53 Euro 
+			Rock     Farbe Blau    in Groesse 32  5 Stueck fuer je 69,84 Euro 
+			Pullover Farbe Blau    in Groesse 38  5 Stueck fuer je 53,19 Euro 
+			Hose     Farbe Schwarz in Groesse 48 10 Stueck fuer je 61,06 Euro 
+			Jacke    Farbe Gelb    in Groesse 38  5 Stueck fuer je 69,07 Euro 
+			Kleid    Farbe Blau    in Groesse 40  5 Stueck fuer je 58,04 Euro 
+			Hose     Farbe Gelb    in Groesse 34  5 Stueck fuer je 64,14 Euro 
+			Kleid    Farbe Blau    in Groesse 32  5 Stueck fuer je 50,53 Euro 
+			Hose     Farbe Rot     in Groesse 52  5 Stueck fuer je 64,61 Euro 
+
+
+			Pullover Farbe Rot     in Groesse 36 fuer 91,53 Euro verkauft.
+			Rock     Farbe Blau    in Groesse 32 fuer 69,84 Euro verkauft.
+			Pullover Farbe Blau    in Groesse 38 fuer 53,19 Euro verkauft.
+			Hose     Farbe Schwarz in Groesse 48 fuer 61,06 Euro verkauft.
+			Jacke    Farbe Gelb    in Groesse 38 fuer 69,07 Euro verkauft.
+			Kleid    Farbe Blau    in Groesse 40 fuer 58,04 Euro verkauft.
+			Hose     Farbe Schwarz in Groesse 48 fuer 61,06 Euro verkauft.
+			Hose     Farbe Gelb    in Groesse 34 fuer 64,14 Euro verkauft.
+			Kleid    Farbe Blau    in Groesse 32 fuer 50,53 Euro verkauft.
+			Hose     Farbe Rot     in Groesse 52 fuer 64,61 Euro verkauft.
+
+			```
+
+		- Rufen Sie in der `main()`-Methode für `s2` die `sort()`-Methode auf und geben Sie `s2` auf die Konsole aus. 
+
+			Es entsteht folgende Ausgabe (zufällige Beispielwerte):
+
+			```bash
+			---------------- sort() --------------------
+
+
+			18 items in stock ---------- 
+
+			Kleid    Farbe Blau    in Groesse 32  4 Stueck fuer je 50,53 Euro 
+			Jacke    Farbe Rot     in Groesse 42  5 Stueck fuer je 51,61 Euro 
+			Pullover Farbe Blau    in Groesse 38  4 Stueck fuer je 53,19 Euro 
+			Kleid    Farbe Blau    in Groesse 40  4 Stueck fuer je 58,04 Euro 
+			Rock     Farbe Schwarz in Groesse 42 10 Stueck fuer je 59,62 Euro 
+			Hose     Farbe Schwarz in Groesse 48  8 Stueck fuer je 61,06 Euro 
+			Hose     Farbe Gelb    in Groesse 34  4 Stueck fuer je 64,14 Euro 
+			Hose     Farbe Rot     in Groesse 52  4 Stueck fuer je 64,61 Euro 
+			Rock     Farbe Blau    in Groesse 48  5 Stueck fuer je 65,93 Euro 
+			Kleid    Farbe Gelb    in Groesse 44  5 Stueck fuer je 66,49 Euro 
+			Kleid    Farbe Blau    in Groesse 34  5 Stueck fuer je 67,01 Euro 
+			Jacke    Farbe Gelb    in Groesse 38  4 Stueck fuer je 69,07 Euro 
+			Rock     Farbe Blau    in Groesse 32  4 Stueck fuer je 69,84 Euro 
+			Pullover Farbe Rot     in Groesse 52  5 Stueck fuer je 75,88 Euro 
+			Jacke    Farbe Schwarz in Groesse 32  5 Stueck fuer je 88,81 Euro 
+			Kleid    Farbe Rot     in Groesse 50  5 Stueck fuer je 89,76 Euro 
+			Pullover Farbe Rot     in Groesse 36  4 Stueck fuer je 91,53 Euro 
+			Kleid    Farbe Gelb    in Groesse 32  5 Stueck fuer je 96,25 Euro 
+			```
+
+		- Rufen Sie in der `main()`-Methode für `s2` die `filter()`-Methode für eine bestimmte Größe auf. Geben Sie alle zurückgegebenen Items auf die Konsole aus. 
+
+			Es entsteht folgende Ausgabe (zufällige Beispielwerte – hier nach Größe 32 gefiltert):
+
+			```bash
+			----------- filter(int size) ---------------
+
+			Kleid    Farbe Blau    in Groesse 32  4 Stueck fuer je 50,53 Euro
+			Rock     Farbe Blau    in Groesse 32  4 Stueck fuer je 69,84 Euro
+			Jacke    Farbe Schwarz in Groesse 32  5 Stueck fuer je 88,81 Euro
+			Kleid    Farbe Gelb    in Groesse 32  5 Stueck fuer je 96,25 Euro
+
+			```
+
+			??? abstract "Zur Kontrolle. Die möglichen Ausgaben (Zufallswerte) könnten sein:"
+				```bash
+
+				---------------- Teil 1 --------------------
+
+				Pullover Farbe Rot     in Groesse 36
+				Rock     Farbe Blau    in Groesse 32
+				Pullover Farbe Blau    in Groesse 38
+				Hose     Farbe Schwarz in Groesse 48
+				Jacke    Farbe Gelb    in Groesse 38
+				Kleid    Farbe Blau    in Groesse 40
+				Hose     Farbe Schwarz in Groesse 48
+				Hose     Farbe Gelb    in Groesse 34
+				Kleid    Farbe Blau    in Groesse 32
+				Hose     Farbe Rot     in Groesse 52
+
+
+				---------------- Teil 2 --------------------
+
+				Kleid    Farbe Gelb    in Groesse 44  5 Stueck fuer je 66,49 Euro
+				Jacke    Farbe Rot     in Groesse 42  5 Stueck fuer je 51,61 Euro
+				Kleid    Farbe Blau    in Groesse 34  5 Stueck fuer je 67,01 Euro
+				Kleid    Farbe Rot     in Groesse 50  5 Stueck fuer je 89,76 Euro
+				Kleid    Farbe Gelb    in Groesse 32  5 Stueck fuer je 96,25 Euro
+				Rock     Farbe Schwarz in Groesse 42  5 Stueck fuer je 59,62 Euro
+				Rock     Farbe Blau    in Groesse 48  5 Stueck fuer je 65,93 Euro
+				Jacke    Farbe Schwarz in Groesse 32  5 Stueck fuer je 88,81 Euro
+				Rock     Farbe Schwarz in Groesse 42  5 Stueck fuer je 71,11 Euro
+				Pullover Farbe Rot     in Groesse 52  5 Stueck fuer je 75,88 Euro
+				Pullover Farbe Rot     in Groesse 36  5 Stueck fuer je 91,53 Euro
+				Rock     Farbe Blau    in Groesse 32  5 Stueck fuer je 69,84 Euro
+				Pullover Farbe Blau    in Groesse 38  5 Stueck fuer je 53,19 Euro
+				Hose     Farbe Schwarz in Groesse 48  5 Stueck fuer je 61,06 Euro
+				Jacke    Farbe Gelb    in Groesse 38  5 Stueck fuer je 69,07 Euro
+				Kleid    Farbe Blau    in Groesse 40  5 Stueck fuer je 58,04 Euro
+				Hose     Farbe Schwarz in Groesse 48  5 Stueck fuer je 78,22 Euro
+				Hose     Farbe Gelb    in Groesse 34  5 Stueck fuer je 64,14 Euro
+				Kleid    Farbe Blau    in Groesse 32  5 Stueck fuer je 50,53 Euro
+				Hose     Farbe Rot     in Groesse 52  5 Stueck fuer je 64,61 Euro
+
+
+				---------------- Teil 3 --------------------
+
+
+				20 items in stock ---------- 
+
+				Hose     Farbe Schwarz in Groesse 42  5 Stueck fuer je 95,50 Euro 
+				Pullover Farbe Rot     in Groesse 32  5 Stueck fuer je 83,17 Euro 
+				Hose     Farbe Gelb    in Groesse 38  5 Stueck fuer je 54,02 Euro 
+				Rock     Farbe Gelb    in Groesse 44  5 Stueck fuer je 97,98 Euro 
+				Jacke    Farbe Blau    in Groesse 40  5 Stueck fuer je 76,35 Euro 
+				Kleid    Farbe Gelb    in Groesse 46  5 Stueck fuer je 94,77 Euro 
+				Hose     Farbe Blau    in Groesse 40  5 Stueck fuer je 89,68 Euro 
+				Hose     Farbe Schwarz in Groesse 46  5 Stueck fuer je 77,56 Euro 
+				Pullover Farbe Rot     in Groesse 38  5 Stueck fuer je 58,85 Euro 
+				Rock     Farbe Gelb    in Groesse 38  5 Stueck fuer je 83,63 Euro 
+				Rock     Farbe Blau    in Groesse 30  5 Stueck fuer je 85,67 Euro 
+				Pullover Farbe Gelb    in Groesse 48  5 Stueck fuer je 66,45 Euro 
+				Hose     Farbe Gelb    in Groesse 48  5 Stueck fuer je 60,87 Euro 
+				Hose     Farbe Gelb    in Groesse 32  5 Stueck fuer je 71,71 Euro 
+				Kleid    Farbe Gelb    in Groesse 46  5 Stueck fuer je 91,35 Euro 
+				Rock     Farbe Blau    in Groesse 48  5 Stueck fuer je 74,04 Euro 
+				Rock     Farbe Rot     in Groesse 50  5 Stueck fuer je 88,73 Euro 
+				Kleid    Farbe Schwarz in Groesse 38  5 Stueck fuer je 96,23 Euro 
+				Pullover Farbe Gelb    in Groesse 32  5 Stueck fuer je 62,45 Euro 
+				Rock     Farbe Gelb    in Groesse 30  5 Stueck fuer je 64,27 Euro 
+
+
+				Pullover Farbe Rot     in Groesse 36 nicht erhaeltlich.
+				Rock     Farbe Blau    in Groesse 32 nicht erhaeltlich.
+				Pullover Farbe Blau    in Groesse 38 nicht erhaeltlich.
+				Hose     Farbe Schwarz in Groesse 48 nicht erhaeltlich.
+				Jacke    Farbe Gelb    in Groesse 38 nicht erhaeltlich.
+				Kleid    Farbe Blau    in Groesse 40 nicht erhaeltlich.
+				Hose     Farbe Schwarz in Groesse 48 nicht erhaeltlich.
+				Hose     Farbe Gelb    in Groesse 34 nicht erhaeltlich.
+				Kleid    Farbe Blau    in Groesse 32 nicht erhaeltlich.
+				Hose     Farbe Rot     in Groesse 52 nicht erhaeltlich.
+
+				18 items in stock ---------- 
+
+				Kleid    Farbe Gelb    in Groesse 44  5 Stueck fuer je 66,49 Euro 
+				Jacke    Farbe Rot     in Groesse 42  5 Stueck fuer je 51,61 Euro 
+				Kleid    Farbe Blau    in Groesse 34  5 Stueck fuer je 67,01 Euro 
+				Kleid    Farbe Rot     in Groesse 50  5 Stueck fuer je 89,76 Euro 
+				Kleid    Farbe Gelb    in Groesse 32  5 Stueck fuer je 96,25 Euro 
+				Rock     Farbe Schwarz in Groesse 42 10 Stueck fuer je 59,62 Euro 
+				Rock     Farbe Blau    in Groesse 48  5 Stueck fuer je 65,93 Euro 
+				Jacke    Farbe Schwarz in Groesse 32  5 Stueck fuer je 88,81 Euro 
+				Pullover Farbe Rot     in Groesse 52  5 Stueck fuer je 75,88 Euro 
+				Pullover Farbe Rot     in Groesse 36  5 Stueck fuer je 91,53 Euro 
+				Rock     Farbe Blau    in Groesse 32  5 Stueck fuer je 69,84 Euro 
+				Pullover Farbe Blau    in Groesse 38  5 Stueck fuer je 53,19 Euro 
+				Hose     Farbe Schwarz in Groesse 48 10 Stueck fuer je 61,06 Euro 
+				Jacke    Farbe Gelb    in Groesse 38  5 Stueck fuer je 69,07 Euro 
+				Kleid    Farbe Blau    in Groesse 40  5 Stueck fuer je 58,04 Euro 
+				Hose     Farbe Gelb    in Groesse 34  5 Stueck fuer je 64,14 Euro 
+				Kleid    Farbe Blau    in Groesse 32  5 Stueck fuer je 50,53 Euro 
+				Hose     Farbe Rot     in Groesse 52  5 Stueck fuer je 64,61 Euro 
+
+
+				Pullover Farbe Rot     in Groesse 36 fuer 91,53 Euro verkauft.
+				Rock     Farbe Blau    in Groesse 32 fuer 69,84 Euro verkauft.
+				Pullover Farbe Blau    in Groesse 38 fuer 53,19 Euro verkauft.
+				Hose     Farbe Schwarz in Groesse 48 fuer 61,06 Euro verkauft.
+				Jacke    Farbe Gelb    in Groesse 38 fuer 69,07 Euro verkauft.
+				Kleid    Farbe Blau    in Groesse 40 fuer 58,04 Euro verkauft.
+				Hose     Farbe Schwarz in Groesse 48 fuer 61,06 Euro verkauft.
+				Hose     Farbe Gelb    in Groesse 34 fuer 64,14 Euro verkauft.
+				Kleid    Farbe Blau    in Groesse 32 fuer 50,53 Euro verkauft.
+				Hose     Farbe Rot     in Groesse 52 fuer 64,61 Euro verkauft.
+
+				18 items in stock ---------- 
+
+				Kleid    Farbe Gelb    in Groesse 44  5 Stueck fuer je 66,49 Euro 
+				Jacke    Farbe Rot     in Groesse 42  5 Stueck fuer je 51,61 Euro 
+				Kleid    Farbe Blau    in Groesse 34  5 Stueck fuer je 67,01 Euro 
+				Kleid    Farbe Rot     in Groesse 50  5 Stueck fuer je 89,76 Euro 
+				Kleid    Farbe Gelb    in Groesse 32  5 Stueck fuer je 96,25 Euro 
+				Rock     Farbe Schwarz in Groesse 42 10 Stueck fuer je 59,62 Euro 
+				Rock     Farbe Blau    in Groesse 48  5 Stueck fuer je 65,93 Euro 
+				Jacke    Farbe Schwarz in Groesse 32  5 Stueck fuer je 88,81 Euro 
+				Pullover Farbe Rot     in Groesse 52  5 Stueck fuer je 75,88 Euro 
+				Pullover Farbe Rot     in Groesse 36  4 Stueck fuer je 91,53 Euro 
+				Rock     Farbe Blau    in Groesse 32  4 Stueck fuer je 69,84 Euro 
+				Pullover Farbe Blau    in Groesse 38  4 Stueck fuer je 53,19 Euro 
+				Hose     Farbe Schwarz in Groesse 48  8 Stueck fuer je 61,06 Euro 
+				Jacke    Farbe Gelb    in Groesse 38  4 Stueck fuer je 69,07 Euro 
+				Kleid    Farbe Blau    in Groesse 40  4 Stueck fuer je 58,04 Euro 
+				Hose     Farbe Gelb    in Groesse 34  4 Stueck fuer je 64,14 Euro 
+				Kleid    Farbe Blau    in Groesse 32  4 Stueck fuer je 50,53 Euro 
+				Hose     Farbe Rot     in Groesse 52  4 Stueck fuer je 64,61 Euro 
+
+
+
+				---------------- sort() --------------------
+
+				18 items in stock ---------- 
+
+				Kleid    Farbe Blau    in Groesse 32  4 Stueck fuer je 50,53 Euro 
+				Jacke    Farbe Rot     in Groesse 42  5 Stueck fuer je 51,61 Euro 
+				Pullover Farbe Blau    in Groesse 38  4 Stueck fuer je 53,19 Euro 
+				Kleid    Farbe Blau    in Groesse 40  4 Stueck fuer je 58,04 Euro 
+				Rock     Farbe Schwarz in Groesse 42 10 Stueck fuer je 59,62 Euro 
+				Hose     Farbe Schwarz in Groesse 48  8 Stueck fuer je 61,06 Euro 
+				Hose     Farbe Gelb    in Groesse 34  4 Stueck fuer je 64,14 Euro 
+				Hose     Farbe Rot     in Groesse 52  4 Stueck fuer je 64,61 Euro 
+				Rock     Farbe Blau    in Groesse 48  5 Stueck fuer je 65,93 Euro 
+				Kleid    Farbe Gelb    in Groesse 44  5 Stueck fuer je 66,49 Euro 
+				Kleid    Farbe Blau    in Groesse 34  5 Stueck fuer je 67,01 Euro 
+				Jacke    Farbe Gelb    in Groesse 38  4 Stueck fuer je 69,07 Euro 
+				Rock     Farbe Blau    in Groesse 32  4 Stueck fuer je 69,84 Euro 
+				Pullover Farbe Rot     in Groesse 52  5 Stueck fuer je 75,88 Euro 
+				Jacke    Farbe Schwarz in Groesse 32  5 Stueck fuer je 88,81 Euro 
+				Kleid    Farbe Rot     in Groesse 50  5 Stueck fuer je 89,76 Euro 
+				Pullover Farbe Rot     in Groesse 36  4 Stueck fuer je 91,53 Euro 
+				Kleid    Farbe Gelb    in Groesse 32  5 Stueck fuer je 96,25 Euro 
+
+
+
+				----------- filter(int size) ---------------
+
+				Kleid    Farbe Blau    in Groesse 32  4 Stueck fuer je 50,53 Euro
+				Rock     Farbe Blau    in Groesse 32  4 Stueck fuer je 69,84 Euro
+				Jacke    Farbe Schwarz in Groesse 32  5 Stueck fuer je 88,81 Euro
+				Kleid    Farbe Gelb    in Groesse 32  5 Stueck fuer je 96,25 Euro
+
+				```
+
+
+
+
+
+
+
+
+??? note "Produkt [(pdf)](./files/2023-03-28_Klausur_ProgI_PZ2.pdf)"
 	
 	1. Erstellen Sie ein package `klausurvorbereitung.produkt`. 
 	2. (**Teil 1**) Erstellen Sie in diesem package eine Klasse `Produkt` mit 
@@ -3310,7 +4516,7 @@
 
 
 
-??? note "Fahrzeug"
+??? note "Fahrzeug [(pdf)](./files/2023-02-07_Klausur_ProgI_PZ1.pdf)"
 	
 	1. Erstellen Sie ein package `klausurvorbereitung.fahrzeug`. 
 	2. (**Teil 1**) Erstellen Sie in diesem package eine Klasse `Fahrzeug` mit 
@@ -4007,7 +5213,7 @@
 
 
 	
-??? note "Akku"
+??? note "Akku [(pdf)](./files/2022-03-30_Klausur_ProgI_PZ2.pdf)"
 	
 	1. Erstellen Sie ein package `klausurvorbereitung.akku`. 
 	2. (**Teil 1**) Erstellen Sie in diesem package eine Klasse `Akku` mit 
@@ -4799,7 +6005,7 @@
 		```		
 
 
-??? note "Buch"
+??? note "Buch [(pdf)](./files/2022-02-02_Klausur_ProgI_PZ1.pdf)"
 	
 	1. Erstellen Sie ein package `klausurvorbereitung.buch`. 
 	2. (**Teil 1**) Erstellen Sie in diesem package eine Klasse `Buch` mit 
@@ -5925,7 +7131,7 @@
 
 
 
-??? note "Wohnung"
+??? note "Wohnung [(pdf)](./files/2018-01-29_Klausur_ProgI_PZ1.pdf)"
 	
 	1. Erstellen Sie ein package `klausurvorbereitung.wohnung`. 
 	2. Erstellen Sie in diesem package eine Klasse `Wohnung` mit
@@ -6423,7 +7629,7 @@
 	- <iframe src="https://mediathek.htw-berlin.de/media/embed?key=6576514d74c8203d934640551f153b64&width=720&height=385&autoplay=false&autolightsoff=false&loop=false&chapters=false&related=false&responsive=false&t=0" data-src="" class="iframeLoaded" width="720" height="385" frameborder="0" allowfullscreen="allowfullscreen" allowtransparency="true" scrolling="no"></iframe>
 
 
-??? note "Pizza"
+??? note "Pizza [(pdf)](./files/2018-03-19_Klausur_ProgI_PZ2.pdf)"
 	
 	1. Erstellen Sie ein package `klausurvorbereitung.pizza`. 
 	2. Erstellen Sie in diesem package eine Klasse `Pizza` mit
@@ -8024,7 +9230,7 @@
 		}
 		```
 
-??? note "Länder und Kontinente"
+??? note "Länder und Kontinente [(pdf)](./files/2021-02-10_Klausur_ProgI_PZ1.pdf)"
 	- Implementieren Sie eine Klasse `Land`. 
 
 		- Objektvariablen sind `name` vom Typ `String` *(Name des Landes)*, `groesse` vom Typ `int` *(Größe des Landes)* und `einwohner` vom Typ `int` *(Anzahl der Einwohner des Landes)*. Die Objektvariablen sind nur in der Klasse sichtbar!
@@ -8816,7 +10022,7 @@
 		```
 
 
-??? note "MyString"
+??? note "MyString [(pdf)](./files/2021-03-30_Klausur_ProgI_PZ2.pdf)"
 	- **Information:** 
 
 		- Wir bauen in Ansätzen die Klasse `String` nach, d.h. wir bauen uns einen eigenen Datentypen für Zeichenketten: `MyString`.
