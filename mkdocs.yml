@@ -29,8 +29,7 @@ theme:
     - navigation.footer
   favicon: img/favicon.png
   logo: img/fiw.jpg
-hooks:
-  - hook.py
+
 extra_css:
   - extra.css
 

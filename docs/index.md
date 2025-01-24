@@ -1,5 +1,8 @@
 # Programmieren I
 
+<!-- Matomo Image Tracker-->
+<img referrerpolicy="no-referrer-when-downgrade" src="https://freiheit.f4.htw-berlin.de/matomo/matomo.php?idsite=2&amp;rec=1&amp;action_name=2" style="border:0" alt="" />
+<!-- End Matomo -->
 
 Herzlich willkommen zur **Programmieren I** Veranstaltung! Wir werden unter Verwendung der Programmiersprache [Java](tools.md#java) die wesentlichen Konzepte lernen, die für das Verständnis modernen Programmierens notwendig sind. Es sind keinerlei Vorkenntnisse erforderlich. Hier einige Tipps, damit Sie die Veranstaltung erfolgreich durchführen und Sie dabei auch Spaß haben:
 
