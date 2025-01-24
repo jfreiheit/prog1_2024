@@ -2630,8 +2630,234 @@
 	[Übung 11 (pdf)](./files/prog1_uebung11.pdf)
 
 
+??? question "Eine mögliche Lösung für Übung 12 (Fahrzeug)"
+	=== "Fahrzeug.java"
+		```java
+		package klausurvorbereitung.fahrzeug.b;
 
-??? note "<a id="ubung-12"></a>Übung 12"
+		import java.util.Random;
+
+		public class Fahrzeug
+		{
+			private String marke;
+			private int kmStand;
+			private int maxV;
+			private double verbrauch;
+			
+			public Fahrzeug(String marke, int maxV, double verbrauch)
+			{
+				this.marke = marke;
+				this.maxV = maxV;
+				this.verbrauch = verbrauch;
+				this.kmStand = 0;
+			}
+			
+			public void fahren()
+			{
+				Random r = new Random();
+				this.kmStand += r.nextInt(1000);
+			}
+			
+			public double gesamtVerbrauch()
+			{
+				return this.kmStand * this.verbrauch / 100.0;
+			}
+
+			public String getMarke()
+			{
+				return this.marke;
+			}
+
+			public int getKmStand()
+			{
+				return this.kmStand;
+			}
+
+			public int getMaxV()
+			{
+				return this.maxV;
+			}
+
+			public double getVerbrauch()
+			{
+				return this.verbrauch;
+			}
+			
+			@Override
+			public String toString()
+			{
+				return String.format("%-4s %3dkm/h %4.1fl/100km %7dkm %8.2fl", 
+						this.marke, this.maxV, this.verbrauch, this.kmStand, 
+						this.gesamtVerbrauch());
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				Fahrzeug other = (Fahrzeug)o;
+				return this.marke.equals(other.marke) 
+					&& this.kmStand == other.kmStand;	
+			}
+		}
+		```		
+	=== "Auto.java"
+		```java
+		package klausurvorbereitung.fahrzeug.b;
+
+		public class Auto extends Fahrzeug
+		{
+
+			public Auto(String marke, int maxV, double verbrauch)
+			{
+				super(marke, maxV, verbrauch);
+			}
+
+		}
+		```
+	=== "LKW.java"
+		```java
+		package klausurvorbereitung.fahrzeug.b;
+
+		public class LKW extends Fahrzeug
+		{
+
+			public LKW(double verbrauch)
+			{
+				super("LKW", 100, verbrauch);
+			}
+
+		}
+		```
+	=== "Fuhrpark.java"
+		```java
+		package klausurvorbereitung.fahrzeug.b;
+
+		import java.util.Random;
+
+		public class Fuhrpark
+		{
+			private Fahrzeug[] fuhrpark;
+			private int anzahl;
+			
+			public Fuhrpark(int groesse)
+			{
+				this.fuhrpark = new Fahrzeug[groesse];
+				this.anzahl = 0;
+			}
+			
+			public void fahrzeugKaufen()
+			{
+				Random r = new Random();
+				int zufZahl = r.nextInt(400) + 50;
+				if(zufZahl <= 250)
+				{
+					// Auto
+					this.fuhrpark[this.anzahl] = new Auto("A"+this.anzahl, zufZahl, zufZahl/10.0);
+				}
+				else
+				{
+					// LKW
+					this.fuhrpark[this.anzahl] = new LKW(zufZahl/10.0);
+				}
+				this.anzahl++;
+			}
+			
+			public void fahrzeugKaufen(Fahrzeug fahrzeug)
+			{
+				this.fuhrpark[this.anzahl] = fahrzeug;
+				this.anzahl++;
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = String.format("Im Fuhrpark sind %d Fahrzeuge :%n", this.anzahl);
+				s += String.format("---------------------------%n");
+				for(int index=0; index < this.anzahl; index++)
+				{
+					s += String.format("%s %n", this.fuhrpark[index].toString());
+				}
+				s += String.format("---------------------------%n%n");
+				return s;
+			}
+			
+			public void reisenImMonat(int anzahlReisen)
+			{
+				Random r = new Random();
+				for(int anz = 0; anz < anzahlReisen; anz++)
+				{
+					int indexZuf = r.nextInt(this.anzahl);
+					this.fuhrpark[indexZuf].fahren();
+				}
+			}
+		}
+		```
+	=== "Programmklasse.java"
+		```java
+		package klausurvorbereitung.fahrzeug.b;
+
+		import java.util.Random;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				Fahrzeug[] fahrzeuge = new Fahrzeug[4];
+				fahrzeuge[0] = new Fahrzeug("A", 250, 10.0);
+				fahrzeuge[1] = new Fahrzeug("B", 200, 8.5);
+				fahrzeuge[2] = new Fahrzeug("C", 160, 6.5);
+				fahrzeuge[3] = new Fahrzeug("D", 180, 7.0);
+				
+				for (int index = 0; index < fahrzeuge.length; index++)
+				{
+					fahrzeuge[index].print();
+				}
+				System.out.println();
+				
+				Random r = new Random();
+				for(int fahrt = 0; fahrt < 100; fahrt++)
+				{
+					int indexZuf = r.nextInt(fahrzeuge.length);
+					fahrzeuge[indexZuf].fahren();
+				}
+				
+				for (int index = 0; index < fahrzeuge.length; index++)
+				{
+					fahrzeuge[index].print();
+				}
+				System.out.println();
+				
+				Fuhrpark fp1 = new Fuhrpark(20);
+				System.out.println(fp1.toString());
+				
+				for(int anz = 0; anz < 15; anz++)
+				{
+					fp1.fahrzeugKaufen();
+				}
+				fp1.fahrzeugKaufen(new Auto("B", 200, 8.5));
+				fp1.fahrzeugKaufen(new LKW(35.5));
+				System.out.println(fp1.toString());
+				
+				fp1.reisenImMonat(75);
+				System.out.println(fp1.toString());
+			}
+
+		}
+		```
+
+
+
+??? note "<a id="ubung-12"></a>Übung 13"
 
 	Implementieren Sie eine Methode, die überprüft, ob ein gegebener String doppelte Zeichen enthält. Von der `String`-Klasse dürfen nur die Methoden `length()` und `charAt(int)` verwendet werden.
 
