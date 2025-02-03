@@ -3196,8 +3196,8 @@
 
 				------------------- Byte and ------------------------
 
-				1001 0010 and 1001 0001 = 0000 1001
-				1001 0010 and 1001 0010 = 0100 1001
+				1001 0010 and 1001 0001 = 1001 0000
+				1001 0010 and 1001 0010 = 1001 0010
 
 
 				------------------- Byte add ------------------------
@@ -3407,7 +3407,7 @@
 				for (int i = 0; i < this.bits.length; i++) 
 				{
 					Bit result = this.bits[i].and(b.bits[i]);
-					s = result.bitToInt() + s;
+					s = s + result.bitToInt();
 				}
 				Byte by = new Byte();
 				by.createByte(s);
@@ -10368,6 +10368,8 @@
 				{
 					s += String.format("%24s %n", this.laender[index]);
 				}
+				int[] summen = this.getSummen();
+				s += String.format("%nSummen : %d : %d %n", summen[0], summen[1])
 				return s;
 			}
 			

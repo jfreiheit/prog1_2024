@@ -3,7 +3,6 @@
 <!-- Matomo Image Tracker-->
 <img referrerpolicy="no-referrer-when-downgrade" src="https://freiheit.f4.htw-berlin.de/matomo/matomo.php?idsite=2&amp;rec=1&amp;action_name=2" style="border:0" alt="" />
 <!-- End Matomo -->
-
 Herzlich willkommen zur **Programmieren I** Veranstaltung! Wir werden unter Verwendung der Programmiersprache [Java](tools.md#java) die wesentlichen Konzepte lernen, die für das Verständnis modernen Programmierens notwendig sind. Es sind keinerlei Vorkenntnisse erforderlich. Hier einige Tipps, damit Sie die Veranstaltung erfolgreich durchführen und Sie dabei auch Spaß haben:
 
 1. In diesem Skript sind bereits alle Inhalte des gesamten Semesters verfügbar. Der Grund dafür ist der, dass Sie sich das jeweilige Thema vorab selbständig erarbeiten können, indem Sie sich den jeweiligen Abschnitt bereits vor der jeweiligen Vorlesung anschauen. Ich empfehle Ihnen diese Vorgehensweise - sie hat sich bewährt!
@@ -2561,6 +2560,24 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			
 		}
 		```
+
+
+## Hinweise zur Klausur
+
+- Es stehen immer ein Mac-Labor (z.B. 624) und ein Windows-Labor (z.B. 625) zur Verfügung. 
+- Wenn die Klausur auf 10 Uhr angesetzt ist, werden die Aufgabenblätter ca. 9:45 Uhr ausgeteilt, so dass um ca. 9:55 Uhr mit dem Programmieren begonnen werden kann. Seien Sie am besten spätestens eine halbe Stunde vor dem offiziellen Beginn in dem Labor Ihrer Wahl.
+- Sie können sich vorab schon ein Package `klausur` erstellen und darin eine `Programmklasse` mit `main`-Methode. Probieren Sie auch schonmal mindestens eine Ausgabe auf die Konsole, damit Sie wissen, ob alles funktioniert. 
+- Sie können sich in Ihren Workspace gerne allen Ihren Code importieren, den Sie im Laufe des Semesters erzeugt haben (üben Sie den Import dann am besten vorher - Sie können sich nicht sicher sein, dass Sie an dem Rechner die Klausur schreiben können, an dem Sie den Import geübt haben). 
+- Sie dürfen während der Klausur im Web browsen und sogar Google verwenden (nicht jedoch Bing).
+- Es ist nicht gestattet:
+	- den eigenen Rechner zu verwenden (gar nicht mitbringen oder auspacken)
+	- das Handy zu verwenden  (gar nicht mitbringen oder auspacken)
+	- Kommunikation mit anderen oder mit KI-Tools
+-  Wichtig! 
+	- Mit Teilnahme an der Klausur gestatten Sie uns, nachträglich die Access-Logs der Rechner im Labor zu überprüfen!
+	- Bereits geöffnete Programme oder Tabs (selbst, wenn Sie unbenutzt sind), die eine Kommunikation mit anderen (z.B. E-Mail, Chats, KI, ...) ermöglichen, führen zum Ausschluss aus der Klausur.
+- Sollte sich herausstellen, dass 2 Labore nicht genügen, weichen wir auf ein drittes Labor aus (Windows). Deswegen ist es wichtig, dass Sie spätestens eine halbe Stunde vor Beginn vor Ort sind.
+- Bitte beachten Sie auch, dass wir nicht beim Hochladen der Lösung in Moodle unterstützen können. Das haben Sie für die Aufgaben genügend geübt. Wichtig ist, dass Sie wissen, wo Ihr workspace auf dem Rechner ist, damit Sie von dort aus hochladen können. 
 
 
 
