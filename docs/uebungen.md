@@ -3638,6 +3638,8 @@
 
 		- Erstellen Sie eine Objektmethode `isEqual(Clothes c)`, die genau dann ein `true` zurückgibt, wenn das aufrufende Objekt und `c` in ihren jeweiligen drei Objektvariablen paarweise dieselben Werte haben. Sonst `false`.
 
+		- Erstellen Sie eine Objektmethode `isBigger(Clothes c)`, die genau dann ein `true` zurückgibt, wenn der Wert von `size` des aufrufenden Objektes größer ist, als der Wert von `size` von `c`. Sonst `false`. 
+
 		- Erzeugen Sie eine `Programmklasse` mit `main()`-Methode. <br> <br>
 		Erzeugen Sie in der `main()`-Methode der `Programmklasse` ein `Clothes[] ca` der Länge `10`. Befüllen Sie in *einer Schleife* das `Clothes`-Array mit `Clothes`-Objekten und geben Sie diese auf die Konsole aus. Es entsteht folgende Ausgabe (zufällige Beispielwerte):
 			```bash
@@ -3733,6 +3735,12 @@
 		- Erstellen Sie eine Objektmethode `delivery(Item i)`. Das als Parameter übergebene `Item` wird dem `stock`-Array hinzugefügt. Die Länge des `stock`-Arrays muss sich dazu um `1` erhöhen. <br> <br>
 
 			**Beachten Sie:** Ist das in `Item i` enthaltene Kleidungsstück `clothes` (mit gleicher Größe, Typ und Farbe – siehe `isEquals(Clothes)`) bereits in `stock` enthalten, erhöht sich nur der `amount` des `Item`s in `stock` (siehe `increase()`). Die Länge des `stock`-Arrays ändert sich dann nicht. 
+
+			**Tipp:** Es kann hier ratsam sein, eine `contains(Item i)`-Methode zu schreiben, die prüft, ob `Item i` bereits in `stock` enthalten ist. Diese Methode kann man auch im Folgenden gebrauchen. 
+
+		- Erstellen Sie eine Objektmethode `delivery(int quantity)`. Das `stock`-Array wird um die Länge `quantity` erhöht. Die neuen Elemente werden mithilfe des parameterlosen `Item`-Konstruktors mit `Item`-Objekten befüllt. 
+
+			**Beachten Sie:** Es sollen keine „doppelten“ `Item`-Objekte in `stock` eingefügt werden, d.h. keine `clothes` mit gleicher Größe, Typ und Farbe – siehe `isEquals(Clothes)` (oder siehe `contains(Item i)`). 
 	
 		- Erstellen Sie eine Objektmethode `sell(Clothes c)`.
 
