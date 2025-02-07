@@ -59,9 +59,9 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 11. | 16.-20.12.2024 | [Algorithmen über Arrays](arrays.md#algorithmen-uber-arrays) | [Übung 9](uebungen.md#ubung-9)| [Aufgabe 7](aufgaben.md#aufgabe-7)  | 10.01.2025 |
 | | | | | | | |
 | 12. | 06.-10.01.2025 | [Sortieren von Arrays](sortieren.md#sortieren-von-arrays)  | [Übung 10](uebungen.md#ubung-10)| [Aufgabe 8](aufgaben.md#aufgabe-8)   | 17.01.2025 |
-| 13. | 13.-17.01.2025 | [Suchen in Arrays](arrays.md#suchen-in-arrays) | [Übung 11](uebungen.md#ubung-11)| [Probeklausuren](uebungen.md#probeklausuren) | - |
-| 14. | 20.-24.01.2025 | [JavaDoc](javadoc.md#javadoc) | [Übung 12](uebungen.md#ubung-12)| [Probeklausuren](uebungen.md#probeklausuren)  | - |
-| 15. | 27.-31.01.2025 | Wiederholung, Klausurvorbereitung | | [Probeklausuren](uebungen.md#probeklausuren) | - |
+| 13. | 13.-17.01.2025 | [Suchen in Arrays](arrays.md#suchen-in-arrays) | [Übung 11](uebungen.md#ubung-11)| [Probeklausuren](probeklausuren.md) | - |
+| 14. | 20.-24.01.2025 | [JavaDoc](javadoc.md#javadoc) | [Übung 12](uebungen.md#ubung-12)| [Probeklausuren](probeklausuren.md)  | - |
+| 15. | 27.-31.01.2025 | Wiederholung, Klausurvorbereitung | | [Probeklausuren](probeklausuren.md) | - |
 | 16. | 07.02.2025 09.30-11.30 Uhr| Klausur 1.PZ | | -  | - |
 | 16. | 28.03.2025 09.30-11.30 Uhr| Klausur 2.PZ | | -  | - |
 
