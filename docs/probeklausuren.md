@@ -1,6 +1,934 @@
 # Probeklausuren
 
 
+??? note "Table [(pdf)](./files/2025-03-28_Klausur_ProgI_PZ2.pdf)"
+		
+	1. Erstellen Sie ein package `klausurvorbereitung.table`. 
+	2. (**Teil 1**) Erstellen Sie in diesem package eine Klasse `KeyValue` mit 
+
+		- den privaten Objektvariablen 
+
+			- `key` vom Typ `int` und
+			- `value` vom Typ `String`.
+
+		- Erstellen Sie für die Klasse `KeyValue` einen parametrisierten Konstruktor, dem als Parameter ein `int key` und ein `String value` übergeben werden. Initialisieren Sie mit dem Parameterwerten die Objektvariablen.
+
+		- Erstellen Sie für die beiden Objektvariablen die Getter `getKey()` und `getValue()`.
+
+		- Erstellen Sie für die Objektvariable value einen Setter `setValue(String value)`.
+
+		- ^^Überschreiben^^ Sie die Objektmethode `toString()`, so dass ein `KeyValue`-Objekt in der folgenden Form ausgegeben wird (Beispielwert):
+
+			```bash
+			|   1 | Potsdam    |
+			```
+
+			- es kommt also zunächst ein  `|`, 
+			- dann der `key` (reservieren Sie dafür `3` Stellen),
+			- dann wieder ein `|`,
+			- dann der `value` (reservieren Sie dafür `10` Stellen) und
+			- dann erneut ein `|`
+
+		- ^^Überschreiben^^ Sie die Objektmethode `equals(Object o)`. Diese Methode gibt ein `true` zurück, wenn die `key`s von `this` und `o` gleich sind (und `false` sonst).
+
+		- Erstellen Sie eine `Programmklasse` mit `main()`-Methode. Kopieren Sie in die `main()`-Methode zunächst folgende Deklaration:
+
+
+			```bash
+			String[] staedte = { "Berlin", "Potsdam", "Hamburg", "Magdeburg", "Bremen", "Dresden", "Leipzig", "Halle", "Dortmund", "Stuttgart", "Mainz", "Frankfurt" };
+			```
+
+			- Erstellen Sie eine Schleife, so dass Sie durch das `staedte`-Array laufen. 
+			- Verwenden Sie die jeweilige Stadt aus dem `staedte`-Array als `value` und den jeweiligen Index aus dem `staedte`-Array als `key` und erzeugen Sie damit jeweils ein `KeyValue`-Objekt. 
+			- Geben Sie jedes `KeyValue`-Objekt mithilfe der `toString()`-Methode auf die Konsole aus. Es entsteht folgende Ausgabe:
+
+				```bash
+				|   0 | Berlin     |
+				|   1 | Potsdam    |
+				|   2 | Hamburg    |
+				|   3 | Magdeburg  |
+				|   4 | Bremen     |
+				|   5 | Dresden    |
+				|   6 | Leipzig    |
+				|   7 | Halle      |
+				|   8 | Dortmund   |
+				|   9 | Stuttgart  |
+				|  10 | Mainz      |
+				|  11 | Frankfurt  |
+				```
+
+	3. (**Teil 2**) Erstellen Sie eine Klasse `Table` mit 
+
+		- der privaten Objektvariablen 
+
+			- `entries` vom Typ `KeyValue[]` 	// Tabelle mit lauter Schlüssel-Werte-Paaren
+
+		- Erstellen Sie für die Klasse `Table` einen parameterlosen Konstruktor. Innerhalb des Konstruktors wird das `entries`-Array mit der Länge `0` erzeugt.
+
+		- Erstellen Sie eine Objektmethode `containsKey(int key)`, die ein `true` zurückgibt, wenn ein `KeyValue`-Objekt mit dem Schlüssel `key` in `entries` enthalten ist und `false` sonst.
+
+		- Erstellen Sie eine Objektmethode `put(int key, String value)`. Diese Methode fügt ein `KeyValue`-Objekt in die Tabelle `entries` ein, wenn der Schlüssel `key` noch nicht in `entries` existiert. Existiert `key` jedoch bereits, wird nur der dazugehörige Wert durch den neuen `value` ersetzt. Es gibt also 2 Möglichkeiten:
+
+			1.	`key` existiert noch nicht in `entries`. Dann wird ein neues `KeyValue`-Objekt bestehend aus (`key,value`) `entries` hinzugefügt (`entries` wird um 1 größer).
+			2.	`key` existiert bereits. Dann wird nur der dazugehörige Wert mit `value` aktualisiert.
+
+			Im ersten Fall (1.) gibt die `put(int, String)`-Methode ein `true` zurück, im 2. Fall `false`.
+
+		- Erstellen Sie eine Objektmethode `fill(String[] values)`. Diese fügt neue `KeyValue`-Objekte `entries` hinzu. Nutzen Sie dazu die `put(int, String)`-Methode. Es werden *alle* Einträge aus `values` der Table `entries` hinzugefügt.
+
+			**Aber Achtung!** Achten Sie darauf, dass auch tatsächlich *neue* Einträge hinzugefügt werden, d.h. die verwendeten Schlüssel sollen zuvor noch nicht existieren. 
+
+			**Tipp:** Sie können ja versuchen, den Index des Arrays `values` als `key` zu verwenden. Sollte dieser `key` jedoch bereits existieren, erhöhen Sie den Wert für `key` solange, bis er noch nicht in `entries` existiert und verwenden ihn. 
+
+		- Erstellen Sie eine Objektmethode `getEntry(int key)`, die das `KeyValue`-Objekt mit dem Schlüssel `key` aus `entries` zurückgibt. Ist ein solches Objekt nicht in `entries` vorhanden, wird `null` zurückgegeben. 
+
+		- Erstellen Sie eine Objektmethode `getSize()`, die die Anzahl der Einträge in entries zurückgibt.
+
+		- ^^Überschreiben^^ Sie die Methode `toString()` so, dass ein `String` in der folgenden Form zurückgegeben wird (Beispielwerte): 
+
+			```bash
+			12 Eintraege
+			--------------------
+			|   0 | Berlin     |
+			|   1 | Potsdam    |
+			|   2 | Hamburg    |
+			|   3 | Magdeburg  |
+			|   4 | Bremen     |
+			|   5 | Dresden    |
+			|   6 | Leipzig    |
+			|   7 | Halle      |
+			|   8 | Dortmund   |
+			|   9 | Stuttgart  |
+			|  10 | Mainz      |
+			|  11 | Frankfurt  |
+			--------------------
+			```
+
+			-	erst kommt die Anzahl von Einträgen in `entries` gefolgt von `"Eintraege"`
+			-	dann eine Linie (Länge muss nicht passen)
+			-	dann alle `KeyValue`-Objekte aus `entries`
+			-	dann noch eine Linie (Länge muss nicht passen)
+
+		- Erzeugen Sie in der `main()`-Methode der `Programmklasse` ein `Table`-Objekt. Rufen Sie für dieses Objekt 
+
+			-	die `fill()`-Methode auf und übergeben dieser Methode das `staedte`-Array.
+			-	Geben Sie das `Table`-Objekt mithilfe der `toString()`-Methode auf die Konsole aus. 
+
+				Es entsteht folgende Ausgabe:
+
+				```bash
+				12 Eintraege
+				--------------------
+				|   0 | Berlin     |
+				|   1 | Potsdam    |
+				|   2 | Hamburg    |
+				|   3 | Magdeburg  |
+				|   4 | Bremen     |
+				|   5 | Dresden    |
+				|   6 | Leipzig    |
+				|   7 | Halle      |
+				|   8 | Dortmund   |
+				|   9 | Stuttgart  |
+				|  10 | Mainz      |
+				|  11 | Frankfurt  |
+				--------------------
+				```
+
+			-	Rufen sie die `fill()`-Methode erneut auf und übergeben der Methode erneut das `staedte`-Array.
+			-	Geben Sie das `Table`-Objekt mithilfe der `toString()`-Methode erneut auf die Konsole aus. 
+
+				Es entsteht folgende Ausgabe:
+
+				```bash
+				24 Eintraege
+				--------------------
+				|   0 | Berlin     |
+				|   1 | Potsdam    |
+				|   2 | Hamburg    |
+				|   3 | Magdeburg  |
+				|   4 | Bremen     |
+				|   5 | Dresden    |
+				|   6 | Leipzig    |
+				|   7 | Halle      |
+				|   8 | Dortmund   |
+				|   9 | Stuttgart  |
+				|  10 | Mainz      |
+				|  11 | Frankfurt  |
+				|  12 | Berlin     |
+				|  13 | Potsdam    |
+				|  14 | Hamburg    |
+				|  15 | Magdeburg  |
+				|  16 | Bremen     |
+				|  17 | Dresden    |
+				|  18 | Leipzig    |
+				|  19 | Halle      |
+				|  20 | Dortmund   |
+				|  21 | Stuttgart  |
+				|  22 | Mainz      |
+				|  23 | Frankfurt  |
+				--------------------
+				```
+
+		- Rufen Sie in der `main()`-Methode der `Programmklasse` für das `Table`-Objekt die Methoden
+
+			- `put(0, "Potsdam")` (mit Ausgabe des Rückgabewertes auf die Konsole) und
+			- `put(24, "Potsdam")` (mit Ausgabe des Rückgabewertes auf die Konsole) auf und geben Sie danach mithilfe
+			- der `toString()`-Methode das `Table`-Objekt auf die Konsole aus. 
+
+				Es entsteht folgende Ausgabe:
+
+				```bash
+				false
+				true
+				25 Eintraege
+				--------------------
+				|   0 | Potsdam    |
+				|   1 | Potsdam    |
+				|   2 | Hamburg    |
+				|   3 | Magdeburg  |
+				|   4 | Bremen     |
+				|   5 | Dresden    |
+				|   6 | Leipzig    |
+				|   7 | Halle      |
+				|   8 | Dortmund   |
+				|   9 | Stuttgart  |
+				|  10 | Mainz      |
+				|  11 | Frankfurt  |
+				|  12 | Berlin     |
+				|  13 | Potsdam    |
+				|  14 | Hamburg    |
+				|  15 | Magdeburg  |
+				|  16 | Bremen     |
+				|  17 | Dresden    |
+				|  18 | Leipzig    |
+				|  19 | Halle      |
+				|  20 | Dortmund   |
+				|  21 | Stuttgart  |
+				|  22 | Mainz      |
+				|  23 | Frankfurt  |
+				|  24 | Potsdam    |
+				--------------------
+				```
+
+		- Testen Sie die `getEntry()`-Methode mit einem existierenden `key` und geben Sie das zurückgegebene `KeyValue`-Objekt auf die Konsole aus.
+
+	4. (**Teil 3**) weiter mit Klasse `Table` 
+
+		- Erstellen Sie in der Klasse `Table` eine Objektmethode `getKeys()`. Diese Methode gibt alle `keys` aus `entries` als `int[]` zurück. 
+
+		- Erstellen Sie in der Klasse `Table` eine Objektmethode `printKeys()`. Diese Methode ruft die `getKeys()`-Methode auf und gibt das `int[]`, das alle Schlüssel enthält, in der folgenden Form auf die Konsole aus (Beispielwerte):
+
+			```bash
+			0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - 11 – 12
+			```
+
+			d.h. es werden alle Schlüssel getrennt durch ` – `. auf die Konsole ausgegeben
+
+		- Erstellen Sie eine Objektmethode `contains(String[] arr, String s)`. Diese Methode gibt ein `true` zurück, wenn `s` in `arr` enthalten ist und `false` sonst.
+
+		- Erstellen Sie eine Objektmethode `getValues()`. Diese Methode gibt alle `values` aus `entries` als `String[]` zurück.
+
+			**Aber Achtung!** Kein `value` darf im zurückgegebenen `String[]` doppelt vorkommen.
+
+			**Tipp:** Nutzen Sie die `contains(String[], String)`-Methode. 
+
+		- Erstellen Sie in der Klasse `Table` eine Objektmethode `printValues()`. Diese Methode ruft die `getValues()`-Methode auf und gibt das `String[]`, das alle Werte enthält, in der folgenden Form auf die Konsole aus (Beispielwerte):
+
+			```bash
+			Potsdam - Hamburg - Magdeburg - Bremen - Dresden - Leipzig - Halle - Dortmund - Stuttgart - Mainz - Frankfurt – Berlin
+			```
+
+			d.h. es werden alle Werte getrennt durch „ – „ auf die Konsole ausgegeben
+
+		- Erstellen Sie eine Objektmethode `sort(boolean asc)`. Diese Methode sortiert die Tabelle `entries` nach Schlüsselgröße. Ist `asc` gleich `true`, wird aufsteigend sortiert. Ist `asc` gleich `false`, wird absteigend sortiert.
+
+		- Erstellen Sie eine Objektmethode `remove(int key)`. Diese Methode löscht das `KeyValue`-Objekt aus `entries`, das den Schlüssel `key` hat. Wird ein solcher Eintrag gelöscht, gibt die `remove()`-Methode `true` zurück. Ist ein solcher Eintrag nicht vorhanden, gibt die Methode `false` zurück.
+
+		- Erstellen Sie eine Objektmethode `remove(String value)`. Diese Methode löscht die `KeyValue`-Objekte aus `entries`, die den Wert `value` haben. Wird ein solcher Eintrag bzw. solche Einträge gelöscht, gibt die `remove()`-Methode `true` zurück. Ist ein solcher Eintrag nicht vorhanden, gibt die Methode `false` zurück.
+
+			Beachten Sie, dass es mehrere gleiche `values` in `entries` geben kann (im Gegensatz zu `key`).
+
+		- Testen Sie alle Objektmethoden aus Teil 3. Es entstehen z.B. folgende Ausgaben: 
+
+			```bash
+			0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - 11 - 12 - 13 - 14 - 15 - 16 - 17 - 18 - 19 - 20 - 21 - 22 - 23 - 24
+			Potsdam - Hamburg - Magdeburg - Bremen - Dresden - Leipzig - Halle - Dortmund - Stuttgart - Mainz - Frankfurt - Berlin
+
+			25 Eintraege
+			--------------------
+			|  24 | Potsdam    |
+			|  23 | Frankfurt  |
+			|  22 | Mainz      |
+			|  21 | Stuttgart  |
+			|  20 | Dortmund   |
+			|  19 | Halle      |
+			|  18 | Leipzig    |
+			|  17 | Dresden    |
+			|  16 | Bremen     |
+			|  15 | Magdeburg  |
+			|  14 | Hamburg    |
+			|  13 | Potsdam    |
+			|  12 | Berlin     |
+			|  11 | Frankfurt  |
+			|  10 | Mainz      |
+			|   9 | Stuttgart  |
+			|   8 | Dortmund   |
+			|   7 | Halle      |
+			|   6 | Leipzig    |
+			|   5 | Dresden    |
+			|   4 | Bremen     |
+			|   3 | Magdeburg  |
+			|   2 | Hamburg    |
+			|   1 | Potsdam    |
+			|   0 | Potsdam    |
+			--------------------
+
+			25 Eintraege
+			--------------------
+			|   0 | Potsdam    |
+			|   1 | Potsdam    |
+			|   2 | Hamburg    |
+			|   3 | Magdeburg  |
+			|   4 | Bremen     |
+			|   5 | Dresden    |
+			|   6 | Leipzig    |
+			|   7 | Halle      |
+			|   8 | Dortmund   |
+			|   9 | Stuttgart  |
+			|  10 | Mainz      |
+			|  11 | Frankfurt  |
+			|  12 | Berlin     |
+			|  13 | Potsdam    |
+			|  14 | Hamburg    |
+			|  15 | Magdeburg  |
+			|  16 | Bremen     |
+			|  17 | Dresden    |
+			|  18 | Leipzig    |
+			|  19 | Halle      |
+			|  20 | Dortmund   |
+			|  21 | Stuttgart  |
+			|  22 | Mainz      |
+			|  23 | Frankfurt  |
+			|  24 | Potsdam    |
+			--------------------
+
+			remove(9) = true
+			remove(25) = false
+
+			24 Eintraege
+			--------------------
+			|   0 | Potsdam    |
+			|   1 | Potsdam    |
+			|   2 | Hamburg    |
+			|   3 | Magdeburg  |
+			|   4 | Bremen     |
+			|   5 | Dresden    |
+			|   6 | Leipzig    |
+			|   7 | Halle      |
+			|   8 | Dortmund   |
+			|  10 | Mainz      |
+			|  11 | Frankfurt  |
+			|  12 | Berlin     |
+			|  13 | Potsdam    |
+			|  14 | Hamburg    |
+			|  15 | Magdeburg  |
+			|  16 | Bremen     |
+			|  17 | Dresden    |
+			|  18 | Leipzig    |
+			|  19 | Halle      |
+			|  20 | Dortmund   |
+			|  21 | Stuttgart  |
+			|  22 | Mainz      |
+			|  23 | Frankfurt  |
+			|  24 | Potsdam    |
+			--------------------
+
+			remove(Potsdam) = true
+			remove(Brandenburg) = false
+
+			20 Eintraege
+			--------------------
+			|   2 | Hamburg    |
+			|   3 | Magdeburg  |
+			|   4 | Bremen     |
+			|   5 | Dresden    |
+			|   6 | Leipzig    |
+			|   7 | Halle      |
+			|   8 | Dortmund   |
+			|  10 | Mainz      |
+			|  11 | Frankfurt  |
+			|  12 | Berlin     |
+			|  14 | Hamburg    |
+			|  15 | Magdeburg  |
+			|  16 | Bremen     |
+			|  17 | Dresden    |
+			|  18 | Leipzig    |
+			|  19 | Halle      |
+			|  20 | Dortmund   |
+			|  21 | Stuttgart  |
+			|  22 | Mainz      |
+			|  23 | Frankfurt  |
+			--------------------
+			```
+
+			??? abstract "Zur Kontrolle. Die möglichen Ausgaben könnten sein:"
+				```bash
+
+				---------------- Teil 1 -------------------
+
+				|   0 | Berlin     |
+				|   1 | Potsdam    |
+				|   2 | Hamburg    |
+				|   3 | Magdeburg  |
+				|   4 | Bremen     |
+				|   5 | Dresden    |
+				|   6 | Leipzig    |
+				|   7 | Halle      |
+				|   8 | Dortmund   |
+				|   9 | Stuttgart  |
+				|  10 | Mainz      |
+				|  11 | Frankfurt  |
+
+
+				---------------- Teil 2 -------------------
+
+				12 Eintraege
+				--------------------
+				|   0 | Berlin     |
+				|   1 | Potsdam    |
+				|   2 | Hamburg    |
+				|   3 | Magdeburg  |
+				|   4 | Bremen     |
+				|   5 | Dresden    |
+				|   6 | Leipzig    |
+				|   7 | Halle      |
+				|   8 | Dortmund   |
+				|   9 | Stuttgart  |
+				|  10 | Mainz      |
+				|  11 | Frankfurt  |
+				--------------------
+
+				24 Eintraege
+				--------------------
+				|   0 | Berlin     |
+				|   1 | Potsdam    |
+				|   2 | Hamburg    |
+				|   3 | Magdeburg  |
+				|   4 | Bremen     |
+				|   5 | Dresden    |
+				|   6 | Leipzig    |
+				|   7 | Halle      |
+				|   8 | Dortmund   |
+				|   9 | Stuttgart  |
+				|  10 | Mainz      |
+				|  11 | Frankfurt  |
+				|  12 | Berlin     |
+				|  13 | Potsdam    |
+				|  14 | Hamburg    |
+				|  15 | Magdeburg  |
+				|  16 | Bremen     |
+				|  17 | Dresden    |
+				|  18 | Leipzig    |
+				|  19 | Halle      |
+				|  20 | Dortmund   |
+				|  21 | Stuttgart  |
+				|  22 | Mainz      |
+				|  23 | Frankfurt  |
+				--------------------
+
+				false
+				true
+				25 Eintraege
+				--------------------
+				|   0 | Potsdam    |
+				|   1 | Potsdam    |
+				|   2 | Hamburg    |
+				|   3 | Magdeburg  |
+				|   4 | Bremen     |
+				|   5 | Dresden    |
+				|   6 | Leipzig    |
+				|   7 | Halle      |
+				|   8 | Dortmund   |
+				|   9 | Stuttgart  |
+				|  10 | Mainz      |
+				|  11 | Frankfurt  |
+				|  12 | Berlin     |
+				|  13 | Potsdam    |
+				|  14 | Hamburg    |
+				|  15 | Magdeburg  |
+				|  16 | Bremen     |
+				|  17 | Dresden    |
+				|  18 | Leipzig    |
+				|  19 | Halle      |
+				|  20 | Dortmund   |
+				|  21 | Stuttgart  |
+				|  22 | Mainz      |
+				|  23 | Frankfurt  |
+				|  24 | Potsdam    |
+				--------------------
+
+				|   1 | Potsdam    |
+
+
+				---------------- Teil 3 -------------------
+
+				0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - 11 - 12 - 13 - 14 - 15 - 16 - 17 - 18 - 19 - 20 - 21 - 22 - 23 - 24
+				Potsdam - Hamburg - Magdeburg - Bremen - Dresden - Leipzig - Halle - Dortmund - Stuttgart - Mainz - Frankfurt - Berlin
+
+				25 Eintraege
+				--------------------
+				|  24 | Potsdam    |
+				|  23 | Frankfurt  |
+				|  22 | Mainz      |
+				|  21 | Stuttgart  |
+				|  20 | Dortmund   |
+				|  19 | Halle      |
+				|  18 | Leipzig    |
+				|  17 | Dresden    |
+				|  16 | Bremen     |
+				|  15 | Magdeburg  |
+				|  14 | Hamburg    |
+				|  13 | Potsdam    |
+				|  12 | Berlin     |
+				|  11 | Frankfurt  |
+				|  10 | Mainz      |
+				|   9 | Stuttgart  |
+				|   8 | Dortmund   |
+				|   7 | Halle      |
+				|   6 | Leipzig    |
+				|   5 | Dresden    |
+				|   4 | Bremen     |
+				|   3 | Magdeburg  |
+				|   2 | Hamburg    |
+				|   1 | Potsdam    |
+				|   0 | Potsdam    |
+				--------------------
+
+				25 Eintraege
+				--------------------
+				|   0 | Potsdam    |
+				|   1 | Potsdam    |
+				|   2 | Hamburg    |
+				|   3 | Magdeburg  |
+				|   4 | Bremen     |
+				|   5 | Dresden    |
+				|   6 | Leipzig    |
+				|   7 | Halle      |
+				|   8 | Dortmund   |
+				|   9 | Stuttgart  |
+				|  10 | Mainz      |
+				|  11 | Frankfurt  |
+				|  12 | Berlin     |
+				|  13 | Potsdam    |
+				|  14 | Hamburg    |
+				|  15 | Magdeburg  |
+				|  16 | Bremen     |
+				|  17 | Dresden    |
+				|  18 | Leipzig    |
+				|  19 | Halle      |
+				|  20 | Dortmund   |
+				|  21 | Stuttgart  |
+				|  22 | Mainz      |
+				|  23 | Frankfurt  |
+				|  24 | Potsdam    |
+				--------------------
+
+				remove(9) = true
+				remove(25) = false
+
+				24 Eintraege
+				--------------------
+				|   0 | Potsdam    |
+				|   1 | Potsdam    |
+				|   2 | Hamburg    |
+				|   3 | Magdeburg  |
+				|   4 | Bremen     |
+				|   5 | Dresden    |
+				|   6 | Leipzig    |
+				|   7 | Halle      |
+				|   8 | Dortmund   |
+				|  10 | Mainz      |
+				|  11 | Frankfurt  |
+				|  12 | Berlin     |
+				|  13 | Potsdam    |
+				|  14 | Hamburg    |
+				|  15 | Magdeburg  |
+				|  16 | Bremen     |
+				|  17 | Dresden    |
+				|  18 | Leipzig    |
+				|  19 | Halle      |
+				|  20 | Dortmund   |
+				|  21 | Stuttgart  |
+				|  22 | Mainz      |
+				|  23 | Frankfurt  |
+				|  24 | Potsdam    |
+				--------------------
+
+				remove(Potsdam) = true
+				remove(Brandenburg) = false
+
+				20 Eintraege
+				--------------------
+				|   2 | Hamburg    |
+				|   3 | Magdeburg  |
+				|   4 | Bremen     |
+				|   5 | Dresden    |
+				|   6 | Leipzig    |
+				|   7 | Halle      |
+				|   8 | Dortmund   |
+				|  10 | Mainz      |
+				|  11 | Frankfurt  |
+				|  12 | Berlin     |
+				|  14 | Hamburg    |
+				|  15 | Magdeburg  |
+				|  16 | Bremen     |
+				|  17 | Dresden    |
+				|  18 | Leipzig    |
+				|  19 | Halle      |
+				|  20 | Dortmund   |
+				|  21 | Stuttgart  |
+				|  22 | Mainz      |
+				|  23 | Frankfurt  |
+				--------------------
+
+				```
+
+
+??? question "Eine mögliche Lösung für Table"
+	=== "KeyValue.java"
+		```java
+		package klausurvorbereitung.table;
+
+		public class KeyValue
+		{
+			private int key;
+			private String value;
+			
+			KeyValue(int key, String value)
+			{
+				this.key = key;
+				this.value = value;
+			}
+			
+			public int getKey()
+			{
+				return this.key;
+			}
+			
+			public String getValue()
+			{
+				return this.value;
+			}
+			
+			public void setValue(String newValue)
+			{
+				this.value = newValue;
+			}
+			
+			@Override
+			public String toString()
+			{
+				return String.format("| %3d | %-10s |", this.key, this.value);
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				KeyValue k = (KeyValue)o;
+				return this.key == k.key;
+			}
+
+		}
+		```
+	=== "Table.java"
+		```java
+		package klausurvorbereitung.table;
+
+		public class Table
+		{
+			private KeyValue[] entries;
+			
+			Table()
+			{
+				this.entries = new KeyValue[0];
+			}
+			
+			public boolean containsKey(int key)
+			{
+				for(int i = 0; i < this.entries.length; i++)
+				{
+					if(this.entries[i].getKey() == key)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			public KeyValue getEntry(int key)
+			{
+				for(int i = 0; i < this.entries.length; i++)
+				{
+					if(this.entries[i].getKey() == key)
+					{
+						return this.entries[i];
+					}
+				}
+				return null;
+			}
+			
+			public boolean put(int key, String value)
+			{
+				if(this.containsKey(key))
+				{
+					KeyValue entry = this.getEntry(key);
+					entry.setValue(value);
+					return false;
+				}
+				else
+				{
+					KeyValue[] copy = new KeyValue[this.entries.length + 1];
+					for(int i = 0; i < this.entries.length; i++)
+					{
+						copy[i] = this.entries[i];
+					}
+					copy[copy.length - 1] = new KeyValue(key, value);
+					this.entries = copy;
+					return true;
+				}
+			}
+			
+			public void fill(String[] values)
+			{
+				for(int i = 0; i < values.length; i++)
+				{
+					int key = i;
+					while(this.containsKey(key)) key++;
+					this.put(key, values[i]);
+				}
+			}
+			
+			public int getSize()
+			{
+				return this.entries.length;
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = String.format("%d Eintraege%n--------------------%n", this.getSize());
+				for (int i = 0; i < this.entries.length; i++)
+				{
+					s += this.entries[i] + "\n";
+				}
+				s += String.format("--------------------%n");
+				return s;
+			}
+			
+			
+			public int[] getKeys()
+			{
+				int[] keys = new int[this.getSize()];
+				for (int i = 0; i < keys.length; i++)
+				{
+					keys[i] = this.entries[i].getKey();
+				}
+				return keys;
+			}
+			
+			public void printKeys()
+			{
+				int[] keys = this.getKeys();
+				for (int i = 0; i < keys.length; i++)
+				{
+					System.out.print(keys[i]);
+					if(i < keys.length - 1)
+					{
+						System.out.print(" - ");
+					}
+					else
+					{
+						System.out.println();
+					}
+				}
+			}
+			
+			public boolean contains(String[] arr, String s)
+			{
+				for (int i = 0; i < arr.length; i++)
+				{
+					if(arr[i].equals(s)) return true;		
+				}
+				return false;
+			}
+			
+			
+			public String[] getValues()
+			{
+				String[] values = new String[0];
+				for (int i = 0; i < this.entries.length; i++)
+				{
+					if(!this.contains(values, this.entries[i].getValue()))
+					{
+						String[] copy = new String[values.length + 1];
+						for(int j = 0; j < values.length; j++)
+						{
+							copy[j] = values[j];
+						}
+						copy[copy.length - 1] = this.entries[i].getValue();
+						values = copy;
+					}
+				}
+				return values;
+			}
+			
+			public void printValues()
+			{
+				String[] values = this.getValues();
+				for (int i = 0; i < values.length; i++)
+				{
+					System.out.print(values[i]);
+					if(i < values.length - 1)
+					{
+						System.out.print(" - ");
+					}
+					else
+					{
+						System.out.println();
+					}
+				}
+			}
+			
+			public void sort(boolean asc)
+			{
+				for(int bubble = 1; bubble < this.entries.length; bubble++)
+				{
+					for(int index = 0; index < this.entries.length - bubble; index++)
+					{
+						if((asc && this.entries[index].getKey() > this.entries[index+1].getKey()) ||
+						   (!asc && this.entries[index].getKey() < this.entries[index+1].getKey()))
+						{
+							KeyValue tmp = this.entries[index];
+							this.entries[index] = this.entries[index+1];
+							this.entries[index+1] = tmp;
+						}
+					}
+				}
+			}
+			
+			public boolean remove(int key)
+			{
+				if(this.containsKey(key))
+				{
+					KeyValue[] copy = new KeyValue[this.entries.length - 1];
+					int copyIndex = 0;
+					for (int i = 0; i < this.entries.length; i++)
+					{
+						if(this.entries[i].getKey() != key)
+						{
+							copy[copyIndex] = this.entries[i];
+							copyIndex++;
+						}
+					}
+					this.entries = copy;
+					return true;
+				}
+				else return false;
+			}
+			
+			
+			public boolean remove(String value)
+			{
+				int counter = 0;
+				for (int i = 0; i < this.entries.length; i++)
+				{
+					if(this.entries[i].getValue().equals(value))
+					{
+						counter++;
+					}
+				}
+				if(counter == 0) return false;
+				else
+				{
+					KeyValue[] copy = new KeyValue[this.entries.length - counter];
+					int copyIndex = 0;
+					for (int i = 0; i < this.entries.length; i++)
+					{
+						if(!this.entries[i].getValue().equals(value))
+						{
+							copy[copyIndex] = this.entries[i];
+							copyIndex++;
+						}
+					}
+					this.entries = copy;
+					return true;
+				}
+			}
+
+		}
+		```
+	=== "Programmklasse.java"
+		```java
+		package klausurvorbereitung.table;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				String[] staedte = { "Berlin", "Potsdam", "Hamburg", "Magdeburg", "Bremen", "Dresden", "Leipzig", "Halle", "Dortmund", "Stuttgart", "Mainz", "Frankfurt" };
+				
+				System.out.printf("%n%n---------------- Teil 1 -------------------%n%n");
+				
+				for(int i = 0; i < staedte.length; i++)
+				{
+					KeyValue kv = new KeyValue(i, staedte[i]);
+					System.out.println(kv.toString());
+				}
+				
+				System.out.printf("%n%n---------------- Teil 2 -------------------%n%n");
+				
+				Table t = new Table();
+				t.fill(staedte);
+				System.out.println(t.toString());
+				t.fill(staedte);
+				System.out.println(t.toString());
+				System.out.println(t.put(0, "Potsdam"));
+				System.out.println(t.put(24, "Potsdam"));
+				System.out.println(t.toString());
+				KeyValue kv1 = t.getEntry(1);
+				System.out.println(kv1.toString());
+				
+				System.out.printf("%n%n---------------- Teil 3 -------------------%n%n");
+				
+				t.printKeys();
+				t.printValues();
+				
+				System.out.println();
+				
+				t.sort(false);
+				System.out.println(t.toString());
+				t.sort(true);
+				System.out.println(t.toString());
+				
+				System.out.println("remove(9) = " + t.remove(9));
+				System.out.println("remove(25) = " + t.remove(25));
+				System.out.println();
+				System.out.println(t.toString());
+				System.out.println("remove(Potsdam) = " + t.remove("Potsdam"));
+				System.out.println("remove(Brandenburg) = " + t.remove("Brandenburg"));
+				System.out.println();
+				System.out.println(t.toString());
+			}
+
+		}
+		```
+
+
 
 ??? note "Studentin [(pdf)](./files/2025-02-07_Klausur_ProgI_PZ1.pdf)"
 		
