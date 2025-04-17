@@ -1,7 +1,7 @@
 # Probeklausuren
 
 
-??? note "Table [(pdf)](./files/2025-03-28_Klausur_ProgI_PZ2.pdf)"
+??? note "<a id="probeklausur-table"></a>Table [(pdf)](./files/2025-03-28_Klausur_ProgI_PZ2.pdf)"
 		
 	1. Erstellen Sie ein package `klausurvorbereitung.table`. 
 	2. (**Teil 1**) Erstellen Sie in diesem package eine Klasse `KeyValue` mit 
