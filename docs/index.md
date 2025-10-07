@@ -6,7 +6,7 @@
 Herzlich willkommen zur **Programmieren I** Veranstaltung! Wir werden unter Verwendung der Programmiersprache [Java](tools.md#java) die wesentlichen Konzepte lernen, die für das Verständnis modernen Programmierens notwendig sind. Es sind keinerlei Vorkenntnisse erforderlich. Hier einige Tipps, damit Sie die Veranstaltung erfolgreich durchführen und Sie dabei auch Spaß haben:
 
 1. In diesem Skript sind bereits alle Inhalte des gesamten Semesters verfügbar. Der Grund dafür ist der, dass Sie sich das jeweilige Thema vorab selbständig erarbeiten können, indem Sie sich den jeweiligen Abschnitt bereits vor der jeweiligen Vorlesung anschauen. Ich empfehle Ihnen diese Vorgehensweise - sie hat sich bewährt!
-2. Lösen Sie alle **Übungsaufgaben** selbständig! In der Übung sollten Sie ruhig zusammenarbeiten. Es ist auch kein Problem, wenn Sie für das Bewältigen der Übungen etwas länger benötigen. Sollten Sie es gar nicht alleine schaffen, ist das auch kein Problem. Wichtig ist dann, dass Sie sich die Lösung anschauen und es erneut selbständig versuchen. Hören Sie nicht auf, bis Sie es geschafft haben! Sie **müssen** irgendwann in der Lage sein, alle Übungsaufgaben selbständig zu lösen.
+2. In den **Übungen** sollten Sie ruhig zusammenarbeiten. Es ist auch kein Problem, wenn Sie für das Bewältigen der Übungen etwas länger benötigen. Sollten Sie es gar nicht alleine schaffen, ist das auch kein Problem. Wichtig ist dann, dass Sie sich die Lösung anschauen und es erneut selbständig versuchen. Hören Sie nicht auf, bis Sie es geschafft haben! Sie **müssen** irgendwann in der Lage sein, alle Übungsaufgaben selbständig zu lösen.
 2. Sie können die **Hausaufgaben** gerne zu zweit oder im Team lösen. Achten Sie aber darauf, dass Sie Ihre gemeinsame Lösung vollständig verstanden haben und dass Sie sie danach auch alleine erstellen können. Sie können beim Lösen der Hausaufgaben beliebig kreativ sein! Die Aufgabenstellung gibt Ihnen Anhaltspunkte für eine eventuelle Lösung. Sie können es aber auch ganz anders machen!
 3. Die Klausurvorbereitung beginnt mit Beginn der Veranstaltung! Es ist nicht möglich, die Klausur am Ende des Semesters zu bestehen, wenn Sie nicht das ganze Semester über **intensiv programmieren**. Die Übungsaufgaben sind "kleine" Aufgaben, um das in der Vorlesung vermittelte Wissen direkt anzuwenden. Für die Lösung der Hausaufgaben ist bereits ein gewisses Abstraktionsniveau erforderlich, um zu erkennen, dass das in der Vorlesung vermittelte Wissen dafür ausreichend ist. 
 4. Programmieren lernt man nur durch Programmieren! Sie müssen es **tun**. Das Lesen von Büchern oder das "Anschauen" von Code genügt nicht. Eine Sprache lernt man auch nur durch Sprechen. Sie müssen programmieren, programmieren, programmieren... (siehe auch [hier](https://youtu.be/Ao9T1lioa6Y?t=191))
@@ -29,8 +29,11 @@ Der Plan zur Durchführung der Veranstaltung ist derzeit wie folgt:
 - Sollten Sie Wünsche haben, diesen Plan zu ändern, kommen Sie gerne auf mich zu.
 
 Zur erfolgreichen Durchführung der Veranstaltung müssen Sie 
-- eine [**Übungen**](uebungen.md#ubungsblatter-wochenweise) durchgeführt haben (zu zweit) und
-- mir mind. 10 Übungen in den Übungszeiten präsentiert 
+
+- eine der [**Übungen**](uebungen.md#ubungsblatter-wochenweise) durchgeführt haben (zu zweit) und (siehe dazu [Wiki in Moodle](https://moodle.htw-berlin.de/mod/wiki/view.php?id=2025417))
+- mir mind. **8 Lösungen** Ihrer Übungen in den Übungszeiten präsentiert und
+- die **Klausur** am Ende bestanden 
+
 haben. 
 
 
@@ -39,7 +42,7 @@ Jede Woche gibt es zu jedem Thema [**Übungen**](uebungen.md#ubungsblatter-woche
 Es gibt außerdem [**Aufgaben**](aufgaben.md#aufgaben). Diese sind zu Ihrer eigenen Übung da. Es mag Ihnen vielleicht schwerfallen, die Aufgaben selbständig zu lösen. Sie sollten Sie jedoch **irgendwann** selbständig lösen können! Es hat sich gezeigt, dass die Studentinnen, die die Aufgaben irgendwann selbständig lösen konnten, die Klausur sicher bestehen. Damit Sie dies erfolgreich erledigen können, ist jeweils angegeben, welche Themen Sie dafür durcharbeiten müssen. Das Durcharbeiten der jeweiligen Themen entspricht meistens jeweils einem Wochenthema. 
  
 
-Am Ende des Semesters schreiben wir eine **Klausur** (am Rechner). Diese Klausur wird bewertet und entspricht der Note für "Programmieren 1". 
+Am Ende des Semesters schreiben wir eine **Klausur** (am Rechner). Diese Klausur wird bewertet und entspricht der Note für "Programmieren 1". [Probeklausuren](probeklausuren.md#probeklausuren) (Klausuren aus den letzten Jahren) finden Sie [hier](probeklausuren.md#probeklausuren).
 
 Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com/intl/de-de/) (Channel `#b11_prog1_ws2025_26`). Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, dass Sie sich diese gegenseitig beantworten. Damit wäre allen geholfen und wir können besser erkennen, wo noch Nachhol- bzw. Erläuterungsbedarf bei den meisten besteht. Bei Bedarf beantworten die Lehrenden die Fragen natürlich.  
 
