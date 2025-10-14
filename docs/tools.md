@@ -63,25 +63,7 @@ Um unsere Programme "zu schreiben", verwenden wir eine sogenannte *Integrated De
 
 Sie sind in der Wahl Ihrer IDE frei. Eine sehr gute IDE ist [**Eclipse**](https://www.eclipse.org/). Eclipse ist in Java geschrieben und Open-Source. Das ist auch der Grund, warum wir Eclipse verwenden und nicht [IntelliJ](#intellij). Den Download-Link für Eclipse finden Sie [hier](https://www.eclipse.org/downloads/). Es gibt verschiedene Versionen von Eclipse, wir verwenden die *Eclipse IDE for Java Developers*. Installieren Sie Eclipse am besten in ihrem *Applications*- oder *Programme*-Ordner. 
 
-1. Starten Sie Eclipse durch Doppelklick auf das Programmsymbol.
-2. Erstellen Sie einen *Workspace* (Arbeitsbereich) in einem gewünschten Ordner (z. B.
-Programmieren) im Dateisystem. Achten Sie darauf, dass Sie Schreibrechte in diesem Ordner besitzen.
-3. Anlegen eines Projektordners:
-	* Auswahl im Menü `File-->New-->Java Project`.
-	* Eingabe des `Project name:` Name des Projektes (z.B. *WiSe20* oder *Uebung1* oder *Aufgabe2*). Wenn Sie gefragt werden, ob Sie ein `module-info.java` erstellen wollen, wählen Sie `Don't create`.
-	* Klicken auf den Button `Finish`.
-4. Erstellen eines neuen Packages (Paketes):
-	* Öffnen der Projektmappe im `Package Explorer`.
-	* Auswahl des Ordners `src` mit der rechten Maustaste.
-	* Auswahl des Menüpunktes `New --> Package`.
-	* Geben Sie einen Paketnamen ein (Paketnamen werden kleingeschrieben), z.B. `themen.start`.
-5. Erstellen einer neuen Klasse:
-	* Öffnen der Projektmappe im Package Explorer.
-	* Auswahl des Paketes (z.B. `themen.start`) mit der rechten Maustaste.
-	* Auswahl des Menüpunktes `New --> Class`.
-	* Eingabe eines beliebigen Namens, der gleichzeitig der Klassen- und Dateiname ist (z.B. `HelloFIW`). Klassennamen werden immer groß geschrieben.
-	* Setzen des Häkchens bei `public static void main()`.
-	* Klicken auf den Button `Finish`.
+Zur Installation und Einrichtung von Eclipse siehe [Übung 0](uebungen.md#ubung-0).
 
 Die folgende Abbildung gibt einen Überblick über die Bedeutung der einzelnen Fenster in Eclipse:
 

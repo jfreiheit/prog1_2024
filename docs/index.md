@@ -76,7 +76,43 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ## Code aus der Vorlesung
 
+??? hint "Vorlesung String, print(), println()"
+	```java
+	package vorlesungen.vorl1014;
 
+	public class Vorlesung1014 
+	{
+
+		public static void main(String[] args) 
+		{
+			// hier kann ein Zeilenkommentar stehen
+			
+			/*
+			 * Blockkommentar
+			 * in jeder Zeile
+			 * kann irgendetwas
+			 * stehen
+			 */
+			
+			String wort;					// Deklaration
+			wort = "Hallo!";				// Wertzuweisung
+			System.out.println(wort);		// Ausgabe des Wertes von wort
+			wort = "FIW";					// neuer Wert
+			System.out.println(wort);		// Ausgabe des (neuen) Wertes von wort
+			
+			
+			System.out.print("hallo1");		// kein Zeilenumbruch
+			System.out.println();			// nur Zeilenumbruch
+			System.out.println();			// Leerzeile
+			System.out.print("hallo2");		// 
+			System.out.println();
+			System.out.println("hallo3"); 	// Ausgabe mit Zeilenumbruch
+			
+			
+		}
+
+	}
+	```
 
 ## Hinweise zur Klausur
 
