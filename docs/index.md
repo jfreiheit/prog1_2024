@@ -114,6 +114,158 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	}
 	```
 
+
+??? hint "Variablen und Wertetypen"
+	```java
+	package vorlesungen.vorl1020;
+
+	public class Vorlesung1020
+	{
+
+		public static void main(String[] args)
+		{
+			// Deklaration
+			String wort;	// Variable wort existiert
+			
+			// Wertzuweisung
+			wort = "irgendein text";
+			System.out.println(wort);
+			
+			wort = "fuenf";
+			
+			// Lesen
+			System.out.println(wort);
+			System.out.println(wort);
+			
+			// Datentyp int
+			int number;
+			
+			// Wertzuweisung
+			number = 7;		// erste Wertzuweisung - Initialisierung
+			
+			// lesen
+			System.out.println(number);
+			
+			// double
+			// Wertzuweisung und Initialisierung in einem Schritt
+			double number1 = 12.345;
+			
+			// boolean
+			boolean bedingung = true;  // oder bedingung = false;
+			System.out.println(bedingung);
+			bedingung = false;
+			System.out.println(bedingung);
+			
+			// byte
+			byte kleineZahl = 127;
+			System.out.println(kleineZahl);
+			kleineZahl++;
+			System.out.println(kleineZahl);
+			
+			// 
+			int ganzGrosseZahlInt = 2147483647;		// grosstmoeglicher int-Wert
+			
+			System.out.println(ganzGrosseZahlInt);
+			long ganzGanzGrosseZahlLong = 2147483648L;
+			
+
+		}
+
+	}
+
+	```
+
+
+??? hint "Konkatenation, Addition und Division"
+	```java
+	package vorlesungen.vorl1021;
+
+	public class Vorlesung1021
+	{
+
+		public static void main(String[] args)
+		{
+			char zeichen = 'a';
+			System.out.println(zeichen);
+			
+			zeichen = 65;
+			System.out.println(zeichen);
+			
+			zeichen = 'A';
+			System.out.println(zeichen);
+			
+			zeichen = '\u00A9';
+			System.out.println(zeichen);
+			
+			String zeichenkette = "Hallo " + "FIW" + "!";
+			System.out.println(zeichenkette);
+			
+			String word1 = "eins ";
+			String word2 = "zwei";
+			String word3 = word1 + word2; 	// "eins zwei"
+			word1 = word1 + word2;			// "eins zwei"
+			word2 = word1 + word2;			// "eins zweizwei"
+			
+			String wiederhole = "aktueller Wert von ";
+			
+			System.out.println(word1);
+			System.out.println("aktueller Wert von word2 ist " + word2);
+			System.out.println(wiederhole + "word2 ist " + word2);
+			
+			
+			System.out.println("aktueller Wert von zeichen ist " + zeichen);
+			
+			int number = 1234;
+			System.out.println("number = " + number);
+			
+			int summand1 = 3;
+			int summand2 = 4;
+			int summe = summand1 + summand2;
+			System.out.println("summe = " + summe);
+			
+			System.out.println(summand1 + " + " + summand2 + " = " + summe);
+			
+			System.out.println(summand1 + summand2); 	// 7
+			
+			System.out.println(summand1 + " + " + summand2 + " = " + summand1 + summand2);
+			System.out.println(summand1 + " + " + summand2 + " = " + (summand1 + summand2));
+			
+			int number1 = 12;
+			int number2 = 4;
+			int product = number1 * number2;	// 48
+			int quotient = number1 / number2;	// 3
+			int sum = number1 + number2; 		// 16
+			int differenz = number1 - number2;	// 8
+			
+			System.out.println(number1 + " * " + number2 + " = " + number1 * number2);
+			System.out.println(number1 + " * " + number2 + " = " + product);
+			
+			double nr1 = 5.0;
+			double nr2 = 2.0;
+			double pr = nr1 * nr2;
+			double qu = nr1 / nr2;
+			double su = nr1 + nr2;
+			double di = nr1 - nr2;
+			
+			int zahl1 = 5;
+			int zahl2 = 2;
+			int ergebnis = zahl1 / zahl2;		// Ergebnis ist 2
+			System.out.println("ergebnis : " + ergebnis );
+			
+			double result = nr1 / nr2;			// Ergebnis ist 2.5
+			System.out.println("result : " + result );
+			
+			result = zahl1 / zahl2;				// Ergebnis ist 2.0!!
+			System.out.println("result : " + result );
+			
+			
+		}
+
+	}
+
+	```
+
+
 ## Hinweise zur Klausur
 
 - Es stehen immer ein Mac-Labor (z.B. 624) und ein Windows-Labor (z.B. 625) zur Verfügung. 

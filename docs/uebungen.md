@@ -122,7 +122,7 @@
 
 	6. Deklarieren Sie sich eine `boolean`-Variable. Der Wert der Variablen soll `true` sein, wenn das Produkt der beiden `int`-Variablen aus `3.` gerade ist und `false`, wenn es ungerade ist. 
 
-	7. Probieren Sie die Dvision `100/3` in den folgenden Datentypen: `int`, `float`, `double`. Was stellen Sie fest? 
+	7. Probieren Sie die Division `100/3` in den folgenden Datentypen: `int`, `float`, `double`. Was stellen Sie fest? 
 
 	8. Prüfen Sie, ob die letzte Ziffer von 2 `int`-Variablen gleich ist (dann `true`, sonst `false`). 
 
