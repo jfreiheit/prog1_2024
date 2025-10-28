@@ -266,6 +266,116 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	```
 
 
+??? hint "Ausdrücke, arithmetische Vergleichs- und logische Operatoren"
+	```java
+	package vorlesungen.vorl1027;
+
+	public class Vorlesung1027
+	{
+
+		public static void main(String[] args)
+		{
+			int nr1 = 21;
+			int nr2 = 5;
+			int nr3 = nr1;		// nr3 = 21;
+			
+			nr3 = nr1 + nr2;	// nr3 = 21 + 5 = 26;
+			System.out.println(nr1 + " + " + nr2 + " = " + nr3);
+			
+			nr3 = nr1 - nr2;	// nr3 = 21 - 5 = 16;
+			System.out.println(nr1 + " - " + nr2 + " = " + nr3);
+			
+			nr3 = nr1 * nr2;	// nr3 = 21 * 5 = 105;
+			System.out.println(nr1 + " * " + nr2 + " = " + nr3);
+			
+			// ganzzahlige Division!
+			nr3 = nr1 / nr2;	// nr3 = 21 / 5 = 4;
+			System.out.println(nr1 + " / " + nr2 + " = " + nr3);
+			
+			// Restwertoperator (Modulo-Operator)
+			nr3 = nr1 % nr2;	// Restwert der Division
+			System.out.println(nr1 + " % " + nr2 + " = " + nr3);
+			
+			
+			double d1 = 21.0;
+			double d2 = 5.0;
+			
+			// Gleitkommadivision
+			double d3 = d1 / d2;
+			System.out.println(d1 + " / " + d2 + " = " + d3);
+			
+			System.out.println(21 / 5);		// ganzzahlige Division
+			System.out.println(21.0 / 5);	// Gleikommadivision
+			System.out.println(21 / 5.0);	// Gleikommadivision
+			System.out.println(21.0 / 5.0); // Gleikommadivision
+			
+			int zahl1 = 5;
+			int zahl2 = 4;
+			int zahl3 = 5;
+			boolean vergleich = 5 > 4;
+			
+			
+			System.out.println("5 > 4 = " + (5 > 4));
+			System.out.println(zahl1 + " > " + zahl2 + " = " + vergleich);
+			
+			vergleich = 5 < 4;
+			System.out.println(zahl1 + " < " + zahl2 + " = " + vergleich);
+			
+			vergleich = zahl1 <= zahl3;		// kleiner oder gleich
+			System.out.println(zahl1 + " <= " + zahl3 + " = " + vergleich);
+			
+			vergleich = zahl1 == zahl3;		// gleich
+			System.out.println(zahl1 + " == " + zahl3 + " = " + vergleich);
+			
+			vergleich = zahl1 == zahl2;		// gleich
+			System.out.println(zahl1 + " == " + zahl2 + " = " + vergleich);
+			
+			vergleich = zahl1 != zahl3;		// ungleich
+			System.out.println(zahl1 + " != " + zahl3 + " = " + vergleich);
+			
+			vergleich = zahl1 != zahl2;		// ungleich
+			System.out.println(zahl1 + " != " + zahl2 + " = " + vergleich);	
+			
+			char c1 = 'A';		// ASCII-Code 65
+			char c2 = 'B';		// ASCII-Code 66
+			char c3 = 'a';
+			System.out.println(c1 < c2);
+			System.out.println(c3 > c1);
+			
+			int c3ascii = c3;
+			System.out.println(c3ascii);
+			
+			char c4 = 65;		// siehe Uebung 1 - ASCII-Wert von 'A'
+			System.out.println(c4);		// A
+			
+			boolean operand1 = true;
+			boolean operand2 = true;
+			boolean operand3 = false;
+			boolean operand4 = false;
+			boolean result = operand1 && operand2;
+			
+			System.out.println(operand1 + " && " + operand2 + " = " + result);
+			result = operand1 && operand3;
+			System.out.println(operand1 + " && " + operand3 + " = " + result);
+			
+			result = operand1 || operand2;
+			System.out.println(operand1 + " || " + operand2 + " = " + result);
+			result = operand1 || operand3;
+			System.out.println(operand1 + " || " + operand3 + " = " + result);
+			
+			boolean xor = (operand1 || operand2) && !(operand1 && operand2);
+			
+			int z1 = 3;
+			int z2 = 4;
+			int z3 = 5;
+			boolean z1KleinerZ2KleinerZ3 = (z1 < z2) && (z2 < z3);
+			
+		}
+
+	}
+
+	```
+
 ## Hinweise zur Klausur
 
 - Es stehen immer ein Mac-Labor (z.B. 624) und ein Windows-Labor (z.B. 625) zur Verfügung. 
