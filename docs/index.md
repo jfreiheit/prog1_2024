@@ -376,6 +376,77 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 	```
 
+
+
+??? hint "Dekrement, Inkrement, erste eigene Methode"
+	```java
+	package vorlesungen.vorl1028;
+
+	public class Vorlesung1028
+	{
+		
+		public static void printSum(int summand1, int summand2)
+		{
+			int summe = summand1 + summand2;
+			System.out.println(summand1 + " + " + summand2 + " = " + summe);
+		}
+
+		public static void main(String[] args)
+		{		
+			int x = 7;
+			System.out.println("x = " + x);		// 7
+			
+			x = x + 1;		// x = 8;
+			System.out.println("x = " + x);		// 8
+			
+			x++;			// x = x + 1;
+			System.out.println("x = " + x);		// 9
+			
+			++x;			// x = x + 1;
+			System.out.println("x = " + x);		// 10
+			
+			x--;			// x = x - 1;
+			System.out.println("x = " + x);		// 9
+			
+			--x;			// x = x - 1;
+			System.out.println("x = " + x);		// 8
+			
+			x = x + 5;
+			x += 5;
+			
+			x /= 3;		// x = x / 3;
+			x *= 3;		// x = x * 3;
+			x -= 3; 	// x = x - 3;
+			x %= 3; 	// x = x % 3;
+			
+			int nr1 = 3;
+			int nr2 = 4;
+			System.out.println(nr1 + " + " + nr2 + " = " + (nr1 + nr2));	// Klammern notwendig!
+			System.out.println(nr1 + nr2 + " = " + nr1 + " + " + nr2);		// nr1 + nr2 ist Summe
+			
+			
+			int summand1 = 7;
+			int summand2 = 10;
+			int summe = summand1 + summand2;
+			System.out.println(summand1 + " + " + summand2 + " = " + summe);
+			
+			summand1 = -7;
+			summand2 = 107;
+			summe = summand1 + summand2;
+			System.out.println(summand1 + " + " + summand2 + " = " + summe);
+			
+			summand1 = 17;
+			summand2 = -107;
+			summe = summand1 + summand2;
+			System.out.println(summand1 + " + " + summand2 + " = " + summe);	
+		}
+
+	}
+	```
+
+
+
+
 ## Hinweise zur Klausur
 
 - Es stehen immer ein Mac-Labor (z.B. 624) und ein Windows-Labor (z.B. 625) zur Verfügung. 
