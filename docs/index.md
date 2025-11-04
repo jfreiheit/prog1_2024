@@ -445,6 +445,69 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	```
 
 
+??? hint "Methoden mit Rückgabe, Methodenaufrufe"
+	```java
+	package vorlesungen.vorl1103;
+
+	public class Vorlesung1103
+	{
+		public static void printSum(int summand1, int summand2)
+		{
+			//int summe = summand1 + summand2;
+			int summe = add(summand1, summand2);
+			System.out.println(summand1 + " + " + summand2 + " = " + summe);
+		}
+		
+		public static int add(int summand1, int summand2)
+		{
+			int summe = summand1 + summand2;
+			return summe;
+		}
+		
+		public static double multiply(double nr1, double nr2, double nr3)
+		{
+			double product = nr1 * nr2 * nr3;
+			return product;
+		}
+		
+		public static boolean isLeapyear(int year)
+		{
+			boolean istDurch4Teilbar = year % 4 == 0;
+			boolean istDurch100Teilbar = year % 100 == 0;
+			boolean istDurch400Teilbar = year % 400 == 0;
+			boolean isLeapyear = (istDurch4Teilbar && !istDurch100Teilbar) || istDurch400Teilbar;
+			return isLeapyear;
+		}
+		
+		public static void main(String[] args)
+		{
+			printSum(3,6);
+			printSum(17,4);
+			
+			int summe = add(3,4);		// 7
+			System.out.println(summe);
+			System.out.println(add(8,10));
+			
+			int zahl1 = 17;
+			int zahl2 = 12;
+
+			System.out.println(zahl1 + " + " + zahl2 + " = " + add(zahl1, zahl2));
+			
+			int doppelteSumme = 2 * add(17,4);
+			System.out.println(doppelteSumme);
+			
+			double product = multiply(3.0, 4.0, 5.0);
+			System.out.println(product);
+			
+			System.out.println("2025 : " + isLeapyear(2025));
+			System.out.println("2024 : " + isLeapyear(2024));
+			System.out.println("2000 : " + isLeapyear(2000));
+			System.out.println("2100 : " + isLeapyear(2100));
+		}
+
+	}
+
+	```
 
 
 ## Hinweise zur Klausur
