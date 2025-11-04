@@ -300,12 +300,6 @@
 	```bash 
 	17 geteilt durch 4 ergibt 4. Es bleibt ein Rest von 1
 	```
-	Falls kein Rest bleibt, soll die Ausgabe sein:
-	```bash
-	16 geteilt durch 4 ergibt 4. Es bleibt kein Rest.
-	```
-	Rufen Sie die Methode entsprechend in der `main()`-Methode auf!<br/><br/>
-	**Zusatz:** Prüfen Sie, ob der Wert von `nr2` ungleich `0` ist. Nur dann ist die Division definiert. Sollte er `0` sein, geben Sie `Division durch 0 ist nicht definiert!` auf die Konsole aus. 
 
 	5. Schreiben Sie zwei Methoden 
 	```java
@@ -334,11 +328,7 @@
 	```bash
 	Zieht man von den 34567 Stunden die 1440 Tage ab, bleiben 7 Stunden übrig.
 	```	
-		**Zusatz:** Ändern Sie `main()` so, dass für den Fall, dass die Gesamtanzahl der Stunden keinen ganzen Tag enthält, folgende Ausgabe erscheint: 
-		```bash
-		In 22 Stunden ist kein ganzer Tag enthalten. 
-		```
-		Es soll dann auch keine Ausgabe bezüglich der übrig bleibenden Stunden erscheinen.  
+
 
 
 
