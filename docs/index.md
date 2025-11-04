@@ -510,6 +510,88 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	```
 
 
+??? hint "Methodenstack und Selektion"
+	```java
+	package vorlesungen.vorl1104;
+
+	public class Vorlesung1104
+	{
+		public static boolean areEqual(int nr1, int nr2)
+		{
+			return nr1 == nr2;
+		}
+		
+		public static boolean isDivider(int number, int divider)
+		{
+			return number % divider == 0;
+		}
+		
+		public static boolean isDividerButNotEqual(int number, int divider)
+		{
+			return isDivider(number, divider) && !areEqual(number, divider);
+		}
+		
+
+		public static void main(String[] args)
+		{
+			System.out.println("------ areEqual()---------");
+			System.out.println(areEqual(123, 123));
+			System.out.println(areEqual(123, 124));
+			System.out.println(areEqual(123, -(-123)));
+			
+			System.out.println("------ isDivider---------");
+			
+			System.out.println(isDivider(16, 4));
+			System.out.println(isDivider(16, 5));
+			
+			System.out.println("------ isDividerButNotEqual()---------");
+			
+			int number1 = 16;
+			int number2 = 4;
+			System.out.println(isDividerButNotEqual(number1,number2));
+			
+			System.out.println(isDividerButNotEqual(16,16));
+			System.out.println(isDividerButNotEqual(16,5));
+			
+			System.out.println("------ Selektion ---------");
+			
+			int nr1 = 4;
+			int nr2 = 3;
+			
+			if(nr1 > nr2)
+			{
+				System.out.println(nr1 + " ist groesser als " + nr2);
+			}
+			else
+			{
+				System.out.println(nr1 + " ist nicht groesser als " + nr2);
+			}
+			
+			if(nr1 % 2 == 0)
+			{
+				System.out.println(nr1 + " ist eine gerade Zahl.");
+			}
+			else
+			{
+				System.out.println(nr1 + " ist eine ungerade Zahl.");
+			}
+			
+			if(isDivider(nr1,nr2))
+			{
+				System.out.println(nr2 + " ist Teiler von " + nr1);
+			}
+			else
+			{
+				System.out.println(nr2 + " ist kein Teiler von " + nr1);
+			}
+			
+		}
+
+	}	
+	```
+
+
+
 ## Hinweise zur Klausur
 
 - Es stehen immer ein Mac-Labor (z.B. 624) und ein Windows-Labor (z.B. 625) zur Verfügung. 

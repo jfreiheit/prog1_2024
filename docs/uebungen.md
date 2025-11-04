@@ -318,7 +318,7 @@
 		- `getRemainder(17,4);`
 
 	7. Können wir die Methoden `getQuotient(int nr1, int nr2)` und `getRemainder(int nr1, int nr2)` auch in der `printIntDivision(int nr1, int nr2)`-Methode verwenden/aufrufen? Wenn ja, wie?
-	8. Schreiben Sie eine Methode `lastDigitsAreEqual(int nr1, int nr2)`, die ein `true` zurückgibt, wenn `nr1` und `nr2` dieselbe letzte Ziffer haben und `false` sonst. <br/><br/>
+	8. Schreiben Sie eine Methode `lastDigitsAreEqual(int nr1, int nr2)`, die ein `true` zurückgibt, wenn `nr1` und `nr2` dieselbe letzte Ziffer haben und `false` sonst. 
 	9. Schreiben Sie eine Methode `isEven(int nr1)`, die ein `true` zurückgibt, wenn `nr1` eine gerade Zahl ist. Schreiben Sie eine Methode `isOdd(int nr1)`, die ein `true` zurückgibt, wenn `nr1` eine ungerade Zahl ist. Verwenden Sie in `isOdd(int nr1)` die Methode `isEven(int nr1)`.
 	9. Schreiben Sie eine Methode `getDays(int hours)`, die für eine gegebene Stundenanzahl `hours` zurückgibt, wieviele ganze Tage diese Stunden entsprechen. Schreiben Sie eine Methode `getRemainingHours(int hours)`, die für eine gegebene Stundenanzahl `hours` zurückgibt, wieviele Stunden noch verbleiben, wenn man die ganzen Tage darin abzieht. Erstellen Sie in `main()` mit diesen Methoden und der `println()`-Methode folgende Ausgaben auf der Konsole (Beispielwerte):
 	```bash 
