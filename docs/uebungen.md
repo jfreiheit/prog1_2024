@@ -331,6 +331,128 @@
 
 
 
+??? question "Eine mögliche Lösung für Übung 2a"
+	```java
+	package uebungen.uebung2a;
+
+	public class Uebung2a
+	{
+
+		public static void printIntDivision(int nr1, int nr2) 
+		{		
+			// int quotient = nr1 / nr2;
+			int quotient = getQuotient(nr1, nr2);
+			// int rest = nr1 % nr2;
+			int rest = getRemainder(nr1, nr2);
+
+			System.out.print(nr1 + " geteilt durch " + nr2 + " ergibt " + quotient + ".");
+			System.out.println(" Es bleibt ein Rest von " + rest + ".");
+			
+		}
+
+		public static int getQuotient(int nr1, int nr2)
+		{
+			return nr1 / nr2;
+		}
+
+		public static int getRemainder(int nr1, int nr2)
+		{
+			return nr1 % nr2;
+		}
+
+		public static boolean lastDigitsAreEqual(int nr1, int nr2)
+		{
+			int lastDigitOfNr1 = nr1 % 10;
+			int lastDigitOfNr2 = nr2 % 10;
+			return (lastDigitOfNr1 == lastDigitOfNr2) ||
+				   (lastDigitOfNr1 == -lastDigitOfNr2);
+		}
+		
+		public static boolean isEven(int nr)
+		{
+			return nr % 2 == 0;
+		}
+		
+		public static boolean isOdd(int nr)
+		{
+			return !isEven(nr);
+		}
+
+		public static int getDays(int hours)
+		{
+			final int HOURS_ONE_DAY = 24;
+			return hours / HOURS_ONE_DAY;
+		}
+
+		public static int getRemainingHours(int hours)
+		{
+			final int HOURS_ONE_DAY = 24;
+			return hours % HOURS_ONE_DAY;
+		}
+
+
+		public static void main(String[] args)
+		{
+			System.out.println();
+			System.out.println("--------------- 2. ----------------");
+			System.out.println();
+
+			printIntDivision(17, 4);
+			printIntDivision(16, 4);
+			printIntDivision(16, 17);
+
+			System.out.println();
+			System.out.println("--------------- 3. ----------------");
+			System.out.println();
+
+			int nr1 = 17;
+			int nr2 = 4;
+			System.out.println(nr1 + "/" + nr2 + " = " + getQuotient(nr1, nr2));
+			System.out.println(nr1 + " mod " + nr2 + " = " + getRemainder(nr1, nr2));
+
+			nr1 = 15;
+			nr2 = 5;
+			System.out.println(nr1 + "/" + nr2 + " = " + getQuotient(nr1, nr2));
+			System.out.println(nr1 + " mod " + nr2 + " = " + getRemainder(nr1, nr2));
+
+
+			System.out.println();
+			System.out.println("--------------- 6. ----------------");
+			System.out.println();
+
+			System.out.println(nr1 + ", " + nr2 + " ? " + lastDigitsAreEqual(nr1, nr2));
+			nr1 = 123;
+			nr2 = 3;
+			System.out.println(nr1 + ", " + nr2 + " ? " + lastDigitsAreEqual(nr1, nr2));
+			nr1 = 123;
+			nr2 = -3;
+			System.out.println(nr1 + ", " + nr2 + " ? " + lastDigitsAreEqual(nr1, nr2));
+			nr1 = -123;
+			nr2 = 3;
+			System.out.println(nr1 + ", " + nr2 + " ? " + lastDigitsAreEqual(nr1, nr2));
+			nr1 = -12;
+			nr2 = 3;
+			System.out.println(nr1 + ", " + nr2 + " ? " + lastDigitsAreEqual(nr1, nr2));
+						
+			System.out.println();
+			System.out.println("--------------- 7. ----------------");
+			System.out.println();
+
+			int hours = 34567;
+			// hours = 22;
+			int days = getDays(hours);
+			int remainingHours = getRemainingHours(hours);
+
+			System.out.println("In " + hours + " Stunden sind " + days 
+					+ " ganze Tage enthalten.");
+			System.out.println("Zieht man von den " + hours + " Stunden die " 
+					+ days + " Tage ab, bleiben " + remainingHours + " Stunden übrig.");
+
+		}
+	}
+
+	```
+
 
 
 ??? note "<a id="ubung-3"></a>Übung 3"
