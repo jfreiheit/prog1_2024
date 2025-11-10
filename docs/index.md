@@ -677,7 +677,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			
 			String output = "1";
 			int summe = 0;
-			for(int i = 1; i <= 10; i*=2)
+			for(int i = 1; i <= 10; i++)
 			{
 				summe = summe + i;
 				if(i>1)
