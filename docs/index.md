@@ -591,6 +591,122 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	```
 
 
+??? hint "for-Schleife"
+	```java
+	package vorlesungen.vorl1110;
+
+	public class Vorlesung1110
+	{
+		public static void printDivision(int nr1, int nr2)
+		{
+			if(nr2 != 0)
+			{
+				System.out.println(nr1 + "/" + nr2 + " = " + nr1/nr2);
+			}
+			else
+			{
+				System.out.println("Division durch 0 ist nicht definiert.");
+			}
+		}
+		
+		public static int getQuotient(int nr1, int nr2)
+		{
+			return nr1 / nr2;
+		}
+
+		public static void main(String[] args)
+		{
+			System.out.println();
+			System.out.println("------------------ Selektion ------------------");
+			System.out.println();
+			printDivision(15, 5);
+			printDivision(15, 0);
+					
+			int number = 17;
+			
+			if(number % 2 == 0)
+			{
+				number = number / 2;
+			}
+			else
+			{
+				number = 3 * number + 1;
+			}
+			
+			// das geht, aber wollen wir nicht : 
+			if(number % 2 == 0)
+				number = number / 2;
+			else
+				number = 3 * number + 1;
+			
+			
+			
+			int a = 3;
+			int b = 4;
+			int c = 5;
+			
+			if(a < b)
+			{
+				if(a < c)
+				{
+					if(c < b)
+					{
+						System.out.println(a + " < " + c + " < " + b);
+					}
+					else
+					{
+						
+					}
+				}
+			}
+			else // a >= b
+			{
+				
+			}
+			
+			int zahl1 = 3;
+			int zahl2 = 0;
+			if(zahl2 != 0)
+			{
+				System.out.println(zahl1 + "/" + zahl2 + " = " + getQuotient(zahl1,zahl2));
+			}
+			
+			System.out.println();
+			System.out.println("------------------ Iteration ------------------");
+			System.out.println();
+			
+			String output = "1";
+			int summe = 0;
+			for(int i = 1; i <= 10; i*=2)
+			{
+				summe = summe + i;
+				if(i>1)
+				{
+					output = output + " + " + i;
+				}
+				System.out.println(output + " = " + summe);
+			}
+			
+			System.out.println(" Ende : " + summe);
+			
+			for(int zeile = 0; zeile < 5; zeile++)
+			{
+				// Variable spalte gibt es noch gar nicht
+				for(int spalte = 0; spalte < 5; spalte++)
+				{
+					System.out.print("(" + zeile + ", " + spalte + ") ");
+				}
+				// Variable spalte gibt es nicht mehr
+				System.out.println();
+			}
+
+				
+			
+		}
+
+	}
+
+	```
 
 ## Hinweise zur Klausur
 
