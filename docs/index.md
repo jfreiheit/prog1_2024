@@ -708,6 +708,116 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 	```
 
+
+??? hint "verschachtelte for-Schleife"
+	```java
+	package vorlesungen.vorl1111;
+
+	public class Vorlesung1111
+	{
+		public static void printRectangle(int breite, int hoehe)
+		{
+			for(int zeile = 0; zeile < hoehe; zeile++)
+			{
+				/*
+				for(int col = 0; col < width; col++)
+				{
+					System.out.print("* ");
+				}
+				*/
+				printOneLine(breite, '*');
+				System.out.println();
+			}
+		}
+		
+		public static void printTriangle(int hoehe, boolean rechts)
+		{
+			for(int zeile = 1; zeile <= hoehe; zeile++)
+			{
+				/*
+				for(int col = 0; col < width; col++)
+				{
+					System.out.print("* ");
+				}
+				*/
+				if(rechts)
+				{
+					printOneLine(hoehe - zeile, ' ');
+				}
+				printOneLine(zeile, '*');
+				System.out.println();
+			}
+		}
+		
+		public static void printOneLine(int n, char c)
+		{
+			for(int i = 0; i < n; i++)
+			{
+				System.out.print(c + " ");
+			}
+		}
+		
+		public static int fakultaet(int number)
+		{
+			int product = 1;
+			
+			for(int factor = 1; factor <= number; factor++)
+			{
+				product = product * factor;
+			}
+
+			return product;
+		}
+		
+		public static void printFakultaet(int n)
+		{
+			for(int nr = 1; nr <= n; nr++)
+			{
+				System.out.println(nr + "! = " + fakultaet(nr));
+			}
+		}
+		
+
+		public static void main(String[] args)
+		{
+			int anzahlOft = 5;
+			for(int zeile = anzahlOft; zeile > 0; zeile--)
+			{
+				System.out.print("Zeile " + zeile + " : ");
+				for(int spalte = 1; spalte <= anzahlOft; spalte++)
+				{
+					System.out.print(spalte + " : hallo ");
+				}
+				System.out.println();
+			}
+			
+			System.out.println();		
+			printRectangle(6,4);
+			System.out.println();		
+			printRectangle(5,8);
+			
+			System.out.println();
+			for(int nr = 1; nr <= 10; nr++)
+			{
+				System.out.println(nr + "! = " + fakultaet(nr));
+			}
+			System.out.println();
+			printFakultaet(11);
+			
+			System.out.println();
+			printOneLine(10, '*');
+			System.out.println();
+			
+			System.out.println();
+			printTriangle(7, true);
+			System.out.println();
+			printTriangle(7, false);
+		}
+
+	}
+	```
+
+
 ## Hinweise zur Klausur
 
 - Es stehen immer ein Mac-Labor (z.B. 624) und ein Windows-Labor (z.B. 625) zur Verfügung. 
