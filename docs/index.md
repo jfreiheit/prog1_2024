@@ -818,6 +818,187 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	```
 
 
+??? hint "while-Schleife"
+	```java
+	package vorlesungen.vorl1117;
+
+	public class Vorlesung1117
+	{
+		public static void berechneGGT(final int number1, final int number2)
+		{
+			int a = number1;
+			int b = number2;
+			if( a < 0 )
+			{
+				a = -a;
+			}
+			if( b < 0 )
+			{
+				b = -b;
+			}
+			
+			if( a == 0)
+			{
+				System.out.println("ggT(" + number1 +"," + number2 + ") = " + b);
+			}
+			else // a != 0
+			{
+				if( b == 0)
+				{
+					System.out.println("ggT(" + number1 +"," + number2 + ") = " + a);
+				}
+				else // a != 0 && b != 0
+				{
+					while( a != b )
+					{
+						if(a > b)
+						{
+							a = a - b;
+						}
+						else
+						{
+							b = b - a;
+						}
+					}
+					System.out.println("ggT(" + number1 +"," + number2 + ") = " + a);	
+				}
+			}
+		}
+		
+		public static void printCollatz(int number)
+		{
+			int n = number;
+			if( n < 0 )
+			{
+				n = -n;
+			}
+			while( n > 1 )
+			{
+				System.out.print(n + " ");
+				if(n % 2 == 0)
+				{
+					n = n / 2;
+				}
+				else
+				{
+					n = n * 3 + 1;
+				}
+			}
+			System.out.println("1");
+		}
+
+		public static void main(String[] args)
+		{
+			berechneGGT(24, 18);
+			berechneGGT(-76, 12);
+			berechneGGT(24, -18);
+			berechneGGT(-76, 0);
+			berechneGGT(-76, 76);
+			printCollatz(27);
+			System.out.println();
+			printCollatz(5);
+		}
+
+	}
+	```
+
+
+??? hint "Klassen und Objekte - Adresse"
+	=== "Vorlesung1118.java (Programmklasse)"
+		```java
+		package vorlesungen.vorl1118;
+
+		public class Vorlesung1118
+		{
+
+			public static void main(String[] args)
+			{
+				int a = 5;
+				int b = a;
+				a = 6;
+				System.out.println(b);  // 5
+				
+				
+				Adresse campusWH = new Adresse("Wilhelminenhofstr.", 75, 12459, "Berlin" );	// Objekterzeugung
+				Adresse campusTA = new Adresse("Treskowallee", 8, 10435, "Berlin");	// Objekterzeugung
+				
+				campusWH.printAdresse();
+				campusTA.printAdresse();
+				/* 
+				 * geht nicht mehr wegen private
+
+				campusWH.strasse = "Wilhelminenhofstr.";
+				campusWH.hausnummer = 75;
+				campusWH.ort = "Berlin";
+				campusWH.postleitzahl = 12459;
+				String adresseCampusWH = campusWH.getAdresse();
+				System.out.println(adresseCampusWH);
+				*/
+
+				
+				/* 
+				 * geht nicht mehr wegen private
+
+				campusTA.strasse = "Treskowallee";
+				campusTA.hausnummer = 8;
+				campusTA.ort = "Berlin";
+				campusTA.postleitzahl = 10435;
+				System.out.println(campusTA.getAdresse());
+				*/
+				
+			}
+
+		}
+		```
+	=== "Adresse.java"
+		```java
+		package vorlesungen.vorl1118;
+
+		public class Adresse
+		{
+			// Objektvariablen
+			private String strasse;
+			private int hausnummer;
+			private int postleitzahl;
+			private String ort;
+			
+			// Konstruktor
+			public Adresse(String str, int nr, int plz, String wohnort)
+			{
+				strasse = str;
+				hausnummer = nr;
+				postleitzahl = plz;
+				ort = wohnort;
+			}
+			
+			// Objektmethoden
+			private String getAdresse()
+			{
+				return strasse + " " + hausnummer 
+						+ " in " + postleitzahl + " " + ort;
+			}
+			
+			public void printAdresse()
+			{
+				System.out.println(getAdresse());
+			}
+		}
+
+		```
+	=== "Anschrift.java"
+		```java
+		package vorlesungen.vorl1118;
+
+		public class Anschrift
+		{
+			public Adresse adresse;
+			public String co;
+			public int etage;
+		}
+		```
+
+
+
 ## Hinweise zur Klausur
 
 - Es stehen immer ein Mac-Labor (z.B. 624) und ein Windows-Labor (z.B. 625) zur Verfügung. 
