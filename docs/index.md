@@ -998,6 +998,191 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 
 
+??? hint "Klassen und Objekte - Point"
+	=== "Vorlesung1124.java (Programmklasse)"
+		```java
+		package vorlesungen.vorl1124;
+
+		public class Vorlesung1124
+		{
+
+			public static void main(String[] args)
+			{
+				Point p1 = new Point(2,1);
+				Point p2 = new Point(-1,-2);
+				
+				/*
+				p1.setX(3);	
+				p1.setY(4);
+				*/
+				System.out.println("x = " + p1.getX());
+				System.out.println("y = " + p1.getY());
+				
+				p1.print();
+				p2.print();
+				
+				System.out.println();
+				System.out.println("p1 links von p2 ? " + p1.istLinks(p2));
+				System.out.println("p2 links von p1 ? " + p2.istLinks(p1));
+				
+				System.out.println("p1 oberhalb von p2 ? " + p1.istOben(p2));
+				System.out.println("p2 oberhalb von p1 ? " + p2.istOben(p1));
+			}
+
+		}
+		```
+	=== "Point.java"
+		```java
+		package vorlesungen.vorl1124;
+
+		public class Point
+		{
+			// Objektvariablen
+			private int x;
+			private int y;
+			
+			// Konstruktor
+			public Point(int pX, int pY)
+			{
+				x = pX;
+				y = pY;
+			}
+			
+			/*
+			public void setX(int neuX)
+			{
+				x = neuX;
+			}
+			
+			public void setY(int neuY)
+			{
+				y = neuY;
+			}
+			*/
+			
+			public int getX()
+			{
+				return x;
+			}
+			
+			public int getY()
+			{
+				return y;
+			}
+			
+			public void print()
+			{
+				System.out.println("[ x = " + x + ", y = " + y + " ]");
+			}
+			
+			public boolean istLinks(Point p)
+			{
+				return x < p.x;
+			}
+			
+			public boolean istOben(Point p)
+			{
+				return y > p.y;
+			}
+		}
+		```
+
+
+
+## Code aus Tutorium
+
+
+??? hint "FilledRhombus"
+	```java
+	package tutorium.tutorium1124;
+
+	public class Tutorium1124
+	{
+		public static void printNSpaces(int n)
+		{
+			for(int i = 0; i < n; i++)
+			{
+				System.out.print(" ");
+			}
+		}
+		
+		public static void printNStars(int n)
+		{
+			for(int i = 0; i < n; i++)
+			{
+				System.out.print("*");
+			}
+		}
+		
+		public static void printPyramid(int upperHalf)
+		{
+			for(int row = 0; row < upperHalf; row++)
+			{
+				printNSpaces(upperHalf - row);
+				printNStars(2*row + 1);
+				System.out.println();
+			}
+		}
+		
+		public static void printLowerHalf(int lowerHalf)
+		{
+			for(int row = lowerHalf - 1; row >= 0; row-- )
+			{
+				printNSpaces(lowerHalf - row);
+				printNStars(2 * row + 1);
+				System.out.println();
+			}
+		}
+		
+		public static void printMiddleLine(int upperHalf)
+		{
+			printNStars(2 * upperHalf + 1);
+			System.out.println();
+		}
+		
+		public static void printFilledRhombus(int upperHalf)
+		{
+			printPyramid(upperHalf);
+			printMiddleLine(upperHalf);
+			printLowerHalf(upperHalf);
+		}
+
+		public static void main(String[] args)
+		{
+			printPyramid(5);
+			System.out.println();
+			
+			printPyramid(11);
+			System.out.println();
+			
+			printPyramid(1);
+			System.out.println();
+			
+			
+			int upperHalf = 5;
+			for(int row = 1; row <= upperHalf; row++)
+			{
+				printNSpaces(row);
+				printNStars(2 * (upperHalf - row) + 1);
+				System.out.println();
+			}
+			System.out.println();
+			
+			printFilledRhombus(5);
+			System.out.println();
+			
+			printFilledRhombus(11);
+			System.out.println();
+			
+			printFilledRhombus(1);
+			System.out.println();
+			
+		}
+
+	}
+	```
+
+
 
 ## Hinweise zur Klausur
 
