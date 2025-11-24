@@ -1705,7 +1705,7 @@ Wieviele Stunden bleiben übrig?
 </ul>
 </li>
 <li>Erstellen Sie in der Klasse <code>Konto</code> einen Konstruktor für <code>Konto</code><ul>
-<li>diesem Konstruktor wird als Parameter <code>int pin</code> übergeben</li>
+<li>diesem Konstruktor wird als Parameter <code>int pPin</code> übergeben</li>
 <li>mit dem Wert des Parameters wird innerhalb des Konstruktors der Wert von <code>pin</code> initialisiert</li>
 <li>Initialisieren Sie im Konstruktor auch die Objektvariable <code>guthaben</code>. Sie bekommt den Wert <code>0.0</code> (hierfür haben wir also keinen Parameter, wir setzen den initialen Wert einfach generell auf <code>0.0</code>)</li>
 </ul>
@@ -1731,7 +1731,7 @@ Wieviele Stunden bleiben übrig?
 </span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>Es<span class="w"> </span>wurden<span class="w"> </span><span class="m">50</span>,00<span class="w"> </span>Euro<span class="w"> </span>eingezahlt.
 </span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>Es<span class="w"> </span>wurden<span class="w"> </span><span class="m">150</span>,00<span class="w"> </span>Euro<span class="w"> </span>eingezahlt.
 </span></code></pre></div></li>
-<li>Erstellen Sie in der Klasse <code>Konto</code> eine Objektmethode <code>kontoauszug(int pin)</code><ul>
+<li>Erstellen Sie in der Klasse <code>Konto</code> eine Objektmethode <code>kontoauszug(int pPin)</code><ul>
 <li>diese Objektmethode ist <code>public</code> und gibt nichts zurück</li>
 <li>einen <code>kontoauszug(int pin)</code> können Sie nur "ziehen", wenn der Parameterwert von <code>pin</code> mit dem Wert der Objektvariablen <code>pin</code> übereinstimmt</li>
 <li>wird der richtige Wert für die <code>pin</code> übergeben, geben Sie das <code>guthaben</code> in der folgenden Form aus:
@@ -1751,18 +1751,18 @@ Wieviele Stunden bleiben übrig?
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>Falsche<span class="w"> </span>PIN!
 </span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>Ihr<span class="w"> </span>aktuelles<span class="w"> </span>Guthaben<span class="w"> </span>betraegt<span class="w"> </span><span class="m">300</span>,00<span class="w"> </span>Euro.
 </span></code></pre></div></li>
-<li>Erstellen Sie in der Klasse <code>Konto</code> eine Objektmethode <code>auszahlen(int pin, double betrag)</code><ul>
+<li>Erstellen Sie in der Klasse <code>Konto</code> eine Objektmethode <code>auszahlen(int pPin, double betrag)</code><ul>
 <li>diese Objektmethode ist <code>public</code> und gibt nichts zurück</li>
-<li>es kann nur etwas ausgezahlt werden, wenn der Parameterwert von <code>pin</code> mit dem Wert der Objektvariablen <code>pin</code> übereinstimmt</li>
+<li>es kann nur etwas ausgezahlt werden, wenn der Parameterwert von <code>pPin</code> mit dem Wert der Objektvariablen <code>pin</code> übereinstimmt</li>
 <li>stimmen die Werte nicht überein, geben Sie erneut 
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>Falsche<span class="w"> </span>PIN!
 </span></code></pre></div>
     aus. </li>
-<li>stimmt der <code>pin</code>-Wert, dann müssen Sie prüfen, ob das <code>guthaben</code> reicht, um <code>betrag</code> auszuzahlen. Ist nicht genug <code>guthaben</code> vorhanden, dann geben Sie aus
+<li>stimmt der <code>pPin</code>-Wert, dann müssen Sie prüfen, ob das <code>guthaben</code> reicht, um <code>betrag</code> auszuzahlen. Ist nicht genug <code>guthaben</code> vorhanden, dann geben Sie aus
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>Ihr<span class="w"> </span>Guthaben<span class="w"> </span>reicht<span class="w"> </span>nicht,<span class="w"> </span>um<span class="w"> </span><span class="m">400</span>,00<span class="w"> </span>Euro<span class="w"> </span>auszuzahlen.
 </span></code></pre></div>
     falls <code>betrag</code> den Wert <code>400.0</code> hatte. </li>
-<li>wenn der <code>pin</code>-Wert stimmt und genug <code>guthaben</code> vorhanden ist, um den <code>betrag</code> auszuzahlen, dann reduzieren Sie <code>guthaben</code> um den entsprechenden <code>betrag</code> und geben aus
+<li>wenn der <code>pPin</code>-Wert stimmt und genug <code>guthaben</code> vorhanden ist, um den <code>betrag</code> auszuzahlen, dann reduzieren Sie <code>guthaben</code> um den entsprechenden <code>betrag</code> und geben aus
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>Es<span class="w"> </span>wurden<span class="w"> </span><span class="m">100</span>,00<span class="w"> </span>Euro<span class="w"> </span>ausgezahlt.
 </span></code></pre></div>
     falls der <code>betrag</code> den Wert <code>100.0</code> hatte.</li>

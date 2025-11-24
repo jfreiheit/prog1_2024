@@ -922,7 +922,7 @@
 		- `guthaben` vom Typ `double` --> nur in der Klasse sichtbar!
 		- `pin` vom Typ `int`	--> ebenfalls nur in der Klasse sichtbar!
 	5. Erstellen Sie in der Klasse `Konto` einen Konstruktor für `Konto`
-		- diesem Konstruktor wird als Parameter `int pin` übergeben
+		- diesem Konstruktor wird als Parameter `int pPin` übergeben
 		- mit dem Wert des Parameters wird innerhalb des Konstruktors der Wert von `pin` initialisiert
 		- Initialisieren Sie im Konstruktor auch die Objektvariable `guthaben`. Sie bekommt den Wert `0.0` (hierfür haben wir also keinen Parameter, wir setzen den initialen Wert einfach generell auf `0.0`)
 	6. Erstellen Sie in der Klasse `Konto` eine Objektmethode `einzahlen(double betrag)`
@@ -947,7 +947,7 @@
 		Es wurden 50,00 Euro eingezahlt.
 		Es wurden 150,00 Euro eingezahlt.
 		```
-	8. Erstellen Sie in der Klasse `Konto` eine Objektmethode `kontoauszug(int pin)`
+	8. Erstellen Sie in der Klasse `Konto` eine Objektmethode `kontoauszug(int pPin)`
 		- diese Objektmethode ist `public` und gibt nichts zurück
 		- einen `kontoauszug(int pin)` können Sie nur "ziehen", wenn der Parameterwert von `pin` mit dem Wert der Objektvariablen `pin` übereinstimmt
 		- wird der richtige Wert für die `pin` übergeben, geben Sie das `guthaben` in der folgenden Form aus:
@@ -969,20 +969,20 @@
 		Falsche PIN!
 		Ihr aktuelles Guthaben betraegt 300,00 Euro.
 		```
-	10. Erstellen Sie in der Klasse `Konto` eine Objektmethode `auszahlen(int pin, double betrag)`
+	10. Erstellen Sie in der Klasse `Konto` eine Objektmethode `auszahlen(int pPin, double betrag)`
 		- diese Objektmethode ist `public` und gibt nichts zurück
-		- es kann nur etwas ausgezahlt werden, wenn der Parameterwert von `pin` mit dem Wert der Objektvariablen `pin` übereinstimmt
+		- es kann nur etwas ausgezahlt werden, wenn der Parameterwert von `pPin` mit dem Wert der Objektvariablen `pin` übereinstimmt
 		- stimmen die Werte nicht überein, geben Sie erneut 
 			```bash
 			Falsche PIN!
 			```
 			aus. 
-		- stimmt der `pin`-Wert, dann müssen Sie prüfen, ob das `guthaben` reicht, um `betrag` auszuzahlen. Ist nicht genug `guthaben` vorhanden, dann geben Sie aus
+		- stimmt der `pPin`-Wert, dann müssen Sie prüfen, ob das `guthaben` reicht, um `betrag` auszuzahlen. Ist nicht genug `guthaben` vorhanden, dann geben Sie aus
 			```bash
 			Ihr Guthaben reicht nicht, um 400,00 Euro auszuzahlen.
 			``` 
 			falls `betrag` den Wert `400.0` hatte. 
-		- wenn der `pin`-Wert stimmt und genug `guthaben` vorhanden ist, um den `betrag` auszuzahlen, dann reduzieren Sie `guthaben` um den entsprechenden `betrag` und geben aus
+		- wenn der `pPin`-Wert stimmt und genug `guthaben` vorhanden ist, um den `betrag` auszuzahlen, dann reduzieren Sie `guthaben` um den entsprechenden `betrag` und geben aus
 			```bash
 			Es wurden 100,00 Euro ausgezahlt.
 			```
