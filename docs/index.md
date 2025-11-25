@@ -1088,6 +1088,185 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 
 
+??? hint "Klassen und Objekte - this und Person"
+	=== "Vorlesung1125.java (Programmklasse)"
+		```java
+		package vorlesungen.vorl1125;
+
+		public class Vorlesung1125
+		{
+			public void etwas()
+			{
+				int p1 = 3;
+				int p2 = 4;
+			}
+
+			public static void main(String[] args)
+			{
+				Point p1 = new Point(3,4); 
+				Point p2 = new Point(-2, -1);
+				Point p3 = p1;
+				
+				p3.setX(5);
+				p1.print();
+				
+				p3 = p2;
+				p2.setX(-3);
+				p3.print();
+				
+				System.out.println("p1 links von p2 ? " + p1.istLinks(p2));
+				
+				Point p4 = new Point(6,7);
+				
+				Adresse wh = new Adresse("Wilhelminenhofstr.", 75, 12459, "Berlin");
+				Adresse ta = new Adresse("Treskowallee", 8, 10318, "Berlin");
+				
+				Person max = new Person("Mustermann", "Max", wh);
+				Person maria = new Person("Musterfrau", "Maria", ta);
+				
+				max.print();
+				maria.print();
+				
+				Adresse maxAdresse = max.getAdresse();
+				maxAdresse.strasseUmbenennen("neue Strasse");
+				
+				max.getAdresse().strasseUmbenennen("neue Strasse");
+				
+				wh.printAdresse();
+			}
+
+		}
+		```
+	=== "Point.java"
+		```java
+		package vorlesungen.vorl1125;
+
+		public class Point
+		{
+			// Objektvariablen
+			private int x;
+			private int y;
+			
+			// Konstruktor
+			public Point(int x, int y)
+			{
+				this.x = x;
+				this.y = y;
+			}
+			
+			public void setX(int x)
+			{
+				this.x = x;
+			}
+			
+			public void setY(int y)
+			{
+				this.y = y;
+			}
+			
+			public int getX()
+			{
+				return this.x;
+			}
+			
+			public int getY()
+			{
+				return this.y;
+			}
+			
+			public void print()
+			{
+				System.out.println("[ x = " + this.getX() + ", y = " + this.getY() + " ]");
+			}
+			
+			public boolean istLinks(Point p)
+			{
+				return this.x < p.x;
+			}
+			
+			public boolean istOben(Point p)
+			{
+				return this.y > p.y;
+			}
+		}
+		```
+	=== "Adresse.java"
+		```java
+		package vorlesungen.vorl1125;
+
+		public class Adresse
+		{
+			// Objektvariablen
+			private String strasse;
+			private int hausnummer;
+			private int postleitzahl;
+			private String ort;
+			
+			// Konstruktor
+			public Adresse(String strasse, int hausnummer, int plz, String wohnort)
+			{
+				this.strasse = strasse;
+				this.hausnummer = hausnummer;
+				this.postleitzahl = plz;
+				this.ort = wohnort;
+			}
+			
+			// Objektmethoden
+			private String getAdresse()
+			{
+				return this.strasse + " " + this.hausnummer 
+						+ " in " + this.postleitzahl + " " + this.ort;
+			}
+			
+			public void printAdresse()
+			{
+				System.out.println(this.getAdresse());
+			}
+			
+			public void strasseUmbenennen(String neuerStrassenname)
+			{
+				this.strasse = neuerStrassenname;
+			}
+		}
+		```
+	=== "Person.java"
+		```java
+		package vorlesungen.vorl1125;
+
+		import vorlesungen.vorl1118.Adresse;
+
+		public class Person
+		{
+			private String name;
+			private String vorname;
+			private Adresse adresse;
+			
+			public Person(String name, String vorname, Adresse adresse)
+			{
+				this.name = name;
+				this.vorname = vorname;
+				this.adresse = adresse;
+			}
+			
+			public void print()
+			{
+				System.out.print(this.vorname + " " + this.name + " wohnt in ");
+				this.adresse.printAdresse();
+			}
+			
+			public Adresse getAdresse()
+			{
+				return this.adresse;
+			}
+			
+			
+
+		}
+
+		```
+
+
+
 
 ## Code aus Tutorium
 
@@ -1175,6 +1354,137 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			System.out.println();
 			
 			printFilledRhombus(1);
+			System.out.println();
+			
+		}
+
+	}
+	```
+
+??? success "FilledRhombus und UnfilledRhombus"
+	```java
+	package tutorium.tutorium1124;
+
+	public class Tutorium1124
+	{
+		public static void printNSpaces(int n)
+		{
+			for(int i = 0; i < n; i++)
+			{
+				System.out.print(" ");
+			}
+		}
+		
+		public static void printNStarsFilled(int n)
+		{
+			for(int i = 0; i < n; i++)
+			{
+				System.out.print("*");
+			}
+		}
+		
+		public static void printNStarsUnfilled(int n)
+		{
+			if(n==1)
+			{
+				System.out.print("*");
+			}
+			else
+			{
+				System.out.print("*");
+				for(int i = 0; i < n-2; i++)
+				{
+					System.out.print(" ");
+				}
+				System.out.print("*");
+			}
+			
+		}
+		
+		public static void printUpperHalfFilled(int upperHalf)
+		{
+			for(int row = 0; row < upperHalf; row++)
+			{
+				printNSpaces(upperHalf - row);
+				printNStarsFilled(2*row + 1);
+				System.out.println();
+			}
+		}
+		
+		public static void printUpperHalfUnfilled(int upperHalf)
+		{
+			for(int row = 0; row < upperHalf; row++)
+			{
+				printNSpaces(upperHalf - row);
+				printNStarsUnfilled(2*row + 1);
+				System.out.println();
+			}
+		}
+		
+		public static void printLowerHalfFilled(int lowerHalf)
+		{
+			for(int row = lowerHalf - 1; row >= 0; row-- )
+			{
+				printNSpaces(lowerHalf - row);
+				printNStarsFilled(2 * row + 1);
+				System.out.println();
+			}
+		}
+		
+		public static void printLowerHalfUnfilled(int lowerHalf)
+		{
+			for(int row = lowerHalf - 1; row >= 0; row-- )
+			{
+				printNSpaces(lowerHalf - row);
+				printNStarsUnfilled(2 * row + 1);
+				System.out.println();
+			}
+		}
+		
+		public static void printMiddleLineFilled(int upperHalf)
+		{
+			printNStarsFilled(2 * upperHalf + 1);
+			System.out.println();
+		}
+		
+		public static void printMiddleLineUnfilled(int upperHalf)
+		{
+			printNStarsUnfilled(2 * upperHalf + 1);
+			System.out.println();
+		}
+		
+		public static void printFilledRhombus(int upperHalf)
+		{
+			printUpperHalfFilled(upperHalf);
+			printMiddleLineFilled(upperHalf);
+			printLowerHalfFilled(upperHalf);
+		}
+		
+		public static void printUnfilledRhombus(int upperHalf)
+		{
+			printUpperHalfUnfilled(upperHalf);
+			printMiddleLineUnfilled(upperHalf);
+			printLowerHalfUnfilled(upperHalf);
+		}
+
+		public static void main(String[] args)
+		{
+			printFilledRhombus(5);
+			System.out.println();
+			
+			printFilledRhombus(11);
+			System.out.println();
+			
+			printFilledRhombus(1);
+			System.out.println();
+			
+			printUnfilledRhombus(5);
+			System.out.println();
+			
+			printUnfilledRhombus(11);
+			System.out.println();
+			
+			printUnfilledRhombus(1);
 			System.out.println();
 			
 		}
