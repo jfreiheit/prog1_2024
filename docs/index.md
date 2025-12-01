@@ -1266,6 +1266,144 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 
 
+??? hint "Klassen und Objekte - Circle"
+	=== "Programmklasse.java"
+		```java
+		package vorlesungen.vorl1201;
+
+		public class Programmklasse
+		{
+			public static int add(int nr1, int nr2)
+			{
+				return nr1 + nr2;
+			}
+			
+			public static int add(int nr1, int nr2, int nr3)
+			{
+				return nr1 + nr2 + nr3;
+			}
+			
+			public static double add(double nr1, double nr2)
+			{
+				return nr1 + nr2;
+			}
+
+			public static void main(String[] args)
+			{
+				Circle c1 = new Circle(5.0); 
+				Circle c2 = new Circle(2.5);
+				
+				System.out.println("Radius von c1 : " + c1.getRadius());
+				System.out.println("Durchmesser von c1 " + c1.getDiameter());
+				System.out.println("Radius von c2 : " + c2.getRadius());
+				
+				Circle c4 = c1.setNewCircleWithRadius(6.458);
+				System.out.println("Radius von c1 : " + c1.getRadius());
+				System.out.println("Durchmesser von c1 " + c1.getDiameter());
+				
+				System.out.println("Radius von c4 : " + c4.getRadius());
+				System.out.println("Durchmesser von c4 " + c4.getDiameter());
+				
+				c1.print();
+				c2.print();
+				
+				System.out.println("PI = " + Math.PI);
+				System.out.println(MyMath.abs(-1));
+				
+				Circle c3 = new Circle();
+				c3.print();
+				
+				System.out.println(add(3,4));
+				System.out.println(add(3.0,4.0));
+			}
+
+		}
+
+		```
+	=== "Circle.java"
+		```java
+		package vorlesungen.vorl1201;
+
+		public class Circle
+		{
+			// Objektvariable
+			private double radius;
+			
+			// Konstruktor
+			public Circle(double radius)
+			{
+				this.radius = radius;
+			}
+			
+			public Circle()
+			{
+				this.radius = 1.0;
+			}
+			
+			public double getRadius()
+			{
+				return this.radius;
+			}
+			
+			public double getDiameter()
+			{
+				return 2.0 * this.radius;
+			}
+			
+			public Circle setNewCircleWithRadius(double radius)
+			{
+				return new Circle(radius);
+			}
+			
+			public double getCircumference()
+			{
+				return Math.PI * this.getDiameter();
+			}
+			
+			public double getArea()
+			{
+				return Math.PI * this.radius * this.radius;
+			}
+			
+			public void print()
+			{
+				System.out.printf("%-14s : %7.2f %n", "Radius", this.radius);
+				System.out.printf("%-14s : %7.2f %n", "Durchmesser", this.getDiameter());
+				System.out.printf("%-14s : %7.2f %n", "Umfang", this.getCircumference());
+				System.out.printf("%-14s : %7.2f %n", "Flaecheninhalt", this.getArea());
+				System.out.println();
+			}
+		}
+		```
+	=== "MyMath.java"
+		```java
+		package vorlesungen.vorl1201;
+
+		public class MyMath
+		{
+			// Klassenveriable
+			public static final double PI = 3.141592653589793;
+			
+			private MyMath()
+			{
+				
+			}
+			
+			public static double abs(double value)
+			{
+				if(value < 0)
+				{
+					return -value;
+				}
+				else
+				{
+					return value;
+				}
+			}
+
+		}
+		```
+
 
 
 ## Code aus Tutorium
@@ -1492,6 +1630,71 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	}
 	```
 
+??? hint "Selektion und Iteration"
+	```java
+	package tutorium.tutorium1201;
+
+	public class Tutorium1201
+	{
+		public static void printNChars(int n, char c)
+		{
+			for(int i = 0; i < n; i++)
+			{
+				System.out.print(c);
+			}
+			System.out.println();	
+		}
+
+		public static void main(String[] args)
+		{
+			int a = 5;
+			
+			for(int b = 4; b <= 6; b++)
+			{
+			
+				if(a < b)
+				{
+					// wenn die Bedingung (a < b) true
+					System.out.println(a + " ist kleiner als " + b);
+				}
+				else // nicht a < b
+				{
+					if(a > b)
+					{
+						// wenn die Beding false ist
+						System.out.println(a + " ist groesser als " + b);
+					}
+					else
+					{
+						System.out.println(a + " ist gleich " + b);
+					}
+				}
+				
+			}
+			
+			for(int i = 0; i < 5; i++)
+			{
+				System.out.println("i = " + i);
+			}
+			
+			for(int i = 1; i <= 10; i++)
+			{
+				printNChars(i, '+');
+			}
+			
+			for(int i = 1; i <= 5; i++)
+			{
+				System.out.print(" i = " + i + " : ");
+				for(int j = 0; j < i; j++)
+				{
+					System.out.print("[ j = " + j + " ] ");
+				}
+				System.out.println();
+			}
+		}
+
+	}
+	```
 
 
 ## Hinweise zur Klausur
