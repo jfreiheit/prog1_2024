@@ -1333,8 +1333,6 @@
 		newArea= 2310,00 newA= 34,79 newB= 66,41 check (newA*newB)=2310,00
 		```
 
-		Sollte die `scale()`-Methode besser ein neues `Rectangle`-Objekt zurückgeben? Wenn ja, dann implementieren Sie es so.
-
 
 
 
