@@ -1406,6 +1406,188 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 
+??? hint "Vererbung - Viereck, Rechteck"
+	=== "Programmklasse.java"
+		```java
+		package vorlesungen.vorl1202;
+
+		import vorlesungen.vorl1201.Circle;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n------- Circle ------------%n%n");
+
+				Circle c1 = new Circle();
+				Circle c2 = new Circle(2.0);
+				Circle c3 = new Circle(3.0);
+				
+				c1.print();
+				c2.print();
+				c3.print();
+				
+				System.out.println("c2 groesser als c1 ? " + c2.isBigger(c1));
+				
+				System.out.printf("%n%n------- Viereck ------------%n%n");
+				
+				Viereck v1 = new Viereck(10, 20, 30, 40);
+				Viereck v2 = new Viereck(15, 20, 25, 30);
+				
+				// Viereck v1 = new Viereck();
+				// Viereck v2 = new Viereck();
+				
+				v1.print();
+				v2.print();
+				// System.out.println("Flaecheninhalt des Vierecks : " + 
+				// v1.flaecheninhalt());
+				
+				Rechteck r1 = new Rechteck(12, 24);
+				r1.print();
+				System.out.println("Umfang des Rechtecks : " + r1.umfang());
+				System.out.println("Flaecheninhalt des Rechtecks : " + 
+				r1.flaecheninhalt());
+
+			}
+
+		}
+		```
+	=== "Viereck.java"
+		```java
+		package vorlesungen.vorl1202;
+
+		public class Viereck
+		{
+			protected int a, b, c, d;
+			
+			public Viereck(int a, int b, int c, int d)
+			{
+				this.a = a;
+				this.b = b;
+				this.c = c;
+				this.d = d;
+			}
+
+			
+			public int umfang()
+			{
+				return this.a + this.b + this.c + this.d;
+			}
+			
+			public void print()
+			{
+				System.out.println("a=" + this.a + ", b=" + this.b + 
+						", c=" + this.c + ", d=" + this.d);
+				System.out.println("Umfang des Vierecks : " + this.umfang());
+				System.out.println();
+			}
+
+		}
+		```
+	=== "Rechteck.java"
+		```java
+		package vorlesungen.vorl1202;
+
+		public class Rechteck extends Viereck
+		{
+			// private String farbe;
+			
+			public Rechteck(int laenge, int breite)
+			{
+				super(laenge, breite, laenge, breite);  // Aufruf des Konstruktors
+														// von Viereck
+				// this.farbe = farbe;
+			}
+			
+			public int flaecheninhalt()
+			{
+				return this.a * this.b;
+			}
+			
+			@Override
+			public void print()
+			{
+				System.out.println("a=" + this.a + ", b=" + this.b + 
+						", c=" + this.c + ", d=" + this.d);
+				System.out.println("Umfang des Rechtecks : " + this.umfang());
+				System.out.println("Flaecheninhalt des Rechtecks : " 
+				+ this.flaecheninhalt());
+				
+				System.out.println();
+			}
+			
+		}
+		```
+	=== "Circle.java"
+		```java
+		package vorlesungen.vorl1201;
+
+		public class Circle
+		{
+			// Objektvariable
+			private double radius;
+			
+			// Konstruktor
+			public Circle(double radius)
+			{
+				this.radius = radius;
+			}
+			
+			public Circle()
+			{
+				this.radius = 1.0;
+			}
+			
+			public double getRadius()
+			{
+				return this.radius;
+			}
+			
+			public double getDiameter()
+			{
+				return 2.0 * this.radius;
+			}
+			
+			public Circle setNewCircleWithRadius(double radius)
+			{
+				return new Circle(radius);
+			}
+			
+			public double getCircumference()
+			{
+				return Math.PI * this.getDiameter();
+			}
+			
+			public double getArea()
+			{
+				return Math.PI * this.radius * this.radius;
+			}
+			
+			public void print()
+			{
+				System.out.printf("%-14s : %7.2f %n", "Radius", this.radius);
+				System.out.printf("%-14s : %7.2f %n", "Durchmesser", this.getDiameter());
+				System.out.printf("%-14s : %7.2f %n", "Umfang", this.getCircumference());
+				System.out.printf("%-14s : %7.2f %n", "Flaecheninhalt", this.getArea());
+				System.out.println();
+			}
+			
+			public boolean isBigger(Circle c)
+			{
+				return this.radius > c.radius;
+			}
+			
+			public double differenceRadius(Circle c)
+			{
+				return this.radius - c.radius;
+			}
+		}
+		```
+
+
+
+
 ## Code aus Tutorium
 
 
