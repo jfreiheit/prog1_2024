@@ -1587,6 +1587,185 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 
+??? hint "Vererbung - Object"
+	=== "Programmklasse.java"
+		```java
+		package vorlesungen.vorl1209;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				
+				System.out.printf("%n%n------- Objekte von Viereck erzeugen ------------%n%n");
+
+				Viereck v1 = new Viereck(10,20,30,40);
+				v1.print();
+
+				Viereck v2 = new Viereck(15,20,25,20);
+				v2.print();
+
+				System.out.printf("%n%n------- Objekte von Rechteck erzeugen ------------%n%n");
+				Rechteck r1 = new Rechteck(10, 20);
+				r1.print();
+
+				Rechteck r2 = new Rechteck(20, 30);
+				r2.print();
+
+				System.out.printf("%n%n------- Objekte von Quadrat erzeugen ------------%n%n");
+				Quadrat q1 = new Quadrat(25);
+				q1.print();
+				
+				System.out.println(q1.umfang());
+				System.out.println(q1.flaecheninhalt());
+				
+				System.out.printf("%n%n------- Object ------------%n%n");
+				//System.out.println(q1.getClass());
+				
+				Viereck v3 = new Viereck(5,6,7,8);
+				Viereck v4 = new Rechteck(11, 12);
+				Viereck v5 = new Quadrat(13);
+				System.out.println(v3.getClass());
+				System.out.println(v4.getClass());
+				System.out.println(v5.getClass());
+				
+				if(v5 instanceof Quadrat)
+				{
+					System.out.println("v5 ist Quadrat");
+				}
+				if(v5 instanceof Rechteck)
+				{
+					System.out.println("v5 ist Rechteck");
+				}
+				if(v5 instanceof Viereck)
+				{
+					System.out.println("v5 ist Viereck");
+				}
+				if(v5 instanceof Object)
+				{
+					System.out.println("v5 ist Object");
+				}
+				
+				System.out.println("v4");
+				if(v4 instanceof Quadrat)
+				{
+					System.out.println("v4 ist Quadrat");
+				}
+				else
+				{
+					System.out.println("v4 ist kein Quadrat");
+				}
+				if(v4 instanceof Rechteck)
+				{
+					System.out.println("v4 ist Rechteck");
+				}
+				if(v4 instanceof Viereck)
+				{
+					System.out.println("v4 ist Viereck");
+				}
+				if(v4 instanceof Object)
+				{
+					System.out.println("v4 ist Object");
+				}
+				
+				Rechteck r4 = (Rechteck)v4;
+				
+				System.out.println(r4.flaecheninhalt());
+			}
+
+
+		}
+		```
+	=== "Viereck.java"
+		```java
+		package vorlesungen.vorl1209;
+
+		public class Viereck
+		{
+			protected int a, b, c, d;
+			
+			public Viereck(int a, int b, int c, int d)
+			{
+				this.a = a;
+				this.b = b;
+				this.c = c;
+				this.d = d;
+			}
+
+			public int umfang()
+			{
+				return this.a + this.b + this.c + this.d;
+			}
+			
+			public void print()
+			{
+				System.out.println("a=" + this.a + ", b=" + this.b + 
+						", c=" + this.c + ", d=" + this.d);
+				System.out.println("Umfang des Vierecks : " + this.umfang());
+				System.out.println();
+			}
+
+		}
+
+		```
+	=== "Rechteck.java"
+		```java
+		package vorlesungen.vorl1209;
+
+		public class Rechteck extends Viereck
+		{
+			
+			public Rechteck(int laenge, int breite)
+			{
+				super(laenge, breite, laenge, breite);  // Aufruf des Konstruktors
+														// von Viereck
+			}
+			
+			public int flaecheninhalt()
+			{
+				return this.a * this.b;
+			}
+			
+			@Override
+			public void print()
+			{
+				System.out.println("Laenge=" + this.a + ", Breite=" + this.b + 
+						" ( c=" + this.c + ", d=" + this.d +" ) ");
+				System.out.println("Umfang des Rechtecks : " + this.umfang());
+				System.out.println("Flaecheninhalt des Rechtecks : " 
+				+ this.flaecheninhalt());
+				
+				System.out.println();
+			}
+			
+		}
+
+		```
+	=== "Quadrat.java"
+		```java
+		package vorlesungen.vorl1209;
+
+		public class Quadrat extends Rechteck
+		{
+			public Quadrat(int seite)
+			{
+				super(seite, seite);
+			}
+			
+			@Override
+			public void print()
+			{
+				System.out.println("Seitenlaenge : " + this.a 
+						+ " ("+ this.b + ", " + this.c + ", " + this.d + ")");
+				System.out.println("Umfang des Quadrates : " + this.umfang());
+				System.out.println("Flaecheninhalt des Quadrates : " + this.flaecheninhalt());
+				System.out.println();
+			}
+
+		}
+		```
+
 
 ## Code aus Tutorium
 
@@ -1877,6 +2056,125 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 	}
 	```
+
+
+??? hint "while und Referenzen"
+	=== "Programmklasse"
+		```java
+		package tutorium.tutorium1208;
+
+		public class Tutorium1208
+		{
+			public static int lengthOfNumber(int number)
+			{
+				int merkeZahl = number;
+				if(merkeZahl < 0)
+				{
+					merkeZahl = -merkeZahl;
+				}
+				if(merkeZahl==0)
+				{
+					return 1;
+				}
+				int counter = 0;
+				
+				while(merkeZahl > 0)
+				{
+					merkeZahl = merkeZahl/10;
+					counter++;
+				}
+				return counter;
+			}
+			
+
+
+			public static void main(String[] args)
+			{
+				int number = 0;
+				System.out.println(lengthOfNumber(number));
+				
+				Circle c1 = new Circle(5.0);
+				c1.print();
+				Circle c2 = c1.changeRadius(-1.5);
+				c1.print();
+				c2.print();
+				
+				Circle c3 = c1;
+				c3.print();
+				
+				int i = 1;
+				int i1 = 0;
+				i1 = changeI(i);
+				System.out.println("i = " + i);
+				System.out.println("i1 = " + i1);
+				
+				O o1 = new O(1);
+				o1.print();		// i = 1
+				o1.changeI(0);
+				o1.print();		// i = 0
+				O o2 = o1;
+				o2.print();		// i = 0
+			}
+			
+			public static int changeI(int i)
+			{
+				i++;
+				int i1 = i;
+				return i1;
+			}
+
+		}
+		```
+	=== "Circle"
+		```java
+		package tutorium.tutorium1208;
+
+		public class Circle
+		{
+			private double radius;
+			
+			public Circle(double radius)
+			{
+				this.radius = radius;
+			}
+			
+			public Circle changeRadius(double diffRadius)
+			{
+				double newRadius = this.radius + diffRadius;
+				return new Circle(newRadius);
+			}
+			
+			public void print()
+			{
+				System.out.println("Radius = " + this.radius);
+			}
+		}
+		```
+	=== "O"
+		```java
+		package tutorium.tutorium1208;
+
+		public class O
+		{
+			private int i;
+			
+			O(int i)
+			{
+				this.i = i;
+			}
+			
+			public void changeI(int i)
+			{
+				this.i = i;
+			}
+
+			public void print()
+			{
+				System.out.println("i = " + this.i);
+			}
+		}
+
+		```
 
 
 ## Hinweise zur Klausur
