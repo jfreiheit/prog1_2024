@@ -1590,7 +1590,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 ??? hint "Vererbung - Object"
 	=== "Programmklasse.java"
 		```java
-		package vorlesungen.vorl1209;
+		package vorlesungen.vorl1208;
 
 		public class Programmklasse
 		{
@@ -1679,7 +1679,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 	=== "Viereck.java"
 		```java
-		package vorlesungen.vorl1209;
+		package vorlesungen.vorl1208;
 
 		public class Viereck
 		{
@@ -1711,7 +1711,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 	=== "Rechteck.java"
 		```java
-		package vorlesungen.vorl1209;
+		package vorlesungen.vorl1208;
 
 		public class Rechteck extends Viereck
 		{
@@ -1744,7 +1744,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 	=== "Quadrat.java"
 		```java
-		package vorlesungen.vorl1209;
+		package vorlesungen.vorl1208;
 
 		public class Quadrat extends Rechteck
 		{
@@ -1761,6 +1761,107 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 				System.out.println("Umfang des Quadrates : " + this.umfang());
 				System.out.println("Flaecheninhalt des Quadrates : " + this.flaecheninhalt());
 				System.out.println();
+			}
+
+		}
+		```
+
+
+??? hint "toString() und equals()"
+	=== "Programmklasse.java"
+		```java
+		package vorlesungen.vorl1209;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				
+				System.out.printf("%n%n------- Objekte von Viereck erzeugen ------------%n%n");
+
+				Viereck v1 = new Viereck(10,20,30,40);
+				v1.print();
+
+				Viereck v2 = new Viereck(10,20,30,40);
+				v2.print();
+				
+				Object o1 = new Viereck(11, 12, 13, 14);
+				Object o2 = o1;
+				System.out.println(o1.toString());
+				System.out.println(o1);
+				Viereck v5 = (Viereck)o1;
+				
+				System.out.println(v1.toString());
+				System.out.println(v2.toString());
+				
+				System.out.println(v1);		// v1.toString()
+				System.out.println(v2);		// v2.toString()
+				
+				System.out.println(5);
+				System.out.println(5.5);
+				
+				System.out.println("v1 == v2 ? " + (v1 == v2));  // false
+				System.out.println("v1.equals(v2) ? " + v1.equals(v2));	
+				Viereck v3 = v1;
+				System.out.println("v1 == v3 ? " + (v1 == v3));
+				
+				System.out.println("v5 == o1 ? " + (v5 == o1));
+			}
+
+		}
+		```
+	=== "Viereck.java"
+		```java
+		package vorlesungen.vorl1209;
+
+		public class Viereck
+		{
+			protected int a, b, c, d;
+			
+			public Viereck(int a, int b, int c, int d)
+			{
+				this.a = a;
+				this.b = b;
+				this.c = c;
+				this.d = d;
+			}
+
+			public int umfang()
+			{
+				return this.a + this.b + this.c + this.d;
+			}
+			
+			public void print()
+			{
+				System.out.println("a=" + this.a + ", b=" + this.b + 
+						", c=" + this.c + ", d=" + this.d);
+				System.out.println("Umfang des Vierecks : " + this.umfang());
+				System.out.println();
+			}
+			
+			@Override
+			public String toString()
+			{
+				return "[ a=" + this.a + ", b=" + this.b + ", c=" 
+							  + this.c + ", d=" + this.d + " ]";
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;	
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+
+				// o ist vom Typ Viereck
+				// jetzt der eigentliche Vergleich
+				Viereck other = (Viereck)o;
+				return  this.a == other.a && 
+						this.b == other.b && 
+						this.c == other.c && 
+						this.d == other.d;
+
 			}
 
 		}
