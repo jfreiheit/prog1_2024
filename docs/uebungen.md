@@ -1734,7 +1734,69 @@
 
 
 
+??? note "<a id="ubung-7a"></a>Übung 7a"
 
+	---
+
+	**Info:** Wir erstellen uns einen neuen Datentypen `BinaryNumber`. Objekte dieser Klasse repräsentieren ganze binäre Zahlen. Das heißt, sie enthalten nur die Ziffern `1` und `0` und können positiv oder negativ sein.
+
+	---
+	
+	1. Erstellen Sie ein package `uebungen.uebung7a`. 
+	2. Erstellen Sie in diesem package eine Programmklasse mit `main()`-Methode.
+	3. Erstellen Sie eine Klasse `BinaryNumber`. Objektvariable ist `value` vom Typ `long`. Die Objektvariable ist nur innerhalb der Klasse sichtbar. 
+	4. Erstellen Sie in der Klasse `BinaryNumber` eine private Objektmethode `convertToBinary(int number)`. Dieser Methode wird eine Dezimalzahl als `int` übergeben. Die Methode konvertiert diese Dezimalzahl in eine Binärzahl vonm Typ `long` und gibt diese zurück. 
+
+		??? "Beispiele"
+			``` 
+			| Dezimalzahl | Binärzahl |
+			|-------------|-----------|
+			|      1      |        1  |
+			|      2      |       10  |
+			|      3      |       11  |
+			|      4      |      100  |
+			|      5      |      101  |
+			|      6      |      110  |
+			|      7      |      111  |
+			|      8      |     1000  |
+			|      9      |     1001  |
+			|     10      |     1010  |
+			|     11      |     1011  |
+			|     12      |     1100  |
+			|     13      |     1101  |
+			|     14      |     1110  |
+			|     15      |     1111  |
+			|     16      |    10000  |
+			|     17      |    10001  |
+			|     18      |    10010  |
+			|     19      |    10011  |
+			|     20      |    10100  |
+			|     21      |    10101  |
+			|     22      |    10110  |
+			|     23      |    10111  |
+			|     24      |    11000  |
+			|     25      |    11001  |
+			|     26      |    11010  |
+			|     27      |    11011  |
+			|     28      |    11100  |
+			|     29      |    11101  |
+			|     30      |    11110  |
+			|     31      |    11111  |
+			|     32      |   100000  |
+			```
+
+			**Tipp**: angenommen, Sie wollen die `13` in eine Binärzahl umwandeln, dann können Sie das wie folgt machen: Sie teilen die `13` durch `2` und merken sich den Rest `1`. Das Ergebnis der Division durch `2` ist `6`. Nun wiederholen Sie den Vorgang. Sie teilen die `6` durch `2` und der Rest `0` wird **vor** den alten Rest gesetzt, d.h. `01`. Das Ergbnis der Division durch `2` ist `3`. Sie teilen erneut und setzen den Rest wieder **vor** das alte Ergebnis, also `101`. Solange die Divsion wiederholen, bis als Ergebnis der Divsion durch `2` nur noch `0` übrig bleibt. 
+	
+	5. Erstellen Sie einen parametrisierten Konstruktor `BinaryNumber(int number)`. Der übergebene Parameterwert ist eine Dezimalzahl. In dem Konstruktor wird die Objektvariable initialisiert. Nutzen Sie dazu die `convertToBinary(int number)`-Methode. 
+	6. Welche ist die größte Binärzahl, die Sie speichern können? Erstellen Sie sich eine statische Konstante `MAX_BINARY_NUMBER` und weisen sie ihr diesen Wert zu. 
+	7. Welche ist die kleinste Binärzahl, die Sie speichern können? Erstellen Sie sich eine statische Konstante `MIN_BINARY_NUMBER` und weisen sie ihr diesen Wert zu. 
+	8. Überschreiben Sie die `toString()`-Methode, so dass `value` als String zurückgegeben wird.
+	9. Überschreiben Sie die `equals(Object o)`-Methode, so dass 2 `BinaryNumber`-Objekte gleich sind, wenn sie denselben `value` haben. 
+
+	10. **Zusatz**:  
+		- Implementieren Sie eine Methode `public boolean isPowerOf2()`, die ein `true`zurückgibt, wenn es sich bei der Zahl um eine Potenz von 2 handelt, also z.B. <br/> `10` (2), `100` (4), `1000` (8), `10000` (16), `100000` (32), aber auch <br/>
+		`-10` (-2), `-100` (-4), `-1000` (-8), `-10000` (-16), `-100000` (-32) <br/>
+		Sonst `false`.
 
 ??? note "<a id="ubung-8"></a>Übung 8"
 	
