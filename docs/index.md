@@ -1868,6 +1868,152 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 
 
+??? hint "hashCode() und Polymorphie"
+	=== "Programmklasse.java"
+		```java
+		package vorlesungen.vorl1215;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				
+				System.out.printf("%n%n------- Objekte von Viereck erzeugen ------------%n%n");
+
+				Viereck v1 = new Viereck(10,20,30,40);
+				v1.print();
+
+				Viereck v2 = new Viereck(10,20,30,40);
+				v2.print();
+
+				System.out.println("v1 == v2 ? " + (v1 == v2));  // false
+				System.out.println("v1.equals(v2) ? " + v1.equals(v2));	
+				
+				Viereck v3 = new Rechteck(10,20);
+				Viereck v4 = new Quadrat(25);
+				Object v5 = new Quadrat(35);
+				
+				v1.print();
+				v3.print();
+				v4.print();
+				
+				System.out.println(v4.toString());
+				System.out.println(v5);
+				
+				Quadrat q1 = new Quadrat(12);
+				System.out.println(q1.toString());			
+			}
+
+		}
+		```
+	=== "Viereck.java"
+		```java
+		package vorlesungen.vorl1215;
+
+		public class Viereck
+		{
+			protected int a, b, c, d;
+			
+			public Viereck(int a, int b, int c, int d)
+			{
+				this.a = a;
+				this.b = b;
+				this.c = c;
+				this.d = d;
+			}
+
+			public int umfang()
+			{
+				return this.a + this.b + this.c + this.d;
+			}
+			
+			public void print()
+			{
+				System.out.println("a=" + this.a + ", b=" + this.b + 
+						", c=" + this.c + ", d=" + this.d);
+				System.out.println("Umfang des Vierecks : " + this.umfang());
+				System.out.println();
+			}
+			
+			@Override
+			public String toString()
+			{
+				return "[ a=" + this.a + ", b=" + this.b + ", c=" 
+							  + this.c + ", d=" + this.d + " ]";
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;	
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+
+				// o ist vom Typ Viereck
+				// jetzt der eigentliche Vergleich
+				Viereck other = (Viereck)o;
+				return  this.a == other.a && 
+						this.b == other.b && 
+						this.c == other.c && 
+						this.d == other.d;
+			}
+			
+			@Override
+			public int hashCode()
+			{
+				return this.a + this.b + this.c + this.d;		
+			}
+
+		}
+		```
+
+
+
+??? hint "Arrays - I"
+	=== "Programmklasse.java"
+		```java
+		package vorlesungen.vorl1215.b;
+
+		import vorlesungen.vorl1215.Viereck;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n------- Arrays ------------%n%n");
+
+				int a = 1;
+				int b = a;
+				int c = a + b;
+				
+				int[] myArray1 = new int[7];	// 7 int-Variablen
+				myArray1[0] = 0;
+				myArray1[1] = 1;
+				myArray1[2] = myArray1[1];
+				myArray1[3] = myArray1[2] + myArray1[1];
+				
+				System.out.println(myArray1.length);
+				
+				Viereck[] vierecke = new Viereck[5];
+				vierecke[0] = new Viereck(10,20,30,40);
+				vierecke[1] = new Viereck(11,20,30,40);
+				vierecke[2] = new Viereck(12,20,30,40);
+				vierecke[3] = new Viereck(13,20,30,40);
+				vierecke[4] = new Viereck(14,20,30,40);
+				
+				vierecke[0].print();
+				vierecke[1].print();
+				vierecke[2].print();
+				vierecke[3].print();
+				vierecke[4].print();
+			}
+
+		}
+		```
+
+
 ## Code aus Tutorium
 
 
@@ -2275,6 +2421,85 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			}
 		}
 
+		```
+
+??? "Anfang Aufgabe 2"
+	=== "Tutorium1215"
+		```java
+		package tutorium.tutorium1215;
+
+		import java.util.Random;
+
+		public class Tutorium1215
+		{
+			public static int lengthOfNumber(int number)
+			{
+				int n = number;
+				int counter = 0;
+				while(n != 0)
+				{
+					n = n / 10;
+					counter++;
+				}
+				return counter;
+			}
+			
+			public static int firstDigit(int number)
+			{
+				//int n = (number < 0) ? -number : number;
+				int n = Math.abs(number);
+				
+				/*
+				int n = 0;
+				if(number < 0)
+				{
+					n = -number;
+				}
+				else
+				{
+					n = number;
+				}
+				*/
+				
+				int length = lengthOfNumber(number);
+				for(int i = 0; i < (length-1); i++)
+				{
+					n = n / 10;
+				}
+				return n;		
+			}
+			
+
+			public static void main(String[] args)
+			{
+				int number = -1234;
+				String numberString = "" + number;
+				
+				System.out.println("Laenge String : " + numberString.length());
+				
+				System.out.println("Laenge von " + number + " : " 
+				+ lengthOfNumber(number));
+				
+				Random r = new Random();
+				
+				System.out.printf("%-11s --> %s %n", "number", "Rueckgabewert");
+				System.out.printf("%-11d --> %2d %n", 0, lengthOfNumber(0));
+				System.out.printf("%-11d --> %2d %n", 1, lengthOfNumber(1));
+				System.out.printf("%-11d --> %2d %n", 9, lengthOfNumber(9));
+				System.out.printf("%-11d --> %2d %n", 10, lengthOfNumber(10));
+				System.out.printf("%-11d --> %2d %n", 1234, lengthOfNumber(1234));
+				System.out.printf("%-11d --> %2d %n", -1234, lengthOfNumber(-1234));
+				System.out.println();
+				
+				for(int i = 0; i < 10; i++)
+				{
+					int nr = r.nextInt();
+					//System.out.printf("%-11d --> %2d %n", nr, lengthOfNumber(nr));
+					System.out.printf("%-11d --> %2d %n", nr, firstDigit(nr));
+				}
+			}
+
+		}
 		```
 
 
