@@ -1971,13 +1971,13 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 ??? hint "Arrays - I"
-	=== "Programmklasse.java"
+	=== "Vorlesung1215.java"
 		```java
 		package vorlesungen.vorl1215.b;
 
 		import vorlesungen.vorl1215.Viereck;
 
-		public class Programmklasse
+		public class Vorlesung1215
 		{
 
 			public static void main(String[] args)
@@ -2008,6 +2008,165 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 				vierecke[2].print();
 				vierecke[3].print();
 				vierecke[4].print();
+			}
+
+		}
+		```
+
+
+??? hint "Arrays - II"
+	=== "Vorlesung1216"
+		```java
+		package vorlesungen.vorl1216;
+
+		import java.util.Random;
+
+		public class Vorlesung1216
+		{
+			public static long computeSum(int[] a)
+			{
+				long sum = 0;
+				
+				for (int index = 0; index < a.length; index++)
+				{
+					sum += a[index];
+				}
+				return sum;
+			}
+			
+			public static long computeSum(long[] a)
+			{
+				long sum = 0;
+				
+				for (int index = 0; index < a.length; index++)
+				{
+					sum += a[index];
+				}
+				return sum;
+			}
+			
+			public static void printArray(int[] a)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < a.length; index++)
+				{
+					System.out.print(a[index]);
+					
+					if(index < a.length-1)
+					{
+						System.out.print(", ");
+					}
+				}
+				System.out.println(" ]");
+			}
+			
+			public static int getMinimum(int[] a)
+			{
+				if(a.length > 0)
+				{
+					int minimum = a[0];
+					for (int index = 0; index < a.length; index++)
+					{
+						if(a[index] < minimum)
+						{
+							minimum = a[index];
+						}
+					}
+					return minimum;
+				}
+				else
+				{
+					return -1;	// das wollen wir nicht, muessen wir aber!
+								// kein Wert passt
+				}
+			}
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n------------------ numbers -----------%n%n");
+				int[] numbers = new int[5];
+				
+				System.out.println("Laenge : " + numbers.length);
+				numbers[0] = 0;
+				numbers[1] = 1;
+				numbers[2] = 4;
+				numbers[3] = 9;
+				numbers[4] = 16;
+				// numbers[5] = 25;		// ArrayIndexOutOfBoundsException
+				
+				for(int index = 0; index < numbers.length; index++)
+				{
+					System.out.println("index = " + index + ",  Wert = " + numbers[index]);
+				}
+				
+				int nr1 = 0;
+				int nr2 = 1;
+				int nr3 = 4;
+				
+				System.out.printf("%n%n------------------ numbers1 -----------%n%n");
+				
+				long[] numbers1 = new long[55];
+				
+				for(int index = 0; index < numbers1.length; index++)
+				{
+					long factor = index;
+					numbers1[index] = (factor * factor);
+					System.out.println("index = " + index + ",  Wert = " + numbers1[index]);
+				}
+				System.out.println("Summe : " + computeSum(numbers1));
+
+				
+				System.out.printf("%n%n------------------ numbers2 -----------%n%n");
+				int[] numbers2 = { 0, 1, 4, 9, 16, 25 };
+				System.out.println("Laenge : " + numbers2.length);
+				
+				int summe = 0;
+				for (int index = 0; index < numbers2.length; index++)
+				{
+					summe += numbers2[index];
+				}
+				//System.out.println("Summe ist " + summe);
+				System.out.println("Summe : " + computeSum(numbers2));
+				
+				System.out.printf("%n%n------------------ numbers3 -----------%n%n");
+				
+				Random r = new Random();
+				int[] numbers3 = new int[20];
+				for(int index = 0; index < numbers3.length; index++)
+				{
+					numbers3[index] = r.nextInt(100);
+				}
+				
+				System.out.print("[ ");
+				for (int index = 0; index < numbers3.length; index++)
+				{
+					if(index < numbers3.length-1)
+					{
+						System.out.print(numbers3[index] + ", ");
+					}
+					else
+					{
+						System.out.print(numbers3[index]);
+					}
+
+				}
+				System.out.println(" ]");
+				
+				
+				int minimum = 2147483647;
+				for (int index = 0; index < numbers3.length; index++)
+				{
+					if(numbers3[index] < minimum)
+					{
+						minimum = numbers3[index];
+					}
+				}
+				System.out.println("kleinste Wert ist " + minimum);
+				System.out.println("Minimum = " + getMinimum(numbers3));
+				
+				int[] numbers4 = new int[0];
+				System.out.println("Minimum = " + getMinimum(numbers4));
+				printArray(numbers4);
 			}
 
 		}
