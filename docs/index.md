@@ -2173,6 +2173,212 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 
 
+??? hint "Arrays - III"
+	=== "Vorlesung0105"
+		```java
+		package vorlesungen.vorl0105;
+
+		import java.util.Random;
+
+		public class Vorlesung0105
+		{
+			public static void printArray(int[] a)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < a.length; index++)
+				{
+					System.out.print(a[index]);
+					
+					if(index < a.length-1)
+					{
+						System.out.print(", ");
+					}
+				}
+				System.out.println(" ]");
+			}
+			
+			public static void printArray(Rectangle[] a)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < a.length; index++)
+				{
+					System.out.print(a[index]);
+					
+					if(index < a.length-1)
+					{
+						System.out.print(", ");
+					}
+				}
+				System.out.println(" ]");
+			}
+			
+			public static void printArray(char[] a)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < a.length; index++)
+				{
+					System.out.print(a[index]);
+					
+					if(index < a.length-1)
+					{
+						System.out.print(", ");
+					}
+				}
+				System.out.println(" ]");
+			}
+			
+			public static boolean areEqual(char[] a, char[] b)
+			{
+				if(a.length != b.length)
+				{
+					return false;
+				}
+				
+				for(int index = 0; index < a.length; index++)
+				{
+					if(a[index] != b[index])
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+			
+			public static char[] concat(char[] a, char[] b)
+			{
+				char[] result = new char[a.length + b.length];
+				int indexResult = 0;
+				
+				// alle Werte aus a nach result kopieren
+				for(int indexA = 0; indexA < a.length; indexA++)
+				{
+					result[indexResult] = a[indexA];
+					indexResult++;
+				}
+				
+				// alle Werte aus b nach result kopieren
+				for(int indexB = 0; indexB < b.length; indexB++)
+				{
+					result[indexResult] = b[indexB];
+					indexResult++;
+				}
+				
+				return result;
+			}
+			
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n----------- Werte --------- %n%n");
+				
+				int[] a1 = { 8, 5, 5, 3, 2, 1 };
+				printArray(a1);
+				
+				char[] c1 = { 'a', 'c', 'e', 'b' };
+				printArray(c1);
+				
+				char[] c2 = new char[26];
+				int index = 0;
+				for(char c = 'a'; c <= 'z'; c++)
+				{
+					c2[index] = c;
+					index++;
+				}
+				printArray(c2);
+				
+				char c = 'a';		// c = 97
+				for(index = 0; index < c2.length; index++)
+				{
+					c2[index] = c;
+					c++;
+				}
+				printArray(c2);	
+				
+				char[] ca1 = { 'a', 'b', 'c' };
+				char[] ca2 = { 'a', 'b', 'c' };
+				char[] ca3 = { 'a', 'b', 'd' };
+				char[] ca4 = { 'a', 'b', 'c' , 'd'};
+				
+				System.out.println(areEqual(ca1, ca2));
+				System.out.println(areEqual(ca1, ca3));
+				System.out.println(areEqual(ca1, ca4));
+				System.out.println(areEqual(ca4, ca1));
+				
+				char[] ca5 = concat(ca1, ca4);
+				printArray(ca5);
+				char[] ca6 = concat(ca5, ca5);
+				printArray(ca6);
+				
+				System.out.printf("%n%n----------- Referenzen --------- %n%n");
+				
+				Rectangle r1 = new Rectangle(10, 20);
+				System.out.println(r1.toString());
+				r1.print();
+				Rectangle r2 = new Rectangle(15, 25);
+				r2.print();
+				
+				Rectangle[] rectangles = new Rectangle[5];
+				rectangles[0] = new Rectangle(10,20);
+				rectangles[1] = new Rectangle(11,21);
+				rectangles[2] = new Rectangle(12,22);
+				rectangles[3] = new Rectangle(13,23);
+				rectangles[4] = new Rectangle(14,24);
+				
+				for(int indexR = 0; indexR < rectangles.length; indexR++)
+				{
+					rectangles[indexR].print();
+				}
+				
+				Random r = new Random();
+				Rectangle[] rects1 = new Rectangle[10];
+				for(int indexR = 0; indexR < rects1.length; indexR++)
+				{
+					rects1[indexR] = new Rectangle(r.nextInt(10,20), r.nextInt(10, 20));
+				}
+				
+				printArray(rects1);
+		 	}
+
+		}
+		```
+	=== "Rectangle"
+		```java
+		package vorlesungen.vorl0105;
+
+		public class Rectangle
+		{
+			private int length, width;
+			
+			public Rectangle(int length, int width)
+			{
+				this.length = length;
+				this.width = width;
+			}
+			
+			public int area()
+			{
+				return this.length * this.width;
+			}
+			
+			public int circumference()
+			{
+				return 2 * (this.length + this.width);
+			}
+			
+			@Override
+			public String toString()
+			{
+				return "( " + this.length + ", " + this.width + " )";
+				// return String.format("[ l = %2d, w = %2d, a = %3d, c = %2d ]", 
+				//		this.length, this.width, this.area(), this.circumference()); 	
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+		}
+		```
+
 ## Code aus Tutorium
 
 

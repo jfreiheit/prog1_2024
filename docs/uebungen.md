@@ -1924,6 +1924,91 @@
 		`-10` (-2), `-100` (-4), `-1000` (-8), `-10000` (-16), `-100000` (-32) <br/>
 		Sonst `false`.
 
+
+??? question "Eine mögliche Lösung für Übung 7a"
+	=== "BinaryNumber.java"
+		```java 
+		package uebungen.uebung7a;
+
+		public class BinaryNumber
+		{
+			private long value;
+			public static final long MAX_BINARY_NUMBER = 1111111111111111111L;
+			public static final long MIN_BINARY_NUMBER = -1111111111111111111L;
+			
+			public BinaryNumber(int number)
+			{
+				this.value = this.convertToBinary(number);
+			}
+
+			private long convertToBinary(int number)
+			{
+				long n = (number < 0) ? -number : number;
+				long power = 1;
+				long result = 0;
+				while(n > 0) {
+					long remainder = n % 2;
+					result = result + (remainder * power);
+					power = power * 10;
+					n = n / 2;
+				}
+				return (number<0) ? -result : result;
+			}
+			
+			public boolean isPowerOf2()
+			{
+				long n = (this.value < 0) ? -this.value : this.value;
+				long remainder = 1;
+				while(n > 1)
+				{
+					remainder = n % 2;
+					if(remainder == 1)
+					{
+						return false;
+					}
+					n = n / 10;
+				}
+				return remainder == 0;
+			}
+			
+			public long getValue()
+			{
+				return this.value;
+			}
+			
+			@Override
+			public String toString()
+			{
+				return ""+this.value;
+			}
+		}
+
+		```
+	=== "BinaryNumber.java"
+		```java 
+		package uebungen.uebung7a;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				long old = 0;
+				System.out.printf("| Dezimalzahl | Binärzahl |%n");
+				System.out.printf("|-------------|-----------|%n");
+				for (int i = 1; i < 33; i++)
+				{
+					BinaryNumber bn = new BinaryNumber(i);
+					//if(bn.isPowerOf2()) 
+					System.out.printf("|   %4d      | %8s  |%n", i, bn.toString());
+				}
+			}
+
+		}
+
+		```
+
+
 ??? note "<a id="ubung-8"></a>Übung 8"
 	
 	1. Erstellen Sie ein package `uebungen.uebung8`. 
