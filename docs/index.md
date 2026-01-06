@@ -71,8 +71,8 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 | 13. | 13.-17.01.2026 | [Suchen in Arrays](arrays.md#suchen-in-arrays) | [Übung 11](uebungen.md#ubung-11)| [Probeklausuren](probeklausuren.md) | - |
 | 14. | 20.-24.01.2026 | [JavaDoc](javadoc.md#javadoc) | [Übung 12](uebungen.md#ubung-12)| [Probeklausuren](probeklausuren.md)  | - |
 | 15. | 27.-31.01.2026 | Wiederholung, Klausurvorbereitung | | [Probeklausuren](probeklausuren.md) | - |
-| 16. | 03.02.2026 09.45-11.30 Uhr| Klausur 1.PZ | | -  | - |
-| 16. | 24.03.2026 09.45-11.30 Uhr| Klausur 2.PZ | | -  | - |
+| 16. | 09.02.2026 09.30-11.30 Uhr| Klausur 1.PZ | | -  | - |
+| 16. | 24.03.2026 09.30-11.30 Uhr| Klausur 2.PZ | | -  | - |
 
 ## Code aus der Vorlesung
 
@@ -2197,7 +2197,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 				System.out.println(" ]");
 			}
 			
-			public static void printArray(Rectangle[] a)
+			public static void printArray(Object[] a)
 			{
 				System.out.print("[ ");
 				for (int index = 0; index < a.length; index++)
@@ -2266,16 +2266,71 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 				return result;
 			}
 			
+			public static boolean contains(int[] ia, int element)
+			{
+				for (int index = 0; index < ia.length; index++)
+				{
+					if(ia[index] == element)
+					{
+						return true;
+					}	
+				}
+				return false;
+			}
+			
+			public static boolean contains(char[] ia, char element)
+			{
+				for (int index = 0; index < ia.length; index++)
+				{
+					if(ia[index] == element)
+					{
+						return true;
+					}	
+				}
+				return false;
+			}
+			
+			
+			public static boolean contains(Rectangle[] ia, Rectangle element)
+			{
+				for (int index = 0; index < ia.length; index++)
+				{
+					if(ia[index].equals(element))
+					{
+						return true;
+					}	
+				}
+				return false;
+			}
+			
+			public static int[] insert(int[] ia, int element)
+			{
+				int[] result = new int[ia.length+1];
+				
+				for (int index = 0; index < ia.length; index++)
+				{
+					result[index] = ia[index];
+				}
+				result[result.length-1] = element;
+				return result;
+			}
+			
 			public static void main(String[] args)
 			{
 				System.out.printf("%n%n----------- Werte --------- %n%n");
 				
 				int[] a1 = { 8, 5, 5, 3, 2, 1 };
 				printArray(a1);
+				System.out.println("2 in a1 ? " + contains(a1, 2));
+				System.out.println("4 in a1 ? " + contains(a1, 4));
+				
+				int[] a2 = insert(a1, 7);
+				printArray(a2);
 				
 				char[] c1 = { 'a', 'c', 'e', 'b' };
 				printArray(c1);
-				
+				System.out.println("e in c1 ? " + contains(c1, 'e'));
+				System.out.println("d in c1 ? " + contains(c1, 'd'));
 				char[] c2 = new char[26];
 				int index = 0;
 				for(char c = 'a'; c <= 'z'; c++)
@@ -2328,6 +2383,11 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 					rectangles[indexR].print();
 				}
 				
+				Rectangle r3 = new Rectangle(13, 23);
+				//Rectangle r3 = rectangles[4];
+				//rectangles[4] = r3;
+				System.out.println("r3 in rectangles ? " + contains(rectangles, r3));
+				
 				Random r = new Random();
 				Rectangle[] rects1 = new Rectangle[10];
 				for(int indexR = 0; indexR < rects1.length; indexR++)
@@ -2375,6 +2435,24 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			public void print()
 			{
 				System.out.println(this.toString());
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				Rectangle ro = (Rectangle)o;
+				return (this.length == ro.length && this.width == ro.width) || 
+						(this.length == ro.width && this.width == ro.length);
+			}
+			
+			@Override
+			public int hashCode()
+			{
+				return this.length + this.width;
 			}
 		}
 		```
