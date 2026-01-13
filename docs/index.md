@@ -2460,7 +2460,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 
-??? hint "Sortieren"
+??? hint "Sortieren - int[]"
 	=== "Vorlesung0112"
 		```java
 		package vorlesungen.vorl0112;
@@ -2544,6 +2544,144 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 
 
+
+??? hint "Sortieren - Rectangle[]"
+	=== "Vorlesung0112"
+		```java
+		package vorlesungen.vorl0113;
+
+		import java.util.Random;
+
+		import vorlesungen.vorl0105.Rectangle;
+
+		public class Vorlesung0113
+		{
+			public static void printArray(Object[] a)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < a.length; index++)
+				{
+					System.out.print(a[index]);
+					
+					if(index < a.length-1)
+					{
+						System.out.print(", ");
+					}
+				}
+				System.out.println(" ]");
+			}
+			
+			public static void sortieren(Rectangle[] a)
+			{
+				for(int bubble = 1; bubble < a.length; bubble++)
+				{
+					for(int index = 0; index < a.length - bubble; index++)
+					{
+						/*
+						if(a[index].area() > a[index+1].area())
+						*/
+						if( (a[index].getLength() > a[index+1].getLength()) ||
+							(a[index].getLength() == a[index+1].getLength() 
+							&& a[index].getWidth() > a[index+1].getWidth()))
+						{
+							Rectangle tmp = a[index];
+							a[index] = a[index+1];
+							a[index+1] = tmp;
+						}
+
+					}
+				}
+			}
+
+			
+			public static void main(String[] args)
+			{
+				Rectangle[] rectangles = new Rectangle[10];
+				Random r = new Random();
+				for (int index = 0; index < rectangles.length; index++)
+				{
+					int length = r.nextInt(2, 7) * 5;
+					int width = r.nextInt(2, 7) * 5;
+					rectangles[index] = new Rectangle(length, width);
+				}
+				printArray(rectangles);
+				sortieren(rectangles);
+				printArray(rectangles);
+				
+				
+			}
+
+		}
+
+		```
+	=== "Rectangle"
+		```java
+		package vorlesungen.vorl0105;
+
+		public class Rectangle
+		{
+			private int length, width;
+			
+			public Rectangle(int length, int width)
+			{
+				this.length = length;
+				this.width = width;
+			}
+			
+			public int getLength()
+			{
+				return this.length;
+			}
+			
+			public int getWidth()
+			{
+				return this.width;
+			}
+			
+			public int area()
+			{
+				return this.length * this.width;
+			}
+			
+			public int circumference()
+			{
+				return 2 * (this.length + this.width);
+			}
+			
+			@Override
+			public String toString()
+			{
+				return "( " + this.length + ", " + this.width + " )";
+				// return this.area() + "";
+				// return String.format("[ l = %2d, w = %2d, a = %3d, c = %2d ]", 
+				//		this.length, this.width, this.area(), this.circumference()); 	
+			}
+			
+			public void print()
+			{
+				System.out.println(this.toString());
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				Rectangle ro = (Rectangle)o;
+				return (this.length == ro.length && this.width == ro.width) || 
+						(this.length == ro.width && this.width == ro.length);
+			}
+			
+			@Override
+			public int hashCode()
+			{
+				return this.length + this.width;
+			}
+		}
+
+		```
 
 
 
