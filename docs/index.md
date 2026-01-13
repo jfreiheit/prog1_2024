@@ -2457,6 +2457,96 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		}
 		```
 
+
+
+
+??? hint "Sortieren"
+	=== "Vorlesung0112"
+		```java
+		package vorlesungen.vorl0112;
+
+		import java.util.Random;
+
+		public class Vorlesung0112
+		{
+			public static void printArray(int[] a)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < a.length; index++)
+				{
+					System.out.print(a[index]);
+					
+					if(index < a.length-1)
+					{
+						System.out.print(", ");
+					}
+				}
+				System.out.println(" ]");
+			}
+			
+			// Laenge Array : length 
+			// [0, ... , upperBound-1]
+			public static int[] createAndFillArray(int length, int upperBound)
+			{
+				Random r = new Random();
+				int[] result = new int[length];
+				for (int index = 0; index < result.length; index++)
+				{
+					result[index] = r.nextInt(upperBound);
+				}
+				return result;
+			}
+			
+			// Laenge Array : length 
+			// [lowerBound, ... , upperBound-1]
+			public static int[] createAndFillArray(int length, int lowerBound, int upperBound)
+			{
+				Random r = new Random();
+				int[] result = new int[length];
+				for (int index = 0; index < result.length; index++)
+				{
+					int nrOfDifferentNumbers = upperBound - lowerBound;
+					result[index] = r.nextInt(nrOfDifferentNumbers) + lowerBound;
+				}
+				return result;
+			}
+			
+			public static void bubblesort(int[] a)
+			{
+				for(int bubble = 1; bubble < a.length; bubble++)
+				{
+					System.out.printf("%n%n------ Bubble-Phase %d -------%n%n", bubble);
+					for(int indexLeft = 0; indexLeft < a.length-bubble; indexLeft++)
+					{
+						int indexRight = indexLeft + 1;
+						if(a[indexLeft] > a[indexRight])
+						{
+							int tmp = a[indexLeft];
+							a[indexLeft] = a[indexRight];
+							a[indexRight] = tmp;
+						}
+						System.out.printf("index = %2d : ", indexLeft);
+						printArray(a);
+					}
+				}
+			}
+			
+			public static void main(String[] args)
+			{
+				int[] a1 = createAndFillArray(15, 10);
+				printArray(a1);
+				
+				bubblesort(a1);
+				printArray(a1);	
+			}
+		}
+
+		```
+
+
+
+
+
 ## Code aus Tutorium
 
 
@@ -2944,6 +3034,210 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 		}
 		```
+
+
+
+??? "Probeklausur Table"
+	=== "Programmklasse"
+		```java
+		package tutorium.tutorium0105;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+		        String[] staedte = { "Berlin", "Potsdam", "Hamburg", "Magdeburg", 
+		        		"Bremen", "Dresden", "Leipzig", "Halle", "Dortmund", 
+		        		"Stuttgart", "Mainz", "Frankfurt" };
+
+		        System.out.printf("%n%n---------------- Teil 1 -------------------%n%n");
+
+		        for(int i = 0; i < staedte.length; i++)
+		        {
+		            KeyValue kv = new KeyValue(i, staedte[i]);
+		            System.out.println(kv.toString());
+		        }
+
+		        System.out.printf("%n%n---------------- Teil 2 -------------------%n%n");
+		        Table t = new Table();
+		        t.fill(staedte);
+		        System.out.println(t.toString());
+		        t.fill(staedte);
+		        System.out.println(t.toString());
+		        
+		        
+		        
+			}
+		}
+		```
+	=== "KeyValue"
+		```java
+		package tutorium.tutorium0105;
+
+		public class KeyValue
+		{
+			private int key;
+			private String value;
+			
+			// Konstruktor
+			public KeyValue(int key, String value)
+			{
+				this.key = key;
+				this.value = value;
+			}
+			
+			// Getter
+			// Auslesen der Werte der Objektvariablen
+			public int getKey()
+			{
+				return this.key;
+			}
+			
+			public String getValue()
+			{
+				return this.value;
+			}
+			
+			// Setter
+			// Neusetzen (Schreiben) der Objektvariablen value
+			public void setValue(String newValue)
+			{
+				this.value = newValue;
+			}
+			
+			@Override
+			public String toString()
+			{
+
+				return String.format("| %3d | %10s |", 
+						this.key, 
+						this.value);
+
+				// return "| " + this.key + " | " + this.value + " |";
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				KeyValue other = (KeyValue)o;
+				return this.key == other.key;
+			}
+			
+			@Override
+			public int hashCode()
+			{
+				return this.key;
+			}
+		}
+
+		```
+	=== "Table"
+		```java
+		package tutorium.tutorium0105;
+
+		public class Table
+		{
+			private KeyValue[] entries;
+			
+			public Table()
+			{
+				this.entries = new KeyValue[0];
+			}
+			
+			public boolean containsKey(int key)
+			{
+				for(int index = 0; index < this.entries.length; index++)
+				{
+					if(this.entries[index].getKey() == key)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			public boolean put(int key, String value)
+			{
+				if(this.containsKey(key))
+				{
+					// Objekt mit key gibt es schon (b)
+					for(int index = 0; index < this.entries.length; index++)
+					{
+						if(this.entries[index].getKey() == key)
+						{
+							this.entries[index].setValue(value);
+						}
+					}
+					return false;
+				}
+				else
+				{
+					// Objekt mit key gibt es noch nicht (a)
+					KeyValue[] kopie = new KeyValue[this.entries.length + 1];
+					for(int index=0; index < this.entries.length; index++)
+					{
+						kopie[index] = this.entries[index];
+					}
+					kopie[kopie.length-1] = new KeyValue(key,value);
+					this.entries = kopie;
+					return true;
+				}
+			}
+			
+			public void fill(String[] values)
+			{
+				int tryKey = 0;
+				for(int index = 0; index < values.length; index++)
+				{
+					while(this.containsKey(tryKey)) 
+					{
+						tryKey++;
+					}
+					this.put(tryKey, values[index]);
+				}
+			}
+			
+			public KeyValue getEntry(int key)
+			{
+				for(int index = 0; index < this.entries.length; index++)
+				{
+					if(this.entries[index].getKey() == key)
+					{
+						return this.entries[index];
+					}
+				}
+				return null;
+			}
+			
+			public int getSize()
+			{
+				return this.entries.length;
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = String.format("%d Eintraege%n", this.getSize());
+				s += String.format("-----------------%n");
+				
+				for(int index = 0; index < this.entries.length; index++)
+				{
+					s += String.format("%s%n", this.entries[index].toString());
+				}
+				
+				s += String.format("-----------------%n");
+				return s;
+			}
+
+		}
+		```
+
+
 
 
 ## Hinweise zur Klausur
