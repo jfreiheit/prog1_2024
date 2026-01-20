@@ -2546,7 +2546,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 ??? hint "Sortieren - Rectangle[]"
-	=== "Vorlesung0112"
+	=== "Vorlesung 12.1., 13.1. und 19.1.2026"
 		```java
 		package vorlesungen.vorl0113;
 
@@ -2554,6 +2554,9 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 		import vorlesungen.vorl0105.Rectangle;
 
+		/*
+		 * auch Vorlesung vom 19.1.2026
+		 */
 		public class Vorlesung0113
 		{
 			public static void printArray(Object[] a)
@@ -2567,35 +2570,74 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 					{
 						System.out.print(", ");
 					}
+					if((index + 1) != a.length && (index + 1) % 5 == 0)
+					{
+						System.out.printf("%n  ");
+					}
 				}
 				System.out.println(" ]");
 			}
 			
-			public static void sortieren(Rectangle[] a)
+			public static Rectangle[] sortieren(Rectangle[] unsorted)
 			{
-				for(int bubble = 1; bubble < a.length; bubble++)
+				Rectangle[] copy = new Rectangle[unsorted.length];
+				for (int index = 0; index < copy.length; index++)
 				{
-					for(int index = 0; index < a.length - bubble; index++)
+					copy[index] = unsorted[index];
+				}
+
+				for(int bubble = 1; bubble < copy.length; bubble++)
+				{
+					for(int index = 0; index < copy.length - bubble; index++)
 					{
 						/*
 						if(a[index].area() > a[index+1].area())
 						*/
-						if( (a[index].getLength() > a[index+1].getLength()) ||
-							(a[index].getLength() == a[index+1].getLength() 
-							&& a[index].getWidth() > a[index+1].getWidth()))
+						if( (copy[index].getLength() > copy[index+1].getLength()) ||
+							(copy[index].getLength() == copy[index+1].getLength() 
+							&& copy[index].getWidth() > copy[index+1].getWidth()))
 						{
-							Rectangle tmp = a[index];
-							a[index] = a[index+1];
-							a[index+1] = tmp;
+							Rectangle tmp = copy[index];
+							copy[index] = copy[index+1];
+							copy[index+1] = tmp;
 						}
-
 					}
 				}
+				return copy;
+			}
+			
+			public static boolean containsInUnsorted(Rectangle[] unsorted, Rectangle r)
+			{
+				for (int index = 0; index < unsorted.length; index++)
+				{
+					if(unsorted[index].equals(r))
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			public static Rectangle[] getAllEqualRectangles(Rectangle[] rectangles, Rectangle r)
+			{
+				int counter = 0;
+				for (int index = 0; index < rectangles.length; index++)
+				{
+					if(rectangles[index].equals(r))
+					{
+						counter++;
+					}
+				}
+				Rectangle[] result = new Rectangle[counter];
+				
+				
+				return result;
 			}
 
 			
 			public static void main(String[] args)
 			{
+				System.out.printf("%n%n------------- Rectangle-Array erzeugen und befuellen ------%n%n");
 				Rectangle[] rectangles = new Rectangle[10];
 				Random r = new Random();
 				for (int index = 0; index < rectangles.length; index++)
@@ -2604,14 +2646,27 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 					int width = r.nextInt(2, 7) * 5;
 					rectangles[index] = new Rectangle(length, width);
 				}
-				printArray(rectangles);
-				sortieren(rectangles);
-				printArray(rectangles);
 				
+				System.out.printf("%n%n------------- Rectangle-Array ausgeben ------%n%n");
+				Vorlesung0113.printArray(rectangles);
 				
+				System.out.printf("%n%n------------- Rectangle-Array sortieren und ausgeben ------%n%n");
+				Rectangle[] sorted = sortieren(rectangles);
+				printArray(sorted);
+				
+				System.out.printf("%n%n------------- rectangles aendern, sorted ausgeben ------%n%n");
+				rectangles[0].setLength(50);
+				printArray(rectangles);
+				printArray(sorted);
+				
+				System.out.printf("%n%n------------- contains in unsorted ------%n%n");
+				Rectangle r1 = new Rectangle(10,20);
+				r1.print();
+				System.out.println("contains ? " + containsInUnsorted(rectangles, r1));
 			}
 
 		}
+
 
 		```
 	=== "Rectangle"
@@ -3373,6 +3428,116 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			}
 
 		}
+		```
+
+
+??? "Tutorium 19.1.2026"
+	=== "Tutorium0119"
+		```java
+		package tutorium.tutorium0119;
+
+		public class Tutorium0119
+		{
+			public static char[] stringToCharArray(String s)
+			{
+				char[] result = new char[s.length()];
+				
+				for(int index = 0; index < s.length(); index++)
+				{
+					result[index] = s.charAt(index);
+				}
+				return result;
+			}
+			
+			public static void print(char[] ca)
+			{
+				System.out.print("[ ");
+				for (int index = 0; index < ca.length; index++)
+				{
+					System.out.print(ca[index]);
+					if(index < ca.length-1)
+					{
+						System.out.print(", ");
+					}
+				}
+				System.out.println(" ]");
+			}
+			
+			public static void printReverse(char[] ca)
+			{
+				System.out.print("[ ");
+				for (int index = ca.length-1; index >= 0; index--)
+				{
+					System.out.print(ca[index]);
+					if(index > 0)
+					{
+						System.out.print(", ");
+					}
+				}
+				System.out.println(" ]");
+			}
+			
+			public static void sortierenAufsteigend(char[] ca)
+			{
+				for (int bubble = 1; bubble < ca.length; bubble++)
+				{
+					for(int index = 0; index < ca.length - bubble; index++)
+					{
+						if(ca[index] > ca[index+1])	// links GROESSER als rechts?
+						{
+							char tmp = ca[index];
+							ca[index] = ca[index+1];
+							ca[index+1] = tmp;
+						}
+					}
+				}
+			}
+			
+			public static void sortierenAbsteigend(char[] ca)
+			{
+				for (int bubble = 1; bubble < ca.length; bubble++)
+				{
+					for(int index = 0; index < ca.length - bubble; index++)
+					{
+						if(ca[index] < ca[index+1])	// links KLEINER als rechts?
+						{
+							char tmp = ca[index];
+							ca[index] = ca[index+1];
+							ca[index+1] = tmp;
+						}
+					}
+				}
+			}
+			
+			public static boolean istKleinbuchstabe(char c)
+			{
+				return 'a' <= c && c <= 'z';
+			}
+			
+			public static void main(String[] args)
+			{
+				String s = "Test string";
+				char c = s.charAt(10);
+				System.out.println(c);
+				c++;
+				System.out.println(c);
+				System.out.println("Laenge = " + s.length());
+
+				
+				char[] ca1 = stringToCharArray("irgendein String % ! ?");
+				print(ca1);
+				printReverse(ca1);
+				
+				ca1[0]++;
+				print(ca1);
+				sortierenAufsteigend(ca1);
+				print(ca1);
+				sortierenAbsteigend(ca1);
+				print(ca1);
+			}
+
+		}
+
 		```
 
 
