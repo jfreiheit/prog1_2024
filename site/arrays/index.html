@@ -2363,39 +2363,39 @@ Original-Array länger als Kopie (falls nur ein Teil kopiert werden soll; wenn <
 <span class="normal"><a href="#__codelineno-69-14">14</a></span>
 <span class="normal"><a href="#__codelineno-69-15">15</a></span>
 <span class="normal"><a href="#__codelineno-69-16">16</a></span>
-<span class="normal"><a href="#__codelineno-69-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="nf">insertIntoSortedArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">element</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-69-17">17</a></span>
+<span class="normal"><a href="#__codelineno-69-18">18</a></span>
+<span class="normal"><a href="#__codelineno-69-19">19</a></span>
+<span class="normal"><a href="#__codelineno-69-20">20</a></span>
+<span class="normal"><a href="#__codelineno-69-21">21</a></span>
+<span class="normal"><a href="#__codelineno-69-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="nf">insertIntoSortedArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">element</span><span class="p">)</span>
 </span><span id="__span-69-2"><a id="__codelineno-69-2" name="__codelineno-69-2"></a><span class="p">{</span>
 </span><span id="__span-69-3"><a id="__codelineno-69-3" name="__codelineno-69-3"></a><span class="w">    </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
 </span><span id="__span-69-4"><a id="__codelineno-69-4" name="__codelineno-69-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">indexB</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">indexA</span><span class="w"> </span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-69-5"><a id="__codelineno-69-5" name="__codelineno-69-5"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">indexA</span><span class="o">&lt;</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="o">[</span><span class="n">indexA</span><span class="o">]&lt;</span><span class="n">element</span><span class="p">)</span><span class="w">  </span>
 </span><span id="__span-69-6"><a id="__codelineno-69-6" name="__codelineno-69-6"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-69-7"><a id="__codelineno-69-7" name="__codelineno-69-7"></a><span class="w">        </span><span class="n">b</span><span class="o">[</span><span class="n">indexB</span><span class="o">++]=</span><span class="n">a</span><span class="o">[</span><span class="n">indexA</span><span class="o">++]</span><span class="p">;</span>
-</span><span id="__span-69-8"><a id="__codelineno-69-8" name="__codelineno-69-8"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-69-9"><a id="__codelineno-69-9" name="__codelineno-69-9"></a>
-</span><span id="__span-69-10"><a id="__codelineno-69-10" name="__codelineno-69-10"></a><span class="w">    </span><span class="n">b</span><span class="o">[</span><span class="n">indexB</span><span class="o">++]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">;</span><span class="w">  </span><span class="c1">// from now on indexB = indexA+1</span>
+</span><span id="__span-69-7"><a id="__codelineno-69-7" name="__codelineno-69-7"></a><span class="w">        </span><span class="n">b</span><span class="o">[</span><span class="n">indexB</span><span class="o">]=</span><span class="n">a</span><span class="o">[</span><span class="n">indexA</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-69-8"><a id="__codelineno-69-8" name="__codelineno-69-8"></a><span class="w">        </span><span class="n">indexA</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-69-9"><a id="__codelineno-69-9" name="__codelineno-69-9"></a><span class="w">        </span><span class="n">indexB</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-69-10"><a id="__codelineno-69-10" name="__codelineno-69-10"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-69-11"><a id="__codelineno-69-11" name="__codelineno-69-11"></a>
-</span><span id="__span-69-12"><a id="__codelineno-69-12" name="__codelineno-69-12"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">indexB</span><span class="o">&lt;</span><span class="n">b</span><span class="p">.</span><span class="na">length</span><span class="p">)</span>
-</span><span id="__span-69-13"><a id="__codelineno-69-13" name="__codelineno-69-13"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-69-14"><a id="__codelineno-69-14" name="__codelineno-69-14"></a><span class="w">        </span><span class="n">b</span><span class="o">[</span><span class="n">indexB</span><span class="o">++]=</span><span class="n">a</span><span class="o">[</span><span class="n">indexA</span><span class="o">++]</span><span class="p">;</span>
-</span><span id="__span-69-15"><a id="__codelineno-69-15" name="__codelineno-69-15"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-69-16"><a id="__codelineno-69-16" name="__codelineno-69-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
-</span><span id="__span-69-17"><a id="__codelineno-69-17" name="__codelineno-69-17"></a><span class="p">}</span>
+</span><span id="__span-69-12"><a id="__codelineno-69-12" name="__codelineno-69-12"></a><span class="w">    </span><span class="n">b</span><span class="o">[</span><span class="n">indexB</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">;</span><span class="w">    </span><span class="c1">// element einfuegen</span>
+</span><span id="__span-69-13"><a id="__codelineno-69-13" name="__codelineno-69-13"></a><span class="w">    </span><span class="n">indexB</span><span class="o">++</span><span class="p">;</span><span class="w">               </span><span class="c1">// von nun an ist indexB um 1 groesser als indexA</span>
+</span><span id="__span-69-14"><a id="__codelineno-69-14" name="__codelineno-69-14"></a>
+</span><span id="__span-69-15"><a id="__codelineno-69-15" name="__codelineno-69-15"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">indexB</span><span class="o">&lt;</span><span class="n">b</span><span class="p">.</span><span class="na">length</span><span class="p">)</span>
+</span><span id="__span-69-16"><a id="__codelineno-69-16" name="__codelineno-69-16"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-69-17"><a id="__codelineno-69-17" name="__codelineno-69-17"></a><span class="w">        </span><span class="n">b</span><span class="o">[</span><span class="n">indexB</span><span class="o">]=</span><span class="n">a</span><span class="o">[</span><span class="n">indexA</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-69-18"><a id="__codelineno-69-18" name="__codelineno-69-18"></a><span class="w">        </span><span class="n">indexA</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-69-19"><a id="__codelineno-69-19" name="__codelineno-69-19"></a><span class="w">        </span><span class="n">indexB</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-69-20"><a id="__codelineno-69-20" name="__codelineno-69-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-69-21"><a id="__codelineno-69-21" name="__codelineno-69-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-69-22"><a id="__codelineno-69-22" name="__codelineno-69-22"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
 <li>in Zeile <code>3</code> wird das Array <code>b</code> erzeugt, welches um <code>1</code> länger ist als <code>a</code></li>
-<li>in Zeilen <code>5-8</code> kopieren wir alle Werte aus <code>a</code> nach <code>b</code>, die kleiner sind als unser <code>element</code></li>
-<li>in Zeile <code>10</code> wird <code>element</code> in <code>b</code> eingefügt</li>
-<li>in Zeilen <code>12-15</code> kopieren wir die restlichen Werte aus <code>a</code> nach <code>b</code></li>
-</ul>
-<p>Beachten Sie:</p>
-<ul>
-<li>in der Anweisung <code>b[indexB++]=a[indexA++];</code> passieren mehrere Sachen auf einmal: <ul>
-<li>einerseits <code>b[indexB]=a[indexA];</code> und</li>
-<li>außerdem noch <code>indexB++;</code> </li>
-<li>und <code>indexA++</code>; </li>
-</ul>
-</li>
-<li>nach der Anweisung <code>b[indexB++] = element;</code> ist <code>indexB</code> um <code>1</code> größer als <code>indexA</code> (was ja auch gut ist, siehe im Bild das "rote" Kopieren)</li>
+<li>in Zeilen <code>5-10</code> kopieren wir alle Werte aus <code>a</code> nach <code>b</code>, die kleiner sind als unser <code>element</code></li>
+<li>in Zeile <code>12</code> wird <code>element</code> in <code>b</code> eingefügt</li>
+<li>in Zeilen <code>15-20</code> kopieren wir die restlichen Werte aus <code>a</code> nach <code>b</code></li>
 </ul>
 <details class="question">
 <summary>Spielen Sie den Fall durch, dass eine <code>0</code> in das Beispiel-Array aus der Abbildung eingefügt werden soll!</summary>

@@ -2739,6 +2739,145 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 
 
+??? hint "Einfügen in Arrays"
+	=== "Vorlesung 20.1.2026"
+		```java
+		package vorlesungen.vorl0120;
+
+		import java.util.Iterator;
+		import java.util.Random;
+
+		public class Vorlesung0120
+		{
+			public static char[] createAndFillCharArray(int length)
+			{
+				char[] result = new char[length];
+				Random r = new Random();
+				
+				for (int index = 0; index < result.length; index++)
+				{
+					result[index] = (char)r.nextInt(97,123);
+				}
+				
+				return result;
+			}
+			
+			public static char[] insertIntoUnsorted(char[] original, char c)
+			{
+				char[] copy = new char[original.length+1];
+				
+				for (int index = 0; index < original.length; index++)
+				{
+					copy[index] = original[index];
+				}
+				copy[copy.length-1] = c;
+						
+				return copy;
+			}
+			
+			public static char[] insertIntoSorted(char[] original, char c)
+			{
+				char[] copy = new char[original.length+1];
+				
+				int index = 0;
+				while(index < original.length && original[index] < c)
+				{
+					copy[index] = original[index];
+					index++;
+				}
+				copy[index] = c;
+				while(index < original.length)
+				{
+					copy[index+1] = original[index];
+					index++;
+				}
+				return copy;
+			}
+			
+			public static boolean containsInUnsorted(char[] ca, char element)
+			{
+				for (int index = 0; index < ca.length; index++)
+				{
+					if(ca[index] == element)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			
+			public static boolean containsInSorted(char[] ca, char element)
+			{
+				for (int index = 0; index < ca.length && ca[index] <= element; index++)
+				{
+					if(ca[index] == element)
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			public static void print(char[] ca)
+			{
+				for (int index = 0; index < ca.length; index++)
+				{
+					System.out.print(ca[index] + " ");
+				}
+				System.out.println();
+			}
+			
+			public static char[] sortieren(char[] unsorted)
+			{
+				// Erzeugen
+				char[] copy = new char[unsorted.length];
+				
+				// Kopiern
+				for (int index = 0; index < copy.length; index++)
+				{
+					copy[index] = unsorted[index];
+				}
+				
+				// Sortieren
+				for (int bubble = 1; bubble < copy.length; bubble++)
+				{
+					for (int index = 0; index < copy.length - bubble; index++)
+					{
+						if(copy[index] > copy[index+1])
+						{
+							char tmp = copy[index];
+							copy[index] = copy[index+1];
+							copy[index+1] = tmp;
+						}
+					}
+				}
+				return copy;
+			}
+
+			public static void main(String[] args)
+			{
+				char[] ca1 = createAndFillCharArray(20);
+				print(ca1);
+				
+				/*
+				char[] ca2 = insert(ca1, 'x');
+				print(ca2);
+				*/
+				
+				ca1 = insertIntoUnsorted(ca1, 'x');
+				print(ca1);
+				
+				char[] ca3 = sortieren(ca1);
+				print(ca3);
+				
+				char[] ca4 = insertIntoSorted(ca3,'z');
+				print(ca4);
+			}
+
+		}
+		```
+
 
 ## Code aus Tutorium
 

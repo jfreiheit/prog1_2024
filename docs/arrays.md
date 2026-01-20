@@ -1180,31 +1180,29 @@ public static int[] insertIntoSortedArray(int[] a, int element)
 	int indexB=0, indexA =0;
 	while(indexA<a.length && a[indexA]<element)  
 	{
-		b[indexB++]=a[indexA++];
+		b[indexB]=a[indexA];
+		indexA++;
+		indexB++;
 	}
 	
-	b[indexB++] = element;	// from now on indexB = indexA+1
+	b[indexB] = element;	// element einfuegen
+	indexB++;				// von nun an ist indexB um 1 groesser als indexA
 	
 	while(indexB<b.length)
 	{
-		b[indexB++]=a[indexA++];
+		b[indexB]=a[indexA];
+		indexA++;
+		indexB++;
 	}
 	return b;
 }
 ```
 
 - in Zeile `3` wird das Array `b` erzeugt, welches um `1` länger ist als `a`
-- in Zeilen `5-8` kopieren wir alle Werte aus `a` nach `b`, die kleiner sind als unser `element`
-- in Zeile `10` wird `element` in `b` eingefügt
-- in Zeilen `12-15` kopieren wir die restlichen Werte aus `a` nach `b`
+- in Zeilen `5-10` kopieren wir alle Werte aus `a` nach `b`, die kleiner sind als unser `element`
+- in Zeile `12` wird `element` in `b` eingefügt
+- in Zeilen `15-20` kopieren wir die restlichen Werte aus `a` nach `b`
 
-Beachten Sie:
-
-- in der Anweisung `b[indexB++]=a[indexA++];` passieren mehrere Sachen auf einmal: 
-	- einerseits `b[indexB]=a[indexA];` und
-	- außerdem noch `indexB++;` 
-	- und `indexA++`; 
-- nach der Anweisung `b[indexB++] = element;` ist `indexB` um `1` größer als `indexA` (was ja auch gut ist, siehe im Bild das "rote" Kopieren)
 
 ??? question "Spielen Sie den Fall durch, dass eine `0` in das Beispiel-Array aus der Abbildung eingefügt werden soll!"
 	- Dann wird die erste `while`-Schleife gar nicht betreten, da die (Teil-)Bedingung `a[indexA]<element` gleich `false` ist
