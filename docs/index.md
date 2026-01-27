@@ -3917,21 +3917,25 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ## Hinweise zur Klausur
 
-- Es stehen immer ein Mac-Labor (z.B. 624) und ein Windows-Labor (z.B. 625) zur Verfügung. 
-- Wenn die Klausur auf 9:45 Uhr angesetzt ist, werden die Aufgabenblätter ca. 9:35 Uhr ausgeteilt, so dass um ca. 9:40 Uhr mit dem Programmieren begonnen werden kann. Seien Sie am besten spätestens eine halbe Stunde vor dem offiziellen Beginn in dem Labor Ihrer Wahl.
-- Sie können sich vorab schon ein Package `klausur` erstellen und darin eine `Programmklasse` mit `main`-Methode. Probieren Sie auch schonmal mindestens eine Ausgabe auf die Konsole, damit Sie wissen, ob alles funktioniert. 
-- Sie können sich in Ihren Workspace gerne allen Ihren Code importieren, den Sie im Laufe des Semesters erzeugt haben (üben Sie den Import dann am besten vorher - Sie können sich nicht sicher sein, dass Sie an dem Rechner die Klausur schreiben können, an dem Sie den Import geübt haben). 
-- Sie dürfen beliebig viele selbstbeschriebene Seiten mit in die Klausur bringen.
+- Die ProgrammierungI-Klausur findet am Montag, den 9.2.2026 statt.
+- Es stehen die Labore C 624 (Mac) und C 625 (Windows) zur Verfügung.
+- Wir wollen um 9:35 Uhr die Aufgabenblätter austeilen, so dass wir spätestens um 9:45 Uhr mit dem Programmieren beginnen können. Seien Sie am besten um 9:15 Uhr in dem Labor Ihrer Wahl.
+- Sie können sich vorab schon ein Package `klausur` erstellen und darin eine `Programmklasse` mit `main`-Methode. Probieren Sie auch schonmal mindestens eine Ausgabe auf die Konsole, damit Sie wissen, ob alles funktioniert.
+- Sie können sich in Ihren Workspace gerne allen Ihren Code importieren, den Sie im Laufe des Semesters erzeugt haben (üben Sie den Import dann am besten vorher - Sie können sich nicht sicher sein, dass Sie an dem Rechner die Klausur schreiben können, an dem Sie den Import geübt haben).
+- Im Browser dürfen nur der Moodle-Raum und mein Skript geöffnet sein. Alle anderen Webseiten sind ab 9.35 Uhr bis zum Ende der Klausur verboten! Auf dem Rechner dürfen nur ein Browser, Eclipse und der Dateiexplorer/Finder geöffnet sein. Alle anderen Programme sind ebenfalls nicht erlaubt!
 - Es ist nicht gestattet:
+
 	- den eigenen Rechner zu verwenden (gar nicht mitbringen oder auspacken)
 	- das Handy zu verwenden  (gar nicht mitbringen oder auspacken)
-	- im Web zu browsen
 	- Kommunikation mit anderen oder mit KI-Tools
--  Wichtig! 
+
+- Wichtig!
+
 	- Mit Teilnahme an der Klausur gestatten Sie uns, nachträglich die Access-Logs der Rechner im Labor zu überprüfen!
 	- Bereits geöffnete Programme oder Tabs (selbst, wenn Sie unbenutzt sind), die eine Kommunikation mit anderen (z.B. E-Mail, Chats, KI, ...) ermöglichen, führen zum Ausschluss aus der Klausur.
-- Sollte sich herausstellen, dass 2 Labore nicht genügen, weichen wir auf ein drittes Labor aus (Windows). Deswegen ist es wichtig, dass Sie spätestens eine halbe Stunde vor Beginn vor Ort sind.
-- Bitte beachten Sie auch, dass wir nicht beim Hochladen der Lösung in Moodle unterstützen können. Das haben Sie für die Aufgaben genügend geübt. Wichtig ist, dass Sie wissen, wo Ihr workspace auf dem Rechner ist, damit Sie von dort aus hochladen können. 
+
+- Sollte sich herausstellen, dass 2 Labore nicht genügen, weichen wir auf ein drittes Labor aus (Windows). Deswegen ist es wichtig, dass Sie bereits 9:15 Uhr vor Ort sind.
+- Bitte beachten Sie auch, dass wir nicht beim Hochladen der Lösung in Moodle unterstützen können. Das haben Sie für die Aufgaben genügend geübt. Wichtig ist, dass Sie wissen, wo Ihr workspace auf dem Rechner ist, damit Sie von dort aus hochladen können.  
 
 
 
