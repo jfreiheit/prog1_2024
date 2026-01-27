@@ -2740,11 +2740,10 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 ??? hint "Einfügen in Arrays"
-	=== "Vorlesung 20.1.2026"
+	=== "Vorlesung 20.1.2026 und 26.1.2026"
 		```java
 		package vorlesungen.vorl0120;
 
-		import java.util.Iterator;
 		import java.util.Random;
 
 		public class Vorlesung0120
@@ -2854,6 +2853,100 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 				}
 				return copy;
 			}
+			
+			public static int nrOfOccurrences(char[] ca, char element)
+			{
+				int counter = 0;
+				for (int index = 0; index < ca.length; index++)
+				{
+					if(ca[index] == element)
+					{
+						counter++;
+					}
+				}
+				return counter;
+			}
+			
+			public static char[] delete(char[] original, char element)
+			{
+				if(containsInUnsorted(original, element))
+				{
+					// element ist enthalten
+					// 1. wie oft kommt element in original vor?
+					int nrOfOccurrencesOfElement = nrOfOccurrences(original, element);
+					int lengthResultArray = original.length - nrOfOccurrencesOfElement;
+					
+					// 2. result-Array erzeugen
+					char[] result = new char[lengthResultArray];
+					
+					// 3. alle Werte aus original nach result kopieren - ausser element
+					int indexResult = 0;
+					for (int index = 0; index < original.length; index++)
+					{
+						if(original[index] != element)
+						{
+							// kopieren
+							result[indexResult] = original[index];
+							indexResult++;
+						}
+					}
+					return result;
+				}
+				else
+				{
+					// elemenet ist nicht enthalten
+					return original;
+				}
+			}
+			
+			public static int getFirstIndexOfElement(char[] ca, char element)
+			{
+				final int NOT_FOUND = -1;
+				for (int index = 0; index < ca.length; index++)
+				{
+					if(ca[index] == element)
+					{
+						return index;
+					}
+				}
+				return NOT_FOUND;
+			}
+			
+			public static int getLastIndexOfElement(char[] ca, char element)
+			{
+				final int NOT_FOUND = -1;
+				for (int index = ca.length-1; index >= 0; index--)
+				{
+					if(ca[index] == element)
+					{
+						return index;
+					}
+				}
+				return NOT_FOUND;
+			}
+			
+			public static boolean binarySearch(char[] sorted, char element)
+			{
+				int lo = 0;
+				int hi = sorted.length-1;
+				while(lo <= hi)
+				{
+					int mid = (hi+lo)/2;
+					if(sorted[mid] == element)
+					{
+						return true;
+					}
+					else if(sorted[mid] > element)
+					{
+						hi = mid - 1;
+					}
+					else
+					{
+						lo = mid + 1;
+					}
+				}
+				return false;
+			}
 
 			public static void main(String[] args)
 			{
@@ -2873,6 +2966,13 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 				
 				char[] ca4 = insertIntoSorted(ca3,'z');
 				print(ca4);
+				
+				char[] ca5 = delete(ca4, 'm');
+				print(ca5);
+				
+				int firstIndex = getFirstIndexOfElement(ca5, 'f');
+				int lastIndex = getLastIndexOfElement(ca5, 'f');
+				System.out.println("first " + firstIndex + " , last " + lastIndex);
 			}
 
 		}
@@ -3680,6 +3780,139 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 		```
 
 
+??? "Tutorium 26.1.2026"
+	=== "Programmklasse"
+		```java
+		package tutorium.tutorium0126;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				Name n1 = new Name("FIW");
+				Name n2 = new Name("AI");
+				Name n3 = new Name("IMI");
+
+				System.out.println("FIW > AI ? " + n1.isBigger(n2));
+				System.out.println("FIW > IMI ? " + n1.isBigger(n3));
+				
+				char[] name = new char[5];
+				System.out.println(name.length);
+				name[0] = 'a';
+			}
+
+		}
+		```
+	=== "Name"
+		```java
+		package tutorium.tutorium0126;
+
+		public class Name
+		{
+			private char[] name;
+			
+			public Name(String name)
+			{
+				this.name = new char[name.length()];
+				for (int index = 0; index < this.name.length; index++)
+				{
+					this.name[index] = name.charAt(index);
+				}
+			}
+			
+			@Override
+			public String toString()
+			{
+				String s = "";
+				for(int index = 0; index < this.name.length; index++)
+				{
+					s += this.name[index];
+				}
+				return s;
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(this == o) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				Name other = (Name)o;
+				if(this.name.length != other.name.length)
+				{
+					return false;
+				}
+				for (int index = 0; index < this.name.length; index++)
+				{
+					if(this.name[index] != other.name[index])
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+			
+			public boolean isBigger(Name n)
+			{
+				/*
+				int kuerzereLaenge = 0;
+				if(n.name.length > this.name.length)
+				{
+					kuerzereLaenge = this.name.length;
+				}
+				else
+				{
+					kuerzereLaenge = n.name.length;
+				}
+				*/
+				int kuerzereLaenge = (n.name.length > this.name.length) 
+						? this.name.length 
+						: n.name.length;
+				for (int index = 0; index < kuerzereLaenge; index++)
+				{
+					if(this.name[index] > n.name[index])
+					{
+						return true;
+					}
+					else if(this.name[index] < n.name[index])
+					{
+						return false;
+					}
+				}
+				return this.name.length > n.name.length;
+			}
+
+		}
+		```
+	=== "Studentin"
+		```java
+		package tutorium.tutorium0126;
+
+		import java.util.Random;
+
+		public class Studentin
+		{
+			private String matrNr;
+			private int jahr;
+			private double note;
+			private int lp;
+			private Name sg;
+			
+			public Studentin(String sg)
+			{
+				this.sg = new Name(sg);
+				Random r = new Random();
+				int matr = r.nextInt(10000);
+				this.matrNr = "s095" + matr;
+				while(this.matrNr.length() < 8)
+				{
+					this.matrNr += "0";
+				}
+			}
+		}
+		```
 
 
 ## Hinweise zur Klausur
