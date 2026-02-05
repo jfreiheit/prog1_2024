@@ -3922,6 +3922,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 - Wir wollen um 9:35 Uhr die Aufgabenblätter austeilen, so dass wir spätestens um 9:45 Uhr mit dem Programmieren beginnen können. Seien Sie am besten um 9:15 Uhr in dem Labor Ihrer Wahl.
 - Sie können sich vorab schon ein Package `klausur` erstellen und darin eine `Programmklasse` mit `main`-Methode. Probieren Sie auch schonmal mindestens eine Ausgabe auf die Konsole, damit Sie wissen, ob alles funktioniert.
 - Sie können sich in Ihren Workspace gerne allen Ihren Code importieren, den Sie im Laufe des Semesters erzeugt haben (üben Sie den Import dann am besten vorher - Sie können sich nicht sicher sein, dass Sie an dem Rechner die Klausur schreiben können, an dem Sie den Import geübt haben).
+- Sie dürfen beliebig viele Seiten **handgeschriebenen** Spicker mitbringen. Sie können auch leere Zettel dabei haben, um sich während der Klausur Notizen zu machen.
 - Im Browser dürfen nur der Moodle-Raum und mein Skript geöffnet sein. Alle anderen Webseiten sind ab 9.35 Uhr bis zum Ende der Klausur verboten! Auf dem Rechner dürfen nur ein Browser, Eclipse und der Dateiexplorer/Finder geöffnet sein. Alle anderen Programme sind ebenfalls nicht erlaubt!
 - Es ist nicht gestattet:
 
