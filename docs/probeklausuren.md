@@ -1,6 +1,927 @@
 # Probeklausuren
 
 
+??? note "<a id="probeklausur-label"></a>Label"
+
+	> Ein `Label` besteht aus einem Großbuchstaben `A`...`Z` und einer Ziffer `1`...`9`, also z.B. `A1`, `B6`, `Z9`.
+
+	1. Erstellen Sie ein package `klausurvorbereitung.label`. 
+	2. (**Teil 1**) Erstellen Sie in diesem package eine Klasse `Label` mit 
+
+		- den Objektvariablen
+
+		    - `buchstabe` vom Typ `char` und
+		    - `ziffer` vom Typ `int`
+
+		    Beide Objektvariablen sind nur innerhalb der Klasse sichtbar. 
+
+		- Erstellen Sie für die Klasse `Label` einen parametrisierten Konstruktor, dem als Parameter ein `char buchstabe` und eine `int ziffer` übergeben werden. Initialisieren Sie mit den Parameterwerten die Objektvariablen. 
+
+		- Erstellen Sie für die Klasse `Label` einen parameterlosen Konstruktor. Innerhalb dieses Konstruktors werden den Objektvariablen **zufällig** Werte zugewiesen (`A-Z` und `1-9`). <br/>
+		***Tipp***: Ein `A` hat den ASCII-Code `65`, ein `Z` hat den ASCII-Code `90`.
+
+		- Erstellen Sie für die Objektvariable `buchstabe` einen *Getter* `getBuchstabe()`, der den Wert von `buchstabe` zurückgibt. 
+
+		- ^^Überschreiben^^ Sie die `toString()`-Methode, sodass ein `Label`-Objekt als zusammengesetzter String zurückgegeben wird, also z.B. `"A1"`, `"B6"`, `"Z9"`. 
+
+		- ^^Überschreiben^^ Sie die `equals(Object)`-Methode, sodass zwei `Label`-Objekte gleich sind, wenn sie denselben `buchstabe`n **und** dieselbe `ziffer` haben.
+
+		- Erstellen Sie eine `istBigger(Label)`-Methode, die ein `true` zurückgibt, wenn der `buchstabe` des aufrufenden `Label`-Objektes alphabetisch "größer" (`>`) ist als der `buchstabe` des als Parameter übergebenen `Label`-Objektes **oder** bei gleichem `buchstabe` die `ziffer` des aufrufenden `Label`-Objektes größer ist als die `ziffer` des als Parameter übergebenen `Label`-Objektes. `false` sonst. <br/>Also z.B. `B1` *isBigger* als `A1` und `B2` *isBigger* als `B1`.
+
+	3. (**Teil 1**) `Programmklasse`. Erstellen Sie die `Programmklasse` mit `main`-Methode. 
+
+		- Erstellen Sie in der `main`-Methode `2` Objekte `label1` und `label2` vom Typ `Label`. 
+		- Das erste Objekt erstellen Sie mithilfe des parametrisierten Konstruktors als ein `T5`-Objekt. 
+		- Das zweite Objekt erstellen Sie mithilfe des parameterlosen Konstruktors (Zufallswerte). 
+		- Erstellen Sie das zweite Objekt solange, bis es "größer" (`isBigger(Label)`) ist als das erste Objekt. 
+		- Zählen Sie mit, wie oft sie das zweite Objekt erzeugen mussten. 
+		- Geben Sie beide Objekte auf der Konsole aus und auch die Anzahl der Versuche, z.B. (Zufallswerte):
+
+		    ```bash
+
+		    ----------- Teil 1 --------------
+
+		    label1 = T5
+		    label2 = Y5
+		    Versuche : 2
+		    ```
+
+		---
+
+
+	4. (**Teil 2**) Klasse `Labels`. Erstellen Sie eine Klasse `Labels`.
+
+		- Objektvariable ist
+
+		    - `labels` vom Typ `Label[]`
+
+		    Die Objektvariable ist nur innerhalb der Klasse sichtbar. 
+
+		- Erstellen Sie für die Klasse `Labels` einen parameterlosen Konstruktor. Innerhalb dieses Konstruktors wird das `labels`-Array mit der Länge `0` erzeugt.
+
+		- Erstellen Sie für die Klasse `Labels` einen parametrisierten Konstruktor, dem als Parameter eine `int length` übergeben wird. Der Parameterwert wird als Länge des `labels`-Arrays verwendet. Befüllen Sie das gesamte `labels`-Array mit `Label`-Objekten unter Verwendung des parameterlosen Konstruktors von `Label`. 
+
+		- Erstellen Sie eine Objektmethode `getLength()`, die die Länge des `labels`-Array zurückgibt.
+
+		- Erstellen Sie eine Objektmethode `getLabelAt(int index)`, die das `Label`-Objekt am Index `index` aus dem `labels`-Array zurückgibt. <br/>**Achtung!** Prüfen Sie, ob `index` ein korrekter Index im `labels`-Array ist. Wenn nicht, geben Sie `null` zurück.
+
+		- Erstellen Sie eine Objektmethode `contains(Label la)`, die prüft, ob `Label la` im `labels`-Array enthalten ist. Wenn ja, geben Sie `true` zurück, `false` sonst. 
+
+		- Erstellen Sie eine Objektmethode `insert(Label la)`, die das `Label la` in das `labels`-Array einfügt. 
+
+		- Erstellen Sie eine Objektmethode `insertNoDoublets(Label la)`, die das `Label la` in das `labels`-Array einfügt. <br/>**Achtung!** Das `Label la` soll nur dann eingefügt werden, wenn es noch nicht im `labels`-Array enthalten ist! Wird `Label la` tatsächlich eingefügt, geben Sie `true` zurück. Wird es nicht eingefügt, gibt die Methode ein `false` zurück.
+
+		- Erstellen Sie eine Objektmethode `print()`, die das `labels`-Array auf die Konsole ausgibt. Es sollen folgende Regeln gelten:
+
+		    - in eine Zeile werden immer nur `9` Labels ausgegeben, d.h. nach jedem **9.** Label erfolgt ein Zeilenumbruch
+		    - die Labels sind durch Komma getrennt, außer am Ende der Zeile
+		    - hinter dem letzten Label (und am Ende der Zeile) kommt kein Komma
+
+		    z.B. (Zufallswerte):
+
+		    ```bash
+		    U3, V5, C5, E1, F4, Q1, P5, M4, B5
+		    P9, L4, G8, Q5, K4, K2, P9, V2, Q4
+		    J6, B6, P7, Z8, J9, I1, V6, V9, P3
+		    G3, G5, T9
+		    ```
+
+	5. (**Teil 2**) `Programmklasse`
+
+		- Erstellen Sie in der `main()`-Methode der `Programmklasse` ein `Labels`-Objekt mithilfe des parameterlosen Konstruktors. Fügen Sie in einer Schleife unter Verwendung der `insert()`-Methode `30` `Label`-Objekte ein (Verwendung von `Label()`).  *--> Doppelungen möglich*
+
+		- Erstellen Sie in der `main()`-Methode ein `Labels`-Objekt mithilfe des parametrisierten Konstruktors (Länge `30`). 
+
+		- Erstellen Sie in der `main()`-Methode ein `Labels`-Objekt mithilfe des parameterlosen Konstruktors. Fügen Sie in einer Schleife unter Verwendung der `insertNoDoublets()`-Methode `30` `Label`-Objekte ein (Verwendung von `Label()`).  *--> keine Doppelungen möglich*
+
+		    **Achten Sie darauf, dass das `labels`-Array auch tatsächlich mit `30` Objekten befüllt wird!**
+
+		- Geben Sie alle drei Objekte jeweils mithilfe der `print()`-Methode auf die Konsole aus, 
+
+		    z.B. (Zufallswerte):
+
+		    ```bash
+		    ----------- Teil 2 --------------
+
+
+		    ---- Labels 1 ----
+
+		    U3, V5, C5, E1, F4, Q1, P5, M4, B5
+		    P9, L4, G8, Q5, K4, K2, P9, V2, Q4
+		    J6, B6, P7, Z8, J9, I1, V6, V9, P3
+		    G3, G5, T9
+
+
+		    ---- Labels 2 ----
+
+		    I2, X9, E8, H6, P9, G1, I4, N5, E4
+		    D8, B1, O4, U2, L7, E2, U7, O9, V7
+		    X3, Z4, D5, Y4, B4, T3, D1, E6, D3
+		    I7, E7, F5
+
+
+		    ---- Labels 3 ----
+
+		    X7, W5, R3, M2, Q5, W4, U6, K7, I4
+		    F1, O2, V8, G1, G5, E4, W1, K8, K5
+		    D1, H8, B4, Y9, Y4, N5, L6, M8, R8
+		    P4, C6, T9
+
+		    ```
+
+		---
+
+
+	6. (**Teil 3**) weiter mit Klasse `Labels`
+
+		- Erstellen Sie eine Objektmethode `sort()`, die das `labels`-Array aufsteigend sortiert.
+
+		- Erstellen Sie eine Objektmethode `printSorted()`, die das sortierte `labels`-Array auf die Konsole ausgibt. Rufen Sie dazu in der Methode als erstes die `sort()`-Methode auf. Es sollen folgende Regeln gelten:
+
+		    - am Anfang der Zeile steht immer der aktuelle Großbuchstabe
+		    - es gibt `26` Zeilen, für jeden Großbuchstaben des Alphabets eine Zeile
+		    - hinter dem Großbuchstaben kommt ein Doppelpunkt und 
+		    - dann alle Labels aus dem `labels`-Array, die mit diesem Buchstaben beginnen.
+		    - die einzelnen Labels pro Zeile sind durch ein Leerzeichen getrennt
+
+		    z.B. (Zufallswerte):
+
+		    ```bash
+		    A : 
+		    B : B5 B6 
+		    C : C5 
+		    D : 
+		    E : E1 
+		    F : F4 
+		    G : G3 G5 G8 
+		    H : 
+		    I : I1 
+		    J : J6 J9 
+		    K : K2 K4 
+		    L : L4 
+		    M : M4 
+		    N : 
+		    O : 
+		    P : P3 P5 P7 P9 P9 
+		    Q : Q1 Q4 Q5 
+		    R : 
+		    S : 
+		    T : T9 
+		    U : U3 
+		    V : V2 V5 V6 V9 
+		    W : 
+		    X : 
+		    Y : 
+		    Z : Z8 
+		    ```
+
+		- Erstellen Sie eine **statische** Klassenmethode `allPossibleLabels()`, die ein `Labels`-Objekt zurückgibt. In diesem `Labels`-Objekt ist das `labels`-Array mit allen möglichen `Label`-Objekten befüllt, also `A1`, `A2`, ... , `Z8`, `Z9` (`26` Buchstaben x `9` Ziffern). Jedes `Label`-Objekt kommt nur genau einmal vor. 
+
+	7. (**Teil 3**)  `Programmklasse`
+
+		- Rufen Sie für die in **Teil 2** erstellten drei Objekte von `Labels` auch jeweils die `printSorted()`-Methode auf.
+
+		- Rufen Sie in `main()` die `allPossibleLabels()`-Methode auf und geben Sie das zurückgegebene `Labels`-Objekt mithilfe der `print()`- und mithilfe der `printSorted()`-Methode aus. 
+
+		    z.B. (Zufallswerte) 
+
+		    ```bash
+
+		    ---- allPossibleLabels() ----
+
+		    A1, A2, A3, A4, A5, A6, A7, A8, A9
+		    B1, B2, B3, B4, B5, B6, B7, B8, B9
+		    C1, C2, C3, C4, C5, C6, C7, C8, C9
+		    D1, D2, D3, D4, D5, D6, D7, D8, D9
+		    E1, E2, E3, E4, E5, E6, E7, E8, E9
+		    F1, F2, F3, F4, F5, F6, F7, F8, F9
+		    G1, G2, G3, G4, G5, G6, G7, G8, G9
+		    H1, H2, H3, H4, H5, H6, H7, H8, H9
+		    I1, I2, I3, I4, I5, I6, I7, I8, I9
+		    J1, J2, J3, J4, J5, J6, J7, J8, J9
+		    K1, K2, K3, K4, K5, K6, K7, K8, K9
+		    L1, L2, L3, L4, L5, L6, L7, L8, L9
+		    M1, M2, M3, M4, M5, M6, M7, M8, M9
+		    N1, N2, N3, N4, N5, N6, N7, N8, N9
+		    O1, O2, O3, O4, O5, O6, O7, O8, O9
+		    P1, P2, P3, P4, P5, P6, P7, P8, P9
+		    Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9
+		    R1, R2, R3, R4, R5, R6, R7, R8, R9
+		    S1, S2, S3, S4, S5, S6, S7, S8, S9
+		    T1, T2, T3, T4, T5, T6, T7, T8, T9
+		    U1, U2, U3, U4, U5, U6, U7, U8, U9
+		    V1, V2, V3, V4, V5, V6, V7, V8, V9
+		    W1, W2, W3, W4, W5, W6, W7, W8, W9
+		    X1, X2, X3, X4, X5, X6, X7, X8, X9
+		    Y1, Y2, Y3, Y4, Y5, Y6, Y7, Y8, Y9
+		    Z1, Z2, Z3, Z4, Z5, Z6, Z7, Z8, Z9
+
+		    A : A1 A2 A3 A4 A5 A6 A7 A8 A9 
+		    B : B1 B2 B3 B4 B5 B6 B7 B8 B9 
+		    C : C1 C2 C3 C4 C5 C6 C7 C8 C9 
+		    D : D1 D2 D3 D4 D5 D6 D7 D8 D9 
+		    E : E1 E2 E3 E4 E5 E6 E7 E8 E9 
+		    F : F1 F2 F3 F4 F5 F6 F7 F8 F9 
+		    G : G1 G2 G3 G4 G5 G6 G7 G8 G9 
+		    H : H1 H2 H3 H4 H5 H6 H7 H8 H9 
+		    I : I1 I2 I3 I4 I5 I6 I7 I8 I9 
+		    J : J1 J2 J3 J4 J5 J6 J7 J8 J9 
+		    K : K1 K2 K3 K4 K5 K6 K7 K8 K9 
+		    L : L1 L2 L3 L4 L5 L6 L7 L8 L9 
+		    M : M1 M2 M3 M4 M5 M6 M7 M8 M9 
+		    N : N1 N2 N3 N4 N5 N6 N7 N8 N9 
+		    O : O1 O2 O3 O4 O5 O6 O7 O8 O9 
+		    P : P1 P2 P3 P4 P5 P6 P7 P8 P9 
+		    Q : Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 Q9 
+		    R : R1 R2 R3 R4 R5 R6 R7 R8 R9 
+		    S : S1 S2 S3 S4 S5 S6 S7 S8 S9 
+		    T : T1 T2 T3 T4 T5 T6 T7 T8 T9 
+		    U : U1 U2 U3 U4 U5 U6 U7 U8 U9 
+		    V : V1 V2 V3 V4 V5 V6 V7 V8 V9 
+		    W : W1 W2 W3 W4 W5 W6 W7 W8 W9 
+		    X : X1 X2 X3 X4 X5 X6 X7 X8 X9 
+		    Y : Y1 Y2 Y3 Y4 Y5 Y6 Y7 Y8 Y9 
+		    Z : Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 
+
+		    ```
+
+		- Erstellen Sie in der `Programmklasse` eine **statische** Klassenmethode `union(Labels al1, Labels al2)`, die ein `Labels`-Objekt zurückgibt. In dem `labels`-Array des zurückgegebenen `Labels`-Objekte sind alle die `Label`-Objekte aus `al1` **und** `al2` enthalten (aber keine Doppelungen!). 
+
+		<figure markdown="span">
+		  ![union](./files/union.png){ width="300" }
+		  <figcaption>Beispiel union()- Zufallswerte</figcaption>
+		</figure>
+
+		- Erstellen Sie in der `Programmklasse` eine **statische** Klassenmethode `difference(Labels al1, Labels al2)`, die ein `Labels`-Objekt zurückgibt. In dem `labels`-Array des zurückgegebenen `Labels`-Objekte sind alle die `Label`-Objekte aus `al1`, die aber **nicht** in `al2` sind, enthalten (eventuell Doppelungen aus `al1`). 
+
+		<figure markdown="span">
+		  ![difference](./files/difference.png){ width="300" }
+		  <figcaption>Beispiel difference() - Zufallswerte</figcaption>
+		</figure>
+
+		- Erstellen Sie in der `Programmklasse` eine **statische** Klassenmethode `intersection(Labels al1, Labels al2)`, die ein `Labels`-Objekt zurückgibt. In dem `labels`-Array des zurückgegebenen `Labels`-Objekte sind alle die `Label`-Objekte aus `al1` enthalten, die **auch** in `al2` sind (aber keine Doppelungen!). 
+
+		<figure markdown="span">
+		  ![intersection](./files/intersection.png){ width="300" }
+		  <figcaption>Beispiel intersection() - Zufallswerte</figcaption>
+		</figure>
+
+		- Rufen Sie die Methoden `union()`, `difference()` und `intersection()` für zwei mithilfe des `Labels(10)`-Konstruktors erzeugte `Labels`-Objekte auf und geben Sie jeweils das zurückgegebene `Labels`-Objekt auf die Konsole aus. 
+
+		    z.B. (Zufallswerte) 
+
+		    ```bash
+
+		    D2, E4, I5, M6, O1, U1, W8, Y4, Y4
+		    Z2
+
+		    A2, B7, D2, I9, J6, L5, M9, W1, W4
+		    W5
+
+
+
+		    ---- union ----
+
+		    A2, B7, D2, E4, I5, I9, J6, L5, M6
+		    M9, O1, U1, W1, W4, W5, W8, Y4, Z2
+
+
+		    ---- difference ----
+
+		    E4, I5, M6, O1, U1, W8, Y4, Z2
+
+
+		    ---- intersection ----
+
+		    D2
+		    ```
+
+		- Erstellen Sie in der `Programmklasse` eine **statische** Klassenmethode `allLabelsWithLetter(Labels al, char letter)`, die ein `Label[]`-Objekt zurückgibt. In dem zurückgegebenen Array sind alle `Label`-Objekte aus `al`, die mit dem Buchstaben `letter` beginnen, enthalten. Geben Sie das zurückgegebene `Label[]` für ein Beispiel-`Labels`-Objekt und einen Beispiel-Buchstaben auf die Konsole aus. 
+
+
+		    z.B. (Zufallswerte) 
+
+		    ```bash
+		    ---- allLabelsWithLetter() ----
+
+		    M1 M8
+		    ```
+
+
+		??? abstract "Zur Kontrolle. Die möglichen Ausgaben könnten sein:"
+		    ```bash
+
+		    ----------- Teil 1 --------------
+
+		    label1 = T5
+		    label2 = Y5
+		    Versuche : 2
+
+
+		    ----------- Teil 2 --------------
+
+
+
+		    ---- Labels 1 ----
+
+		    U3, V5, C5, E1, F4, Q1, P5, M4, B5
+		    P9, L4, G8, Q5, K4, K2, P9, V2, Q4
+		    J6, B6, P7, Z8, J9, I1, V6, V9, P3
+		    G3, G5, T9
+
+
+		    ---- Labels 2 ----
+
+		    I2, X9, E8, H6, P9, G1, I4, N5, E4
+		    D8, B1, O4, U2, L7, E2, U7, O9, V7
+		    X3, Z4, D5, Y4, B4, T3, D1, E6, D3
+		    I7, E7, F5
+
+
+		    ---- Labels 3 ----
+
+		    X7, W5, R3, M2, Q5, W4, U6, K7, I4
+		    F1, O2, V8, G1, G5, E4, W1, K8, K5
+		    D1, H8, B4, Y9, Y4, N5, L6, M8, R8
+		    P4, C6, T9
+
+
+		    ----------- Teil 3 --------------
+
+
+
+		    ---- printSorted() ----
+
+		    A : 
+		    B : B5 B6 
+		    C : C5 
+		    D : 
+		    E : E1 
+		    F : F4 
+		    G : G3 G5 G8 
+		    H : 
+		    I : I1 
+		    J : J6 J9 
+		    K : K2 K4 
+		    L : L4 
+		    M : M4 
+		    N : 
+		    O : 
+		    P : P3 P5 P7 P9 P9 
+		    Q : Q1 Q4 Q5 
+		    R : 
+		    S : 
+		    T : T9 
+		    U : U3 
+		    V : V2 V5 V6 V9 
+		    W : 
+		    X : 
+		    Y : 
+		    Z : Z8 
+
+		    A : 
+		    B : B1 B4 
+		    C : 
+		    D : D1 D3 D5 D8 
+		    E : E2 E4 E6 E7 E8 
+		    F : F5 
+		    G : G1 
+		    H : H6 
+		    I : I2 I4 I7 
+		    J : 
+		    K : 
+		    L : L7 
+		    M : 
+		    N : N5 
+		    O : O4 O9 
+		    P : P9 
+		    Q : 
+		    R : 
+		    S : 
+		    T : T3 
+		    U : U2 U7 
+		    V : V7 
+		    W : 
+		    X : X3 X9 
+		    Y : Y4 
+		    Z : Z4 
+
+		    A : 
+		    B : B4 
+		    C : C6 
+		    D : D1 
+		    E : E4 
+		    F : F1 
+		    G : G1 G5 
+		    H : H8 
+		    I : I4 
+		    J : 
+		    K : K5 K7 K8 
+		    L : L6 
+		    M : M2 M8 
+		    N : N5 
+		    O : O2 
+		    P : P4 
+		    Q : Q5 
+		    R : R3 R8 
+		    S : 
+		    T : T9 
+		    U : U6 
+		    V : V8 
+		    W : W1 W4 W5 
+		    X : X7 
+		    Y : Y4 Y9 
+		    Z : 
+
+
+		    ---- allPossibleLabels() ----
+
+		    A1, A2, A3, A4, A5, A6, A7, A8, A9
+		    B1, B2, B3, B4, B5, B6, B7, B8, B9
+		    C1, C2, C3, C4, C5, C6, C7, C8, C9
+		    D1, D2, D3, D4, D5, D6, D7, D8, D9
+		    E1, E2, E3, E4, E5, E6, E7, E8, E9
+		    F1, F2, F3, F4, F5, F6, F7, F8, F9
+		    G1, G2, G3, G4, G5, G6, G7, G8, G9
+		    H1, H2, H3, H4, H5, H6, H7, H8, H9
+		    I1, I2, I3, I4, I5, I6, I7, I8, I9
+		    J1, J2, J3, J4, J5, J6, J7, J8, J9
+		    K1, K2, K3, K4, K5, K6, K7, K8, K9
+		    L1, L2, L3, L4, L5, L6, L7, L8, L9
+		    M1, M2, M3, M4, M5, M6, M7, M8, M9
+		    N1, N2, N3, N4, N5, N6, N7, N8, N9
+		    O1, O2, O3, O4, O5, O6, O7, O8, O9
+		    P1, P2, P3, P4, P5, P6, P7, P8, P9
+		    Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9
+		    R1, R2, R3, R4, R5, R6, R7, R8, R9
+		    S1, S2, S3, S4, S5, S6, S7, S8, S9
+		    T1, T2, T3, T4, T5, T6, T7, T8, T9
+		    U1, U2, U3, U4, U5, U6, U7, U8, U9
+		    V1, V2, V3, V4, V5, V6, V7, V8, V9
+		    W1, W2, W3, W4, W5, W6, W7, W8, W9
+		    X1, X2, X3, X4, X5, X6, X7, X8, X9
+		    Y1, Y2, Y3, Y4, Y5, Y6, Y7, Y8, Y9
+		    Z1, Z2, Z3, Z4, Z5, Z6, Z7, Z8, Z9
+
+		    A : A1 A2 A3 A4 A5 A6 A7 A8 A9 
+		    B : B1 B2 B3 B4 B5 B6 B7 B8 B9 
+		    C : C1 C2 C3 C4 C5 C6 C7 C8 C9 
+		    D : D1 D2 D3 D4 D5 D6 D7 D8 D9 
+		    E : E1 E2 E3 E4 E5 E6 E7 E8 E9 
+		    F : F1 F2 F3 F4 F5 F6 F7 F8 F9 
+		    G : G1 G2 G3 G4 G5 G6 G7 G8 G9 
+		    H : H1 H2 H3 H4 H5 H6 H7 H8 H9 
+		    I : I1 I2 I3 I4 I5 I6 I7 I8 I9 
+		    J : J1 J2 J3 J4 J5 J6 J7 J8 J9 
+		    K : K1 K2 K3 K4 K5 K6 K7 K8 K9 
+		    L : L1 L2 L3 L4 L5 L6 L7 L8 L9 
+		    M : M1 M2 M3 M4 M5 M6 M7 M8 M9 
+		    N : N1 N2 N3 N4 N5 N6 N7 N8 N9 
+		    O : O1 O2 O3 O4 O5 O6 O7 O8 O9 
+		    P : P1 P2 P3 P4 P5 P6 P7 P8 P9 
+		    Q : Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 Q9 
+		    R : R1 R2 R3 R4 R5 R6 R7 R8 R9 
+		    S : S1 S2 S3 S4 S5 S6 S7 S8 S9 
+		    T : T1 T2 T3 T4 T5 T6 T7 T8 T9 
+		    U : U1 U2 U3 U4 U5 U6 U7 U8 U9 
+		    V : V1 V2 V3 V4 V5 V6 V7 V8 V9 
+		    W : W1 W2 W3 W4 W5 W6 W7 W8 W9 
+		    X : X1 X2 X3 X4 X5 X6 X7 X8 X9 
+		    Y : Y1 Y2 Y3 Y4 Y5 Y6 Y7 Y8 Y9 
+		    Z : Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 
+
+		    A1, B3, B4, G8, I2, K5, Q7, T7, V6
+		    W9
+
+		    E5, F3, G1, H8, Q9, R8, S4, V7, Y6
+		    Z8
+
+		    ---- union ----
+
+		    A1, B3, B4, E5, F3, G1, G8, H8, I2
+		    K5, Q7, Q9, R8, S4, T7, V6, V7, W9
+		    Y6, Z8
+
+
+		    ---- difference ----
+
+		    A1, B3, B4, G8, I2, K5, Q7, T7, V6
+		    W9
+
+
+		    ---- intersection ----
+
+
+
+		    ---- allLabelsWithLetter() ----
+
+		    Labels-Objekt:
+		    B4, C6, D1, E4, F1, G1, G5, H8, I4
+		    K5, K7, K8, L6, M2, M8, N5, O2, P4
+		    Q5, R3, R8, T9, U6, V8, W1, W4, W5
+		    X7, Y4, Y9
+
+		    alle Label-Objekte mit 'M':
+		    M2 M8 
+
+		    ```
+
+
+??? question "Eine mögliche Lösung für Label"
+	=== "Label.java"
+		```java
+		package klausurvorbereitung.label;
+
+		import java.util.Random;
+
+		public class Label
+		{
+			char buchstabe;
+			int ziffer;
+			
+			public Label()
+			{
+				Random r = new Random();
+				this.buchstabe = (char)r.nextInt(65, 91);
+				this.ziffer = r.nextInt(1,10);
+			}
+			
+			public Label(char buchstabe, int ziffer)
+			{
+				this.buchstabe = buchstabe;
+				this.ziffer = ziffer;
+			}
+			
+			public char getBuchstabe()
+			{
+				return this.buchstabe;
+			}
+			
+			@Override
+			public String toString()
+			{
+				return "" + this.buchstabe + this.ziffer;
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(this == o) return true;
+				if(o == null) return false;
+				if(this.getClass() != o.getClass()) return false;
+				
+				Label la = (Label)o;
+				return this.buchstabe == la.buchstabe && 
+						this.ziffer == la.ziffer;
+			}
+			
+			
+			public boolean isBigger(Label l)
+			{
+				return (this.buchstabe > l.buchstabe ||
+						(this.buchstabe == l.buchstabe && 
+						this.ziffer > l.ziffer));
+			}
+		}
+		```
+	=== "Labels.java"
+		```java
+		package klausurvorbereitung.label;
+
+		public class Labels
+		{
+			Label[] labels;
+			
+			public Labels()
+			{
+				this.labels = new Label[0];
+			}
+			
+			public Labels(int length)
+			{
+				this.labels = new Label[length];
+				for (int i = 0; i < this.labels.length; i++)
+				{
+					this.labels[i] = new Label();
+				}
+			}
+			
+			public int getLength()
+			{
+				return this.labels.length;
+			}
+			
+			public Label getLabelAt(int index)
+			{
+				if(index >= 0 && index < this.getLength())
+				{
+					return this.labels[index];
+				}
+				else
+				{
+					return null;
+				}
+			}
+			
+			public boolean contains(Label l)
+			{
+				for (int i = 0; i < this.labels.length; i++)
+				{
+					if(this.labels[i].equals(l))
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			public void insert(Label l)
+			{
+				Label[] copy = new Label[this.labels.length+1];
+				for (int index = 0; index < this.labels.length; index++)
+				{
+					copy[index] = this.labels[index];
+				}
+				copy[copy.length-1] = l;
+				this.labels = copy;
+			}
+			
+			public boolean insertNoDoublets(Label l)
+			{
+				if(this.contains(l))
+				{
+					return false;
+				}
+				else
+				{
+					Label[] copy = new Label[this.labels.length+1];
+					for (int index = 0; index < this.labels.length; index++)
+					{
+						copy[index] = this.labels[index];
+					}
+					copy[copy.length-1] = l;
+					this.labels = copy;
+					return true;
+				}
+			}
+			
+			public void print()
+			{
+				for(int i = 0; i < this.labels.length; i++)
+				{
+					System.out.print(this.labels[i]);
+					if((i+1) % 9 == 0 || i == this.labels.length-1)
+					{
+						System.out.println();
+					}
+					else
+					{
+						System.out.print(", ");
+					}
+				}
+			}
+			
+			public void printSorted()
+			{
+				this.sort();
+				char currentLetter = 'A';
+				System.out.print(currentLetter + " : ");
+				int i = 0;
+				while(i < this.labels.length)
+				{
+					if(this.labels[i].getBuchstabe() == currentLetter)
+					{
+						System.out.print(this.labels[i] + " ");
+						i++;
+					}
+					else
+					{
+						System.out.println();
+						currentLetter++;
+						System.out.print(currentLetter + " : ");
+					}
+				}
+				while(currentLetter < 'Z' )
+				{
+					System.out.println();
+					currentLetter++;
+					System.out.print(currentLetter + " : ");
+				}
+			}
+			
+			public void sort()
+			{
+				for (int bubble = 1; bubble < labels.length; bubble++)
+				{
+					for (int index = 0; index < labels.length - bubble; index++)
+					{
+						if(this.labels[index].isBigger(this.labels[index+1]))
+						{
+							Label tmp = this.labels[index];
+							this.labels[index] = this.labels[index+1];
+							this.labels[index+1] = tmp;
+						}
+					}
+				}
+			}
+			
+			
+			public static Labels allPossibleLabels()
+			{
+				Labels la = new Labels();
+				la.labels = new Label[234];
+				int index = 0;
+				for(char c = 'A'; c <= 'Z'; c++)
+				{
+					for(int z = 1; z < 10; z++)
+					{
+						la.labels[index] = new Label(c,z);
+						index++;
+					}
+				}
+				return la;
+			}
+		}
+		```
+	=== "Programmklasse.java"
+		```java
+		package klausurvorbereitung.label;
+
+		public class Programmklasse
+		{
+			public static Labels union(Labels al1, Labels al2)
+			{
+				Labels result = new Labels();
+				for (int i = 0; i < al1.getLength(); i++)
+				{
+					result.insertNoDoublets(al1.getLabelAt(i));
+				}
+				for (int i = 0; i < al2.getLength(); i++)
+				{
+					result.insertNoDoublets(al2.getLabelAt(i));
+				}
+				return result;
+			}
+			
+			public static Labels difference(Labels al1, Labels al2)
+			{
+				Labels result = new Labels();
+				for (int i = 0; i < al1.getLength(); i++)
+				{
+					Label l = al1.getLabelAt(i);
+					if(!al2.contains(l))
+					{
+						result.insert(l);
+					}
+				}
+				return result;
+			}
+			
+			
+			public static Labels intersection(Labels al1, Labels al2)
+			{
+				Labels result = new Labels();
+				for (int i = 0; i < al1.getLength(); i++)
+				{
+					Label l = al1.getLabelAt(i);
+					if(al2.contains(l))
+					{
+						result.insertNoDoublets(l);
+					}
+				}
+				return result;
+			}
+			
+			public static Label[] allLabelsWithLetter(Labels al, char letter)
+			{
+				int count = 0;
+				for (int index = 0; index < al.getLength(); index++)
+				{
+					if(al.getLabelAt(index).getBuchstabe() == letter)
+					{
+						count++;
+					}
+				}
+				Label[] result = new Label[count];
+				int resultIndex = 0;
+				for (int index = 0; index < al.getLength(); index++)
+				{
+					Label la = al.getLabelAt(index);
+					if(la.getBuchstabe() == letter)
+					{
+						result[resultIndex] = la;
+						resultIndex++;
+					}
+				}
+				return result;
+			}
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n----------- Teil 1 --------------%n%n");
+				Label label1 = new Label('T', 5);
+				Label label2 = new Label();
+				int count = 1;
+				while(!label2.isBigger(label1))
+				{
+					label2 = new Label();
+					count++;
+				}
+				System.out.println("label1 = " + label1);
+				System.out.println("label2 = " + label2);
+				System.out.println("Versuche : " + count);
+				
+				
+				System.out.printf("%n%n----------- Teil 2 --------------%n%n");
+				
+				System.out.printf("%n%n---- Labels 1 ----%n%n");
+				Labels al1 = new Labels();
+				for (int i = 0; i < 30; i++)
+				{
+					al1.insert(new Label());
+				}
+				al1.print();
+
+				
+				System.out.printf("%n%n---- Labels 2 ----%n%n");	
+				Labels al2 = new Labels(30);
+				al2.print();
+				
+				
+				System.out.printf("%n%n---- Labels 3 ----%n%n");
+				Labels al3 = new Labels();
+				for (int i = 0; i < 30; i++)
+				{
+					boolean inserted = al3.insertNoDoublets(new Label());
+					while(!inserted)
+					{
+						inserted = al3.insertNoDoublets(new Label());
+					}
+				}
+				al3.print();
+				
+				
+				System.out.printf("%n%n----------- Teil 3 --------------%n%n");
+				
+
+				
+				System.out.printf("%n%n---- printSorted() ----%n%n");
+				
+				al1.printSorted();
+				System.out.println();
+				System.out.println();
+				al2.printSorted();
+				System.out.println();
+				System.out.println();
+				al3.printSorted();
+				System.out.println();
+				
+				
+				System.out.printf("%n%n---- allPossibleLabels() ----%n%n");
+				Labels al4 = Labels.allPossibleLabels();
+				al4.print();
+				System.out.println();
+				al4.printSorted();
+				System.out.println();
+				System.out.println();
+				
+				Labels al5 = new Labels(10);
+				Labels al6 = new Labels(10);
+				al5.sort(); 	al5.print();	System.out.println();
+				al6.sort(); 	al6.print();	System.out.println();
+				
+				
+				
+				System.out.printf("%n%n---- union ----%n%n");
+				Labels al7 = union(al5, al6);
+				al7.sort();		al7.print();	
+				
+				System.out.printf("%n%n---- difference ----%n%n");
+				Labels al8 = difference(al5, al6);
+				al8.sort();		al8.print();	
+				
+				System.out.printf("%n%n---- intersection ----%n%n");
+				Labels al9 = intersection(al5, al6);
+				al9.sort();		al9.print();	
+				
+				System.out.printf("%n%n---- allLabelsWithLetter() ----%n%n");
+				System.out.println("Labels-Objekt:");
+				al3.print();
+				System.out.println();
+				System.out.println("alle Label-Objekte mit 'M':");
+				Label[] labels = allLabelsWithLetter(al3, 'M');
+				for (int index = 0; index < labels.length; index++)
+				{
+					System.out.print(labels[index] + " ");
+				}
+				System.out.println();
+			}
+
+		}
+		```
+
+
+
 ??? note "<a id="probeklausur-table"></a>Table [(pdf)](./files/2025-03-28_Klausur_ProgI_PZ2.pdf)"
 		
 	1. Erstellen Sie ein package `klausurvorbereitung.table`. 
