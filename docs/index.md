@@ -3917,7 +3917,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ## Hinweise zur Klausur
 
-- Die ProgrammierungI-Klausur findet am Montag, den 9.2.2026 statt.
+- Die ProgrammierungI-Klausur im 2. PZ findet am Dienstag, den 24.2.2026 statt.
 - Es stehen die Labore C 624 (Mac) und C 625 (Windows) zur Verfügung.
 - Wir wollen um 9:35 Uhr die Aufgabenblätter austeilen, so dass wir spätestens um 9:45 Uhr mit dem Programmieren beginnen können. Seien Sie am besten um 9:15 Uhr in dem Labor Ihrer Wahl.
 - Sie können sich vorab schon ein Package `klausur` erstellen und darin eine `Programmklasse` mit `main`-Methode. Probieren Sie auch schonmal mindestens eine Ausgabe auf die Konsole, damit Sie wissen, ob alles funktioniert.
