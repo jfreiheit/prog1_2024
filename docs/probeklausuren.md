@@ -1,6 +1,520 @@
 # Probeklausuren
 
 
+
+??? note "<a id="probeklausur-wurf"></a>Wurf"
+
+	> Ein `Wurf` ist der Wurf eines Würfels, entspricht also eine der Zahlen `1` bis `6`.
+
+
+	1. Erstellen Sie ein package `klausurvorbereitung.label`. 
+	2. (**Teil 1**) Erstellen Sie eine Klasse `Wurf`. Objektvariable ist
+
+	    - `wert` vom Typ `int` 
+
+	    	Die Objektvariable ist nur innerhalb der Klasse sichtbar. 
+
+
+		- Erstellen Sie für die Klasse `Wurf` einen parameterlosen Konstruktor. Innerhalb dieses Konstruktors wird der Objektvariablen **zufällig** ein Wert zugewiesen (zufällig eine Zahl aus `[1, ..., 6]`). 
+
+		- Erstellen Sie für die Klasse `Wurf` einen parametrisierten Konstruktor, dem als Parameter ein `int wert` übergeben wird. Initialisieren Sie mit dem Parameterwert die Objektvariablen. **Achtung!:** Falls der Parameterwert keiner der Zahlen `1` bis `6` entspricht, verwenden Sie einen *Modulo-Wert* (*Restwertoperator*) so, dass eine der Zahlen `1` bis `6` entsteht, also z.B.:
+
+		    | Parameterwert | erzeugter Wert |
+		    |---------------|----------------|
+		    | `7`           | `1`            |
+		    | `-7`          | `1`            |  
+		    | `12`          | `6`            | 
+		    | `-12`         | `6`            |  
+
+		    Prinzipiell können Sie also den Restwertoperator verwenden. Ein Rest von `0` entspricht aber dem Wert `6`.
+
+		- Erstellen Sie für die Objektvariable `wert` einen *Getter* `getWert()`, der den Wert von `wert` zurückgibt. 
+
+		- ^^Überschreiben^^ Sie die `toString()`-Methode, sodass der `wert` als String zurückgegeben wird. 
+
+		- ^^Überschreiben^^ Sie die `equals(Object)`-Methode, sodass zwei `Wurf`-Objekte gleich sind, wenn sie denselben `wert` haben.
+
+	2. (**Teil 1**) `Programmklasse`. Erstellen Sie die `Programmklasse` mit `main`-Methode. 
+
+		- Erstellen Sie in der `main`-Methode `5` Objekte `w1`, `w2`, `w3` und `w4` vom Typ `Wurf`. 
+		- Das erste Objekt erstellen Sie mithilfe des parametrisierten Konstruktors und übergeben eine `6`. 
+		- Das zweite Objekt erstellen Sie mithilfe des parametrisierten Konstruktors und übergeben eine `15`. 
+		- Das dritte Objekt erstellen Sie mithilfe des parametrisierten Konstruktors und übergeben eine `-15`.
+		- Das vierte Objekt erstellen Sie mithilfe des parameterlosen Konstruktors.
+		- Geben Sie alle vier Objekte auf der Konsole aus (letzter Wert Zufallswert):
+
+		    ```bash
+		    ----------- Wurf --------------
+
+		    6
+		    3
+		    3
+		    1
+		    ```
+
+		- Erzeugen Sie nun für `w4` so lange ein neues Objekt bis der `wert` des erzeugten Objektes einer `6` entspricht (könnte auch bereits so sein). Zählen Sie die Versuche mit. Geben Sie die Anzahl der Versuche auf der Konsole aus, z.B. (Zufallswert):
+
+		    ```bash
+		    Anzahl Versuche : 7
+		    ```
+
+	3. (**Teil 2**) Klasse `Wuerfe`
+
+		- Erstellen Sie eine Klasse `Wuerfe`
+		- Objektvariable ist
+
+		    - `wuerfe` vom Typ `Wurf[]`
+
+		    Die Objektvariable ist nur innerhalb der Klasse sichtbar. 
+
+		- Erstellen Sie für die Klasse `Wuerfe` einen parameterlosen Konstruktor. Innerhalb dieses Konstruktors wird das `wuerfe`-Array mit der Länge `0` erzeugt.
+
+		- Erstellen Sie für die Klasse `Wuerfe` einen parametrisierten Konstruktor, dem als Parameter eine `int length` übergeben wird. Der Parameterwert wird als Länge des `wuerfe`-Arrays verwendet. Befüllen Sie das gesamte `wuerfe`-Array mit `Wurf`-Objekten unter Verwendung des parameterlosen Konstruktors von `Wurf`. 
+
+		- Erstellen Sie eine Objektmethode `getLength()`, die die Länge des `wuerfe`-Array zurückgibt.
+
+		- Erstellen Sie eine Objektmethode `naechsterWurf()`. In dieser Methode wird den `wuerfe`-Array ein weiterer `Wurf` hinzugefügt. Verwenden Sie zur Objekterzeugung von `Wurf` den parameterlosen Konstruktor. 
+
+		- Erstellen Sie eine Objektmethode `summeAllerWerte()`, die die Summe aller *Werte* im `wuerfe`-Array zurückgibt. 
+
+		- Erstellen Sie eine Objektmethode `anzahlWert(int wert)`, die die Anzahl des Vorkommens von `wert` im `wuerfe`-Array zurückgibt. 
+
+		    **Beispiel**: Angenommen, das `wuerfe`-Array sieht so aus: `[2, 4, 5, 2, 6, 5, 5, 4]`, dann gibt `anzahlWert(4)` eine `2` zurück, weil die `4` zwei Mal im Array vorkommt. `anzahlWert(1)` gibt eine `0` zurück, `anzahlWert(5)` eine `3` usw.
+
+
+		- ^^Überschreiben^^ Sie die `toString()`-Methode, sodass ein String in der folgenden Form zurückgegeben wird (Beispiel - Zufallswerte):
+
+		    ```bash
+		    20 : 6 4 6 4 6 6 3 5 1 1 2 4 3 2 3 4 4 1 5 3 ( 73 )
+		    ``` 
+
+		    - zuerst kommt die Länge des `wuerfe`-Arrays (hier `20`),
+		    - dann kommt ein Doppelpunkt `:`,
+		    - dann kommen alle Werte aus dem `wuerfe`-Array durch Leerzeichen getrennt,
+		    - dann kommt die Summe der Werte in runden Klammern (hier `( 73 )`)
+
+
+		- Erstellen Sie eine Objektmethode `printTabelle()`, die das `wuerfe`-Array wie folgt auf die Konsole ausgibt(Beispiel - Zufallswerte):
+
+		    ```bash
+		    Anzahl =    20 
+		    1      :     3 
+		    2      :     2 
+		    3      :     4 
+		    4      :     5 
+		    5      :     2 
+		    6      :     4 
+		    Summe  =    73
+		    ```
+
+		    - in der ersten Zeile steht `Anzahl = ` gefolgt von der Länge des `wuerfe`-Arrays (hier `20`),
+		    - in den folgenden sechs Zeilen steht jeweils am Anfang der *Wert*, dann ein Doppelpunkt `: ` und dann, wie oft dieser Wert im `wuerfe`-Array vorkommt (z.B. kommt die `1` `3` Mal vor, die `4` `5`Mal usw.),
+		    - in der letzten Zeile steht `Summe = ` gefolgt von der Summe der Werte aus dem `wuerfe`-Array (hier `73`).
+
+
+		- Erstellen Sie eine Objektmethode `sortieren(boolean aufsteigend)`, die das `wuerfe`-Array 
+
+		    - *aufsteigend* (kleinste Werte zuerst) sortiert, wenn der Wert von `aufsteigend` `true` ist und 
+		    - *absteigend* (größte Werte zuerst) sortiert, wenn der Wert von `aufsteigend` `false` ist. 
+
+
+	3. (**Teil 2**) `Programmklasse`
+
+		- Erstellen Sie in der `main()`-Methode der `Programmklasse` ein `Wuerfe`-Objekt mithilfe des parameterlosen Konstruktors. Fügen Sie in einer Schleife unter Verwendung der `naechsterWurf()`-Methode solange einen Wurf hinzu, bis insgesamt `3` Mal eine `6` gewurfelt wurde. Geben Sie dann das `wuerfe`-Array zunächst mithilfe der `toString()`-Methode und dann mithilfe der `printTabelle()`-Methode auf die Konsole aus (Zufallswerte):
+
+		    ```bash
+		    18 : 2 1 2 6 6 4 2 4 2 5 4 3 2 5 4 4 2 6 ( 64 )
+
+		    Anzahl =    18 
+		    1      :     1 
+		    2      :     6 
+		    3      :     1 
+		    4      :     5 
+		    5      :     2 
+		    6      :     3 
+		    Summe  =    64
+		    ```
+
+		- Erstellen Sie in der `main()`-Methode ein `Wuerfe`-Objekt mithilfe des parametrisierten Konstruktors (Länge `20`). 
+
+		    - Geben Sie das `wuerfe`-Array mithilfe der `toString()`-Methode auf die Konsole aus. 
+		    - Sortieren Sie das `wuerfe`-Array **aufsteigend** und geben es aus. 
+		    - Sortieren Sie das `wuerfe`-Array **absteigend** und geben es aus. 
+
+		    Zufallswerte:
+
+		    ```bash
+		    20 : 2 4 3 5 5 3 5 3 5 5 6 6 4 3 1 4 1 5 2 3 ( 75 )
+		    20 : 1 1 2 2 3 3 3 3 3 4 4 4 5 5 5 5 5 5 6 6 ( 75 )
+		    20 : 6 6 5 5 5 5 5 5 4 4 4 3 3 3 3 3 2 2 1 1 ( 75 )
+		    ```
+
+
+	4. (**Teil 3**) weiter mit Klasse `Wuerfe`
+
+		- Erstellen Sie eine Objektmethode `mittelwert()` die den Mittwelwert aller Werte aus dem `wuerfe`-Array (als `double`) zurückgibt. Ist die Länge des `wuerfe`-Arrays gleich `0`, wird `0.0` zurückgegeben.
+
+		- Erstellen Sie eine Objektmethode `haeufigsterWert()`, die den Wert (als `int`) zurückgibt, der im `wuerfe`-Array am häufigsten vorkommt. Gibt es mehrere solcher Werte, geben Sie irgendeinen davon zurück. Ist das `wuerfe`-Array leer, geben Sie `0` zurück.
+
+		- Erstellen Sie eine Objektmethode `undoLetzterWurf()`. Diese Methode löscht den letzten Wurf aus dem `wuerfe`-Array, d.h. das `wuerfe`-Array ist nach Ausführen der Methode um `1` kleiner. Ist das `wuerfe`-Array leer, passiert nichts. 
+
+		- Erstellen Sie eine **statische** Methode `erzeugeWuerfeMitSummeN(int n)`, die ein `Wuerfe`-Objekt zurückgibt. Das zurückgegebene `Wuerfe`-Objekt enthält ein `wuerfe`-Array, dessen Wertesumme **exakt** `n` entspricht. 
+
+	5. (**Teil 3**) `Programmklasse`
+
+		- Rufen Sie in `main()` die `erzeugeWuerfeMitSummeN()`-Methode auf und übergeben Sie als Wert der Summe `50`. Geben Sie das `Wuerfe`-Objekt mithilfe der `printTabelle()`- und der `toString()`-Methode auf die Konsole aus. Rufen Sie auch die Methoden `haeufigsterWert()` und `mittelwert()` auf und geben diese aus.
+
+		    z.B. (Zufallswerte) 
+
+		    ```bash
+		    ----------- Wuerfe Teil 3 --------------
+
+		    Anzahl =    14 
+		    1      :     1 
+		    2      :     5 
+		    3      :     2 
+		    4      :     1 
+		    5      :     1 
+		    6      :     4 
+		    Summe  =    50 
+
+		    14 : 4 6 6 3 3 1 2 2 5 2 2 6 2 6 ( 50 )
+
+		    haeufigster Wert = 2
+		    Mittelwert       = 3.5714285714285716
+		    ```
+
+
+		??? abstract "Alle Ausgaben zur Kontrolle (Beispielwerte)"
+		    ```bash
+		    ----------- Wurf Teil 1--------------
+
+		    6
+		    3
+		    3
+		    6
+		    Anzahl Versuche : 1
+
+
+		    ----------- Wuerfe Teil 2 --------------
+
+		    15 : 1 5 1 4 2 6 2 5 2 1 4 1 5 6 6 ( 51 )
+
+		    Anzahl =    15 
+		    1      :     4 
+		    2      :     3 
+		    3      :     0 
+		    4      :     2 
+		    5      :     3 
+		    6      :     3 
+		    Summe  =    51 
+
+
+		    Anzahl =    20 
+		    1      :     4 
+		    2      :     3 
+		    3      :     4 
+		    4      :     2 
+		    5      :     4 
+		    6      :     3 
+		    Summe  =    68 
+
+		    20 : 6 4 3 6 3 2 1 2 3 1 5 3 5 2 6 4 1 5 5 1 ( 68 )
+		    20 : 1 1 1 1 2 2 2 3 3 3 3 4 4 5 5 5 5 6 6 6 ( 68 )
+		    20 : 6 6 6 5 5 5 5 4 4 3 3 3 3 2 2 2 1 1 1 1 ( 68 )
+
+
+		    ----------- Wuerfe Teil 3 --------------
+
+		    Anzahl =    17 
+		    1      :     6 
+		    2      :     1 
+		    3      :     4 
+		    4      :     3 
+		    5      :     0 
+		    6      :     3 
+		    Summe  =    50 
+
+		    17 : 1 1 6 6 3 3 1 1 2 1 4 3 1 6 3 4 4 ( 50 )
+
+		    haeufigster Wert = 1
+		    Mittelwert       = 2.9411764705882355
+
+		    ```
+
+
+
+??? question "Eine mögliche Lösung für Wurf"
+	=== "Wurf.java"
+		```java
+		package klausurvorbereitung.wurf;
+
+		import java.util.Random;
+
+		public class Wurf
+		{
+			private int wert;
+			
+			public Wurf(int wert)
+			{
+				if(wert < 0)
+				{
+					wert = -wert;
+				}
+				int rest = wert % 6;	// 0 .. 5
+				this.wert = (rest == 0) ? 6 : rest;
+			}
+			
+			public Wurf()
+			{
+				Random r = new Random();
+				this.wert = r. nextInt(6) + 1;
+			}
+			
+			public int getWert()
+			{
+				return this.wert;
+			}
+			
+			@Override
+			public String toString()
+			{
+				return "" + this.wert; 
+			}
+			
+			@Override
+			public boolean equals(Object o)
+			{
+				if(o == null) return false;
+				if(o == this) return true;
+				if(this.getClass() != o.getClass()) return false;
+				
+				Wurf w = (Wurf)o;
+				return this.wert == w.wert;
+			}
+			
+
+		}
+
+		```
+	=== "Wuerfe.java"
+		```java
+		package klausurvorbereitung.wurf;
+
+		public class Wuerfe
+		{
+			private Wurf[] wuerfe;
+
+			public Wuerfe()
+			{
+				this.wuerfe = new Wurf[0];
+			}
+
+			public Wuerfe(int length)
+			{
+				this.wuerfe = new Wurf[length];
+				for (int index = 0; index < wuerfe.length; index++)
+				{
+					this.wuerfe[index] = new Wurf();
+				}
+			}
+			
+			public int getLength()
+			{
+				return this.wuerfe.length;
+			}
+
+			public void naechsterWurf()
+			{
+				Wurf[] copy = new Wurf[this.wuerfe.length+1];
+				for (int index = 0; index < this.wuerfe.length; index++)
+				{
+					copy[index] = this.wuerfe[index];
+				}
+				copy[copy.length-1] = new Wurf();
+				this.wuerfe = copy;
+			}
+
+			public int anzahlWert(int wert)
+			{
+				int counter = 0;
+				for (int index = 0; index < this.wuerfe.length; index++)
+				{
+					if(this.wuerfe[index].getWert()==wert)
+					{
+						counter++;
+					}
+				}
+				return counter;
+			}
+
+			public int summeAllerWerte()
+			{
+				int summe = 0;
+				for (int index = 0; index < this.wuerfe.length; index++)
+				{
+					summe += this.wuerfe[index].getWert();
+				}
+				return summe;
+			}
+
+			public void printTabelle()
+			{
+				System.out.printf("Anzahl = %5d %n", this.wuerfe.length);
+				for(int wert = 1; wert <= 6; wert++)
+				{
+					System.out.printf("%-5d  : %5d %n", wert, this.anzahlWert(wert));
+				}
+				System.out.printf("Summe  = %5d %n", this.summeAllerWerte());
+			}
+
+			public void sortieren(boolean aufsteigend)
+			{
+				for (int bubble = 1; bubble < wuerfe.length; bubble++)
+				{
+					for (int index = 0; index < wuerfe.length - bubble; index++)
+					{
+						if(
+								(aufsteigend && this.wuerfe[index].getWert() > this.wuerfe[index+1].getWert()) ||
+								(!aufsteigend && this.wuerfe[index].getWert() < this.wuerfe[index+1].getWert())	
+								)
+						{
+							Wurf tmp = this.wuerfe[index];
+							this.wuerfe[index] = this.wuerfe[index+1];
+							this.wuerfe[index+1] = tmp;
+						}
+					}
+				}
+			}
+
+			@Override
+			public String toString()
+			{
+				String s = this.wuerfe.length + " : ";
+				for (int index = 0; index < wuerfe.length; index++)
+				{
+					s += this.wuerfe[index].getWert() + " ";
+				}
+				s += "( " + this.summeAllerWerte() + " )";
+				return s;
+			}
+			
+			public double mittelwert()
+			{
+				if( this.wuerfe.length == 0 ) return 0.0;
+				return this.summeAllerWerte() / (double) this.wuerfe.length;
+			}
+			
+			public int haeufigsterWert()
+			{
+				int maxWert = 0;
+				int maxHaeufigkeit = 0;
+				for(int wert = 1; wert <= 6; wert++)
+				{
+					int anzahlWert = this.anzahlWert(wert);
+					if(anzahlWert > maxHaeufigkeit)
+					{
+						maxWert = wert;
+						maxHaeufigkeit = anzahlWert;
+					}
+				}
+				return maxWert;
+			}
+			
+			public void undoLetzterWurf()
+			{
+				if(this.wuerfe.length > 0)
+				{
+					Wurf[] copy = new Wurf[this.wuerfe.length-1];
+					for (int index = 0; index < copy.length; index++)
+					{
+						copy[index] = this.wuerfe[index];
+					}
+					this.wuerfe = copy;
+				}
+			}
+			
+			public static Wuerfe erzeugeWuerfeMitSummeN(int n)
+			{
+				Wuerfe w = new Wuerfe();
+				while(w.summeAllerWerte() < n)
+				{
+					w.naechsterWurf();
+				}
+				while(w.summeAllerWerte() != n)
+				{
+					w.undoLetzterWurf();
+					w.naechsterWurf();
+				}
+				return w;
+			}
+
+		}
+
+		```
+	=== "Programmklasse.java"
+		```java
+		package klausurvorbereitung.wurf;
+
+		public class Programmklasse
+		{
+
+			public static void main(String[] args)
+			{
+				System.out.printf("%n%n----------- Wurf Teil 1 --------------%n%n");
+				Wurf w1 = new Wurf(6);
+				System.out.println(w1);
+				Wurf w2 = new Wurf(15);
+				System.out.println(w2);
+				Wurf w3 = new Wurf(-15);
+				System.out.println(w3);
+				Wurf w4 = new Wurf();
+				System.out.println(w4);
+				
+				int anzahlVersuche = 1;
+				while(w4.getWert() != 6)
+				{
+					w4 = new Wurf();
+					anzahlVersuche++;
+				}
+				System.out.println("Anzahl Versuche : " + anzahlVersuche);
+				
+				System.out.printf("%n%n----------- Wuerfe Teil 2 --------------%n%n");
+				Wuerfe wf1 = new Wuerfe();
+				
+				while(wf1.anzahlWert(6) < 3)
+				{
+					wf1.naechsterWurf();
+				}
+				
+				System.out.println(wf1);
+				System.out.println();
+				wf1.printTabelle();
+				System.out.println();
+				System.out.println();
+				Wuerfe wf2 = new Wuerfe(20);
+				wf2.printTabelle();
+				System.out.println();
+				System.out.println(wf2.toString());
+				wf2.sortieren(true);
+				System.out.println(wf2.toString());
+				wf2.sortieren(false);
+				System.out.println(wf2.toString());
+				
+				System.out.printf("%n%n----------- Wuerfe Teil 3 --------------%n%n");
+				Wuerfe wf3 = Wuerfe.erzeugeWuerfeMitSummeN(50);
+				wf3.printTabelle();
+				System.out.println();
+				System.out.println(wf3);
+				System.out.println();
+				System.out.println("haeufigster Wert = " + wf3.haeufigsterWert());
+				System.out.println("Mittelwert       = " + wf3.mittelwert());
+			}
+
+		}
+
+		```
+
 ??? note "<a id="probeklausur-label"></a>Label"
 
 	> Ein `Label` besteht aus einem Großbuchstaben `A`...`Z` und einer Ziffer `1`...`9`, also z.B. `A1`, `B6`, `Z9`.
