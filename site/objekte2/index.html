@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -714,6 +716,26 @@
   
   <span class="md-ellipsis">
     Javadoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
   </span>
   
 
@@ -2177,8 +2199,54 @@
 </span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="o">[</span><span class="w"> </span><span class="nv">x</span><span class="o">=</span><span class="m">3</span>,<span class="w"> </span><span class="nv">y</span><span class="o">=</span><span class="m">6</span><span class="w"> </span><span class="o">]</span>
 </span></code></pre></div>
 <p>Wesentlichster Unterschied zur ersten Variante ist, dass sich weder <code>p1</code> noch <code>p2</code> durch die Addition geändert haben. Wenn wir das Ziel verfolgen, möglichst unveränderliche Objekte zu erzeugen, dann ist die zweite Lösung auf jeden Fall die bessere. So oder so haben wir eine Methode kennengelernt, in der ein Objekt der Klasse erzeugt und dieses Objekt zurückgegeben wird. Solche Objekte kommen nicht selten vor - und nun kennen wir ein Beispiel. Weitere Beispiele werden wir in der Aufgabe <em>Bruch</em> erzeugen.  </p>
+<details class="note">
+<summary>Übung 1 – Konstruktor-Überladung für <code>Kreis</code></summary>
+<p>Erweitern Sie die Klasse <code>Kreis</code> aus der vorigen Aufgabe um einen zweiten Konstruktor <code>Kreis()</code>, der einen Kreis mit Radius <code>1.0</code> anlegt. Nutzen Sie das Schlüsselwort <code>this(...)</code>, um den vorhandenen Konstruktor aufzurufen.</p>
+</details>
+<details class="note">
+<summary>Übung 2 – <code>this</code>-Referenz</summary>
+<p>Was gibt folgendes Programm aus? Begründen Sie Ihre Antwort.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Zähler</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">wert</span><span class="p">;</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Zähler</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">wert</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">wert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wert</span><span class="p">;</span>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Zähler</span><span class="w"> </span><span class="nf">erhöhen</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">wert</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a>
+</span><span id="__span-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">wert</span><span class="p">);</span>
+</span><span id="__span-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="p">}</span>
+</span><span id="__span-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a>
+</span><span id="__span-35-18"><a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="c1">// In main():</span>
+</span><span id="__span-35-19"><a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a><span class="n">Zähler</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Zähler</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-35-20"><a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="n">z</span><span class="p">.</span><span class="na">erhöhen</span><span class="p">().</span><span class="na">erhöhen</span><span class="p">().</span><span class="na">erhöhen</span><span class="p">().</span><span class="na">print</span><span class="p">();</span>
+</span></code></pre></div>
+<blockquote>
+<p><strong>Antwort:</strong> Ausgabe ist <code>3</code>. Jeder Aufruf von <code>erhöhen()</code> gibt <code>this</code> zurück, sodass Aufrufe verkettet werden können (<em>method chaining</em>).</p>
+</blockquote>
+</details>
+<details class="note">
+<summary>Übung 3 – Methode gibt neues Objekt zurück</summary>
+<p>Erweitern Sie die Klasse <code>Bruch</code> um eine Methode <code>Bruch addieren(Bruch anderer)</code>, die die Summe der beiden Brüche als neues <code>Bruch</code>-Objekt zurückgibt. Die originalen Objekte sollen dabei unverändert bleiben.</p>
+<p>Formel für die Addition: $rac{a}{b} + rac{c}{d} = rac{a \cdot d + b \cdot c}{b \cdot d}$</p>
+</details>
+<details class="note">
+<summary>Übung 4 – Überladen von <code>print()</code></summary>
+<p>Erstellen Sie eine Klasse <code>Nachricht</code> mit einer Objektvariable <code>text</code> (Typ <code>String</code>). Implementieren Sie drei überladene Methoden:</p>
+<ul>
+<li><code>void print()</code> – gibt <code>text</code> aus,</li>
+<li><code>void print(String prefix)</code> – gibt <code>prefix + ": " + text</code> aus,</li>
+<li><code>void print(int anzahl)</code> – gibt <code>text</code> genau <code>anzahl</code> Mal aus.</li>
+</ul>
+</details>
 <div class="admonition success">
-<p class="admonition-title">Success</p>
+<p class="admonition-title">Zusammenfassung</p>
 <p>Wir haben eigene Datentypen in der Definition eigener Datentypen verwendet. Wir haben das Schlüsselwort <code>this</code> kennengerlernt, mit dem wir innerhalb der Klasse das aufrufende Objekt referenzieren können. Wir haben das Überladen von Methoden betrachtet und Konstruktoren in Klassen mehrfach überladen. Das Überladen von Methoden lässt sich auf alle Methoden anwenden. Darüber hinaus haben wir Methoden erstellt, in denen Objekte erzeugt werden. Zuletzt gibt eine solche Methode das von ihr erzeugte Objekt auch zurück. </p>
 </div>
 
@@ -2198,8 +2266,16 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -2271,10 +2347,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

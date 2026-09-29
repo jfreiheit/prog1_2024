@@ -532,6 +532,32 @@ und bekämen folgende Ausgaben:
 [ a=40, b=40, c=40, d=40 ]  Umfang des Quadrats : 160 Flaecheninhalt des Quadrats : 1600
 ```
 
-!!! success
+??? note "Übung 1 – Klassen-Hierarchie Fahrzeug"
+	Erstellen Sie eine Klassen-Hierarchie für Fahrzeuge:
+
+	- Elternklasse `Fahrzeug` mit Objektvariablen `marke` (`String`) und `geschwindigkeit` (`int`) sowie Methoden `void print()` und `void beschleunigen(int delta)`.
+	- Kindklasse `PKW extends Fahrzeug` mit zusätzlicher Objektvariable `anzahlSitze` (`int`) und überschriebener `print()`-Methode.
+	- Kindklasse `LKW extends Fahrzeug` mit zusätzlicher Objektvariable `nutzlastTonnen` (`double`) und überschriebener `print()`-Methode.
+
+	Testen Sie die Hierarchie in einer Testklasse.
+
+??? note "Übung 2 – `super` im Konstruktor"
+	Ergänzen Sie die Klassen aus Übung 1 um Konstruktoren. Der Konstruktor von `PKW` soll den Konstruktor von `Fahrzeug` mit `super(marke, geschwindigkeit)` aufrufen und zusätzlich `anzahlSitze` setzen. Warum ist der Aufruf von `super(...)` notwendig, wenn in der Elternklasse kein parameterlosen Konstruktor vorhanden ist?
+
+??? note "Übung 3 – `@Override` und Polymorphie"
+	Fügen Sie den Fahrzeug-Klassen aus Übung 1 eine Methode `String fahrzeugTyp()` hinzu, die in `Fahrzeug` den String `"Fahrzeug"` zurückgibt, in `PKW` den String `"PKW"` und in `LKW` den String `"LKW"`. Erstellen Sie in `main()` ein Array `Fahrzeug[]` mit gemischten Objekten und rufen Sie für jedes Element `fahrzeugTyp()` auf. Was beobachten Sie?
+
+??? note "Übung 4 – Vererbungshierarchie analysieren"
+	Gegeben sei folgende Hierarchie:
+
+	```
+	Tier → Säugetier → Hund
+	              ↘ Katze
+	     → Vogel  → Adler
+	```
+
+	Welche Eigenschaften erbt `Hund` von `Tier`? Welche von `Säugetier`? Kann eine Variable vom Typ `Tier` auf ein `Hund`-Objekt zeigen? Begründen Sie.
+
+!!! success "Zusammenfassung"
 	Mit Vererbung haben wir ein wichtiges Konzept der objektorientierten Programmierung kennengelernt. Um von einer Klasse zu erben, verwenden wir das Schlüsselwort `extends`. Eine Kindklasse erbt von ihrer Elternklasse alle Eigenschaften, also alle Objektvariablen und Objektmethoden. Eine geerbte Methode kann in der Kindklasse überschrieben werden. Wird eine Methode überschrieben, verwenden wir die Annotation `@Override`. Im Konstruktor der Kindklasse wird der Konstruktor der Elternklasse aufgerufen. Dies kann implizit erfolgen, wenn der implizite Konstruktor der Elternklasse existiert, oder es erfolgt explizit durch die Verwendung des Schlüsselwortes `super`. Mithilfe von Vererbung erhöhen wir die Wiederverwendbarkeit von Code und vermeiden doppelte Implementierungen. Außerdem sorgen wir für eine bessere Strukturierung des Codes. 
 

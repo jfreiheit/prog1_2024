@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -662,6 +664,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -702,6 +713,26 @@
   
   <span class="md-ellipsis">
     Javadoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
   </span>
   
 
@@ -919,6 +950,15 @@
   <a href="#quicksort" class="md-nav__link">
     <span class="md-ellipsis">
       Quicksort
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
     </span>
   </a>
   
@@ -3289,6 +3329,81 @@
 </details>
 <h2 id="quicksort">Quicksort<a class="headerlink" href="#quicksort" title="Permanent link">&para;</a></h2>
 <p>Ein Sortier-Algorithmus, der ebenfalls auf dem <em>Divide-and-Conquer</em>-Prinzip berucht, ist <a href="https://de.wikipedia.org/wiki/Quicksort">Quicksort</a>. Bei Quicksort ist, im Gegensatz zu Merge-Sort, das Teilen kompliziert und das Zusammenfügen einfach. Die Methode <code>sort()</code> der Klasse <code>Arrays</code> verwendet Quicksort. Wir gehen hier aber aus Zeitgründen nicht weiter auf den Algroithmus ein. Sie können sich aber gerne darüber selbständig informieren. Es gibt viele Implementierungen und Erläuterungen davon im Netz, z.B. <a href="https://www.codeflow.site/de/article/java-quicksort">hier</a>, <a href="https://javabeginners.de/Algorithmen/Sortieralgorithmen/Quicksort.php">hier</a> und <a href="https://studyflix.de/informatik/quicksort-1322">hier</a>.</p>
+<h2 id="ubungen">Übungen<a class="headerlink" href="#ubungen" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary>Übung 1 – Bubblesort nachvollziehen</summary>
+<p>Vollziehen Sie den Bubblesort-Algorithmus für das folgende Array nach und geben Sie das Array nach jedem vollständigen Durchlauf an:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>[5, 3, 8, 1, 4]
+</span></code></pre></div>
+<p>Wie viele Vergleiche werden insgesamt durchgeführt?</p>
+</details>
+<details class="note">
+<summary>Übung 2 – Selectionsort implementieren</summary>
+<p>Implementieren Sie den Selectionsort-Algorithmus in einer Methode <code>public static int[] selectionsort(int[] a)</code>. Das Original-Array soll dabei nicht verändert werden; zurückgegeben wird ein neues sortiertes Array.</p>
+</details>
+<details class="note">
+<summary>Übung 3 – Insertionsort analysieren</summary>
+<p>Analysieren Sie die Laufzeitkomplexität von Insertionsort:</p>
+<ul>
+<li>Wie viele Vergleiche werden im <strong>besten Fall</strong> benötigt (Array bereits sortiert)?</li>
+<li>Wie viele Vergleiche werden im <strong>schlechtesten Fall</strong> benötigt (Array umgekehrt sortiert)?</li>
+<li>Wie lautet die O-Notation für den schlechtesten Fall?</li>
+</ul>
+</details>
+<details class="note">
+<summary>Übung 4 – Mergesort verstehen</summary>
+<p>Mergesort basiert auf dem <em>Divide-and-Conquer</em>-Prinzip. Erläutern Sie die beiden Schritte:</p>
+<ol>
+<li><strong>Teilen:</strong> Wie wird das Array aufgeteilt?</li>
+<li><strong>Zusammenführen (Merge):</strong> Wie werden zwei sortierte Teil-Arrays zu einem sortierten Array zusammengeführt?</li>
+</ol>
+<p>Implementieren Sie die <code>merge()</code>-Hilfsmethode, die zwei sortierte Arrays zu einem sortierten Array zusammenfügt.</p>
+</details>
+<details class="note">
+<summary>Übung 5 – Vergleich der Sortierverfahren</summary>
+<p>Vergleichen Sie Bubblesort, Selectionsort, Insertionsort und Mergesort anhand der folgenden Kriterien:</p>
+<table>
+<thead>
+<tr>
+<th>Algorithmus</th>
+<th>Bester Fall</th>
+<th>Schlechtester Fall</th>
+<th>Stabil?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bubblesort</td>
+<td>O(n)</td>
+<td>O(n²)</td>
+<td>ja</td>
+</tr>
+<tr>
+<td>Selectionsort</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>nein</td>
+</tr>
+<tr>
+<td>Insertionsort</td>
+<td>O(n)</td>
+<td>O(n²)</td>
+<td>ja</td>
+</tr>
+<tr>
+<td>Mergesort</td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td>ja</td>
+</tr>
+</tbody>
+</table>
+<p>Wann würden Sie welchen Algorithmus bevorzugen?</p>
+</details>
+<div class="admonition success">
+<p class="admonition-title">Zusammenfassung</p>
+<p>Wir haben vier klassische Sortierverfahren kennengelernt. Bubblesort, Selectionsort und Insertionsort sind einfach zu implementieren, haben aber im schlechtesten Fall eine quadratische Laufzeit O(n²). Mergesort verwendet das <em>Divide-and-Conquer</em>-Prinzip und erreicht auch im schlechtesten Fall eine Laufzeit von O(n log n), benötigt dafür aber zusätzlichen Speicherplatz. Die eingebaute Methode <code>Arrays.sort()</code> der Java-Standardbibliothek verwendet Quicksort bzw. Timsort und ist für die Praxis empfehlenswert.</p>
+</div>
 
 
 
@@ -3306,8 +3421,16 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -3379,10 +3502,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

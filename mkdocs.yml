@@ -23,15 +23,22 @@ theme:
     text: Roboto
     code: Roboto Mono
   features:
-    - instant
-    - tabs
+    - navigation.instant
+    - content.tabs.link
     - content.code.copy
     - navigation.footer
+    - navigation.top
+    - search.highlight
+    - search.suggest
   favicon: img/favicon.png
   logo: img/fiw.jpg
 
 extra_css:
   - extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 
 # Extensions
@@ -39,7 +46,8 @@ markdown_extensions:
   - admonition
   - attr_list
   - footnotes
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
@@ -64,8 +72,6 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true 
   - pymdownx.tilde
-  - codehilite:
-      guess_lang: false
   - toc:
       permalink: true
   - md_in_html
@@ -88,7 +94,8 @@ nav:
     - Arrays: arrays.md 
     - Sortieren: sortieren.md 
     - Hilfsklassen: hilfsklassen.md 
-    - Javadoc: javadoc.md 
+    - Javadoc: javadoc.md
+    - Clean Code: cleancode.md
     - Werkzeuge: tools.md
     - Übungen: uebungen.md
     - Aufgaben: aufgaben.md 

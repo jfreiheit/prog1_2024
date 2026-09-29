@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -687,6 +689,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tools/" class="md-nav__link">
         
   
@@ -886,13 +908,37 @@
 <p>Ehe wir uns weiter mit Java und Programmierkonzepten beschäftigen, wollen wir uns bewusst werden, was Programmieren überhaupt ist. Prinzipiell lösen wir beim Programmieren ein Problem mithilfe einer Programmiersprache. Dabei stellt sich die Frage, welche Probleme mithilfe eines Computers lösbar sind und welche nicht. Dazu gibt es umfangreiche theoretische Untersuchungen - viele davon werden Sie in den "Grundlegenden Konzepten der Informatik" diskutieren. Ein wesentlicher Begriff dabei ist <em>Algorithmus</em>. Ein Algorithmus ist eine eindeutige Handlungsvorschrift, die aus endlich vielen einzelnen Schritten besteht und ein Problem löst. </p>
 <p>Algorithmen sind also auch Kochrezepte oder Bauanleitungen, wenn sie denn "eindeutig" sind. Wir kennen alle das Problem, dass Handlungsanweisungen nicht immer eindeutig sind - man kann es manchmal so oder so machen. In der Programmierung darf eine solche Mehrdeutigkeit natürlich nicht vorkommen. Der Algorithmusbegriff wurde deshalb detailliert und folgende Eigenschaften müssen für eine Handlungsanweisung für einen Computer gelten, um ein Algorithmus zu sein:</p>
 <ol>
-<li><strong>Finitheit</strong> Das Verfahren muss in einem <strong>endlichen</strong> Text (Programm) eindeutig beschreibbar sein.</li>
-<li><strong>Ausführbarkeit</strong> Jeder einzelne Schritt des Verfahrens muss auch tatsächlich ausführbar sein.</li>
-<li><strong>Dynamische Finitheit</strong> Das Verfahren darf zu jedem Zeitpunkt nur endlich viel Speicherplatz benötigen.</li>
-<li><strong>Terminierung</strong> Das Verfahren muss irgendwann enden, d.h. darf nur endlich viele Ausführungsschritte benötigen.</li>
-<li><strong>Determiniertheit</strong> Das Verfahren muss bei denselben Voraussetzungen das gleiche Ergebnis liefern.</li>
-<li><strong>Determinismus</strong> Die nächste anzuwendende Regel im Verfahren ist zu jedem Zeitpunkt (in jedem Zustand) eindeutig definiert.</li>
+<li><strong>Statische Finitheit</strong> (Endlichkeit der Beschreibung): Das Verfahren muss in einem endlichen Text (Programm) eindeutig beschreibbar sein.</li>
+<li><strong>Ausführbarkeit</strong> (Effektivität): Jeder einzelne Schritt des Verfahrens muss auch tatsächlich ausführbar sein.</li>
+<li><strong>Dynamische Finitheit</strong> (Endlichkeit der Ressourcen): Das Verfahren darf zu jedem Zeitpunkt nur endlich viel Speicherplatz benötigen.</li>
 </ol>
+<p>Neben diesen zwingend erforderlichen Anforderungen, gibt es noch weitere Anforderungen, die jedoch nicht zwingend erforderlich sind. Stattdessen ordnet man Algrorithmen anhand dieser Kriterien ein, je nachdem, ob sie gelten oder nicht:</p>
+<table>
+<thead>
+<tr>
+<th>Eigenschaft</th>
+<th>im klassischen Sinne</th>
+<th>Abweichungen (teilweise Praxis)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Terminierung</strong></td>
+<td>Das Verfahren endet nach endlich vielen Ausführungsschritten (z.B. Sortieralgorithmen)</td>
+<td>Das Programm läuft "endlos" (z.B. Betriebssystem, Webserver usw.)</td>
+</tr>
+<tr>
+<td><strong>Determinismus</strong> Die nächste anzuwendende Regel im Verfahren ist zu jedem Zeitpunkt (in jedem Zustand) eindeutig definiert.</td>
+<td>(pseudo-)randomisierte Algorithmen; der Folgeschritt beinhaltet Zufall oder freie Wahl (z.B. Krypto-Schlüsselerzeugung)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Determiniertheit</strong></td>
+<td>Das Verfahren liefert bei denselben Voraussetzungen stets dasselbe Ergebnis.</td>
+<td>Unterschiedliche Ergebnisse sind erlaubt/gewollt (z. B. randomisierte Heuristiken, nebenläufige Threads ohne Synchronisation)</td>
+</tr>
+</tbody>
+</table>
 <h3 id="beispiel-euklidischer-algorithmus">Beispiel: Euklidischer Algorithmus<a class="headerlink" href="#beispiel-euklidischer-algorithmus" title="Permanent link">&para;</a></h3>
 <p>Mit dem euklidischen Algorithmus<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">1</a></sup> kann der <em>größte gemeinsame Teiler (ggT)</em> zweier Zahlen berechnet werden. In seinen <em>Elementen</em> hat Euklid diesen Algorithmus ungefähr so formuliert:</p>
 <div class="admonition quote">
@@ -940,7 +986,7 @@
 <li><strong>Ausführbarkeit</strong> jeder einzelne Schritt kann ausgeführt werden.</li>
 <li><strong>Dynamische Finitheit</strong> über den Speicherplatz können wir noch nicht viel sagen, aber wir müssen nur einige wenige Zahlen speichern. Das sollte klappen.</li>
 <li><strong>Terminierung</strong> Wann endet unser Algorithmus? Was muss gelten? Wissen wir, ob der Algorithmus irgendwann stoppt?</li>
-<li><strong>Determiniertheit</strong> Es ist sicherlich nicht so leicht zu sehen, ob bei gleicher Eingabe (die Zahlen <code>a</code>und <code>b</code>) auch stets der gleiche größte gemneinsame Teiler berechnet wird. Dazu müssten wir uns erstmal überlegen, wie wir das prüfen können. </li>
+<li><strong>Determiniertheit</strong> Es ist sicherlich nicht so leicht zu sehen, ob bei gleicher Eingabe (die Zahlen <code>a</code>und <code>b</code>) auch stets der gleiche größte gemeinsame Teiler berechnet wird. Dazu müssten wir uns erstmal überlegen, wie wir das prüfen können. </li>
 <li><strong>Determinismus</strong> Wir werden unseren Algorithmus nochmal an einem Beispiel <em>durchspielen</em>, um ein Gefühl dafür zu bekommen, dass wir stets wissen, welche Anweisung als nächstes ausgeführt wird. </li>
 </ol>
 <h3 id="beispielzahlen-fur-den-euklidischen-algorithmus">Beispielzahlen für den euklidischen Algorithmus<a class="headerlink" href="#beispielzahlen-fur-den-euklidischen-algorithmus" title="Permanent link">&para;</a></h3>
@@ -1021,7 +1067,7 @@
 </tr>
 </tbody>
 </table>
-<p>Für dieses Beispiel war stets eindeutig, welche Anweisung als nächstes ausgeführt wird. Der Algrorithmus hat auch terminiert, d.h. er wurde beendet und es sollte auch klar sein, dass das Ergebnis für die die Eingabe <code>a=40</code> und <code>b=24</code> stets <code>8</code> ist. </p>
+<p>Für dieses Beispiel war stets eindeutig, welche Anweisung als nächstes ausgeführt wird. Der Algorithmus hat auch terminiert, d.h. er wurde beendet und es sollte auch klar sein, dass das Ergebnis für die die Eingabe <code>a=40</code> und <code>b=24</code> stets <code>8</code> ist. </p>
 <div class="admonition question">
 <p class="admonition-title">Fragen</p>
 <ul>
@@ -1141,7 +1187,7 @@
 </tr>
 </tbody>
 </table>
-<p>Auch für dieses Beispiel war erneut stets eindeutig, welche Anweisung als nächstes ausgeführt wird. Der Algrorithmus hat auch terminiert, d.h. er wurde beendet und es sollte auch klar sein, dass das Ergebnis für die Eingabe <code>n=5</code> stets <code>1</code> ist. </p>
+<p>Auch für dieses Beispiel war erneut stets eindeutig, welche Anweisung als nächstes ausgeführt wird. Der Algorithmus hat auch terminiert, d.h. er wurde beendet und es sollte auch klar sein, dass das Ergebnis für die Eingabe <code>n=5</code> stets <code>1</code> ist. </p>
 <div class="admonition question">
 <p class="admonition-title">Fragen</p>
 <ul>
@@ -1151,7 +1197,7 @@
 </ul>
 </div>
 <div class="admonition success">
-<p class="admonition-title">Success</p>
+<p class="admonition-title">Zusammenfassung</p>
 <p>Wir haben ein Verständnis über den <em>Algorithmus</em>-Begriff erlangt und wissen, was <em>Finitheit</em>, <em>Determiniertheit</em>, <em>Determinismus</em> und <em>Terminierung</em> bedeuten. </p>
 </div>
 <h2 id="programmablaufstrukturen">Programmablaufstrukturen<a class="headerlink" href="#programmablaufstrukturen" title="Permanent link">&para;</a></h2>
@@ -1273,8 +1319,16 @@ Ein Problem ist es jedoch, wenn die Bedingung niemals falsch wird und die Schlei
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -1346,10 +1400,14 @@ Ein Problem ist es jedoch, wenn die Bedingung niemals falsch wird und die Schlei
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

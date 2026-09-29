@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -660,6 +662,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tools/" class="md-nav__link">
         
   
@@ -1046,7 +1068,7 @@
 <p>Schreiben Sie eine Methode <code>isOdd(int number)</code>, die ein <code>true</code> zurückgibt, wenn <code>number</code> ungerade ist und sonst <code>false</code>. Dieses Mal verwenden Sie aber die Methode <code>isEven()</code>, um den richtigen Wert zu ermitteln. </p>
 </details>
 <div class="admonition success">
-<p class="admonition-title">Success</p>
+<p class="admonition-title">Zusammenfassung</p>
 <p>Wir können uns nun Methoden selber definieren. Die Definition von Methoden erfolgt innerhalb der Klasse, aber außerhalb jeder anderen Methode. Eine Methode kann entweder keinen Wert zurückgeben. Dann ist der "Rückgabetyp"<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> <code>void</code>. Eine solche <code>void</code>-Methode gibt typischerweise etwas auf die Konsole aus. Oder die Methode gibt einen Wert zurück. Dann wird der Datentyp dieses Wertes im Methodenkopf der Methodendefinition angegeben. Die Rückgabe des Wertes erfolgt durch <code>return</code>. Die <code>return</code>-Anweisung muss die letzte Anweisung in der Methode sein. Der Aufruf einer solchen Methode entspricht dann einem Ausdruck. 
 Einer Methode können beliebig viele Parameter übergeben werden. Diese lokalen Variablen werden im Methodenkopf in den runden Klammern durch Komma getrennt deklariert. Bei Aufruf der Methode müssen diesen Variablen Werte übergeben werden (Anzahl und Datentypen müssen bei Methodenaufruf passen).</p>
 </div>
@@ -1075,8 +1097,16 @@ Einer Methode können beliebig viele Parameter übergeben werden. Diese lokalen 
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -1148,10 +1178,14 @@ Einer Methode können beliebig viele Parameter übergeben werden. Diese lokalen 
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

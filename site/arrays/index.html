@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -810,6 +812,26 @@
   
   <span class="md-ellipsis">
     Javadoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
   </span>
   
 
@@ -2415,8 +2437,33 @@ Original-Array länger als Kopie (falls nur ein Teil kopiert werden soll; wenn <
 <li>Nein, das könnte zu einem Fehler führen. Der Operator <code>&amp;&amp;</code> hat (im Gegensatz zum Operator <code>&amp;</code>) die Eigenschaft, dass die zweite Teilbedingung (also <code>a[indexA]&lt;element</code>) gar nicht mehr geprüft wird, wenn die erste bereits <code>false</code> ist. Angenommen, die Teilbedingung <code>indexA&lt;a.length</code> ist <code>false</code>, dann ist <code>indexA==a.length</code>. Dann können wir aber nicht mehr mit <code>a[indexA]</code> auf ein Element in <code>a</code> zugreifen, da der Index <code>a.length</code> nicht existiert. Wir würden eine <code>ArrayIndexOutOfBoundsException</code> geworfen bekommen. Für den Fall also, dass das neu einzufügende Element ganz an das Ende des neuen Arrays <code>b</code> kommt, muss die Bedingung genau in dieser Reihenfolge formuliert werden. </li>
 </ul>
 </details>
+<details class="note">
+<summary>Übung 1 – Array initialisieren und ausgeben</summary>
+<p>Schreiben Sie eine Methode <code>public static void printArray(int[] a)</code>, die alle Elemente des Arrays durch Komma getrennt in einer Zeile ausgibt. Erstellen Sie außerdem eine Methode <code>public static int[] fillArray(int n)</code>, die ein Array der Länge <code>n</code> mit den Werten <code>1, 2, ..., n</code> füllt und zurückgibt.</p>
+</details>
+<details class="note">
+<summary>Übung 2 – Minimum und Maximum</summary>
+<p>Schreiben Sie zwei Methoden:</p>
+<ul>
+<li><code>public static int minimum(int[] a)</code> – gibt den kleinsten Wert zurück,</li>
+<li><code>public static int maximum(int[] a)</code> – gibt den größten Wert zurück.</li>
+</ul>
+<p>Was passiert, wenn das Array leer ist? Wie kann man sich dagegen absichern?</p>
+</details>
+<details class="note">
+<summary>Übung 3 – Lineare Suche</summary>
+<p>Schreiben Sie eine Methode <code>public static int suche(int[] a, int wert)</code>, die den Index des ersten Vorkommens von <code>wert</code> in <code>a</code> zurückgibt, oder <code>-1</code>, wenn <code>wert</code> nicht enthalten ist.</p>
+</details>
+<details class="note">
+<summary>Übung 4 – Array umkehren</summary>
+<p>Schreiben Sie eine Methode <code>public static int[] umkehren(int[] a)</code>, die ein neues Array zurückgibt, in dem die Elemente in umgekehrter Reihenfolge stehen. Das Original-Array soll dabei unverändert bleiben.</p>
+</details>
+<details class="note">
+<summary>Übung 5 – Häufigkeitsanalyse</summary>
+<p>Schreiben Sie eine Methode <code>public static int[] haeufigkeit(int[] a, int max)</code>, die ein Array zurückgibt, in dem an Position <code>i</code> gespeichert ist, wie oft die Zahl <code>i</code> im Array <code>a</code> vorkommt. Gehen Sie davon aus, dass alle Werte in <code>a</code> zwischen <code>0</code> und <code>max</code> liegen.</p>
+</details>
 <div class="admonition success">
-<p class="admonition-title">Success</p>
+<p class="admonition-title">Zusammenfassung</p>
 <p>Wir kennen jetzt Arrays. Wir können sie erzeugen, wir können sie miteinander verbinden. Wir können Elemente darin suchen, sowohl in sortierten als auch in unsortierten Arrays. Wir können Elemente einfügen. Bitte beachten Sie, dass die Elemente eines Arrays von jedem beliebigen Typ sein können, auch Referenztypen. Jetzt lernen wir noch, wie wir Arrays sortieren können und werden uns später nochmal mit Arrays beschäftigen, deren Elemente von Referenztypen sind und somit Objekte beinhalten. </p>
 </div>
 <div class="footnote">
@@ -2444,8 +2491,16 @@ Original-Array länger als Kopie (falls nur ein Teil kopiert werden soll; wenn <
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -2517,10 +2572,14 @@ Original-Array länger als Kopie (falls nur ein Teil kopiert werden soll; wenn <
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -216,6 +216,6 @@ Das schauen wir uns einmal genauer an:
 	Schreiben Sie eine Methode `isOdd(int number)`, die ein `true` zurückgibt, wenn `number` ungerade ist und sonst `false`. Dieses Mal verwenden Sie aber die Methode `isEven()`, um den richtigen Wert zu ermitteln. 
 
 
-!!! success
+!!! success "Zusammenfassung"
     Wir können uns nun Methoden selber definieren. Die Definition von Methoden erfolgt innerhalb der Klasse, aber außerhalb jeder anderen Methode. Eine Methode kann entweder keinen Wert zurückgeben. Dann ist der "Rückgabetyp"[^1] `void`. Eine solche `void`-Methode gibt typischerweise etwas auf die Konsole aus. Oder die Methode gibt einen Wert zurück. Dann wird der Datentyp dieses Wertes im Methodenkopf der Methodendefinition angegeben. Die Rückgabe des Wertes erfolgt durch `return`. Die `return`-Anweisung muss die letzte Anweisung in der Methode sein. Der Aufruf einer solchen Methode entspricht dann einem Ausdruck. 
     Einer Methode können beliebig viele Parameter übergeben werden. Diese lokalen Variablen werden im Methodenkopf in den runden Klammern durch Komma getrennt deklariert. Bei Aufruf der Methode müssen diesen Variablen Werte übergeben werden (Anzahl und Datentypen müssen bei Methodenaufruf passen).

@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -553,6 +555,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -813,6 +824,26 @@
   
   <span class="md-ellipsis">
     Javadoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
   </span>
   
 
@@ -1146,6 +1177,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1170,7 +1210,7 @@
 <p>Eine Variable besteht also aus drei Dingen:</p>
 <ul>
 <li>dem Wert der Variablen (genau einer)</li>
-<li>dem Datentyp der Variablen (besteimmt den Wertebereich, also die möglichen Werte, die die Variable annehmen kann)</li>
+<li>dem Datentyp der Variablen (bestimmt den Wertebereich, also die möglichen Werte, die die Variable annehmen kann)</li>
 <li>dem Namen der Variablen (dafür gibt es Regeln, wie solche <em>Bezeichner</em> aussehen dürfen)</li>
 </ul>
 <p><img alt="variablen" src="../files/12_variable.png" /></p>
@@ -1183,49 +1223,47 @@
 <h2 id="datentypen-in-java">Datentypen in Java<a class="headerlink" href="#datentypen-in-java" title="Permanent link">&para;</a></h2>
 <p>In Java gibt es acht sogenannte <em>primitive Datentypen</em>. Wir bezeichnen diese <em>primitiven Datentypen</em> als <em>Wertetypen</em>. Eine Variable von einem <em>Wertetyp</em> kann genau einen Wert annehmen. In folgender Tabelle sind diese Datentypen aufgelistet und ihre jeweilige Bedeutung erklärt.</p>
 <table>
-    <thead>
-        <tr>
-            <th> Datentyp </th>
-            <th> Bedeutung </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td> <code>int</code> </td>
-            <td> eine Variable vom Datentyp <code>int</code> kann ganzzahlige Werte speichern, also positive und negative ganze Zahlen. Die kleinste Zahl vom Typ <code>int</code> ist <code>-2^31</code> "klein" und die größte Zahl vom Typ <code>int</code> ist <code>2^31-1</code> groß. <code>int</code> ist der Standard-Typ für ganze Zahlen in Java. <code>int</code> steht für <code>integer</code>. 
-            </td>
-        </tr>
-        <tr>
-            <td>  <code>byte</code>     </td>
-            <td>  eine Variable vom Datentyp <code>byte</code> kann ebenfalls ganzzahlige Werte speichern, also positive und negative ganze Zahlen. Im Gegensatz zu <code>int</code> ist der Wertebereich aber viel kleiner. Die kleinste <code>byte</code>-Zahl ist <code>-2^7</code> klein und die größte <code>byte</code>-Zahl ist <code>2^7-1</code> groß. </td>
-        </tr>
-        <tr>
-            <td>  <code>short</code>     </td>
-            <td> eine Variable vom Datentyp <code>short</code> kann ebenfalls ganzzahlige Werte speichern, also positive und negative ganze Zahlen. Im Gegensatz zu <code>int</code> ist der Wertebereich aber viel kleiner. Im Gegensatz zu <code>byte</code> ist er aber größer. Die kleinste <code>short</code>-Zahl ist <code>-2^15</code> klein und die größte <code>short</code>-Zahl ist <code>2^15-1</code> groß. </td>
-        </tr>
-        <tr>
-            <td>  <code>long</code>    </td>
-            <td>  eine Variable vom Datentyp <code>long</code> kann ebenfalls ganzzahlige Werte speichern, also positive und negative ganze Zahlen. Im Gegensatz zu <code>int</code> ist der Wertebereich aber viel größer. <code>long</code> wird immer dann verwendet, wenn der Wertebereich von <code>int</code> nicht ausreicht, also entweder für sehr, sehr kleine oder sehr, sehr große Zahlen. Die kleinste <code>long</code>-Zahl ist <code>-2^63</code> klein und die größte <code>long</code>-Zahl ist <code>2^63-1</code> groß. </td>
-        </tr>
-        <tr>
-            <td>  <code>char</code>  </td>
-            <td>  Der Datenyp <code>char</code> steht für <code>character</code>. Mit diesem Datentypen werden einzelne Zeichen gespeichert. Der Datentyp <code>char</code> ist ebenfalls ein ganzzahliger Datentyp, nimmt aber nur positive Werte (aus dem Wertebereich <code>0</code> bis <code>65535</code> an.) Diese Werte sind Zahlenwerte, die der Codierung eines Zeichens entsprechen, z.B. dem Zeichen <code>'a'</code>. Ein solches Zeichen steht immer in einfachen Hochkommata <code>''</code>. </td>
-        </tr>
-        <tr>
-            <td>  <code>boolean</code>  </td>
-            <td>  Der Datentyp <code>boolean</code> kennt nur genau zwei Werte <code>true</code> und <code>false</code>. Eine Variable vom Datentyp <code>boolean</code> kann also entweder genau <code>true</code> sein oder genau <code>false</code>, nichts anderes. </td>
-        </tr>
-        <tr>
-            <td>  <code>double</code>  </td>
-            <td>  Der Datentyp <code>double</code> ist in Java der Standard-Datentyp für Gleitkommazahlen (also gebrochene Zahlen mit Komma). Die kleinste und größte <code>double</code>-Zahl lässt sich nicht genau bestimmen, denn das hängt von der Genauigkeit der Angabe hinter dem Komma ab. Es werden aber 64 bit verwendet, um eine <code>double</code>-Zahl zu speichern. </td>
-        </tr>
-        <tr>
-            <td>  <code>float</code>  </td>
-            <td>  <code>float</code> ist neben <code>double</code> ein weiterer Datentyp für Gleitkommazahlen. Die Genauigkeit der Speicherung als <code>float</code> ist aber nicht so groß wie bei <code>double</code>, da <code>float</code> nur 32 bit zur Speicherung einer Zahl zur Verfügung hat. </td>
-        </tr>
-    </tbody>
+<thead>
+<tr>
+<th>Datentyp</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td>Ganzzahlige Werte (positiv und negativ). Wertebereich: −2³¹ bis 2³¹−1. Standard-Typ für ganze Zahlen in Java (<code>integer</code>).</td>
+</tr>
+<tr>
+<td><code>byte</code></td>
+<td>Ganzzahlige Werte mit kleinem Wertebereich: −2⁷ bis 2⁷−1.</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>Ganzzahlige Werte, Wertebereich zwischen <code>byte</code> und <code>int</code>: −2¹⁵ bis 2¹⁵−1.</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>Ganzzahlige Werte mit sehr großem Wertebereich: −2⁶³ bis 2⁶³−1. Wird verwendet, wenn <code>int</code> nicht ausreicht.</td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>Einzelne Zeichen (<code>character</code>). Ganzzahliger Typ, nur positive Werte von 0 bis 65535, die einer Zeichencodierung entsprechen (z.B. <code>'a'</code>). Zeichen stehen in einfachen Hochkommata <code>''</code>.</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td>Kennt nur genau zwei Werte: <code>true</code> und <code>false</code>.</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>Standard-Typ für Gleitkommazahlen (gebrochene Zahlen). Speicherung mit 64 bit.</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>Weiterer Typ für Gleitkommazahlen, aber geringere Genauigkeit als <code>double</code> (32 bit).</td>
+</tr>
+</tbody>
 </table>
-
 <h3 id="deklaration-von-variablen">Deklaration von Variablen<a class="headerlink" href="#deklaration-von-variablen" title="Permanent link">&para;</a></h3>
 <p>Nun, da wir Datentypen kennen, können wir Variablen "erzeugen". Das "Erzeugen" von Variablen besteht aus zwei Schritten:</p>
 <ol>
@@ -2173,6 +2211,52 @@ Kopf, dass für die vier Werte <code>1</code>, <code>2</code>, <code>3</code> un
 <p>Hier nochmal zur Veranschaulichung, zwischen welchen Datentypen eine <em>explizite</em> Typkonvertierung durchgeführt werden kann (<em>kompatible</em> Datentypen):</p>
 <p><img alt="implicittypecast" src="../files/52_typecast.png" /></p>
 <p>Beachten Sie, dass von und nach <code>boolean</code> in Java auch keine explizite Typkonvertierung möglich ist!</p>
+<h2 id="ubungen">Übungen<a class="headerlink" href="#ubungen" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary>Übung 1 – Variablen deklarieren und initialisieren</summary>
+<p>Deklarieren und initialisieren Sie Variablen für folgende Informationen:
+- Den Namen einer Person (z.B. <code>"Ada Lovelace"</code>)
+- Das Alter einer Person (z.B. <code>28</code>)
+- Die Körpergröße in Metern (z.B. <code>1.72</code>)
+- Ob die Person immatrikuliert ist (<code>true</code>)
+- Den Anfangsbuchstaben des Nachnamens (<code>'L'</code>)</p>
+<p>Geben Sie alle Werte auf der Konsole aus.</p>
+</details>
+<details class="note">
+<summary>Übung 2 – Gültige Bezeichner</summary>
+<p>Welche der folgenden Bezeichner sind in Java gültig? Begründen Sie für jeden:</p>
+<p><code>studentName</code>, <code>2ndPlace</code>, <code>_value</code>, <code>class</code>, <code>my variable</code>, <code>π</code>, <code>MAX_SIZE</code>,
+<code>firstName</code>, <code>int</code>, <code>has-data</code>, <code>$price</code>, <code>Straße</code></p>
+</details>
+<details class="note">
+<summary>Übung 3 – Typkonvertierung</summary>
+<p>Gegeben sei folgender Code. Welche Zeilen erzeugen einen Compilerfehler?
+Begründen Sie und korrigieren Sie die fehlerhaften Zeilen:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="kt">int</span><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.5</span><span class="p">;</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="kt">long</span><span class="w">   </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000000000000L</span><span class="p">;</span>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="kt">int</span><span class="w">    </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="mf">9.99</span><span class="p">;</span>
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="kt">byte</span><span class="w">   </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
+</span><span id="__span-43-6"><a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="kt">double</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-43-7"><a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a><span class="kt">double</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Was ist der Wert von <code>d</code>, <code>f</code> und <code>g</code>?</p>
+</details>
+<details class="note">
+<summary>Übung 4 – Zeichenketten</summary>
+<p>Deklarieren Sie zwei <code>String</code>-Variablen <code>firstName</code> und <code>lastName</code>.
+Erzeugen Sie daraus durch Verkettung (<code>+</code>) einen vollständigen Namen und
+geben Sie ihn aus. Experimentieren Sie auch mit dem Leerzeichen zwischen Vor- und Nachname.</p>
+</details>
+<div class="admonition success">
+<p class="admonition-title">Zusammenfassung</p>
+<p>Wir haben Variablen und die acht primitiven Datentypen in Java kennengelernt:
+<code>int</code>, <code>byte</code>, <code>short</code>, <code>long</code> für ganze Zahlen, <code>float</code> und <code>double</code> für Gleitkommazahlen,
+<code>char</code> für einzelne Zeichen und <code>boolean</code> für Wahrheitswerte. Eine Variable besteht aus
+Name, Typ und Wert. Bei der Deklaration vergeben wir Namen und Typ, bei der Initialisierung
+weisen wir den ersten Wert zu. Wir wissen, was Bezeichner sind und welche Regeln für sie gelten.
+Außerdem haben wir implizite und explizite Typkonvertierung (<em>Casting</em>) kennengelernt.</p>
+</div>
 <div class="footnote">
 <hr />
 <ol>
@@ -2207,8 +2291,16 @@ Kopf, dass für die vier Werte <code>1</code>, <code>2</code>, <code>3</code> un
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -2280,10 +2372,14 @@ Kopf, dass für die vier Werte <code>1</code>, <code>2</code>, <code>3</code> un
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

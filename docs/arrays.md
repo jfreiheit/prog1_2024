@@ -1213,6 +1213,26 @@ public static int[] insertIntoSortedArray(int[] a, int element)
 ??? question "Die Bedingung der ersten `while`-Schleife lautet `indexA<a.length && a[indexA]<element`. Könnte man das auch umdrehen und `a[indexA]<element && indexA<a.length` schreiben?"
 	- Nein, das könnte zu einem Fehler führen. Der Operator `&&` hat (im Gegensatz zum Operator `&`) die Eigenschaft, dass die zweite Teilbedingung (also `a[indexA]<element`) gar nicht mehr geprüft wird, wenn die erste bereits `false` ist. Angenommen, die Teilbedingung `indexA<a.length` ist `false`, dann ist `indexA==a.length`. Dann können wir aber nicht mehr mit `a[indexA]` auf ein Element in `a` zugreifen, da der Index `a.length` nicht existiert. Wir würden eine `ArrayIndexOutOfBoundsException` geworfen bekommen. Für den Fall also, dass das neu einzufügende Element ganz an das Ende des neuen Arrays `b` kommt, muss die Bedingung genau in dieser Reihenfolge formuliert werden. 
 
-!!! success
+??? note "Übung 1 – Array initialisieren und ausgeben"
+	Schreiben Sie eine Methode `public static void printArray(int[] a)`, die alle Elemente des Arrays durch Komma getrennt in einer Zeile ausgibt. Erstellen Sie außerdem eine Methode `public static int[] fillArray(int n)`, die ein Array der Länge `n` mit den Werten `1, 2, ..., n` füllt und zurückgibt.
+
+??? note "Übung 2 – Minimum und Maximum"
+	Schreiben Sie zwei Methoden:
+
+	- `public static int minimum(int[] a)` – gibt den kleinsten Wert zurück,
+	- `public static int maximum(int[] a)` – gibt den größten Wert zurück.
+
+	Was passiert, wenn das Array leer ist? Wie kann man sich dagegen absichern?
+
+??? note "Übung 3 – Lineare Suche"
+	Schreiben Sie eine Methode `public static int suche(int[] a, int wert)`, die den Index des ersten Vorkommens von `wert` in `a` zurückgibt, oder `-1`, wenn `wert` nicht enthalten ist.
+
+??? note "Übung 4 – Array umkehren"
+	Schreiben Sie eine Methode `public static int[] umkehren(int[] a)`, die ein neues Array zurückgibt, in dem die Elemente in umgekehrter Reihenfolge stehen. Das Original-Array soll dabei unverändert bleiben.
+
+??? note "Übung 5 – Häufigkeitsanalyse"
+	Schreiben Sie eine Methode `public static int[] haeufigkeit(int[] a, int max)`, die ein Array zurückgibt, in dem an Position `i` gespeichert ist, wie oft die Zahl `i` im Array `a` vorkommt. Gehen Sie davon aus, dass alle Werte in `a` zwischen `0` und `max` liegen.
+
+!!! success "Zusammenfassung"
 	Wir kennen jetzt Arrays. Wir können sie erzeugen, wir können sie miteinander verbinden. Wir können Elemente darin suchen, sowohl in sortierten als auch in unsortierten Arrays. Wir können Elemente einfügen. Bitte beachten Sie, dass die Elemente eines Arrays von jedem beliebigen Typ sein können, auch Referenztypen. Jetzt lernen wir noch, wie wir Arrays sortieren können und werden uns später nochmal mit Arrays beschäftigen, deren Elemente von Referenztypen sind und somit Objekte beinhalten. 
 

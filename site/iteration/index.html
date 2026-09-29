@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -584,6 +586,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -744,6 +755,26 @@
   
   <span class="md-ellipsis">
     Javadoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
   </span>
   
 
@@ -1003,6 +1034,15 @@
   <a href="#break-und-continue" class="md-nav__link">
     <span class="md-ellipsis">
       break und continue
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
     </span>
   </a>
   
@@ -1793,7 +1833,46 @@ Beachten Sie das Semikolon hinter der Bedingung! Es gibt Beispiele für den sinn
 <h2 id="break-und-continue"><code>break</code> und <code>continue</code><a class="headerlink" href="#break-und-continue" title="Permanent link">&para;</a></h2>
 <div class="admonition hint">
 <p class="admonition-title"><code>break</code> und <code>continue</code></p>
-<p>In (fast) allen Java-Büchern liest man in dem Kapitel über Schleifen auch davon, dass es die beiden Anweisungen <code>break;</code> und <code>continue;</code> gibt. Ich will hier gar nicht darauf eigehen, was diese beiden Anweisungen machen, nur so viel: sie springen aus Schleifen heraus. Solche Art von "Sprüngen" (<em>go to statements</em>) gehören nicht in moderne, gute Programme. Wir nutzen diese Anweisungen nicht!!! Stattdessen sei in diesem Zusammenhang ein berühmtes Papier von <a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra">Edsger W. Dijkstra</a> empfohlen: <a href="https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf">Go To Statement Considered Harmful</a>. Siehe dazu auch <a href="https://en.wikipedia.org/wiki/Goto#CITEREFDijkstra1968">hier</a>. </p>
+<p>In (fast) allen Java-Büchern liest man in dem Kapitel über Schleifen auch davon, dass es die beiden Anweisungen <code>break;</code> und <code>continue;</code> gibt. Ich will hier gar nicht darauf eigehen, was diese beiden Anweisungen machen, nur so viel: sie springen aus Schleifen heraus. Solche Art von "Sprüngen" (<em>go to statements</em>) gehören nicht in moderne, gute Programme. Wir nutzen diese Anweisungen nicht!!! Stattdessen sei in diesem Zusammenhang ein berühmtes Papier von <a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra">Edsger W. Dijkstra</a> empfohlen: <a href="https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf">Go To Statement Considered Harmful</a>. Siehe dazu auch <a href="https://en.wikipedia.org/wiki/Goto#CITEREFDijkstra1968">hier</a>.</p>
+</div>
+<h2 id="ubungen">Übungen<a class="headerlink" href="#ubungen" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary>Übung 1 – Summe aller geraden Zahlen</summary>
+<p>Schreiben Sie eine Methode <code>public static int summeGerade(int n)</code>, die die Summe aller geraden Zahlen von 2 bis einschließlich <code>n</code> berechnet. Verwenden Sie eine <code>for</code>-Schleife.</p>
+<p>Beispiel: <code>summeGerade(10)</code> → <code>2 + 4 + 6 + 8 + 10 = 30</code>.</p>
+</details>
+<details class="note">
+<summary>Übung 2 – Primzahltest</summary>
+<p>Schreiben Sie eine Methode <code>public static boolean istPrimzahl(int n)</code>, die prüft, ob <code>n</code> eine Primzahl ist. Eine Primzahl ist nur durch 1 und sich selbst teilbar. Verwenden Sie eine <code>for</code>- oder <code>while</code>-Schleife.</p>
+<p><em>Tipp:</em> Es genügt, alle möglichen Teiler von 2 bis <span class="arithmatex">\(\sqrt{n}\)</span> zu prüfen.</p>
+</details>
+<details class="note">
+<summary>Übung 3 – FizzBuzz</summary>
+<p>Ein Klassiker! Schreiben Sie eine Methode <code>public static void fizzBuzz(int n)</code>, die alle Zahlen von 1 bis <code>n</code> ausgibt – aber:</p>
+<ul>
+<li>für Vielfache von 3 statt der Zahl <code>"Fizz"</code>,</li>
+<li>für Vielfache von 5 statt der Zahl <code>"Buzz"</code>,</li>
+<li>für Vielfache von 3 und 5 <code>"FizzBuzz"</code>.</li>
+</ul>
+</details>
+<details class="note">
+<summary>Übung 4 – Zahlenmuster mit verschachtelten Schleifen</summary>
+<p>Schreiben Sie eine Methode, die folgendes Muster ausgibt (für n=5):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>1
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>1 2
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>1 2 3
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>1 2 3 4
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>1 2 3 4 5
+</span></code></pre></div>
+<p>Verwenden Sie zwei verschachtelte <code>for</code>-Schleifen.</p>
+</details>
+<details class="note">
+<summary>Übung 5 – Fibonacci-Folge</summary>
+<p>Schreiben Sie eine Methode <code>public static void fibonacci(int n)</code>, die die ersten <code>n</code> Glieder der Fibonacci-Folge ausgibt (0, 1, 1, 2, 3, 5, 8, …). Verwenden Sie eine <code>while</code>-Schleife.</p>
+</details>
+<div class="admonition success">
+<p class="admonition-title">Zusammenfassung</p>
+<p>Wir haben drei Arten von Schleifen kennengelernt: die <code>for</code>-Schleife für eine bekannte Anzahl von Durchläufen, die <code>while</code>-Schleife für eine bedingungsgesteuerte Iteration und die <code>do...while</code>-Schleife, die mindestens einmal ausgeführt wird. Schleifen können verschachtelt werden, um z.B. zweidimensionale Muster auszugeben. Sprunganweisungen wie <code>break</code> und <code>continue</code> sollten in modernem Java-Code vermieden werden. Die gewählte Schleifenart sollte immer zum Problem passen: <code>for</code> bei bekannter Schrittzahl, <code>while</code> bei unbekannter Bedingungsabbruchbedingung.</p>
 </div>
 
 
@@ -1812,8 +1891,16 @@ Beachten Sie das Semikolon hinter der Bedingung! Es gibt Beispiele für den sinn
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -1885,10 +1972,14 @@ Beachten Sie das Semikolon hinter der Bedingung! Es gibt Beispiele für den sinn
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

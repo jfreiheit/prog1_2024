@@ -278,3 +278,36 @@ Mit den oben genannten *Tags* können Klassen bereits gut dokumentiert werden. E
 - [@deprecated](https://docs.oracle.com/javase/1.5.0/docs/tooldocs/windows/javadoc.html#@deprecated) - kennzeichnet, dass diese Klasse oder Methode nicht weiter genutzt werden soll, siehe auch [hier](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html#@deprecated) und [hier](https://docs.oracle.com/javase/1.5.0/docs/guide/javadoc/deprecation/index.html)
 - [@throws](https://docs.oracle.com/javase/1.5.0/docs/tooldocs/windows/javadoc.html#@throws) - synonym zu `@exception`; in Verbindung zu der Exception (den Exceptions), die durch eine Methode geworfen werden kann/können und für welche Fälle die jeweilige Exception geworfen wird, siehe auch [hier](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html#@exception)
 - [@see](https://docs.oracle.com/javase/1.5.0/docs/tooldocs/windows/javadoc.html#@see) - erstellt einen Link zu einer Klasse, Methode, etc. in der API-Dokumentation (Syntax: `@see  package.class#member  label`, wobei `label` sichtbar und `package.class#member ` der Link), siehe auch [hier](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html#@see); `@see` ist ähnlich zu [{@ link}](https://docs.oracle.com/javase/1.5.0/docs/tooldocs/windows/javadoc.html#{@link}), aber ein `{@link}` beschreibt einen In-line-Link, während der `@see`-Link im `See also`-Bereich aufgeführt wird.
+
+## Übungen
+
+??? note "Übung 1 – Klasse `Bruch` dokumentieren"
+	Nehmen Sie Ihre `Bruch`-Klasse aus früheren Übungen und versehen Sie alle Methoden und Konstruktoren mit vollständigen Javadoc-Kommentaren. Verwenden Sie dabei mindestens die Tags `@param`, `@return` und `@author`. Generieren Sie anschließend die Dokumentation mit Eclipse (`Project → Generate Javadoc...`) und öffnen Sie die entstandene `index.html`.
+
+??? note "Übung 2 – Methoden dokumentieren"
+	Documenten Sie die folgende Methode vollständig mit Javadoc:
+
+	```java
+	public static int binaereSuche(int[] sortiert, int wert) {
+		int links = 0, rechts = sortiert.length - 1;
+		while (links <= rechts) {
+			int mitte = (links + rechts) / 2;
+			if (sortiert[mitte] == wert) return mitte;
+			else if (sortiert[mitte] < wert) links = mitte + 1;
+			else rechts = mitte - 1;
+		}
+		return -1;
+	}
+	```
+
+	Erläutern Sie im `@param`-Tag die Vorbedingung (Array muss sortiert sein) und beschreiben Sie im `@return`-Tag beide möglichen Rückgabewerte.
+
+??? note "Übung 3 – Klassen-Javadoc"
+	Welche Informationen gehören in den Javadoc-Kommentar einer Klasse (im Gegensatz zu dem einer Methode)? Erstellen Sie einen vollständigen Klassen-Kommentar für eine Klasse `Bibliothek`, die eine Sammlung von Büchern verwaltet.
+
+??? note "Übung 4 – `@deprecated` und `@see`"
+	Erstellen Sie eine Klasse `AltesKonto` mit einer als `@deprecated` markierten Methode `void buchen(double betrag)` und einer neuen Methode `void einzahlen(double betrag)`. Verweisen Sie im `@deprecated`-Tag mit `@see` auf die Nachfolgemethode.
+
+!!! success "Zusammenfassung"
+	Javadoc ist das Standard-Werkzeug zur Dokumentation von Java-Code. Durch spezielle `/** ... */`-Kommentare können Klassen, Methoden, Konstruktoren und Felder beschrieben werden. Wichtige Tags sind `@author`, `@version`, `@param`, `@return`, `@throws`, `@deprecated` und `@see`. Aus den Kommentaren wird automatisch eine HTML-Dokumentation generiert, die der Dokumentation der Java-Standardbibliothek ähnelt. Eine gute Dokumentation ist ein wesentlicher Bestandteil von *Clean Code* und erleichtert anderen Entwicklerinnen und Entwicklern die Arbeit erheblich.
+

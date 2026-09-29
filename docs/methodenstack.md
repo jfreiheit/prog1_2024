@@ -510,7 +510,81 @@ Es ist eigentlich ungünstig, den Gleichheitsoperator `==` von Werten auch für 
 
 > Wird der Vergleichsoperator `==` für Referenztypen verwendet, so wird nur die Gleichheit von Referenzen verglichen, nicht aber die Gleichheit von Objekten!
 
-!!! success
+??? note "Übung 1 – Werte- vs. Referenztyp"
+	Gegeben sei folgende Methode:
+
+	```java
+	public static void verdoppeln(int zahl) {
+		zahl = zahl * 2;
+	}
+	```
+
+	Was gibt folgende `main()`-Methode aus? Begründen Sie Ihre Antwort.
+
+	```java
+	int x = 5;
+	verdoppeln(x);
+	System.out.println(x);
+	```
+
+	> **Antwort:** Ausgabe ist `5`. Werte werden als Kopie übergeben (*pass by value*), der Parameter `zahl` ist eine lokale Kopie. Die Variable `x` in `main()` bleibt unverändert.
+
+??? note "Übung 2 – Referenzübergabe"
+	Gegeben sei folgende Methode:
+
+	```java
+	public static void verschieben(Point p, int dx, int dy) {
+		p.translate(dx, dy);
+	}
+	```
+
+	Betrachten Sie:
+
+	```java
+	Point p = new Point(3, 4);
+	verschieben(p, 2, -1);
+	System.out.println(p.getX() + ", " + p.getY());
+	```
+
+	Was wird ausgegeben? Erklären Sie den Unterschied zur Übung 1.
+
+	> **Antwort:** Ausgabe ist `5, 3`. Bei Referenztypen wird zwar auch eine Kopie der Referenz übergeben, die aber auf dasselbe Objekt zeigt. Änderungen am Objekt sind deshalb dauerhaft sichtbar.
+
+??? note "Übung 3 – Methodenstack nachvollziehen"
+	Verfolgen Sie den Aufruf-Stack für folgende Methoden:
+
+	```java
+	public static int quad(int n) {
+		return n * n;
+	}
+
+	public static int sumOfQuads(int a, int b) {
+		return quad(a) + quad(b);
+	}
+
+	public static void main(String[] args) {
+		int result = sumOfQuads(3, 4);
+		System.out.println(result);
+	}
+	```
+
+	Zeichnen Sie den Aufruf-Stack (Stackrahmen) nach und geben Sie an, wann welche Methode auf dem Stack liegt.
+
+	> **Antwort:** `main` ruft `sumOfQuads(3,4)` auf, das seinerseits zweimal `quad()` aufruft. Zuerst liegt `main → sumOfQuads → quad(3)` auf dem Stack, nach Rückgabe `main → sumOfQuads → quad(4)`. Am Ende liegt nur noch `main` auf dem Stack. Die Ausgabe ist `25`.
+
+??? note "Übung 4 – Null-Referenz"
+	Was passiert bei folgender Ausführung und warum?
+
+	```java
+	Point p = null;
+	System.out.println(p.getX());
+	```
+
+	Wie könnte man die Ausgabe absichern?
+
+	> **Antwort:** Es wird eine `NullPointerException` geworfen, weil `p` auf kein Objekt zeigt. Absichern z.B. mit `if (p != null) { System.out.println(p.getX()); }`.
+
+!!! success "Zusammenfassung"
 	Wir haben zwei Aspekte diskutiert, die beide sehr wichtig für das Verständnis der objektorientierten Programmierung sind. Einerseits den Unterschied zwischen Werte- und Referenztypen und andererseits, dass ein Objekt aufhört, zu existieren, sobald es keine Referenz mehr gibt, die auf dieses Objekt zeigt. Insbesondere das Verständnis über den Unterschied zwischen Werte- und Referenztypen ist wirklich wichtig, um die Konzepte der objektorientierten Programmierung gut verstehen zu können!
 
 

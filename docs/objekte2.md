@@ -862,7 +862,50 @@ mit der Ausgabe
 Wesentlichster Unterschied zur ersten Variante ist, dass sich weder `p1` noch `p2` durch die Addition geändert haben. Wenn wir das Ziel verfolgen, möglichst unveränderliche Objekte zu erzeugen, dann ist die zweite Lösung auf jeden Fall die bessere. So oder so haben wir eine Methode kennengelernt, in der ein Objekt der Klasse erzeugt und dieses Objekt zurückgegeben wird. Solche Objekte kommen nicht selten vor - und nun kennen wir ein Beispiel. Weitere Beispiele werden wir in der Aufgabe *Bruch* erzeugen.  
 
 
-!!! success 
+??? note "Übung 1 – Konstruktor-Überladung für `Kreis`"
+	Erweitern Sie die Klasse `Kreis` aus der vorigen Aufgabe um einen zweiten Konstruktor `Kreis()`, der einen Kreis mit Radius `1.0` anlegt. Nutzen Sie das Schlüsselwort `this(...)`, um den vorhandenen Konstruktor aufzurufen.
+
+??? note "Übung 2 – `this`-Referenz"
+	Was gibt folgendes Programm aus? Begründen Sie Ihre Antwort.
+
+	```java
+	public class Zähler {
+		private int wert;
+
+		public Zähler(int wert) {
+			this.wert = wert;
+		}
+
+		public Zähler erhöhen() {
+			this.wert++;
+			return this;
+		}
+
+		public void print() {
+			System.out.println(wert);
+		}
+	}
+
+	// In main():
+	Zähler z = new Zähler(0);
+	z.erhöhen().erhöhen().erhöhen().print();
+	```
+
+	> **Antwort:** Ausgabe ist `3`. Jeder Aufruf von `erhöhen()` gibt `this` zurück, sodass Aufrufe verkettet werden können (*method chaining*).
+
+??? note "Übung 3 – Methode gibt neues Objekt zurück"
+	Erweitern Sie die Klasse `Bruch` um eine Methode `Bruch addieren(Bruch anderer)`, die die Summe der beiden Brüche als neues `Bruch`-Objekt zurückgibt. Die originalen Objekte sollen dabei unverändert bleiben.
+
+	Formel für die Addition: $rac{a}{b} + rac{c}{d} = rac{a \cdot d + b \cdot c}{b \cdot d}$
+
+??? note "Übung 4 – Überladen von `print()`"
+	Erstellen Sie eine Klasse `Nachricht` mit einer Objektvariable `text` (Typ `String`). Implementieren Sie drei überladene Methoden:
+
+	- `void print()` – gibt `text` aus,
+	- `void print(String prefix)` – gibt `prefix + ": " + text` aus,
+	- `void print(int anzahl)` – gibt `text` genau `anzahl` Mal aus.
+
+!!! success "Zusammenfassung"
 	Wir haben eigene Datentypen in der Definition eigener Datentypen verwendet. Wir haben das Schlüsselwort `this` kennengerlernt, mit dem wir innerhalb der Klasse das aufrufende Objekt referenzieren können. Wir haben das Überladen von Methoden betrachtet und Konstruktoren in Klassen mehrfach überladen. Das Überladen von Methoden lässt sich auf alle Methoden anwenden. Darüber hinaus haben wir Methoden erstellt, in denen Objekte erzeugt werden. Zuletzt gibt eine solche Methode das von ihr erzeugte Objekt auch zurück. 
 
 

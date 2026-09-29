@@ -7,7 +7,7 @@ Eine Variable kann man sich wie eine Kiste vorstellen, in die genau ein *Wert* p
 Eine Variable besteht also aus drei Dingen:
 
 - dem Wert der Variablen (genau einer)
-- dem Datentyp der Variablen (besteimmt den Wertebereich, also die möglichen Werte, die die Variable annehmen kann)
+- dem Datentyp der Variablen (bestimmt den Wertebereich, also die möglichen Werte, die die Variable annehmen kann)
 - dem Namen der Variablen (dafür gibt es Regeln, wie solche *Bezeichner* aussehen dürfen)
 
 ![variablen](./files/12_variable.png)
@@ -23,49 +23,16 @@ Damit wir einer Variablen ihren Datentyp zuweisen können, müssen wir die Daten
 
 In Java gibt es acht sogenannte *primitive Datentypen*. Wir bezeichnen diese *primitiven Datentypen* als *Wertetypen*. Eine Variable von einem *Wertetyp* kann genau einen Wert annehmen. In folgender Tabelle sind diese Datentypen aufgelistet und ihre jeweilige Bedeutung erklärt.
 
-<table>
-	<thead>
-		<tr>
-			<th> Datentyp </th>
-			<th> Bedeutung </th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td> <code>int</code> </td>
-			<td> eine Variable vom Datentyp <code>int</code> kann ganzzahlige Werte speichern, also positive und negative ganze Zahlen. Die kleinste Zahl vom Typ <code>int</code> ist <code>-2^31</code> "klein" und die größte Zahl vom Typ <code>int</code> ist <code>2^31-1</code> groß. <code>int</code> ist der Standard-Typ für ganze Zahlen in Java. <code>int</code> steht für <code>integer</code>. 
-			</td>
-		</tr>
-		<tr>
-			<td>  <code>byte</code>     </td>
-			<td>  eine Variable vom Datentyp <code>byte</code> kann ebenfalls ganzzahlige Werte speichern, also positive und negative ganze Zahlen. Im Gegensatz zu <code>int</code> ist der Wertebereich aber viel kleiner. Die kleinste <code>byte</code>-Zahl ist <code>-2^7</code> klein und die größte <code>byte</code>-Zahl ist <code>2^7-1</code> groß. </td>
-		</tr>
-		<tr>
-			<td>  <code>short</code>     </td>
-			<td> eine Variable vom Datentyp <code>short</code> kann ebenfalls ganzzahlige Werte speichern, also positive und negative ganze Zahlen. Im Gegensatz zu <code>int</code> ist der Wertebereich aber viel kleiner. Im Gegensatz zu <code>byte</code> ist er aber größer. Die kleinste <code>short</code>-Zahl ist <code>-2^15</code> klein und die größte <code>short</code>-Zahl ist <code>2^15-1</code> groß. </td>
-		</tr>
-		<tr>
-			<td>  <code>long</code>    </td>
-			<td>  eine Variable vom Datentyp <code>long</code> kann ebenfalls ganzzahlige Werte speichern, also positive und negative ganze Zahlen. Im Gegensatz zu <code>int</code> ist der Wertebereich aber viel größer. <code>long</code> wird immer dann verwendet, wenn der Wertebereich von <code>int</code> nicht ausreicht, also entweder für sehr, sehr kleine oder sehr, sehr große Zahlen. Die kleinste <code>long</code>-Zahl ist <code>-2^63</code> klein und die größte <code>long</code>-Zahl ist <code>2^63-1</code> groß. </td>
-		</tr>
-		<tr>
-			<td>  <code>char</code>  </td>
-			<td>  Der Datenyp <code>char</code> steht für <code>character</code>. Mit diesem Datentypen werden einzelne Zeichen gespeichert. Der Datentyp <code>char</code> ist ebenfalls ein ganzzahliger Datentyp, nimmt aber nur positive Werte (aus dem Wertebereich <code>0</code> bis <code>65535</code> an.) Diese Werte sind Zahlenwerte, die der Codierung eines Zeichens entsprechen, z.B. dem Zeichen <code>'a'</code>. Ein solches Zeichen steht immer in einfachen Hochkommata <code>''</code>. </td>
-		</tr>
-		<tr>
-			<td>  <code>boolean</code>  </td>
-			<td>  Der Datentyp <code>boolean</code> kennt nur genau zwei Werte <code>true</code> und <code>false</code>. Eine Variable vom Datentyp <code>boolean</code> kann also entweder genau <code>true</code> sein oder genau <code>false</code>, nichts anderes. </td>
-		</tr>
-		<tr>
-			<td>  <code>double</code>  </td>
-			<td>  Der Datentyp <code>double</code> ist in Java der Standard-Datentyp für Gleitkommazahlen (also gebrochene Zahlen mit Komma). Die kleinste und größte <code>double</code>-Zahl lässt sich nicht genau bestimmen, denn das hängt von der Genauigkeit der Angabe hinter dem Komma ab. Es werden aber 64 bit verwendet, um eine <code>double</code>-Zahl zu speichern. </td>
-		</tr>
-		<tr>
-			<td>  <code>float</code>  </td>
-			<td>  <code>float</code> ist neben <code>double</code> ein weiterer Datentyp für Gleitkommazahlen. Die Genauigkeit der Speicherung als <code>float</code> ist aber nicht so groß wie bei <code>double</code>, da <code>float</code> nur 32 bit zur Speicherung einer Zahl zur Verfügung hat. </td>
-		</tr>
-	</tbody>
-</table>
+| Datentyp | Bedeutung |
+|----------|-----------|
+| `int` | Ganzzahlige Werte (positiv und negativ). Wertebereich: −2³¹ bis 2³¹−1. Standard-Typ für ganze Zahlen in Java (`integer`). |
+| `byte` | Ganzzahlige Werte mit kleinem Wertebereich: −2⁷ bis 2⁷−1. |
+| `short` | Ganzzahlige Werte, Wertebereich zwischen `byte` und `int`: −2¹⁵ bis 2¹⁵−1. |
+| `long` | Ganzzahlige Werte mit sehr großem Wertebereich: −2⁶³ bis 2⁶³−1. Wird verwendet, wenn `int` nicht ausreicht. |
+| `char` | Einzelne Zeichen (`character`). Ganzzahliger Typ, nur positive Werte von 0 bis 65535, die einer Zeichencodierung entsprechen (z.B. `'a'`). Zeichen stehen in einfachen Hochkommata `''`. |
+| `boolean` | Kennt nur genau zwei Werte: `true` und `false`. |
+| `double` | Standard-Typ für Gleitkommazahlen (gebrochene Zahlen). Speicherung mit 64 bit. |
+| `float` | Weiterer Typ für Gleitkommazahlen, aber geringere Genauigkeit als `double` (32 bit). |
 
 ### Deklaration von Variablen
 
@@ -810,10 +777,50 @@ Hier nochmal zur Veranschaulichung, zwischen welchen Datentypen eine *explizite*
 Beachten Sie, dass von und nach `boolean` in Java auch keine explizite Typkonvertierung möglich ist!
 
 
+## Übungen
 
+??? note "Übung 1 – Variablen deklarieren und initialisieren"
+    Deklarieren und initialisieren Sie Variablen für folgende Informationen:
+    - Den Namen einer Person (z.B. `"Ada Lovelace"`)
+    - Das Alter einer Person (z.B. `28`)
+    - Die Körpergröße in Metern (z.B. `1.72`)
+    - Ob die Person immatrikuliert ist (`true`)
+    - Den Anfangsbuchstaben des Nachnamens (`'L'`)
 
+    Geben Sie alle Werte auf der Konsole aus.
 
+??? note "Übung 2 – Gültige Bezeichner"
+    Welche der folgenden Bezeichner sind in Java gültig? Begründen Sie für jeden:
 
+    `studentName`, `2ndPlace`, `_value`, `class`, `my variable`, `π`, `MAX_SIZE`,
+    `firstName`, `int`, `has-data`, `$price`, `Straße`
 
+??? note "Übung 3 – Typkonvertierung"
+    Gegeben sei folgender Code. Welche Zeilen erzeugen einen Compilerfehler?
+    Begründen Sie und korrigieren Sie die fehlerhaften Zeilen:
 
+    ```java
+    int    a = 3.5;
+    double b = 3;
+    long   c = 1000000000000L;
+    int    d = (int) 9.99;
+    byte   e = 200;
+    double f = 1 / 2;
+    double g = 1.0 / 2;
+    ```
+
+    Was ist der Wert von `d`, `f` und `g`?
+
+??? note "Übung 4 – Zeichenketten"
+    Deklarieren Sie zwei `String`-Variablen `firstName` und `lastName`.
+    Erzeugen Sie daraus durch Verkettung (`+`) einen vollständigen Namen und
+    geben Sie ihn aus. Experimentieren Sie auch mit dem Leerzeichen zwischen Vor- und Nachname.
+
+!!! success "Zusammenfassung"
+    Wir haben Variablen und die acht primitiven Datentypen in Java kennengelernt:
+    `int`, `byte`, `short`, `long` für ganze Zahlen, `float` und `double` für Gleitkommazahlen,
+    `char` für einzelne Zeichen und `boolean` für Wahrheitswerte. Eine Variable besteht aus
+    Name, Typ und Wert. Bei der Deklaration vergeben wir Namen und Typ, bei der Initialisierung
+    weisen wir den ersten Wert zu. Wir wissen, was Bezeichner sind und welche Regeln für sie gelten.
+    Außerdem haben wir implizite und explizite Typkonvertierung (*Casting*) kennengelernt.
 

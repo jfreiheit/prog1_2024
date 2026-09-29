@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -645,6 +647,26 @@
   
   <span class="md-ellipsis">
     Javadoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
   </span>
   
 
@@ -1159,8 +1181,25 @@
 <li>hat sich die Schreibweise beim <code>case</code> geändert. Aus dem Doppelpunkt wurde ein Pfeil und es können mit einem <code>case</code> auch mehrere durch Komma getrennte Werte aufgeführt werden</li>
 <li>und - besonders gut - wir benötigen kein <code>break</code>mehr. Es wird immer nur der <code>case</code> ausgeführt. Die Abarbeitung der dort beschriebenen Anweisungen stoppt beim nächsten <code>case</code> bzw. bei <code>default</code> oder am Ende der <code>switch()</code>-Anweisung</li>
 </ol>
+<details class="note">
+<summary>Übung 1 – Noten-Ausgabe</summary>
+<p>Schreiben Sie eine Methode <code>public static String notenText(int note)</code>, die zu einer Note (1–5) den deutschen Notentext zurückgibt (z.B. <code>1</code> → <code>"sehr gut"</code>, <code>5</code> → <code>"nicht ausreichend"</code>). Verwenden Sie dafür eine <code>switch</code>-Anweisung in der neuen Schreibweise.</p>
+</details>
+<details class="note">
+<summary>Übung 2 – Jahreszeitenbestimmung</summary>
+<p>Schreiben Sie eine Methode <code>public static String jahreszeit(int monat)</code>, die zu einem Monat (1–12) die passende Jahreszeit zurückgibt (<code>"Frühling"</code>, <code>"Sommer"</code>, <code>"Herbst"</code>, <code>"Winter"</code>). Verwenden Sie eine <code>switch</code>-Anweisung.</p>
+<p><em>Hinweis:</em> Frühling = März–Mai, Sommer = Juni–August, Herbst = September–November, Winter = Dezember–Februar.</p>
+</details>
+<details class="note">
+<summary>Übung 3 – Schaltjahr</summary>
+<p>Schreiben Sie eine Methode <code>public static boolean istSchaltjahr(int jahr)</code>, die bestimmt, ob ein Jahr ein Schaltjahr ist. Ein Schaltjahr ist durch 4 teilbar, aber nicht durch 100 – außer es ist durch 400 teilbar. Verwenden Sie eine <code>if...else</code>-Kaskade.</p>
+</details>
+<details class="note">
+<summary>Übung 4 – Dreieckstyp</summary>
+<p>Schreiben Sie eine Methode <code>public static String dreieckstyp(int a, int b, int c)</code>, die anhand der drei Seitenlängen bestimmt, ob das Dreieck <em>gleichseitig</em>, <em>gleichschenklig</em>, <em>rechtwinklig</em> oder <em>unregelmäßig</em> ist. Ein rechtwinkliges Dreieck liegt vor, wenn <span class="arithmatex">\(a^2 + b^2 = c^2\)</span> (oder eine der anderen Permutationen) gilt.</p>
+</details>
 <div class="admonition success">
-<p class="admonition-title">Success</p>
+<p class="admonition-title">Zusammenfassung</p>
 <p>Wir haben 2 Möglichkeiten kennengelernt, die Selktion in Java zu implementieren. Die eine (und bedeutendste) Möglichkeit ist die <code>if...else</code>-Anweisung. Dort wird in Abhängigkeit vom Wahreheitswert einer Bedingung entweder der eine oder der andere Anweisungsblock ausgeführt. Der <code>else</code>-Block kann auch weggelassen werden. Innerhalb eines Anweisungsblockes können beliebige Kontrollstrukturen stehen: Sequenzen, Iterationen und Selektionen. 
 Die zweite Möglichkeit ist die <code>switch()</code>-Anweisung, die seit Java 12 auch selbst ein Ausdruck sein kann. Wir haben die alte Syntax der <code>switch()</code>-Anweisung kritisch betrachtet und die neue Syntax kennengelernt.</p>
 </div>
@@ -1181,8 +1220,16 @@ Die zweite Möglichkeit ist die <code>switch()</code>-Anweisung, die seit Java 1
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -1254,10 +1301,14 @@ Die zweite Möglichkeit ist die <code>switch()</code>-Anweisung, die seit Java 1
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

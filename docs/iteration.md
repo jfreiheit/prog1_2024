@@ -691,4 +691,43 @@ Beachten Sie das Semikolon hinter der Bedingung! Es gibt Beispiele für den sinn
 ## `break` und `continue`
 
 !!! hint "`break` und `continue`"
-	In (fast) allen Java-Büchern liest man in dem Kapitel über Schleifen auch davon, dass es die beiden Anweisungen `break;` und `continue;` gibt. Ich will hier gar nicht darauf eigehen, was diese beiden Anweisungen machen, nur so viel: sie springen aus Schleifen heraus. Solche Art von "Sprüngen" (*go to statements*) gehören nicht in moderne, gute Programme. Wir nutzen diese Anweisungen nicht!!! Stattdessen sei in diesem Zusammenhang ein berühmtes Papier von [Edsger W. Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) empfohlen: [Go To Statement Considered Harmful](https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf). Siehe dazu auch [hier](https://en.wikipedia.org/wiki/Goto#CITEREFDijkstra1968). 
+	In (fast) allen Java-Büchern liest man in dem Kapitel über Schleifen auch davon, dass es die beiden Anweisungen `break;` und `continue;` gibt. Ich will hier gar nicht darauf eigehen, was diese beiden Anweisungen machen, nur so viel: sie springen aus Schleifen heraus. Solche Art von "Sprüngen" (*go to statements*) gehören nicht in moderne, gute Programme. Wir nutzen diese Anweisungen nicht!!! Stattdessen sei in diesem Zusammenhang ein berühmtes Papier von [Edsger W. Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) empfohlen: [Go To Statement Considered Harmful](https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf). Siehe dazu auch [hier](https://en.wikipedia.org/wiki/Goto#CITEREFDijkstra1968).
+
+## Übungen
+
+??? note "Übung 1 – Summe aller geraden Zahlen"
+	Schreiben Sie eine Methode `public static int summeGerade(int n)`, die die Summe aller geraden Zahlen von 2 bis einschließlich `n` berechnet. Verwenden Sie eine `for`-Schleife.
+
+	Beispiel: `summeGerade(10)` → `2 + 4 + 6 + 8 + 10 = 30`.
+
+??? note "Übung 2 – Primzahltest"
+	Schreiben Sie eine Methode `public static boolean istPrimzahl(int n)`, die prüft, ob `n` eine Primzahl ist. Eine Primzahl ist nur durch 1 und sich selbst teilbar. Verwenden Sie eine `for`- oder `while`-Schleife.
+
+	*Tipp:* Es genügt, alle möglichen Teiler von 2 bis $\sqrt{n}$ zu prüfen.
+
+??? note "Übung 3 – FizzBuzz"
+	Ein Klassiker! Schreiben Sie eine Methode `public static void fizzBuzz(int n)`, die alle Zahlen von 1 bis `n` ausgibt – aber:
+
+	- für Vielfache von 3 statt der Zahl `"Fizz"`,
+	- für Vielfache von 5 statt der Zahl `"Buzz"`,
+	- für Vielfache von 3 und 5 `"FizzBuzz"`.
+
+??? note "Übung 4 – Zahlenmuster mit verschachtelten Schleifen"
+	Schreiben Sie eine Methode, die folgendes Muster ausgibt (für n=5):
+
+	```
+	1
+	1 2
+	1 2 3
+	1 2 3 4
+	1 2 3 4 5
+	```
+
+	Verwenden Sie zwei verschachtelte `for`-Schleifen.
+
+??? note "Übung 5 – Fibonacci-Folge"
+	Schreiben Sie eine Methode `public static void fibonacci(int n)`, die die ersten `n` Glieder der Fibonacci-Folge ausgibt (0, 1, 1, 2, 3, 5, 8, …). Verwenden Sie eine `while`-Schleife.
+
+!!! success "Zusammenfassung"
+	Wir haben drei Arten von Schleifen kennengelernt: die `for`-Schleife für eine bekannte Anzahl von Durchläufen, die `while`-Schleife für eine bedingungsgesteuerte Iteration und die `do...while`-Schleife, die mindestens einmal ausgeführt wird. Schleifen können verschachtelt werden, um z.B. zweidimensionale Muster auszugeben. Sprunganweisungen wie `break` und `continue` sollten in modernem Java-Code vermieden werden. Die gewählte Schleifenart sollte immer zum Problem passen: `for` bei bekannter Schrittzahl, `while` bei unbekannter Bedingungsabbruchbedingung.
+

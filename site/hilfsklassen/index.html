@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -712,6 +714,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -732,6 +743,26 @@
   
   <span class="md-ellipsis">
     Javadoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
   </span>
   
 
@@ -981,6 +1012,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
+    </span>
+  </a>
   
 </li>
       
@@ -1753,6 +1793,46 @@ Mithilfe der Methode <code>toUpperCase()</code> werden alle Buchstaben eines Str
 </span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;|%5.2f|&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1234.567</span><span class="p">);</span><span class="w">         </span><span class="c1">// |1234,57|</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Beachten Sie auch das letzte Beispiel (Zeile <code>4</code>). Es wurden nur insgesamt <code>5</code> Stellen für die gesamte Zahl reserviert. Davon benötigen wir alleine <code>2</code> Stellen für die Nachkommastellen und <code>1</code> Stelle für das Komma. Die Vorkommastellen hätten also nur <code>2</code>Stellen Platz. Vorne wird die Zahl aber <strong>nie</strong> abgeschnitten. Sollte der reservierte Platz für die Vorkommastellen nicht ausreichen, wird der Vorkommabereich trotzdem vollständig dargestellt. Es kann also trotz der Formatierung zu Verzerrungen in der Ausgabe kommen!</p>
+<h2 id="ubungen">Übungen<a class="headerlink" href="#ubungen" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary>Übung 1 – Benutzereingabe mit Scanner</summary>
+<p>Schreiben Sie ein Programm, das den Benutzer nach seinem Namen und Alter fragt und anschließend ausgibt: <code>"Hallo [Name], du bist [Alter] Jahre alt und wirst dieses Jahr [Alter+1]."</code> Verwenden Sie die Klasse <code>Scanner</code> für die Eingabe.</p>
+</details>
+<details class="note">
+<summary>Übung 2 – String-Methoden</summary>
+<p>Gegeben sei der String <code>"  Java ist toll!  "</code>. Schreiben Sie ein Programm, das folgende Informationen ausgibt:</p>
+<ul>
+<li>Die Länge des Strings (ohne führende/nachfolgende Leerzeichen) – verwenden Sie <code>trim()</code>.</li>
+<li>Den String in Großbuchstaben.</li>
+<li>Den String rückwärts – nutzen Sie <code>StringBuilder</code>.</li>
+<li>Ob der String das Wort <code>"toll"</code> enthält (<code>contains()</code>).</li>
+<li>Den String, in dem <code>"toll"</code> durch <code>"super"</code> ersetzt wurde (<code>replace()</code>).</li>
+</ul>
+</details>
+<details class="note">
+<summary>Übung 3 – Mathematische Berechnungen</summary>
+<p>Schreiben Sie eine Methode <code>public static void printPythagoraeischeTriple(int max)</code>, die alle pythagoräischen Triple <span class="arithmatex">\((a, b, c)\)</span> mit <span class="arithmatex">\(a \leq b \leq c \leq max\)</span> ausgibt, für die <span class="arithmatex">\(a^2 + b^2 = c^2\)</span> gilt. Verwenden Sie <code>Math.sqrt()</code> oder <code>Math.pow()</code>.</p>
+</details>
+<details class="note">
+<summary>Übung 4 – Formatierte Ausgabe mit printf</summary>
+<p>Gegeben sei eine Liste von Produkten mit Name, Anzahl und Preis:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">namen</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Apfel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Banane&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Kirsche&quot;</span><span class="p">};</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="kt">int</span><span class="o">[]</span><span class="w">    </span><span class="n">anzahl</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">320</span><span class="p">};</span>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">preis</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.39</span><span class="p">,</span><span class="w"> </span><span class="mf">0.29</span><span class="p">,</span><span class="w"> </span><span class="mf">0.89</span><span class="p">};</span>
+</span></code></pre></div>
+<p>Geben Sie eine formatierte Tabelle aus, die so aussieht:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>Produkt       Anzahl    Preis     Gesamt
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>----------------------------------------------
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>Apfel            150     0,39 €    58,50 €
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>Banane            80     0,29 €    23,20 €
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>Kirsche          320     0,89 €   284,80 €
+</span></code></pre></div>
+<p>Verwenden Sie <code>System.out.printf()</code> mit geeigneten Formatierungsangaben.</p>
+</details>
+<div class="admonition success">
+<p class="admonition-title">Zusammenfassung</p>
+<p>Wir haben wichtige Hilfsklassen der Java-Standardbibliothek kennengelernt. Die Klasse <code>Scanner</code> ermöglicht die Eingabe von der Konsole. Die Klasse <code>String</code> stellt zahlreiche Methoden zur Verarbeitung von Zeichenketten bereit (<code>length()</code>, <code>substring()</code>, <code>contains()</code>, <code>replace()</code>, u.v.m.). Die Klasse <code>Math</code> bietet mathematische Funktionen wie <code>Math.sqrt()</code>, <code>Math.pow()</code>, <code>Math.abs()</code> und die Konstante <code>Math.PI</code>. Mit <code>System.out.printf()</code> können Ausgaben präzise formatiert werden, z.B. für Tabellen oder Dezimalzahlen mit einer bestimmten Anzahl von Nachkommastellen.</p>
+</div>
 
 
 
@@ -1770,8 +1850,16 @@ Mithilfe der Methode <code>toUpperCase()</code> werden alle Buchstaben eines Str
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -1843,10 +1931,14 @@ Mithilfe der Methode <code>toUpperCase()</code> werden alle Buchstaben eines Str
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -2,14 +2,17 @@
 
 Bevor wir uns mit der Funktionsweise von Java auseinandersetzen, schreiben wir einfach einmal unser erstes Programm. Wir öffnen dazu [*Eclipse*](tools.md#eclipse) und erstellen uns eine Klasse `HelloFIW`. Dazu 
 
-1. erstellen wir uns ein Java-Projekt (falls noch nicht geschehen): Menüpunkt `File --> New --> Java Project`, geben in das Textfeld `Project name:` z.B. `WS24` (in den Screenshots steht dort `WS22`) ein.
+1. erstellen wir uns ein Java-Projekt (falls noch nicht geschehen): Menüpunkt `File --> New --> Java Project`, geben in das Textfeld `Project name:` z.B. `WS26` ein.
 
 	![Projekt](./files/01_project.png)
 
-	Den `module name` beim Erstellen der `module-info.java` können Sie genau so lassen, wie vorgeschlagen (`WS24`). Klicken Sie auf den Button `Create`.
+	Klicken Sie auf den Button `Create`.
 
-2. erstellen wir uns ein Paket: Menüpunkt `File --> New --> Package` und geben `themen.eins.start` ein.
-3. erstellen wir uns eine Klasse: Wir wählen das Paket `themen.eins.start` aus und wählen den Menüpunkt `File --> New --> Class`, geben in dem Fenster den Klassennamen `HelloFIW` ein und setzen bei `public static void main(Strg[] args)` ein Häkchen:
+2. erstellen wir uns ein Paket: Menüpunkt `File --> New --> Package` und geben `themen.start` ein.
+
+	![Projekt](./files/01a_project.png)
+
+3. erstellen wir uns eine Klasse: Wir wählen das Paket `themen.eins` aus und wählen den Menüpunkt `File --> New --> Class`, geben in dem Fenster den Klassennamen `HelloFIW` ein und setzen bei `public static void main(Strg[] args)` ein Häkchen:
 
 ![Klasse](./files/02_klasse.png)
 
@@ -17,12 +20,12 @@ Im Editor-Fenster von Eclipse erscheint:
 
 === "HelloFIW.java"
 ```java linenums="1"
-package themen.eins.start;
+package themen.eins;
 
-public class HelloFIW 
+public class HelloFIW
 {
 
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		// TODO Auto-generated method stub
 
@@ -33,14 +36,18 @@ public class HelloFIW
 
 Schauen wir uns diesen Code zunächst an:
 
-- in Zeile `1` sehen wir, in welchem Paket sich unsere Klasse befindet. Die Anweisung `package themen.eins.start;`definiert, dass wir uns im Paket `themen.eins.start` befinden. Mit Paketen werden wir uns in Kürze ausführlich auseinandersetzen.
+- in Zeile `1` sehen wir, in welchem Paket sich unsere Klasse befindet. Die Anweisung `package themen.eins;`definiert, dass wir uns im Paket `themen.eins` befinden. Mit Paketen werden wir uns in Kürze ausführlich auseinandersetzen.
+
 - in Zeile `3` steht unsere Klassendefinition. Diese erkennen wir am Schlüsselwort `class` gefolgt von dem Namen der Klasse `HelloFIW`. Das Schlüsselwort `public` beschreibt, dass es sich um eine *öffentliche* Klasse handelt, die von allen genutzt werden kann. Dieses Schlüsselwort ist ein sogenannter *Sichtbarkeitsmodifierer* (auch *Zugriffsmodifizierer*). Mit Sichtbarkeitsmodifizierern werden wir uns ebenfalls noch ausführlich auseinandersetzen. Wichtig ist, dass die Klasse nicht nur aus dem Klassenkopf (`public class HelloFIW`) besteht, sondern aus allem, was diese Klassen enthält (dem Klassenrumpf). Der Klassenrumpf beginnt mit einer öffnenden geschweiften Klammer `{` (Zeile `4`) und endet mit einer schließenden geschweiften Klammer `}` (Zeile `12`).
+
 - eine Klasse kann beliebig viele *Methoden* enthalten. Unsere Klasse enthält bis jetzt eine Methode, die Methode namens `main()`. Methoden erkennen wir an den runden Klammern nach dem Methodennamen. Hier ist der Name `main` gefolgt von runden Klammern, in denen *Parameter* (auch *Argumente* genannt) definiert sein können (hier ein Parameter namens `args` vom Typ String-Array: `Strg[] args`). Wie bei den Klassen auch, bestehen Methoden aus einem Methodenkopf und einem Methodenrumpf. Wie bei den Klassen auch, beginnt der Methodenrumpf mit einer öffnenden geschweiften Klammer (Zeile `7`) und endet mit einer schließenden geschweiften Klammer (Zeile `10`). Der Methodenkopf 
+
 	- beginnt erneut mit einem Sichtbarkeitsmodifizierer. Dieser ist hier wieder `public` und gibt an, dass diese Methode öffentlich ist und von allen ausgeführt werden kann. 
 	- Danach kommt das Schlüsselwort `static`. Dieses Schlüsselwort besagt, dass es sich bei dieser Methode um eine *Klassenmethode* handelt. Das Gegenstück zu einer Klassenmethode ist die *Objektmethode*. Wir werden uns mit der Unterscheidung zwischen Klassen- und Objektmnethoden ausführlich auseinandersetzen. Wir können uns aber schon merken (wenn überhaupt), dass wir eine Klassenmethode aufrufen können ohne ein Objekt der Klasse erstellen zu müssen. 
 	- Danach kommt das Schlüsselwort `void`. Dieses Schlüsslwort gibt an, dass die Methode nichts zurückgibt. An dieser Stelle steht der Rückgabetyp eine Methode - wenn die Methode etwas zurückgibt. Unsere Methode gibt nichts zurück, deshalb hier `void`. Wir werden uns mit Methodenrückgaben ausführlich beschäftigen.
 	- Jetzt kommt der Name der Methode, hier `main`. Die `main()`-Methode ist eine ganz besondere Methode. Sie existiert in einem Programm genau einmal und wird aufgerufen, wenn das Programm aufgerufen wird - die sogenannte *Programmmethode*. Wenn wir ein Programm ausführen, wird alles das ausgeführt, was in dem Rumpf der `main()`-Methode definiert ist (derzeit noch nichts). 
 	- In den runden Klammern stehen *Parameter* (auch *Argumente* genannt). In unserem Fall ist ein Parameter namens `args` definiert. Der *Datentyp* dieses Parameters ist `Strg[]`, d.h. dass der Parameter einem *Array* von Zeichenketten *Strings* entspricht. Wir kümmern uns um Parameter später ausführlich. 
+	
 - In unserer Methode gibt es derzeit nur einen einzigen Eintrag (Zeile `8`). Dabei handelt es sich um einen *Kommentar*, genauer hier um einen *Zeilenkommentar*. Zeilenkommentare beginnen mit einem Doppelslash `//`. Hinter diesen Doppelslash können Sie schreiben, was Sie möchten - bis an das Zeilenende. Kommentare dienen Ihnen dazu, den Code verständlicher zu gestalten oder Ihnen Hinweise zu geben. Hier steht der Hinweis, dass die Methode automatisch durch Eclipse erstellt wurde und Sie noch das ToDo haben, die Methode zu befüllen. Das machen wir jetzt auch!
 
 Wir löschen den Kommentar und fügen nun die Anweisung `System.out.println("HelloFIW !");` in unseren Methodenrumpf ein. Unsere Klasse sieht nun so aus (die neuhinzugekommene Zeile ist markiert):
@@ -65,7 +72,7 @@ Jetzt wählen wir entweder im Menü `Run --> Run` oder klicken auf den kleinen g
 
 ![Konsole](./files/04_konsole.png) 
 
-!!! success
+!!! success "Zusammenfassung"
     Herzlichen Glückwunsch! Sie haben Ihr erstes Java-Programm geschrieben und ausgeführt!
 
 ### System.out.println("Hello FIW!");
@@ -364,6 +371,30 @@ Hello FIW HTW Berlin Welt !
 ```
 
 Es erscheint zunächst aufwendig, das Programm zunächst in Bytecode zu übersetzen und dann den Bytecode nochmal interpretieren und ausführen zu lassen. Warum wird nicht direkt in Maschinencode übersetzt? Die Antwort ist, dass der Java-Compiler so beriebssystemunabhängig arbeiten kann. Alle, egal, ob Windows-, iOS- oder Linux-Nutzerinnen können den gleichen Compiler verwenden. Die Programme können völlig systemunabhängig geschrieben und von allen compiliert werden. Erst die Java-Laufzeitumgebung ist beriebssystemabhängig, d.h. diese wird entsprechend dem Betriebssystem installiert. Alle Java-Programme und auch ihre Compilierung sind jedoch völlig losgelöst vom verwendeten Betriebssystem und können deshalb überall ausgeführt werden.
+
+
+??? note "Übung 1 – Erstes Programm anpassen"
+    Ändern Sie das `HelloFIW`-Programm so, dass es Ihren eigenen Namen ausgibt, z.B.:
+    ```
+    Hallo, ich bin Anna Müller!
+    Willkommen bei Programmieren I.
+    ```
+    Verwenden Sie dafür zwei separate `System.out.println()`-Aufrufe.
+
+??? note "Übung 2 – Ausgaben kombinieren"
+    Geben Sie mit einem einzigen `System.out.println()`-Aufruf den Text
+    `Programmieren macht Spaß!` aus. Geben Sie dann mit `System.out.print()` (ohne `ln`) dreimal
+    hintereinander `Java ` aus und beobachten Sie den Unterschied.
+
+??? note "Übung 3 – Fehler einbauen und verstehen"
+    Bauen Sie absichtlich folgende Fehler nacheinander in Ihr Programm ein,
+    übersetzen Sie und lesen Sie die Fehlermeldung. Beheben Sie den Fehler danach wieder:
+
+    1. Entfernen Sie das Semikolon am Ende der `println`-Zeile.
+    2. Schreiben Sie `system` statt `System` (Kleinbuchstabe).
+    3. Löschen Sie eine der geschweiften Klammern `}`.
+
+    Was können Sie aus den Fehlermeldungen ablesen?
 
 !!! success
     Wir haben uns angeschaut, was passiert, wenn wir das Programm übersetzen und ausführen. Die Übersetzung erfolgt durch den Java-Compiler `javac`. Dieser erzeugt *Java-Bytecode*. Die Ausführung dieses Bytcodes übernimmt die Java-Laufzeitumgebung `java`. Diese interpretiert den Bytecode und führt ihn *sequentiell* (also nacheinander, Anweisung für Anweisung) aus.

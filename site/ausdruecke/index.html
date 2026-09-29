@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -462,6 +464,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -717,6 +728,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tools/" class="md-nav__link">
         
   
@@ -921,6 +952,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
+    </span>
+  </a>
   
 </li>
       
@@ -1325,6 +1365,55 @@ Das gilt nicht für den Präfix-Operator:
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">--</span><span class="n">a</span><span class="p">;</span><span class="w">    </span><span class="c1">// b hat den Wert 2 und a den Wert 2</span>
 </span></code></pre></div></p>
 </div>
+<h2 id="ubungen">Übungen<a class="headerlink" href="#ubungen" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary>Übung 1 – Arithmetik von Hand</summary>
+<p>Berechnen Sie die folgenden Ausdrücke zunächst von Hand und prüfen Sie dann das Ergebnis mit Java:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">17</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">17</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">17.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="kc">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+</span></code></pre></div>
+</details>
+<details class="note">
+<summary>Übung 2 – Prä- und Postfix-Operatoren</summary>
+<p>Was ist der Wert von <code>x</code> und <code>y</code> nach jeder Zeile? Kommentieren Sie jede Zeile.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">;</span><span class="w">   </span><span class="c1">// y = ?  x = ?</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">;</span><span class="w">   </span><span class="c1">// z = ?  x = ?</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">x</span><span class="o">--</span><span class="p">;</span><span class="w">           </span><span class="c1">// x = ?</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">--</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">--</span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// y = ?  x = ?</span>
+</span></code></pre></div>
+</details>
+<details class="note">
+<summary>Übung 3 – Temperaturen umrechnen</summary>
+<p>Schreiben Sie ein Programm, das eine Temperatur in Grad Celsius als <code>double</code>-Variable
+speichert und in Fahrenheit umrechnet. Die Formel lautet:
+<code>fahrenheit = celsius * 9.0 / 5.0 + 32</code></p>
+<p>Testen Sie mit <code>0°C</code> (ergibt <code>32°F</code>), <code>100°C</code> (ergibt <code>212°F</code>) und <code>-40°C</code> (ergibt <code>-40°F</code>).</p>
+<p>Achten Sie darauf, <code>9.0 / 5.0</code> statt <code>9 / 5</code> zu schreiben – warum?</p>
+</details>
+<details class="note">
+<summary>Übung 4 – Vergleichs- und logische Operatoren</summary>
+<p>Schreiben Sie Ausdrücke (als <code>boolean</code>-Variablen), die folgende Bedingungen prüfen:</p>
+<ol>
+<li>Eine Zahl <code>n</code> liegt zwischen 10 und 20 (inklusive).</li>
+<li>Ein Zeichen <code>c</code> ist ein Kleinbuchstabe (zwischen <code>'a'</code> und <code>'z'</code>).</li>
+<li>Ein Jahr <code>year</code> ist kein Schaltjahr.</li>
+<li>Entweder ist <code>a</code> positiv oder <code>b</code> ist negativ, aber nicht beides.</li>
+</ol>
+</details>
+<div class="admonition success">
+<p class="admonition-title">Zusammenfassung</p>
+<p>Wir haben die wichtigsten Operatoren in Java kennengelernt: arithmetische Operatoren
+(<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>), Vergleichsoperatoren (<code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>),
+logische Operatoren (<code>&amp;&amp;</code>, <code>||</code>, <code>!</code>) sowie Zuweisungsoperatoren und die Inkrement-/
+Dekrement-Operatoren (<code>++</code>, <code>--</code>) in Prä- und Postfix-Form. Wir wissen, dass die
+Operatorenpriorität die Auswertungsreihenfolge bestimmt und wie Typkonvertierungen
+bei gemischten Ausdrücken automatisch vorgenommen werden.</p>
+</div>
 
 
 
@@ -1342,8 +1431,16 @@ Das gilt nicht für den Präfix-Operator:
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -1415,10 +1512,14 @@ Das gilt nicht für den Präfix-Operator:
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

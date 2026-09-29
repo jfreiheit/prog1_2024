@@ -417,3 +417,53 @@ a = !!a && true;		// Wert von a ist true
 	```
 
 
+## Übungen
+
+??? note "Übung 1 – Arithmetik von Hand"
+    Berechnen Sie die folgenden Ausdrücke zunächst von Hand und prüfen Sie dann das Ergebnis mit Java:
+
+    ```java
+    int a = 17 / 5;
+    int b = 17 % 5;
+    double c = 17.0 / 5;
+    int d = 2 + 3 * 4 - 1;
+    boolean e = (3 > 2) && (5 != 6);
+    boolean f = !(true || false);
+    ```
+
+??? note "Übung 2 – Prä- und Postfix-Operatoren"
+    Was ist der Wert von `x` und `y` nach jeder Zeile? Kommentieren Sie jede Zeile.
+
+    ```java
+    int x = 5;
+    int y = x++;   // y = ?  x = ?
+    int z = ++x;   // z = ?  x = ?
+    x--;           // x = ?
+    y = x-- + --x; // y = ?  x = ?
+    ```
+
+??? note "Übung 3 – Temperaturen umrechnen"
+    Schreiben Sie ein Programm, das eine Temperatur in Grad Celsius als `double`-Variable
+    speichert und in Fahrenheit umrechnet. Die Formel lautet:
+    `fahrenheit = celsius * 9.0 / 5.0 + 32`
+
+    Testen Sie mit `0°C` (ergibt `32°F`), `100°C` (ergibt `212°F`) und `-40°C` (ergibt `-40°F`).
+
+    Achten Sie darauf, `9.0 / 5.0` statt `9 / 5` zu schreiben – warum?
+
+??? note "Übung 4 – Vergleichs- und logische Operatoren"
+    Schreiben Sie Ausdrücke (als `boolean`-Variablen), die folgende Bedingungen prüfen:
+
+    1. Eine Zahl `n` liegt zwischen 10 und 20 (inklusive).
+    2. Ein Zeichen `c` ist ein Kleinbuchstabe (zwischen `'a'` und `'z'`).
+    3. Ein Jahr `year` ist kein Schaltjahr.
+    4. Entweder ist `a` positiv oder `b` ist negativ, aber nicht beides.
+
+!!! success "Zusammenfassung"
+    Wir haben die wichtigsten Operatoren in Java kennengelernt: arithmetische Operatoren
+    (`+`, `-`, `*`, `/`, `%`), Vergleichsoperatoren (`==`, `!=`, `<`, `>`, `<=`, `>=`),
+    logische Operatoren (`&&`, `||`, `!`) sowie Zuweisungsoperatoren und die Inkrement-/
+    Dekrement-Operatoren (`++`, `--`) in Prä- und Postfix-Form. Wir wissen, dass die
+    Operatorenpriorität die Auswertungsreihenfolge bestimmt und wie Typkonvertierungen
+    bei gemischten Ausdrücken automatisch vorgenommen werden.
+

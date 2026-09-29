@@ -510,7 +510,7 @@ System.out.println(v3.equals(v5)); 		// false
 System.out.println(v3.equals(null)); 	// false
 ```
 
-!!! success
+!!! success "Zusammenfassung"
 	Mithilfe der `equals()`-Methode haben wir eine einheitliche Möglichkeit, die Gleichheit von Objekten zu definieren. Die Implementierung der `equals()`-Methode folgt immer dem gleichen Schema. Wir führen zunächst die drei Prüfungen auf Null-Akzeptanz, Reflexivität und ungleiche Typen aus, konvertieren `other` dann in unseren Klassentyp und führen den eigentlichen Vergleich auf Gleichheit der Objekte durch. Wir sollten `equals()`, wie auch `toString()`, von nun an für alle unsere Klassen implmentieren. 
 
 ### Die Objektmethode `hashCode()`
@@ -648,6 +648,36 @@ Das bedeutet, dass die Laufzeitumgebung von Java die *speziellstmögliche* Imple
 - Der speziellste Laufzeittyp von `base[0]` ist `Base` und somit wird die `methodBase()`-Implementierung der Klasse `Base` verwendet. 
 - Der speziellste Laufzeittyp von `base[1]` ist `Sub` und somit wird die `methodBase()`-Implementierung der Klasse `Sub` verwendet. 
 - Der speziellste Laufzeittyp von `base[2]` ist `SubSub` und somit wird die `methodBase()`-Implementierung der Klasse `SubSub` verwendet. 
+
+??? note "Übung 1 – `equals()` und `toString()` implementieren"
+	Erstellen Sie eine Klasse `Farbe` mit den Objektvariablen `rot`, `gruen`, `blau` (alle `int`, Wertbereich 0–255).
+
+	- Überschreiben Sie `toString()`, sodass die Farbe als `"rgb(rot, gruen, blau)"` zurückgegeben wird.
+	- Überschreiben Sie `equals(Object o)`, sodass zwei `Farbe`-Objekte als gleich gelten, wenn alle drei Komponenten übereinstimmen. Vergessen Sie nicht `instanceof` zu prüfen.
+
+??? note "Übung 2 – Polymorphie beobachten"
+	Gegeben sei folgende Ausgabe in `main()`:
+
+	```java
+	Object[] objekte = new Object[3];
+	objekte[0] = new Point(1, 2);
+	objekte[1] = "Hallo Welt";
+	objekte[2] = 42;  // Autoboxing: int → Integer
+
+	for (Object o : objekte) {
+		System.out.println(o.toString());
+	}
+	```
+
+	Was wird ausgegeben? Erklären Sie, warum Polymorphie hier eine Rolle spielt.
+
+	> **Antwort:** Es wird die `toString()`-Methode der jeweiligen Laufzeittypen aufgerufen: `Point.toString()`, `String.toString()`, `Integer.toString()`. Das ist Polymorphie: dieselbe Nachricht (`toString()`) wird je nach Laufzeittyp unterschiedlich interpretiert.
+
+??? note "Übung 3 – `hashCode()` und Konsistenz"
+	Wie verhält sich `hashCode()` in Bezug auf `equals()`? Formulieren Sie den Java-Vertrag (*contract*) zwischen `equals()` und `hashCode()` in eigenen Worten und erläutern Sie, warum dieser Vertrag für die Verwendung in Collections (z.B. `HashMap`) wichtig ist.
+
+??? note "Übung 4 – Klassen-Hierarchie und Object"
+	Jede Java-Klasse erbt implizit von `Object`. Welche Methoden stehen deshalb in jeder Klasse zur Verfügung? Nennen Sie mindestens drei Methoden und erläutern Sie deren Zweck.
 
 !!! success
 	*Polymorphie* ist ein tolles Konzept der objektorientierten Programmierung. Der Nutzen von Polymorphie wird uns jetzt noch nicht vollständig deutlich. Wir werden aber immer wieder darauf hinweisen, wenn wir Polymorphie im Einsatz sehen. Vielleicht erkennen Sie ja jetzt besser, warum z.B. die Methode `System.out.println(Object o)` so funktioniert. Spätestens, wenn wir *Interfaces* behandeln, kommen wir auf dieses Konzept zurück. 

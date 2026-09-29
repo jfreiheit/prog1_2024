@@ -5,12 +5,18 @@ Ehe wir uns weiter mit Java und Programmierkonzepten beschäftigen, wollen wir u
 
 Algorithmen sind also auch Kochrezepte oder Bauanleitungen, wenn sie denn "eindeutig" sind. Wir kennen alle das Problem, dass Handlungsanweisungen nicht immer eindeutig sind - man kann es manchmal so oder so machen. In der Programmierung darf eine solche Mehrdeutigkeit natürlich nicht vorkommen. Der Algorithmusbegriff wurde deshalb detailliert und folgende Eigenschaften müssen für eine Handlungsanweisung für einen Computer gelten, um ein Algorithmus zu sein:
 
-1. **Finitheit** Das Verfahren muss in einem **endlichen** Text (Programm) eindeutig beschreibbar sein.
-2. **Ausführbarkeit** Jeder einzelne Schritt des Verfahrens muss auch tatsächlich ausführbar sein.
-3. **Dynamische Finitheit** Das Verfahren darf zu jedem Zeitpunkt nur endlich viel Speicherplatz benötigen.
-4. **Terminierung** Das Verfahren muss irgendwann enden, d.h. darf nur endlich viele Ausführungsschritte benötigen.
-5. **Determiniertheit** Das Verfahren muss bei denselben Voraussetzungen das gleiche Ergebnis liefern.
-6. **Determinismus** Die nächste anzuwendende Regel im Verfahren ist zu jedem Zeitpunkt (in jedem Zustand) eindeutig definiert.
+1. **Statische Finitheit** (Endlichkeit der Beschreibung): Das Verfahren muss in einem endlichen Text (Programm) eindeutig beschreibbar sein.
+2. **Ausführbarkeit** (Effektivität): Jeder einzelne Schritt des Verfahrens muss auch tatsächlich ausführbar sein.
+3. **Dynamische Finitheit** (Endlichkeit der Ressourcen): Das Verfahren darf zu jedem Zeitpunkt nur endlich viel Speicherplatz benötigen.
+
+Neben diesen zwingend erforderlichen Anforderungen, gibt es noch weitere Anforderungen, die jedoch nicht zwingend erforderlich sind. Stattdessen ordnet man Algrorithmen anhand dieser Kriterien ein, je nachdem, ob sie gelten oder nicht:
+
+| Eigenschaft | im klassischen Sinne | Abweichungen (teilweise Praxis) |
+|-------------|----------------------|---------------------------------|
+| **Terminierung** | Das Verfahren endet nach endlich vielen Ausführungsschritten (z.B. Sortieralgorithmen) | Das Programm läuft "endlos" (z.B. Betriebssystem, Webserver usw.) |
+| **Determinismus** Die nächste anzuwendende Regel im Verfahren ist zu jedem Zeitpunkt (in jedem Zustand) eindeutig definiert. | (pseudo-)randomisierte Algorithmen; der Folgeschritt beinhaltet Zufall oder freie Wahl (z.B. Krypto-Schlüsselerzeugung) |
+| **Determiniertheit** | Das Verfahren liefert bei denselben Voraussetzungen stets dasselbe Ergebnis. | Unterschiedliche Ergebnisse sind erlaubt/gewollt (z. B. randomisierte Heuristiken, nebenläufige Threads ohne Synchronisation) |
+
 
 ### Beispiel: Euklidischer Algorithmus
 
@@ -61,7 +67,7 @@ Schauen wir uns für unseren Algorithmus nochmal die Eigenschaften eines Algorit
 2. **Ausführbarkeit** jeder einzelne Schritt kann ausgeführt werden.
 3. **Dynamische Finitheit** über den Speicherplatz können wir noch nicht viel sagen, aber wir müssen nur einige wenige Zahlen speichern. Das sollte klappen.
 4. **Terminierung** Wann endet unser Algorithmus? Was muss gelten? Wissen wir, ob der Algorithmus irgendwann stoppt?
-5. **Determiniertheit** Es ist sicherlich nicht so leicht zu sehen, ob bei gleicher Eingabe (die Zahlen `a`und `b`) auch stets der gleiche größte gemneinsame Teiler berechnet wird. Dazu müssten wir uns erstmal überlegen, wie wir das prüfen können. 
+5. **Determiniertheit** Es ist sicherlich nicht so leicht zu sehen, ob bei gleicher Eingabe (die Zahlen `a`und `b`) auch stets der gleiche größte gemeinsame Teiler berechnet wird. Dazu müssten wir uns erstmal überlegen, wie wir das prüfen können. 
 6. **Determinismus** Wir werden unseren Algorithmus nochmal an einem Beispiel *durchspielen*, um ein Gefühl dafür zu bekommen, dass wir stets wissen, welche Anweisung als nächstes ausgeführt wird. 
 
 ### Beispielzahlen für den euklidischen Algorithmus
@@ -84,7 +90,7 @@ Wir nehmen die Zahlen `a=40` und `b=24` und spielen damit unseren Algorithmus du
 | 12 |	Zeile `7` | der gesuchte `ggT` ist `8` | 
 | 13 |	Ende | | 
 
-Für dieses Beispiel war stets eindeutig, welche Anweisung als nächstes ausgeführt wird. Der Algrorithmus hat auch terminiert, d.h. er wurde beendet und es sollte auch klar sein, dass das Ergebnis für die die Eingabe `a=40` und `b=24` stets `8` ist. 
+Für dieses Beispiel war stets eindeutig, welche Anweisung als nächstes ausgeführt wird. Der Algorithmus hat auch terminiert, d.h. er wurde beendet und es sollte auch klar sein, dass das Ergebnis für die die Eingabe `a=40` und `b=24` stets `8` ist. 
 
 !!! question "Fragen"
 	 * Was ändert sich, wenn am Anfang `a=24` und `b=40` sind?
@@ -128,14 +134,14 @@ Wir begeben uns also in eine *Schleife* und berechnen so lange einen Nachfolger 
 | 16 | Zeile `1` |  wegen *wiederhole* (Iteration): `n (1) ist nicht ungleich 1`, also wird der Schleifeninhalt **nicht** ausgeführt | 
 | 17 | Ende | | 
 
-Auch für dieses Beispiel war erneut stets eindeutig, welche Anweisung als nächstes ausgeführt wird. Der Algrorithmus hat auch terminiert, d.h. er wurde beendet und es sollte auch klar sein, dass das Ergebnis für die Eingabe `n=5` stets `1` ist. 
+Auch für dieses Beispiel war erneut stets eindeutig, welche Anweisung als nächstes ausgeführt wird. Der Algorithmus hat auch terminiert, d.h. er wurde beendet und es sollte auch klar sein, dass das Ergebnis für die Eingabe `n=5` stets `1` ist. 
 
 !!! question "Fragen"
 	 * Spielen Sie den Algorithmus ruhig einmal für `n=7` durch oder auch für andere `n`
 	 * Denken Sie, dass der Algorithmus für jede beliebige positive natürliche Zahl `n` terminiert?
 	 * Wenn ein Algorithmus für eine konkrete Eingabe stets ein eindeutiges Ergebnis (und zwar immer das gleiche) liefert, wie können dann Zufallszahlen berechnet werden?
 
-!!! success
+!!! success "Zusammenfassung"
     Wir haben ein Verständnis über den *Algorithmus*-Begriff erlangt und wissen, was *Finitheit*, *Determiniertheit*, *Determinismus* und *Terminierung* bedeuten. 
 
 ## Programmablaufstrukturen

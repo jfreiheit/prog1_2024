@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -592,6 +594,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -732,6 +743,26 @@
   
   <span class="md-ellipsis">
     Javadoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
   </span>
   
 
@@ -979,6 +1010,15 @@
   <a href="#ein-weiterer-datentyp-circle" class="md-nav__link">
     <span class="md-ellipsis">
       Ein weiterer Datentyp Circle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
     </span>
   </a>
   
@@ -3037,6 +3077,53 @@
 </div>
 </div>
 </details>
+<h2 id="ubungen">Übungen<a class="headerlink" href="#ubungen" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary>Übung 1 – Klasse <code>Rechteck</code></summary>
+<p>Erstellen Sie eine Klasse <code>Rechteck</code> mit den Objektvariablen <code>breite</code> und <code>hoehe</code> (beide <code>int</code>). Implementieren Sie:</p>
+<ul>
+<li>einen Konstruktor <code>Rechteck(int breite, int hoehe)</code>,</li>
+<li>eine Methode <code>int flaecheninhalt()</code>, die die Fläche zurückgibt,</li>
+<li>eine Methode <code>int umfang()</code>, die den Umfang zurückgibt,</li>
+<li>eine Methode <code>void print()</code>, die das Rechteck in der Form <code>[ breite=10, hoehe=5 ]</code> ausgibt.</li>
+</ul>
+<p>Testen Sie die Klasse in einer <code>Testklasse</code>.</p>
+</details>
+<details class="note">
+<summary>Übung 2 – Klasse <code>Kreis</code></summary>
+<p>Erstellen Sie eine Klasse <code>Kreis</code> mit der Objektvariable <code>radius</code> (Typ <code>double</code>). Implementieren Sie:</p>
+<ul>
+<li>einen Konstruktor <code>Kreis(double radius)</code>,</li>
+<li>eine Methode <code>double flaeche()</code> (Formel: <span class="arithmatex">\(\pi \cdot r^2\)</span>),</li>
+<li>eine Methode <code>double umfang()</code> (Formel: <span class="arithmatex">\(2 \cdot \pi \cdot r\)</span>),</li>
+<li>eine Methode <code>boolean istGroesserAls(Kreis anderer)</code>, die <code>true</code> zurückgibt, wenn dieser Kreis größer ist als <code>anderer</code>.</li>
+</ul>
+<p>Verwenden Sie <code>Math.PI</code> für die Kreiszahl.</p>
+</details>
+<details class="note">
+<summary>Übung 3 – Klasse <code>Konto</code></summary>
+<p>Erstellen Sie eine Klasse <code>Konto</code> mit den Objektvariablen <code>kontonummer</code> (<code>int</code>) und <code>kontostand</code> (<code>double</code>). Implementieren Sie:</p>
+<ul>
+<li>einen Konstruktor <code>Konto(int kontonummer)</code>, der das Konto mit einem Stand von <code>0.0</code> anlegt,</li>
+<li>eine Methode <code>void einzahlen(double betrag)</code>,</li>
+<li>eine Methode <code>boolean abheben(double betrag)</code>, die <code>true</code> zurückgibt, wenn die Abhebung erfolgreich war (Kontostand darf nicht negativ werden),</li>
+<li>eine Methode <code>void print()</code>, die Kontonummer und Kontostand ausgibt.</li>
+</ul>
+</details>
+<details class="note">
+<summary>Übung 4 – Bruch</summary>
+<p>Erstellen Sie eine Klasse <code>Bruch</code> mit den Objektvariablen <code>zaehler</code> und <code>nenner</code> (beide <code>int</code>). Implementieren Sie:</p>
+<ul>
+<li>einen Konstruktor <code>Bruch(int zaehler, int nenner)</code>,</li>
+<li>eine Methode <code>double wert()</code>, die den Dezimalwert des Bruchs zurückgibt,</li>
+<li>eine Methode <code>void print()</code>, die den Bruch als <code>zaehler/nenner</code> ausgibt,</li>
+<li>eine Methode <code>Bruch multiplizieren(Bruch anderer)</code>, die das Produkt als neues <code>Bruch</code>-Objekt zurückgibt.</li>
+</ul>
+</details>
+<div class="admonition success">
+<p class="admonition-title">Zusammenfassung</p>
+<p>Wir haben eigene Datentypen (Klassen) erstellt. Eine Klasse kapselt Objektvariablen (Zustand) und Objektmethoden (Verhalten). Konstruktoren erzeugen Objekte mit dem Schlüsselwort <code>new</code>. Getter-Methoden geben den Zustand eines Objekts nach außen weiter. Jedes Objekt ist eine Instanz seiner Klasse und besitzt eine eigene Identität. Das Prinzip der Kapselung (<em>Encapsulation</em>) sorgt dafür, dass der innere Zustand eines Objekts nur über definierte Methoden verändert werden kann.</p>
+</div>
 
 
 
@@ -3054,8 +3141,16 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -3127,10 +3222,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

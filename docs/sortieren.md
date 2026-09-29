@@ -2199,3 +2199,48 @@ Insgesamt sieht die Implementierung von Merge-Sort also so aus:
 ## Quicksort
 
 Ein Sortier-Algorithmus, der ebenfalls auf dem *Divide-and-Conquer*-Prinzip berucht, ist [Quicksort](https://de.wikipedia.org/wiki/Quicksort). Bei Quicksort ist, im Gegensatz zu Merge-Sort, das Teilen kompliziert und das Zusammenfügen einfach. Die Methode `sort()` der Klasse `Arrays` verwendet Quicksort. Wir gehen hier aber aus Zeitgründen nicht weiter auf den Algroithmus ein. Sie können sich aber gerne darüber selbständig informieren. Es gibt viele Implementierungen und Erläuterungen davon im Netz, z.B. [hier](https://www.codeflow.site/de/article/java-quicksort), [hier](https://javabeginners.de/Algorithmen/Sortieralgorithmen/Quicksort.php) und [hier](https://studyflix.de/informatik/quicksort-1322).
+
+## Übungen
+
+??? note "Übung 1 – Bubblesort nachvollziehen"
+	Vollziehen Sie den Bubblesort-Algorithmus für das folgende Array nach und geben Sie das Array nach jedem vollständigen Durchlauf an:
+
+	```
+	[5, 3, 8, 1, 4]
+	```
+
+	Wie viele Vergleiche werden insgesamt durchgeführt?
+
+??? note "Übung 2 – Selectionsort implementieren"
+	Implementieren Sie den Selectionsort-Algorithmus in einer Methode `public static int[] selectionsort(int[] a)`. Das Original-Array soll dabei nicht verändert werden; zurückgegeben wird ein neues sortiertes Array.
+
+??? note "Übung 3 – Insertionsort analysieren"
+	Analysieren Sie die Laufzeitkomplexität von Insertionsort:
+
+	- Wie viele Vergleiche werden im **besten Fall** benötigt (Array bereits sortiert)?
+	- Wie viele Vergleiche werden im **schlechtesten Fall** benötigt (Array umgekehrt sortiert)?
+	- Wie lautet die O-Notation für den schlechtesten Fall?
+
+??? note "Übung 4 – Mergesort verstehen"
+	Mergesort basiert auf dem *Divide-and-Conquer*-Prinzip. Erläutern Sie die beiden Schritte:
+
+	1. **Teilen:** Wie wird das Array aufgeteilt?
+	2. **Zusammenführen (Merge):** Wie werden zwei sortierte Teil-Arrays zu einem sortierten Array zusammengeführt?
+
+	Implementieren Sie die `merge()`-Hilfsmethode, die zwei sortierte Arrays zu einem sortierten Array zusammenfügt.
+
+??? note "Übung 5 – Vergleich der Sortierverfahren"
+	Vergleichen Sie Bubblesort, Selectionsort, Insertionsort und Mergesort anhand der folgenden Kriterien:
+
+	| Algorithmus    | Bester Fall | Schlechtester Fall | Stabil? |
+	|----------------|-------------|-------------------|---------|
+	| Bubblesort     | O(n)        | O(n²)             | ja      |
+	| Selectionsort  | O(n²)       | O(n²)             | nein    |
+	| Insertionsort  | O(n)        | O(n²)             | ja      |
+	| Mergesort      | O(n log n)  | O(n log n)        | ja      |
+
+	Wann würden Sie welchen Algorithmus bevorzugen?
+
+!!! success "Zusammenfassung"
+	Wir haben vier klassische Sortierverfahren kennengelernt. Bubblesort, Selectionsort und Insertionsort sind einfach zu implementieren, haben aber im schlechtesten Fall eine quadratische Laufzeit O(n²). Mergesort verwendet das *Divide-and-Conquer*-Prinzip und erreicht auch im schlechtesten Fall eine Laufzeit von O(n log n), benötigt dafür aber zusätzlichen Speicherplatz. Die eingebaute Methode `Arrays.sort()` der Java-Standardbibliothek verwendet Quicksort bzw. Timsort und ist für die Praxis empfehlenswert.
+

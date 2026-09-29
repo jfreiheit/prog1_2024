@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://freiheit.f4.htw-berlin.de/prog1/cleancode/">
       
       
+        <link rel="prev" href="../javadoc/">
+      
+      
+        <link rel="next" href="../tools/">
       
       
       <link rel="icon" href="../img/favicon.png">
@@ -143,6 +147,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -562,6 +568,339 @@
       
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Clean Code
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bezeichner" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bezeichner
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bezeichner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allgemeine-regeln" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allgemeine Regeln
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lange-ist-eine-tugend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Länge ist eine Tugend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleans-wie-fragen-formulieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      Booleans wie Fragen formulieren
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laufvariablen-in-schleifen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laufvariablen in Schleifen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kein-typ-im-bezeichner" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kein Typ im Bezeichner
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magic-numbers-vermeiden" class="md-nav__link">
+    <span class="md-ellipsis">
+      Magic Numbers vermeiden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kommentare" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kommentare
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kommentare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kommentare-die-man-nicht-braucht" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kommentare, die man nicht braucht
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wann-sind-kommentare-sinnvoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wann sind Kommentare sinnvoll?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#was-immer-sinnvoll-ist-javadoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was immer sinnvoll ist: JavaDoc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methoden" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methoden
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methoden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eine-methode-eine-aufgabe-srp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eine Methode – eine Aufgabe (SRP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dry-dont-repeat-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      DRY – Don't Repeat Yourself
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#komplexe-bedingungen-auslagern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Komplexe Bedingungen auslagern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameterzahl-begrenzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameterzahl begrenzen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatierung
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatierung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#einruckung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Einrückung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#klammern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Klammern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immer-geschweifte-klammern-bei-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immer geschweifte Klammern bei if
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leerzeilen-und-zeilenlange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leerzeilen und Zeilenlänge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solid-design-prinzipien" class="md-nav__link">
+    <span class="md-ellipsis">
+      SOLID Design-Prinzipien
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SOLID Design-Prinzipien">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-responsibility-principle-srp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single Responsibility Principle (SRP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openclosed-principle-ocp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open/Closed Principle (OCP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liskov-substitution-principle-lsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liskov Substitution Principle (LSP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-segregation-principle-isp-und-dependency-inversion-principle-dip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface Segregation Principle (ISP) und Dependency Inversion Principle (DIP)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     <li class="md-nav__item">
@@ -665,20 +1004,113 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sinnvoller-umgang-mit-kommentaren" class="md-nav__link">
+  <a href="#bezeichner" class="md-nav__link">
     <span class="md-ellipsis">
-      Sinnvoller Umgang mit Kommentaren
+      Bezeichner
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bezeichner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allgemeine-regeln" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allgemeine Regeln
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lange-ist-eine-tugend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Länge ist eine Tugend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleans-wie-fragen-formulieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      Booleans wie Fragen formulieren
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#laufvariablen-in-schleifen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Laufvariablen in Schleifen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kein-typ-im-bezeichner" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kein Typ im Bezeichner
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magic-numbers-vermeiden" class="md-nav__link">
+    <span class="md-ellipsis">
+      Magic Numbers vermeiden
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bezeichner" class="md-nav__link">
+  <a href="#kommentare" class="md-nav__link">
     <span class="md-ellipsis">
-      Bezeichner
+      Kommentare
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Kommentare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kommentare-die-man-nicht-braucht" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kommentare, die man nicht braucht
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wann-sind-kommentare-sinnvoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wann sind Kommentare sinnvoll?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#was-immer-sinnvoll-ist-javadoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was immer sinnvoll ist: JavaDoc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -689,22 +1121,40 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solid-design-prinzipien" class="md-nav__link">
-    <span class="md-ellipsis">
-      SOLID Design Prinzipien
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="SOLID Design Prinzipien">
+    <nav class="md-nav" aria-label="Methoden">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#single-responsibility-principle" class="md-nav__link">
+  <a href="#eine-methode-eine-aufgabe-srp" class="md-nav__link">
     <span class="md-ellipsis">
-      Single Responsibility Principle
+      Eine Methode – eine Aufgabe (SRP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dry-dont-repeat-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      DRY – Don't Repeat Yourself
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#komplexe-bedingungen-auslagern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Komplexe Bedingungen auslagern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameterzahl-begrenzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameterzahl begrenzen
     </span>
   </a>
   
@@ -712,6 +1162,117 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatierung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatierung
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatierung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#einruckung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Einrückung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#klammern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Klammern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immer-geschweifte-klammern-bei-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immer geschweifte Klammern bei if
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leerzeilen-und-zeilenlange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leerzeilen und Zeilenlänge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solid-design-prinzipien" class="md-nav__link">
+    <span class="md-ellipsis">
+      SOLID Design-Prinzipien
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SOLID Design-Prinzipien">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-responsibility-principle-srp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single Responsibility Principle (SRP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openclosed-principle-ocp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open/Closed Principle (OCP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liskov-substitution-principle-lsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liskov Substitution Principle (LSP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-segregation-principle-isp-und-dependency-inversion-principle-dip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interface Segregation Principle (ISP) und Dependency Inversion Principle (DIP)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Übungen
+    </span>
+  </a>
   
 </li>
       
@@ -734,80 +1295,1014 @@
 
 
 <h1 id="clean-code">Clean Code<a class="headerlink" href="#clean-code" title="Permanent link">&para;</a></h1>
-<h4 id="sinnvoller-umgang-mit-kommentaren">Sinnvoller Umgang mit Kommentaren<a class="headerlink" href="#sinnvoller-umgang-mit-kommentaren" title="Permanent link">&para;</a></h4>
-<p>Wirklich sinnvoll sind nur JavaDoc-Kommentare. Andere Kommentare sollten, wenn überhaupt, sehr sparsam verwendet werden. </p>
-<p>Erläutern Sie nicht  </p>
+<div class="admonition quote">
+<p class="admonition-title">Robert C. Martin</p>
+<p><em>"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."</em></p>
+</div>
+<p>Wenn Sie ein Programm schreiben, ist Ihr erstes Ziel, dass es korrekt läuft. Aber das allein reicht nicht: Code wird nach dem Schreiben viel häufiger <strong>gelesen</strong> als geschrieben – von Ihnen selbst in drei Monaten, von Kommilitonen, von Kolleginnen und Kollegen, von Prüfenden. Unter <em>Clean Code</em> versteht man Programmcode, der nicht nur funktioniert, sondern auch <strong>klar, verständlich und pflegbar</strong> ist.</p>
+<p>Der Begriff wurde vor allem durch das Buch <em>Clean Code</em> von <a href="https://de.wikipedia.org/wiki/Robert_Cecil_Martin">Robert C. Martin</a> geprägt. Die Prinzipien darin sind heute ein zentraler Bestandteil professioneller Softwareentwicklung.</p>
+<div class="admonition info">
+<p class="admonition-title">Warum Clean Code von Anfang an?</p>
+<p>Schlechte Gewohnheiten beim Programmieren sind schwer wieder loszuwerden. Wer von Anfang an auf verständlichen Code achtet, spart sich später viel Zeit – beim Debuggen, beim Erweitern und beim Zusammenarbeiten.</p>
+</div>
+<hr />
+<h2 id="bezeichner">Bezeichner<a class="headerlink" href="#bezeichner" title="Permanent link">&para;</a></h2>
+<p>Ein <strong>Bezeichner</strong> ist jeder Name, den Sie selbst vergeben: für Variablen, Methoden, Klassen, Konstanten und Pakete. Gute Bezeichner sind der wichtigste Beitrag zu lesbarem Code.</p>
+<h3 id="allgemeine-regeln">Allgemeine Regeln<a class="headerlink" href="#allgemeine-regeln" title="Permanent link">&para;</a></h3>
 <ul>
-<li>die Bedeutung einer Variablen bei der Deklaration. Das sollte durch den Namen klar sein. </li>
-<li>die Bedeutung einer Bedingung. Spendieren Sie besser eine eigene Methode für diese Bedingung und geben Sie dieser Methode einen entsprechenden Namen. </li>
-<li>die Bedeutung einer <code>for</code>-Schleife. Geben Sie stattdessen der Laufvariablen einen entsprechenden Namen. </li>
-<li>die Bedeutung von <em>magic numbers</em>. Deklarieren Sie stattdessen Konstanten mit sprechenden Namen. </li>
-<li>die Bedeutung verschachtelter Schleifen. Lagern Sie innere Schleifen besser in eigene Methoden aus und geben Sie den Methoden sprechende Namen. </li>
+<li><strong>Variablen und Parameter</strong> → Substantive, die den Inhalt beschreiben</li>
+<li><strong>Methoden</strong> → Verben oder Verb-Substantiv-Kombinationen</li>
+<li><strong>Klassen</strong> → Substantive im Singular</li>
+<li><strong>Konstanten</strong> → <code>GROSSBUCHSTABEN_MIT_UNTERSTRICH</code></li>
+<li><strong>Pakete</strong> → komplett in Kleinbuchstaben</li>
 </ul>
-<p>Generell wird häufig versucht, "schlechte" Programmierung durch Kommentare zu "verbessern". Ein Problem bei Kommentaren besteht darin, dass sie ebenfalls geändert werden müssen, wenn der Code geändert wird. Außerdem können Kommentare einfach falsche Informationen enthalten, nämlich dann, wenn darin Gedanken formuliert sind, die gar nicht bis zu Ende gedacht wurden. </p>
-<h4 id="bezeichner">Bezeichner<a class="headerlink" href="#bezeichner" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Variablennamen sollten nicht den Typ der Variable enthalten. Das ist unnötig. </li>
-<li>Klassennamen sollten Substantive sein.</li>
-<li>Methodennamen sollten Verben enthalten.</li>
-<li>Ein typischer Fehler bei Bezeichnern ist, sie zu kurz zu wählen. Dafür gibt es keinen Grund! <code>calculateMeanValueOfAges()</code> ist besser als <code>calc</code>. Typisch ist es auch, Laufvariablen in <code>for</code>-Schleifen die Bezeichner <code>i</code> und <code>j</code> usw. geben. Besser sind sprechende Namen, wie z.B. <code>row</code> und <code>column</code>. </li>
-</ul>
-<h4 id="methoden">Methoden<a class="headerlink" href="#methoden" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Methoden sollten genau eine Funktion ausführen. </li>
-<li>Komplexere Bedingungen (mit logischen Operatoren verknüpfte Ausdrücke) sollten in eigene Methoden ausgelagert werden, um ihnen einen sprechenden Namen zu geben.</li>
-<li>Die Parameter sollten zu den Methoden passen, z.B. ist <code>write(String)</code> verständlich, aber <code>write(boolean</code> nicht. </li>
-<li>Methoden sollten so (kurz und knapp) geschrieben werden, dass sie wiederverwendet werden können. </li>
-<li>Daten sollten möglichst nicht "hartcodiert" sein, z.B.: </li>
-</ul>
+<h3 id="lange-ist-eine-tugend">Länge ist eine Tugend<a class="headerlink" href="#lange-ist-eine-tugend" title="Permanent link">&para;</a></h3>
+<p>Ein häufiger Anfängerfehler ist, Bezeichner zu kurz zu wählen. Es gibt keinen Grund für Kürze – moderne IDEs ergänzen Namen automatisch. Ein langer, sprechender Name ist fast immer besser als ein kurzer, kryptischer.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">schlecht</label><label for="__tabbed_1_2">besser</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">String</span><span class="w"> </span><span class="nf">getCapital</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">capital</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">switch</span><span class="p">(</span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;Italien&quot;</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;Rom&quot;</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;Portugal&quot;</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;Lissabon&quot;</span><span class="p">;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;Spanien&quot;</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;Madrid&quot;</span><span class="p">;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">};</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">capital</span><span class="p">;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">flag</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">calc</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">studentCount</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">averageGrade</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">isEnrolled</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kt">void</span><span class="w"> </span><span class="nf">calculateSum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">firstSummand</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">secondSummand</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="booleans-wie-fragen-formulieren">Booleans wie Fragen formulieren<a class="headerlink" href="#booleans-wie-fragen-formulieren" title="Permanent link">&para;</a></h3>
+<p>Booleans drücken einen Wahrheitswert aus. Wenn ihr Name wie eine Ja/Nein-Frage klingt, ist der Code besonders lesbar:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">schlecht</label><label for="__tabbed_2_2">besser</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">active</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">check</span><span class="p">;</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">capitals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Map</span><span class="p">.</span><span class="na">ofEntries</span><span class="p">(</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="n">entry</span><span class="p">(</span><span class="s">&quot;Italien&quot;</span><span class="p">,</span><span class="s">&quot;Rom&quot;</span><span class="p">),</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">entry</span><span class="p">(</span><span class="s">&quot;Portugal&quot;</span><span class="p">,</span><span class="s">&quot;Lissabon&quot;</span><span class="p">),</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">entry</span><span class="p">(</span><span class="s">&quot;Spanien&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Madrid&quot;</span><span class="p">)</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">);</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">String</span><span class="w"> </span><span class="nf">getCapital</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">capital</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">capital</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">capitals</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">country</span><span class="p">);</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">capital</span><span class="p">;</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">isActive</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">hasData</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">isPrimeNumber</span><span class="p">;</span>
 </span></code></pre></div>
 </div>
 </div>
 </div>
-<h3 id="solid-design-prinzipien">SOLID Design Prinzipien<a class="headerlink" href="#solid-design-prinzipien" title="Permanent link">&para;</a></h3>
-<p>Nachdem <a href="https://de.wikipedia.org/wiki/Robert_Cecil_Martin">Robert C. Martin</a> Design-Prinzipien für die Softwareentwicklung zusammengetragen hatte (<a href="https://portal.dnb.de/opac.htm?method=simpleSearch&amp;query=114440964">Clean Code Literatur</a>), wurden diese unter dem Akronym SOLID zusammengefasst. SOLID steht für die Prinzipien:</p>
+<h3 id="laufvariablen-in-schleifen">Laufvariablen in Schleifen<a class="headerlink" href="#laufvariablen-in-schleifen" title="Permanent link">&para;</a></h3>
+<p>Die klassischen Bezeichner <code>i</code>, <code>j</code>, <code>k</code> in <code>for</code>-Schleifen sind zwar weit verbreitet, aber oft irreführend. Sprechende Namen machen den Code sofort verständlicher:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">schlecht</label><label for="__tabbed_3_2">besser</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">matrix</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">matrix</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">matrix</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">row</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">matrix</span><span class="o">[</span><span class="n">row</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">col</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">matrix</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="kein-typ-im-bezeichner">Kein Typ im Bezeichner<a class="headerlink" href="#kein-typ-im-bezeichner" title="Permanent link">&para;</a></h3>
+<p>Früher war es üblich, den Typ in den Variablennamen zu kodieren (<em>Ungarische Notation</em>, z.B. <code>strName</code>, <code>iCount</code>). Das ist heute überholt – der Typ ist in Java bereits in der Deklaration sichtbar.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">schlecht</label><label for="__tabbed_4_2">besser</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">String</span><span class="w"> </span><span class="n">strName</span><span class="p">;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">iCount</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">bIsValid</span><span class="p">;</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kt">boolean</span><span class="w"> </span><span class="n">isValid</span><span class="p">;</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Übung Bezeichner</p>
+<p>Welche der folgenden Bezeichner sind gut gewählt, welche nicht? Begründen Sie und benennen Sie die schlechten um:
+<code>d</code>, <code>numberOfPassedStudents</code>, <code>temp2</code>, <code>calculateCircleArea</code>, <code>FLAG</code>, <code>x1</code>, <code>isLeapYear</code>, <code>data</code></p>
+</div>
+<hr />
+<h2 id="magic-numbers-vermeiden">Magic Numbers vermeiden<a class="headerlink" href="#magic-numbers-vermeiden" title="Permanent link">&para;</a></h2>
+<p>Als <em>Magic Numbers</em> bezeichnet man numerische (oder andere) Werte, die direkt im Code stehen, ohne zu erklären, was sie bedeuten. Sie machen Code schwer lesbar und fehleranfällig – wenn sich der Wert ändert, muss man ihn an jeder Stelle suchen und ersetzen.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">schlecht</label><label for="__tabbed_5_2">besser</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span>
+<span class="normal"><a href="#__codelineno-8-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">if</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Volljährig&quot;</span><span class="p">);</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="p">}</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="kt">double</span><span class="w"> </span><span class="n">tax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.19</span><span class="p">;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">if</span><span class="p">(</span><span class="n">password</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Passwort zu kurz&quot;</span><span class="p">);</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LEGAL_AGE</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">VAT_RATE</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mf">0.19</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MIN_PASSWORD_LEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="k">if</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">LEGAL_AGE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Volljährig&quot;</span><span class="p">);</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">}</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="kt">double</span><span class="w"> </span><span class="n">tax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">VAT_RATE</span><span class="p">;</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="k">if</span><span class="p">(</span><span class="n">password</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MIN_PASSWORD_LEN</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Passwort zu kurz&quot;</span><span class="p">);</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Konstanten werden in Java mit dem Schlüsselwort <code>final</code> deklariert. In Klassen werden sie oft zusätzlich als <code>static</code> deklariert, damit sie zur Klasse gehören und nicht zu einem bestimmten Objekt.</p>
+<div class="admonition info">
+<p class="admonition-title">Gilt auch für Strings</p>
+<p>Magic Numbers sind nicht nur Zahlen. Auch hart kodierte Texte, die mehrfach verwendet werden, sollten als Konstanten definiert werden:
+<div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// schlecht</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fehler: Eingabe ungültig&quot;</span><span class="p">);</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">&quot;Fehler: Eingabe ungültig&quot;</span><span class="p">);</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1">// besser</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ERROR_INVALID_INPUT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Fehler: Eingabe ungültig&quot;</span><span class="p">;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ERROR_INVALID_INPUT</span><span class="p">);</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">ERROR_INVALID_INPUT</span><span class="p">);</span>
+</span></code></pre></div></p>
+</div>
+<hr />
+<h2 id="kommentare">Kommentare<a class="headerlink" href="#kommentare" title="Permanent link">&para;</a></h2>
+<p>Es klingt kontraintuitiv, aber: <strong>zu viele Kommentare können Code schlechter lesbar machen.</strong> Ein Kommentar, der nur wiederholt, was der Code ohnehin sagt, ist Lärm. Schlimmer noch: Kommentare veralten, werden vergessen zu aktualisieren und enthalten dann falsche Informationen.</p>
+<h3 id="kommentare-die-man-nicht-braucht">Kommentare, die man nicht braucht<a class="headerlink" href="#kommentare-die-man-nicht-braucht" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">schlecht</label><label for="__tabbed_6_2">besser</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// Zähler auf null setzen</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="c1">// über das Array iterieren</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">grades</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">index</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">    </span><span class="c1">// wenn Note bestanden</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">grades</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">4.0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">        </span><span class="n">counter</span><span class="o">++</span><span class="p">;</span><span class="w">   </span><span class="c1">// Zähler erhöhen</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="p">}</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="c1">// Ergebnis ausgeben</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">counter</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span>
+<span class="normal"><a href="#__codelineno-12-7">7</a></span>
+<span class="normal"><a href="#__codelineno-12-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">passedCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="k">for</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">grades</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">isPassing</span><span class="p">(</span><span class="n">grade</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">        </span><span class="n">passedCount</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="p">}</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">passedCount</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Der "bessere" Code braucht keine einzige Kommentarzeile – die Bezeichner und die ausgelagerte Methode <code>isPassing()</code> machen ihn selbsterklärend.</p>
+<h3 id="wann-sind-kommentare-sinnvoll">Wann sind Kommentare sinnvoll?<a class="headerlink" href="#wann-sind-kommentare-sinnvoll" title="Permanent link">&para;</a></h3>
+<p>Kommentare sind dann wertvoll, wenn sie das <strong>Warum</strong> erklären – also den Hintergrund, den man dem Code nicht ansehen kann:</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span>
+<span class="normal"><a href="#__codelineno-13-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1">// Division durch 2 statt durch pi, da die Formel für Halbkreise gilt</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="c1">// Wir prüfen explizit auf null, weil die Datenbank manchmal leere Einträge liefert</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="k">if</span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">defaultValue</span><span class="p">;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="was-immer-sinnvoll-ist-javadoc">Was immer sinnvoll ist: JavaDoc<a class="headerlink" href="#was-immer-sinnvoll-ist-javadoc" title="Permanent link">&para;</a></h3>
+<p>Für öffentliche Methoden und Klassen sind <a href="../javadoc/">JavaDoc-Kommentare</a> stets sinnvoll. Sie beschreiben den Zweck, die Parameter und den Rückgabewert – das ist Dokumentation, kein Lärm.</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span>
+<span class="normal"><a href="#__codelineno-14-7">7</a></span>
+<span class="normal"><a href="#__codelineno-14-8">8</a></span>
+<span class="normal"><a href="#__codelineno-14-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="cm">/**</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="cm"> * Berechnet den Notendurchschnitt aller übergebenen Noten.</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="cm"> *</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="cm"> * @param grades Array mit Noten (1.0 bis 5.0)</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="cm"> * @return Durchschnittsnote, oder 0.0 wenn das Array leer ist</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="cm"> */</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateAverage</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">grades</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition question">
+<p class="admonition-title">Übung Kommentare</p>
+<p>Lesen Sie folgenden Code und entscheiden Sie für jeden Kommentar: Sinnvoll behalten, oder besser entfernen/den Code stattdessen verbessern?
+<div class="language-java highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">// Student-Klasse</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="c1">// Name des Studenten</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="c1">// Prüft ob bestanden</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="c1">// Gibt true zurück wenn Note kleiner gleich 4</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="c1">// gibt false zurück wenn Note größer 4</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">passed</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">grade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">        </span><span class="c1">// Vergleich</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">grade</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">4.0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">   </span><span class="c1">// bestanden</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// nicht bestanden</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</div>
+<hr />
+<h2 id="methoden">Methoden<a class="headerlink" href="#methoden" title="Permanent link">&para;</a></h2>
+<p>Methoden sind das wichtigste Werkzeug für sauberen Code. Die folgenden Prinzipien helfen dabei, Methoden gut zu gestalten.</p>
+<h3 id="eine-methode-eine-aufgabe-srp">Eine Methode – eine Aufgabe (SRP)<a class="headerlink" href="#eine-methode-eine-aufgabe-srp" title="Permanent link">&para;</a></h3>
+<p>Das <em>Single Responsibility Principle</em> gilt nicht nur für Klassen, sondern besonders deutlich für Methoden: <strong>Eine Methode sollte genau eine Sache tun.</strong> Wenn Sie eine Methode mit „und" beschreiben müssen, ist sie zu groß.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">schlecht</label><label for="__tabbed_7_2">besser</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span>
+<span class="normal"><a href="#__codelineno-16-11">11</a></span>
+<span class="normal"><a href="#__codelineno-16-12">12</a></span>
+<span class="normal"><a href="#__codelineno-16-13">13</a></span>
+<span class="normal"><a href="#__codelineno-16-14">14</a></span>
+<span class="normal"><a href="#__codelineno-16-15">15</a></span>
+<span class="normal"><a href="#__codelineno-16-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1">// Diese Methode liest Eingabe, berechnet UND gibt aus – zu viel!</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">processAndPrintStudentResult</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">grades</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">grades</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">grade</span><span class="p">;</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">average</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">grades</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8"></a>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Student: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Durchschnitt: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">average</span><span class="p">);</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">average</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">4.0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Bestanden!&quot;</span><span class="p">);</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nicht bestanden.&quot;</span><span class="p">);</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-17-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-17-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-17-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-17-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-17-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-17-10">10</a></span>
+<span class="normal"><a href="#__codelineno-17-11">11</a></span>
+<span class="normal"><a href="#__codelineno-17-12">12</a></span>
+<span class="normal"><a href="#__codelineno-17-13">13</a></span>
+<span class="normal"><a href="#__codelineno-17-14">14</a></span>
+<span class="normal"><a href="#__codelineno-17-15">15</a></span>
+<span class="normal"><a href="#__codelineno-17-16">16</a></span>
+<span class="normal"><a href="#__codelineno-17-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="kt">double</span><span class="w"> </span><span class="nf">calculateAverage</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">grades</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">grades</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">grade</span><span class="p">;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">grades</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="p">}</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8"></a>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="kt">boolean</span><span class="w"> </span><span class="nf">isPassing</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">average</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">average</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">4.0</span><span class="p">;</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="p">}</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12"></a>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13"></a><span class="kt">void</span><span class="w"> </span><span class="nf">printResult</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">average</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Student: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Durchschnitt: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">average</span><span class="p">);</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">isPassing</span><span class="p">(</span><span class="n">average</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Bestanden!&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Nicht bestanden.&quot;</span><span class="p">);</span>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Drei kleine Methoden sind viel besser als eine große: jede ist einzeln testbar, wiederverwendbar und verständlich.</p>
+<h3 id="dry-dont-repeat-yourself">DRY – Don't Repeat Yourself<a class="headerlink" href="#dry-dont-repeat-yourself" title="Permanent link">&para;</a></h3>
+<p><em>Don't Repeat Yourself</em> bedeutet: <strong>Jede Information (jede Logik) sollte im Code genau einmal vorkommen.</strong> Wenn Sie Code kopieren und einfügen, ist das fast immer ein Zeichen, dass Sie eine Methode brauchen.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">schlecht</label><label for="__tabbed_8_2">besser</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-18-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-18-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-18-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-18-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-18-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-18-10">10</a></span>
+<span class="normal"><a href="#__codelineno-18-11">11</a></span>
+<span class="normal"><a href="#__codelineno-18-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="c1">// Dreimal der gleiche Berechnungsblock, nur mit anderen Werten</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">price1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">29.99</span><span class="p">;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">tax1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.19</span><span class="p">;</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Preis: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">price1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, MwSt: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tax1</span><span class="p">);</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="kt">double</span><span class="w"> </span><span class="n">price2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">49.99</span><span class="p">;</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="kt">double</span><span class="w"> </span><span class="n">tax2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.19</span><span class="p">;</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Preis: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">price2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, MwSt: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tax2</span><span class="p">);</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9"></a>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="kt">double</span><span class="w"> </span><span class="n">price3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.99</span><span class="p">;</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="kt">double</span><span class="w"> </span><span class="n">tax3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.19</span><span class="p">;</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Preis: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">price3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, MwSt: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tax3</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-19-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-19-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-19-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-19-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-19-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-19-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-19-10">10</a></span>
+<span class="normal"><a href="#__codelineno-19-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">VAT_RATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.19</span><span class="p">;</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">printPriceWithTax</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">tax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">VAT_RATE</span><span class="p">;</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Preis: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, MwSt: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tax</span><span class="p">);</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="p">}</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7"></a>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="c1">// Aufruf:</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="n">printPriceWithTax</span><span class="p">(</span><span class="mf">29.99</span><span class="p">);</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="n">printPriceWithTax</span><span class="p">(</span><span class="mf">49.99</span><span class="p">);</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="n">printPriceWithTax</span><span class="p">(</span><span class="mf">9.99</span><span class="p">);</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Warum DRY so wichtig ist</p>
+<p>Angenommen, der Mehrwertsteuersatz ändert sich von 19% auf 21%. Im „schlechten" Beispiel müssen Sie die <code>0.19</code> an drei Stellen suchen und ändern – und könnten eine vergessen. Im „besseren" Beispiel ändern Sie eine einzige Zeile.</p>
+</div>
+<h3 id="komplexe-bedingungen-auslagern">Komplexe Bedingungen auslagern<a class="headerlink" href="#komplexe-bedingungen-auslagern" title="Permanent link">&para;</a></h3>
+<p>Lange <code>if</code>-Bedingungen mit mehreren logischen Operatoren sind schwer zu lesen. Eine eigene Methode mit einem sprechenden Namen macht den Code sofort klarer:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">schlecht</label><label for="__tabbed_9_2">besser</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">if</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">hasValidID</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">isBlacklisted</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">membershipYears</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">    </span><span class="n">grantAccess</span><span class="p">();</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-21-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-21-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-21-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-21-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-21-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-21-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-21-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-21-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-21-10">10</a></span>
+<span class="normal"><a href="#__codelineno-21-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="kt">boolean</span><span class="w"> </span><span class="nf">isEligibleForAccess</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">hasValidID</span><span class="p">,</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">                            </span><span class="kt">boolean</span><span class="w"> </span><span class="n">isBlacklisted</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">membershipYears</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">LEGAL_AGE</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">        </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">hasValidID</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="w">        </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">isBlacklisted</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="w">        </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">membershipYears</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">MIN_MEMBERSHIP_YEARS</span><span class="p">;</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="p">}</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8"></a>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="k">if</span><span class="p">(</span><span class="n">isEligibleForAccess</span><span class="p">(</span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">hasValidID</span><span class="p">,</span><span class="w"> </span><span class="n">isBlacklisted</span><span class="p">,</span><span class="w"> </span><span class="n">membershipYears</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10"></a><span class="w">    </span><span class="n">grantAccess</span><span class="p">();</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h3 id="parameterzahl-begrenzen">Parameterzahl begrenzen<a class="headerlink" href="#parameterzahl-begrenzen" title="Permanent link">&para;</a></h3>
+<p>Je mehr Parameter eine Methode hat, desto schwerer ist sie zu verstehen und aufzurufen. Als Faustregel gilt:</p>
 <ul>
-<li><b>S</b>ingle Responsibility Principle (RSP)</li>
-<li><b>O</b>pen Closed Principle</li>
-<li><b>L</b>iskov Substitution Principle (LSP)</li>
-<li><b>I</b>nterface Segregation Principle</li>
-<li><b>D</b>ependency Inversion Principle</li>
+<li><strong>0–2 Parameter</strong>: gut</li>
+<li><strong>3 Parameter</strong>: akzeptabel, aber hinterfragen</li>
+<li><strong>4+ Parameter</strong>: fast immer ein Zeichen, dass ein Objekt übergeben werden sollte</li>
 </ul>
-<h4 id="single-responsibility-principle">Single Responsibility Principle<a class="headerlink" href="#single-responsibility-principle" title="Permanent link">&para;</a></h4>
-<p>Diese Prinzip wird heute auch häufiger für Methoden verwendet, es bezieht sich aber auf Klassen. Im Original hat Robert C. Marting dieses Prinzip so erklärt: </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">schlecht</label><label for="__tabbed_10_2">besser</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">createStudent</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lastName</span><span class="p">,</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">                   </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">gpa</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1">// Die Daten gehören zusammen – ein Objekt ist sinnvoller</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">createStudent</span><span class="p">(</span><span class="n">Student</span><span class="w"> </span><span class="n">student</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="formatierung">Formatierung<a class="headerlink" href="#formatierung" title="Permanent link">&para;</a></h2>
+<p>Konsistente Formatierung macht Code schneller lesbar. In einem Team sollte sich jeder an dieselben Regeln halten. Die meisten IDEs (Eclipse, IntelliJ) können Code automatisch formatieren.</p>
+<h3 id="einruckung">Einrückung<a class="headerlink" href="#einruckung" title="Permanent link">&para;</a></h3>
+<p>Verwenden Sie <strong>konsistent</strong> entweder Leerzeichen oder Tabs – niemals beides gemischt. In Java ist 4 Leerzeichen pro Einrückungsebene der verbreitete Standard.</p>
+<h3 id="klammern">Klammern<a class="headerlink" href="#klammern" title="Permanent link">&para;</a></h3>
+<p>In Java ist der <em>K&amp;R-Stil</em> üblich: Die öffnende geschweifte Klammer <code>{</code> steht am Ende der vorherigen Zeile, die schließende <code>}</code> auf einer eigenen Zeile:</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printHello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hallo!&quot;</span><span class="p">);</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="immer-geschweifte-klammern-bei-if">Immer geschweifte Klammern bei <code>if</code><a class="headerlink" href="#immer-geschweifte-klammern-bei-if" title="Permanent link">&para;</a></h3>
+<p>Auch wenn eine <code>if</code>-Bedingung nur eine einzige Anweisung hat, sollten Sie immer <code>{}</code>-Blöcke verwenden. Das Weglassen hat schon zu ernsthaften Softwarefehlern geführt:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">gefährlich und falsch</label><label for="__tabbed_11_2">sicher und richtig</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span>
+<span class="normal"><a href="#__codelineno-25-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="k">if</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="w">    </span><span class="n">shutdown</span><span class="p">();</span><span class="w">  </span><span class="c1">// Das sieht aus wie ein Block – ist aber keiner!</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w">      </span><span class="c1">// Diese Zeile wird IMMER ausgeführt, egal ob error true ist</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span>
+<span class="normal"><a href="#__codelineno-26-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="k">if</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="w">    </span><span class="n">shutdown</span><span class="p">();</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Der Apple-SSL-Bug</p>
+<p>2014 enthielt Apples SSL-Implementierung genau diesen Fehler: Ein versehentlich doppeltes <code>goto fail;</code> ohne Klammern führte dazu, dass Sicherheitszertifikate immer als gültig akzeptiert wurden. Mehr dazu im <a href="../selektion/#if-else">Selektion-Kapitel</a>.</p>
+</div>
+<h3 id="leerzeilen-und-zeilenlange">Leerzeilen und Zeilenlänge<a class="headerlink" href="#leerzeilen-und-zeilenlange" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Trennen Sie logische Abschnitte innerhalb einer Methode durch eine Leerzeile.</li>
+<li>Halten Sie Zeilen auf ca. <strong>80–120 Zeichen</strong> – längere Zeilen müssen beim Lesen gescrollt werden.</li>
+<li>Halten Sie Methoden kurz: Eine Methode, die auf einen Bildschirm passt (ca. 20–30 Zeilen), ist leichter zu verstehen als eine, die über mehrere Seiten geht.</li>
+</ul>
+<hr />
+<h2 id="solid-design-prinzipien">SOLID Design-Prinzipien<a class="headerlink" href="#solid-design-prinzipien" title="Permanent link">&para;</a></h2>
+<p>Nachdem <a href="https://de.wikipedia.org/wiki/Robert_Cecil_Martin">Robert C. Martin</a> Design-Prinzipien für die Softwareentwicklung zusammengetragen hatte, wurden diese unter dem Akronym <strong>SOLID</strong> zusammengefasst:</p>
+<table>
+<thead>
+<tr>
+<th>Buchstabe</th>
+<th>Prinzip</th>
+<th>Kurzbeschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S</strong></td>
+<td>Single Responsibility Principle</td>
+<td>Eine Klasse hat genau einen Grund zur Änderung</td>
+</tr>
+<tr>
+<td><strong>O</strong></td>
+<td>Open/Closed Principle</td>
+<td>Offen für Erweiterung, geschlossen für Änderung</td>
+</tr>
+<tr>
+<td><strong>L</strong></td>
+<td>Liskov Substitution Principle</td>
+<td>Kindklassen müssen Elternklassen ersetzen können</td>
+</tr>
+<tr>
+<td><strong>I</strong></td>
+<td>Interface Segregation Principle</td>
+<td>Keine Abhängigkeit von nicht verwendeten Methoden</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Dependency Inversion Principle</td>
+<td>Abhängigkeiten zeigen auf Abstraktionen</td>
+</tr>
+</tbody>
+</table>
+<h3 id="single-responsibility-principle-srp">Single Responsibility Principle (SRP)<a class="headerlink" href="#single-responsibility-principle-srp" title="Permanent link">&para;</a></h3>
 <blockquote>
+<p><em>A class should have only one reason to change.</em> – Robert C. Martin</p>
+</blockquote>
+<p>Eine Klasse soll genau <strong>eine Verantwortung</strong> haben. Wenn mehrere unabhängige Konzepte in einer Klasse vermischt werden, wird sie schwer zu verstehen, zu testen und zu ändern.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">schlecht</label><label for="__tabbed_12_2">besser</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-27-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-27-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-27-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-27-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-27-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-27-10">10</a></span>
+<span class="normal"><a href="#__codelineno-27-11">11</a></span>
+<span class="normal"><a href="#__codelineno-27-12">12</a></span>
+<span class="normal"><a href="#__codelineno-27-13">13</a></span>
+<span class="normal"><a href="#__codelineno-27-14">14</a></span>
+<span class="normal"><a href="#__codelineno-27-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="c1">// Diese Klasse ist für Studentendaten, Dateiexport UND E-Mail zuständig – zu viel!</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">grades</span><span class="p">;</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5"></a>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateAverage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7"></a>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">saveToFile</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">filename</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9"></a><span class="w">        </span><span class="c1">// Datei schreiben ...</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11"></a>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendGradeEmail</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">recipient</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13"></a><span class="w">        </span><span class="c1">// E-Mail versenden ...</span>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-28-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-28-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-28-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-28-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-28-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-28-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-28-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-28-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-28-10">10</a></span>
+<span class="normal"><a href="#__codelineno-28-11">11</a></span>
+<span class="normal"><a href="#__codelineno-28-12">12</a></span>
+<span class="normal"><a href="#__codelineno-28-13">13</a></span>
+<span class="normal"><a href="#__codelineno-28-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="w">    </span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">grades</span><span class="p">;</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4"></a>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateAverage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="p">}</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7"></a>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StudentExporter</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">saveToFile</span><span class="p">(</span><span class="n">Student</span><span class="w"> </span><span class="n">student</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">filename</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10"></a><span class="p">}</span>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11"></a>
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GradeNotifier</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendGradeEmail</span><span class="p">(</span><span class="n">Student</span><span class="w"> </span><span class="n">student</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">recipient</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Jetzt hat jede Klasse genau eine Aufgabe. Wenn sich das E-Mail-System ändert, muss nur <code>GradeNotifier</code> angepasst werden – <code>Student</code> und <code>StudentExporter</code> bleiben unberührt.</p>
+<h3 id="openclosed-principle-ocp">Open/Closed Principle (OCP)<a class="headerlink" href="#openclosed-principle-ocp" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>A class should have only one reason to change</p>
+<p><em>Software entities should be open for extension, but closed for modification.</em></p>
 </blockquote>
+<p>Eine Klasse soll so gestaltet sein, dass man ihr <strong>neues Verhalten hinzufügen</strong> kann (offen für Erweiterung), <strong>ohne bestehenden Code zu ändern</strong> (geschlossen für Modifikation). In Java erreicht man das häufig durch <a href="../vererbung/">Vererbung</a>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">schlecht</label><label for="__tabbed_13_2">besser</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-29-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-29-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-29-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-29-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-29-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-29-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-29-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-29-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-29-10">10</a></span>
+<span class="normal"><a href="#__codelineno-29-11">11</a></span>
+<span class="normal"><a href="#__codelineno-29-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="c1">// Jede neue Form erfordert eine Änderung dieser Methode!</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="kt">double</span><span class="w"> </span><span class="nf">calculateArea</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">shape</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">shape</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="w">        </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Rectangle</span><span class="p">)</span><span class="w"> </span><span class="n">shape</span><span class="p">;</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="na">width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="na">height</span><span class="p">;</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">shape</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Circle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="w">        </span><span class="n">Circle</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Circle</span><span class="p">)</span><span class="w"> </span><span class="n">shape</span><span class="p">;</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">radius</span><span class="p">;</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10"></a><span class="w">    </span><span class="c1">// Beim Hinzufügen eines Dreiecks muss diese Methode geändert werden...</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-30-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-30-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-30-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-30-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-30-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-30-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-30-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-30-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-30-10">10</a></span>
+<span class="normal"><a href="#__codelineno-30-11">11</a></span>
+<span class="normal"><a href="#__codelineno-30-12">12</a></span>
+<span class="normal"><a href="#__codelineno-30-13">13</a></span>
+<span class="normal"><a href="#__codelineno-30-14">14</a></span>
+<span class="normal"><a href="#__codelineno-30-15">15</a></span>
+<span class="normal"><a href="#__codelineno-30-16">16</a></span>
+<span class="normal"><a href="#__codelineno-30-17">17</a></span>
+<span class="normal"><a href="#__codelineno-30-18">18</a></span>
+<span class="normal"><a href="#__codelineno-30-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="c1">// Jede Form implementiert ihre eigene Berechnung – keine zentrale Änderung nötig</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Shape</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateArea</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="p">}</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5"></a>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Rectangle</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateArea</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">height</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9"></a><span class="p">}</span>
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10"></a>
+</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Circle</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateArea</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14"></a><span class="p">}</span>
+</span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15"></a>
+</span><span id="__span-30-16"><a id="__codelineno-30-16" name="__codelineno-30-16"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Triangle</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Shape</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-30-17"><a id="__codelineno-30-17" name="__codelineno-30-17"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+</span><span id="__span-30-18"><a id="__codelineno-30-18" name="__codelineno-30-18"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateArea</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">height</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-30-19"><a id="__codelineno-30-19" name="__codelineno-30-19"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Ein neues <code>Triangle</code> hinzuzufügen erfordert keine Änderung an vorhandenem Code.</p>
+<h3 id="liskov-substitution-principle-lsp">Liskov Substitution Principle (LSP)<a class="headerlink" href="#liskov-substitution-principle-lsp" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em>If S is a subtype of T, then objects of type T may be replaced by objects of type S without altering the correctness of the program.</em></p>
 </blockquote>
-<p>Man kann es sich auch so merken, dass man in einer Klasse alle die Eigenschaften definieren soll, die aus einem Grund geändert werden können. Eigenschaften, die aus anderen Gründen geändert werden können, sollten in anderen Klassen definiert werden. </p>
-<p>Ein typischer Fall für die Missachtung des SRP besteht z.B. darin, wenn ein Spiel programmiert wird und in derselben Klasse auch die GUI für dieses Spiel. Generell sollte stets die Datenverwaltung (<em>Model</em>) von den Interaktionen (<em>Controller</em>) und der Darstellung (<em>View</em>) getrennt werden. Dafür hat sich z.B. das <em>Design-Pattern</em> <em>Model-View-Controller</em> etabliert. </p>
+<p>Einfach gesagt: <strong>Überall, wo ein Objekt der Elternklasse verwendet wird, muss auch ein Objekt der Kindklasse funktionieren</strong> – ohne dass das Programm falsch läuft oder Ausnahmen geworfen werden müssen.</p>
+<p>Ein klassisches Gegenbeispiel ist das Rechteck/Quadrat-Problem:</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-31-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-31-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-31-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-31-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-31-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-31-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-31-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-31-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-31-10">10</a></span>
+<span class="normal"><a href="#__codelineno-31-11">11</a></span>
+<span class="normal"><a href="#__codelineno-31-12">12</a></span>
+<span class="normal"><a href="#__codelineno-31-13">13</a></span>
+<span class="normal"><a href="#__codelineno-31-14">14</a></span>
+<span class="normal"><a href="#__codelineno-31-15">15</a></span>
+<span class="normal"><a href="#__codelineno-31-16">16</a></span>
+<span class="normal"><a href="#__codelineno-31-17">17</a></span>
+<span class="normal"><a href="#__codelineno-31-18">18</a></span>
+<span class="normal"><a href="#__codelineno-31-19">19</a></span>
+<span class="normal"><a href="#__codelineno-31-20">20</a></span>
+<span class="normal"><a href="#__codelineno-31-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Rectangle</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4"></a>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setWidth</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">width</span><span class="p">)</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">width</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setHeight</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">height</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateArea</span><span class="p">()</span><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">height</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8"></a><span class="p">}</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9"></a>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10"></a><span class="c1">// Verletzt LSP: Ein Quadrat muss width == height erzwingen,</span>
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11"></a><span class="c1">// was die Semantik von setWidth/setHeight bricht.</span>
+</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Square</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setWidth</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">side</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-14"><a id="__codelineno-31-14" name="__codelineno-31-14"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">width</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">side</span><span class="p">;</span>
+</span><span id="__span-31-15"><a id="__codelineno-31-15" name="__codelineno-31-15"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">side</span><span class="p">;</span><span class="w">  </span><span class="c1">// erzwingt Gleichheit – unerwartet für Aufrufer von Rectangle!</span>
+</span><span id="__span-31-16"><a id="__codelineno-31-16" name="__codelineno-31-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-31-17"><a id="__codelineno-31-17" name="__codelineno-31-17"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setHeight</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">side</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-18"><a id="__codelineno-31-18" name="__codelineno-31-18"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">width</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">side</span><span class="p">;</span>
+</span><span id="__span-31-19"><a id="__codelineno-31-19" name="__codelineno-31-19"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">side</span><span class="p">;</span>
+</span><span id="__span-31-20"><a id="__codelineno-31-20" name="__codelineno-31-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-31-21"><a id="__codelineno-31-21" name="__codelineno-31-21"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Code, der <code>Rectangle</code> erwartet und <code>setWidth(5); setHeight(3);</code> aufruft, bekommt bei einem <code>Square</code> die Fläche <code>9</code> statt <code>15</code> – das Verhalten ist überraschend und verletzt LSP. Die Lösung: <code>Square</code> und <code>Rectangle</code> sollten nicht in einer Vererbungsbeziehung stehen, sondern beide von einer gemeinsamen Elternklasse <code>Shape</code> erben.</p>
+<h3 id="interface-segregation-principle-isp-und-dependency-inversion-principle-dip">Interface Segregation Principle (ISP) und Dependency Inversion Principle (DIP)<a class="headerlink" href="#interface-segregation-principle-isp-und-dependency-inversion-principle-dip" title="Permanent link">&para;</a></h3>
+<p>Diese beiden Prinzipien werden relevant, sobald Sie mit <em>Interfaces</em> (Java-Schnittstellen) und komplexeren Abhängigkeiten zwischen Klassen arbeiten. Sie werden diese Konzepte in <strong>Programmieren 2</strong> und <strong>Software Engineering</strong> vertiefen. Kurz zusammengefasst:</p>
+<ul>
+<li><strong>ISP</strong>: Eine Klasse sollte nur die Methoden implementieren müssen, die sie auch wirklich nutzt. Statt eines großen „Alles-kann"-Interfaces lieber mehrere kleine, spezifische Interfaces.</li>
+<li><strong>DIP</strong>: Klassen sollten von Abstraktionen (Interfaces, abstrakten Klassen) abhängen, nicht von konkreten Implementierungen. Das macht Code flexibler und leichter testbar.</li>
+</ul>
+<hr />
+<h2 id="ubungen">Übungen<a class="headerlink" href="#ubungen" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary>Übung 1 – Bezeichner verbessern</summary>
+<p>Benennen Sie alle Bezeichner im folgenden Code so um, dass der Code ohne Kommentare verständlich ist. Entfernen Sie danach alle Kommentare.</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-32-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-32-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-32-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-32-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-32-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-32-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-32-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-32-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-32-10">10</a></span>
+<span class="normal"><a href="#__codelineno-32-11">11</a></span>
+<span class="normal"><a href="#__codelineno-32-12">12</a></span>
+<span class="normal"><a href="#__codelineno-32-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="c1">// Methode zur Berechnung</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="kt">double</span><span class="w"> </span><span class="nf">m</span><span class="p">(</span><span class="kt">double</span><span class="o">[]</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">       </span><span class="c1">// Summe</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">          </span><span class="c1">// Zähler</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">d</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// nur positive Werte</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7"></a><span class="w">            </span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">d</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8"></a><span class="w">            </span><span class="n">c</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// kein Element vorhanden</span>
+</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w">        </span><span class="c1">// Durchschnitt zurückgeben</span>
+</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</details>
+<details class="note">
+<summary>Übung 2 – Magic Numbers eliminieren</summary>
+<p>Welche Magic Numbers finden Sie im folgenden Code? Ersetzen Sie sie durch benannte Konstanten.</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-33-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-33-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-33-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-33-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-33-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-33-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-33-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-33-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-33-10">10</a></span>
+<span class="normal"><a href="#__codelineno-33-11">11</a></span>
+<span class="normal"><a href="#__codelineno-33-12">12</a></span>
+<span class="normal"><a href="#__codelineno-33-13">13</a></span>
+<span class="normal"><a href="#__codelineno-33-14">14</a></span>
+<span class="normal"><a href="#__codelineno-33-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="kt">double</span><span class="w"> </span><span class="nf">calculateShippingCost</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">distance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">weight</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">distance</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.02</span><span class="p">;</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">cost</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">4.99</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7"></a><span class="w">        </span><span class="n">cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.99</span><span class="p">;</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">cost</span><span class="p">;</span>
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10"></a><span class="p">}</span>
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11"></a>
+</span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12"></a><span class="kt">boolean</span><span class="w"> </span><span class="nf">isValidPassword</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-13"><a id="__codelineno-33-13" name="__codelineno-33-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">password</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">8</span>
+</span><span id="__span-33-14"><a id="__codelineno-33-14" name="__codelineno-33-14"></a><span class="w">        </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">password</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">64</span><span class="p">;</span>
+</span><span id="__span-33-15"><a id="__codelineno-33-15" name="__codelineno-33-15"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</details>
+<details class="note">
+<summary>Übung 3 – Kommentare aufräumen</summary>
+<p>Entscheiden Sie für jeden Kommentar im folgenden Code: entfernen, behalten oder den Code so umschreiben, dass der Kommentar überflüssig wird?</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-34-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-34-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-34-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-34-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-34-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-34-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-34-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-34-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-34-10">10</a></span>
+<span class="normal"><a href="#__codelineno-34-11">11</a></span>
+<span class="normal"><a href="#__codelineno-34-12">12</a></span>
+<span class="normal"><a href="#__codelineno-34-13">13</a></span>
+<span class="normal"><a href="#__codelineno-34-14">14</a></span>
+<span class="normal"><a href="#__codelineno-34-15">15</a></span>
+<span class="normal"><a href="#__codelineno-34-16">16</a></span>
+<span class="normal"><a href="#__codelineno-34-17">17</a></span>
+<span class="normal"><a href="#__codelineno-34-18">18</a></span>
+<span class="normal"><a href="#__codelineno-34-19">19</a></span>
+<span class="normal"><a href="#__codelineno-34-20">20</a></span>
+<span class="normal"><a href="#__codelineno-34-21">21</a></span>
+<span class="normal"><a href="#__codelineno-34-22">22</a></span>
+<span class="normal"><a href="#__codelineno-34-23">23</a></span>
+<span class="normal"><a href="#__codelineno-34-24">24</a></span>
+<span class="normal"><a href="#__codelineno-34-25">25</a></span>
+<span class="normal"><a href="#__codelineno-34-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BankAccount</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2"></a>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span><span class="w"> </span><span class="c1">// Kontostand</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4"></a>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5"></a><span class="w">    </span><span class="c1">// Einzahlen</span>
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">deposit</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7"></a><span class="w">        </span><span class="n">balance</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">amount</span><span class="p">;</span><span class="w"> </span><span class="c1">// zum Kontostand addieren</span>
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9"></a>
+</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10"></a><span class="w">    </span><span class="c1">// Prüft ob Betrag abgehoben werden kann</span>
+</span><span id="__span-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11"></a><span class="w">    </span><span class="c1">// Gibt true zurück wenn Betrag &lt;= Kontostand</span>
+</span><span id="__span-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">canWithdraw</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-34-13"><a id="__codelineno-34-13" name="__codelineno-34-13"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">amount</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">balance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Vergleich</span>
+</span><span id="__span-34-14"><a id="__codelineno-34-14" name="__codelineno-34-14"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span id="__span-34-15"><a id="__codelineno-34-15" name="__codelineno-34-15"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-34-16"><a id="__codelineno-34-16" name="__codelineno-34-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span><span id="__span-34-17"><a id="__codelineno-34-17" name="__codelineno-34-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-34-18"><a id="__codelineno-34-18" name="__codelineno-34-18"></a>
+</span><span id="__span-34-19"><a id="__codelineno-34-19" name="__codelineno-34-19"></a><span class="w">    </span><span class="c1">// Berechne Zinsen (1.5% pro Jahr, wird monatlich gutgeschrieben,</span>
+</span><span id="__span-34-20"><a id="__codelineno-34-20" name="__codelineno-34-20"></a><span class="w">    </span><span class="c1">// aber nur wenn Kontostand über 100 Euro, wegen interner Regelung vom 12.03.2019)</span>
+</span><span id="__span-34-21"><a id="__codelineno-34-21" name="__codelineno-34-21"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">addMonthlyInterest</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-34-22"><a id="__codelineno-34-22" name="__codelineno-34-22"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">balance</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-34-23"><a id="__codelineno-34-23" name="__codelineno-34-23"></a><span class="w">            </span><span class="n">balance</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.015</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+</span><span id="__span-34-24"><a id="__codelineno-34-24" name="__codelineno-34-24"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-34-25"><a id="__codelineno-34-25" name="__codelineno-34-25"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-34-26"><a id="__codelineno-34-26" name="__codelineno-34-26"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</details>
+<details class="note">
+<summary>Übung 4 – DRY und Methoden</summary>
+<p>Der folgende Code enthält Wiederholungen. Lagern Sie den gemeinsamen Code in eine oder mehrere Methoden aus.</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-35-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-35-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-35-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-35-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-35-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-35-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-35-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-35-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-35-10">10</a></span>
+<span class="normal"><a href="#__codelineno-35-11">11</a></span>
+<span class="normal"><a href="#__codelineno-35-12">12</a></span>
+<span class="normal"><a href="#__codelineno-35-13">13</a></span>
+<span class="normal"><a href="#__codelineno-35-14">14</a></span>
+<span class="normal"><a href="#__codelineno-35-15">15</a></span>
+<span class="normal"><a href="#__codelineno-35-16">16</a></span>
+<span class="normal"><a href="#__codelineno-35-17">17</a></span>
+<span class="normal"><a href="#__codelineno-35-18">18</a></span>
+<span class="normal"><a href="#__codelineno-35-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2"></a><span class="w">    </span><span class="c1">// Kreis mit Radius 5</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radius1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius1</span><span class="p">;</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">perimeter1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.14159</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius1</span><span class="p">;</span>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Kreis 1: Fläche=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">area1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, Umfang=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">perimeter1</span><span class="p">);</span>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7"></a>
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8"></a><span class="w">    </span><span class="c1">// Kreis mit Radius 3</span>
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radius2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius2</span><span class="p">;</span>
+</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">perimeter2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.14159</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius2</span><span class="p">;</span>
+</span><span id="__span-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Kreis 2: Fläche=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">area2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, Umfang=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">perimeter2</span><span class="p">);</span>
+</span><span id="__span-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13"></a>
+</span><span id="__span-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14"></a><span class="w">    </span><span class="c1">// Kreis mit Radius 7.5</span>
+</span><span id="__span-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radius3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.5</span><span class="p">;</span>
+</span><span id="__span-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius3</span><span class="p">;</span>
+</span><span id="__span-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">perimeter3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.14159</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius3</span><span class="p">;</span>
+</span><span id="__span-35-18"><a id="__codelineno-35-18" name="__codelineno-35-18"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Kreis 3: Fläche=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">area3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, Umfang=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">perimeter3</span><span class="p">);</span>
+</span><span id="__span-35-19"><a id="__codelineno-35-19" name="__codelineno-35-19"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</details>
+<details class="note">
+<summary>Übung 5 – Single Responsibility Principle</summary>
+<p>Die folgende Klasse <code>Library</code> verletzt das Single Responsibility Principle. Sie ist gleichzeitig für Bücherverwaltung, Ausleihe und Berichtserstellung zuständig.</p>
+<p>Identifizieren Sie die verschiedenen Verantwortlichkeiten und teilen Sie die Klasse in mindestens drei Klassen auf. Überlegen Sie, welche Methoden und Variablen zu welcher Klasse gehören.</p>
+<div class="language-java highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-36-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-36-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-36-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-36-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-36-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-36-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-36-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-36-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-36-10">10</a></span>
+<span class="normal"><a href="#__codelineno-36-11">11</a></span>
+<span class="normal"><a href="#__codelineno-36-12">12</a></span>
+<span class="normal"><a href="#__codelineno-36-13">13</a></span>
+<span class="normal"><a href="#__codelineno-36-14">14</a></span>
+<span class="normal"><a href="#__codelineno-36-15">15</a></span>
+<span class="normal"><a href="#__codelineno-36-16">16</a></span>
+<span class="normal"><a href="#__codelineno-36-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Library</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">books</span><span class="p">;</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3"></a><span class="w">    </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">borrowedBy</span><span class="p">;</span><span class="w">   </span><span class="c1">// wer hat welches Buch ausgeliehen</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bookCount</span><span class="p">;</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5"></a>
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">addBook</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">removeBook</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isAvailable</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-36-9"><a id="__codelineno-36-9" name="__codelineno-36-9"></a>
+</span><span id="__span-36-10"><a id="__codelineno-36-10" name="__codelineno-36-10"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">borrowBook</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">member</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-36-11"><a id="__codelineno-36-11" name="__codelineno-36-11"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">returnBook</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-36-12"><a id="__codelineno-36-12" name="__codelineno-36-12"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">hasBorrowed</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">member</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-36-13"><a id="__codelineno-36-13" name="__codelineno-36-13"></a>
+</span><span id="__span-36-14"><a id="__codelineno-36-14" name="__codelineno-36-14"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">printInventoryReport</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-36-15"><a id="__codelineno-36-15" name="__codelineno-36-15"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">printOverdueReport</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-36-16"><a id="__codelineno-36-16" name="__codelineno-36-16"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">generateStatistics</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-36-17"><a id="__codelineno-36-17" name="__codelineno-36-17"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</details>
+<div class="admonition success">
+<p class="admonition-title">Zusammenfassung</p>
+<p>Clean Code ist kein Luxus, sondern professionelles Handwerk. Die wichtigsten Prinzipien auf einen Blick:</p>
+<ul>
+<li><strong>Bezeichner</strong> sind lang, sprechend und ohne Abkürzungen</li>
+<li><strong>Magic Numbers</strong> werden durch benannte Konstanten ersetzt</li>
+<li><strong>Kommentare</strong> erklären das <em>Warum</em>, nicht das <em>Was</em></li>
+<li><strong>Methoden</strong> tun genau eine Sache (SRP) und werden nicht kopiert (DRY)</li>
+<li><strong>Formatierung</strong> ist konsistent und macht Struktur sichtbar</li>
+<li><strong>SOLID</strong>-Prinzipien führen zu flexiblem, erweiterbarem Design</li>
+</ul>
+</div>
 
 
 
@@ -825,13 +2320,59 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Fußzeile" >
+        
+          
+          <a href="../javadoc/" class="md-footer__link md-footer__link--prev" aria-label="Zurück: Javadoc">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              <div class="md-ellipsis">
+                Javadoc
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../tools/" class="md-footer__link md-footer__link--next" aria-label="Weiter: Werkzeuge">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              <div class="md-ellipsis">
+                Werkzeuge
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -860,10 +2401,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

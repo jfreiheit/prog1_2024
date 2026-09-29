@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -669,6 +671,26 @@
   
   <span class="md-ellipsis">
     Javadoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
   </span>
   
 
@@ -1349,8 +1371,73 @@
 <blockquote>
 <p>Wird der Vergleichsoperator <code>==</code> für Referenztypen verwendet, so wird nur die Gleichheit von Referenzen verglichen, nicht aber die Gleichheit von Objekten!</p>
 </blockquote>
+<details class="note">
+<summary>Übung 1 – Werte- vs. Referenztyp</summary>
+<p>Gegeben sei folgende Methode:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">verdoppeln</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">zahl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="n">zahl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zahl</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Was gibt folgende <code>main()</code>-Methode aus? Begründen Sie Ihre Antwort.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">verdoppeln</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</span></code></pre></div>
+<blockquote>
+<p><strong>Antwort:</strong> Ausgabe ist <code>5</code>. Werte werden als Kopie übergeben (<em>pass by value</em>), der Parameter <code>zahl</code> ist eine lokale Kopie. Die Variable <code>x</code> in <code>main()</code> bleibt unverändert.</p>
+</blockquote>
+</details>
+<details class="note">
+<summary>Übung 2 – Referenzübergabe</summary>
+<p>Gegeben sei folgende Methode:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">verschieben</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dx</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dy</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="na">translate</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span><span class="w"> </span><span class="n">dy</span><span class="p">);</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Betrachten Sie:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">Point</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">verschieben</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getX</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="na">getY</span><span class="p">());</span>
+</span></code></pre></div>
+<p>Was wird ausgegeben? Erklären Sie den Unterschied zur Übung 1.</p>
+<blockquote>
+<p><strong>Antwort:</strong> Ausgabe ist <code>5, 3</code>. Bei Referenztypen wird zwar auch eine Kopie der Referenz übergeben, die aber auf dasselbe Objekt zeigt. Änderungen am Objekt sind deshalb dauerhaft sichtbar.</p>
+</blockquote>
+</details>
+<details class="note">
+<summary>Übung 3 – Methodenstack nachvollziehen</summary>
+<p>Verfolgen Sie den Aufruf-Stack für folgende Methoden:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">quad</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="p">}</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">sumOfQuads</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">quad</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">quad</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="p">}</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sumOfQuads</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Zeichnen Sie den Aufruf-Stack (Stackrahmen) nach und geben Sie an, wann welche Methode auf dem Stack liegt.</p>
+<blockquote>
+<p><strong>Antwort:</strong> <code>main</code> ruft <code>sumOfQuads(3,4)</code> auf, das seinerseits zweimal <code>quad()</code> aufruft. Zuerst liegt <code>main → sumOfQuads → quad(3)</code> auf dem Stack, nach Rückgabe <code>main → sumOfQuads → quad(4)</code>. Am Ende liegt nur noch <code>main</code> auf dem Stack. Die Ausgabe ist <code>25</code>.</p>
+</blockquote>
+</details>
+<details class="note">
+<summary>Übung 4 – Null-Referenz</summary>
+<p>Was passiert bei folgender Ausführung und warum?</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">Point</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">getX</span><span class="p">());</span>
+</span></code></pre></div>
+<p>Wie könnte man die Ausgabe absichern?</p>
+<blockquote>
+<p><strong>Antwort:</strong> Es wird eine <code>NullPointerException</code> geworfen, weil <code>p</code> auf kein Objekt zeigt. Absichern z.B. mit <code>if (p != null) { System.out.println(p.getX()); }</code>.</p>
+</blockquote>
+</details>
 <div class="admonition success">
-<p class="admonition-title">Success</p>
+<p class="admonition-title">Zusammenfassung</p>
 <p>Wir haben zwei Aspekte diskutiert, die beide sehr wichtig für das Verständnis der objektorientierten Programmierung sind. Einerseits den Unterschied zwischen Werte- und Referenztypen und andererseits, dass ein Objekt aufhört, zu existieren, sobald es keine Referenz mehr gibt, die auf dieses Objekt zeigt. Insbesondere das Verständnis über den Unterschied zwischen Werte- und Referenztypen ist wirklich wichtig, um die Konzepte der objektorientierten Programmierung gut verstehen zu können!</p>
 </div>
 <div class="footnote">
@@ -1378,8 +1465,16 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -1451,10 +1546,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

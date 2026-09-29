@@ -1292,4 +1292,44 @@ Beachten Sie, dass im dritten Vergleichsblock das `c1`-Objekt mit sich selbst ve
 		}	
 		```
 
+## Übungen
+
+??? note "Übung 1 – Klasse `Rechteck`"
+	Erstellen Sie eine Klasse `Rechteck` mit den Objektvariablen `breite` und `hoehe` (beide `int`). Implementieren Sie:
+
+	- einen Konstruktor `Rechteck(int breite, int hoehe)`,
+	- eine Methode `int flaecheninhalt()`, die die Fläche zurückgibt,
+	- eine Methode `int umfang()`, die den Umfang zurückgibt,
+	- eine Methode `void print()`, die das Rechteck in der Form `[ breite=10, hoehe=5 ]` ausgibt.
+
+	Testen Sie die Klasse in einer `Testklasse`.
+
+??? note "Übung 2 – Klasse `Kreis`"
+	Erstellen Sie eine Klasse `Kreis` mit der Objektvariable `radius` (Typ `double`). Implementieren Sie:
+
+	- einen Konstruktor `Kreis(double radius)`,
+	- eine Methode `double flaeche()` (Formel: $\pi \cdot r^2$),
+	- eine Methode `double umfang()` (Formel: $2 \cdot \pi \cdot r$),
+	- eine Methode `boolean istGroesserAls(Kreis anderer)`, die `true` zurückgibt, wenn dieser Kreis größer ist als `anderer`.
+
+	Verwenden Sie `Math.PI` für die Kreiszahl.
+
+??? note "Übung 3 – Klasse `Konto`"
+	Erstellen Sie eine Klasse `Konto` mit den Objektvariablen `kontonummer` (`int`) und `kontostand` (`double`). Implementieren Sie:
+
+	- einen Konstruktor `Konto(int kontonummer)`, der das Konto mit einem Stand von `0.0` anlegt,
+	- eine Methode `void einzahlen(double betrag)`,
+	- eine Methode `boolean abheben(double betrag)`, die `true` zurückgibt, wenn die Abhebung erfolgreich war (Kontostand darf nicht negativ werden),
+	- eine Methode `void print()`, die Kontonummer und Kontostand ausgibt.
+
+??? note "Übung 4 – Bruch"
+	Erstellen Sie eine Klasse `Bruch` mit den Objektvariablen `zaehler` und `nenner` (beide `int`). Implementieren Sie:
+
+	- einen Konstruktor `Bruch(int zaehler, int nenner)`,
+	- eine Methode `double wert()`, die den Dezimalwert des Bruchs zurückgibt,
+	- eine Methode `void print()`, die den Bruch als `zaehler/nenner` ausgibt,
+	- eine Methode `Bruch multiplizieren(Bruch anderer)`, die das Produkt als neues `Bruch`-Objekt zurückgibt.
+
+!!! success "Zusammenfassung"
+	Wir haben eigene Datentypen (Klassen) erstellt. Eine Klasse kapselt Objektvariablen (Zustand) und Objektmethoden (Verhalten). Konstruktoren erzeugen Objekte mit dem Schlüsselwort `new`. Getter-Methoden geben den Zustand eines Objekts nach außen weiter. Jedes Objekt ist eine Instanz seiner Klasse und besitzt eine eigene Identität. Das Prinzip der Kapselung (*Encapsulation*) sorgt dafür, dass der innere Zustand eines Objekts nur über definierte Methoden verändert werden kann.
 

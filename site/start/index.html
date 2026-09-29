@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -669,6 +671,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tools/" class="md-nav__link">
         
   
@@ -850,14 +872,17 @@
 <p>Bevor wir uns mit der Funktionsweise von Java auseinandersetzen, schreiben wir einfach einmal unser erstes Programm. Wir öffnen dazu <a href="../tools/#eclipse"><em>Eclipse</em></a> und erstellen uns eine Klasse <code>HelloFIW</code>. Dazu </p>
 <ol>
 <li>
-<p>erstellen wir uns ein Java-Projekt (falls noch nicht geschehen): Menüpunkt <code>File --&gt; New --&gt; Java Project</code>, geben in das Textfeld <code>Project name:</code> z.B. <code>WS24</code> (in den Screenshots steht dort <code>WS22</code>) ein.</p>
+<p>erstellen wir uns ein Java-Projekt (falls noch nicht geschehen): Menüpunkt <code>File --&gt; New --&gt; Java Project</code>, geben in das Textfeld <code>Project name:</code> z.B. <code>WS26</code> ein.</p>
 <p><img alt="Projekt" src="../files/01_project.png" /></p>
-<p>Den <code>module name</code> beim Erstellen der <code>module-info.java</code> können Sie genau so lassen, wie vorgeschlagen (<code>WS24</code>). Klicken Sie auf den Button <code>Create</code>.</p>
+<p>Klicken Sie auf den Button <code>Create</code>.</p>
 </li>
 <li>
-<p>erstellen wir uns ein Paket: Menüpunkt <code>File --&gt; New --&gt; Package</code> und geben <code>themen.eins.start</code> ein.</p>
+<p>erstellen wir uns ein Paket: Menüpunkt <code>File --&gt; New --&gt; Package</code> und geben <code>themen.start</code> ein.</p>
+<p><img alt="Projekt" src="../files/01a_project.png" /></p>
 </li>
-<li>erstellen wir uns eine Klasse: Wir wählen das Paket <code>themen.eins.start</code> aus und wählen den Menüpunkt <code>File --&gt; New --&gt; Class</code>, geben in dem Fenster den Klassennamen <code>HelloFIW</code> ein und setzen bei <code>public static void main(Strg[] args)</code> ein Häkchen:</li>
+<li>
+<p>erstellen wir uns eine Klasse: Wir wählen das Paket <code>themen.eins</code> aus und wählen den Menüpunkt <code>File --&gt; New --&gt; Class</code>, geben in dem Fenster den Klassennamen <code>HelloFIW</code> ein und setzen bei <code>public static void main(Strg[] args)</code> ein Häkchen:</p>
+</li>
 </ol>
 <p><img alt="Klasse" src="../files/02_klasse.png" /></p>
 <p>Im Editor-Fenster von Eclipse erscheint:</p>
@@ -877,12 +902,12 @@
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-0-10">10</a></span>
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">themen.eins.start</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">themen.eins</span><span class="p">;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloFIW</span><span class="w"> </span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloFIW</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">{</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="p">{</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="c1">// TODO Auto-generated method stub</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>
@@ -892,9 +917,15 @@
 </span></code></pre></div></td></tr></table></div>
 <p>Schauen wir uns diesen Code zunächst an:</p>
 <ul>
-<li>in Zeile <code>1</code> sehen wir, in welchem Paket sich unsere Klasse befindet. Die Anweisung <code>package themen.eins.start;</code>definiert, dass wir uns im Paket <code>themen.eins.start</code> befinden. Mit Paketen werden wir uns in Kürze ausführlich auseinandersetzen.</li>
-<li>in Zeile <code>3</code> steht unsere Klassendefinition. Diese erkennen wir am Schlüsselwort <code>class</code> gefolgt von dem Namen der Klasse <code>HelloFIW</code>. Das Schlüsselwort <code>public</code> beschreibt, dass es sich um eine <em>öffentliche</em> Klasse handelt, die von allen genutzt werden kann. Dieses Schlüsselwort ist ein sogenannter <em>Sichtbarkeitsmodifierer</em> (auch <em>Zugriffsmodifizierer</em>). Mit Sichtbarkeitsmodifizierern werden wir uns ebenfalls noch ausführlich auseinandersetzen. Wichtig ist, dass die Klasse nicht nur aus dem Klassenkopf (<code>public class HelloFIW</code>) besteht, sondern aus allem, was diese Klassen enthält (dem Klassenrumpf). Der Klassenrumpf beginnt mit einer öffnenden geschweiften Klammer <code>{</code> (Zeile <code>4</code>) und endet mit einer schließenden geschweiften Klammer <code>}</code> (Zeile <code>12</code>).</li>
-<li>eine Klasse kann beliebig viele <em>Methoden</em> enthalten. Unsere Klasse enthält bis jetzt eine Methode, die Methode namens <code>main()</code>. Methoden erkennen wir an den runden Klammern nach dem Methodennamen. Hier ist der Name <code>main</code> gefolgt von runden Klammern, in denen <em>Parameter</em> (auch <em>Argumente</em> genannt) definiert sein können (hier ein Parameter namens <code>args</code> vom Typ String-Array: <code>Strg[] args</code>). Wie bei den Klassen auch, bestehen Methoden aus einem Methodenkopf und einem Methodenrumpf. Wie bei den Klassen auch, beginnt der Methodenrumpf mit einer öffnenden geschweiften Klammer (Zeile <code>7</code>) und endet mit einer schließenden geschweiften Klammer (Zeile <code>10</code>). Der Methodenkopf <ul>
+<li>
+<p>in Zeile <code>1</code> sehen wir, in welchem Paket sich unsere Klasse befindet. Die Anweisung <code>package themen.eins;</code>definiert, dass wir uns im Paket <code>themen.eins</code> befinden. Mit Paketen werden wir uns in Kürze ausführlich auseinandersetzen.</p>
+</li>
+<li>
+<p>in Zeile <code>3</code> steht unsere Klassendefinition. Diese erkennen wir am Schlüsselwort <code>class</code> gefolgt von dem Namen der Klasse <code>HelloFIW</code>. Das Schlüsselwort <code>public</code> beschreibt, dass es sich um eine <em>öffentliche</em> Klasse handelt, die von allen genutzt werden kann. Dieses Schlüsselwort ist ein sogenannter <em>Sichtbarkeitsmodifierer</em> (auch <em>Zugriffsmodifizierer</em>). Mit Sichtbarkeitsmodifizierern werden wir uns ebenfalls noch ausführlich auseinandersetzen. Wichtig ist, dass die Klasse nicht nur aus dem Klassenkopf (<code>public class HelloFIW</code>) besteht, sondern aus allem, was diese Klassen enthält (dem Klassenrumpf). Der Klassenrumpf beginnt mit einer öffnenden geschweiften Klammer <code>{</code> (Zeile <code>4</code>) und endet mit einer schließenden geschweiften Klammer <code>}</code> (Zeile <code>12</code>).</p>
+</li>
+<li>
+<p>eine Klasse kann beliebig viele <em>Methoden</em> enthalten. Unsere Klasse enthält bis jetzt eine Methode, die Methode namens <code>main()</code>. Methoden erkennen wir an den runden Klammern nach dem Methodennamen. Hier ist der Name <code>main</code> gefolgt von runden Klammern, in denen <em>Parameter</em> (auch <em>Argumente</em> genannt) definiert sein können (hier ein Parameter namens <code>args</code> vom Typ String-Array: <code>Strg[] args</code>). Wie bei den Klassen auch, bestehen Methoden aus einem Methodenkopf und einem Methodenrumpf. Wie bei den Klassen auch, beginnt der Methodenrumpf mit einer öffnenden geschweiften Klammer (Zeile <code>7</code>) und endet mit einer schließenden geschweiften Klammer (Zeile <code>10</code>). Der Methodenkopf </p>
+<ul>
 <li>beginnt erneut mit einem Sichtbarkeitsmodifizierer. Dieser ist hier wieder <code>public</code> und gibt an, dass diese Methode öffentlich ist und von allen ausgeführt werden kann. </li>
 <li>Danach kommt das Schlüsselwort <code>static</code>. Dieses Schlüsselwort besagt, dass es sich bei dieser Methode um eine <em>Klassenmethode</em> handelt. Das Gegenstück zu einer Klassenmethode ist die <em>Objektmethode</em>. Wir werden uns mit der Unterscheidung zwischen Klassen- und Objektmnethoden ausführlich auseinandersetzen. Wir können uns aber schon merken (wenn überhaupt), dass wir eine Klassenmethode aufrufen können ohne ein Objekt der Klasse erstellen zu müssen. </li>
 <li>Danach kommt das Schlüsselwort <code>void</code>. Dieses Schlüsslwort gibt an, dass die Methode nichts zurückgibt. An dieser Stelle steht der Rückgabetyp eine Methode - wenn die Methode etwas zurückgibt. Unsere Methode gibt nichts zurück, deshalb hier <code>void</code>. Wir werden uns mit Methodenrückgaben ausführlich beschäftigen.</li>
@@ -902,7 +933,9 @@
 <li>In den runden Klammern stehen <em>Parameter</em> (auch <em>Argumente</em> genannt). In unserem Fall ist ein Parameter namens <code>args</code> definiert. Der <em>Datentyp</em> dieses Parameters ist <code>Strg[]</code>, d.h. dass der Parameter einem <em>Array</em> von Zeichenketten <em>Strings</em> entspricht. Wir kümmern uns um Parameter später ausführlich. </li>
 </ul>
 </li>
-<li>In unserer Methode gibt es derzeit nur einen einzigen Eintrag (Zeile <code>8</code>). Dabei handelt es sich um einen <em>Kommentar</em>, genauer hier um einen <em>Zeilenkommentar</em>. Zeilenkommentare beginnen mit einem Doppelslash <code>//</code>. Hinter diesen Doppelslash können Sie schreiben, was Sie möchten - bis an das Zeilenende. Kommentare dienen Ihnen dazu, den Code verständlicher zu gestalten oder Ihnen Hinweise zu geben. Hier steht der Hinweis, dass die Methode automatisch durch Eclipse erstellt wurde und Sie noch das ToDo haben, die Methode zu befüllen. Das machen wir jetzt auch!</li>
+<li>
+<p>In unserer Methode gibt es derzeit nur einen einzigen Eintrag (Zeile <code>8</code>). Dabei handelt es sich um einen <em>Kommentar</em>, genauer hier um einen <em>Zeilenkommentar</em>. Zeilenkommentare beginnen mit einem Doppelslash <code>//</code>. Hinter diesen Doppelslash können Sie schreiben, was Sie möchten - bis an das Zeilenende. Kommentare dienen Ihnen dazu, den Code verständlicher zu gestalten oder Ihnen Hinweise zu geben. Hier steht der Hinweis, dass die Methode automatisch durch Eclipse erstellt wurde und Sie noch das ToDo haben, die Methode zu befüllen. Das machen wir jetzt auch!</p>
+</li>
 </ul>
 <p>Wir löschen den Kommentar und fügen nun die Anweisung <code>System.out.println("HelloFIW !");</code> in unseren Methodenrumpf ein. Unsere Klasse sieht nun so aus (die neuhinzugekommene Zeile ist markiert):</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">HelloFIW.java</label></div>
@@ -937,7 +970,7 @@
 <p>Jetzt wählen wir entweder im Menü <code>Run --&gt; Run</code> oder klicken auf den kleinen grünen Kreis mit dem weißen Pfeil in der Mitte in der Werkzeugleiste. Sie werden gefragt, ob Sie Ihr Programm zunächst speichern wollen. Bevor Sie das bestätigen, sollten Sie ein Häkchen setzen, um zu sagen, dass Sie das gar nicht mehr gefragt werden wollen, sondern das Programm immer gespeichert werden soll, bevor Sie es ausführen. In der Konsole erscheint:</p>
 <p><img alt="Konsole" src="../files/04_konsole.png" /> </p>
 <div class="admonition success">
-<p class="admonition-title">Success</p>
+<p class="admonition-title">Zusammenfassung</p>
 <p>Herzlichen Glückwunsch! Sie haben Ihr erstes Java-Programm geschrieben und ausgeführt!</p>
 </div>
 <h3 id="systemoutprintlnhello-fiw">System.out.println("Hello FIW!");<a class="headerlink" href="#systemoutprintlnhello-fiw" title="Permanent link">&para;</a></h3>
@@ -1217,6 +1250,31 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Hello<span class="w"> </span>FIW<span class="w"> </span>HTW<span class="w"> </span>Berlin<span class="w"> </span>Welt<span class="w"> </span>!
 </span></code></pre></div>
 <p>Es erscheint zunächst aufwendig, das Programm zunächst in Bytecode zu übersetzen und dann den Bytecode nochmal interpretieren und ausführen zu lassen. Warum wird nicht direkt in Maschinencode übersetzt? Die Antwort ist, dass der Java-Compiler so beriebssystemunabhängig arbeiten kann. Alle, egal, ob Windows-, iOS- oder Linux-Nutzerinnen können den gleichen Compiler verwenden. Die Programme können völlig systemunabhängig geschrieben und von allen compiliert werden. Erst die Java-Laufzeitumgebung ist beriebssystemabhängig, d.h. diese wird entsprechend dem Betriebssystem installiert. Alle Java-Programme und auch ihre Compilierung sind jedoch völlig losgelöst vom verwendeten Betriebssystem und können deshalb überall ausgeführt werden.</p>
+<details class="note">
+<summary>Übung 1 – Erstes Programm anpassen</summary>
+<p>Ändern Sie das <code>HelloFIW</code>-Programm so, dass es Ihren eigenen Namen ausgibt, z.B.:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Hallo, ich bin Anna Müller!
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>Willkommen bei Programmieren I.
+</span></code></pre></div>
+Verwenden Sie dafür zwei separate <code>System.out.println()</code>-Aufrufe.</p>
+</details>
+<details class="note">
+<summary>Übung 2 – Ausgaben kombinieren</summary>
+<p>Geben Sie mit einem einzigen <code>System.out.println()</code>-Aufruf den Text
+<code>Programmieren macht Spaß!</code> aus. Geben Sie dann mit <code>System.out.print()</code> (ohne <code>ln</code>) dreimal
+hintereinander <code>Java</code> aus und beobachten Sie den Unterschied.</p>
+</details>
+<details class="note">
+<summary>Übung 3 – Fehler einbauen und verstehen</summary>
+<p>Bauen Sie absichtlich folgende Fehler nacheinander in Ihr Programm ein,
+übersetzen Sie und lesen Sie die Fehlermeldung. Beheben Sie den Fehler danach wieder:</p>
+<ol>
+<li>Entfernen Sie das Semikolon am Ende der <code>println</code>-Zeile.</li>
+<li>Schreiben Sie <code>system</code> statt <code>System</code> (Kleinbuchstabe).</li>
+<li>Löschen Sie eine der geschweiften Klammern <code>}</code>.</li>
+</ol>
+<p>Was können Sie aus den Fehlermeldungen ablesen?</p>
+</details>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
 <p>Wir haben uns angeschaut, was passiert, wenn wir das Programm übersetzen und ausführen. Die Übersetzung erfolgt durch den Java-Compiler <code>javac</code>. Dieser erzeugt <em>Java-Bytecode</em>. Die Ausführung dieses Bytcodes übernimmt die Java-Laufzeitumgebung <code>java</code>. Diese interpretiert den Bytecode und führt ihn <em>sequentiell</em> (also nacheinander, Anweisung für Anweisung) aus.</p>
@@ -1252,8 +1310,16 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -1325,10 +1391,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

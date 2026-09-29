@@ -379,6 +379,20 @@ Mehrere Dinge fallen auf:
 3. und - besonders gut - wir benötigen kein `break`mehr. Es wird immer nur der `case` ausgeführt. Die Abarbeitung der dort beschriebenen Anweisungen stoppt beim nächsten `case` bzw. bei `default` oder am Ende der `switch()`-Anweisung
 
 
-!!! success
+??? note "Übung 1 – Noten-Ausgabe"
+	Schreiben Sie eine Methode `public static String notenText(int note)`, die zu einer Note (1–5) den deutschen Notentext zurückgibt (z.B. `1` → `"sehr gut"`, `5` → `"nicht ausreichend"`). Verwenden Sie dafür eine `switch`-Anweisung in der neuen Schreibweise.
+
+??? note "Übung 2 – Jahreszeitenbestimmung"
+	Schreiben Sie eine Methode `public static String jahreszeit(int monat)`, die zu einem Monat (1–12) die passende Jahreszeit zurückgibt (`"Frühling"`, `"Sommer"`, `"Herbst"`, `"Winter"`). Verwenden Sie eine `switch`-Anweisung.
+
+	*Hinweis:* Frühling = März–Mai, Sommer = Juni–August, Herbst = September–November, Winter = Dezember–Februar.
+
+??? note "Übung 3 – Schaltjahr"
+	Schreiben Sie eine Methode `public static boolean istSchaltjahr(int jahr)`, die bestimmt, ob ein Jahr ein Schaltjahr ist. Ein Schaltjahr ist durch 4 teilbar, aber nicht durch 100 – außer es ist durch 400 teilbar. Verwenden Sie eine `if...else`-Kaskade.
+
+??? note "Übung 4 – Dreieckstyp"
+	Schreiben Sie eine Methode `public static String dreieckstyp(int a, int b, int c)`, die anhand der drei Seitenlängen bestimmt, ob das Dreieck *gleichseitig*, *gleichschenklig*, *rechtwinklig* oder *unregelmäßig* ist. Ein rechtwinkliges Dreieck liegt vor, wenn $a^2 + b^2 = c^2$ (oder eine der anderen Permutationen) gilt.
+
+!!! success "Zusammenfassung"
     Wir haben 2 Möglichkeiten kennengelernt, die Selktion in Java zu implementieren. Die eine (und bedeutendste) Möglichkeit ist die `if...else`-Anweisung. Dort wird in Abhängigkeit vom Wahreheitswert einer Bedingung entweder der eine oder der andere Anweisungsblock ausgeführt. Der `else`-Block kann auch weggelassen werden. Innerhalb eines Anweisungsblockes können beliebige Kontrollstrukturen stehen: Sequenzen, Iterationen und Selektionen. 
     Die zweite Möglichkeit ist die `switch()`-Anweisung, die seit Java 12 auch selbst ein Ausdruck sein kann. Wir haben die alte Syntax der `switch()`-Anweisung kritisch betrachtet und die neue Syntax kennengelernt.

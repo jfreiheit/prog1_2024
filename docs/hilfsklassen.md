@@ -788,3 +788,45 @@ System.out.printf("|%5.2f|", 1234.567); 		// |1234,57|
 ```
 
 Beachten Sie auch das letzte Beispiel (Zeile `4`). Es wurden nur insgesamt `5` Stellen für die gesamte Zahl reserviert. Davon benötigen wir alleine `2` Stellen für die Nachkommastellen und `1` Stelle für das Komma. Die Vorkommastellen hätten also nur `2`Stellen Platz. Vorne wird die Zahl aber **nie** abgeschnitten. Sollte der reservierte Platz für die Vorkommastellen nicht ausreichen, wird der Vorkommabereich trotzdem vollständig dargestellt. Es kann also trotz der Formatierung zu Verzerrungen in der Ausgabe kommen!
+
+## Übungen
+
+??? note "Übung 1 – Benutzereingabe mit Scanner"
+	Schreiben Sie ein Programm, das den Benutzer nach seinem Namen und Alter fragt und anschließend ausgibt: `"Hallo [Name], du bist [Alter] Jahre alt und wirst dieses Jahr [Alter+1]."` Verwenden Sie die Klasse `Scanner` für die Eingabe.
+
+??? note "Übung 2 – String-Methoden"
+	Gegeben sei der String `"  Java ist toll!  "`. Schreiben Sie ein Programm, das folgende Informationen ausgibt:
+
+	- Die Länge des Strings (ohne führende/nachfolgende Leerzeichen) – verwenden Sie `trim()`.
+	- Den String in Großbuchstaben.
+	- Den String rückwärts – nutzen Sie `StringBuilder`.
+	- Ob der String das Wort `"toll"` enthält (`contains()`).
+	- Den String, in dem `"toll"` durch `"super"` ersetzt wurde (`replace()`).
+
+??? note "Übung 3 – Mathematische Berechnungen"
+	Schreiben Sie eine Methode `public static void printPythagoraeischeTriple(int max)`, die alle pythagoräischen Triple $(a, b, c)$ mit $a \leq b \leq c \leq max$ ausgibt, für die $a^2 + b^2 = c^2$ gilt. Verwenden Sie `Math.sqrt()` oder `Math.pow()`.
+
+??? note "Übung 4 – Formatierte Ausgabe mit printf"
+	Gegeben sei eine Liste von Produkten mit Name, Anzahl und Preis:
+
+	```java
+	String[] namen   = {"Apfel", "Banane", "Kirsche"};
+	int[]    anzahl  = {150, 80, 320};
+	double[] preis   = {0.39, 0.29, 0.89};
+	```
+
+	Geben Sie eine formatierte Tabelle aus, die so aussieht:
+
+	```
+	Produkt       Anzahl    Preis     Gesamt
+	----------------------------------------------
+	Apfel            150     0,39 €    58,50 €
+	Banane            80     0,29 €    23,20 €
+	Kirsche          320     0,89 €   284,80 €
+	```
+
+	Verwenden Sie `System.out.printf()` mit geeigneten Formatierungsangaben.
+
+!!! success "Zusammenfassung"
+	Wir haben wichtige Hilfsklassen der Java-Standardbibliothek kennengelernt. Die Klasse `Scanner` ermöglicht die Eingabe von der Konsole. Die Klasse `String` stellt zahlreiche Methoden zur Verarbeitung von Zeichenketten bereit (`length()`, `substring()`, `contains()`, `replace()`, u.v.m.). Die Klasse `Math` bietet mathematische Funktionen wie `Math.sqrt()`, `Math.pow()`, `Math.abs()` und die Konstante `Math.PI`. Mit `System.out.printf()` können Ausgaben präzise formatiert werden, z.B. für Tabellen oder Dezimalzahlen mit einer bestimmten Anzahl von Nachkommastellen.
+

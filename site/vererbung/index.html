@@ -148,6 +148,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -696,6 +698,26 @@
   
   <span class="md-ellipsis">
     Javadoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleancode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Clean Code
   </span>
   
 
@@ -1602,8 +1624,35 @@
 </span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="o">[</span><span class="w"> </span><span class="nv">a</span><span class="o">=</span><span class="m">30</span>,<span class="w"> </span><span class="nv">b</span><span class="o">=</span><span class="m">30</span>,<span class="w"> </span><span class="nv">c</span><span class="o">=</span><span class="m">30</span>,<span class="w"> </span><span class="nv">d</span><span class="o">=</span><span class="m">30</span><span class="w"> </span><span class="o">]</span><span class="w">  </span>Umfang<span class="w"> </span>des<span class="w"> </span>Quadrats<span class="w"> </span>:<span class="w"> </span><span class="m">120</span><span class="w"> </span>Flaecheninhalt<span class="w"> </span>des<span class="w"> </span>Quadrats<span class="w"> </span>:<span class="w"> </span><span class="m">900</span>
 </span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="o">[</span><span class="w"> </span><span class="nv">a</span><span class="o">=</span><span class="m">40</span>,<span class="w"> </span><span class="nv">b</span><span class="o">=</span><span class="m">40</span>,<span class="w"> </span><span class="nv">c</span><span class="o">=</span><span class="m">40</span>,<span class="w"> </span><span class="nv">d</span><span class="o">=</span><span class="m">40</span><span class="w"> </span><span class="o">]</span><span class="w">  </span>Umfang<span class="w"> </span>des<span class="w"> </span>Quadrats<span class="w"> </span>:<span class="w"> </span><span class="m">160</span><span class="w"> </span>Flaecheninhalt<span class="w"> </span>des<span class="w"> </span>Quadrats<span class="w"> </span>:<span class="w"> </span><span class="m">1600</span>
 </span></code></pre></div>
+<details class="note">
+<summary>Übung 1 – Klassen-Hierarchie Fahrzeug</summary>
+<p>Erstellen Sie eine Klassen-Hierarchie für Fahrzeuge:</p>
+<ul>
+<li>Elternklasse <code>Fahrzeug</code> mit Objektvariablen <code>marke</code> (<code>String</code>) und <code>geschwindigkeit</code> (<code>int</code>) sowie Methoden <code>void print()</code> und <code>void beschleunigen(int delta)</code>.</li>
+<li>Kindklasse <code>PKW extends Fahrzeug</code> mit zusätzlicher Objektvariable <code>anzahlSitze</code> (<code>int</code>) und überschriebener <code>print()</code>-Methode.</li>
+<li>Kindklasse <code>LKW extends Fahrzeug</code> mit zusätzlicher Objektvariable <code>nutzlastTonnen</code> (<code>double</code>) und überschriebener <code>print()</code>-Methode.</li>
+</ul>
+<p>Testen Sie die Hierarchie in einer Testklasse.</p>
+</details>
+<details class="note">
+<summary>Übung 2 – <code>super</code> im Konstruktor</summary>
+<p>Ergänzen Sie die Klassen aus Übung 1 um Konstruktoren. Der Konstruktor von <code>PKW</code> soll den Konstruktor von <code>Fahrzeug</code> mit <code>super(marke, geschwindigkeit)</code> aufrufen und zusätzlich <code>anzahlSitze</code> setzen. Warum ist der Aufruf von <code>super(...)</code> notwendig, wenn in der Elternklasse kein parameterlosen Konstruktor vorhanden ist?</p>
+</details>
+<details class="note">
+<summary>Übung 3 – <code>@Override</code> und Polymorphie</summary>
+<p>Fügen Sie den Fahrzeug-Klassen aus Übung 1 eine Methode <code>String fahrzeugTyp()</code> hinzu, die in <code>Fahrzeug</code> den String <code>"Fahrzeug"</code> zurückgibt, in <code>PKW</code> den String <code>"PKW"</code> und in <code>LKW</code> den String <code>"LKW"</code>. Erstellen Sie in <code>main()</code> ein Array <code>Fahrzeug[]</code> mit gemischten Objekten und rufen Sie für jedes Element <code>fahrzeugTyp()</code> auf. Was beobachten Sie?</p>
+</details>
+<details class="note">
+<summary>Übung 4 – Vererbungshierarchie analysieren</summary>
+<p>Gegeben sei folgende Hierarchie:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Tier → Säugetier → Hund
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>              ↘ Katze
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>     → Vogel  → Adler
+</span></code></pre></div>
+<p>Welche Eigenschaften erbt <code>Hund</code> von <code>Tier</code>? Welche von <code>Säugetier</code>? Kann eine Variable vom Typ <code>Tier</code> auf ein <code>Hund</code>-Objekt zeigen? Begründen Sie.</p>
+</details>
 <div class="admonition success">
-<p class="admonition-title">Success</p>
+<p class="admonition-title">Zusammenfassung</p>
 <p>Mit Vererbung haben wir ein wichtiges Konzept der objektorientierten Programmierung kennengelernt. Um von einer Klasse zu erben, verwenden wir das Schlüsselwort <code>extends</code>. Eine Kindklasse erbt von ihrer Elternklasse alle Eigenschaften, also alle Objektvariablen und Objektmethoden. Eine geerbte Methode kann in der Kindklasse überschrieben werden. Wird eine Methode überschrieben, verwenden wir die Annotation <code>@Override</code>. Im Konstruktor der Kindklasse wird der Konstruktor der Elternklasse aufgerufen. Dies kann implizit erfolgen, wenn der implizite Konstruktor der Elternklasse existiert, oder es erfolgt explizit durch die Verwendung des Schlüsselwortes <code>super</code>. Mithilfe von Vererbung erhöhen wir die Wiederverwendbarkeit von Code und vermeiden doppelte Implementierungen. Außerdem sorgen wir für eine bessere Strukturierung des Codes. </p>
 </div>
 
@@ -1623,8 +1672,16 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
         
       </main>
       
@@ -1696,10 +1753,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "tabs", "content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "content.tabs.link", "content.code.copy", "navigation.footer", "navigation.top", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}}</script>
     
     
       <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
