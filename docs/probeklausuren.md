@@ -11951,5 +11951,50 @@
 		```
 
 
+---
+
+## Hinweise zur Klausur
+
+- Die ProgrammierungI-Klausur im 1. PZ findet am Montag, den 8.2.2027 statt.
+- Es stehen die Labore C 624 (Mac) und C 625 (Windows) zur Verfügung.
+- Wir wollen um 13:30 Uhr die Aufgabenblätter austeilen, so dass wir spätestens um 13:35 Uhr mit dem Programmieren beginnen können. Seien Sie am besten um 13:15 Uhr in dem Labor Ihrer Wahl.
+- Sie können sich vorab schon ein Package `klausur` erstellen und darin eine `Programmklasse` mit `main`-Methode. Probieren Sie auch schonmal mindestens eine Ausgabe auf die Konsole, damit Sie wissen, ob alles funktioniert.
+- Sie können sich in Ihren Workspace gerne allen Ihren Code importieren, den Sie im Laufe des Semesters erzeugt haben (üben Sie den Import dann am besten vorher - Sie können sich nicht sicher sein, dass Sie an dem Rechner die Klausur schreiben können, an dem Sie den Import geübt haben).
+- Sie dürfen beliebig viele Seiten **handgeschriebenen** Spicker mitbringen. Sie können auch leere Zettel dabei haben, um sich während der Klausur Notizen zu machen.
+- Im Browser **dürfen nur** 
+
+	- der [Moodle-Raum](https://moodle.htw-berlin.de/course/view.php?id=61719), 
+	- das [Prog1-Skript](https://freiheit.f4.htw-berlin.de/prog1/),
+	- die [Java-Dokumentation](https://docs.oracle.com/en/java/javase/21/docs/api/index.html) und
+	- die [Klausuraufgabe](https://freiheit.f4.htw-berlin.de/klausur) 
+
+	geöffnet sein. Alle anderen Webseiten sind ab 13.35 Uhr bis zum Ende der Klausur verboten! 
+
+- Auf dem Rechner **dürfen nur** 
+
+	- ein Browser, 
+	- Eclipse (oder IntelliJ) und 
+	- der Dateiexplorer/Finder 
+
+	geöffnet sein. Sollten Sie IntelliJ verwenden, darf das AI-Chat-Plugin entweder gar nicht erst installiert oder aber muss disabled sein! Alle anderen Programme sind ebenfalls nicht erlaubt!
+
+- Es ist nicht gestattet:
+
+	- den eigenen Rechner zu verwenden (gar nicht mitbringen oder auspacken)
+	- das Handy zu verwenden  (gar nicht mitbringen oder auspacken)
+	- Kommunikation mit anderen oder mit KI-Tools
+
+- Wichtig!
+
+	- Mit Teilnahme an der Klausur gestatten Sie uns, nachträglich die Access-Logs der Rechner im Labor zu überprüfen!
+	- Bereits geöffnete Programme oder Tabs (selbst, wenn Sie unbenutzt sind), die eine Kommunikation mit anderen (z.B. E-Mail, Chats, KI, ...) ermöglichen, führen zum Ausschluss aus der Klausur.
+
+- Sollte sich herausstellen, dass 2 Labore nicht genügen, weichen wir auf ein drittes Labor aus (Windows). Deswegen ist es wichtig, dass Sie bereits 13:15 Uhr vor Ort sind.
+- Bitte beachten Sie auch, dass wir **nicht** beim Hochladen der Lösung in Moodle unterstützen können. Das haben Sie für die Aufgaben genügend geübt. Wichtig ist, dass Sie wissen, wo Ihr *workspace* auf dem Rechner ist, damit Sie von dort aus hochladen können.  
+- Beachten Sie auch, dass wir auch vor der Klausur nicht immer allen helfen können. Insbesondere das Importieren von Klassen und Paketen in den Workspace sollten Sie schon einmal vorher im Labor geübt haben! Die Labore sind in der Klausurvorbereitung stets verfügbar!
+- Mit Unterschrift unter der Teilnehmendenliste nehmen Sie an der Klausur teil! 
+
+
+
 
 
