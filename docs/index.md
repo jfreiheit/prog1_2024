@@ -8,7 +8,7 @@ Herzlich willkommen zur **Programmieren I** Veranstaltung! Wir werden unter Verw
 1. In diesem Skript sind bereits alle Inhalte des gesamten Semesters verfügbar. Der Grund dafür ist der, dass Sie sich das jeweilige Thema vorab selbständig erarbeiten können, indem Sie sich den jeweiligen Abschnitt bereits vor der jeweiligen Vorlesung anschauen. Ich empfehle Ihnen diese Vorgehensweise - sie hat sich bewährt!
 2. In den **Übungen** sollten Sie ruhig zusammenarbeiten. Es ist auch kein Problem, wenn Sie für das Bewältigen der Übungen etwas länger benötigen. Sollten Sie es gar nicht alleine schaffen, ist das auch kein Problem. Wichtig ist dann, dass Sie sich die Lösung anschauen und es erneut selbständig versuchen. Hören Sie nicht auf, bis Sie es geschafft haben! Sie **müssen** irgendwann in der Lage sein, alle Übungsaufgaben selbständig zu lösen.
 2. Sie können die **Hausaufgaben** gerne zu zweit oder im Team lösen. Achten Sie aber darauf, dass Sie Ihre gemeinsame Lösung vollständig verstanden haben und dass Sie sie danach auch alleine erstellen können. Sie können beim Lösen der Hausaufgaben beliebig kreativ sein! Die Aufgabenstellung gibt Ihnen Anhaltspunkte für eine eventuelle Lösung. Sie können es aber auch ganz anders machen!
-3. Die Klausurvorbereitung beginnt mit Beginn der Veranstaltung! Es ist nicht möglich, die Klausur am Ende des Semesters zu bestehen, wenn Sie nicht das ganze Semester über **intensiv programmieren**. Die Übungsaufgaben sind "kleine" Aufgaben, um das in der Vorlesung vermittelte Wissen direkt anzuwenden. Für die Lösung der Hausaufgaben ist bereits ein gewisses Abstraktionsniveau erforderlich, um zu erkennen, dass das in der Vorlesung vermittelte Wissen dafür ausreichend ist. 
+3. Die Klausurvorbereitung beginnt mit Beginn der Veranstaltung! Es ist **nicht möglich**, die Klausur am Ende des Semesters zu bestehen, wenn Sie nicht das ganze Semester über **intensiv programmieren**. Die Übungsaufgaben sind "kleine" Aufgaben, um das in der Vorlesung vermittelte Wissen direkt anzuwenden. Für die Lösung der Hausaufgaben ist bereits ein gewisses Abstraktionsniveau erforderlich, um zu erkennen, dass das in der Vorlesung vermittelte Wissen dafür ausreichend ist. 
 4. Programmieren lernt man nur durch Programmieren! Sie müssen es **tun**. Das Lesen von Büchern oder das "Anschauen" von Code genügt nicht. Eine Sprache lernt man auch nur durch Sprechen. Sie müssen programmieren, programmieren, programmieren... (siehe auch [hier](https://youtu.be/Ao9T1lioa6Y?t=191))
 5. Lassen Sie sich durch Fehler nicht verunsichern, sondern analysieren Sie Ihre Fehler! Bis zur Klausur sollten Sie **alle Fehler einmal gemacht** haben. Wenn Sie sich überlegen, warum das jeweils ein Fehler war, dann werden Sie diesen Fehler nicht wiederholen und haben durch die Reflektion eine Menge gelernt. Fehler zu machen (und darüber zu reflektieren) gehört zu den besten Lernmethoden des Programmierens!
 6. Haben Sie Spaß! Je mehr Sie das Programmieren lernen, je mehr Spaß werden Sie haben. Sollte es Ihnen zwischendurch keinen Spaß mehr machen, geben Sie mir sofort Bescheid!
@@ -30,8 +30,7 @@ Der Plan zur Durchführung der Veranstaltung ist derzeit wie folgt:
 
 Zur erfolgreichen Durchführung der Veranstaltung müssen Sie 
 
-- eine der [**Übungen**](uebungen.md#ubungsblatter-wochenweise) durchgeführt haben (zu zweit) und (siehe dazu [Wiki in Moodle](https://moodle.htw-berlin.de/mod/wiki/view.php?id=2025417))
-- mir mind. **8 Lösungen** Ihrer Übungen in den Übungszeiten präsentiert und
+- eine der [**Übungen**](uebungen.md#ubungsblatter-wochenweise) durchgeführt haben (zu zweit) und (siehe dazu [Wiki in Moodle](https://moodle.htw-berlin.de/mod/wiki/view.php?id=2252133))
 - die **Klausur** am Ende bestanden 
 
 haben. 
@@ -39,12 +38,17 @@ haben.
 
 Jede Woche gibt es zu jedem Thema [**Übungen**](uebungen.md#ubungsblatter-wochenweise), die wir in den Übungszeiten besprechen. Diese dienen der Anwendung und der Festigung der erlangten Kenntnisse. Die [**Übungen**](uebungen.md#ubungsblatter-wochenweise) sind kleine Aufgaben, an denen Sie das neue Wissen anwenden sollen. Die Übungen dienen der Befähigung, die (größeren) Aufgaben lösen zu können. 
 
-Es gibt außerdem [**Aufgaben**](aufgaben.md#aufgaben). Diese sind zu Ihrer eigenen Übung da. Es mag Ihnen vielleicht schwerfallen, die Aufgaben selbständig zu lösen. Sie sollten Sie jedoch **irgendwann** selbständig lösen können! Es hat sich gezeigt, dass die Studentinnen, die die Aufgaben irgendwann selbständig lösen konnten, die Klausur sicher bestehen. Damit Sie dies erfolgreich erledigen können, ist jeweils angegeben, welche Themen Sie dafür durcharbeiten müssen. Das Durcharbeiten der jeweiligen Themen entspricht meistens jeweils einem Wochenthema. 
+Es gibt außerdem [**Aufgaben**](aufgaben.md#aufgaben). Diese sind zu Ihrer eigenen Übung da. Es mag Ihnen vielleicht schwerfallen, die Aufgaben selbständig zu lösen. Sie sollten Sie jedoch **irgendwann** selbständig lösen können! 
+
+!!! success
+	**Es hat sich gezeigt, dass die Studentinnen, die die Aufgaben zum Klausurzeitpunkt selbständig lösen konnten, die Klausur sicher bestehen.**
+
+Damit Sie dies erfolgreich erledigen können, ist jeweils angegeben, welche Themen Sie dafür durcharbeiten müssen. Das Durcharbeiten der jeweiligen Themen entspricht meistens jeweils einem Wochenthema. 
  
 
 Am Ende des Semesters schreiben wir eine **Klausur** (am Rechner). Diese Klausur wird bewertet und entspricht der Note für "Programmieren 1". [Probeklausuren](probeklausuren.md#probeklausuren) (Klausuren aus den letzten Jahren) finden Sie [hier](probeklausuren.md#probeklausuren).
 
-Für die Kommunikation untereinander verwenden wir [**Slack**](https://slack.com/intl/de-de/) (Channel `#b11_prog1_ws2025_26`). Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, dass Sie sich diese gegenseitig beantworten. Damit wäre allen geholfen und wir können besser erkennen, wo noch Nachhol- bzw. Erläuterungsbedarf bei den meisten besteht. Bei Bedarf beantworten die Lehrenden die Fragen natürlich.  
+Für die Kommunikation untereinander verwenden wir [**Element**](https://element.io/de) (Channel `#b11_prog1_wise2627`). Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, dass Sie sich diese gegenseitig beantworten. Damit wäre allen geholfen und wir können besser erkennen, wo noch Nachhol- bzw. Erläuterungsbedarf bei den meisten besteht. Bei Bedarf beantworten die Lehrenden die Fragen natürlich.  
 
 
 
@@ -90,12 +94,12 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 - Sie dürfen beliebig viele Seiten **handgeschriebenen** Spicker mitbringen. Sie können auch leere Zettel dabei haben, um sich während der Klausur Notizen zu machen.
 - Im Browser **dürfen nur** 
 
-	- der [Moodle-Raum](https://moodle.htw-berlin.de/course/view.php?id=59708), 
-	- das [Prog2-Skript](https://freiheit.f4.htw-berlin.de/prog2/),
+	- der [Moodle-Raum](https://moodle.htw-berlin.de/course/view.php?id=61719), 
+	- das [Prog1-Skript](https://freiheit.f4.htw-berlin.de/prog1/),
 	- die [Java-Dokumentation](https://docs.oracle.com/en/java/javase/21/docs/api/index.html) und
 	- die [Klausuraufgabe](https://freiheit.f4.htw-berlin.de/klausur) 
 
-	geöffnet sein. Alle anderen Webseiten sind ab 9.35 Uhr bis zum Ende der Klausur verboten! 
+	geöffnet sein. Alle anderen Webseiten sind ab 13.35 Uhr bis zum Ende der Klausur verboten! 
 
 - Auf dem Rechner **dürfen nur** 
 
@@ -116,7 +120,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	- Mit Teilnahme an der Klausur gestatten Sie uns, nachträglich die Access-Logs der Rechner im Labor zu überprüfen!
 	- Bereits geöffnete Programme oder Tabs (selbst, wenn Sie unbenutzt sind), die eine Kommunikation mit anderen (z.B. E-Mail, Chats, KI, ...) ermöglichen, führen zum Ausschluss aus der Klausur.
 
-- Sollte sich herausstellen, dass 2 Labore nicht genügen, weichen wir auf ein drittes Labor aus (Windows). Deswegen ist es wichtig, dass Sie bereits 9:15 Uhr vor Ort sind.
+- Sollte sich herausstellen, dass 2 Labore nicht genügen, weichen wir auf ein drittes Labor aus (Windows). Deswegen ist es wichtig, dass Sie bereits 13:15 Uhr vor Ort sind.
 - Bitte beachten Sie auch, dass wir **nicht** beim Hochladen der Lösung in Moodle unterstützen können. Das haben Sie für die Aufgaben genügend geübt. Wichtig ist, dass Sie wissen, wo Ihr *workspace* auf dem Rechner ist, damit Sie von dort aus hochladen können.  
 - Beachten Sie auch, dass wir auch vor der Klausur nicht immer allen helfen können. Insbesondere das Importieren von Klassen und Paketen in den Workspace sollten Sie schon einmal vorher im Labor geübt haben! Die Labore sind in der Klausurvorbereitung stets verfügbar!
 - Mit Unterschrift unter der Teilnehmendenliste nehmen Sie an der Klausur teil! 

@@ -47,14 +47,14 @@ Schauen wir uns diesen Code zunächst an:
 	- Danach kommt das Schlüsselwort `void`. Dieses Schlüsslwort gibt an, dass die Methode nichts zurückgibt. An dieser Stelle steht der Rückgabetyp eine Methode - wenn die Methode etwas zurückgibt. Unsere Methode gibt nichts zurück, deshalb hier `void`. Wir werden uns mit Methodenrückgaben ausführlich beschäftigen.
 	- Jetzt kommt der Name der Methode, hier `main`. Die `main()`-Methode ist eine ganz besondere Methode. Sie existiert in einem Programm genau einmal und wird aufgerufen, wenn das Programm aufgerufen wird - die sogenannte *Programmmethode*. Wenn wir ein Programm ausführen, wird alles das ausgeführt, was in dem Rumpf der `main()`-Methode definiert ist (derzeit noch nichts). 
 	- In den runden Klammern stehen *Parameter* (auch *Argumente* genannt). In unserem Fall ist ein Parameter namens `args` definiert. Der *Datentyp* dieses Parameters ist `Strg[]`, d.h. dass der Parameter einem *Array* von Zeichenketten *Strings* entspricht. Wir kümmern uns um Parameter später ausführlich. 
-	
+
 - In unserer Methode gibt es derzeit nur einen einzigen Eintrag (Zeile `8`). Dabei handelt es sich um einen *Kommentar*, genauer hier um einen *Zeilenkommentar*. Zeilenkommentare beginnen mit einem Doppelslash `//`. Hinter diesen Doppelslash können Sie schreiben, was Sie möchten - bis an das Zeilenende. Kommentare dienen Ihnen dazu, den Code verständlicher zu gestalten oder Ihnen Hinweise zu geben. Hier steht der Hinweis, dass die Methode automatisch durch Eclipse erstellt wurde und Sie noch das ToDo haben, die Methode zu befüllen. Das machen wir jetzt auch!
 
 Wir löschen den Kommentar und fügen nun die Anweisung `System.out.println("HelloFIW !");` in unseren Methodenrumpf ein. Unsere Klasse sieht nun so aus (die neuhinzugekommene Zeile ist markiert):
 
 === "HelloFIW.java"
 ``` java linenums="1" hl_lines="8"
-package themen.eins.start;
+package themen.eins;
 
 public class HelloFIW
 {
@@ -77,9 +77,8 @@ Jetzt wählen wir entweder im Menü `Run --> Run` oder klicken auf den kleinen g
 
 ### System.out.println("Hello FIW!");
 
-Schauen wir uns `System.out.println("Hello FIW!");` zunächst etwas genauer an. Wir verwenden hier eine Klasse, nämlcih die Klasse `System`. Diese Klasse existiert bereits und wurde von den Java-Entwicklern für uns gesschrieben. Sie gehört zum Standardpaket von Java, existiert bereits seit der ersten Version von Java und befindet sich im Paket `java.lang`. Diese Klasse hat eine interssante Klassenvariable, die wir verwenden, nämlich `out`. Diese Variable stellt in unserem (Betriebs-)System die Verbindung zu unserem Standardausgabegerät bereit, in unserem Fall die Konsole. Um nun eine Ausgabe auf diese Konsole zu generieren verwenden wir die Methode `println()`. Wir sehen hier eine typische Notation in Java, die sogenannte *Punktnotation*. Mithilfe dieser Punktnotation greifen wir auf Eigenschaften von Klassen und Objekten zu. In unserem Beispiel greifen wir mit `System.out` auf das Standardausgabegerät zu und mit `System.out.println()` auf die `println()`-Methode des Ausgabegerätes[^1].
+Schauen wir uns `System.out.println("Hello FIW!");` zunächst etwas genauer an. Wir verwenden hier eine Klasse, nämlcih die Klasse `System`. Diese Klasse existiert bereits und wurde von den Java-Entwicklern für uns gesschrieben. Sie gehört zum Standardpaket von Java, existiert bereits seit der ersten Version von Java und befindet sich im Paket `java.lang`. Diese Klasse hat eine interssante Klassenvariable, die wir verwenden, nämlich `out`. Diese Variable stellt in unserem (Betriebs-)System die Verbindung zu unserem Standardausgabegerät bereit, in unserem Fall die Konsole. Um nun eine Ausgabe auf diese Konsole zu generieren verwenden wir die Methode `println()`. Wir sehen hier eine typische Notation in Java, die sogenannte *Punktnotation*. Mithilfe dieser Punktnotation greifen wir auf Eigenschaften von Klassen und Objekten zu. In unserem Beispiel greifen wir mit `System.out` auf das Standardausgabegerät zu und mit `System.out.println()` auf die `println()`-Methode des Ausgabegerätes.
 
-[^1]: Wenn wir ganz genau sein wollen, dann ist `out` vom Typ `PrintStream` und wir greifen auf die Objektmethode `println()` des `PrintStream`-Objektes `out` zu. 
 
 Die Methode `println()` erzeugt also eine Ausgabe auf unsere Konsole. Jetzt müssen wir nur noch sagen, WAS ausgegeben werden sollen. Dazu übergeben wir dieser Methode eine *Zeichenkette* (einen *String*). Eine Zeichenkette erkennt man an den doppelten Anführungsstrichen `"das ist eine Zeichekette"`. Innerhalb dieser Anführungsstriche können Sie schreiben, was Sie möchten (außer `"`). Wir haben uns für `"Hello FIW!"`entschieden und genau diese Zeichenkette (ohne die Anführungsstriche) wird ausgegeben. Die Zeichnkette, die wir ausgeben möchten, schreiben wir in die runden Klammern der `println()`-Methode, also `println("Hello FIW!")`. 
 
@@ -95,7 +94,7 @@ Wir wollen nun unser Programm ändern und verwenden nicht mehr die `println()`- 
 
 === "main()-Methode mit print()"
 	``` java linenums="1" hl_lines="8-10"
-	package themen.eins.start;
+	package themen.eins;
 
 	public class HelloFIW
 	{
@@ -125,7 +124,7 @@ Wir ändern nun unser Programm erneut und fügen folgende Anweisungen hinzu: `Sy
 
 === "main()-Methode mit print() und println()"
 	``` java linenums="1" hl_lines="9 11 13"
-	package themen.eins.start;
+	package themen.eins;
 
 	public class HelloFIW
 	{
