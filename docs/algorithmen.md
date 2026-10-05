@@ -14,7 +14,7 @@ Neben diesen zwingend erforderlichen Anforderungen, gibt es noch weitere Anforde
 | Eigenschaft | im klassischen Sinne | Abweichungen (teilweise Praxis) |
 |-------------|----------------------|---------------------------------|
 | **Terminierung** | Das Verfahren endet nach endlich vielen Ausführungsschritten (z.B. Sortieralgorithmen) | Das Programm läuft "endlos" (z.B. Betriebssystem, Webserver usw.) |
-| **Determinismus** Die nächste anzuwendende Regel im Verfahren ist zu jedem Zeitpunkt (in jedem Zustand) eindeutig definiert. | (pseudo-)randomisierte Algorithmen; der Folgeschritt beinhaltet Zufall oder freie Wahl (z.B. Krypto-Schlüsselerzeugung) |
+| **Determinismus** | Die nächste anzuwendende Regel im Verfahren ist zu jedem Zeitpunkt (in jedem Zustand) eindeutig definiert. | (pseudo-)randomisierte Algorithmen; der Folgeschritt beinhaltet Zufall oder freie Wahl (z.B. Krypto-Schlüsselerzeugung) |
 | **Determiniertheit** | Das Verfahren liefert bei denselben Voraussetzungen stets dasselbe Ergebnis. | Unterschiedliche Ergebnisse sind erlaubt/gewollt (z. B. randomisierte Heuristiken, nebenläufige Threads ohne Synchronisation) |
 
 
