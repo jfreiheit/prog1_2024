@@ -25,7 +25,7 @@ Der Plan zur Durchführung der Veranstaltung ist derzeit wie folgt:
 - Zusammen mit dem Skript (das neue Thema) werden sowohl die dazugehörige Übung als auch die dazugehörige Aufgabe hochgeladen.
 - Die beiden Übungen am Dienstag (in der einen Woche) und am Montag in der folgenden Woche sind jeweils gleich (d.h. dort werden die gleichen Übungsaufgaben gelöst). Die Übungen behandeln den Stoff, der am Montag und Dienstag in der gleichen Woche besprochen wird. 
 - Sie können frei wählen, welche der beiden Übungen Sie besuchen. Sie können auch beliebig wöchentlich wechseln. 
-- Es wird ein Tutorium angeboten (Termin wird noch bekanntgegeben). 
+- Es wird ein Tutorium angeboten. Unsere Tutorin ist Lucija und das Tutorium ist immer **mittwochs um 14 Uhr in C 639**. Das erste Tutorium findet am 21.10.2026 statt.
 - Sollten Sie Wünsche haben, diesen Plan zu ändern, kommen Sie gerne auf mich zu.
 
 Zur erfolgreichen Durchführung der Veranstaltung müssen Sie 
@@ -48,7 +48,7 @@ Damit Sie dies erfolgreich erledigen können, ist jeweils angegeben, welche Them
 
 Am Ende des Semesters schreiben wir eine **Klausur** (am Rechner). Diese Klausur wird bewertet und entspricht der Note für "Programmieren 1". [Probeklausuren](probeklausuren.md#probeklausuren) (Klausuren aus den letzten Jahren) finden Sie [hier](probeklausuren.md#probeklausuren).
 
-Für die Kommunikation untereinander verwenden wir [**Element**](https://element.io/de) (Channel `#b11_prog1_wise2627`). Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, dass Sie sich diese gegenseitig beantworten. Damit wäre allen geholfen und wir können besser erkennen, wo noch Nachhol- bzw. Erläuterungsbedarf bei den meisten besteht. Bei Bedarf beantworten die Lehrenden die Fragen natürlich.  
+Für die Kommunikation untereinander verwenden wir [**Element**](https://element.io/de) (Channel `#b11_prog1_wise_26`). Dort können Sie alle inhaltlichen und organisatorischen Fragen stellen. Ich fände es gut, wenn eine Art internes Diskussionsforum entsteht. Es ist sehr gewünscht, dort Fragen zu stellen und noch mehr gewünscht, dass Sie sich diese gegenseitig beantworten. Damit wäre allen geholfen und wir können besser erkennen, wo noch Nachhol- bzw. Erläuterungsbedarf bei den meisten besteht. Bei Bedarf beantworten die Lehrenden die Fragen natürlich.  
 
 
 
