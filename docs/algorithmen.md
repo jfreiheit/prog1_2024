@@ -20,9 +20,7 @@ Neben diesen zwingend erforderlichen Anforderungen, gibt es noch weitere Anforde
 
 ### Beispiel: Euklidischer Algorithmus
 
-Mit dem euklidischen Algorithmus[^4] kann der *größte gemeinsame Teiler (ggT)* zweier Zahlen berechnet werden. In seinen *Elementen* hat Euklid diesen Algorithmus ungefähr so formuliert:
-
-[^4]: Benannt nach Euklid von Alexandria, einem Mathematiker aus dem 3. Jahrhundert, Autor der *Elemente* - einem Kompendium des Wissens der Mathematik seiner Zeit. 
+Mit dem euklidischen Algorithmus kann der *größte gemeinsame Teiler (ggT)* zweier Zahlen berechnet werden. In seinen *Elementen* hat Euklid diesen Algorithmus ungefähr so formuliert:
 
 !!! quote "Euklidischer Algorithmus"
 	Wenn CD aber AB nicht misst, und man nimmt bei AB, CD abwechselnd immer das kleinere vom größeren weg, dann muss (schließlich) eine Zahl übrig bleiben, die die vorangehende misst.
@@ -97,6 +95,9 @@ Für dieses Beispiel war stets eindeutig, welche Anweisung als nächstes ausgef�
 	 * Was ändert sich, wenn am Anfang `a=-40` und `b=24` sind?
 	 * Was ändert sich, wenn am Anfang `a=0` und `b=24` sind?
 	 * Was ändert sich, wenn am Anfang `a=24` und `b=24` sind?
+
+Per Difinition gilt übrigens \(ggT(\pm a, \pm b) = ggT(a,b)\).
+
 
 ### Beispiel: (3n+1)-Vermutung (Collatz-Problem)
 

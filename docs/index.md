@@ -59,22 +59,22 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 | | Woche | Themen (Vorlesung) | Übung | Aufgabe | 
 |-|-------|--------------------|-------|---------|
-| 1. | 05.-09.10.2026 | [Organisatorisches](#organisatorisches), [Algorithmen](algorithmen.md#was-ist-programmieren) und [Erstes Programm](start.md#unser-erstes-programm)| [Übung 0](uebungen.md#ubung-0)| -  | 
-| 2. | 12.-16.10.2026 | [Variablen und Datentypen](variablen.md#variablen-und-datentypen) | [Übung 1](uebungen.md#ubung-1)| -  |
-| 3. | 19.-23.10.2026 | [Operatoren und Ausdrücke](ausdruecke.md#operatoren-und-ausdrucke) | [Übung 2](uebungen.md#ubung-2)| -  |  
-| 4. | 26.-30.10.2026 | [Methoden](methoden.md#methoden) und [Methodenstack](methodenstack.md#methodenstack)| [Übung 2a](uebungen.md#ubung-2a)| - |
-| 5. | 02.-06.11.2026 | [Selektion (if)](selektion.md#selektion) und [Iteration (for)](iteration.md#die-for-schleife)| [Übung 3](uebungen.md#ubung-3)| [Aufgabe 1](aufgaben.md#aufgabe-1) |
-| 6. | 09.-13.11.2026 | [Iteration (while)](iteration.md#die-while-schleife) und [Methodenstack](methodenstack.md#methodenstack) | [Übung 4](uebungen.md#ubung-4)| [Aufgabe 2](aufgaben.md#aufgabe-2)  | 
-| 7. | 16.-20.11.2026 | [Klassen und Objekte, Konstruktoren, this](objekte1.md#klassen-und-objekte) | [Übung 5](uebungen.md#ubung-5)| [Aufgabe 3](aufgaben.md#aufgabe-3) |  
-| 8. | 23.-27.11.2026 | [Eigene Datentypen, Rückgabe von Objekten](objekte2.md#klassen-und-objekte-ii) und [Leben der Objekte](methodenstack.md/#das-leben-der-objekte)| [Übung 6](uebungen.md#ubung-6)| [Aufgabe 4](aufgaben.md#aufgabe-4)  | 
-| 9. | 30.-04.12.2026 | [Vererbung,](vererbung.md#vererbung) [Object und Polymorphie](object.md#die-klasse-object) | [Übung 7](uebungen.md#ubung-7)| [Aufgabe 5](aufgaben.md#aufgabe-5)  | 
-| 10. | 07.-11.12.2026 | [Arrays](arrays.md#arrays) | [Übung 8](uebungen.md#ubung-8)| [Aufgabe 6](aufgaben.md#aufgabe-6) | 
-| 11. | 14.-18.12.2026 | [Algorithmen über Arrays](arrays.md#algorithmen-uber-arrays) | [Übung 9](uebungen.md#ubung-9)| [Aufgabe 7](aufgaben.md#aufgabe-7)  | 
-| 12. | 21.-23.12.2026 | [Sortieren von Arrays](sortieren.md#sortieren-von-arrays)  | [Übung 10](uebungen.md#ubung-10)| [Aufgabe 8](aufgaben.md#aufgabe-8)   | 
+| 1. | 05.-09.10.2026 | [Organisatorisches](#organisatorisches), [Algorithmen](algorithmen.md#was-ist-programmieren) und [Erstes Programm](start.md#unser-erstes-programm)| | -  | 
+| 2. | 12.-16.10.2026 | [Variablen und Datentypen](variablen.md#variablen-und-datentypen) | [Übung 0](uebungen.md#ubung-0)| -  |
+| 3. | 19.-23.10.2026 | [Operatoren und Ausdrücke](ausdruecke.md#operatoren-und-ausdrucke) | [Übung 1](uebungen.md#ubung-1)| -  |  
+| 4. | 26.-30.10.2026 | [Methoden](methoden.md#methoden) und [Methodenstack](methodenstack.md#methodenstack)| [Übung 2](uebungen.md#ubung-2)| - |
+| 5. | 02.-06.11.2026 | [Selektion (if)](selektion.md#selektion) und [Iteration (for)](iteration.md#die-for-schleife)| [Übung 2a](uebungen.md#ubung-2a)| [Aufgabe 1](aufgaben.md#aufgabe-1) |
+| 6. | 09.-13.11.2026 | [Iteration (while)](iteration.md#die-while-schleife) und [Methodenstack](methodenstack.md#methodenstack) | [Übung 3](uebungen.md#ubung-3)| [Aufgabe 2](aufgaben.md#aufgabe-2)  | 
+| 7. | 16.-20.11.2026 | [Klassen und Objekte, Konstruktoren, this](objekte1.md#klassen-und-objekte) | [Übung 4](uebungen.md#ubung-4)| [Aufgabe 3](aufgaben.md#aufgabe-3) |  
+| 8. | 23.-27.11.2026 | [Eigene Datentypen, Rückgabe von Objekten](objekte2.md#klassen-und-objekte-ii) und [Leben der Objekte](methodenstack.md/#das-leben-der-objekte)| [Übung 5](uebungen.md#ubung-5)| [Aufgabe 4](aufgaben.md#aufgabe-4)  | 
+| 9. | 30.-04.12.2026 | [Vererbung,](vererbung.md#vererbung) [Object und Polymorphie](object.md#die-klasse-object) | [Übung 6](uebungen.md#ubung-6)| [Aufgabe 5](aufgaben.md#aufgabe-5)  | 
+| 10. | 07.-11.12.2026 | [Arrays](arrays.md#arrays) | [Übung 7](uebungen.md#ubung-7)| [Aufgabe 6](aufgaben.md#aufgabe-6) | 
+| 11. | 14.-18.12.2026 | [Algorithmen über Arrays](arrays.md#algorithmen-uber-arrays) | [Übung 8](uebungen.md#ubung-8)| [Aufgabe 7](aufgaben.md#aufgabe-7)  | 
+| 12. | 21.-23.12.2026 | [Sortieren von Arrays](sortieren.md#sortieren-von-arrays)  | [Übung 9](uebungen.md#ubung-9)| [Aufgabe 8](aufgaben.md#aufgabe-8)   | 
 | | | | | | |
-| 13. | 04.-08.01.2027 | [Suchen in Arrays](arrays.md#suchen-in-arrays) | [Übung 11](uebungen.md#ubung-11)| [Probeklausuren](probeklausuren.md) | 
-| 14. | 11.-15.01.2027 | [JavaDoc](javadoc.md#javadoc) | [Übung 12](uebungen.md#ubung-12)| [Probeklausuren](probeklausuren.md)  | 
-| 15. | 18.-22.01.2027 | Wiederholung, Klausurvorbereitung | | [Probeklausuren](probeklausuren.md) | 
+| 13. | 04.-08.01.2027 | [Suchen in Arrays](arrays.md#suchen-in-arrays) | [Übung 10](uebungen.md#ubung-10)| [Probeklausuren](probeklausuren.md) | 
+| 14. | 11.-15.01.2027 | [JavaDoc](javadoc.md#javadoc) | [Übung 11](uebungen.md#ubung-11)| [Probeklausuren](probeklausuren.md)  | 
+| 15. | 18.-22.01.2027 | Wiederholung, Klausurvorbereitung | [Übung 12](uebungen.md#ubung-12) | [Probeklausuren](probeklausuren.md) | 
 | 16. | 08.02.2027 13.30-15.30 Uhr| Klausur 1.PZ | | -  | 
 | 16. | 22.03.2027 13.30-15.30 Uhr| Klausur 2.PZ | | -  | 
 
