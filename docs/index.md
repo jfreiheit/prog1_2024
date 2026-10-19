@@ -85,6 +85,105 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 ## Code aus der Vorlesung
 
+??? hint "Vorlesung Datentypen 13. + 19.10.2026"
+	```java
+	package vorlesungen.vorlesung1013;
+
+	public class MeineErsteKlasse 
+	{
+
+		public static void main(String[] args) 	
+		{
+			System.out.println("Hallo 1!");
+			System.out.println();
+			System.out.print("Hallo 2!");
+			System.out.println("Hallo 3!");
+			
+			System.out.println();
+			
+			String wort1;				// die Variable wort1 als String deklariert
+			wort1 = "Hallo FIW!";		// Wertzuweisung
+			
+			System.out.println( wort1 );
+			System.out.println( "Hallo FIW!" );
+			System.out.println( wort1 + wort1 );
+			
+			String wort2;
+			String wort3;
+			
+			wort2 = "Hallo";
+			wort3 = "FIW";
+			
+			String leerzeichen;
+			leerzeichen = " ";
+			
+			System.out.println(wort2 + leerzeichen + wort3 + "!");
+			
+			// Datentyp int
+			
+			int ganzeZahl = 5;
+			System.out.println( ganzeZahl ); // 5
+			ganzeZahl = 6;
+			System.out.println( ganzeZahl ); // 6
+			ganzeZahl = 5 + 6;
+			System.out.println( ganzeZahl ); //11
+			
+			System.out.println( "ganzeZahl = " + ganzeZahl );
+			System.out.println( ganzeZahl + " = ganzeZahl"  );
+			
+			System.out.println("1 + 2 = " + 1 + 2 );		// 1 + 2 = 12
+			System.out.println("1 + 2 = " + (1 + 2) );		// 1 + 2 = 3
+			
+			// Datentypen short und byte
+			
+			short kleineZahl = 30001;
+			System.out.println(kleineZahl);
+			byte nochKleinereZahl = -125;
+			System.out.println( nochKleinereZahl );
+			
+			// Datentyp long
+			long grosseZahl = 2147483648L;
+			System.out.println(grosseZahl);
+			
+			// Datentyp char
+			char zeichen = 'a';
+			System.out.println(zeichen);
+			zeichen = 66;
+			System.out.println(zeichen);
+
+			
+			// Datentyp boolean
+			boolean wahrheitswert = true;
+			wahrheitswert = false;
+			
+			// Datentypen double und float
+			double gebrocheneZahl = 5.123;
+			float eineFloatZahl = 1.234f;
+			
+			
+			System.out.println("eins " + "zwei"); 
+			System.out.println("jetzt aber " + wort1); 
+			System.out.println("jetzt aber " + "Hallo FIW!");
+			  
+			wort1 = "neuer Wert"; System.out.println("jetzt aber " + wort1);
+	 
+			
+			// das ist ein Zeilenkommentar
+			// Kommentare werden nicht compiliert
+			// Zeilenkommentar
+
+			/*
+			 * das ist ein Blockkommentar
+			 * der geht ueber mehrere Zeilen
+			 * Kommentare werden nicht compiliert
+			 */
+
+		}
+
+	}
+
+	```
+
 
 
 
