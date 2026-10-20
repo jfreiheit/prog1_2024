@@ -185,7 +185,47 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	```
 
 
+??? hint "Vorlesung arithmetische Ausdrücke 20.10.2026"
+	```java
+	package vorlesungen.vorlesung1020;
 
+	public class Vorlesung1020 
+	{
+
+		public static void main(String[] args) 
+		{
+			int zahl1 = 15;
+			int zahl2 = 6;
+			
+			int summe = zahl1 + zahl2;
+			System.out.println(zahl1 + " + " + zahl2 + " = " + summe);
+			
+			int differenz = zahl1 - zahl2;
+			System.out.println(zahl1 + " - " + zahl2 + " = " + differenz);
+			
+			int produkt = zahl1 * zahl2;
+			System.out.println(zahl1 + " * " + zahl2 + " = " + produkt);
+			
+			int quotient = zahl1 / zahl2;		
+			System.out.println(zahl1 + " / " + zahl2 + " = " + quotient);
+			
+			int rest = zahl1 % zahl2;
+			System.out.println(zahl1 + " % " + zahl2 + " = " + rest);
+			
+			double nr1 = 15.0;
+			double nr2 = 6.0;
+			
+			double quot = nr1 / nr2;
+			System.out.println(nr1 + " / " + nr2 + " = " + quot);
+			
+			double result = 15 / 6;		// 2.0
+			
+
+		}
+
+	}
+
+	```
 
 
 
