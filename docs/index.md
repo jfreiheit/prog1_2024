@@ -229,6 +229,104 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 
+??? hint "Vorlesung logische und Vergleichsoperatoren 26.10.2026"
+	```java
+	package vorlesungen.vorlesung1026;
+
+	public class Vorlesung1026 
+	{
+
+		public static void main(String[] args) 
+		{
+			/* 
+			 * Arithmetische Operatoren
+			 */
+			int a = 2;
+			int b = 3;
+			int result = a + b;
+			System.out.println("result = " + result);	// 5
+			a = 5;
+			System.out.println("result = " + result);	// 5
+			result = a + b;
+			System.out.println("result = " + result);	// 8
+			
+			result = result + 1;
+			System.out.println("result = " + result);	// 9
+			result = result * 3;
+			System.out.println("result = " + result);	// 27
+			
+			result *= 3;		// exakt wie Zeile 22
+			System.out.println("result = " + result);	// 81
+			
+			result /= 3;
+			System.out.println("result = " + result);	// 27
+			
+			result++;		// identisch mit result = result + 1;
+							// identisch mit result += 1;
+			System.out.println("result = " + result);	// 28
+			
+			result--;		// identisch mit result = result - 1;
+							// identisch mit result -= 1;
+			System.out.println("result = " + result);	// 27
+			
+			result = 2 + 3 * 4;		// 14
+			result = (2 + 3) * 4; 	// 20
+			
+			double d1 = 4.5;
+			double d2 = 5.0;
+			
+			double ergebnis = d1 * d2;
+			System.out.println("ergebnis = " + ergebnis);
+			
+			// ergebnis ist double
+			ergebnis = 62 / 4;	// ganzzahlige Division!!!
+			System.out.println("ergebnis = " + ergebnis);		// 15.0
+			
+			ergebnis = 62.0 / 4;	// Gleikommadivision
+			System.out.println("ergebnis = " + ergebnis);		// 15.5
+			
+			// result ist int
+			result = 62 / 4;
+			System.out.println("result = " + result);			// 15
+			
+			// result = 62.0 / 4;  // Compilerfehler double nach int
+			
+			/*
+			 * Vergleichsoperatoren
+			 */		
+			boolean vergleich = a > b;							// 5 > 3 
+			System.out.println("vergleich ist " + vergleich);  	// true
+			
+			vergleich = a < b;
+			System.out.println("vergleich ist " + vergleich);  	// false
+			
+			vergleich = 3 < 3; 	    // false (echt kleiner)
+			vergleich = 3 <= 3; 	// true	 (kleiner oder gleich)
+			vergleich = 3 > 3; 	    // false (echt groesser)
+			vergleich = 3 >= 3; 	// true	 (groesser oder gleich)
+			vergleich = 3 == 3;		// true  (Gleichheit)
+			vergleich = 3 == 4;		// false
+			vergleich = 3 != 3; 	// false (Ungleichheit)
+			vergleich = 3 != 4; 	// true
+			
+			/*
+			 * Logische Operatoren
+			 */
+			boolean wahrheitswert = true;
+			wahrheitswert = !wahrheitswert;	// negation
+			wahrheitswert = true && true;	// true (Und)
+			wahrheitswert = true || false;	// true	(Oder)
+			wahrheitswert = true ^ true;	// false (exklusives Oder)
+			
+			a = 3;
+			b = 4;
+			int c = 5;
+			wahrheitswert = (a < b) && (b < c);
+
+		}
+
+	}
+	```
 
 
 
