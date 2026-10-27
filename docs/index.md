@@ -330,6 +330,61 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 
+??? hint "Vorlesung Methoden 27.10.2026"
+	```java
+	package vorlesungen.vorlesung1027;
+
+	public class Vorlesung1027 
+	{
+		public static void addieren(int zahl1, int zahl2)
+		{
+			int summe = zahl1 + zahl2;
+			System.out.println(zahl1 + " + " + zahl2 + " = " + summe);
+		}
+		
+		public static int berechneSumme(int zahl1, int zahl2)
+		{
+			int summe = zahl1 + zahl2;
+			return summe;
+		}
+		
+		public static void main(String[] args)
+		{		
+			int nr1 = 16;
+			int nr2 = 15;
+			int summe = nr1 + nr2;
+			System.out.println(nr1 + " + " + nr2 + " = " + summe);
+			
+			nr1 = -16;
+			nr2 = 10;
+			summe = nr1 + nr2;
+			System.out.println(nr1 + " + " + nr2 + " = " + summe);
+				
+			nr1 = 7;
+			nr2 = -8;
+			summe = nr1 + nr2;
+			System.out.println(nr1 + " + " + nr2 + " = " + summe);
+			
+			addieren(43,42);
+			addieren(-43,42);
+			addieren(-43,-42);
+			addieren(nr1, nr2);
+			
+			addieren(1+3, 2+4);
+			
+			nr1 = -16;
+			nr2 = 10;
+			summe = berechneSumme(nr1, nr2);
+			System.out.println(nr1 + " + " + nr2 + " = " + -6);
+			System.out.println(nr1 + " + " + nr2 + " = " + summe);
+			System.out.println(nr1 + " + " + nr2 + " = " + berechneSumme(nr1, nr2));
+			
+			double dTest = berechneSumme(89, 67);
+			
+		}
+
+	}
+	```
 
 
 
