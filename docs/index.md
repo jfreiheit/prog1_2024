@@ -387,5 +387,123 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	```
 
 
+??? hint "Vorlesung Selektion 2.11.2026"
+	```java
+	package vorlesungen.vorlesung1102;
 
+	public class Vorlesung1102
+	{
+		public static boolean istGerade(int zahl)
+		{
+			boolean even = (zahl % 2 == 0);
+			return even;
+		}
+		
+		public static boolean istUngerade(int zahl)
+		{
+			return !istGerade(zahl);
+		}
+
+		public static void main(String[] args)
+		{
+			// TODO Auto-generated method stub
+			int number = 3;
+			System.out.println("ist " + number + " gerade ? " + istGerade(number));
+			System.out.println("ist " + number + " gerade ? " + istGerade(3));
+			System.out.println("ist " + number + " ungerade ? " + istUngerade(number));
+
+			// Selektion
+			
+			if(5 < 4)
+			{
+				System.out.println("Bedingung ist true");
+			}
+			else
+			{
+				System.out.println("Bedingung ist false");
+			}
+			
+			if(istGerade(number))
+			{
+				System.out.println(number + " ist eine gerade Zahl");
+			}
+			else
+			{
+				System.out.println(number + " ist eine ungerade Zahl");
+			}
+			
+			char c = 'a';
+			
+			if(c >= '0' && c <= '9')
+			{
+				System.out.println(c + " ist eine Ziffer ");
+			}
+			else
+			{
+				System.out.println(c + " ist keine Ziffer ");
+			}
+			
+			int jahr = 2100;
+			
+			if( (jahr % 4 == 0 && jahr % 100 != 0) || (jahr % 400 == 0) )
+			{
+				System.out.println(jahr + " ist ein Schaltjahr.");
+			}
+			else
+			{
+				System.out.println(jahr + " ist kein Schaltjahr.");
+			}
+			
+			if( jahr % 4 == 0 )
+			{
+				// durch 4 teilbar
+				if( jahr % 100 == 0)
+				{
+					// durch 4 UND durch 100 teilbar
+					if( jahr % 400 == 0)
+					{
+						// durch 4 UND durch 100 UND durch 400 teilbar
+						System.out.println(jahr + " ist ein Schaltjahr.");
+					}
+					else
+					{
+						// durch 4 UND durch 100 aber nicht durch 400 teilbar
+						System.out.println(jahr + " ist kein Schaltjahr.");
+					}
+				}
+				else
+				{
+					// durch 4 aber nicht durch 100 teilbar
+					System.out.println(jahr + " ist ein Schaltjahr.");
+				}
+			}
+			else
+			{
+				// nicht durch 4 teilbar
+				System.out.println(jahr + " ist kein Schaltjahr.");
+			}
+			
+			int a = 3;
+			int b = 3;
+			
+			if(a > b)
+			{
+				System.out.println( a + " > " + b );
+			}
+			else  // b > a oder b == a
+			{
+				if(b > a)
+				{
+					System.out.println( a + " < " + b );
+				}
+				else	// b == a
+				{
+					System.out.println( a + " == " + b );
+				}
+			}
+				
+		}
+
+	}
+	```
 
