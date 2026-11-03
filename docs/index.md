@@ -507,3 +507,115 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	}
 	```
 
+
+??? hint "Vorlesung Iteration 3.11.2026"
+	```java
+	package vorlesungen.vorlesung1103;
+
+	public class Vorlesung1103
+	{
+		public static void computeSumFrom1ToN(int n)
+		{
+		    int sum = 0;
+		    String s = "1";
+		    for(int i=1; i<=n; i++)
+		    {
+		        if(i>1)
+		        {
+		            s += " + " + i;
+		        }
+		        sum = sum + i;
+		        System.out.println(s + " = " + sum);
+		    }
+		}
+		
+		public static void irgendetwas(int nr1, int nr2)
+		{
+			if(nr1 < 0)
+				nr1 = -nr1;	// Anweisung(sblock) des true-Zweiges
+				nr1++;		// wird immer ausgefuehrt!!
+			
+			// ohne else
+			
+			if(nr2 < 0)
+			{
+				nr2 = -nr2;
+			}
+			// ohne else
+			
+			System.out.println("nr1 = " + nr1 + ", nr2 = " + nr2);
+		}
+		
+		public static boolean istGerade(int zahl)
+		{
+			return (zahl % 2 == 0);
+		}
+
+		public static void main(String[] args)
+		{
+			int a = 48;
+			int b = 16;
+			if(a > b)
+			{
+				a = a - b;
+				irgendetwas(a, b);
+				
+			}
+			else
+			{
+				b = b - a;
+			}
+			
+			int n = 5;
+			//if(n % 2 == 0)
+			if(istGerade(n))
+			{
+				n = n / 2;
+			}
+			else
+			{
+				n = 3 * n + 1;
+			}
+
+			irgendetwas(3,4);
+			irgendetwas(-3, 4);
+			irgendetwas(3, -4);
+			irgendetwas(-3, -4);
+			
+			
+			/*
+			 * Iteration for-Schleife
+			 */
+
+			for(int i = 1; i < 5; i++)
+			{
+				System.out.println("i = " + i);
+			}
+			System.out.println("for-Schleife zu Ende");
+			
+			for(int i = 0; i < 3; i++)
+			{
+				for(int j = 0; j < 2; j++)
+				{
+					System.out.println("i = " + i + ", j = " + j);
+				}
+				System.out.println("--------------");
+			}
+			
+			
+			for(int zeile = 0; zeile < 10; zeile++)
+			{
+				for(int spalte = 0; spalte < zeile; spalte++)
+				{
+					System.out.print("* ");
+				}
+				System.out.println();
+			}
+			
+			computeSumFrom1ToN(20);
+		}
+
+	}
+
+	```
+
