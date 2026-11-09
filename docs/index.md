@@ -619,3 +619,94 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 	```
 
+
+
+??? hint "Vorlesung Iteration 9.11.2026"
+	```java
+	package vorlesungen.vorlesung1109;
+
+	public class Vorlesung1109
+	{
+		public static void printNChars(int n, char c)
+		{
+			for( int i = 1 ; i <= n ; i++ )
+			{
+				System.out.print(c);
+			}
+			//System.out.println();
+		}
+		
+		public static int sumOf1ToN(int n)
+		{
+			int summe = 0;
+			for(int summand = 1; summand <= n; summand++)
+			{
+				summe = summe + summand;
+			}
+			return summe;
+		}
+		
+		public static void printFakultaet(int n)
+		{
+			long produkt = 1;
+			System.out.print(n + "! = ");
+			for(int faktor = 1 ; faktor <= n; faktor++)
+			{
+				if(faktor < n)
+				{
+					System.out.print(faktor + " * ");
+				}
+				else
+				{
+					System.out.print(faktor + " = ");
+				}
+				produkt = produkt * faktor;
+			}
+			System.out.println(produkt);
+		}
+
+		public static void main(String[] args)
+		{
+
+			int n = 5;
+			for( int i = 1 ; i <= n ; i++ )
+			{
+				System.out.print('+');
+			}
+			// System.out.println(i);	// i existiert nicht ausserhalb for
+			System.out.println();
+			
+			printNChars(10, '*');
+			printNChars(1, '-');
+			printNChars(-10, 'x');
+			printNChars(30, 'z');
+			
+			System.out.println();
+			
+			n = 10;
+			for( int i = 1 ; i < n ; i++ )
+			{
+				System.out.print("i = " + i + " : ");
+				printNChars(n-i, ' ');
+				printNChars(i, '*');
+				System.out.println();
+			}
+			
+			for(int i = 1; i < 10; i++)
+			{
+				int summe = sumOf1ToN(i);
+				System.out.println("Summe 1 bis " + i + " = " + summe);
+			}
+			System.out.println();
+			printFakultaet(6);
+			printFakultaet(10);
+			
+			for(int i = 1; i < 18; i++)
+			{
+				printFakultaet(i);
+			}
+		}
+
+	}
+
+	```
