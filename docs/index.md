@@ -621,7 +621,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 
-??? hint "Vorlesung Iteration 9.11.2026"
+??? hint "Vorlesung Iteration (for) 9.11.2026"
 	```java
 	package vorlesungen.vorlesung1109;
 
@@ -705,6 +705,123 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			{
 				printFakultaet(i);
 			}
+		}
+
+	}
+
+	```
+
+
+??? hint "Vorlesung Iteration (while) 10.11.2026"
+	```java
+	package vorlesungen.vorlesung1110;
+
+	public class Vorlesung1110
+	{
+		public static double powerOf2(int n)
+		{
+			double number = 1;
+			boolean negativ = true;
+			if(n < 0)
+			{
+				negativ = true;
+				n = -n;
+			}
+			else
+			{
+				negativ = false;
+			}
+			for(int exp = 1; exp <= n; exp++)
+			{
+				number = number * 2;
+			}
+			if(negativ)
+			{
+				number = 1 / number;
+			}
+			return number;
+			
+			
+			
+			
+			
+			/*
+			if(n > 0)
+			{
+				for(int exp = 1; exp <= n; exp++)
+				{
+					number = number * 2;
+				}
+			}
+			else
+			{
+				for(int exp = n; exp<0 ; exp++)
+				{
+					number = number / 2;
+				}
+				
+			}
+			return number;
+			*/
+		}
+		
+		public static int method1(int i)
+		{
+			i = i + 1;
+			return i;
+		}
+
+		public static void main(String[] args)
+		{
+			int exp = -3;
+			double result = powerOf2(exp);
+			System.out.println("2^" + exp + " = " + result);
+
+			int j = 3;
+			j = method1(j) * 4;
+			System.out.println(j);
+			
+			
+			int a = 48;
+			int b = 32;
+			
+
+			while(a != b)
+			{
+				if(a > b)
+				{
+					a = a - b;
+				}
+				else
+				{
+					b = b - a;
+				}
+			}
+			System.out.println(a + " == " + b);
+			
+			int n = 10;
+			int i = 1;
+			while(i <= n)
+			{
+				System.out.println(i);
+				i++;
+			}
+			
+			n = 7;
+			System.out.print(n + " ");
+			while(n>1)
+			{
+				if(n % 2 == 0)
+				{
+					n = n / 2;
+				}
+				else
+				{
+					n = 3 * n + 1;
+				}
+				System.out.print(n + " ");
+			}
+			
 		}
 
 	}
