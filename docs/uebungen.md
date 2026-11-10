@@ -661,6 +661,183 @@
 		```
 
 
+??? question "Eine mögliche Lösung für Übung 3"
+	```java
+	package uebungen.uebung3;
+
+	public class Uebung3
+	{
+		public static void printTimesTables(int nr1, int nr2)
+		{
+			for(int factor1 = 1; factor1 <= nr1; factor1++)
+			{
+				//System.out.println();
+				//System.out.println("factor1 : " + factor1);
+				//System.out.println("--> vor innerer Schleife");
+				
+				for(int factor2 = 1; factor2 <= nr2; factor2++)
+				{
+					//System.out.println("            factor2 : " + factor2);
+					int product = factor1 * factor2;
+					System.out.println(factor1 + " * " + factor2 + " = " + product);
+				}
+				
+				//System.out.println("--> nach innerer Schleife");
+				System.out.println();
+			}
+		}
+		
+		public static void printTimesMatrix(int nr1, int nr2)
+		{
+			for(int factor1 = 1; factor1 <= nr1; factor1++)
+			{
+				for(int factor2 = 1; factor2 <= nr2; factor2++)
+				{
+					System.out.print(factor1 * factor2 + " ");
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+		
+		public static void printTriangleUp(int height)
+		{
+			for(int row = 0; row < height; row++)
+			{
+				System.out.print(" Zeile " + row + " : ");
+				for(int stars = 1; stars <= height-row; stars++)
+				{
+					System.out.print("* ");
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+		
+		public static void printSeconds(int seconds)
+		{
+			final int SECONDS_PER_MINUTE = 60; 	// Konstante
+			final int SECONDS_PER_HOUR   = 60 * SECONDS_PER_MINUTE;
+			final int SECONDS_PER_DAY    = 24 * SECONDS_PER_HOUR;
+			
+			int days = seconds / SECONDS_PER_DAY;
+			int remainingSeconds = seconds % SECONDS_PER_DAY;
+			
+			int hours = remainingSeconds / SECONDS_PER_HOUR;
+			remainingSeconds = remainingSeconds % SECONDS_PER_HOUR;
+			
+			int minutes = remainingSeconds / SECONDS_PER_MINUTE;
+			remainingSeconds = remainingSeconds % SECONDS_PER_MINUTE;
+			
+			String output = seconds + " Sekunden sind ";
+			
+			if(days > 0)
+			{
+				if(days == 1)
+				{
+					output += "1 Tag, ";
+				}
+				else
+				{
+					output += days + " Tage, ";
+				}
+			}
+			
+			if(hours > 0)
+			{
+				if(hours == 1)
+				{
+					output += "1 Stunde, ";
+				}
+				else
+				{
+					output += hours + " Tage, ";
+				}
+			}
+			
+			if(minutes > 0)
+			{
+				if(minutes == 1)
+				{
+					output += "1 Minute, ";
+				}
+				else
+				{
+					output += minutes + " Minuten, ";
+				}
+			}
+			
+			
+			if(remainingSeconds > 0)
+			{
+				if(remainingSeconds == 1)
+				{
+					output += "1 Sekunde.";
+				}
+				else
+				{
+					output += remainingSeconds + " Sekunden.";
+				}
+			}
+			
+			System.out.println(output);
+		}
+
+		public static void main(String[] args)
+		{
+			System.out.println();
+			System.out.println("----------------- 3. --------------------");
+			System.out.println();
+			printTimesTables(10,10);
+			printTimesTables(3,7);
+			
+			System.out.println();
+			System.out.println("----------------- 4. --------------------");
+			System.out.println();
+			printTimesMatrix(10,10);
+			printTimesMatrix(3,7);
+			
+			System.out.println();
+			System.out.println("----------------- 5. --------------------");
+			System.out.println();
+			printTriangleUp(9);
+			printTriangleUp(4);
+			
+			
+			System.out.println();
+			System.out.println("----------------- 6. --------------------");
+			System.out.println();
+			
+			for(int x = -36; x <= 36; x++)
+			{
+				for(int y = x; y <= 36; y++)	// y startet bei x, wegen y >= x
+				{
+					for(int z = y; z <= 36; z++)	// z startet bei y, wegen z >= y
+					{
+						int product = x * y * z;
+						//if(product == 36 && x <= y && y <= z)
+						if(product == 36)
+						{
+							System.out.println(x + " * " + y + " * " + z + " = " + product );
+						}
+					}
+				}
+			}
+			
+			System.out.println();
+			System.out.println("----------------- Zusatz --------------------");
+			System.out.println();
+			
+			printSeconds(3456789);
+			printSeconds(2345678);
+			printSeconds(123456);
+			printSeconds(12345);
+		}
+
+	}
+
+	```
+
 
 	
 ??? note "<a id="ubung-4"></a>Übung 4"
