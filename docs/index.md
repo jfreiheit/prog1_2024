@@ -901,3 +901,134 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			}
 		}
 		```
+
+
+
+??? hint "Vorlesung Klassen und Objekte I (Point) 17.11.2026"
+	=== "Vorlesung1117.java (Programmklasse)"
+		```java
+		package vorlesungen.vorlesung1117;
+
+		import vorlesungen.vorlesung1116.Adresse;
+
+		public class Vorlesung1117
+		{
+
+			public static void main(String[] args)
+			{
+				Adresse wh = new Adresse("Wilhelminenhofstr.", "Berlin", 75, 12459);
+				
+				System.out.println(wh.getAdresse());
+				
+				wh.strasseUmbenennen("Neue Strasse");
+				
+				System.out.println(wh.getAdresse());
+				
+				Point p1 = new Point(3, 4);
+				Point p2 = new Point(-3, 2);
+				Point p3 = new Point(0, 0);
+				
+				System.out.println(p1.getX() + ", " + p1.getY());
+				p1.translate(-2, 3);
+				System.out.println(p1.getX() + ", " + p1.getY());
+				
+				System.out.println(p1.toString());
+				System.out.println(p2.toString());
+				System.out.println(p3.toString());
+				
+				System.out.println("p1 links von p2 ? " + p1.isLeft(p2));
+				System.out.println("p1 links von p3 ? " + p1.isLeft(p3));
+				System.out.println("p2 links von p1 ? " + p2.isLeft(p1));
+			}
+
+		}
+		```
+	=== "Adresse.java (package vorlesungen.vorlesung1116)"
+		```java
+		package vorlesungen.vorlesung1116;
+
+		public class Adresse
+		{
+			// Objektvariablen
+			private String strasse;
+			private String ort;
+			private int hausnummer;
+			private int plz;
+			
+			// Konstruktor
+			public Adresse(String str, String stadt, int nr, int postleitzahl)
+			{
+				strasse = str;
+				ort = stadt;
+				hausnummer = nr;
+				plz = postleitzahl;
+			}
+			
+			// Objektmethoden
+			public String getAdresse()
+			{
+				return strasse + " " + hausnummer + " in " + plz + " " + ort;
+			}
+			
+			public String getStrasse()
+			{
+				return strasse;
+			}
+			
+			public void strasseUmbenennen(String neueStrasse)
+			{
+				strasse = neueStrasse;
+			}
+		}
+		```
+	=== "Point.java"
+		```java
+		package vorlesungen.vorlesung1117;
+
+		public class Point
+		{
+			// Objektvariablen
+			private int x;
+			private int y;
+			
+			// Konstruktor
+			public Point(int px, int py)
+			{
+				x = px;
+				y = py;
+			}
+			
+			// Objektmethoden
+			
+			// Getter
+			public int getX()
+			{
+				return x;
+			}
+			
+			public int getY()
+			{
+				return y;
+			}
+			
+			public String toString()
+			{
+				return "[ x = " + x + ", y = " + y + "]";
+			}
+			
+			public boolean isLeft(Point otherPoint)
+			{
+				return x < otherPoint.x;
+			}
+			
+			// Setter
+			public void translate(int deltaX, int deltaY)
+			{
+				x = x + deltaX;
+				y = y + deltaY;
+			}
+			
+
+		}
+
+		```
