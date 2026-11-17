@@ -827,3 +827,77 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 	}
 
 	```
+
+
+
+??? hint "Vorlesung Klassen und Objekte I (Adresse) 16.11.2026"
+	=== "Vorlesung1116.java (Programmklasse)"
+		```java
+		package vorlesungen.vorlesung1116;
+
+		public class Vorlesung1116
+		{
+
+			public static void main(String[] args)
+			{
+				String s = "hallo";
+				System.out.println(s.toUpperCase());
+				
+				// Adresse adresse1 = new Adresse();	// impliziter Konstruktor
+				// Adresse adresse2 = new Adresse();	// impliziter Konstruktor
+				
+				Adresse adresse1 = new Adresse("Wilhelmenhofstr.", "Berlin", 75, 12459);
+				Adresse adresse2 = new Adresse("Treskowallee", "Berlin", 8, 10318);
+				
+				// neues Objekt:
+				adresse2 = new Adresse("Wilhelmenhofstr.", "Berlin", 75, 12459);
+				
+				/* geht nicht mehr wegen private
+				adresse1.strasse = "Wilhelmenhofstr.";
+				adresse1.hausnummer = 75;
+				adresse1.plz = 12459;
+				adresse1.ort = "Berlin";
+				
+				adresse2.strasse = "Treskowalle";
+				adresse2.hausnummer = 8;
+				adresse2.plz = 10318;
+				adresse2.ort = "Berlin";
+				*/
+				System.out.println(adresse1.getAdresse());
+				System.out.println(adresse2.getAdresse());
+				
+				// adresse1.hausnummer = 76;	// nicht mehr moeglich wegen private
+				System.out.println(adresse1.getAdresse());
+				
+			}
+
+		}
+		```
+	=== "Adresse.java"
+		```java
+		package vorlesungen.vorlesung1116;
+
+		public class Adresse
+		{
+			// Objektvariablen
+			private String strasse;
+			private String ort;
+			private int hausnummer;
+			private int plz;
+			
+			// Konstruktor
+			public Adresse(String str, String stadt, int nr, int postleitzahl)
+			{
+				strasse = str;
+				ort = stadt;
+				hausnummer = nr;
+				plz = postleitzahl;
+			}
+			
+			// Objektmethoden
+			public String getAdresse()
+			{
+				return strasse + " " + hausnummer + " in " + plz + " " + ort;
+			}
+		}
+		```
