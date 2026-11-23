@@ -904,7 +904,7 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 
 
-??? hint "Vorlesung Klassen und Objekte I (Point) 17.11.2026"
+??? hint "Vorlesung Klassen und Objekte II (Point) 17.11.2026"
 	=== "Vorlesung1117.java (Programmklasse)"
 		```java
 		package vorlesungen.vorlesung1117;
@@ -1031,4 +1031,151 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 
 		}
 
+		```
+
+
+??? hint "Vorlesung Klassen und Objekte III (this und Circle) 23.11.2026"
+
+	=== "Vorlesung1123.java"
+		```java
+		package vorlesungen.vorlesung1123;
+
+		import vorlesungen.vorlesung1117.Point;
+
+		public class Vorlesung1123
+		{
+
+			public static void main(String[] args)
+			{
+				Point p1 = new Point(3,4);
+				Point p2 = new Point(2,3);
+				
+				System.out.println("p1 : " + p1.toString());
+				System.out.println("p2 : " + p2.toString());
+				
+				Point p3 = p1;			// p3 und p1 zeigen auf dasselbe Objekt
+				p3.translate(1, -2);	// Objektvariablen 
+				
+				System.out.println("p1 : " + p1.toString());
+				
+				System.out.println("p1 links von p2 ? " + p1.isLeft(p2));
+				
+				int nr1 = 5;
+				int nr2 = nr1;		// Kopie des Wertes von nr1 
+				nr1 = 6;
+				System.out.println("nr1 = " + nr1);
+				System.out.println("nr2 = " + nr2);
+				
+				Circle c1 = new Circle(1.0);
+				Circle c2 = new Circle(2.0);
+				System.out.println("c1 : " + c1.toString());
+				System.out.println("c2 : " + c2.toString());
+				
+				System.out.println("c1 > c2 ? " + c1.isBigger(c2));
+				System.out.println("c1 > c1 ? " + c1.isBigger(c1));
+			}
+
+		}
+		```
+	=== "Point.java (package vorlesungen.vorlesung1117)"
+		```java
+		package vorlesungen.vorlesung1117;
+
+		public class Point
+		{
+			// Objektvariablen
+			private int x;
+			private int y;
+			
+			// Konstruktor
+			public Point(int x, int y)
+			{
+				this.x = x;
+				this.y = y;
+			}
+			
+			// Objektmethoden
+			
+			// Getter
+			public int getX()
+			{
+				return this.x;
+			}
+			
+			public int getY()
+			{
+				return this.y;
+			}
+			
+			public String toString()
+			{
+				return "[ x = " + this.x + ", y = " + this.y + "]";
+			}
+			
+			public boolean isLeft(Point otherPoint)
+			{
+				return this.x < otherPoint.x;
+			}
+			
+			// Setter
+			public void translate(int deltaX, int deltaY)
+			{
+				this.x = this.x + deltaX;
+				this.y = this.y + deltaY;
+			}
+			
+		}
+		```
+	=== "Circle.java"
+		```java
+		package vorlesungen.vorlesung1123;
+
+		public class Circle
+		{
+			// Objektvariable
+			private double radius;
+			
+			// Konstruktor
+			public Circle(double radius)
+			{
+				this.radius = radius;
+			}
+			
+			// Objektmethoden
+			public double getRadius()
+			{
+				return this.radius;
+			}
+			
+			public double getDiameter()
+			{
+				return 2.0 * this.radius;
+			}
+			
+			public double getPerimeter()
+			{
+				return Math.PI * this.getDiameter();
+			}
+			
+			public double getArea()
+			{
+				return Math.PI * this.radius * this.radius;
+			}
+			
+			public String toString()
+			{
+				return "[r="+ this.radius +", d=" + this.getDiameter() + ", p=" + 
+						this.getPerimeter() + ", a=" + this.getArea() + "]";
+			}
+			
+			public boolean isBigger(Circle c)
+			{
+				return this.radius > c.radius;
+			}
+			
+			public boolean isSmaller(Circle c)
+			{
+				return this.radius < c.radius;
+			}
+		}
 		```
