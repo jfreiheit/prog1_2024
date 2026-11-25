@@ -1179,3 +1179,197 @@ Nachfolgend der vorläufige Wochenplan (wird eventuell angepasst).
 			}
 		}
 		```
+
+
+??? hint "Vorlesung Klassen und Objekte IIII (Klassen in Klassen) 24.11.2026"
+
+	=== "Vorlesung1124.java"
+		```java
+		package vorlesungen.vorlesung1124;
+
+		import vorlesungen.vorlesung1116.Adresse;
+		import vorlesungen.vorlesung1123.Circle;
+
+		public class Vorlesung1124
+		{
+
+			public static void main(String[] args)
+			{
+				Circle c1 = new Circle(1.0);
+				Circle c2 = new Circle(2.0);
+				Circle c3 = new Circle();
+				Circle c4 = null;
+				
+				System.out.println("c1 : " + c1.toString());
+				System.out.println("c2 : " + c2.toString());
+				System.out.println("c3 : " + c3.toString());
+				// System.out.println("c4 : " + c4.toString());	// NullPointerException
+				
+				System.out.println("c1 > c2 ? " + c1.isBigger(c2));
+				System.out.println("c1 > c1 ? " + c1.isBigger(c1));
+				
+				Adresse wh = new Adresse("Wilhelminenhofstr.", "Berlin", 75, 12459);
+				Adresse ta = new Adresse("Treskowallee", "Berlin", 8, 10318);
+				
+				Person maria = new Person("Maria", "Test", wh);
+				Person joe = new Person("Joe", "Smith", wh);
+				Person max = new Person("Max", "Hallo", ta);
+				Person jemand = new Person("Jane", "Smith", 
+						new Adresse("Alte Strasse", "Berlin", 1, 12345));
+				
+				max.print();
+				maria.print();
+				jemand.print();
+				
+				Adresse maxAdresse = max.getAdresseVonPerson();
+				
+				Adresse jemandAdresse = jemand.getAdresseVonPerson();
+				System.out.println(jemandAdresse.getAdresse());
+				System.out.println(jemandAdresse.getStrasse());
+				
+				joe.print();
+				
+				Adresse mariaAdresse = maria.getAdresseVonPerson();
+				mariaAdresse.strasseUmbenennen("Marias Strasse");
+				
+				joe.print();
+				System.out.println(wh.getStrasse());
+				
+				
+
+			}
+
+		}
+
+		```
+	=== "Circle.java (package vorlesungen.vorlesung1123)"
+		```java
+		package vorlesungen.vorlesung1123;
+
+		public class Circle
+		{
+			// Objektvariable
+			private double radius;
+			
+			// Konstruktor
+			public Circle(double radius)
+			{
+				this.radius = radius;
+			}
+			
+			// Konstruktor ueberladen
+			public Circle()
+			{
+				this.radius = 1.0;
+			}
+			
+			// Objektmethoden
+			public double getRadius()
+			{
+				return this.radius;
+			}
+			
+			public double getDiameter()
+			{
+				return 2.0 * this.radius;
+			}
+			
+			public double getPerimeter()
+			{
+				return Math.PI * this.getDiameter();
+			}
+			
+			public double getArea()
+			{
+				return Math.PI * this.radius * this.radius;
+			}
+			
+			public String toString()
+			{
+				return "[r="+ this.radius +", d=" + this.getDiameter() + ", p=" + 
+						this.getPerimeter() + ", a=" + this.getArea() + "]";
+			}
+			
+			public boolean isBigger(Circle c)
+			{
+				return this.radius > c.radius;
+			}
+			
+			public boolean isSmaller(Circle c)
+			{
+				return this.radius < c.radius;
+			}
+		}
+
+		```
+	=== "Adresse.java (package vorlesungen.vorlesung1116)"
+		```java
+		package vorlesungen.vorlesung1116;
+
+		public class Adresse
+		{
+			// Objektvariablen
+			private String strasse;
+			private String ort;
+			private int hausnummer;
+			private int plz;
+			
+			// Konstruktor
+			public Adresse(String str, String stadt, int nr, int postleitzahl)
+			{
+				strasse = str;
+				ort = stadt;
+				hausnummer = nr;
+				plz = postleitzahl;
+			}
+			
+			// Objektmethoden
+			public String getAdresse()
+			{
+				return strasse + " " + hausnummer + " in " + plz + " " + ort;
+			}
+			
+			public String getStrasse()
+			{
+				return strasse;
+			}
+			
+			public void strasseUmbenennen(String neueStrasse)
+			{
+				strasse = neueStrasse;
+			}
+		}
+		```
+	=== "Person.java"
+		```java
+		package vorlesungen.vorlesung1124;
+
+		import vorlesungen.vorlesung1116.Adresse;
+
+		public class Person
+		{
+			private String vorname;
+			private String nachname;
+			private Adresse adresse;
+			
+			// Konstruktor
+			public Person(String vorname, String nachname, Adresse adresse)
+			{
+				this.vorname = vorname;
+				this.nachname = nachname;
+				this.adresse = adresse;
+			}
+			
+			public void print()
+			{
+				System.out.println(this.vorname + " " + this.nachname + " wohnt in " 
+						+ this.adresse.getAdresse());
+			}
+			
+			public Adresse getAdresseVonPerson()
+			{
+				return this.adresse;
+			}
+			
+		}
+		```
